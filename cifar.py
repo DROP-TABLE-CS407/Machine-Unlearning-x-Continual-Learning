@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Path to the dataset
-DATASET_PATH = 'cifar-10-batches-py'  # Replace with your actual path
+DATASET_PATH = 'cifar-10-batches-py' 
 
 # Load a single batch file
 def load_batch(filename):
@@ -32,6 +32,24 @@ def load_cifar10_data(path):
 # Load CIFAR-10 data
 train_data, train_labels, test_data, test_labels = load_cifar10_data(DATASET_PATH)
 classes = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
+
+def split_into_nclasses(train_data, train_labels, num_classes):
+    # Get unique classes
+    unique_classes = np.unique(train_labels)
+    
+    # Randomly select num_classes from unique_classes
+    selected_classes = np.random.choice(unique_classes, num_classes, replace=False)
+    
+    subset_train = []
+    subset_labels = []
+    
+    for data, label in zip(train_data, train_labels):
+        if label in selected_classes:
+            subset_train.append(data)
+            subset_labels.append(label)
+    
+    return np.array(subset_train), np.array(subset_labels)
+
 
 # Helper function to display images
 def show_image(image, label):
