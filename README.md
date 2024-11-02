@@ -28,26 +28,15 @@ https://warwick.ac.uk/fac/sci/dcs/intranet/user_guide/installing_software/cuda
 
 ### 1.) Install the Github VSCode extension 
 
-
-
 ### 2.) Ensure you are signed into your Github account with access to this repo
-
-
 
 ### 3.) run "git clone https://github.com/DROP-TABLE-CS407/Machine-Unlearning-x-Continual-Learning.git" in the directory of your choice
 
-
-
 ### 4.) run "python3.9 cifar.py" or it's better to use the included venv
-
-
 
 (if this doesn't work or you are doing this in your own venv make sure you have the 'numpy' dependency installed 'pip3.x install numpy')
 
 ### 5.) ssh kudu
 
-
-
 ### 6.) sbatch remoterun.sbatch
 
-:pognuts:
