@@ -1,6 +1,6 @@
 import unittest
 import numpy as np
-from cifar import load_batch, load_cifar10_data, split_into_nclasses, DATASET_PATH
+from cifar import load_batch, load_cifar10_data, split_into_nclasses, DATASET_PATH , split_into_classes, CLASSES
 
 class TestCifar(unittest.TestCase):
 
@@ -24,6 +24,19 @@ class TestCifar(unittest.TestCase):
         self.assertEqual(len(unique_labels), num_classes)
         for label in unique_labels:
             self.assertIn(label, range(10))  # CIFAR-10 has labels from 0 to 9
+
+    def test_split_into_classes(self):
+        train_data, train_labels, _ , _ = load_cifar10_data(DATASET_PATH)
+        selected_classes = ['airplane', 'cat' ,'pointyhats']  # Example classes
+        
+        subset_train, subset_labels = split_into_classes(train_data, train_labels, selected_classes)
+        unique_labels = np.unique(subset_labels)
+        print(selected_classes)
+        print(unique_labels)
+        # Check that all unique labels in the subset are within selected_classes
+        for label in unique_labels:
+            self.assertIn(CLASSES[label], selected_classes)
+
 
 if __name__ == '__main__':
     unittest.main()
