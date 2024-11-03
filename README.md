@@ -42,4 +42,5 @@ https://warwick.ac.uk/fac/sci/dcs/intranet/user_guide/installing_software/cuda
 
 # tests
 
+
 in order to run tests write python -m unittest discover -s tests -p "test_cifar.py" in root directory
