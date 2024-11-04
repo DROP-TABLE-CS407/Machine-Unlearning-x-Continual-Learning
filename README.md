@@ -10,21 +10,37 @@ on how intertwined the datasets are.
 For example possible splitting(s) of cifar-5 could be randomised sets of:
 
 5 birds : 0 animals
+
 4 birds : 1 animal
+
 3 birds : 2 animals
+
 2 birds : 3 animals
+
 ....
 
 # Github + VSCode quick set up guide
 
 (if you are sshing through DCS)
 
-## 1.) Install the Github VSCode extension 
+pip3 install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
+https://warwick.ac.uk/fac/sci/dcs/intranet/user_guide/installing_software/cuda
 
-## 2.) Ensure you are signed into your Github account with access to this repo
+### 1.) Install the Github VSCode extension 
 
-## 3.) run "git clone https://github.com/DROP-TABLE-CS407/Machine-Unlearning-x-Continual-Learning.git" in the directory of your choice
+### 2.) Ensure you are signed into your Github account with access to this repo
 
-## 4.) run "python3.9 cifar.py"
+### 3.) run "git clone https://github.com/DROP-TABLE-CS407/Machine-Unlearning-x-Continual-Learning.git" in the directory of your choice
+
+### 4.) run "python3.9 cifar.py" or it's better to use the included venv
 
 (if this doesn't work or you are doing this in your own venv make sure you have the 'numpy' dependency installed 'pip3.x install numpy')
+
+### 5.) ssh kudu
+
+### 6.) sbatch remoterun.sbatch
+
+### Additional notes: You can now use a 75% accuracy pretrained model with the '.pth' extension. Pytorch has a guide to load these models in the documentation.
+
+You must have the class template for the Resnet model imported into the file you want to use the PTM in 'ResNet18CIFAR'.
+
