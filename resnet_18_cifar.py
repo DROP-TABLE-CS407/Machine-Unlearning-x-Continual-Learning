@@ -57,15 +57,9 @@ DATASET_PATH = 'cifar-10-batches-py'  # Replace with your actual path
 train_data, train_labels, test_data, test_labels = load_cifar10_data(DATASET_PATH)
 classes = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
 
-<<<<<<< HEAD
 epoch = 400
 learning_rate = 0.0005
 batch_size = 32
-=======
-epoch = 2
-learning_rate = 0.0005
-batch_size = 512
->>>>>>> ef78082d34a4d275f7f2c271ad87c4538b4cf3ea
 
 # print  sizes of train data and test data
 print("||==========================TRAINING HYPERPARAMETERS========================||")
@@ -213,7 +207,4 @@ print(f"|| Total time: {initialisation + training + accuracy:.2f}s")
 
 print("||==============================END==========================||")
 
-<<<<<<< HEAD
 torch.save(model, 'resnet18_cifar78ACC.pth')
-=======
->>>>>>> ef78082d34a4d275f7f2c271ad87c4538b4cf3ea
