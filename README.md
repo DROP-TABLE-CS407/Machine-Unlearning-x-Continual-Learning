@@ -46,6 +46,8 @@ You must have the class template for the Resnet model imported into the file you
 
 # Load the model
 ```python
+model = ResNet18CIFAR()
+
 model = torch.load('resnet18_cifar77ACC.pth',  map_location=torch.device('cpu'))
 model.eval()
 ```
