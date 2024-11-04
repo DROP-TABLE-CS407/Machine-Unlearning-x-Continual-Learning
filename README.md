@@ -44,3 +44,6 @@ https://warwick.ac.uk/fac/sci/dcs/intranet/user_guide/installing_software/cuda
 
 You must have the class template for the Resnet model imported into the file you want to use the PTM in 'ResNet18CIFAR'.
 
+# Tests
+
+in order to run tests write python -m unittest discover -s tests -p "test_cifar.py" in root directory

@@ -83,3 +83,5 @@ def get_class_indexes(selected_classes):
 # Show a random image from the training set
 random_idx = np.random.randint(len(train_data))
 show_image(train_data[random_idx], train_labels[random_idx])
+
+
