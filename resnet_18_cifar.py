@@ -32,8 +32,8 @@ class ResNet18CIFAR(torch.nn.Module):
         for name, layer in self.resnet.named_children():
             print(f"Layer: {name} -> {layer}")
         
-        print("|| conv1 weight size: ", self.resnet.conv1.weight.size())
-        print("|| fc weight size: ", self.resnet.fc.weight.size())
+        #print("|| conv1 weight size: ", self.resnet.conv1.weight.size())
+        #print("|| fc weight size: ", self.resnet.fc.weight.size())
 
     def forward(self, x):
         return self.resnet(x)
