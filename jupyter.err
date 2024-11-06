@@ -1,34 +1,10 @@
 Loading python-ml/22-12-21-python3.9
   Loading requirement: CUDA/11.6.0
-[I 03:29:31.102 NotebookApp] Serving notebooks from local directory: /dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning
-[I 03:29:31.103 NotebookApp] Jupyter Notebook 6.5.2 is running at:
-[I 03:29:31.103 NotebookApp] http://gecko-02:11861/
-[I 03:29:31.103 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
-[W 03:32:39.941 NotebookApp] 404 GET /hub/api (137.205.113.129) 39.250000ms referer=None
-[I 03:32:39.946 NotebookApp] 302 GET / (137.205.113.129) 0.180000ms
-[I 03:32:39.950 NotebookApp] 302 GET /tree? (137.205.113.129) 0.250000ms
-[I 03:32:44.294 NotebookApp] 302 POST /login? (137.205.113.129) 40.010000ms
-[I 03:32:55.588 NotebookApp] Kernel started: 63e29499-a81e-4abe-9d5b-3188694908ee, name: python3
-[I 03:32:56.418 NotebookApp] Starting buffering for 63e29499-a81e-4abe-9d5b-3188694908ee:b7f6fda0-0a0d-4770-a943-bbc12d9e8632
-[I 03:32:56.430 NotebookApp] Restoring connection for 63e29499-a81e-4abe-9d5b-3188694908ee:b7f6fda0-0a0d-4770-a943-bbc12d9e8632
-[I 03:32:56.433 NotebookApp] Replaying 3 buffered messages
-[W 03:33:01.342 NotebookApp] 404 GET /nbextensions (137.205.113.129) 1.700000ms referer=None
-[W 03:33:01.343 NotebookApp] 404 GET /nbextensions (137.205.113.129) 0.590000ms referer=None
-[I 03:41:06.531 NotebookApp] Kernel interrupted: 63e29499-a81e-4abe-9d5b-3188694908ee
-[I 03:41:45.464 NotebookApp] Kernel interrupted: 63e29499-a81e-4abe-9d5b-3188694908ee
-[I 03:45:03.567 NotebookApp] Kernel interrupted: 63e29499-a81e-4abe-9d5b-3188694908ee
-[I 03:46:53.030 NotebookApp] Kernel interrupted: 63e29499-a81e-4abe-9d5b-3188694908ee
-[I 03:47:08.894 NotebookApp] Kernel interrupted: 63e29499-a81e-4abe-9d5b-3188694908ee
-[I 03:47:22.233 NotebookApp] Kernel interrupted: 63e29499-a81e-4abe-9d5b-3188694908ee
-[I 03:47:59.066 NotebookApp] Kernel interrupted: 63e29499-a81e-4abe-9d5b-3188694908ee
-[I 03:49:00.906 NotebookApp] Kernel interrupted: 63e29499-a81e-4abe-9d5b-3188694908ee
-[I 04:06:58.480 NotebookApp] Kernel interrupted: 63e29499-a81e-4abe-9d5b-3188694908ee
-[I 05:15:44.505 NotebookApp] 302 GET / (137.205.113.129) 0.570000ms
-[I 05:15:44.782 NotebookApp] 302 GET /tree? (137.205.113.129) 0.620000ms
-[I 05:15:51.683 NotebookApp] 302 POST /login? (137.205.113.129) 25.990000ms
-[W 05:15:51.899 NotebookApp] Got events for closed stream <zmq.eventloop.zmqstream.ZMQStream object at 0x7f1ed339cdc0>
-[W 05:15:52.572 NotebookApp] 404 GET /nbextensions (137.205.113.129) 1.730000ms referer=None
-[W 05:15:52.573 NotebookApp] 404 GET /nbextensions (137.205.113.129) 0.530000ms referer=None
-[I 06:14:26.833 NotebookApp] Kernel interrupted: 63e29499-a81e-4abe-9d5b-3188694908ee
-[I 06:16:22.258 NotebookApp] Kernel interrupted: 63e29499-a81e-4abe-9d5b-3188694908ee
-[I 06:33:42.029 NotebookApp] Kernel interrupted: 63e29499-a81e-4abe-9d5b-3188694908ee
+[I 10:10:25.446 NotebookApp] Serving notebooks from local directory: /dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning
+[I 10:10:25.446 NotebookApp] Jupyter Notebook 6.5.2 is running at:
+[I 10:10:25.446 NotebookApp] http://gecko-02:11861/
+[I 10:10:25.446 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 10:11:42.903 NotebookApp] Kernel started: 5c017ba8-12e3-482e-8919-edb93adff280, name: python3
+[I 10:11:43.758 NotebookApp] Starting buffering for 5c017ba8-12e3-482e-8919-edb93adff280:a8fce820-19ee-4e85-98dd-b554143df012
+[I 10:11:43.766 NotebookApp] Restoring connection for 5c017ba8-12e3-482e-8919-edb93adff280:a8fce820-19ee-4e85-98dd-b554143df012
+[I 10:11:43.769 NotebookApp] Replaying 3 buffered messages
