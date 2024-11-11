@@ -1,10 +1,29 @@
-Loading python-ml/22-12-21-python3.9
-  Loading requirement: CUDA/11.6.0
-[I 10:10:25.446 NotebookApp] Serving notebooks from local directory: /dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning
-[I 10:10:25.446 NotebookApp] Jupyter Notebook 6.5.2 is running at:
-[I 10:10:25.446 NotebookApp] http://gecko-02:11861/
-[I 10:10:25.446 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
-[I 10:11:42.903 NotebookApp] Kernel started: 5c017ba8-12e3-482e-8919-edb93adff280, name: python3
-[I 10:11:43.758 NotebookApp] Starting buffering for 5c017ba8-12e3-482e-8919-edb93adff280:a8fce820-19ee-4e85-98dd-b554143df012
-[I 10:11:43.766 NotebookApp] Restoring connection for 5c017ba8-12e3-482e-8919-edb93adff280:a8fce820-19ee-4e85-98dd-b554143df012
-[I 10:11:43.769 NotebookApp] Replaying 3 buffered messages
+[I 19:45:35.343 NotebookApp] Serving notebooks from local directory: /dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning
+[I 19:45:35.344 NotebookApp] Jupyter Notebook 6.5.2 is running at:
+[I 19:45:35.344 NotebookApp] http://gecko-02:11861/
+[I 19:45:35.344 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 19:46:51.306 NotebookApp] 302 GET / (137.205.113.129) 0.520000ms
+[I 19:46:51.528 NotebookApp] 302 GET /tree? (137.205.113.129) 0.530000ms
+[I 19:47:09.592 NotebookApp] 302 POST /login? (137.205.113.129) 29.930000ms
+[I 20:02:52.830 NotebookApp] Kernel started: 6841c51f-6a47-47ad-84ac-aaef31e9644e, name: python3
+[I 20:03:14.191 NotebookApp] Starting buffering for 6841c51f-6a47-47ad-84ac-aaef31e9644e:335bc656-1f88-43d9-8a52-502f303155d6
+[I 20:03:14.202 NotebookApp] Restoring connection for 6841c51f-6a47-47ad-84ac-aaef31e9644e:335bc656-1f88-43d9-8a52-502f303155d6
+[I 20:03:14.205 NotebookApp] Replaying 3 buffered messages
+[W 20:03:14.899 NotebookApp] 404 GET /nbextensions (137.205.113.129) 7.780000ms referer=None
+[W 20:03:14.900 NotebookApp] 404 GET /nbextensions (137.205.113.129) 0.580000ms referer=None
+[I 20:04:51.271 NotebookApp] Kernel interrupted: 6841c51f-6a47-47ad-84ac-aaef31e9644e
+[W 20:05:14.341 NotebookApp] Wait for final termination of kernel timed out - continuing...
+[W 20:07:47.995 NotebookApp] 404 GET /hub/api (137.205.113.129) 6.290000ms referer=None
+[I 20:07:48.016 NotebookApp] 302 GET / (137.205.113.129) 0.350000ms
+[I 20:07:48.019 NotebookApp] 302 GET /tree? (137.205.113.129) 0.290000ms
+[I 20:07:48.027 NotebookApp] Kernel restarted: 6841c51f-6a47-47ad-84ac-aaef31e9644e
+[I 20:07:48.041 NotebookApp] Starting buffering for 6841c51f-6a47-47ad-84ac-aaef31e9644e:335bc656-1f88-43d9-8a52-502f303155d6
+[I 20:07:48.050 NotebookApp] Restoring connection for 6841c51f-6a47-47ad-84ac-aaef31e9644e:335bc656-1f88-43d9-8a52-502f303155d6
+[I 20:07:53.792 NotebookApp] 302 POST /login? (137.205.113.129) 18.620000ms
+[I 20:08:07.211 NotebookApp] Kernel restarted: 6841c51f-6a47-47ad-84ac-aaef31e9644e
+[I 20:08:07.215 NotebookApp] Starting buffering for 6841c51f-6a47-47ad-84ac-aaef31e9644e:335bc656-1f88-43d9-8a52-502f303155d6
+[I 20:08:07.220 NotebookApp] Restoring connection for 6841c51f-6a47-47ad-84ac-aaef31e9644e:335bc656-1f88-43d9-8a52-502f303155d6
+[I 20:08:10.997 NotebookApp] Kernel interrupted: 6841c51f-6a47-47ad-84ac-aaef31e9644e
+[I 20:08:14.474 NotebookApp] Kernel restarted: 6841c51f-6a47-47ad-84ac-aaef31e9644e
+[I 20:08:14.478 NotebookApp] Starting buffering for 6841c51f-6a47-47ad-84ac-aaef31e9644e:335bc656-1f88-43d9-8a52-502f303155d6
+[I 20:08:14.485 NotebookApp] Restoring connection for 6841c51f-6a47-47ad-84ac-aaef31e9644e:335bc656-1f88-43d9-8a52-502f303155d6

@@ -12,7 +12,7 @@
 #SBATCH --error=jupyter.err
 
 source /etc/profile.d/modules.sh
-module load CUDA
+module load CUDA/11.6.0
 module load python-ml
 cd /dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning # You might want to use the cd command here to change the working directory that jupyter notebook will use
 jupyter notebook --ip=0.0.0.0 --port=11861 --no-browser
