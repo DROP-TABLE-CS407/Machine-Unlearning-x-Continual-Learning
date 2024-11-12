@@ -11,7 +11,7 @@ import torch.optim as optim
 import numpy as np
 import quadprog
 
-from .common import MLP, ResNet18
+from ..GradientEpisodicMemory.model.common import MLP, ResNet18
 
 # Auxiliary functions useful for GEM's inner optimization.
 
@@ -192,7 +192,7 @@ class Net(nn.Module):
         # now compute the grad on the current minibatch
         self.zero_grad()
 
-        offset1, offset2 = compute_offsets(t, self.nc_per_task, self.is_cifar)
+        offset1, offset2 = compute_offsets(t, self.nc_per_task, self.is_cifar) 
         loss = self.ce(self.forward(x, t)[:, offset1: offset2], y - offset1)
         loss.backward()
 
