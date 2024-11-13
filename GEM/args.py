@@ -1,7 +1,7 @@
 class Args:
     def __init__(self):
         # model parameters
-        self.model = 'gem'
+        self.model = 'single'
         self.n_hiddens = 10
         self.n_layers = 2
 
@@ -11,9 +11,9 @@ class Args:
         self.finetune = 'no'
 
         # optimizer parameters
-        self.n_epochs = 100
+        self.n_epochs = 3
         self.batch_size = 10
-        self.lr = 0.01
+        self.lr = 0.1
 
         # experiment parameters
         self.cuda = 'yes'
@@ -24,7 +24,7 @@ class Args:
         # data parameters
         self.data_path = 'data/'
         self.data_file = 'mnist_permutations.pt'
-        self.samples_per_task = 25000
+        self.samples_per_task = 2500
         self.shuffle_tasks = 'no'
 
         # Convert string flags to boolean
