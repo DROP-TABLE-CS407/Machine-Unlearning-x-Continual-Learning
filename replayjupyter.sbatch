@@ -15,4 +15,5 @@ source /etc/profile.d/modules.sh
 module load CUDA/11.6.0
 module load python-ml
 cd /dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning # You might want to use the cd command here to change the working directory that jupyter notebook will use
+pip3 install --user quadprog
 jupyter notebook --ip=0.0.0.0 --port=11871 --no-browser

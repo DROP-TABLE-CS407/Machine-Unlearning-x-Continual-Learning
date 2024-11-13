@@ -1,34 +1,82 @@
-[I 00:33:47.366 NotebookApp] The port 11871 is already in use, trying another port.
-[I 00:33:47.366 NotebookApp] Serving notebooks from local directory: /dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning
-[I 00:33:47.366 NotebookApp] Jupyter Notebook 6.5.2 is running at:
-[I 00:33:47.366 NotebookApp] http://gecko-03:11872/?token=076dc11775801f7ad0ff2220886d7e98e69a2ecc6c73feec
-[I 00:33:47.366 NotebookApp]  or http://127.0.0.1:11872/?token=076dc11775801f7ad0ff2220886d7e98e69a2ecc6c73feec
-[I 00:33:47.366 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
-[C 00:33:47.379 NotebookApp] 
+numpy requires Python '>=3.8' but the running Python is 3.6.8
+[I 02:43:58.666 NotebookApp] Serving notebooks from local directory: /dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning
+[I 02:43:58.666 NotebookApp] Jupyter Notebook 6.5.2 is running at:
+[I 02:43:58.666 NotebookApp] http://gecko-02:11871/?token=188ddff8731860e186fb1957daac2479f0a873b8cb55f11e
+[I 02:43:58.666 NotebookApp]  or http://127.0.0.1:11871/?token=188ddff8731860e186fb1957daac2479f0a873b8cb55f11e
+[I 02:43:58.666 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 02:43:58.687 NotebookApp] 
     
     To access the notebook, open this file in a browser:
-        file:///dcs/21/u2140671/.local/share/jupyter/runtime/nbserver-117551-open.html
+        file:///dcs/21/u2140671/.local/share/jupyter/runtime/nbserver-1942104-open.html
     Or copy and paste one of these URLs:
-        http://gecko-03:11872/?token=076dc11775801f7ad0ff2220886d7e98e69a2ecc6c73feec
-     or http://127.0.0.1:11872/?token=076dc11775801f7ad0ff2220886d7e98e69a2ecc6c73feec
-slurmstepd: error: *** JOB 993028 ON gecko-03 CANCELLED AT 2024-11-13T00:34:04 ***
-[I 00:37:32.245 NotebookApp] 302 GET / (137.205.113.129) 0.400000ms
-[I 00:37:32.252 NotebookApp] 302 GET /tree? (137.205.113.129) 0.330000ms
-[I 00:37:35.736 NotebookApp] 302 GET / (137.205.113.129) 0.460000ms
-[I 00:37:35.740 NotebookApp] 302 GET /tree? (137.205.113.129) 0.240000ms
-[I 00:37:47.053 NotebookApp] 302 GET / (137.205.113.129) 0.520000ms
-[I 00:37:47.058 NotebookApp] 302 GET /tree? (137.205.113.129) 0.250000ms
-[I 00:37:47.179 NotebookApp] Kernel started: 31598663-1fa8-4e0f-ac72-9cfb2bf5040b, name: python3
-[I 00:37:47.856 NotebookApp] Starting buffering for 31598663-1fa8-4e0f-ac72-9cfb2bf5040b:67c29dd3-6de4-4921-84ce-7198d7608049
-[I 00:37:47.870 NotebookApp] Restoring connection for 31598663-1fa8-4e0f-ac72-9cfb2bf5040b:67c29dd3-6de4-4921-84ce-7198d7608049
-[I 00:37:47.872 NotebookApp] Replaying 3 buffered messages
-[W 00:37:50.417 NotebookApp] 404 GET /nbextensions (137.205.113.129) 5.260000ms referer=None
-[I 00:37:50.418 NotebookApp] 302 GET / (137.205.113.129) 5.170000ms
-[I 00:37:50.424 NotebookApp] 302 GET /tree? (137.205.113.129) 0.240000ms
-[W 00:37:50.431 NotebookApp] 404 GET /nbextensions (137.205.113.129) 0.830000ms referer=None
-[I 00:41:16.764 NotebookApp] Kernel restarted: 31598663-1fa8-4e0f-ac72-9cfb2bf5040b
-[I 00:41:16.769 NotebookApp] Starting buffering for 31598663-1fa8-4e0f-ac72-9cfb2bf5040b:67c29dd3-6de4-4921-84ce-7198d7608049
-[I 00:41:16.774 NotebookApp] Restoring connection for 31598663-1fa8-4e0f-ac72-9cfb2bf5040b:67c29dd3-6de4-4921-84ce-7198d7608049
-[I 00:54:46.094 NotebookApp] Kernel restarted: 31598663-1fa8-4e0f-ac72-9cfb2bf5040b
-[I 00:54:46.098 NotebookApp] Starting buffering for 31598663-1fa8-4e0f-ac72-9cfb2bf5040b:67c29dd3-6de4-4921-84ce-7198d7608049
-[I 00:54:46.109 NotebookApp] Restoring connection for 31598663-1fa8-4e0f-ac72-9cfb2bf5040b:67c29dd3-6de4-4921-84ce-7198d7608049
+        http://gecko-02:11871/?token=188ddff8731860e186fb1957daac2479f0a873b8cb55f11e
+     or http://127.0.0.1:11871/?token=188ddff8731860e186fb1957daac2479f0a873b8cb55f11e
+[I 02:46:15.744 NotebookApp] 302 GET / (137.205.113.129) 0.450000ms
+[I 02:46:15.749 NotebookApp] 302 GET /tree? (137.205.113.129) 0.350000ms
+[I 02:46:17.517 NotebookApp] 302 GET / (137.205.113.129) 0.380000ms
+[I 02:46:17.520 NotebookApp] 302 GET /tree? (137.205.113.129) 0.270000ms
+[I 02:46:20.540 NotebookApp] 302 GET / (137.205.113.129) 0.420000ms
+[I 02:46:20.543 NotebookApp] 302 GET /tree? (137.205.113.129) 0.300000ms
+[I 02:46:20.682 NotebookApp] Kernel started: c1b0ee4d-b40a-41ae-8bb0-a758e9a8f96a, name: python3
+[I 02:46:21.418 NotebookApp] Starting buffering for c1b0ee4d-b40a-41ae-8bb0-a758e9a8f96a:0fbc93e9-4a11-431f-aa15-e15a3733b4c1
+[I 02:46:21.431 NotebookApp] Restoring connection for c1b0ee4d-b40a-41ae-8bb0-a758e9a8f96a:0fbc93e9-4a11-431f-aa15-e15a3733b4c1
+[I 02:46:21.434 NotebookApp] Replaying 3 buffered messages
+[I 02:47:18.200 NotebookApp] Starting buffering for c1b0ee4d-b40a-41ae-8bb0-a758e9a8f96a:0fbc93e9-4a11-431f-aa15-e15a3733b4c1
+[I 02:48:21.755 NotebookApp] 302 GET / (137.205.113.129) 0.440000ms
+[I 02:48:21.911 NotebookApp] 302 GET /tree? (137.205.113.129) 0.560000ms
+[I 02:48:25.188 NotebookApp] 302 GET / (137.205.113.129) 0.360000ms
+[I 02:48:25.192 NotebookApp] 302 GET /tree? (137.205.113.129) 0.270000ms
+[I 02:48:25.527 NotebookApp] Discarding 17 buffered messages for c1b0ee4d-b40a-41ae-8bb0-a758e9a8f96a:0fbc93e9-4a11-431f-aa15-e15a3733b4c1
+[I 02:48:25.530 NotebookApp] Starting buffering for c1b0ee4d-b40a-41ae-8bb0-a758e9a8f96a:a5e212d8-5748-423f-827f-1b35f8295636
+[I 02:48:25.563 NotebookApp] Restoring connection for c1b0ee4d-b40a-41ae-8bb0-a758e9a8f96a:a5e212d8-5748-423f-827f-1b35f8295636
+[I 02:48:40.160 NotebookApp] Kernel restarted: c1b0ee4d-b40a-41ae-8bb0-a758e9a8f96a
+[I 02:48:40.176 NotebookApp] Starting buffering for c1b0ee4d-b40a-41ae-8bb0-a758e9a8f96a:a5e212d8-5748-423f-827f-1b35f8295636
+[I 02:48:40.186 NotebookApp] Restoring connection for c1b0ee4d-b40a-41ae-8bb0-a758e9a8f96a:a5e212d8-5748-423f-827f-1b35f8295636
+[W 02:48:41.726 NotebookApp] 404 GET /nbextensions (137.205.113.129) 6.580000ms referer=None
+[I 02:48:41.727 NotebookApp] 302 GET / (137.205.113.129) 0.210000ms
+[I 02:48:41.734 NotebookApp] 302 GET /tree? (137.205.113.129) 0.330000ms
+[W 02:48:41.741 NotebookApp] 404 GET /nbextensions (137.205.113.129) 0.530000ms referer=None
+[I 02:51:56.458 NotebookApp] Kernel interrupted: c1b0ee4d-b40a-41ae-8bb0-a758e9a8f96a
+[IPKernelApp] ERROR | Exception in control handler:
+Traceback (most recent call last):
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 334, in process_control
+    await result
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 951, in debug_request
+    reply_content = await reply_content
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/ipkernel.py", line 493, in do_debug_request
+    return await self.debugger.process_request(msg)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 660, in process_request
+    reply = await handler(message)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 463, in stackTrace
+    sf_list = reply["body"]["stackFrames"]
+KeyError: 'body'
+[I 02:52:01.210 NotebookApp] Kernel interrupted: c1b0ee4d-b40a-41ae-8bb0-a758e9a8f96a
+[IPKernelApp] ERROR | Exception in control handler:
+Traceback (most recent call last):
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 334, in process_control
+    await result
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 951, in debug_request
+    reply_content = await reply_content
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/ipkernel.py", line 493, in do_debug_request
+    return await self.debugger.process_request(msg)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 665, in process_request
+    self.stop()
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 408, in stop
+    self.debugpy_client.disconnect_tcp_socket()
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 254, in disconnect_tcp_socket
+    self.debugpy_stream.socket.disconnect(self._get_endpoint())
+  File "zmq/backend/cython/socket.pyx", line 668, in zmq.backend.cython.socket.Socket.disconnect
+zmq.error.ZMQError: No such file or directory
+[I 02:52:28.505 NotebookApp] Kernel interrupted: c1b0ee4d-b40a-41ae-8bb0-a758e9a8f96a
+[I 02:53:04.114 NotebookApp] Kernel interrupted: c1b0ee4d-b40a-41ae-8bb0-a758e9a8f96a
+[I 02:53:52.993 NotebookApp] Kernel interrupted: c1b0ee4d-b40a-41ae-8bb0-a758e9a8f96a
+[I 02:54:01.831 NotebookApp] Kernel restarted: c1b0ee4d-b40a-41ae-8bb0-a758e9a8f96a
+[I 02:54:01.836 NotebookApp] Starting buffering for c1b0ee4d-b40a-41ae-8bb0-a758e9a8f96a:a5e212d8-5748-423f-827f-1b35f8295636
+[I 02:54:01.848 NotebookApp] Restoring connection for c1b0ee4d-b40a-41ae-8bb0-a758e9a8f96a:a5e212d8-5748-423f-827f-1b35f8295636
+[I 03:05:10.748 NotebookApp] Kernel interrupted: c1b0ee4d-b40a-41ae-8bb0-a758e9a8f96a
+[I 03:09:46.982 NotebookApp] Kernel restarted: c1b0ee4d-b40a-41ae-8bb0-a758e9a8f96a
+[I 03:09:46.986 NotebookApp] Starting buffering for c1b0ee4d-b40a-41ae-8bb0-a758e9a8f96a:a5e212d8-5748-423f-827f-1b35f8295636
+[I 03:09:46.993 NotebookApp] Restoring connection for c1b0ee4d-b40a-41ae-8bb0-a758e9a8f96a:a5e212d8-5748-423f-827f-1b35f8295636
+[I 03:12:56.055 NotebookApp] Kernel restarted: c1b0ee4d-b40a-41ae-8bb0-a758e9a8f96a
+[I 03:12:56.059 NotebookApp] Starting buffering for c1b0ee4d-b40a-41ae-8bb0-a758e9a8f96a:a5e212d8-5748-423f-827f-1b35f8295636
+[I 03:12:56.067 NotebookApp] Restoring connection for c1b0ee4d-b40a-41ae-8bb0-a758e9a8f96a:a5e212d8-5748-423f-827f-1b35f8295636
