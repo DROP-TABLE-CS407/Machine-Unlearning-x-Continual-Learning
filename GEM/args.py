@@ -2,11 +2,11 @@ class Args:
     def __init__(self):
         # model parameters
         self.model = 'single'
-        self.n_hiddens = 100
+        self.n_hiddens = 10
         self.n_layers = 2
 
         # memory parameters
-        self.n_memories = 0
+        self.n_memories = 256
         self.memory_strength = 0.0
         self.finetune = 'no'
 
@@ -16,9 +16,9 @@ class Args:
         self.lr = 1e-3
 
         # experiment parameters
-        self.cuda = 'no'
+        self.cuda = 'yes'
         self.seed = 0
-        self.log_every = 100
+        self.log_every = 1
         self.save_path = 'results/'
 
         # data parameters
