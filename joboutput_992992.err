@@ -1,0 +1,7 @@
+./GradientEpisodicMemory/run_experiments.sh: line 7: cd: data/: No such file or directory
+./GradientEpisodicMemory/run_experiments.sh: line 8: cd: raw/: No such file or directory
+python: can't open file 'raw.py': [Errno 2] No such file or directory
+python: can't open file 'cifar100.py': [Errno 2] No such file or directory
+python: can't open file 'main.py': [Errno 2] No such file or directory
+./GradientEpisodicMemory/run_experiments.sh: line 25: cd: results/: No such file or directory
+python: can't open file 'plot_results.py': [Errno 2] No such file or directory

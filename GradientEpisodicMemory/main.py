@@ -157,7 +157,7 @@ if __name__ == "__main__":
     # model parameters
     parser.add_argument('--model', type=str, default='single',
                         help='model to train')
-    parser.add_argument('--n_hiddens', type=int, default=100,
+    parser.add_argument('--n_hiddens', type=int, default=10,
                         help='number of hidden neurons at each layer')
     parser.add_argument('--n_layers', type=int, default=2,
                         help='number of hidden layers')
@@ -183,7 +183,7 @@ if __name__ == "__main__":
                         help='Use GPU?')
     parser.add_argument('--seed', type=int, default=0,
                         help='random seed')
-    parser.add_argument('--log_every', type=int, default=100,
+    parser.add_argument('--log_every', type=int, default=10,
                         help='frequency of logs, in minibatches')
     parser.add_argument('--save_path', type=str, default='results/',
                         help='save models at the end of training')
