@@ -8,13 +8,11 @@ from torch.utils.data import Subset
 
 from .impl import iterative_unlearn
 
-from .impl import wandb_init, wandb_finish
 
 
 @iterative_unlearn
 def RL_og(data_loaders, model, criterion, optimizer, epoch, args, mask=None):
 
-    logger = wandb_init(args)
 
     forget_loader = data_loaders["forget"]
     retain_loader = data_loaders["retain"]

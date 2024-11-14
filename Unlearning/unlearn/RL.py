@@ -8,13 +8,9 @@ from torch.utils.data import Subset
 
 from .impl import iterative_unlearn
 
-from .impl import wandb_init, wandb_finish
-
 
 @iterative_unlearn
 def RL(data_loaders, model, criterion, optimizer, epoch, args, mask=None):
-
-    logger = wandb_init(args)
 
     forget_loader = data_loaders["forget"]
     retain_loader = data_loaders["retain"]
@@ -60,8 +56,8 @@ def RL(data_loaders, model, criterion, optimizer, epoch, args, mask=None):
 
     for it, (image, target) in enumerate(train_loader):
         i = it + len(forget_loader)
-        image = image.cuda()
-        target = target.cuda()
+        # image = image.cuda()
+        # target = target.cuda()
         # compute output
         output_clean = model(image)
         loss = criterion(output_clean, target)
@@ -100,7 +96,5 @@ def RL(data_loaders, model, criterion, optimizer, epoch, args, mask=None):
                 )
             )
             start = time.time()
-
-    logger.log({"train_acc": top1.avg, "train_loss": losses.avg})
 
     return top1.avg

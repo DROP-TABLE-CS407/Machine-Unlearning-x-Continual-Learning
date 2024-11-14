@@ -9,36 +9,8 @@ import utils
 from pruner import extract_mask, prune_model_custom, remove_prune
 
 import shutil
-import wandb
 from torch.optim.lr_scheduler import CosineAnnealingLR
 
-def wandb_init(args):
-    if args.wandb_group_name is None:
-        args.wandb_group_name = f"{args.dataset}_{args.arch}_{args.forget_class}_{args.num_to_forget}"
-    if args.wandb_run_id is not None:
-        logger = wandb.init(id=args.wandb_run_id, resume="must")
-    else:
-        run_name = "{}_{}_forget_{}_num{}_groupid{}_proxy{}_mem{}_seed{}_alpha{}_lr{}".format(args.dataset, args.arch,
-                        args.class_to_replace, args.num_indexes_to_replace, args.group_index, args.mem_proxy, args.mem, args.seed, args.alpha, args.unlearn_lr)
-        logger = wandb.init(project=args.wandb_project, entity=args.wandb_entity,
-                   mode=args.wandb_mode, group=args.wandb_group_name)
-        logger.name = run_name
-
-    logger.config.update(args, allow_val_change=True)
-
-    return logger
-def wandb_finish(logger, files=None):
-    if files is not None:
-        for file in files:
-            #if using wandb, save the latest model
-            if isinstance(logger, type(wandb.run)) and logger is not None:
-                #artifact = wandb.Artifact('model', type='model')
-                #artifact.add_file(model_name)
-                #logger.log_artifact(artifact)
-                shutil.copyfile(file, os.path.join(logger.dir, os.path.basename(file)))
-                #logger.save(file, policy='end')
-
-    logger.finish()
 
 def plot_training_curve(training_result, save_dir, prefix):
     # plot training curve
@@ -115,7 +87,8 @@ def load_unlearn_checkpoint(model, device, args, filename):
     model.load_state_dict(checkpoint["state_dict"])
 
     # adding an extra forward process to enable the masks
-    x_rand = torch.rand(1, 3, args.input_size, args.input_size).cuda()
+    x_rand = torch.rand(1, 3, args.input_size, args.input_size)
+    #.cuda()
     model.eval()
     with torch.no_grad():
         model(x_rand)
@@ -126,8 +99,6 @@ def load_unlearn_checkpoint(model, device, args, filename):
 
 def _iterative_unlearn_impl(unlearn_iter_func):
     def _wrapped(data_loaders, model, criterion, args, mask=None, **kwargs):
-        # add wandb loggers
-        logger = wandb_init(args)
 
         decreasing_lr = list(map(int, args.decreasing_lr.split(",")))
         if args.rewind_epoch != 0:
@@ -276,12 +247,10 @@ def _iterative_unlearn_impl(unlearn_iter_func):
                         epoch, optimizer.state_dict()["param_groups"][0]["lr"]
                     )
                 )
-                logger.log({'lr': optimizer.state_dict()["param_groups"][0]["lr"]})
 
             train_acc = unlearn_iter_func(
                 data_loaders, model, criterion, optimizer, epoch, args, mask, **kwargs
             )
-            logger.log({'train_acc': train_acc})
             scheduler.step()
 
             print("one epoch duration:{}".format(time.time() - start_time))

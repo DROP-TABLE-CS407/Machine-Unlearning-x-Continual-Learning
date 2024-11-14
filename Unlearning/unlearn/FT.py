@@ -9,8 +9,6 @@ from .impl import iterative_unlearn
 sys.path.append(".")
 from imagenet import get_x_y_from_data_dict
 
-from .impl import wandb_init, wandb_finish
-
 
 def l1_regularization(model):
     params_vec = []
@@ -22,8 +20,6 @@ def l1_regularization(model):
 def FT_iter(
     data_loaders, model, criterion, optimizer, epoch, args, mask=None, with_l1=False
 ):
-    logger = wandb_init(args)
-
     train_loader = data_loaders["retain"]
 
     losses = utils.AverageMeter()

@@ -20,8 +20,7 @@ def main():
     args = arg_parser.parse_args()
 
     args.wandb_group_name = f"{args.arch}-{args.dataset}-{args.unlearn}"
-    logger = wandb_init(args)
-
+    
     # Device setup
     device = torch.device(f"cuda:{int(args.gpu)}" if torch.cuda.is_available() else "cpu")
     args.save_dir = f'assets/unlearn/{args.unlearn}'
