@@ -11,7 +11,7 @@ class Args:
         self.finetune = 'no'
 
         # optimizer parameters
-        self.n_epochs = 3
+        self.n_epochs = 15
         self.batch_size = 10
         self.lr = 0.1
 
