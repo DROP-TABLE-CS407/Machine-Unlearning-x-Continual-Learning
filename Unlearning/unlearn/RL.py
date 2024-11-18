@@ -56,8 +56,8 @@ def RL(data_loaders, model, criterion, optimizer, epoch, args, mask=None):
 
     for it, (image, target) in enumerate(train_loader):
         i = it + len(forget_loader)
-        # image = image.cuda()
-        # target = target.cuda()
+        image = image.cuda()
+        target = target.cuda()
         # compute output
         output_clean = model(image)
         loss = criterion(output_clean, target)

@@ -251,7 +251,6 @@ def _iterative_unlearn_impl(unlearn_iter_func):
             train_acc = unlearn_iter_func(
                 data_loaders, model, criterion, optimizer, epoch, args, mask, **kwargs
             )
-            scheduler.step()
 
             print("one epoch duration:{}".format(time.time() - start_time))
 
