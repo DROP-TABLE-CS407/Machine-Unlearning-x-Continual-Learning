@@ -23,3 +23,7 @@ RuntimeError: dictionary changed size during iteration
 [I 19:21:01.243 NotebookApp] Starting buffering for 97d8d1d2-20e6-4259-9bad-3226a53045b4:3b8d681a-7360-4a70-a009-df9b755b3f27
 [I 19:21:01.266 NotebookApp] Restoring connection for 97d8d1d2-20e6-4259-9bad-3226a53045b4:3b8d681a-7360-4a70-a009-df9b755b3f27
 [W 19:21:05.835 NotebookApp] Nudge: attempt 10 on kernel 97d8d1d2-20e6-4259-9bad-3226a53045b4
+[I 19:45:58.637 NotebookApp] Kernel restarted: 97d8d1d2-20e6-4259-9bad-3226a53045b4
+[I 19:45:58.659 NotebookApp] Starting buffering for 97d8d1d2-20e6-4259-9bad-3226a53045b4:3b8d681a-7360-4a70-a009-df9b755b3f27
+[I 19:45:58.688 NotebookApp] Restoring connection for 97d8d1d2-20e6-4259-9bad-3226a53045b4:3b8d681a-7360-4a70-a009-df9b755b3f27
+[W 19:46:03.234 NotebookApp] Nudge: attempt 10 on kernel 97d8d1d2-20e6-4259-9bad-3226a53045b4
