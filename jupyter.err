@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Loading python-ml/22-12-21-python3.9
   Loading requirement: CUDA/11.6.0
 [I 21:40:16.325 NotebookApp] Serving notebooks from local directory: /dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning
@@ -27,3 +28,23 @@ Loading python-ml/22-12-21-python3.9
 [W 23:57:37.499 NotebookApp] 404 GET /nbextensions (137.205.113.129) 1.120000ms referer=None
 [W 23:57:37.500 NotebookApp] 404 GET /nbextensions (137.205.113.129) 1.330000ms referer=None
 [I 00:06:14.037 NotebookApp] Kernel interrupted: d628d622-1b6e-45db-a94c-901b34a4fbd8
+=======
+numpy requires Python '>=3.8' but the running Python is 3.6.8
+[I 01:04:53.006 NotebookApp] Serving notebooks from local directory: /dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning
+[I 01:04:53.006 NotebookApp] Jupyter Notebook 6.5.2 is running at:
+[I 01:04:53.006 NotebookApp] http://gecko-02:11861/
+[I 01:04:53.006 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 01:07:25.201 NotebookApp] 302 GET / (137.205.113.129) 0.660000ms
+[I 01:07:25.787 NotebookApp] 302 GET /tree? (137.205.113.129) 0.650000ms
+[I 01:07:35.196 NotebookApp] 302 POST /login? (137.205.113.129) 53.050000ms
+[I 01:09:13.755 NotebookApp] Kernel started: 2d58765f-8fe0-4f0b-87a4-e2386a3fe921, name: python3
+[I 01:09:15.748 NotebookApp] Starting buffering for 2d58765f-8fe0-4f0b-87a4-e2386a3fe921:ea947280-ae19-4e8d-a194-ff3c5631b51f
+[I 01:09:15.756 NotebookApp] Restoring connection for 2d58765f-8fe0-4f0b-87a4-e2386a3fe921:ea947280-ae19-4e8d-a194-ff3c5631b51f
+[I 01:09:15.759 NotebookApp] Replaying 3 buffered messages
+[W 01:09:20.928 NotebookApp] 404 GET /nbextensions (137.205.113.129) 8.360000ms referer=None
+[W 01:09:20.931 NotebookApp] 404 GET /nbextensions (137.205.113.129) 1.100000ms referer=None
+[I 01:10:35.608 NotebookApp] Kernel interrupted: 2d58765f-8fe0-4f0b-87a4-e2386a3fe921
+[I 01:10:40.276 NotebookApp] Kernel restarted: 2d58765f-8fe0-4f0b-87a4-e2386a3fe921
+[I 01:10:40.280 NotebookApp] Starting buffering for 2d58765f-8fe0-4f0b-87a4-e2386a3fe921:ea947280-ae19-4e8d-a194-ff3c5631b51f
+[I 01:10:40.286 NotebookApp] Restoring connection for 2d58765f-8fe0-4f0b-87a4-e2386a3fe921:ea947280-ae19-4e8d-a194-ff3c5631b51f
+>>>>>>> GEM
