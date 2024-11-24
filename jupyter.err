@@ -1,50 +1,29 @@
-<<<<<<< HEAD
-Loading python-ml/22-12-21-python3.9
-  Loading requirement: CUDA/11.6.0
-[I 21:40:16.325 NotebookApp] Serving notebooks from local directory: /dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning
-[I 21:40:16.325 NotebookApp] Jupyter Notebook 6.5.2 is running at:
-[I 21:40:16.325 NotebookApp] http://gecko-02:11861/
-[I 21:40:16.325 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
-[I 23:57:17.096 NotebookApp] 302 GET / (137.205.113.129) 0.450000ms
-[I 23:57:17.107 NotebookApp] 302 GET /tree? (137.205.113.129) 0.700000ms
-[W 23:57:17.214 NotebookApp] Forbidden
-[W 23:57:17.215 NotebookApp] 403 GET /api/kernelspecs?1730851037209 (137.205.113.129) 0.790000ms referer=None
-[W 23:57:17.221 NotebookApp] Forbidden
-[W 23:57:17.221 NotebookApp] 403 GET /api/kernels?1730851037211 (137.205.113.129) 0.320000ms referer=None
-[W 23:57:17.222 NotebookApp] Forbidden
-[W 23:57:17.222 NotebookApp] 403 GET /api/kernels?1730851037214 (137.205.113.129) 0.300000ms referer=None
-[W 23:57:17.222 NotebookApp] Forbidden
-[W 23:57:17.222 NotebookApp] 403 GET /api/sessions?1730851037216 (137.205.113.129) 0.370000ms referer=None
-[W 23:57:17.231 NotebookApp] Forbidden
-[W 23:57:17.231 NotebookApp] 403 GET /api/kernelspecs?1730851037220 (137.205.113.129) 0.440000ms referer=None
-[W 23:57:24.654 NotebookApp] 404 GET /hub/api (137.205.113.129) 6.500000ms referer=None
-[I 23:57:24.659 NotebookApp] 302 GET / (137.205.113.129) 0.180000ms
-[I 23:57:24.665 NotebookApp] 302 GET /tree? (137.205.113.129) 0.340000ms
-[I 23:57:28.284 NotebookApp] 302 POST /login? (137.205.113.129) 115.620000ms
-[I 23:57:34.325 NotebookApp] Kernel started: d628d622-1b6e-45db-a94c-901b34a4fbd8, name: python3
-[I 23:57:35.117 NotebookApp] Starting buffering for d628d622-1b6e-45db-a94c-901b34a4fbd8:b573f014-be39-452d-864c-e7b809c65a44
-[I 23:57:35.126 NotebookApp] Restoring connection for d628d622-1b6e-45db-a94c-901b34a4fbd8:b573f014-be39-452d-864c-e7b809c65a44
-[I 23:57:35.130 NotebookApp] Replaying 3 buffered messages
-[W 23:57:37.499 NotebookApp] 404 GET /nbextensions (137.205.113.129) 1.120000ms referer=None
-[W 23:57:37.500 NotebookApp] 404 GET /nbextensions (137.205.113.129) 1.330000ms referer=None
-[I 00:06:14.037 NotebookApp] Kernel interrupted: d628d622-1b6e-45db-a94c-901b34a4fbd8
-=======
 numpy requires Python '>=3.8' but the running Python is 3.6.8
-[I 01:04:53.006 NotebookApp] Serving notebooks from local directory: /dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning
-[I 01:04:53.006 NotebookApp] Jupyter Notebook 6.5.2 is running at:
-[I 01:04:53.006 NotebookApp] http://gecko-02:11861/
-[I 01:04:53.006 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
-[I 01:07:25.201 NotebookApp] 302 GET / (137.205.113.129) 0.660000ms
-[I 01:07:25.787 NotebookApp] 302 GET /tree? (137.205.113.129) 0.650000ms
-[I 01:07:35.196 NotebookApp] 302 POST /login? (137.205.113.129) 53.050000ms
-[I 01:09:13.755 NotebookApp] Kernel started: 2d58765f-8fe0-4f0b-87a4-e2386a3fe921, name: python3
-[I 01:09:15.748 NotebookApp] Starting buffering for 2d58765f-8fe0-4f0b-87a4-e2386a3fe921:ea947280-ae19-4e8d-a194-ff3c5631b51f
-[I 01:09:15.756 NotebookApp] Restoring connection for 2d58765f-8fe0-4f0b-87a4-e2386a3fe921:ea947280-ae19-4e8d-a194-ff3c5631b51f
-[I 01:09:15.759 NotebookApp] Replaying 3 buffered messages
-[W 01:09:20.928 NotebookApp] 404 GET /nbextensions (137.205.113.129) 8.360000ms referer=None
-[W 01:09:20.931 NotebookApp] 404 GET /nbextensions (137.205.113.129) 1.100000ms referer=None
-[I 01:10:35.608 NotebookApp] Kernel interrupted: 2d58765f-8fe0-4f0b-87a4-e2386a3fe921
-[I 01:10:40.276 NotebookApp] Kernel restarted: 2d58765f-8fe0-4f0b-87a4-e2386a3fe921
-[I 01:10:40.280 NotebookApp] Starting buffering for 2d58765f-8fe0-4f0b-87a4-e2386a3fe921:ea947280-ae19-4e8d-a194-ff3c5631b51f
-[I 01:10:40.286 NotebookApp] Restoring connection for 2d58765f-8fe0-4f0b-87a4-e2386a3fe921:ea947280-ae19-4e8d-a194-ff3c5631b51f
->>>>>>> GEM
+[I 18:44:22.883 NotebookApp] Serving notebooks from local directory: /dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning
+[I 18:44:22.884 NotebookApp] Jupyter Notebook 6.5.2 is running at:
+[I 18:44:22.884 NotebookApp] http://gecko-01:11861/
+[I 18:44:22.885 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 18:45:35.894 NotebookApp] 302 GET / (137.205.113.129) 3.460000ms
+[I 18:45:36.212 NotebookApp] 302 GET /tree? (137.205.113.129) 4.160000ms
+[I 18:45:43.345 NotebookApp] 302 POST /login? (137.205.113.129) 273.710000ms
+[I 18:46:15.793 NotebookApp] Kernel started: 97d8d1d2-20e6-4259-9bad-3226a53045b4, name: python3
+[I 18:46:23.669 NotebookApp] Starting buffering for 97d8d1d2-20e6-4259-9bad-3226a53045b4:3b8d681a-7360-4a70-a009-df9b755b3f27
+[I 18:46:23.694 NotebookApp] Restoring connection for 97d8d1d2-20e6-4259-9bad-3226a53045b4:3b8d681a-7360-4a70-a009-df9b755b3f27
+Traceback (most recent call last):
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/IPython/core/completer.py", line 2807, in _complete
+    result = cast(matcher, MatcherAPIv2)(context)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/IPython/core/completer.py", line 1762, in magic_matcher
+    matches = self.magic_matches(text)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/IPython/core/completer.py", line 1795, in magic_matches
+    global_matches = self.global_matches(bare_text)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/IPython/core/completer.py", line 1003, in global_matches
+    for word in lst:
+RuntimeError: dictionary changed size during iteration
+[I 19:21:01.223 NotebookApp] Kernel restarted: 97d8d1d2-20e6-4259-9bad-3226a53045b4
+[I 19:21:01.243 NotebookApp] Starting buffering for 97d8d1d2-20e6-4259-9bad-3226a53045b4:3b8d681a-7360-4a70-a009-df9b755b3f27
+[I 19:21:01.266 NotebookApp] Restoring connection for 97d8d1d2-20e6-4259-9bad-3226a53045b4:3b8d681a-7360-4a70-a009-df9b755b3f27
+[W 19:21:05.835 NotebookApp] Nudge: attempt 10 on kernel 97d8d1d2-20e6-4259-9bad-3226a53045b4
+[I 19:45:58.637 NotebookApp] Kernel restarted: 97d8d1d2-20e6-4259-9bad-3226a53045b4
+[I 19:45:58.659 NotebookApp] Starting buffering for 97d8d1d2-20e6-4259-9bad-3226a53045b4:3b8d681a-7360-4a70-a009-df9b755b3f27
+[I 19:45:58.688 NotebookApp] Restoring connection for 97d8d1d2-20e6-4259-9bad-3226a53045b4:3b8d681a-7360-4a70-a009-df9b755b3f27
+[W 19:46:03.234 NotebookApp] Nudge: attempt 10 on kernel 97d8d1d2-20e6-4259-9bad-3226a53045b4

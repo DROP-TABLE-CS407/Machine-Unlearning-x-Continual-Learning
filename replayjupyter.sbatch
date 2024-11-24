@@ -11,7 +11,6 @@
 #SBATCH --output=jupyter.log
 #SBATCH --error=jupyter.err
 
-module load CUDA
 module load python-ml
 cd /dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning # You might want to use the cd command here to change the working directory that jupyter notebook will use
 pip3 install --user quadprog
