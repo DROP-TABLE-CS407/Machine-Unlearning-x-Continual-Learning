@@ -6,7 +6,7 @@ class Args:
         self.n_layers = 2
 
         # memory parameters
-        self.n_memories = 256
+        self.n_memories = 250
         self.memory_strength = 0.5
         self.finetune = 'no'
 
@@ -15,13 +15,13 @@ class Args:
         self.batch_size = 10
         self.lr = 0.1
 
-        # experiment parameters
+        # experiment parameters nor do we use this stuff 
         self.cuda = 'yes'
         self.seed = 0
         self.log_every = 1
         self.save_path = 'results/'
 
-        # data parameters
+        # data parameters -- we dont use this stuff
         self.data_path = 'data/'
         self.data_file = 'mnist_permutations.pt'
         self.samples_per_task = 2500
