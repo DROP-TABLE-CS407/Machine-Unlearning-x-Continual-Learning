@@ -1,3 +1,4 @@
+/var/spool/slurmd/job998327/slurm_script: line 15: cd: /dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning: Permission denied
 numpy requires Python '>=3.8' but the running Python is 3.6.8
 [I 18:54:28.650 NotebookApp] Serving notebooks from local directory: /dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning
 [I 18:54:28.652 NotebookApp] Jupyter Notebook 6.5.2 is running at:
