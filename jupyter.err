@@ -1,33 +1,40 @@
+/var/spool/slurmd/job998327/slurm_script: line 15: cd: /dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning: Permission denied
 numpy requires Python '>=3.8' but the running Python is 3.6.8
-[I 18:44:22.883 NotebookApp] Serving notebooks from local directory: /dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning
-[I 18:44:22.884 NotebookApp] Jupyter Notebook 6.5.2 is running at:
-[I 18:44:22.884 NotebookApp] http://gecko-01:11861/
-[I 18:44:22.885 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
-[I 18:45:35.894 NotebookApp] 302 GET / (137.205.113.129) 3.460000ms
-[I 18:45:36.212 NotebookApp] 302 GET /tree? (137.205.113.129) 4.160000ms
-[I 18:45:43.345 NotebookApp] 302 POST /login? (137.205.113.129) 273.710000ms
-[I 18:46:15.793 NotebookApp] Kernel started: 97d8d1d2-20e6-4259-9bad-3226a53045b4, name: python3
-[I 18:46:23.669 NotebookApp] Starting buffering for 97d8d1d2-20e6-4259-9bad-3226a53045b4:3b8d681a-7360-4a70-a009-df9b755b3f27
-[I 18:46:23.694 NotebookApp] Restoring connection for 97d8d1d2-20e6-4259-9bad-3226a53045b4:3b8d681a-7360-4a70-a009-df9b755b3f27
+[I 04:42:09.407 NotebookApp] The port 11861 is already in use, trying another port.
+[I 04:42:09.410 NotebookApp] Serving notebooks from local directory: /dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning
+[I 04:42:09.411 NotebookApp] Jupyter Notebook 6.5.2 is running at:
+[I 04:42:09.411 NotebookApp] http://gecko-01:11862/?token=d718ca32a1636f86dfb0c97864cc00f2be6c04498cd9ef52
+[I 04:42:09.411 NotebookApp]  or http://127.0.0.1:11862/?token=d718ca32a1636f86dfb0c97864cc00f2be6c04498cd9ef52
+[I 04:42:09.412 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 04:42:09.479 NotebookApp] 
+    
+    To access the notebook, open this file in a browser:
+        file:///dcs/21/u2140671/.local/share/jupyter/runtime/nbserver-557131-open.html
+    Or copy and paste one of these URLs:
+        http://gecko-01:11862/?token=d718ca32a1636f86dfb0c97864cc00f2be6c04498cd9ef52
+     or http://127.0.0.1:11862/?token=d718ca32a1636f86dfb0c97864cc00f2be6c04498cd9ef52
+[I 04:44:19.375 NotebookApp] 302 GET / (137.205.113.129) 3.760000ms
+[I 04:44:19.387 NotebookApp] 302 GET /tree? (137.205.113.129) 4.200000ms
+[I 04:48:13.029 NotebookApp] 302 GET / (137.205.113.129) 2.970000ms
+[I 04:48:13.039 NotebookApp] 302 GET /tree? (137.205.113.129) 3.660000ms
+[I 04:48:14.261 NotebookApp] 302 GET / (137.205.113.129) 2.830000ms
+[I 04:48:14.270 NotebookApp] 302 GET /tree? (137.205.113.129) 3.470000ms
+[I 04:48:18.604 NotebookApp] 302 GET / (137.205.113.129) 2.910000ms
+[I 04:48:21.973 NotebookApp] 302 GET /tree? (137.205.113.129) 18.260000ms
+[I 04:48:22.599 NotebookApp] Kernel started: 194ed3e4-8db2-40ba-96ae-b39dc96faa86, name: python3
+[W 04:48:30.398 NotebookApp] Replacing stale connection: 194ed3e4-8db2-40ba-96ae-b39dc96faa86:719efe11-719f-4454-9d99-7b053b6ed86a
+[I 04:48:30.402 NotebookApp] Starting buffering for 194ed3e4-8db2-40ba-96ae-b39dc96faa86:719efe11-719f-4454-9d99-7b053b6ed86a
+[I 04:48:30.412 NotebookApp] Restoring connection for 194ed3e4-8db2-40ba-96ae-b39dc96faa86:719efe11-719f-4454-9d99-7b053b6ed86a
+[I 04:48:30.451 NotebookApp] Replaying 3 buffered messages
+[I 04:59:27.607 NotebookApp] Kernel restarted: 194ed3e4-8db2-40ba-96ae-b39dc96faa86
+[I 04:59:27.629 NotebookApp] Starting buffering for 194ed3e4-8db2-40ba-96ae-b39dc96faa86:719efe11-719f-4454-9d99-7b053b6ed86a
+[I 04:59:27.652 NotebookApp] Restoring connection for 194ed3e4-8db2-40ba-96ae-b39dc96faa86:719efe11-719f-4454-9d99-7b053b6ed86a
+[W 04:59:32.198 NotebookApp] Nudge: attempt 10 on kernel 194ed3e4-8db2-40ba-96ae-b39dc96faa86
 Traceback (most recent call last):
-  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/IPython/core/completer.py", line 2807, in _complete
-    result = cast(matcher, MatcherAPIv2)(context)
-  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/IPython/core/completer.py", line 1762, in magic_matcher
-    matches = self.magic_matches(text)
-  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/IPython/core/completer.py", line 1795, in magic_matches
-    global_matches = self.global_matches(bare_text)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/IPython/core/completer.py", line 2804, in _complete
+    matcher(text), type=_UNKNOWN_TYPE
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/IPython/core/completer.py", line 1994, in python_matches
+    matches = self.global_matches(text)
   File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/IPython/core/completer.py", line 1003, in global_matches
     for word in lst:
 RuntimeError: dictionary changed size during iteration
-[I 19:21:01.223 NotebookApp] Kernel restarted: 97d8d1d2-20e6-4259-9bad-3226a53045b4
-[I 19:21:01.243 NotebookApp] Starting buffering for 97d8d1d2-20e6-4259-9bad-3226a53045b4:3b8d681a-7360-4a70-a009-df9b755b3f27
-[I 19:21:01.266 NotebookApp] Restoring connection for 97d8d1d2-20e6-4259-9bad-3226a53045b4:3b8d681a-7360-4a70-a009-df9b755b3f27
-[W 19:21:05.835 NotebookApp] Nudge: attempt 10 on kernel 97d8d1d2-20e6-4259-9bad-3226a53045b4
-[I 19:45:58.637 NotebookApp] Kernel restarted: 97d8d1d2-20e6-4259-9bad-3226a53045b4
-[I 19:45:58.659 NotebookApp] Starting buffering for 97d8d1d2-20e6-4259-9bad-3226a53045b4:3b8d681a-7360-4a70-a009-df9b755b3f27
-[I 19:45:58.688 NotebookApp] Restoring connection for 97d8d1d2-20e6-4259-9bad-3226a53045b4:3b8d681a-7360-4a70-a009-df9b755b3f27
-[W 19:46:03.234 NotebookApp] Nudge: attempt 10 on kernel 97d8d1d2-20e6-4259-9bad-3226a53045b4
-[I 20:11:48.118 NotebookApp] Kernel restarted: 97d8d1d2-20e6-4259-9bad-3226a53045b4
-[I 20:11:48.139 NotebookApp] Starting buffering for 97d8d1d2-20e6-4259-9bad-3226a53045b4:3b8d681a-7360-4a70-a009-df9b755b3f27
-[I 20:11:48.162 NotebookApp] Restoring connection for 97d8d1d2-20e6-4259-9bad-3226a53045b4:3b8d681a-7360-4a70-a009-df9b755b3f27
-[W 20:11:52.705 NotebookApp] Nudge: attempt 10 on kernel 97d8d1d2-20e6-4259-9bad-3226a53045b4
