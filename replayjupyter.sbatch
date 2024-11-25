@@ -11,7 +11,9 @@
 #SBATCH --output=jupyter.log
 #SBATCH --error=jupyter.err
 
-module load python-ml
+module load CUDA/11.6.0
+module load python-ml/22-12-21-python3.9
+
 cd /dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning # You might want to use the cd command here to change the working directory that jupyter notebook will use
 pip3 install --user quadprog
 jupyter notebook --ip=0.0.0.0 --port=11861 --no-browser

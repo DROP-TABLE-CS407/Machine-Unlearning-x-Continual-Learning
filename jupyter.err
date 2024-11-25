@@ -1,33 +1,195 @@
 numpy requires Python '>=3.8' but the running Python is 3.6.8
-[I 18:44:22.883 NotebookApp] Serving notebooks from local directory: /dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning
-[I 18:44:22.884 NotebookApp] Jupyter Notebook 6.5.2 is running at:
-[I 18:44:22.884 NotebookApp] http://gecko-01:11861/
-[I 18:44:22.885 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
-[I 18:45:35.894 NotebookApp] 302 GET / (137.205.113.129) 3.460000ms
-[I 18:45:36.212 NotebookApp] 302 GET /tree? (137.205.113.129) 4.160000ms
-[I 18:45:43.345 NotebookApp] 302 POST /login? (137.205.113.129) 273.710000ms
-[I 18:46:15.793 NotebookApp] Kernel started: 97d8d1d2-20e6-4259-9bad-3226a53045b4, name: python3
-[I 18:46:23.669 NotebookApp] Starting buffering for 97d8d1d2-20e6-4259-9bad-3226a53045b4:3b8d681a-7360-4a70-a009-df9b755b3f27
-[I 18:46:23.694 NotebookApp] Restoring connection for 97d8d1d2-20e6-4259-9bad-3226a53045b4:3b8d681a-7360-4a70-a009-df9b755b3f27
-Traceback (most recent call last):
-  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/IPython/core/completer.py", line 2807, in _complete
-    result = cast(matcher, MatcherAPIv2)(context)
-  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/IPython/core/completer.py", line 1762, in magic_matcher
-    matches = self.magic_matches(text)
-  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/IPython/core/completer.py", line 1795, in magic_matches
-    global_matches = self.global_matches(bare_text)
-  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/IPython/core/completer.py", line 1003, in global_matches
-    for word in lst:
-RuntimeError: dictionary changed size during iteration
-[I 19:21:01.223 NotebookApp] Kernel restarted: 97d8d1d2-20e6-4259-9bad-3226a53045b4
-[I 19:21:01.243 NotebookApp] Starting buffering for 97d8d1d2-20e6-4259-9bad-3226a53045b4:3b8d681a-7360-4a70-a009-df9b755b3f27
-[I 19:21:01.266 NotebookApp] Restoring connection for 97d8d1d2-20e6-4259-9bad-3226a53045b4:3b8d681a-7360-4a70-a009-df9b755b3f27
-[W 19:21:05.835 NotebookApp] Nudge: attempt 10 on kernel 97d8d1d2-20e6-4259-9bad-3226a53045b4
-[I 19:45:58.637 NotebookApp] Kernel restarted: 97d8d1d2-20e6-4259-9bad-3226a53045b4
-[I 19:45:58.659 NotebookApp] Starting buffering for 97d8d1d2-20e6-4259-9bad-3226a53045b4:3b8d681a-7360-4a70-a009-df9b755b3f27
-[I 19:45:58.688 NotebookApp] Restoring connection for 97d8d1d2-20e6-4259-9bad-3226a53045b4:3b8d681a-7360-4a70-a009-df9b755b3f27
-[W 19:46:03.234 NotebookApp] Nudge: attempt 10 on kernel 97d8d1d2-20e6-4259-9bad-3226a53045b4
-[I 20:11:48.118 NotebookApp] Kernel restarted: 97d8d1d2-20e6-4259-9bad-3226a53045b4
-[I 20:11:48.139 NotebookApp] Starting buffering for 97d8d1d2-20e6-4259-9bad-3226a53045b4:3b8d681a-7360-4a70-a009-df9b755b3f27
-[I 20:11:48.162 NotebookApp] Restoring connection for 97d8d1d2-20e6-4259-9bad-3226a53045b4:3b8d681a-7360-4a70-a009-df9b755b3f27
-[W 20:11:52.705 NotebookApp] Nudge: attempt 10 on kernel 97d8d1d2-20e6-4259-9bad-3226a53045b4
+[I 18:54:28.650 NotebookApp] Serving notebooks from local directory: /dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning
+[I 18:54:28.652 NotebookApp] Jupyter Notebook 6.5.2 is running at:
+[I 18:54:28.652 NotebookApp] http://gecko-01:11861/
+[I 18:54:28.652 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[W 18:54:43.375 NotebookApp] 404 GET /hub/api (137.205.113.129) 300.600000ms referer=None
+[I 18:54:43.384 NotebookApp] 302 GET / (137.205.113.129) 2.880000ms
+[I 18:54:43.393 NotebookApp] 302 GET /tree? (137.205.113.129) 3.860000ms
+[I 18:54:47.564 NotebookApp] 302 POST /login? (137.205.113.129) 269.900000ms
+[I 18:54:56.078 NotebookApp] 302 GET / (137.205.113.129) 4.420000ms
+[I 18:54:56.080 NotebookApp] 302 GET / (137.205.113.129) 4.500000ms
+[I 18:54:56.086 NotebookApp] 302 GET / (137.205.113.129) 2.320000ms
+[I 18:54:56.184 NotebookApp] 302 GET /tree? (137.205.113.129) 3.490000ms
+[I 18:54:56.190 NotebookApp] 302 GET /tree? (137.205.113.129) 5.370000ms
+[I 18:54:56.193 NotebookApp] 302 GET /tree? (137.205.113.129) 5.400000ms
+[W 18:54:56.404 NotebookApp] Forbidden
+[W 18:54:56.406 NotebookApp] 403 GET /api/kernelspecs?1732560896396 (137.205.113.129) 4.910000ms referer=None
+[W 18:54:56.413 NotebookApp] Forbidden
+[W 18:54:56.414 NotebookApp] 403 GET /api/kernels?1732560896396 (137.205.113.129) 6.820000ms referer=None
+[W 18:54:56.417 NotebookApp] Forbidden
+[W 18:54:56.418 NotebookApp] 403 GET /api/kernelspecs?1732560896397 (137.205.113.129) 8.590000ms referer=None
+[W 18:54:56.445 NotebookApp] Forbidden
+[W 18:54:56.447 NotebookApp] 403 GET /api/kernels?1732560896397 (137.205.113.129) 17.030000ms referer=None
+[W 18:54:56.449 NotebookApp] Forbidden
+[W 18:54:56.450 NotebookApp] 403 GET /api/kernels?1732560896399 (137.205.113.129) 18.000000ms referer=None
+[W 18:54:56.452 NotebookApp] Forbidden
+[W 18:54:56.454 NotebookApp] 403 GET /api/sessions?1732560896400 (137.205.113.129) 19.170000ms referer=None
+[W 18:54:56.456 NotebookApp] Forbidden
+[W 18:54:56.458 NotebookApp] 403 GET /api/kernels?1732560896400 (137.205.113.129) 20.930000ms referer=None
+[W 18:54:56.459 NotebookApp] Forbidden
+[W 18:54:56.461 NotebookApp] 403 GET /api/sessions?1732560896401 (137.205.113.129) 21.990000ms referer=None
+[W 18:54:56.463 NotebookApp] Forbidden
+[W 18:54:56.465 NotebookApp] 403 GET /api/kernelspecs?1732560896408 (137.205.113.129) 23.170000ms referer=None
+[W 18:54:56.473 NotebookApp] Forbidden
+[W 18:54:56.475 NotebookApp] 403 GET /api/kernelspecs?1732560896420 (137.205.113.129) 7.930000ms referer=None
+[I 18:54:56.484 NotebookApp] 302 GET / (137.205.113.129) 4.500000ms
+[I 18:54:56.485 NotebookApp] 302 GET / (137.205.113.129) 4.320000ms
+[I 18:54:56.498 NotebookApp] 302 GET /tree? (137.205.113.129) 5.440000ms
+[I 18:54:56.500 NotebookApp] 302 GET /tree? (137.205.113.129) 5.420000ms
+[W 18:54:56.544 NotebookApp] Forbidden
+[W 18:54:56.546 NotebookApp] 403 GET /api/kernelspecs?1732560896536 (137.205.113.129) 6.610000ms referer=None
+[W 18:54:56.547 NotebookApp] Forbidden
+[W 18:54:56.549 NotebookApp] 403 GET /api/kernels?1732560896536 (137.205.113.129) 7.740000ms referer=None
+[W 18:54:56.565 NotebookApp] Forbidden
+[W 18:54:56.567 NotebookApp] 403 GET /api/sessions?1732560896538 (137.205.113.129) 11.300000ms referer=None
+[W 18:54:56.569 NotebookApp] Forbidden
+[W 18:54:56.570 NotebookApp] 403 GET /api/kernels?1732560896537 (137.205.113.129) 12.290000ms referer=None
+[W 18:54:56.572 NotebookApp] Forbidden
+[W 18:54:56.574 NotebookApp] 403 GET /api/kernelspecs?1732560896546 (137.205.113.129) 13.370000ms referer=None
+[W 18:54:56.591 NotebookApp] Forbidden
+[W 18:54:56.593 NotebookApp] 403 GET /api/kernelspecs?1732560896552 (137.205.113.129) 12.490000ms referer=None
+[W 18:54:56.595 NotebookApp] Forbidden
+[W 18:54:56.597 NotebookApp] 403 GET /api/kernels?1732560896552 (137.205.113.129) 13.410000ms referer=None
+[W 18:54:56.598 NotebookApp] Forbidden
+[W 18:54:56.600 NotebookApp] 403 GET /api/kernels?1732560896554 (137.205.113.129) 14.450000ms referer=None
+[W 18:54:56.602 NotebookApp] Forbidden
+[W 18:54:56.603 NotebookApp] 403 GET /api/sessions?1732560896555 (137.205.113.129) 15.670000ms referer=None
+[I 18:54:56.610 NotebookApp] 302 GET / (137.205.113.129) 4.880000ms
+[W 18:54:56.618 NotebookApp] Forbidden
+[W 18:54:56.620 NotebookApp] 403 GET /api/kernelspecs?1732560896595 (137.205.113.129) 5.700000ms referer=None
+[I 18:54:56.627 NotebookApp] 302 GET /tree? (137.205.113.129) 3.450000ms
+[W 18:54:56.719 NotebookApp] Forbidden
+[W 18:54:56.721 NotebookApp] 403 GET /api/kernelspecs?1732560896714 (137.205.113.129) 4.690000ms referer=None
+[W 18:54:56.736 NotebookApp] Forbidden
+[W 18:54:56.738 NotebookApp] 403 GET /api/kernels?1732560896714 (137.205.113.129) 10.090000ms referer=None
+[W 18:54:56.740 NotebookApp] Forbidden
+[W 18:54:56.742 NotebookApp] 403 GET /api/kernels?1732560896715 (137.205.113.129) 11.050000ms referer=None
+[W 18:54:56.743 NotebookApp] Forbidden
+[W 18:54:56.745 NotebookApp] 403 GET /api/sessions?1732560896715 (137.205.113.129) 12.250000ms referer=None
+[W 18:54:56.751 NotebookApp] Forbidden
+[W 18:54:56.753 NotebookApp] 403 GET /api/kernelspecs?1732560896724 (137.205.113.129) 5.760000ms referer=None
+[I 18:55:01.642 NotebookApp] 302 POST /login? (137.205.113.129) 198.790000ms
+[I 18:55:17.901 NotebookApp] Kernel started: 22a85895-172f-47c9-b31c-8d5f5da5a5ff, name: python3
+[I 18:55:26.034 NotebookApp] Starting buffering for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[I 18:55:26.062 NotebookApp] Restoring connection for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[I 18:55:27.511 NotebookApp] 302 GET / (137.205.113.129) 38.370000ms
+[I 18:55:27.513 NotebookApp] 302 GET / (137.205.113.129) 38.480000ms
+[I 18:55:27.656 NotebookApp] 302 GET /tree? (137.205.113.129) 45.480000ms
+[I 18:55:27.659 NotebookApp] 302 GET /tree? (137.205.113.129) 45.500000ms
+[W 18:55:27.780 NotebookApp] Forbidden
+[W 18:55:27.782 NotebookApp] 403 GET /api/kernelspecs?1732560927774 (137.205.113.129) 4.990000ms referer=None
+[W 18:55:27.788 NotebookApp] Forbidden
+[W 18:55:27.790 NotebookApp] 403 GET /api/kernels?1732560927774 (137.205.113.129) 6.430000ms referer=None
+[W 18:55:27.802 NotebookApp] Forbidden
+[W 18:55:27.805 NotebookApp] 403 GET /api/kernels?1732560927776 (137.205.113.129) 9.710000ms referer=None
+[W 18:55:27.806 NotebookApp] Forbidden
+[W 18:55:27.808 NotebookApp] 403 GET /api/sessions?1732560927777 (137.205.113.129) 10.980000ms referer=None
+[W 18:55:27.810 NotebookApp] Forbidden
+[W 18:55:27.812 NotebookApp] 403 GET /api/kernelspecs?1732560927783 (137.205.113.129) 12.200000ms referer=None
+[I 18:55:27.820 NotebookApp] 302 GET / (137.205.113.129) 2.750000ms
+[I 18:55:27.828 NotebookApp] 302 GET /tree? (137.205.113.129) 3.590000ms
+[W 18:55:27.894 NotebookApp] Forbidden
+[W 18:55:27.896 NotebookApp] 403 GET /api/kernelspecs?1732560927888 (137.205.113.129) 4.750000ms referer=None
+[W 18:55:27.911 NotebookApp] Forbidden
+[W 18:55:27.914 NotebookApp] 403 GET /api/kernels?1732560927889 (137.205.113.129) 10.140000ms referer=None
+[W 18:55:27.915 NotebookApp] Forbidden
+[W 18:55:27.917 NotebookApp] 403 GET /api/kernels?1732560927890 (137.205.113.129) 11.230000ms referer=None
+[W 18:55:27.919 NotebookApp] Forbidden
+[W 18:55:27.921 NotebookApp] 403 GET /api/sessions?1732560927891 (137.205.113.129) 12.400000ms referer=None
+[W 18:55:27.926 NotebookApp] Forbidden
+[W 18:55:27.928 NotebookApp] 403 GET /api/kernelspecs?1732560927898 (137.205.113.129) 5.880000ms referer=None
+[I 18:55:27.937 NotebookApp] 302 GET / (137.205.113.129) 3.730000ms
+[I 18:55:27.954 NotebookApp] 302 GET /tree? (137.205.113.129) 3.610000ms
+[W 18:55:28.016 NotebookApp] Forbidden
+[W 18:55:28.018 NotebookApp] 403 GET /api/kernelspecs?1732560928011 (137.205.113.129) 4.790000ms referer=None
+[W 18:55:28.034 NotebookApp] Forbidden
+[W 18:55:28.036 NotebookApp] 403 GET /api/kernels?1732560928012 (137.205.113.129) 10.180000ms referer=None
+[W 18:55:28.037 NotebookApp] Forbidden
+[W 18:55:28.039 NotebookApp] 403 GET /api/kernels?1732560928011 (137.205.113.129) 11.200000ms referer=None
+[W 18:55:28.041 NotebookApp] Forbidden
+[W 18:55:28.043 NotebookApp] 403 GET /api/sessions?1732560928013 (137.205.113.129) 12.530000ms referer=None
+[W 18:55:28.049 NotebookApp] Forbidden
+[W 18:55:28.051 NotebookApp] 403 GET /api/kernelspecs?1732560928020 (137.205.113.129) 5.860000ms referer=None
+[I 18:55:32.909 NotebookApp] 302 POST /login? (137.205.113.129) 219.660000ms
+[I 19:31:20.037 NotebookApp] Kernel restarted: 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 19:31:20.059 NotebookApp] Starting buffering for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[I 19:31:20.082 NotebookApp] Restoring connection for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[W 19:31:24.626 NotebookApp] Nudge: attempt 10 on kernel 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 19:36:11.498 NotebookApp] Kernel restarted: 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 19:36:11.518 NotebookApp] Starting buffering for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[I 19:36:11.539 NotebookApp] Restoring connection for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[W 19:36:16.085 NotebookApp] Nudge: attempt 10 on kernel 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 19:56:20.128 NotebookApp] Kernel restarted: 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 19:56:20.149 NotebookApp] Starting buffering for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[I 19:56:20.172 NotebookApp] Restoring connection for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[W 19:56:24.719 NotebookApp] Nudge: attempt 10 on kernel 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 20:01:56.475 NotebookApp] Kernel interrupted: 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 20:02:12.633 NotebookApp] Kernel restarted: 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 20:02:12.652 NotebookApp] Starting buffering for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[I 20:02:12.675 NotebookApp] Restoring connection for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[W 20:02:17.222 NotebookApp] Nudge: attempt 10 on kernel 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 20:02:51.629 NotebookApp] Kernel interrupted: 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 20:03:06.387 NotebookApp] Kernel restarted: 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 20:03:06.408 NotebookApp] Starting buffering for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[I 20:03:06.437 NotebookApp] Restoring connection for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[W 20:03:10.982 NotebookApp] Nudge: attempt 10 on kernel 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 20:24:05.207 NotebookApp] Kernel restarted: 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 20:24:05.227 NotebookApp] Starting buffering for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[I 20:24:05.249 NotebookApp] Restoring connection for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[W 20:24:09.794 NotebookApp] Nudge: attempt 10 on kernel 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 20:53:37.254 NotebookApp] Kernel restarted: 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 20:53:37.274 NotebookApp] Starting buffering for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[I 20:53:37.296 NotebookApp] Restoring connection for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[W 20:53:41.841 NotebookApp] Nudge: attempt 10 on kernel 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 20:58:03.483 NotebookApp] Kernel restarted: 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 20:58:03.502 NotebookApp] Starting buffering for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[I 20:58:03.525 NotebookApp] Restoring connection for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[W 20:58:08.072 NotebookApp] Nudge: attempt 10 on kernel 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[W 20:58:14.089 NotebookApp] Nudge: attempt 20 on kernel 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 21:28:43.464 NotebookApp] Kernel restarted: 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 21:28:43.483 NotebookApp] Starting buffering for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[I 21:28:43.509 NotebookApp] Restoring connection for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[W 21:28:48.055 NotebookApp] Nudge: attempt 10 on kernel 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[W 21:28:53.101 NotebookApp] Nudge: attempt 20 on kernel 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 21:35:44.700 NotebookApp] Kernel restarted: 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 21:35:44.719 NotebookApp] Starting buffering for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[I 21:35:44.741 NotebookApp] Restoring connection for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[W 21:35:49.285 NotebookApp] Nudge: attempt 10 on kernel 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[W 21:35:54.327 NotebookApp] Nudge: attempt 20 on kernel 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 21:37:42.629 NotebookApp] Kernel restarted: 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 21:37:42.648 NotebookApp] Starting buffering for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[I 21:37:42.671 NotebookApp] Restoring connection for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[W 21:37:47.216 NotebookApp] Nudge: attempt 10 on kernel 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 21:43:52.187 NotebookApp] Kernel restarted: 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 21:43:52.207 NotebookApp] Starting buffering for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[I 21:43:52.230 NotebookApp] Restoring connection for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[W 21:43:56.776 NotebookApp] Nudge: attempt 10 on kernel 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 21:56:37.302 NotebookApp] Kernel restarted: 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 21:56:37.322 NotebookApp] Starting buffering for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[I 21:56:37.344 NotebookApp] Restoring connection for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[W 21:56:41.891 NotebookApp] Nudge: attempt 10 on kernel 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 22:28:12.271 NotebookApp] Kernel restarted: 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 22:28:12.290 NotebookApp] Starting buffering for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[I 22:28:12.332 NotebookApp] Restoring connection for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[W 22:28:16.882 NotebookApp] Nudge: attempt 10 on kernel 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 22:34:11.295 NotebookApp] Kernel restarted: 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 22:34:11.318 NotebookApp] Starting buffering for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[I 22:34:11.341 NotebookApp] Restoring connection for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[W 22:34:15.890 NotebookApp] Nudge: attempt 10 on kernel 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 22:37:37.379 NotebookApp] Kernel restarted: 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 22:37:37.401 NotebookApp] Starting buffering for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[I 22:37:37.425 NotebookApp] Restoring connection for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[W 22:37:41.972 NotebookApp] Nudge: attempt 10 on kernel 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 22:40:25.714 NotebookApp] Kernel restarted: 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 22:40:25.734 NotebookApp] Starting buffering for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[I 22:40:25.756 NotebookApp] Restoring connection for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[W 22:40:30.299 NotebookApp] Nudge: attempt 10 on kernel 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 22:43:20.055 NotebookApp] Kernel restarted: 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 22:43:20.075 NotebookApp] Starting buffering for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[I 22:43:20.096 NotebookApp] Restoring connection for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[W 22:43:24.644 NotebookApp] Nudge: attempt 10 on kernel 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 22:47:01.612 NotebookApp] Kernel restarted: 22a85895-172f-47c9-b31c-8d5f5da5a5ff
+[I 22:47:01.631 NotebookApp] Starting buffering for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[I 22:47:01.653 NotebookApp] Restoring connection for 22a85895-172f-47c9-b31c-8d5f5da5a5ff:033317d1-18e7-49d7-a8d4-83139d5ac1e7
+[W 22:47:06.197 NotebookApp] Nudge: attempt 10 on kernel 22a85895-172f-47c9-b31c-8d5f5da5a5ff
