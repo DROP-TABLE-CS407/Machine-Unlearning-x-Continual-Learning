@@ -1,40 +1,545 @@
-/var/spool/slurmd/job998327/slurm_script: line 15: cd: /dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning: Permission denied
+/var/spool/slurmd/job998527/slurm_script: line 15: cd: /dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning: Permission denied
 numpy requires Python '>=3.8' but the running Python is 3.6.8
-[I 04:42:09.407 NotebookApp] The port 11861 is already in use, trying another port.
-[I 04:42:09.410 NotebookApp] Serving notebooks from local directory: /dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning
-[I 04:42:09.411 NotebookApp] Jupyter Notebook 6.5.2 is running at:
-[I 04:42:09.411 NotebookApp] http://gecko-01:11862/?token=d718ca32a1636f86dfb0c97864cc00f2be6c04498cd9ef52
-[I 04:42:09.411 NotebookApp]  or http://127.0.0.1:11862/?token=d718ca32a1636f86dfb0c97864cc00f2be6c04498cd9ef52
-[I 04:42:09.412 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
-[C 04:42:09.479 NotebookApp] 
+[I 17:43:50.449 NotebookApp] Serving notebooks from local directory: /dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning
+[I 17:43:50.449 NotebookApp] Jupyter Notebook 6.5.2 is running at:
+[I 17:43:50.449 NotebookApp] http://gecko-05:11861/?token=f9f6380bba6d82e8ff54d7c96893ebed4f501973ad1d4488
+[I 17:43:50.449 NotebookApp]  or http://127.0.0.1:11861/?token=f9f6380bba6d82e8ff54d7c96893ebed4f501973ad1d4488
+[I 17:43:50.449 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 17:43:50.460 NotebookApp] 
     
     To access the notebook, open this file in a browser:
-        file:///dcs/21/u2140671/.local/share/jupyter/runtime/nbserver-557131-open.html
+        file:///dcs/21/u2140671/.local/share/jupyter/runtime/nbserver-44118-open.html
     Or copy and paste one of these URLs:
-        http://gecko-01:11862/?token=d718ca32a1636f86dfb0c97864cc00f2be6c04498cd9ef52
-     or http://127.0.0.1:11862/?token=d718ca32a1636f86dfb0c97864cc00f2be6c04498cd9ef52
-[I 04:44:19.375 NotebookApp] 302 GET / (137.205.113.129) 3.760000ms
-[I 04:44:19.387 NotebookApp] 302 GET /tree? (137.205.113.129) 4.200000ms
-[I 04:48:13.029 NotebookApp] 302 GET / (137.205.113.129) 2.970000ms
-[I 04:48:13.039 NotebookApp] 302 GET /tree? (137.205.113.129) 3.660000ms
-[I 04:48:14.261 NotebookApp] 302 GET / (137.205.113.129) 2.830000ms
-[I 04:48:14.270 NotebookApp] 302 GET /tree? (137.205.113.129) 3.470000ms
-[I 04:48:18.604 NotebookApp] 302 GET / (137.205.113.129) 2.910000ms
-[I 04:48:21.973 NotebookApp] 302 GET /tree? (137.205.113.129) 18.260000ms
-[I 04:48:22.599 NotebookApp] Kernel started: 194ed3e4-8db2-40ba-96ae-b39dc96faa86, name: python3
-[W 04:48:30.398 NotebookApp] Replacing stale connection: 194ed3e4-8db2-40ba-96ae-b39dc96faa86:719efe11-719f-4454-9d99-7b053b6ed86a
-[I 04:48:30.402 NotebookApp] Starting buffering for 194ed3e4-8db2-40ba-96ae-b39dc96faa86:719efe11-719f-4454-9d99-7b053b6ed86a
-[I 04:48:30.412 NotebookApp] Restoring connection for 194ed3e4-8db2-40ba-96ae-b39dc96faa86:719efe11-719f-4454-9d99-7b053b6ed86a
-[I 04:48:30.451 NotebookApp] Replaying 3 buffered messages
-[I 04:59:27.607 NotebookApp] Kernel restarted: 194ed3e4-8db2-40ba-96ae-b39dc96faa86
-[I 04:59:27.629 NotebookApp] Starting buffering for 194ed3e4-8db2-40ba-96ae-b39dc96faa86:719efe11-719f-4454-9d99-7b053b6ed86a
-[I 04:59:27.652 NotebookApp] Restoring connection for 194ed3e4-8db2-40ba-96ae-b39dc96faa86:719efe11-719f-4454-9d99-7b053b6ed86a
-[W 04:59:32.198 NotebookApp] Nudge: attempt 10 on kernel 194ed3e4-8db2-40ba-96ae-b39dc96faa86
+        http://gecko-05:11861/?token=f9f6380bba6d82e8ff54d7c96893ebed4f501973ad1d4488
+     or http://127.0.0.1:11861/?token=f9f6380bba6d82e8ff54d7c96893ebed4f501973ad1d4488
+[I 17:46:02.444 NotebookApp] 302 GET / (137.205.113.129) 0.750000ms
+[I 17:46:02.451 NotebookApp] 302 GET /tree? (137.205.113.129) 0.690000ms
+[I 17:46:04.082 NotebookApp] 302 GET / (137.205.113.129) 0.420000ms
+[I 17:46:04.087 NotebookApp] 302 GET /tree? (137.205.113.129) 0.550000ms
+[I 17:46:07.217 NotebookApp] 302 GET / (137.205.113.129) 0.440000ms
+[I 17:46:07.221 NotebookApp] 302 GET /tree? (137.205.113.129) 0.530000ms
+[I 17:46:09.043 NotebookApp] Kernel started: 2b3ad7f1-97da-4359-8a35-fd767f1212cd, name: python3
+[I 17:46:10.119 NotebookApp] Starting buffering for 2b3ad7f1-97da-4359-8a35-fd767f1212cd:691c6068-e418-4225-bb53-8be97fae40ae
+[I 17:46:10.124 NotebookApp] Restoring connection for 2b3ad7f1-97da-4359-8a35-fd767f1212cd:691c6068-e418-4225-bb53-8be97fae40ae
+[I 17:46:10.130 NotebookApp] Replaying 3 buffered messages
+[W 17:46:18.054 NotebookApp] 404 GET /nbextensions (137.205.113.129) 10.540000ms referer=None
+[I 17:46:18.057 NotebookApp] 302 GET / (137.205.113.129) 1.770000ms
+[I 17:46:18.063 NotebookApp] 302 GET /tree? (137.205.113.129) 0.520000ms
+[W 17:46:18.080 NotebookApp] 404 GET /nbextensions (137.205.113.129) 1.190000ms referer=None
+[I 17:48:59.390 NotebookApp] Kernel restarted: 2b3ad7f1-97da-4359-8a35-fd767f1212cd
+[I 17:48:59.395 NotebookApp] Starting buffering for 2b3ad7f1-97da-4359-8a35-fd767f1212cd:691c6068-e418-4225-bb53-8be97fae40ae
+[I 17:48:59.401 NotebookApp] Restoring connection for 2b3ad7f1-97da-4359-8a35-fd767f1212cd:691c6068-e418-4225-bb53-8be97fae40ae
+[IPKernelApp] ERROR | Exception in control handler:
 Traceback (most recent call last):
-  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/IPython/core/completer.py", line 2804, in _complete
-    matcher(text), type=_UNKNOWN_TYPE
-  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/IPython/core/completer.py", line 1994, in python_matches
-    matches = self.global_matches(text)
-  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/IPython/core/completer.py", line 1003, in global_matches
-    for word in lst:
-RuntimeError: dictionary changed size during iteration
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 334, in process_control
+    await result
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 951, in debug_request
+    reply_content = await reply_content
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/ipkernel.py", line 493, in do_debug_request
+    return await self.debugger.process_request(msg)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 665, in process_request
+    self.stop()
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 408, in stop
+    self.debugpy_client.disconnect_tcp_socket()
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 254, in disconnect_tcp_socket
+    self.debugpy_stream.socket.disconnect(self._get_endpoint())
+  File "zmq/backend/cython/socket.pyx", line 668, in zmq.backend.cython.socket.Socket.disconnect
+zmq.error.ZMQError: No such file or directory
+[IPKernelApp] ERROR | Exception in control handler:
+Traceback (most recent call last):
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 334, in process_control
+    await result
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 951, in debug_request
+    reply_content = await reply_content
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/ipkernel.py", line 493, in do_debug_request
+    return await self.debugger.process_request(msg)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 665, in process_request
+    self.stop()
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 408, in stop
+    self.debugpy_client.disconnect_tcp_socket()
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 254, in disconnect_tcp_socket
+    self.debugpy_stream.socket.disconnect(self._get_endpoint())
+  File "zmq/backend/cython/socket.pyx", line 668, in zmq.backend.cython.socket.Socket.disconnect
+zmq.error.ZMQError: No such file or directory
+[IPKernelApp] ERROR | Exception in control handler:
+Traceback (most recent call last):
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 334, in process_control
+    await result
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 951, in debug_request
+    reply_content = await reply_content
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/ipkernel.py", line 493, in do_debug_request
+    return await self.debugger.process_request(msg)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 665, in process_request
+    self.stop()
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 408, in stop
+    self.debugpy_client.disconnect_tcp_socket()
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 254, in disconnect_tcp_socket
+    self.debugpy_stream.socket.disconnect(self._get_endpoint())
+  File "zmq/backend/cython/socket.pyx", line 668, in zmq.backend.cython.socket.Socket.disconnect
+zmq.error.ZMQError: No such file or directory
+[IPKernelApp] ERROR | Exception in control handler:
+Traceback (most recent call last):
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 334, in process_control
+    await result
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 951, in debug_request
+    reply_content = await reply_content
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/ipkernel.py", line 493, in do_debug_request
+    return await self.debugger.process_request(msg)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 660, in process_request
+    reply = await handler(message)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 503, in variables
+    variables = self.variable_explorer.get_children_variables(
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 86, in get_children_variables
+    variables = self.suspended_frame_manager.get_variable(var_ref)
+  File "/local/java/python-ml/22-12-21-python3.9/lib64/python3.9/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_suspended_frames.py", line 492, in get_variable
+    raise KeyError()
+KeyError
+[IPKernelApp] ERROR | Exception in control handler:
+Traceback (most recent call last):
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 334, in process_control
+    await result
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 951, in debug_request
+    reply_content = await reply_content
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/ipkernel.py", line 493, in do_debug_request
+    return await self.debugger.process_request(msg)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 660, in process_request
+    reply = await handler(message)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 503, in variables
+    variables = self.variable_explorer.get_children_variables(
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 86, in get_children_variables
+    variables = self.suspended_frame_manager.get_variable(var_ref)
+  File "/local/java/python-ml/22-12-21-python3.9/lib64/python3.9/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_suspended_frames.py", line 492, in get_variable
+    raise KeyError()
+KeyError
+[IPKernelApp] ERROR | Exception in control handler:
+Traceback (most recent call last):
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 334, in process_control
+    await result
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 951, in debug_request
+    reply_content = await reply_content
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/ipkernel.py", line 493, in do_debug_request
+    return await self.debugger.process_request(msg)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 660, in process_request
+    reply = await handler(message)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 503, in variables
+    variables = self.variable_explorer.get_children_variables(
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 86, in get_children_variables
+    variables = self.suspended_frame_manager.get_variable(var_ref)
+  File "/local/java/python-ml/22-12-21-python3.9/lib64/python3.9/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_suspended_frames.py", line 492, in get_variable
+    raise KeyError()
+KeyError
+[IPKernelApp] ERROR | Exception in control handler:
+Traceback (most recent call last):
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 334, in process_control
+    await result
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 951, in debug_request
+    reply_content = await reply_content
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/ipkernel.py", line 493, in do_debug_request
+    return await self.debugger.process_request(msg)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 665, in process_request
+    self.stop()
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 408, in stop
+    self.debugpy_client.disconnect_tcp_socket()
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 254, in disconnect_tcp_socket
+    self.debugpy_stream.socket.disconnect(self._get_endpoint())
+  File "zmq/backend/cython/socket.pyx", line 668, in zmq.backend.cython.socket.Socket.disconnect
+zmq.error.ZMQError: No such file or directory
+[IPKernelApp] ERROR | Exception in control handler:
+Traceback (most recent call last):
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 334, in process_control
+    await result
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 951, in debug_request
+    reply_content = await reply_content
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/ipkernel.py", line 493, in do_debug_request
+    return await self.debugger.process_request(msg)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 665, in process_request
+    self.stop()
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 408, in stop
+    self.debugpy_client.disconnect_tcp_socket()
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 254, in disconnect_tcp_socket
+    self.debugpy_stream.socket.disconnect(self._get_endpoint())
+  File "zmq/backend/cython/socket.pyx", line 668, in zmq.backend.cython.socket.Socket.disconnect
+zmq.error.ZMQError: No such file or directory
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [0,0,0] Assertion `t >= 0 && t < n_classes` failed.
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [1,0,0] Assertion `t >= 0 && t < n_classes` failed.
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [2,0,0] Assertion `t >= 0 && t < n_classes` failed.
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [3,0,0] Assertion `t >= 0 && t < n_classes` failed.
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [4,0,0] Assertion `t >= 0 && t < n_classes` failed.
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [5,0,0] Assertion `t >= 0 && t < n_classes` failed.
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [6,0,0] Assertion `t >= 0 && t < n_classes` failed.
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [7,0,0] Assertion `t >= 0 && t < n_classes` failed.
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [8,0,0] Assertion `t >= 0 && t < n_classes` failed.
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [9,0,0] Assertion `t >= 0 && t < n_classes` failed.
+[I 18:29:12.301 NotebookApp] Kernel restarted: 2b3ad7f1-97da-4359-8a35-fd767f1212cd
+[I 18:29:12.306 NotebookApp] Starting buffering for 2b3ad7f1-97da-4359-8a35-fd767f1212cd:691c6068-e418-4225-bb53-8be97fae40ae
+[I 18:29:12.315 NotebookApp] Restoring connection for 2b3ad7f1-97da-4359-8a35-fd767f1212cd:691c6068-e418-4225-bb53-8be97fae40ae
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [0,0,0] Assertion `t >= 0 && t < n_classes` failed.
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [1,0,0] Assertion `t >= 0 && t < n_classes` failed.
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [2,0,0] Assertion `t >= 0 && t < n_classes` failed.
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [3,0,0] Assertion `t >= 0 && t < n_classes` failed.
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [4,0,0] Assertion `t >= 0 && t < n_classes` failed.
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [5,0,0] Assertion `t >= 0 && t < n_classes` failed.
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [6,0,0] Assertion `t >= 0 && t < n_classes` failed.
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [7,0,0] Assertion `t >= 0 && t < n_classes` failed.
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [8,0,0] Assertion `t >= 0 && t < n_classes` failed.
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [9,0,0] Assertion `t >= 0 && t < n_classes` failed.
+[IPKernelApp] ERROR | Exception in control handler:
+Traceback (most recent call last):
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 334, in process_control
+    await result
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 951, in debug_request
+    reply_content = await reply_content
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/ipkernel.py", line 493, in do_debug_request
+    return await self.debugger.process_request(msg)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 665, in process_request
+    self.stop()
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 408, in stop
+    self.debugpy_client.disconnect_tcp_socket()
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 254, in disconnect_tcp_socket
+    self.debugpy_stream.socket.disconnect(self._get_endpoint())
+  File "zmq/backend/cython/socket.pyx", line 668, in zmq.backend.cython.socket.Socket.disconnect
+zmq.error.ZMQError: No such file or directory
+[I 18:40:34.325 NotebookApp] Kernel restarted: 2b3ad7f1-97da-4359-8a35-fd767f1212cd
+[I 18:40:34.330 NotebookApp] Starting buffering for 2b3ad7f1-97da-4359-8a35-fd767f1212cd:691c6068-e418-4225-bb53-8be97fae40ae
+[I 18:40:34.338 NotebookApp] Restoring connection for 2b3ad7f1-97da-4359-8a35-fd767f1212cd:691c6068-e418-4225-bb53-8be97fae40ae
+[IPKernelApp] ERROR | Exception in control handler:
+Traceback (most recent call last):
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 334, in process_control
+    await result
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 951, in debug_request
+    reply_content = await reply_content
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/ipkernel.py", line 493, in do_debug_request
+    return await self.debugger.process_request(msg)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 660, in process_request
+    reply = await handler(message)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 503, in variables
+    variables = self.variable_explorer.get_children_variables(
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 86, in get_children_variables
+    variables = self.suspended_frame_manager.get_variable(var_ref)
+  File "/local/java/python-ml/22-12-21-python3.9/lib64/python3.9/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_suspended_frames.py", line 492, in get_variable
+    raise KeyError()
+KeyError
+[IPKernelApp] ERROR | Exception in control handler:
+Traceback (most recent call last):
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 334, in process_control
+    await result
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 951, in debug_request
+    reply_content = await reply_content
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/ipkernel.py", line 493, in do_debug_request
+    return await self.debugger.process_request(msg)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 660, in process_request
+    reply = await handler(message)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 503, in variables
+    variables = self.variable_explorer.get_children_variables(
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 86, in get_children_variables
+    variables = self.suspended_frame_manager.get_variable(var_ref)
+  File "/local/java/python-ml/22-12-21-python3.9/lib64/python3.9/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_suspended_frames.py", line 492, in get_variable
+    raise KeyError()
+KeyError
+[IPKernelApp] ERROR | Exception in control handler:
+Traceback (most recent call last):
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 334, in process_control
+    await result
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 951, in debug_request
+    reply_content = await reply_content
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/ipkernel.py", line 493, in do_debug_request
+    return await self.debugger.process_request(msg)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 660, in process_request
+    reply = await handler(message)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 503, in variables
+    variables = self.variable_explorer.get_children_variables(
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 86, in get_children_variables
+    variables = self.suspended_frame_manager.get_variable(var_ref)
+  File "/local/java/python-ml/22-12-21-python3.9/lib64/python3.9/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_suspended_frames.py", line 492, in get_variable
+    raise KeyError()
+KeyError
+[IPKernelApp] ERROR | Exception in control handler:
+Traceback (most recent call last):
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 334, in process_control
+    await result
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 951, in debug_request
+    reply_content = await reply_content
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/ipkernel.py", line 493, in do_debug_request
+    return await self.debugger.process_request(msg)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 660, in process_request
+    reply = await handler(message)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 503, in variables
+    variables = self.variable_explorer.get_children_variables(
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 86, in get_children_variables
+    variables = self.suspended_frame_manager.get_variable(var_ref)
+  File "/local/java/python-ml/22-12-21-python3.9/lib64/python3.9/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_suspended_frames.py", line 492, in get_variable
+    raise KeyError()
+KeyError
+[IPKernelApp] ERROR | Exception in control handler:
+Traceback (most recent call last):
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 334, in process_control
+    await result
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 951, in debug_request
+    reply_content = await reply_content
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/ipkernel.py", line 493, in do_debug_request
+    return await self.debugger.process_request(msg)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 660, in process_request
+    reply = await handler(message)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 503, in variables
+    variables = self.variable_explorer.get_children_variables(
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 86, in get_children_variables
+    variables = self.suspended_frame_manager.get_variable(var_ref)
+  File "/local/java/python-ml/22-12-21-python3.9/lib64/python3.9/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_suspended_frames.py", line 492, in get_variable
+    raise KeyError()
+KeyError
+[IPKernelApp] ERROR | Exception in control handler:
+Traceback (most recent call last):
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 334, in process_control
+    await result
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 951, in debug_request
+    reply_content = await reply_content
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/ipkernel.py", line 493, in do_debug_request
+    return await self.debugger.process_request(msg)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 660, in process_request
+    reply = await handler(message)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 503, in variables
+    variables = self.variable_explorer.get_children_variables(
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 86, in get_children_variables
+    variables = self.suspended_frame_manager.get_variable(var_ref)
+  File "/local/java/python-ml/22-12-21-python3.9/lib64/python3.9/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_suspended_frames.py", line 492, in get_variable
+    raise KeyError()
+KeyError
+[IPKernelApp] ERROR | Exception in control handler:
+Traceback (most recent call last):
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 334, in process_control
+    await result
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 951, in debug_request
+    reply_content = await reply_content
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/ipkernel.py", line 493, in do_debug_request
+    return await self.debugger.process_request(msg)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 660, in process_request
+    reply = await handler(message)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 511, in variables
+    var for var in reply["body"]["variables"] if self.accept_variable(var["name"])
+KeyError: 'body'
+[IPKernelApp] ERROR | Exception in control handler:
+Traceback (most recent call last):
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 334, in process_control
+    await result
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 951, in debug_request
+    reply_content = await reply_content
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/ipkernel.py", line 493, in do_debug_request
+    return await self.debugger.process_request(msg)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 660, in process_request
+    reply = await handler(message)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 503, in variables
+    variables = self.variable_explorer.get_children_variables(
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 86, in get_children_variables
+    variables = self.suspended_frame_manager.get_variable(var_ref)
+  File "/local/java/python-ml/22-12-21-python3.9/lib64/python3.9/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_suspended_frames.py", line 492, in get_variable
+    raise KeyError()
+KeyError
+[IPKernelApp] ERROR | Exception in control handler:
+Traceback (most recent call last):
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 334, in process_control
+    await result
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 951, in debug_request
+    reply_content = await reply_content
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/ipkernel.py", line 493, in do_debug_request
+    return await self.debugger.process_request(msg)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 660, in process_request
+    reply = await handler(message)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 503, in variables
+    variables = self.variable_explorer.get_children_variables(
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 86, in get_children_variables
+    variables = self.suspended_frame_manager.get_variable(var_ref)
+  File "/local/java/python-ml/22-12-21-python3.9/lib64/python3.9/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_suspended_frames.py", line 492, in get_variable
+    raise KeyError()
+KeyError
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [0,0,0] Assertion `t >= 0 && t < n_classes` failed.
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [1,0,0] Assertion `t >= 0 && t < n_classes` failed.
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [2,0,0] Assertion `t >= 0 && t < n_classes` failed.
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [3,0,0] Assertion `t >= 0 && t < n_classes` failed.
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [4,0,0] Assertion `t >= 0 && t < n_classes` failed.
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [5,0,0] Assertion `t >= 0 && t < n_classes` failed.
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [6,0,0] Assertion `t >= 0 && t < n_classes` failed.
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [7,0,0] Assertion `t >= 0 && t < n_classes` failed.
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [8,0,0] Assertion `t >= 0 && t < n_classes` failed.
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [9,0,0] Assertion `t >= 0 && t < n_classes` failed.
+[IPKernelApp] ERROR | Exception in control handler:
+Traceback (most recent call last):
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 334, in process_control
+    await result
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 951, in debug_request
+    reply_content = await reply_content
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/ipkernel.py", line 493, in do_debug_request
+    return await self.debugger.process_request(msg)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 665, in process_request
+    self.stop()
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 408, in stop
+    self.debugpy_client.disconnect_tcp_socket()
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 254, in disconnect_tcp_socket
+    self.debugpy_stream.socket.disconnect(self._get_endpoint())
+  File "zmq/backend/cython/socket.pyx", line 668, in zmq.backend.cython.socket.Socket.disconnect
+zmq.error.ZMQError: No such file or directory
+[IPKernelApp] ERROR | Exception in control handler:
+Traceback (most recent call last):
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 334, in process_control
+    await result
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 951, in debug_request
+    reply_content = await reply_content
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/ipkernel.py", line 493, in do_debug_request
+    return await self.debugger.process_request(msg)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 665, in process_request
+    self.stop()
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 408, in stop
+    self.debugpy_client.disconnect_tcp_socket()
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 254, in disconnect_tcp_socket
+    self.debugpy_stream.socket.disconnect(self._get_endpoint())
+  File "zmq/backend/cython/socket.pyx", line 668, in zmq.backend.cython.socket.Socket.disconnect
+zmq.error.ZMQError: No such file or directory
+[IPKernelApp] ERROR | Exception in control handler:
+Traceback (most recent call last):
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 334, in process_control
+    await result
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 951, in debug_request
+    reply_content = await reply_content
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/ipkernel.py", line 493, in do_debug_request
+    return await self.debugger.process_request(msg)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 665, in process_request
+    self.stop()
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 408, in stop
+    self.debugpy_client.disconnect_tcp_socket()
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 254, in disconnect_tcp_socket
+    self.debugpy_stream.socket.disconnect(self._get_endpoint())
+  File "zmq/backend/cython/socket.pyx", line 668, in zmq.backend.cython.socket.Socket.disconnect
+zmq.error.ZMQError: No such file or directory
+[I 18:49:03.433 NotebookApp] Kernel restarted: 2b3ad7f1-97da-4359-8a35-fd767f1212cd
+[I 18:49:03.438 NotebookApp] Starting buffering for 2b3ad7f1-97da-4359-8a35-fd767f1212cd:691c6068-e418-4225-bb53-8be97fae40ae
+[I 18:49:03.447 NotebookApp] Restoring connection for 2b3ad7f1-97da-4359-8a35-fd767f1212cd:691c6068-e418-4225-bb53-8be97fae40ae
+[IPKernelApp] ERROR | Exception in control handler:
+Traceback (most recent call last):
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 334, in process_control
+    await result
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 951, in debug_request
+    reply_content = await reply_content
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/ipkernel.py", line 493, in do_debug_request
+    return await self.debugger.process_request(msg)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 660, in process_request
+    reply = await handler(message)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 503, in variables
+    variables = self.variable_explorer.get_children_variables(
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 86, in get_children_variables
+    variables = self.suspended_frame_manager.get_variable(var_ref)
+  File "/local/java/python-ml/22-12-21-python3.9/lib64/python3.9/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_suspended_frames.py", line 492, in get_variable
+    raise KeyError()
+KeyError
+[IPKernelApp] ERROR | Exception in control handler:
+Traceback (most recent call last):
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 334, in process_control
+    await result
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 951, in debug_request
+    reply_content = await reply_content
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/ipkernel.py", line 493, in do_debug_request
+    return await self.debugger.process_request(msg)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 660, in process_request
+    reply = await handler(message)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 503, in variables
+    variables = self.variable_explorer.get_children_variables(
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 86, in get_children_variables
+    variables = self.suspended_frame_manager.get_variable(var_ref)
+  File "/local/java/python-ml/22-12-21-python3.9/lib64/python3.9/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_suspended_frames.py", line 492, in get_variable
+    raise KeyError()
+KeyError
+[IPKernelApp] ERROR | Exception in control handler:
+Traceback (most recent call last):
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 334, in process_control
+    await result
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 951, in debug_request
+    reply_content = await reply_content
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/ipkernel.py", line 493, in do_debug_request
+    return await self.debugger.process_request(msg)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 660, in process_request
+    reply = await handler(message)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 503, in variables
+    variables = self.variable_explorer.get_children_variables(
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 86, in get_children_variables
+    variables = self.suspended_frame_manager.get_variable(var_ref)
+  File "/local/java/python-ml/22-12-21-python3.9/lib64/python3.9/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_suspended_frames.py", line 492, in get_variable
+    raise KeyError()
+KeyError
+[IPKernelApp] ERROR | Exception in control handler:
+Traceback (most recent call last):
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 334, in process_control
+    await result
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 951, in debug_request
+    reply_content = await reply_content
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/ipkernel.py", line 493, in do_debug_request
+    return await self.debugger.process_request(msg)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 660, in process_request
+    reply = await handler(message)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 511, in variables
+    var for var in reply["body"]["variables"] if self.accept_variable(var["name"])
+KeyError: 'body'
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [0,0,0] Assertion `t >= 0 && t < n_classes` failed.
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [1,0,0] Assertion `t >= 0 && t < n_classes` failed.
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [2,0,0] Assertion `t >= 0 && t < n_classes` failed.
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [3,0,0] Assertion `t >= 0 && t < n_classes` failed.
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [4,0,0] Assertion `t >= 0 && t < n_classes` failed.
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [5,0,0] Assertion `t >= 0 && t < n_classes` failed.
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [6,0,0] Assertion `t >= 0 && t < n_classes` failed.
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [7,0,0] Assertion `t >= 0 && t < n_classes` failed.
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [8,0,0] Assertion `t >= 0 && t < n_classes` failed.
+../aten/src/ATen/native/cuda/Loss.cu:242: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [9,0,0] Assertion `t >= 0 && t < n_classes` failed.
+[I 19:38:21.871 NotebookApp] Kernel restarted: 2b3ad7f1-97da-4359-8a35-fd767f1212cd
+[I 19:38:21.875 NotebookApp] Starting buffering for 2b3ad7f1-97da-4359-8a35-fd767f1212cd:691c6068-e418-4225-bb53-8be97fae40ae
+[I 19:38:21.882 NotebookApp] Restoring connection for 2b3ad7f1-97da-4359-8a35-fd767f1212cd:691c6068-e418-4225-bb53-8be97fae40ae
+[IPKernelApp] ERROR | Exception in control handler:
+Traceback (most recent call last):
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 334, in process_control
+    await result
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 951, in debug_request
+    reply_content = await reply_content
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/ipkernel.py", line 493, in do_debug_request
+    return await self.debugger.process_request(msg)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 660, in process_request
+    reply = await handler(message)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 503, in variables
+    variables = self.variable_explorer.get_children_variables(
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 86, in get_children_variables
+    variables = self.suspended_frame_manager.get_variable(var_ref)
+  File "/local/java/python-ml/22-12-21-python3.9/lib64/python3.9/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_suspended_frames.py", line 492, in get_variable
+    raise KeyError()
+KeyError
+[IPKernelApp] ERROR | Exception in control handler:
+Traceback (most recent call last):
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 334, in process_control
+    await result
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 951, in debug_request
+    reply_content = await reply_content
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/ipkernel.py", line 493, in do_debug_request
+    return await self.debugger.process_request(msg)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 665, in process_request
+    self.stop()
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 408, in stop
+    self.debugpy_client.disconnect_tcp_socket()
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 254, in disconnect_tcp_socket
+    self.debugpy_stream.socket.disconnect(self._get_endpoint())
+  File "zmq/backend/cython/socket.pyx", line 668, in zmq.backend.cython.socket.Socket.disconnect
+zmq.error.ZMQError: No such file or directory
+[IPKernelApp] ERROR | Exception in control handler:
+Traceback (most recent call last):
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 334, in process_control
+    await result
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 951, in debug_request
+    reply_content = await reply_content
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/ipkernel.py", line 493, in do_debug_request
+    return await self.debugger.process_request(msg)
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 665, in process_request
+    self.stop()
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 408, in stop
+    self.debugpy_client.disconnect_tcp_socket()
+  File "/local/java/python-ml/22-12-21-python3.9/lib/python3.9/site-packages/ipykernel/debugger.py", line 254, in disconnect_tcp_socket
+    self.debugpy_stream.socket.disconnect(self._get_endpoint())
+  File "zmq/backend/cython/socket.pyx", line 668, in zmq.backend.cython.socket.Socket.disconnect
+zmq.error.ZMQError: No such file or directory
+[I 21:56:27.889 NotebookApp] Kernel interrupted: 2b3ad7f1-97da-4359-8a35-fd767f1212cd
+[I 22:03:09.732 NotebookApp] Kernel restarted: 2b3ad7f1-97da-4359-8a35-fd767f1212cd
+[I 22:03:09.738 NotebookApp] Starting buffering for 2b3ad7f1-97da-4359-8a35-fd767f1212cd:691c6068-e418-4225-bb53-8be97fae40ae
+[I 22:03:09.881 NotebookApp] Restoring connection for 2b3ad7f1-97da-4359-8a35-fd767f1212cd:691c6068-e418-4225-bb53-8be97fae40ae
+[I 22:04:51.464 NotebookApp] Kernel interrupted: 2b3ad7f1-97da-4359-8a35-fd767f1212cd
