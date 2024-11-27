@@ -60,11 +60,11 @@ def show_image(image, label):
     plt.show()
 
 # split the dataset into classes from an inputed list of label names
-def split_into_classes(train_data, train_labels, selected_class_names):
+def split_into_classes(train_data, train_labels, selected_class_names, classes = CLASSES):
     
     subset_train = []
     subset_labels = []
-    selected_class_labels = get_class_indexes(selected_class_names)
+    selected_class_labels = get_class_indexes(selected_class_names, classes)
     for data, label in zip(train_data, train_labels):
         if label in selected_class_labels:
             subset_train.append(data)
@@ -73,11 +73,11 @@ def split_into_classes(train_data, train_labels, selected_class_names):
     return np.array(subset_train), np.array(subset_labels)
 
 # Helper function to get indexes of selected classes mapping names to indexes/labels
-def get_class_indexes(selected_classes):
+def get_class_indexes(selected_classes, classes):
     indexes = []
     for cls in selected_classes:
-        if cls in CLASSES:
-            indexes.append(CLASSES.index(cls))
+        if cls in classes:
+            indexes.append(classes.index(cls))
     return indexes
 
 # Show a random image from the training set
