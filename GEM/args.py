@@ -11,9 +11,9 @@ class Args:
         self.finetune = 'no'
 
         # optimizer parameters
-        self.n_epochs = 15
+        self.n_epochs = 10
         self.batch_size = 10
-        self.lr = 0.1
+        self.lr = 0.3
 
         # experiment parameters nor do we use this stuff 
         self.cuda = 'yes'
