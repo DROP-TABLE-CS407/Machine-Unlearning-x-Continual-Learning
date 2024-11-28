@@ -12,7 +12,7 @@ class Args:
 
         # optimizer parameters
         self.n_epochs = 10
-        self.batch_size = 10
+        self.batch_size = 1000
         self.lr = 0.3
 
         # experiment parameters nor do we use this stuff 
