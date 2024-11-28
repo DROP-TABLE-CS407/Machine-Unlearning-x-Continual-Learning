@@ -279,7 +279,7 @@ class Net(nn.Module):
             minus = 0
         self.nc_per_task = int((n_outputs - PRETRAIN) / (n_tasks - minus))
 
-    def forward(self, x, t):
+    def forward(self, x, t=-1):
         output = self.net(x)
         if t == -1:
             return output
