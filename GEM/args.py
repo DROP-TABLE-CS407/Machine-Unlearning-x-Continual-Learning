@@ -6,14 +6,14 @@ class Args:
         self.n_layers = 2
 
         # memory parameters
-        self.n_memories = 250
+        self.n_memories = 256
         self.memory_strength = 0.5
         self.finetune = 'no'
 
         # optimizer parameters
-        self.n_epochs = 10
-        self.batch_size = 1000
-        self.lr = 0.3
+        self.n_epochs = 5
+        self.batch_size = 10
+        self.lr = 0.1
 
         # experiment parameters nor do we use this stuff 
         self.cuda = 'yes'
