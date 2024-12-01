@@ -9,10 +9,11 @@ class Args:
         self.n_memories = 256
         self.memory_strength = 0.5
         self.finetune = 'no'
+        self.mem_cnt = 5120
 
         # optimizer parameters
-        self.n_epochs = 5
-        self.batch_size = 10
+        self.n_epochs = 10
+        self.batch_size = 2500
         self.lr = 0.1
 
         # experiment parameters nor do we use this stuff 

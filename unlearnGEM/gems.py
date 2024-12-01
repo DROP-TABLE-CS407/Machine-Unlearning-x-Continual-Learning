@@ -208,7 +208,7 @@ def agemprojection(gradient, gradient_memory, margin=0.5, eps=1e-3):
     # add epsilon to prevent numerical instability  
     epsvector = torch.Tensor([eps]).cuda()
     
-    g = g - (gref.squeeze() * dot_prod)
+    g = g*0.5 - (gref.squeeze() * dot_prod)
     gradient.copy_(torch.Tensor(g).view(-1, 1))
     
     

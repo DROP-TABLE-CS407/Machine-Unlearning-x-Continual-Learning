@@ -1,10 +1,10 @@
 #!/bin/bash
 #
 #SBATCH --job-name=jupyter     # Job name for tracking
-#SBATCH --partition=gecko      # Partition you wish to use (see above for list)
+#SBATCH --partition=falcon      # Partition you wish to use (see above for list)
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=24      # Number of CPU threads used by your job
-#SBATCH --gres=gpu:3           # Number of GPUs to use 
+#SBATCH --cpus-per-task=12      # Number of CPU threads used by your job
+#SBATCH --gres=gpu:1           # Number of GPUs to use 
 #SBATCH --mem=60000            # 60GB RAM
 #SBATCH --time=12:00:00        # Job time limit set to 12 hours
 #
