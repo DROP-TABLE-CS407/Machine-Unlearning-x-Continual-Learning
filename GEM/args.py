@@ -1,5 +1,5 @@
 class Args:
-    def __init__(self):
+    def __init__(self, learning_rate = 0.1):
         # model parameters
         self.model = 'single'
         self.n_hiddens = 10
@@ -12,8 +12,8 @@ class Args:
         self.mem_cnt = 5120
 
         # optimizer parameters
-        self.n_epochs = 10
-        self.batch_size = 1000
+        self.n_epochs = 15
+        self.batch_size = 10
         self.lr = 0.1
 
         # experiment parameters nor do we use this stuff 
