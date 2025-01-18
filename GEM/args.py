@@ -12,13 +12,13 @@ class Args:
         self.mem_cnt = 5120
 
         # optimizer parameters
-        self.n_epochs = 15
-        self.batch_size = 10
-        self.lr = 0.1
+        self.n_epochs = 3
+        self.batch_size = 100
+        self.lr = learning_rate
 
         # experiment parameters nor do we use this stuff 
         self.cuda = 'yes'
-        self.seed = 0
+        self.seed = 69420
         self.log_every = 1
         self.save_path = 'results/'
 

@@ -16,7 +16,7 @@ source /etc/profile.d/conda.sh
 
 ## Execute your program(s) ##
 module load CUDA/11.6.0
-module load python-ml
+module load cs413-python
 
 cd ./GradientEpisodicMemory
 ./run_experiments.sh
