@@ -11,13 +11,14 @@
 #SBATCH --output=jupyter.log
 #SBATCH --error=jupyter.err
 
-pip3.9 install jupyter
+pip3.9 install --user jupyter
 
 module load NCCL/2.20.3_for_CUDA12.2
 module load CUDA/12.2-cudnn9
 module load cs413-python
 
-cd /dcs/large/u2145461/cs407/ # You might want to use the cd command here to change the working directory that jupyter notebook will use
+# You might want to use the cd command here to change the working directory that jupyter notebook will use
 pip3.9 install --user quadprog
+pip3.9 install --user pyparsing
 
-python3.9 -m notebook --ip=0.0.0.0 --port=11861 --no-browser
+python3.9 -m notebook --ip=0.0.0.0 --port=11871 --no-browser
