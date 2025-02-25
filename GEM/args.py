@@ -12,8 +12,8 @@ class Args:
         self.mem_cnt = 5120
 
         # optimizer parameters
-        self.n_epochs = 3
-        self.batch_size = 100
+        self.n_epochs = 10
+        self.batch_size = 2500
         self.lr = learning_rate
 
         # experiment parameters nor do we use this stuff 
