@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 #SBATCH --job-name=train-resnet-cifar-10 # Job name for tracking
-#SBATCH --partition=gecko  # Partition you wish to use (see above for list)
+#SBATCH --partition=falcon  # Partition you wish to use (see above for list)
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=12      # Number of CPU threads used by your job
 #SBATCH --gres=gpu:3           # Number of GPUs to use 
@@ -16,7 +16,7 @@ source /etc/profile.d/conda.sh
 
 ## Execute your program(s) ##
 module load CUDA/11.6.0
-module load python-ml
+module load cs413-python
 
 cd ./GradientEpisodicMemory
 ./run_experiments.sh

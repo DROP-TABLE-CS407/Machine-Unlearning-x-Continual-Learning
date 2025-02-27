@@ -1,23 +1,24 @@
 class Args:
-    def __init__(self):
+    def __init__(self, learning_rate = 0.1):
         # model parameters
         self.model = 'single'
         self.n_hiddens = 10
         self.n_layers = 2
 
         # memory parameters
-        self.n_memories = 250
+        self.n_memories = 256
         self.memory_strength = 0.5
         self.finetune = 'no'
+        self.mem_cnt = 5120
 
         # optimizer parameters
-        self.n_epochs = 10
-        self.batch_size = 10
-        self.lr = 0.3
+        self.n_epochs = 3
+        self.batch_size = 100
+        self.lr = learning_rate
 
         # experiment parameters nor do we use this stuff 
         self.cuda = 'yes'
-        self.seed = 0
+        self.seed = 69420
         self.log_every = 1
         self.save_path = 'results/'
 

@@ -1,0 +1,6 @@
+cifar-100-python/
+cifar-100-python/file.txt~
+cifar-100-python/train
+cifar-100-python/test
+cifar-100-python/meta
+results/gem_cifar100.pt_2024_11_12_17_34_17_75fc831afff24c53820432cc923a4ddd: {'model': 'gem', 'n_hiddens': 100, 'n_layers': 2, 'n_memories': 256, 'memory_strength': 0.5, 'finetune': False, 'n_epochs': 1, 'batch_size': 10, 'lr': 0.1, 'cuda': True, 'seed': 0, 'log_every': 100, 'save_path': 'results/', 'data_path': 'data/', 'data_file': 'cifar100.pt', 'samples_per_task': 2500, 'shuffle_tasks': 'no'} # 0.682 0.028 -0.011 # 10581.450418233871
