@@ -6,10 +6,10 @@ class Args:
         self.n_layers = 2
 
         # memory parameters
-        self.n_memories = 256
+        self.n_memories = 1250
         self.memory_strength = 0.5
         self.finetune = 'no'
-        self.mem_cnt = 5120
+        self.mem_cnt = 25000
 
         # optimizer parameters
         self.n_epochs = 10

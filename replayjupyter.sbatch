@@ -6,7 +6,7 @@
 #SBATCH --cpus-per-task=6      # Number of CPU threads used by your job
 #SBATCH --gres=gpu:1           # Number of GPUs to use 
 #SBATCH --mem=55000            # 60GB RAM
-#SBATCH --time=12:00:00        # Job time limit set to 12 hours
+#SBATCH --time=1-00:00:00        # Job time limit set to 12 hours
 #
 #SBATCH --output=jupyter.log
 #SBATCH --error=jupyter.err
