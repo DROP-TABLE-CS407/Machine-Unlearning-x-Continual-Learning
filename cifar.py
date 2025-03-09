@@ -151,10 +151,10 @@ def get_class_indexes(selected_classes, classes):
     return indexes
 
 # Show a random image from the training set
-random_idx = np.random.randint(len(train_data))
-show_image(train_data[random_idx], train_labels[random_idx])
-random_idx = np.random.randint(len(train_data_100))
-show_image(train_data_100[random_idx], train_labels_100[random_idx], dataset = "cifar-100")
+#random_idx = np.random.randint(len(train_data))
+#show_image(train_data[random_idx], train_labels[random_idx])
+#random_idx = np.random.randint(len(train_data_100))
+#show_image(train_data_100[random_idx], train_labels_100[random_idx], dataset = "cifar-100")
 
 
 
