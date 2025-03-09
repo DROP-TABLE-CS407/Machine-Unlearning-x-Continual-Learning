@@ -15,6 +15,11 @@ class Args:
         self.n_epochs = 3
         self.batch_size = 100
         self.lr = learning_rate
+        
+        self.unlearn_batch_size = 16
+        self.unlearn_epochs = 3
+        self.unlearning_rate = 0.01
+        self.unlearn_mem_strength = 0.5
 
         # experiment parameters nor do we use this stuff 
         self.cuda = 'yes'
