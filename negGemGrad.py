@@ -4,6 +4,18 @@ import sys
 # run command to check oython version
 os.system('python3.12 --version')
 
+"""
+
+THERE IS ALSO A DIRECTORY YOU NEED TO CHANGE AT THE BOTTOM OF THE FILE YOU SPERG
+
+simply highlight the directory /dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem
+
+hold down ctrl + d then ctrl + v (assuming you already have your directory copied)
+
+if you dont know what directory you're in, use pwd in the cmd line
+
+"""
+
 # set directory /dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning
 # please change these dependent on your own specific path variable
 
@@ -38,6 +50,8 @@ import quadprog
 
 ALL_TASK_UNLEARN_ACCURACIES = []
 ALL_TASK_UNLEARN_CONFIDENCES = []
+
+ALL_TASK_CONTINUAL_LEARNING_ACCURACIES = []
 
 # define main function to run on the cifar dataset
 N_TASKS = 20 #[2 tasks [airplane, automobile, etc], [dog , frog, etc]]
@@ -210,6 +224,13 @@ def NegAGEM(gradient, memories, margin=0.5, eps=1e-3):
     v = quadprog.solve_qp(P, q, G, h)[0]
     x = np.dot(v, memories_np) + gradient_np
     gradient.copy_(torch.Tensor(x).view(-1, 1))
+    
+def project2neggrad2(gradient, memories, alpha = 0.9):
+    gref = memories.t().double().sum(axis=0).cuda() # * margin
+    g = gradient.contiguous().view(-1).double().cuda()
+    x = gref*alpha + g * (1-alpha)
+    gradient.copy_(torch.Tensor(x).view(-1, 1))
+    
 
 def project2cone2(gradient, memories, margin=0.5, eps=1e-3):
     """
@@ -544,48 +565,37 @@ class Net(nn.Module):
                 NegAGEM(forget_grads, retain_grads, self.unlearn_memory_strength)
                 
                 overwrite_grad(self.parameters, forget_grads, self.grad_dims)
-            # set the opt learning rate to the unlearn rate
-            #self.opt = torch.optim.SGD(self.parameters(), 0.01)
             
             self.opt.step()
         elif algorithm == "neggrad":
             """
-            for tt in range(len(self.observed_tasks)):
-                output_clean = self.forward(input)
-                del_output_clean = self.forward(del_input)
-                r_loss = self.ce(output_clean, target)
-                del_loss = self.ce(del_output_clean, del_target)
-
-                loss = alpha*r_loss - (1-alpha)*del_loss
-
-                # Backward
-                self.zero_grad()
-                loss.backward()
-                self.step()
-
-                loss = loss.float()
+            use the project2neggrad2 function to project the gradient to unlearn the task
+            unlike the previous method, we do not perform this in batches
             """
-
-            for tt in range(len(self.observed_tasks)):
-                past_task = self.observed_tasks[tt]
-                offset1, offset2 = compute_offsets(past_task, self.nc_per_task, self.is_cifar)
-                ptloss = self.ce(
-                    self.forward(self.memory_data[past_task], past_task)[:, offset1: offset2],
-                    self.memory_labs[past_task] - offset1)
-                
-                #store_grad(self.parameters, self.grads, self.grad_dims,
-                #            past_task)
-                    
-                if past_task < t:
-                    # apply neggrad constraint take into account the alpha value
-                    ptloss *= alpha
-                else:
-                    ptloss *= -1*(1-alpha)
+            # now find the grads of the previous tasks
+            for tt in range(t + 1):
                 self.zero_grad()
+                past_task = self.observed_tasks[tt]
+                offset1, offset2 = compute_offsets(past_task, self.nc_per_task,
+                                                    self.is_cifar)
+                ptloss = self.ce(
+                        self.forward(
+                            self.memory_data[past_task],
+                            past_task)[:, offset1: offset2],
+                        self.memory_labs[past_task] - offset1)
+                    
                 ptloss.backward()
-                self.opt.step()
-                
-                
+                store_grad(self.parameters, self.grads, self.grad_dims,
+                            past_task)
+            forget_grads = self.grads[:, t].unsqueeze(1)
+            retain_indices = torch.tensor([i for i in range(self.grads.size(1)) if i in self.observed_tasks and i < t], device=self.grads.device)
+            retain_grads = self.grads.index_select(1, retain_indices)
+            
+            self.zero_grad()
+            forget_grads *= -1
+            project2neggrad2(forget_grads, retain_grads, alpha)
+            overwrite_grad(self.parameters, forget_grads, self.grad_dims)
+            self.opt.step()
         else:
             print("Invalid Algorithm")
 
@@ -887,10 +897,18 @@ def run_cifar(algorithm, args, n_inputs=N_INPUTS, n_outputs=N_OUTPUTS, n_tasks=N
                 output = model.forward(current_data, task)
                 pred = output.data.max(1)[1]
 
-            if correct / total > 0.85:
+            if correct / total > 0.80:
                 break
             #   output loss only
-
+        # Test the model after training
+        temp_test_accuracies = []
+        for task in range(n_tasks):
+            test, _ = eval_task(model, args,
+                                        tests[task * 2], tests[task * 2 + 1],
+                                        task)
+            temp_test_accuracies.append(test)
+        print(temp_test_accuracies)
+        ALL_TASK_CONTINUAL_LEARNING_ACCURACIES.append(temp_test_accuracies)
 
     # Test the model after training
         average_confidence = []
@@ -925,6 +943,9 @@ def run_cifar(algorithm, args, n_inputs=N_INPUTS, n_outputs=N_OUTPUTS, n_tasks=N
             average_confidence.append(sum(average_confidence_task) / len(average_confidence_task))  
     
     unlearning_algo = "neggem"
+    #unlearning_algo = "neggrad"
+    if unlearning_algo == "neggrad":
+        args.unlearn_batch_size = args.n_memories
     ## after training lets unlearn the last task and test the model again
     print("Unlearning task: ", n_tasks)
     
@@ -947,8 +968,21 @@ def run_cifar(algorithm, args, n_inputs=N_INPUTS, n_outputs=N_OUTPUTS, n_tasks=N
                                                         retain_set, forget_set, test_set, retain_accuracies, forget_accuracies,
                                                         testing_accuracies, testing_accuracies_forget)
     
-    
-    
+    # eval performance on 20 individual tasks using the eval_task function
+    temp_test_accuracies = []
+    temp_test_confidences = []
+    for task in range(n_tasks):
+        
+        test, confidence = eval_task(model, args,
+                                    tests[task * 2], tests[task * 2 + 1],
+                                    task)
+        temp_test_accuracies.append(test)
+        temp_test_confidences.append(confidence)
+        print(temp_test_accuracies)
+        
+    ALL_TASK_UNLEARN_ACCURACIES.append(temp_test_accuracies)
+    ALL_TASK_UNLEARN_CONFIDENCES.append(temp_test_confidences)
+
     for i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]: # 
         #torch.cuda.empty_cache()
         model.train()
@@ -970,7 +1004,7 @@ def run_cifar(algorithm, args, n_inputs=N_INPUTS, n_outputs=N_OUTPUTS, n_tasks=N
                     output = model.forward(current_data, n_tasks - i)
                     pred = output.data.max(1)[1] 
                     correct += (pred == current_labels).sum().item()
-                if correct / total <= 0.3:
+                if correct / total <= 0.5:
                     flag = True
                     break
                 model.unlearn(unlearning_algo, n_tasks - i, x1 = j, x2 = j + args.unlearn_batch_size)
@@ -1080,8 +1114,8 @@ x_labels = [str(xi) for xi in x]
 x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
 plt.figure()
 # Plot your lines
-plt.plot(x, retain_accuracies_avg, label="Retain Accuracies", linestyle="-")
-plt.plot(x, forget_accuracies_avg, label="Forget Accuracies", linestyle="-.")
+#plt.plot(x, retain_accuracies_avg, label="Retain Accuracies", linestyle="-")
+#plt.plot(x, forget_accuracies_avg, label="Forget Accuracies", linestyle="-.")
 plt.plot(x, testing_accuracies_avg, label="Retain Test Accuracies", linestyle=":")
 plt.plot(x, testing_accuracies_forget_avg, label="Forget Test Accuracies", linestyle="--")
 # Set y-axis range
@@ -1098,16 +1132,65 @@ plt.legend()
 plt.savefig('RetainForgetTest.png')
 plt.show()
 
-# for each run in retain_accuracies_all, forget_accuracies_all, testing_accuracies_all, testing_accuracies_forget_all, plot the exactly like the cell above
+# reverse the ALL_TASK_CONTINUAL_LEARNING_ACCURACIES list
+ALL_TASK_CONTINUAL_LEARNING_ACCURACIES.reverse()
 
+print(len(ALL_TASK_CONTINUAL_LEARNING_ACCURACIES))
+print(len(ALL_TASK_UNLEARN_ACCURACIES))
+
+avg_cont_learning_accuracies = []
+for i in range(20):
+    avg_cont_learning_accuracies.append([])
+
+for i in range(len(ALL_TASK_CONTINUAL_LEARNING_ACCURACIES)):
+    avg_cont_learning_accuracies[i%20].append(ALL_TASK_CONTINUAL_LEARNING_ACCURACIES[i])
+    
+avg_cont_learning_accuracies = np.mean(avg_cont_learning_accuracies, axis = 1)
+
+avg_cont_unlearning_accuracies = []
+for i in range(20):
+    avg_cont_unlearning_accuracies.append([])
+    
+for i in range(len(ALL_TASK_UNLEARN_ACCURACIES)):
+    avg_cont_unlearning_accuracies[i%20].append(ALL_TASK_UNLEARN_ACCURACIES[i])
+
+avg_cont_unlearning_accuracies = np.mean(avg_cont_unlearning_accuracies, axis = 1)
+
+# get the column 0 of the avg_cont_learning_accuracies
+avg_retain_cont_learning_accuracies = avg_cont_learning_accuracies[:, 0]
+
+# the forget accuracies are the average of the last 19 columns
+avg_forget_cont_learning_accuracies = np.mean(avg_cont_learning_accuracies[:, 1:], axis = 1)
+
+# get the column 0 of the avg_cont_unlearning_accuracies
+avg_retain_cont_unlearning_accuracies = avg_cont_unlearning_accuracies[:, 0]
+
+# the forget accuracies are the average of the last 19 columns
+avg_forget_cont_unlearning_accuracies = np.mean(avg_cont_unlearning_accuracies[:, 1:], axis = 1)
+
+
+plt.figure()
+plt.plot(x, avg_retain_cont_unlearning_accuracies, label="Retain Cont. Unlearn Test Accuracies", linestyle="-")
+plt.plot(x, avg_forget_cont_unlearning_accuracies, label="Forget Cont. Unlearn Test Accuracies", linestyle="-.")
+plt.plot(x, avg_retain_cont_learning_accuracies, label="Retain Cont. Learn Test Accuracies (Baseline)", linestyle=":")
+plt.plot(x, avg_forget_cont_learning_accuracies, label="Forget Cont. Learn Test Accuracies (Baseline)", linestyle="--")
+plt.xticks(x, x_labels)
+plt.ylim(0, 1)
+plt.xlabel("Task")
+plt.ylabel("Accuracy")
+plt.legend()
+plt.savefig('RetainForgetContLearningUnlearning.png')
+plt.show()
+
+# for each run in retain_accuracies_all, forget_accuracies_all, testing_accuracies_all, testing_accuracies_forget_all, plot the exactly like the cell above
 for i in range(len(retain_accuracies_all)):
     retain_accuracies_avg = retain_accuracies_all[i]
     forget_accuracies_avg = forget_accuracies_all[i]
     testing_accuracies_avg = testing_accuracies_all[i]
     testing_accuracies_forget_avg = testing_accuracies_forget_all[i]
     plt.figure()
-    plt.plot(x, retain_accuracies_avg, label="Retain Accuracies", linestyle="-")
-    plt.plot(x, forget_accuracies_avg, label="Forget Accuracies", linestyle="-.")
+    #plt.plot(x, retain_accuracies_avg, label="Retain Accuracies", linestyle="-")
+    #plt.plot(x, forget_accuracies_avg, label="Forget Accuracies", linestyle="-.")
     plt.plot(x, testing_accuracies_avg, label="Retain Test Accuracies", linestyle=":")
     plt.plot(x, testing_accuracies_forget_avg, label="Forget Test Accuracies", linestyle="--")
     plt.ylim(0, 1)
@@ -1160,6 +1243,15 @@ df.to_csv('Results' + str(cur_date) + 'MemoryStrength' + str(args.unlearn_memory
 
 df = pd.DataFrame(ALL_TASK_UNLEARN_CONFIDENCES)
 df.to_csv('Results' + str(cur_date) + 'MemoryStrength' + str(args.unlearn_memory_strength) + 'BatchSize' + str(args.unlearn_batch_size) + 'AllTaskUnlearnConfidences.csv')
+
+df = pd.DataFrame(ALL_TASK_CONTINUAL_LEARNING_ACCURACIES)
+df.to_csv('Results' + str(cur_date) + 'MemoryStrength' + str(args.unlearn_memory_strength) + 'BatchSize' + str(args.unlearn_batch_size) + 'AllTaskContinualLearningAccuracies.csv')
+
+df = pd.DataFrame(avg_cont_learning_accuracies)
+df.to_csv('Results' + str(cur_date) + 'MemoryStrength' + str(args.unlearn_memory_strength) + 'BatchSize' + str(args.unlearn_batch_size) + 'AvgContLearningAccuracies.csv')
+
+df = pd.DataFrame(avg_cont_unlearning_accuracies)
+df.to_csv('Results' + str(cur_date) + 'MemoryStrength' + str(args.unlearn_memory_strength) + 'BatchSize' + str(args.unlearn_batch_size) + 'AvgContUnlearningAccuracies.csv')
 
 # save the model
 #torch.save(model, 'Results' + str(cur_date) + 'MemoryStrength' + str(args.unlearn_memory_strength) + 'BatchSize' + str(args.unlearn_batch_size) + 'Model.pt')
