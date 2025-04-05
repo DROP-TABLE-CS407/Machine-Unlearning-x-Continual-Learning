@@ -509,12 +509,12 @@ class Net(nn.Module):
             ## otherwise we need to unlearn the task 
             ## we compute the gradients of all learnt tasks
             current_grad = []
-            
             for param in self.parameters():
                 if param.grad is not None:
                     current_grad.append(param.grad.data.view(-1))
             current_grad = torch.cat(current_grad).unsqueeze(1)
-            
+
+
             # now find the grads of the previous tasks
             for tt in range(t + 1):
                 self.zero_grad()
@@ -536,36 +536,31 @@ class Net(nn.Module):
                 ptloss.backward()
                 store_grad(self.parameters, self.grads, self.grad_dims,
                             past_task)
-            """  
+
+            
+            ## so now, we have the gradients of all the tasks we can now do our projection,
+            ## first we check if it is even neccessary to do so, if not simply do a optimiser.step()
+        
             forget_grads = self.grads[:, t].unsqueeze(1).clone().t()
             retain_indices = torch.tensor([i for i in range(self.grads.size(1)) if i in self.observed_tasks and i < t], device=self.grads.device)
             retain_grads = self.grads.index_select(1, retain_indices).t()
 
-
-            project2cone2_neggrad_dual(current_grad, forget_grads, retain_grads, self.unlearn_memory_strength)
             overwrite_grad(self.parameters, current_grad, self.grad_dims)
-            """
-            ## so now, we have the gradients of all the tasks we can now do our projection,
-            ## first we check if it is even neccessary to do so, if not simply do a optimiser.step()
-        
-            forget_grads = self.grads[:, t].unsqueeze(1)
-            retain_indices = torch.tensor([i for i in range(self.grads.size(1)) if i in self.observed_tasks and i < t], device=self.grads.device)
-            retain_grads = self.grads.index_select(1, retain_indices)
-            
-            self.zero_grad()
-            loss = self.ce(
-                        self.forward(self.memory_data[past_task][x1:x2], past_task)[:, offset1: offset2], self.memory_labs[past_task][x1:x2] - offset1)
-            # negate loss for unlearning
-            loss = -1 * loss
-            loss.backward() 
 
-            dotp = torch.mm(self.grads[:, t].unsqueeze(0) * -1, retain_grads)
-            if (dotp < 0).sum() != 0:
-                forget_grads *= -1
-                NegAGEM(forget_grads, retain_grads, self.unlearn_memory_strength)
-                
-                overwrite_grad(self.parameters, forget_grads, self.grad_dims)
-            
+            if args.salun:
+                apply_Salun(self, args.salun_threshold)
+
+                # populate current_grad with salunated version
+                current_grad = []
+                for param in self.parameters():
+                    if param.grad is not None:
+                        current_grad.append(param.grad.data.view(-1))
+                current_grad = torch.cat(current_grad).unsqueeze(1)
+
+            project2cone2_neggrad_dual(current_grad, forget_grads, retain_grads, self.margin)
+            overwrite_grad(self.parameters, current_grad, self.grad_dims)
+            # set the opt learning rate to the unlearn rate
+            #self.opt = torch.optim.SGD(self.parameters(), 0.01)
             self.opt.step()
         elif algorithm == "neggrad":
             """
@@ -592,12 +587,40 @@ class Net(nn.Module):
             retain_grads = self.grads.index_select(1, retain_indices)
             
             self.zero_grad()
+            
             forget_grads *= -1
             project2neggrad2(forget_grads, retain_grads, alpha)
             overwrite_grad(self.parameters, forget_grads, self.grad_dims)
             self.opt.step()
         else:
             print("Invalid Algorithm")
+
+
+def apply_Salun(model, threshold):
+        '''
+        Apply's SalUn to the model
+        for the current gradients it has.
+        '''
+        
+        for param in model.parameters():
+            if param.grad is not None:
+                # Get the gradient and preserve original shape
+                original_shape = param.grad.data.shape
+                grad = param.grad.data.view(-1)
+                
+                # Check if the gradient norm is above the threshold
+                if torch.norm(grad) > threshold:
+
+                    """ Apply SalUn (soft thresholding) - Optional, interesting if we test!!!!"""
+                    # grad = torch.sign(grad) * torch.clamp(torch.abs(grad) - threshold, min=0)
+                    
+                    # Restore original shape
+                    param.grad.data = grad.view(original_shape)
+                else:
+                    # Set the gradient to zero
+                    param.grad.data.zero_()
+        
+        return model
 
 def project2cone2_neggrad_dual(gradient, forget_memories, retain_memories,
                                 margin=0.5, eps=1e-10):

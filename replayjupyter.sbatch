@@ -20,4 +20,4 @@ module load cs413-python
 cd /dcs/large/u2145461/cs407/ # You might want to use the cd command here to change the working directory that jupyter notebook will use
 pip3.9 install --user quadprog
 
-python3.9 -m notebook --ip=0.0.0.0 --port=11861 --no-browser
+python3.9 -m notebook --ip=0.0.0.0 --port=11871 --no-browser

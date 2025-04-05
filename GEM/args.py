@@ -36,3 +36,6 @@ class Args:
         # Convert string flags to boolean
         self.cuda = True if self.cuda == 'yes' else False
         self.finetune = True if self.finetune == 'yes' else False
+
+        self.salun = True
+        self.salun_threshold = 0.1
