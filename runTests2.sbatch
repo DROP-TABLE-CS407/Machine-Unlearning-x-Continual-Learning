@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 #SBATCH --job-name=continual-learning-2     # Job name for tracking
-#SBATCH --partition=falcon      # Partition you wish to use (see above for list)
+#SBATCH --partition=eagle      # Partition you wish to use (see above for list)
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=6      # Number of CPU threads used by your job
 #SBATCH --gres=gpu:1           # Number of GPUs to use 
@@ -28,10 +28,11 @@ module load CUDA/12.2-cudnn9
 
 nvidia-smi
 
-time python3.12 negGemGradSalun.py 0.6 16 1 0
+time python3.12 negGemGradSalun.py --unlearn_mem_strength 0.6 --unlearn_batch_size 16 --average_over_n_runs 1 --salun 0 --salun_strength 0.5 --rum 0 --rum_split 0.5 --rum_memorization all
 
-# args are as follows (in respective orders): unlearn_mem_strength, unlearn_batch_size, average over_n_runs, salun on/off, salun strength
-time python3.12 negGemGradSalun.py 0.6 16 1 1 0.1
+# args are as follows (in respective orders): unlearn_mem_strength, unlearn_batch_size,
+# average over_n_runs, salun on/off, salun strength, rum on/off, rum_split, rum_memorization
+time python3.12 negGemGradSalun.py --unlearn_mem_strength 0.6 --unlearn_batch_size 16 --average_over_n_runs 1 --salun 1 --salun_strength 0.1 --rum 1 --rum_split 0.5 --rum_memorization most
 
 
 
