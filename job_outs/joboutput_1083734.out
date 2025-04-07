@@ -1,0 +1,594 @@
+Requirement already satisfied: pyyaml in /usr/lib64/python3.12/site-packages (6.0.1)
+Requirement already satisfied: setuptools in /usr/lib/python3.12/site-packages (68.2.2)
+Requirement already satisfied: matplotlib in /dcs/21/u2145461/.local/lib/python3.12/site-packages (3.10.1)
+Requirement already satisfied: contourpy>=1.0.1 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (1.3.1)
+Requirement already satisfied: cycler>=0.10 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (4.56.0)
+Requirement already satisfied: kiwisolver>=1.3.1 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (1.4.8)
+Requirement already satisfied: numpy>=1.23 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (2.2.3)
+Requirement already satisfied: packaging>=20.0 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (24.2)
+Requirement already satisfied: pillow>=8 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (11.0.0)
+Requirement already satisfied: pyparsing>=2.3.1 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (3.2.1)
+Requirement already satisfied: python-dateutil>=2.7 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (2.9.0.post0)
+Requirement already satisfied: six>=1.5 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from python-dateutil>=2.7->matplotlib) (1.17.0)
+Requirement already satisfied: quadprog in /dcs/21/u2145461/.local/lib/python3.12/site-packages (0.1.13)
+Requirement already satisfied: numpy in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from quadprog) (2.2.3)
+Requirement already satisfied: pyparsing in /dcs/21/u2145461/.local/lib/python3.12/site-packages (3.2.1)
+Wed Mar  5 22:03:21 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.144.03             Driver Version: 550.144.03     CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A10                     On  |   00000000:25:00.0 Off |                    0 |
+|  0%   25C    P8             15W /  150W |       1MiB /  23028MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Python 3.12.8
+./cifar-100-python/train
+./cifar-100-python/test
+100
+cifar-100-python/train
+cifar-100-python/test
+new ordering of classes:  ['skunk', 'mouse', 'wolf', 'boy', 'willow', 'bridge', 'mountain', 'lawn-mower', 'lizard', 'squirrel', 'pine', 'man', 'baby', 'kangaroo', 'camel', 'cloud', 'computer keyboard', 'bicycle', 'clock', 'roses', 'shark', 'leopard', 'chair', 'rocket', 'tiger', 'cockroach', 'chimpanzee', 'telephone', 'girl', 'tank', 'cattle', 'bed', 'bear', 'bee', 'elephant', 'lamp', 'possum', 'television', 'worm', 'forest', 'pears', 'sea', 'bottles', 'beetle', 'lobster', 'woman', 'otter', 'beaver', 'flatfish', 'dolphin', 'snail', 'bowls', 'aquarium fish', 'spider', 'caterpillar', 'palm', 'plates', 'lion', 'sweet peppers', 'maple', 'raccoon', 'fox', 'road', 'wardrobe', 'dinosaur', 'oak', 'trout', 'streetcar', 'porcupine', 'tractor', 'hamster', 'cups', 'crocodile', 'apples', 'plain', 'cans', 'house', 'motorcycle', 'seal', 'pickup truck', 'bus', 'ray', 'orchids', 'shrew', 'sunflowers', 'poppies', 'butterfly', 'snake', 'table', 'rabbit', 'oranges', 'mushrooms', 'skyscraper', 'crab', 'whale', 'tulips', 'castle', 'turtle', 'train', 'couch']
+Training task:  1
+Training task:  2
+Training task:  3
+Training task:  4
+Training task:  5
+Training task:  6
+Training task:  7
+Training task:  8
+Training task:  9
+Training task:  10
+Training task:  11
+Training task:  12
+Training task:  13
+Training task:  14
+Training task:  15
+Training task:  16
+Training task:  17
+Training task:  18
+Training task:  19
+Training task:  20
+Unlearning task:  20
+Total correct retain:  1558  Total retain:  2500
+Total correct forget:  34301  Total forget:  47500
+Total correct test:  291  Total test:  500
+Total correct forget test:  6429  Total test forget:  9500
+Total correct retain:  1343  Total retain:  2500
+Total correct forget:  30310  Total forget:  47500
+Total correct test:  252  Total test:  500
+Total correct forget test:  5734  Total test forget:  9500
+Total correct retain:  1523  Total retain:  2500
+Total correct forget:  30137  Total forget:  47500
+Total correct test:  293  Total test:  500
+Total correct forget test:  5766  Total test forget:  9500
+Total correct retain:  1416  Total retain:  2500
+Total correct forget:  28917  Total forget:  47500
+Total correct test:  269  Total test:  500
+Total correct forget test:  5469  Total test forget:  9500
+Total correct retain:  1445  Total retain:  2500
+Total correct forget:  23041  Total forget:  47500
+Total correct test:  294  Total test:  500
+Total correct forget test:  4334  Total test forget:  9500
+Total correct retain:  1286  Total retain:  2500
+Total correct forget:  22238  Total forget:  47500
+Total correct test:  251  Total test:  500
+Total correct forget test:  4214  Total test forget:  9500
+Total correct retain:  616  Total retain:  2500
+Total correct forget:  10766  Total forget:  47500
+Total correct test:  117  Total test:  500
+Total correct forget test:  2117  Total test forget:  9500
+Total correct retain:  1179  Total retain:  2500
+Total correct forget:  17755  Total forget:  47500
+Total correct test:  230  Total test:  500
+Total correct forget test:  3492  Total test forget:  9500
+Total correct retain:  1089  Total retain:  2500
+Total correct forget:  17253  Total forget:  47500
+Total correct test:  202  Total test:  500
+Total correct forget test:  3331  Total test forget:  9500
+Total correct retain:  465  Total retain:  2500
+Total correct forget:  10927  Total forget:  47500
+Total correct test:  92  Total test:  500
+Total correct forget test:  2172  Total test forget:  9500
+Total correct retain:  857  Total retain:  2500
+Total correct forget:  12524  Total forget:  47500
+Total correct test:  183  Total test:  500
+Total correct forget test:  2419  Total test forget:  9500
+Total correct retain:  985  Total retain:  2500
+Total correct forget:  14375  Total forget:  47500
+Total correct test:  186  Total test:  500
+Total correct forget test:  2794  Total test forget:  9500
+Total correct retain:  630  Total retain:  2500
+Total correct forget:  9484  Total forget:  47500
+Total correct test:  127  Total test:  500
+Total correct forget test:  1882  Total test forget:  9500
+Total correct retain:  566  Total retain:  2500
+Total correct forget:  10819  Total forget:  47500
+Total correct test:  106  Total test:  500
+Total correct forget test:  2150  Total test forget:  9500
+Total correct retain:  827  Total retain:  2500
+Total correct forget:  11422  Total forget:  47500
+Total correct test:  158  Total test:  500
+Total correct forget test:  2265  Total test forget:  9500
+Total correct retain:  865  Total retain:  2500
+Total correct forget:  10957  Total forget:  47500
+Total correct test:  171  Total test:  500
+Total correct forget test:  2198  Total test forget:  9500
+Total correct retain:  725  Total retain:  2500
+Total correct forget:  9908  Total forget:  47500
+Total correct test:  147  Total test:  500
+Total correct forget test:  1949  Total test forget:  9500
+Total correct retain:  691  Total retain:  2500
+Total correct forget:  10351  Total forget:  47500
+Total correct test:  134  Total test:  500
+Total correct forget test:  2065  Total test forget:  9500
+Total correct retain:  715  Total retain:  2500
+Total correct forget:  10281  Total forget:  47500
+Total correct test:  149  Total test:  500
+Total correct forget test:  2014  Total test forget:  9500
+Total correct retain:  506  Total retain:  2500
+Total correct forget:  9745  Total forget:  47500
+Total correct test:  101  Total test:  500
+Total correct forget test:  1937  Total test forget:  9500
+100
+cifar-100-python/train
+cifar-100-python/test
+new ordering of classes:  ['forest', 'boy', 'cloud', 'possum', 'chair', 'bottles', 'lion', 'lizard', 'rocket', 'television', 'table', 'cups', 'roses', 'wolf', 'dolphin', 'computer keyboard', 'bus', 'mountain', 'dinosaur', 'oak', 'sunflowers', 'tractor', 'palm', 'skyscraper', 'rabbit', 'otter', 'whale', 'shark', 'wardrobe', 'butterfly', 'tank', 'snail', 'crocodile', 'camel', 'pine', 'mushrooms', 'aquarium fish', 'seal', 'apples', 'tulips', 'pears', 'tiger', 'caterpillar', 'trout', 'poppies', 'plates', 'shrew', 'porcupine', 'squirrel', 'bear', 'castle', 'train', 'beetle', 'road', 'couch', 'lawn-mower', 'lobster', 'telephone', 'bicycle', 'snake', 'worm', 'crab', 'willow', 'leopard', 'bee', 'maple', 'cattle', 'mouse', 'plain', 'hamster', 'ray', 'chimpanzee', 'raccoon', 'man', 'bridge', 'pickup truck', 'oranges', 'sweet peppers', 'elephant', 'bed', 'baby', 'girl', 'cans', 'orchids', 'bowls', 'flatfish', 'sea', 'clock', 'kangaroo', 'streetcar', 'house', 'woman', 'skunk', 'lamp', 'motorcycle', 'spider', 'beaver', 'turtle', 'cockroach', 'fox']
+Training task:  1
+Training task:  2
+Training task:  3
+Training task:  4
+Training task:  5
+Training task:  6
+Training task:  7
+Training task:  8
+Training task:  9
+Training task:  10
+Training task:  11
+Training task:  12
+Training task:  13
+Training task:  14
+Training task:  15
+Training task:  16
+Training task:  17
+Training task:  18
+Training task:  19
+Training task:  20
+Unlearning task:  20
+Total correct retain:  1715  Total retain:  2500
+Total correct forget:  35390  Total forget:  47500
+Total correct test:  339  Total test:  500
+Total correct forget test:  6063  Total test forget:  9500
+Total correct retain:  1492  Total retain:  2500
+Total correct forget:  29571  Total forget:  47500
+Total correct test:  279  Total test:  500
+Total correct forget test:  5244  Total test forget:  9500
+Total correct retain:  1446  Total retain:  2500
+Total correct forget:  25046  Total forget:  47500
+Total correct test:  285  Total test:  500
+Total correct forget test:  4670  Total test forget:  9500
+Total correct retain:  766  Total retain:  2500
+Total correct forget:  15951  Total forget:  47500
+Total correct test:  146  Total test:  500
+Total correct forget test:  3050  Total test forget:  9500
+Total correct retain:  1260  Total retain:  2500
+Total correct forget:  17853  Total forget:  47500
+Total correct test:  233  Total test:  500
+Total correct forget test:  3362  Total test forget:  9500
+Total correct retain:  1240  Total retain:  2500
+Total correct forget:  19797  Total forget:  47500
+Total correct test:  219  Total test:  500
+Total correct forget test:  3715  Total test forget:  9500
+Total correct retain:  628  Total retain:  2500
+Total correct forget:  13310  Total forget:  47500
+Total correct test:  128  Total test:  500
+Total correct forget test:  2597  Total test forget:  9500
+Total correct retain:  666  Total retain:  2500
+Total correct forget:  14372  Total forget:  47500
+Total correct test:  132  Total test:  500
+Total correct forget test:  2860  Total test forget:  9500
+Total correct retain:  1084  Total retain:  2500
+Total correct forget:  15548  Total forget:  47500
+Total correct test:  220  Total test:  500
+Total correct forget test:  3077  Total test forget:  9500
+Total correct retain:  985  Total retain:  2500
+Total correct forget:  13252  Total forget:  47500
+Total correct test:  193  Total test:  500
+Total correct forget test:  2627  Total test forget:  9500
+Total correct retain:  1160  Total retain:  2500
+Total correct forget:  14451  Total forget:  47500
+Total correct test:  223  Total test:  500
+Total correct forget test:  2874  Total test forget:  9500
+Total correct retain:  1005  Total retain:  2500
+Total correct forget:  14203  Total forget:  47500
+Total correct test:  201  Total test:  500
+Total correct forget test:  2850  Total test forget:  9500
+Total correct retain:  1040  Total retain:  2500
+Total correct forget:  12845  Total forget:  47500
+Total correct test:  201  Total test:  500
+Total correct forget test:  2664  Total test forget:  9500
+Total correct retain:  790  Total retain:  2500
+Total correct forget:  12621  Total forget:  47500
+Total correct test:  148  Total test:  500
+Total correct forget test:  2503  Total test forget:  9500
+Total correct retain:  1087  Total retain:  2500
+Total correct forget:  10306  Total forget:  47500
+Total correct test:  200  Total test:  500
+Total correct forget test:  2051  Total test forget:  9500
+Total correct retain:  945  Total retain:  2500
+Total correct forget:  11030  Total forget:  47500
+Total correct test:  173  Total test:  500
+Total correct forget test:  2244  Total test forget:  9500
+Total correct retain:  1030  Total retain:  2500
+Total correct forget:  9651  Total forget:  47500
+Total correct test:  199  Total test:  500
+Total correct forget test:  1920  Total test forget:  9500
+Total correct retain:  746  Total retain:  2500
+Total correct forget:  9252  Total forget:  47500
+Total correct test:  159  Total test:  500
+Total correct forget test:  1844  Total test forget:  9500
+Total correct retain:  988  Total retain:  2500
+Total correct forget:  9714  Total forget:  47500
+Total correct test:  190  Total test:  500
+Total correct forget test:  1927  Total test forget:  9500
+Total correct retain:  832  Total retain:  2500
+Total correct forget:  9075  Total forget:  47500
+Total correct test:  152  Total test:  500
+Total correct forget test:  1824  Total test forget:  9500
+100
+cifar-100-python/train
+cifar-100-python/test
+new ordering of classes:  ['orchids', 'computer keyboard', 'road', 'television', 'mushrooms', 'oak', 'forest', 'man', 'butterfly', 'table', 'palm', 'tractor', 'roses', 'train', 'leopard', 'mountain', 'shark', 'cans', 'bee', 'baby', 'lobster', 'bicycle', 'possum', 'sweet peppers', 'shrew', 'cattle', 'dolphin', 'whale', 'bowls', 'lamp', 'pears', 'worm', 'hamster', 'skyscraper', 'beaver', 'lizard', 'maple', 'bridge', 'dinosaur', 'woman', 'seal', 'tiger', 'clock', 'rocket', 'oranges', 'snake', 'plain', 'beetle', 'bottles', 'lawn-mower', 'snail', 'cups', 'elephant', 'mouse', 'bus', 'ray', 'willow', 'skunk', 'sea', 'crab', 'crocodile', 'wolf', 'streetcar', 'motorcycle', 'otter', 'trout', 'chair', 'poppies', 'sunflowers', 'telephone', 'raccoon', 'spider', 'couch', 'kangaroo', 'boy', 'cockroach', 'castle', 'house', 'porcupine', 'girl', 'turtle', 'squirrel', 'pickup truck', 'cloud', 'lion', 'chimpanzee', 'aquarium fish', 'tank', 'camel', 'bed', 'caterpillar', 'tulips', 'apples', 'plates', 'rabbit', 'flatfish', 'wardrobe', 'bear', 'pine', 'fox']
+Training task:  1
+Training task:  2
+Training task:  3
+Training task:  4
+Training task:  5
+Training task:  6
+Training task:  7
+Training task:  8
+Training task:  9
+Training task:  10
+Training task:  11
+Training task:  12
+Training task:  13
+Training task:  14
+Training task:  15
+Training task:  16
+Training task:  17
+Training task:  18
+Training task:  19
+Training task:  20
+Unlearning task:  20
+Total correct retain:  1776  Total retain:  2500
+Total correct forget:  37689  Total forget:  47500
+Total correct test:  336  Total test:  500
+Total correct forget test:  6636  Total test forget:  9500
+Total correct retain:  1519  Total retain:  2500
+Total correct forget:  30003  Total forget:  47500
+Total correct test:  275  Total test:  500
+Total correct forget test:  5440  Total test forget:  9500
+Total correct retain:  1496  Total retain:  2500
+Total correct forget:  28966  Total forget:  47500
+Total correct test:  275  Total test:  500
+Total correct forget test:  5236  Total test forget:  9500
+Total correct retain:  1485  Total retain:  2500
+Total correct forget:  27861  Total forget:  47500
+Total correct test:  284  Total test:  500
+Total correct forget test:  5128  Total test forget:  9500
+Total correct retain:  1531  Total retain:  2500
+Total correct forget:  23653  Total forget:  47500
+Total correct test:  318  Total test:  500
+Total correct forget test:  4434  Total test forget:  9500
+Total correct retain:  1361  Total retain:  2500
+Total correct forget:  21504  Total forget:  47500
+Total correct test:  261  Total test:  500
+Total correct forget test:  4039  Total test forget:  9500
+Total correct retain:  1265  Total retain:  2500
+Total correct forget:  19581  Total forget:  47500
+Total correct test:  231  Total test:  500
+Total correct forget test:  3737  Total test forget:  9500
+Total correct retain:  568  Total retain:  2500
+Total correct forget:  10298  Total forget:  47500
+Total correct test:  122  Total test:  500
+Total correct forget test:  2039  Total test forget:  9500
+Total correct retain:  1024  Total retain:  2500
+Total correct forget:  13918  Total forget:  47500
+Total correct test:  200  Total test:  500
+Total correct forget test:  2721  Total test forget:  9500
+Total correct retain:  1031  Total retain:  2500
+Total correct forget:  13183  Total forget:  47500
+Total correct test:  198  Total test:  500
+Total correct forget test:  2618  Total test forget:  9500
+Total correct retain:  1083  Total retain:  2500
+Total correct forget:  14380  Total forget:  47500
+Total correct test:  209  Total test:  500
+Total correct forget test:  2793  Total test forget:  9500
+Total correct retain:  499  Total retain:  2500
+Total correct forget:  9707  Total forget:  47500
+Total correct test:  102  Total test:  500
+Total correct forget test:  1927  Total test forget:  9500
+Total correct retain:  561  Total retain:  2500
+Total correct forget:  10121  Total forget:  47500
+Total correct test:  104  Total test:  500
+Total correct forget test:  2060  Total test forget:  9500
+Total correct retain:  594  Total retain:  2500
+Total correct forget:  9877  Total forget:  47500
+Total correct test:  111  Total test:  500
+Total correct forget test:  1979  Total test forget:  9500
+Total correct retain:  870  Total retain:  2500
+Total correct forget:  11888  Total forget:  47500
+Total correct test:  193  Total test:  500
+Total correct forget test:  2350  Total test forget:  9500
+Total correct retain:  671  Total retain:  2500
+Total correct forget:  9911  Total forget:  47500
+Total correct test:  143  Total test:  500
+Total correct forget test:  2016  Total test forget:  9500
+Total correct retain:  499  Total retain:  2500
+Total correct forget:  9580  Total forget:  47500
+Total correct test:  100  Total test:  500
+Total correct forget test:  1918  Total test forget:  9500
+Total correct retain:  683  Total retain:  2500
+Total correct forget:  9888  Total forget:  47500
+Total correct test:  146  Total test:  500
+Total correct forget test:  1944  Total test forget:  9500
+Total correct retain:  659  Total retain:  2500
+Total correct forget:  10098  Total forget:  47500
+Total correct test:  142  Total test:  500
+Total correct forget test:  2021  Total test forget:  9500
+Total correct retain:  739  Total retain:  2500
+Total correct forget:  9442  Total forget:  47500
+Total correct test:  149  Total test:  500
+Total correct forget test:  1907  Total test forget:  9500
+100
+cifar-100-python/train
+cifar-100-python/test
+new ordering of classes:  ['woman', 'flatfish', 'cups', 'fox', 'rocket', 'mouse', 'tulips', 'cattle', 'bus', 'maple', 'rabbit', 'possum', 'bee', 'leopard', 'worm', 'bed', 'motorcycle', 'man', 'snake', 'lobster', 'girl', 'beetle', 'clock', 'television', 'shark', 'otter', 'skunk', 'chair', 'trout', 'caterpillar', 'whale', 'lawn-mower', 'hamster', 'lizard', 'tank', 'apples', 'wardrobe', 'seal', 'beaver', 'chimpanzee', 'road', 'bridge', 'plates', 'castle', 'crocodile', 'bottles', 'wolf', 'sweet peppers', 'pine', 'mushrooms', 'baby', 'palm', 'poppies', 'sunflowers', 'turtle', 'bicycle', 'cloud', 'pickup truck', 'shrew', 'tiger', 'oak', 'boy', 'dinosaur', 'raccoon', 'telephone', 'table', 'ray', 'camel', 'sea', 'skyscraper', 'forest', 'bear', 'spider', 'couch', 'willow', 'aquarium fish', 'house', 'dolphin', 'pears', 'tractor', 'bowls', 'squirrel', 'oranges', 'lion', 'train', 'roses', 'crab', 'kangaroo', 'elephant', 'porcupine', 'mountain', 'computer keyboard', 'cans', 'cockroach', 'snail', 'orchids', 'lamp', 'streetcar', 'butterfly', 'plain']
+Training task:  1
+Training task:  2
+Training task:  3
+Training task:  4
+Training task:  5
+Training task:  6
+Training task:  7
+Training task:  8
+Training task:  9
+Training task:  10
+Training task:  11
+Training task:  12
+Training task:  13
+Training task:  14
+Training task:  15
+Training task:  16
+Training task:  17
+Training task:  18
+Training task:  19
+Training task:  20
+Unlearning task:  20
+Total correct retain:  1519  Total retain:  2500
+Total correct forget:  30304  Total forget:  47500
+Total correct test:  292  Total test:  500
+Total correct forget test:  5680  Total test forget:  9500
+Total correct retain:  1611  Total retain:  2500
+Total correct forget:  32710  Total forget:  47500
+Total correct test:  305  Total test:  500
+Total correct forget test:  6033  Total test forget:  9500
+Total correct retain:  1541  Total retain:  2500
+Total correct forget:  30864  Total forget:  47500
+Total correct test:  275  Total test:  500
+Total correct forget test:  5651  Total test forget:  9500
+Total correct retain:  1546  Total retain:  2500
+Total correct forget:  29317  Total forget:  47500
+Total correct test:  285  Total test:  500
+Total correct forget test:  5375  Total test forget:  9500
+Total correct retain:  1621  Total retain:  2500
+Total correct forget:  28321  Total forget:  47500
+Total correct test:  300  Total test:  500
+Total correct forget test:  5229  Total test forget:  9500
+Total correct retain:  1496  Total retain:  2500
+Total correct forget:  26408  Total forget:  47500
+Total correct test:  277  Total test:  500
+Total correct forget test:  4933  Total test forget:  9500
+Total correct retain:  1276  Total retain:  2500
+Total correct forget:  24528  Total forget:  47500
+Total correct test:  245  Total test:  500
+Total correct forget test:  4604  Total test forget:  9500
+Total correct retain:  1205  Total retain:  2500
+Total correct forget:  20320  Total forget:  47500
+Total correct test:  228  Total test:  500
+Total correct forget test:  3867  Total test forget:  9500
+Total correct retain:  1403  Total retain:  2500
+Total correct forget:  20887  Total forget:  47500
+Total correct test:  269  Total test:  500
+Total correct forget test:  3944  Total test forget:  9500
+Total correct retain:  1045  Total retain:  2500
+Total correct forget:  14597  Total forget:  47500
+Total correct test:  202  Total test:  500
+Total correct forget test:  2831  Total test forget:  9500
+Total correct retain:  1220  Total retain:  2500
+Total correct forget:  15236  Total forget:  47500
+Total correct test:  222  Total test:  500
+Total correct forget test:  2882  Total test forget:  9500
+Total correct retain:  684  Total retain:  2500
+Total correct forget:  12844  Total forget:  47500
+Total correct test:  123  Total test:  500
+Total correct forget test:  2543  Total test forget:  9500
+Total correct retain:  832  Total retain:  2500
+Total correct forget:  13986  Total forget:  47500
+Total correct test:  159  Total test:  500
+Total correct forget test:  2751  Total test forget:  9500
+Total correct retain:  863  Total retain:  2500
+Total correct forget:  12067  Total forget:  47500
+Total correct test:  154  Total test:  500
+Total correct forget test:  2374  Total test forget:  9500
+Total correct retain:  571  Total retain:  2500
+Total correct forget:  11720  Total forget:  47500
+Total correct test:  125  Total test:  500
+Total correct forget test:  2318  Total test forget:  9500
+Total correct retain:  555  Total retain:  2500
+Total correct forget:  9776  Total forget:  47500
+Total correct test:  101  Total test:  500
+Total correct forget test:  1968  Total test forget:  9500
+Total correct retain:  1027  Total retain:  2500
+Total correct forget:  10168  Total forget:  47500
+Total correct test:  204  Total test:  500
+Total correct forget test:  2022  Total test forget:  9500
+Total correct retain:  861  Total retain:  2500
+Total correct forget:  10195  Total forget:  47500
+Total correct test:  167  Total test:  500
+Total correct forget test:  2009  Total test forget:  9500
+Total correct retain:  536  Total retain:  2500
+Total correct forget:  8666  Total forget:  47500
+Total correct test:  115  Total test:  500
+Total correct forget test:  1723  Total test forget:  9500
+Total correct retain:  511  Total retain:  2500
+Total correct forget:  9898  Total forget:  47500
+Total correct test:  94  Total test:  500
+Total correct forget test:  2023  Total test forget:  9500
+100
+cifar-100-python/train
+cifar-100-python/test
+new ordering of classes:  ['spider', 'whale', 'baby', 'woman', 'chimpanzee', 'cups', 'apples', 'otter', 'shrew', 'crab', 'bed', 'motorcycle', 'butterfly', 'forest', 'turtle', 'mouse', 'roses', 'oak', 'rocket', 'porcupine', 'table', 'tiger', 'clock', 'fox', 'house', 'cattle', 'rabbit', 'train', 'crocodile', 'bottles', 'willow', 'snail', 'tulips', 'lion', 'palm', 'lamp', 'dolphin', 'skunk', 'dinosaur', 'flatfish', 'cloud', 'bus', 'poppies', 'trout', 'snake', 'bear', 'kangaroo', 'telephone', 'road', 'streetcar', 'chair', 'ray', 'skyscraper', 'sea', 'plates', 'boy', 'sweet peppers', 'elephant', 'seal', 'plain', 'maple', 'cockroach', 'beetle', 'lizard', 'castle', 'tractor', 'mushrooms', 'aquarium fish', 'bowls', 'beaver', 'worm', 'television', 'pine', 'bee', 'pickup truck', 'raccoon', 'oranges', 'sunflowers', 'bridge', 'shark', 'mountain', 'possum', 'wardrobe', 'cans', 'hamster', 'wolf', 'couch', 'computer keyboard', 'man', 'squirrel', 'lawn-mower', 'caterpillar', 'pears', 'tank', 'lobster', 'camel', 'leopard', 'bicycle', 'orchids', 'girl']
+Training task:  1
+Training task:  2
+Training task:  3
+Training task:  4
+Training task:  5
+Training task:  6
+Training task:  7
+Training task:  8
+Training task:  9
+Training task:  10
+Training task:  11
+Training task:  12
+Training task:  13
+Training task:  14
+Training task:  15
+Training task:  16
+Training task:  17
+Training task:  18
+Training task:  19
+Training task:  20
+Unlearning task:  20
+Total correct retain:  1575  Total retain:  2500
+Total correct forget:  37095  Total forget:  47500
+Total correct test:  288  Total test:  500
+Total correct forget test:  6392  Total test forget:  9500
+Total correct retain:  1484  Total retain:  2500
+Total correct forget:  33143  Total forget:  47500
+Total correct test:  277  Total test:  500
+Total correct forget test:  5828  Total test forget:  9500
+Total correct retain:  1203  Total retain:  2500
+Total correct forget:  26930  Total forget:  47500
+Total correct test:  246  Total test:  500
+Total correct forget test:  4850  Total test forget:  9500
+Total correct retain:  1404  Total retain:  2500
+Total correct forget:  26133  Total forget:  47500
+Total correct test:  259  Total test:  500
+Total correct forget test:  4844  Total test forget:  9500
+Total correct retain:  1402  Total retain:  2500
+Total correct forget:  20399  Total forget:  47500
+Total correct test:  269  Total test:  500
+Total correct forget test:  3827  Total test forget:  9500
+Total correct retain:  1211  Total retain:  2500
+Total correct forget:  18034  Total forget:  47500
+Total correct test:  226  Total test:  500
+Total correct forget test:  3450  Total test forget:  9500
+Total correct retain:  1229  Total retain:  2500
+Total correct forget:  17214  Total forget:  47500
+Total correct test:  230  Total test:  500
+Total correct forget test:  3320  Total test forget:  9500
+Total correct retain:  846  Total retain:  2500
+Total correct forget:  10998  Total forget:  47500
+Total correct test:  171  Total test:  500
+Total correct forget test:  2163  Total test forget:  9500
+Total correct retain:  804  Total retain:  2500
+Total correct forget:  13473  Total forget:  47500
+Total correct test:  152  Total test:  500
+Total correct forget test:  2646  Total test forget:  9500
+Total correct retain:  1133  Total retain:  2500
+Total correct forget:  13591  Total forget:  47500
+Total correct test:  221  Total test:  500
+Total correct forget test:  2745  Total test forget:  9500
+Total correct retain:  1035  Total retain:  2500
+Total correct forget:  11304  Total forget:  47500
+Total correct test:  196  Total test:  500
+Total correct forget test:  2236  Total test forget:  9500
+Total correct retain:  775  Total retain:  2500
+Total correct forget:  11113  Total forget:  47500
+Total correct test:  144  Total test:  500
+Total correct forget test:  2253  Total test forget:  9500
+Total correct retain:  1011  Total retain:  2500
+Total correct forget:  13008  Total forget:  47500
+Total correct test:  199  Total test:  500
+Total correct forget test:  2616  Total test forget:  9500
+Total correct retain:  1005  Total retain:  2500
+Total correct forget:  12691  Total forget:  47500
+Total correct test:  212  Total test:  500
+Total correct forget test:  2554  Total test forget:  9500
+Total correct retain:  992  Total retain:  2500
+Total correct forget:  10912  Total forget:  47500
+Total correct test:  213  Total test:  500
+Total correct forget test:  2183  Total test forget:  9500
+Total correct retain:  1026  Total retain:  2500
+Total correct forget:  10537  Total forget:  47500
+Total correct test:  200  Total test:  500
+Total correct forget test:  2118  Total test forget:  9500
+Total correct retain:  1299  Total retain:  2500
+Total correct forget:  11147  Total forget:  47500
+Total correct test:  249  Total test:  500
+Total correct forget test:  2226  Total test forget:  9500
+Total correct retain:  681  Total retain:  2500
+Total correct forget:  9756  Total forget:  47500
+Total correct test:  136  Total test:  500
+Total correct forget test:  1933  Total test forget:  9500
+Total correct retain:  870  Total retain:  2500
+Total correct forget:  9377  Total forget:  47500
+Total correct test:  172  Total test:  500
+Total correct forget test:  1871  Total test forget:  9500
+Total correct retain:  830  Total retain:  2500
+Total correct forget:  9354  Total forget:  47500
+Total correct test:  169  Total test:  500
+Total correct forget test:  1845  Total test forget:  9500
+Plot  0  Done
+Average Retain Accuracies:  [0.6232, 0.5372, 0.6092, 0.5664, 0.578, 0.5144, 0.2464, 0.4716, 0.4356, 0.186, 0.3428, 0.394, 0.252, 0.2264, 0.3308, 0.346, 0.29, 0.2764, 0.286, 0.2024]
+Average Forget Accuracies:  [0.7221263157894737, 0.6381052631578947, 0.6344631578947368, 0.6087789473684211, 0.4850736842105263, 0.46816842105263157, 0.22665263157894736, 0.3737894736842105, 0.36322105263157894, 0.23004210526315788, 0.2636631578947368, 0.3026315789473684, 0.19966315789473685, 0.2277684210526316, 0.24046315789473685, 0.2306736842105263, 0.20858947368421052, 0.2179157894736842, 0.2164421052631579, 0.2051578947368421]
+Average Retain Test Accuracies:  [0.582, 0.504, 0.586, 0.538, 0.588, 0.502, 0.234, 0.46, 0.404, 0.184, 0.366, 0.372, 0.254, 0.212, 0.316, 0.342, 0.294, 0.268, 0.298, 0.202]
+Average Forget Test Accuracies:  [0.6767368421052632, 0.6035789473684211, 0.6069473684210527, 0.5756842105263158, 0.45621052631578946, 0.4435789473684211, 0.2228421052631579, 0.36757894736842106, 0.3506315789473684, 0.2286315789473684, 0.25463157894736843, 0.29410526315789476, 0.19810526315789473, 0.22631578947368422, 0.23842105263157895, 0.23136842105263158, 0.2051578947368421, 0.21736842105263157, 0.212, 0.20389473684210527]
+Done
+Plot  1  Done
+Average Retain Accuracies:  [0.686, 0.5968, 0.5784, 0.3064, 0.504, 0.496, 0.2512, 0.2664, 0.4336, 0.394, 0.464, 0.402, 0.416, 0.316, 0.4348, 0.378, 0.412, 0.2984, 0.3952, 0.3328]
+Average Forget Accuracies:  [0.7450526315789474, 0.6225473684210526, 0.5272842105263158, 0.33581052631578945, 0.3758526315789474, 0.416778947368421, 0.28021052631578947, 0.3025684210526316, 0.3273263157894737, 0.2789894736842105, 0.3042315789473684, 0.29901052631578945, 0.27042105263157895, 0.2657052631578947, 0.2169684210526316, 0.23221052631578948, 0.20317894736842104, 0.19477894736842105, 0.20450526315789475, 0.19105263157894736]
+Average Retain Test Accuracies:  [0.678, 0.558, 0.57, 0.292, 0.466, 0.438, 0.256, 0.264, 0.44, 0.386, 0.446, 0.402, 0.402, 0.296, 0.4, 0.346, 0.398, 0.318, 0.38, 0.304]
+Average Forget Test Accuracies:  [0.6382105263157895, 0.552, 0.49157894736842106, 0.32105263157894737, 0.35389473684210526, 0.3910526315789474, 0.2733684210526316, 0.30105263157894735, 0.3238947368421053, 0.2765263157894737, 0.3025263157894737, 0.3, 0.28042105263157896, 0.2634736842105263, 0.21589473684210525, 0.23621052631578948, 0.20210526315789473, 0.19410526315789473, 0.2028421052631579, 0.192]
+Done
+Plot  2  Done
+Average Retain Accuracies:  [0.7104, 0.6076, 0.5984, 0.594, 0.6124, 0.5444, 0.506, 0.2272, 0.4096, 0.4124, 0.4332, 0.1996, 0.2244, 0.2376, 0.348, 0.2684, 0.1996, 0.2732, 0.2636, 0.2956]
+Average Forget Accuracies:  [0.7934526315789474, 0.6316421052631579, 0.6098105263157895, 0.5865473684210526, 0.4979578947368421, 0.45271578947368424, 0.4122315789473684, 0.2168, 0.2930105263157895, 0.27753684210526314, 0.30273684210526314, 0.2043578947368421, 0.2130736842105263, 0.20793684210526317, 0.2502736842105263, 0.20865263157894737, 0.2016842105263158, 0.20816842105263159, 0.21258947368421052, 0.19877894736842106]
+Average Retain Test Accuracies:  [0.672, 0.55, 0.55, 0.568, 0.636, 0.522, 0.462, 0.244, 0.4, 0.396, 0.418, 0.204, 0.208, 0.222, 0.386, 0.286, 0.2, 0.292, 0.284, 0.298]
+Average Forget Test Accuracies:  [0.6985263157894737, 0.5726315789473684, 0.5511578947368421, 0.5397894736842105, 0.46673684210526317, 0.4251578947368421, 0.3933684210526316, 0.21463157894736842, 0.28642105263157897, 0.27557894736842103, 0.294, 0.2028421052631579, 0.2168421052631579, 0.2083157894736842, 0.24736842105263157, 0.21221052631578946, 0.20189473684210527, 0.20463157894736841, 0.21273684210526317, 0.20073684210526316]
+Done
+Plot  3  Done
+Average Retain Accuracies:  [0.6076, 0.6444, 0.6164, 0.6184, 0.6484, 0.5984, 0.5104, 0.482, 0.5612, 0.418, 0.488, 0.2736, 0.3328, 0.3452, 0.2284, 0.222, 0.4108, 0.3444, 0.2144, 0.2044]
+Average Forget Accuracies:  [0.6379789473684211, 0.6886315789473684, 0.6497684210526316, 0.6172, 0.5962315789473684, 0.5559578947368421, 0.516378947368421, 0.42778947368421055, 0.4397263157894737, 0.30730526315789475, 0.32075789473684213, 0.2704, 0.2944421052631579, 0.2540421052631579, 0.24673684210526317, 0.20581052631578947, 0.21406315789473684, 0.21463157894736842, 0.1824421052631579, 0.20837894736842105]
+Average Retain Test Accuracies:  [0.584, 0.61, 0.55, 0.57, 0.6, 0.554, 0.49, 0.456, 0.538, 0.404, 0.444, 0.246, 0.318, 0.308, 0.25, 0.202, 0.408, 0.334, 0.23, 0.188]
+Average Forget Test Accuracies:  [0.5978947368421053, 0.6350526315789473, 0.594842105263158, 0.5657894736842105, 0.5504210526315789, 0.5192631578947369, 0.4846315789473684, 0.4070526315789474, 0.4151578947368421, 0.298, 0.30336842105263156, 0.2676842105263158, 0.28957894736842105, 0.24989473684210525, 0.244, 0.2071578947368421, 0.2128421052631579, 0.2114736842105263, 0.18136842105263157, 0.21294736842105264]
+Done
+Plot  4  Done
+Average Retain Accuracies:  [0.63, 0.5936, 0.4812, 0.5616, 0.5608, 0.4844, 0.4916, 0.3384, 0.3216, 0.4532, 0.414, 0.31, 0.4044, 0.402, 0.3968, 0.4104, 0.5196, 0.2724, 0.348, 0.332]
+Average Forget Accuracies:  [0.7809473684210526, 0.6977473684210527, 0.5669473684210526, 0.5501684210526315, 0.42945263157894736, 0.37966315789473687, 0.3624, 0.23153684210526315, 0.2836421052631579, 0.2861263157894737, 0.23797894736842104, 0.23395789473684211, 0.27385263157894735, 0.26717894736842107, 0.2297263157894737, 0.2218315789473684, 0.2346736842105263, 0.20538947368421054, 0.19741052631578948, 0.19692631578947367]
+Average Retain Test Accuracies:  [0.576, 0.554, 0.492, 0.518, 0.538, 0.452, 0.46, 0.342, 0.304, 0.442, 0.392, 0.288, 0.398, 0.424, 0.426, 0.4, 0.498, 0.272, 0.344, 0.338]
+Average Forget Test Accuracies:  [0.6728421052631579, 0.6134736842105263, 0.5105263157894737, 0.5098947368421053, 0.4028421052631579, 0.3631578947368421, 0.3494736842105263, 0.2276842105263158, 0.2785263157894737, 0.2889473684210526, 0.2353684210526316, 0.2371578947368421, 0.2753684210526316, 0.2688421052631579, 0.22978947368421052, 0.22294736842105264, 0.2343157894736842, 0.2034736842105263, 0.19694736842105262, 0.19421052631578947]
+Done

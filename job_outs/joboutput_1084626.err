@@ -1,0 +1,11 @@
+/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGrad.py:446: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+Traceback (most recent call last):
+  File "/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGrad.py", line 1100, in <module>
+    cur_date = str(datetime.time.now())
+                   ^^^^^^^^^^^^^^^^^
+AttributeError: type object 'datetime.time' has no attribute 'now'
+
+real	2m17.173s
+user	14m8.836s
+sys	0m24.711s

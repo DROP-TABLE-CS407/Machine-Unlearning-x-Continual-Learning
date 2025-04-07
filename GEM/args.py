@@ -13,11 +13,11 @@ class Args:
 
         # optimizer parameters
         self.n_epochs = 3
-        self.batch_size = 100
+        self.batch_size = 10
         self.lr = learning_rate
         
         self.unlearn_batch_size = 16
-        self.unlearn_epochs = 3
+        self.unlearn_epochs = 5
         self.unlearning_rate = 0.01
         self.unlearn_mem_strength = 0.5
 
@@ -37,5 +37,5 @@ class Args:
         self.cuda = True if self.cuda == 'yes' else False
         self.finetune = True if self.finetune == 'yes' else False
 
-        self.salun = True
-        self.salun_threshold = 0.1
+        self.salun = False
+        self.salun_threshold = 0.95

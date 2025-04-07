@@ -1,0 +1,151 @@
+Requirement already satisfied: pyyaml in /usr/lib64/python3.12/site-packages (6.0.1)
+Requirement already satisfied: setuptools in /usr/lib/python3.12/site-packages (68.2.2)
+Requirement already satisfied: matplotlib in /dcs/21/u2145461/.local/lib/python3.12/site-packages (3.10.1)
+Requirement already satisfied: contourpy>=1.0.1 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (1.3.1)
+Requirement already satisfied: cycler>=0.10 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (4.56.0)
+Requirement already satisfied: kiwisolver>=1.3.1 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (1.4.8)
+Requirement already satisfied: numpy>=1.23 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (2.2.3)
+Requirement already satisfied: packaging>=20.0 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (24.2)
+Requirement already satisfied: pillow>=8 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (11.0.0)
+Requirement already satisfied: pyparsing>=2.3.1 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (3.2.1)
+Requirement already satisfied: python-dateutil>=2.7 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (2.9.0.post0)
+Requirement already satisfied: six>=1.5 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from python-dateutil>=2.7->matplotlib) (1.17.0)
+Requirement already satisfied: quadprog in /dcs/21/u2145461/.local/lib/python3.12/site-packages (0.1.13)
+Requirement already satisfied: numpy in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from quadprog) (2.2.3)
+Requirement already satisfied: pyparsing in /dcs/21/u2145461/.local/lib/python3.12/site-packages (3.2.1)
+Fri Mar  7 05:35:14 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.144.03             Driver Version: 550.144.03     CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA RTX A5000               Off |   00000000:01:00.0 Off |                  Off |
+| 30%   56C    P0             N/A /  230W |       1MiB /  24564MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Python 3.12.8
+./cifar-100-python/train
+./cifar-100-python/test
+Unlearn Batch Size:  16
+Unlearn MEM Strength:  0.5
+cifar-100-python/train
+cifar-100-python/test
+new ordering of classes:  ['chair', 'bear', 'lamp', 'bowls', 'willow', 'dinosaur', 'raccoon', 'woman', 'cattle', 'table', 'sunflowers', 'maple', 'sea', 'couch', 'boy', 'shark', 'seal', 'skunk', 'camel', 'rocket', 'tractor', 'man', 'leopard', 'tulips', 'apples', 'cloud', 'forest', 'bicycle', 'pickup truck', 'mountain', 'snail', 'worm', 'castle', 'kangaroo', 'elephant', 'squirrel', 'house', 'telephone', 'butterfly', 'rabbit', 'oak', 'mushrooms', 'plates', 'trout', 'fox', 'poppies', 'porcupine', 'streetcar', 'pine', 'television', 'hamster', 'wolf', 'wardrobe', 'ray', 'lion', 'pears', 'dolphin', 'possum', 'caterpillar', 'lawn-mower', 'otter', 'beaver', 'crocodile', 'girl', 'computer keyboard', 'palm', 'tiger', 'cockroach', 'aquarium fish', 'flatfish', 'bed', 'bus', 'tank', 'snake', 'oranges', 'mouse', 'sweet peppers', 'cups', 'beetle', 'roses', 'baby', 'motorcycle', 'road', 'spider', 'skyscraper', 'crab', 'bottles', 'cans', 'bridge', 'chimpanzee', 'plain', 'lobster', 'whale', 'clock', 'train', 'bee', 'lizard', 'turtle', 'shrew', 'orchids']
+Training task:  1
+Training task:  2
+Training task:  3
+Training task:  4
+Training task:  5
+Training task:  6
+Training task:  7
+Training task:  8
+Training task:  9
+Training task:  10
+Training task:  11
+Training task:  12
+Training task:  13
+Training task:  14
+Training task:  15
+Training task:  16
+Training task:  17
+Training task:  18
+Training task:  19
+Training task:  20
+Unlearning task:  20
+Total correct retain:  1079  Total retain:  2500
+Total correct forget:  18771  Total forget:  47500
+Total correct test:  237  Total test:  500
+Total correct forget test:  3789  Total test forget:  9500
+Total correct retain:  1105  Total retain:  2500
+Total correct forget:  21100  Total forget:  47500
+Total correct test:  231  Total test:  500
+Total correct forget test:  4241  Total test forget:  9500
+Total correct retain:  1194  Total retain:  2500
+Total correct forget:  21905  Total forget:  47500
+Total correct test:  242  Total test:  500
+Total correct forget test:  4383  Total test forget:  9500
+Total correct retain:  1218  Total retain:  2500
+Total correct forget:  22970  Total forget:  47500
+Total correct test:  239  Total test:  500
+Total correct forget test:  4598  Total test forget:  9500
+Total correct retain:  1257  Total retain:  2500
+Total correct forget:  23211  Total forget:  47500
+Total correct test:  252  Total test:  500
+Total correct forget test:  4607  Total test forget:  9500
+Total correct retain:  1307  Total retain:  2500
+Total correct forget:  23231  Total forget:  47500
+Total correct test:  258  Total test:  500
+Total correct forget test:  4520  Total test forget:  9500
+Total correct retain:  1332  Total retain:  2500
+Total correct forget:  23654  Total forget:  47500
+Total correct test:  259  Total test:  500
+Total correct forget test:  4617  Total test forget:  9500
+Total correct retain:  1372  Total retain:  2500
+Total correct forget:  23942  Total forget:  47500
+Total correct test:  259  Total test:  500
+Total correct forget test:  4721  Total test forget:  9500
+Total correct retain:  1385  Total retain:  2500
+Total correct forget:  23977  Total forget:  47500
+Total correct test:  259  Total test:  500
+Total correct forget test:  4711  Total test forget:  9500
+Total correct retain:  1433  Total retain:  2500
+Total correct forget:  23857  Total forget:  47500
+Total correct test:  275  Total test:  500
+Total correct forget test:  4669  Total test forget:  9500
+Total correct retain:  1424  Total retain:  2500
+Total correct forget:  24121  Total forget:  47500
+Total correct test:  261  Total test:  500
+Total correct forget test:  4748  Total test forget:  9500
+Total correct retain:  1405  Total retain:  2500
+Total correct forget:  23921  Total forget:  47500
+Total correct test:  267  Total test:  500
+Total correct forget test:  4704  Total test forget:  9500
+Total correct retain:  1419  Total retain:  2500
+Total correct forget:  23555  Total forget:  47500
+Total correct test:  263  Total test:  500
+Total correct forget test:  4617  Total test forget:  9500
+Total correct retain:  1459  Total retain:  2500
+Total correct forget:  23302  Total forget:  47500
+Total correct test:  276  Total test:  500
+Total correct forget test:  4579  Total test forget:  9500
+Total correct retain:  1440  Total retain:  2500
+Total correct forget:  22941  Total forget:  47500
+Total correct test:  280  Total test:  500
+Total correct forget test:  4511  Total test forget:  9500
+Total correct retain:  1433  Total retain:  2500
+Total correct forget:  22233  Total forget:  47500
+Total correct test:  263  Total test:  500
+Total correct forget test:  4310  Total test forget:  9500
+Total correct retain:  1380  Total retain:  2500
+Total correct forget:  20641  Total forget:  47500
+Total correct test:  266  Total test:  500
+Total correct forget test:  4059  Total test forget:  9500
+Total correct retain:  1332  Total retain:  2500
+Total correct forget:  20532  Total forget:  47500
+Total correct test:  245  Total test:  500
+Total correct forget test:  4000  Total test forget:  9500
+Total correct retain:  1394  Total retain:  2500
+Total correct forget:  19822  Total forget:  47500
+Total correct test:  275  Total test:  500
+Total correct forget test:  3898  Total test forget:  9500
+Total correct retain:  1322  Total retain:  2500
+Total correct forget:  18905  Total forget:  47500
+Total correct test:  254  Total test:  500
+Total correct forget test:  3748  Total test forget:  9500
+Plot  0  Done
+Average Retain Accuracies:  [0.4316, 0.442, 0.4776, 0.4872, 0.5028, 0.5228, 0.5328, 0.5488, 0.554, 0.5732, 0.5696, 0.562, 0.5676, 0.5836, 0.576, 0.5732, 0.552, 0.5328, 0.5576, 0.5288]
+Average Forget Accuracies:  [0.3951789473684211, 0.4442105263157895, 0.4611578947368421, 0.48357894736842105, 0.4886526315789474, 0.4890736842105263, 0.4979789473684211, 0.5040421052631578, 0.5047789473684211, 0.5022526315789474, 0.5078105263157895, 0.5036, 0.4958947368421053, 0.4905684210526316, 0.4829684210526316, 0.46806315789473685, 0.4345473684210526, 0.4322526315789474, 0.41730526315789473, 0.398]
+Average Retain Test Accuracies:  [0.474, 0.462, 0.484, 0.478, 0.504, 0.516, 0.518, 0.518, 0.518, 0.55, 0.522, 0.534, 0.526, 0.552, 0.56, 0.526, 0.532, 0.49, 0.55, 0.508]
+Average Forget Test Accuracies:  [0.3988421052631579, 0.44642105263157894, 0.4613684210526316, 0.484, 0.4849473684210526, 0.47578947368421054, 0.486, 0.49694736842105264, 0.4958947368421053, 0.49147368421052634, 0.4997894736842105, 0.49515789473684213, 0.486, 0.482, 0.4748421052631579, 0.4536842105263158, 0.42726315789473684, 0.42105263157894735, 0.4103157894736842, 0.39452631578947367]
+Done
