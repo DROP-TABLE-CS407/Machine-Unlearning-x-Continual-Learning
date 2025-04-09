@@ -209,16 +209,7 @@ def run_cifar(algorithm, args, n_inputs=N_INPUTS, n_outputs=N_OUTPUTS, n_tasks=N
             if correct / total > 0.80:
                 break
             #   output loss only
-        # Test the model after training
-        temp_test_accuracies = []
-        for task in range(n_tasks):
-            test, _ = eval_task(model, args,
-                                        tests[task * 2], tests[task * 2 + 1],
-                                        task)
-            temp_test_accuracies.append(test)
-        print(temp_test_accuracies)
-        ALL_TASK_CONTINUAL_LEARNING_ACCURACIES.append(temp_test_accuracies)
-        
+            
         if args.use_rum:
             # *** Global Memory Update Step ***
             # After training on the task, update the replay buffer using the entire training set.
@@ -229,6 +220,16 @@ def run_cifar(algorithm, args, n_inputs=N_INPUTS, n_outputs=N_OUTPUTS, n_tasks=N
             
             # Update the memory for the current task using the selected examples.
             model.update_memory_from_dataset(x[:max_idx], y[:max_idx], task, task_mapping, mem_scores, mem_split, mem_type)
+            
+        # Test the model after training
+        temp_test_accuracies = []
+        for task_test in range(n_tasks):
+            test, _ = eval_task(model, args,
+                                        tests[task_test * 2], tests[task_test * 2 + 1],
+                                        task_test)
+            temp_test_accuracies.append(test)
+        print(temp_test_accuracies)
+        ALL_TASK_CONTINUAL_LEARNING_ACCURACIES.append(temp_test_accuracies)
 
     # Test the model after training
         average_confidence = []
@@ -512,11 +513,10 @@ avg_retain_cont_unlearning_accuracies = avg_cont_unlearning_accuracies[:, 0]
 # the forget accuracies are the average of the last 19 columns
 avg_forget_cont_unlearning_accuracies = np.mean(avg_cont_unlearning_accuracies[:, 1:], axis = 1)
 
-
 plt.figure()
 plt.plot(x, avg_retain_cont_unlearning_accuracies, label="Retain Cont. Unlearn Test Accuracies", linestyle="-")
-plt.plot(x, avg_forget_cont_unlearning_accuracies, label="Forget Cont. Unlearn Test Accuracies", linestyle="-.")
-plt.plot(x, avg_retain_cont_learning_accuracies, label="Retain Cont. Learn Test Accuracies (Baseline)", linestyle=":")
+plt.plot(x, avg_forget_cont_unlearning_accuracies, label="Forget Cont. Unlearn Test Accuracies", linestyle="--")
+plt.plot(x, avg_retain_cont_learning_accuracies, label="Retain Cont. Learn Test Accuracies (Baseline)", linestyle="-")
 plt.plot(x, avg_forget_cont_learning_accuracies, label="Forget Cont. Learn Test Accuracies (Baseline)", linestyle="--")
 plt.xticks(x, x_labels)
 plt.ylim(0, 1)
@@ -524,6 +524,29 @@ plt.xlabel("Task")
 plt.ylabel("Accuracy")
 plt.legend()
 plt.savefig('RetainForgetContLearningUnlearning.png')
+plt.show()
+
+# now we want to create a plot similar to above but rather than plotting the retain/forget accuracies, we plot and track the accuracies of each individual task
+plt.figure()
+for i in range(avg_cont_unlearning_accuracies.shape[1]):
+    plt.plot(x, avg_cont_unlearning_accuracies[:, i], label="Task " + str(i+1), linestyle="-")
+plt.xticks(x, x_labels)
+plt.ylim(0, 1)
+plt.xlabel("Task")
+plt.ylabel("Accuracy")
+plt.legend()
+plt.savefig('ContLearningUnlearningAllTasks.png')
+plt.show()
+
+plt.figure()
+for i in range(avg_cont_learning_accuracies.shape[1]):
+    plt.plot(x, avg_cont_learning_accuracies[:, i], label="Task " + str(i+1), linestyle="-")
+plt.xticks(x, x_labels)
+plt.ylim(0, 1)
+plt.xlabel("Task")
+plt.ylabel("Accuracy")
+plt.legend()
+plt.savefig('ContLearningAllTasks.png')
 plt.show()
 
 # for each run in retain_accuracies_all, forget_accuracies_all, testing_accuracies_all, testing_accuracies_forget_all, plot the exactly like the cell above
@@ -535,8 +558,8 @@ for i in range(len(retain_accuracies_all)):
     plt.figure()
     #plt.plot(x, retain_accuracies_avg, label="Retain Accuracies", linestyle="-")
     #plt.plot(x, forget_accuracies_avg, label="Forget Accuracies", linestyle="-.")
-    plt.plot(x, testing_accuracies_avg, label="Retain Test Accuracies", linestyle=":")
-    plt.plot(x, testing_accuracies_forget_avg, label="Forget Test Accuracies", linestyle="--")
+    plt.plot(x, testing_accuracies_avg, label="Retain Test Accuracies", linestyle="-")
+    plt.plot(x, testing_accuracies_forget_avg, label="Forget Test Accuracies", linestyle="-")
     plt.ylim(0, 1)
     plt.xlabel("Task Unlearned")
     plt.ylabel("Accuracy")
