@@ -244,26 +244,33 @@ class Net(nn.Module):
                             past_task)
             ## so now, we have the gradients of all the tasks we can now do our projection,
             ## first we check if it is even neccessary to do so, if not simply do a optimiser.step()
-        
-            forget_grads = self.grads[:, t].unsqueeze(1)
-            retain_indices = torch.tensor([i for i in range(self.grads.size(1)) if i in self.observed_tasks and i < t], device=self.grads.device)
-            retain_grads = self.grads.index_select(1, retain_indices)
             
             self.zero_grad()
             loss = self.ce(
                         self.forward(self.memory_data[past_task][x1:x2], past_task)[:, offset1: offset2], self.memory_labs[past_task][x1:x2] - offset1)
             # negate loss for unlearning
             loss = -1 * loss
-            loss.backward() 
+            loss.backward()
+            
+            store_grad(self.parameters, self.grads, self.grad_dims, t)
+            indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+                else torch.LongTensor(self.observed_tasks[:-1])
+                
+            forget_grads = self.grads[:, t].unsqueeze(1)
+            retain_indices = torch.tensor([i for i in range(self.grads.size(1)) if i in self.observed_tasks and i < t], device=self.grads.device)
+            retain_grads = self.grads.index_select(1, retain_indices)
 
-            dotp = torch.mm(self.grads[:, t].unsqueeze(0) * -1, retain_grads)
+            dotp = torch.mm(self.grads[:, t].unsqueeze(0),
+                                self.grads.index_select(1, indx))
             if (dotp < 0).sum() != 0:
-                forget_grads *= -1
-                NegAGEM(forget_grads, retain_grads, self.unlearn_memory_strength)
+                print("Projection needed")
                 if self.salun:
                     apply_salun(forget_grads, self.salun_threshold)
-
-                overwrite_grad(self.parameters, forget_grads, self.grad_dims)
+                NegAGEM(forget_grads, retain_grads, self.unlearn_memory_strength)
+                self.grads[:, t] = forget_grads.squeeze(1)
+                # copy gradients back
+                overwrite_grad(self.parameters, self.grads[:, t],
+                            self.grad_dims)
             
             self.opt.step()
         elif algorithm == "neggrad":
