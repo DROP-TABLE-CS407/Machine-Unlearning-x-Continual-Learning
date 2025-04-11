@@ -1,57 +1,52 @@
 # Machine-Unlearning-x-Continual-Learning
 Master's Thesis for DROP TABLE
 
-# cifar.py
+## Abstract
+This repository contains the code for the thesis "Machine Unlearning in Continual Learning". The goal of this thesis is to investigate the relationship between machine unlearning and continual learning, and to develop methods that can effectively unlearn data in a continual learning setting. The thesis also explores the implications of machine unlearning for privacy and security in machine learning systems.
+The thesis is divided into three main parts:
+1. **Introduction**: This section provides an overview of the problem of machine unlearning and its relevance to continual learning. It also discusses the motivation for the research and the main contributions of the thesis.
+2. **Related Work**: This section reviews the existing literature on machine unlearning and continual learning, and identifies the gaps in the current research that this thesis aims to address.
+3. **Methodology**: This section describes the methods developed in this thesis for machine unlearning in continual learning. It includes a detailed description of the algorithms, experiments, and evaluation metrics used in the research.
+4. **Results**: This section presents the results of the experiments conducted in this thesis, and discusses the implications of the findings for machine unlearning and continual learning.
+5. **Conclusion**: This section summarizes the main findings of the thesis, and discusses the implications of the research for future work in machine unlearning and continual learning.
+6. **References**: This section lists the references cited in the thesis.
 
-Utilised to split the cifar-10 dataset into something akin to cifar-5.
-The general idea we want to implement here is to split the images into different partitions with splits of 2 general classes to see how unlearning algorithms perform depending
-on how intertwined the datasets are.
+## Installation
+This repository works by default on DCS systems as long as you have a batch compute access set up.
+You will have to change some string directories in the code to make it work on your local machine.
 
-For example possible splitting(s) of cifar-5 could be randomised sets of:
+They are in the following file(s):
+- `./negGemGradSalun.py`
 
-5 birds : 0 animals
+## Running a test
+To run a test, use the provided sbatch scripts. The example jobs provided should work out of the box.
+The arguments that can be passed to the python scripts are:
+- ` --unlearn_mem_strength ` 0.6 : Strength of the unlearning memory
+- ` --unlearn_batch_size ` 10 : Batch size for unlearning
+- ` --average_over_n_runs ` 3 : Number of runs to average over
+- ` --salun ` 1 : Use salun or not
+- ` --salun_strength ` 0.2 : Strength of the salun, we use the top percentage quartile for salun. What this means is that if this 
+                             value is set to 0.2 for example, it means the largest absolute magnitude top 20% of the weights are used for salun and the rest are set to 0.
+- ` --rum ` 1 : Use rum or not
+- ` --rum_split ` 0.1 : Determines how much of the memories are filled with `most` or `least` memorized samples for RUM.
+- ` --rum_memorization ` most : Determines if we want to use the most or least memorized samples for RUM. `a` means randomly selected samples.
 
-4 birds : 1 animal
+There are other arguments that can be passed to the scripts in `./negGem/args.py`, but we do not have to change them for now.
+Additionally, we can change the unlearning algorithm used, in line `274` of `negGemGradSalun.py` we can change the unlearning algorithm used. The default is `neggem`, but we also have access to `neggrad` where we can specify an alpha value.
+The default is `0.9` but we can change this to be whatever we want.
 
-3 birds : 2 animals
+## Continual Learning
 
-2 birds : 3 animals
+### GEM
 
-....
+The GEM algorithm is a continual learning algorithm that uses a memory of past tasks to prevent catastrophic forgetting. The algorithm works by storing a small subset of the training data from each task in memory, and using this memory to compute a gradient that is orthogonal to the gradients of the current task. This prevents the model from forgetting the previous tasks while learning the current task.
 
-# Github + VSCode quick set up guide
-
-(if you are sshing through DCS)
-
-pip3 install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
-https://warwick.ac.uk/fac/sci/dcs/intranet/user_guide/installing_software/cuda
-
-### 1.) Install the Github VSCode extension 
-
-### 2.) Ensure you are signed into your Github account with access to this repo
-
-### 3.) run "git clone https://github.com/DROP-TABLE-CS407/Machine-Unlearning-x-Continual-Learning.git" in the directory of your choice
-
-### 4.) run "python3.9 cifar.py" or it's better to use the included venv
-
-(if this doesn't work or you are doing this in your own venv make sure you have the 'numpy' dependency installed 'pip3.x install numpy')
-
-### 5.) ssh kudu
-
-### 6.) sbatch remoterun.sbatch
-
-### Additional notes: You can now use a 75% accuracy pretrained model with the '.pth' extension. Pytorch has a guide to load these models in the documentation.
-
-You must have the class template for the Resnet model imported into the file you want to use the PTM in 'ResNet18CIFAR'.
-
-# Load the model
-```python
-model = ResNet18CIFAR()
-
-model = torch.load('resnet18_cifar77ACC.pth',  map_location=torch.device('cpu'))
-model.eval()
-```
-
-# Tests
-
-in order to run tests write python -m unittest discover -s tests -p "test_cifar.py" in root directory
+We apply the following constraint to the projection of the gradient to reduce the risk of catastrophic forgetting as per the original GEM paper:
+$$
+\begin{equation}
+\begin{aligned}
+\min_{\theta} \mathcal{L}_{t}(\theta) + \lambda \sum_{i=1}^{k} \max(0, \langle g_{t}, g_{i} \rangle - \epsilon)
+\end{aligned}
+\end{equation}
+$$
+where $\mathcal{L}_{t}(\theta)$ is the loss of the current task, $g_{t}$ is the gradient of the current task, $g_{i}$ is the gradient of the previous tasks, $\lambda$ is a hyperparameter that controls the strength of the constraint, and $\epsilon$ is a small positive constant that prevents the constraint from being too strict.
