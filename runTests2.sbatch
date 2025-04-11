@@ -1,10 +1,10 @@
 #!/bin/bash
 #
 #SBATCH --job-name=continual-learning-2     # Job name for tracking
-#SBATCH --partition=eagle      # Partition you wish to use (see above for list)
+#SBATCH --partition=gecko      # Partition you wish to use (see above for list)
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=6      # Number of CPU threads used by your job
-#SBATCH --gres=gpu:1           # Number of GPUs to use 
+#SBATCH --cpus-per-task=48      # Number of CPU threads used by your job
+#SBATCH --gres=gpu:3           # Number of GPUs to use 
 #SBATCH --mem=60G            # 60GB RAM
 #SBATCH --time=23:00:00        # Job time limit set to 12 hours
 #
@@ -26,18 +26,25 @@ pip3.12 install --user numpy
 module load NCCL/2.20.3_for_CUDA12.2
 module load CUDA/12.2-cudnn9
 
-nvidia-smi
+export CUDA_VISIBLE_DEVICES=0,1,2
 
-time python3.12 negGemGradSalun.py --unlearn_mem_strength 0.6 --unlearn_batch_size 16 --average_over_n_runs 1 --salun 0 --salun_strength 0.5 --rum 0 --rum_split 0.5 --rum_memorization all
+nvidia-smi
 
 # args are as follows (in respective orders): unlearn_mem_strength, unlearn_batch_size,
 # average over_n_runs, salun on/off, salun strength, rum on/off, rum_split, rum_memorization
-time python3.12 negGemGradSalun.py --unlearn_mem_strength 0.6 --unlearn_batch_size 16 --average_over_n_runs 1 --salun 1 --salun_strength 0.1 --rum 1 --rum_split 0.5 --rum_memorization most
+time python3.12 negGemGradSalun.py --unlearn_mem_strength 0.6 --unlearn_batch_size 10 --average_over_n_runs 3 --salun 1 --salun_strength 0.2 --rum 0 --rum_split 0.1 --rum_memorization least
+time python3.12 negGemGradSalun.py --unlearn_mem_strength 0.6 --unlearn_batch_size 10 --average_over_n_runs 3 --salun 1 --salun_strength 0.2 --rum 1 --rum_split 0.1 --rum_memorization least
+time python3.12 negGemGradSalun.py --unlearn_mem_strength 0.6 --unlearn_batch_size 10 --average_over_n_runs 3 --salun 1 --salun_strength 0.2 --rum 1 --rum_split 0.2 --rum_memorization least
+time python3.12 negGemGradSalun.py --unlearn_mem_strength 0.6 --unlearn_batch_size 10 --average_over_n_runs 3 --salun 1 --salun_strength 0.2 --rum 1 --rum_split 0.3 --rum_memorization least
+time python3.12 negGemGradSalun.py --unlearn_mem_strength 0.6 --unlearn_batch_size 10 --average_over_n_runs 3 --salun 1 --salun_strength 0.2 --rum 1 --rum_split 0.4 --rum_memorization least
+time python3.12 negGemGradSalun.py --unlearn_mem_strength 0.6 --unlearn_batch_size 10 --average_over_n_runs 3 --salun 1 --salun_strength 0.2 --rum 1 --rum_split 0.5 --rum_memorization least
+time python3.12 negGemGradSalun.py --unlearn_mem_strength 0.6 --unlearn_batch_size 10 --average_over_n_runs 3 --salun 1 --salun_strength 0.2 --rum 1 --rum_split 0.6 --rum_memorization least
+time python3.12 negGemGradSalun.py --unlearn_mem_strength 0.6 --unlearn_batch_size 10 --average_over_n_runs 3 --salun 1 --salun_strength 0.2 --rum 1 --rum_split 0.7 --rum_memorization least
+time python3.12 negGemGradSalun.py --unlearn_mem_strength 0.6 --unlearn_batch_size 10 --average_over_n_runs 3 --salun 1 --salun_strength 0.2 --rum 1 --rum_split 0.8 --rum_memorization least
+time python3.12 negGemGradSalun.py --unlearn_mem_strength 0.6 --unlearn_batch_size 10 --average_over_n_runs 3 --salun 1 --salun_strength 0.2 --rum 1 --rum_split 0.9 --rum_memorization least
+time python3.12 negGemGradSalun.py --unlearn_mem_strength 0.6 --unlearn_batch_size 10 --average_over_n_runs 3 --salun 1 --salun_strength 0.2 --rum 1 --rum_split 0.99 --rum_memorization least
 
-
-
-
-
-
-
-
+# move all the results and joboutput files to rum_finetune_results_least
+mv joboutput_*.out ./rum_finetune_results_least
+mv joboutput_*.err ./rum_finetune_results_least
+mv ./Results* ./rum_finetune_results_least

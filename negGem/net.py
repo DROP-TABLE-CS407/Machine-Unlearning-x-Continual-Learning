@@ -6,9 +6,6 @@ from .eval import *
 from .salun import *
 from .util import *
 
-mem_data = np.load("/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/Memorization/cifar100_mem.npz")  # Replace with actual file path
-mem_scores = mem_data["tr_mem"]  
-
 class Net(nn.Module):
     def __init__(self,
                  n_inputs,
@@ -306,7 +303,7 @@ class Net(nn.Module):
         else:
             print("Invalid Algorithm")
             
-    def update_memory_from_dataset(self, x_all, y_all, t, t_mapping, mem_scores, split, mem_type):
+    def update_memory_from_dataset(self, x_all, y_all, t, t_mapping, mem_scores, mem_data, split, mem_type):
         """
         Update the episodic memory for task t using the entire training set for that task.
         Computes the memorization score for each example and selects the top (or bottom)
