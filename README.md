@@ -1,57 +1,130 @@
 # Machine-Unlearning-x-Continual-Learning
 Master's Thesis for DROP TABLE
 
-# cifar.py
+## Abstract
+This repository contains the code for the thesis "Machine Unlearning in Continual Learning". The goal of this thesis is to investigate the relationship between machine unlearning and continual learning, and to develop methods that can effectively unlearn data in a continual learning setting. The thesis also explores the implications of machine unlearning for privacy and security in machine learning systems.
+The thesis is divided into three main parts:
+1. **Introduction**: This section provides a brief overview on how to run this experiment along with some installation instructions.
+2. **Related Work**: This section reviews the existing literature on machine unlearning and continual learning, and identifies the gaps in the current research that this thesis aims to address.
+3. **Methodology**: This section describes the methods developed in this thesis for machine unlearning in continual learning. It includes a detailed description of the algorithms, experiments, and evaluation metrics used in the research.
+4. **Results**: This section presents the results of the experiments conducted in this thesis, and discusses the implications of the findings for machine unlearning and continual learning.
+5. **Conclusion**: This section summarizes the main findings of the thesis, and discusses the implications of the research for future work in machine unlearning and continual learning.
+6. **References**: This section lists the references cited in the thesis.
 
-Utilised to split the cifar-10 dataset into something akin to cifar-5.
-The general idea we want to implement here is to split the images into different partitions with splits of 2 general classes to see how unlearning algorithms perform depending
-on how intertwined the datasets are.
+## Installation
+This repository works by default on DCS systems as long as you have a batch compute access set up.
+You will have to change some string directories in the code to make it work on your local machine.
 
-For example possible splitting(s) of cifar-5 could be randomised sets of:
+They are in the following file(s):
+- `./negGemGradSalun.py`
 
-5 birds : 0 animals
+# 1.) Introduction
 
-4 birds : 1 animal
+## Running a test
+To run a test, use the provided sbatch scripts. The example jobs provided should work out of the box after downloading the repo.
+The arguments that can be passed to the python scripts are:
+- ` --unlearn_mem_strength ` 0.6 : Strength of the unlearning memory
+- ` --unlearn_batch_size ` 10 : Batch size for unlearning
+- ` --average_over_n_runs ` 3 : Number of runs to average over
+- ` --salun ` 1 : Use salun or not
+- ` --salun_strength ` 0.2 : Strength of the salun, we use the top percentage quartile for salun. What this means is that if this 
+                             value is set to 0.2 for example, it means the largest absolute magnitude top 20% of the weights are used for salun and the rest are set to 0. (The original paper just used a hard threshold which effectively gave 0 update in cases where the gradient was small)
+- ` --rum ` 1 : Use rum or not
+- ` --rum_split ` 0.1 : Determines how much of the memories are filled with `most` or `least` memorized samples for RUM.
+- ` --rum_memorization ` most : Determines if we want to use the most or least memorized samples for RUM. `a` means randomly selected samples.
 
-3 birds : 2 animals
+There are other arguments that can be passed to the scripts in `./negGem/args.py`, but we do not have to change them for now.
+Additionally, we can change the unlearning algorithm used, in line `274` of `negGemGradSalun.py` we can change the unlearning algorithm used. The default is `neggem`, but we also have access to `neggrad` where we can specify an alpha value.
+The default is `0.9` but we can change this to be whatever we want.
 
-2 birds : 3 animals
+# 2.) Related Work
 
-....
+## Continual Learning
 
-# Github + VSCode quick set up guide
+### GEM
+The GEM algorithm is a continual learning algorithm that uses a memory of past tasks to prevent catastrophic forgetting. The algorithm works by storing a small subset of the training data from each task in memory, and using this memory to compute a gradient that is orthogonal to the gradients of the current task. This prevents the model from forgetting the previous tasks while learning the current task.
 
-(if you are sshing through DCS)
+The original paper for GEM is "Gradient Episodic Memory for Continual Learning" by Lopez-Paz and Ranzato (2017). The paper can be found [here](https://arxiv.org/abs/1706.08840).
 
-pip3 install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
-https://warwick.ac.uk/fac/sci/dcs/intranet/user_guide/installing_software/cuda
+### AGEM
+The Averaged Gradient Episodic Memory (AGEM) algorithm is a variant of the GEM algorithm that uses an average of the gradients from the memory to compute the orthogonal gradient. This allows the model to learn from the memory more effectively, and prevents catastrophic forgetting. This was found to be significantly faster and more efficient than the original GEM algorithm but not as performant is certain specific scenarios.
 
-### 1.) Install the Github VSCode extension 
+The original paper for AGEM is "Averaged Gradient Episodic Memory for Continual Learning" by Chaudhry et al. (2018). The paper can be found [here](https://arxiv.org/abs/1812.00420).
 
-### 2.) Ensure you are signed into your Github account with access to this repo
+## Unlearning
 
-### 3.) run "git clone https://github.com/DROP-TABLE-CS407/Machine-Unlearning-x-Continual-Learning.git" in the directory of your choice
+### Negative Gradient Unlearning
+Otherwise known as neggrad, this is a method for unlearning data from a model by computing the negative gradient of the loss function with respect to the model parameters. This allows the model to "unlearn" the data by moving the parameters in the opposite direction of the gradient, effectively removing the influence of the data from the model.
 
-### 4.) run "python3.9 cifar.py" or it's better to use the included venv
+The paper that discusses this method was found in quite a few of the paper references here, but 
+from the SCRUB paper (we don't actually use SCRUB here), we can see that this is a method that is used to unlearn data from a model. The paper can be found [here](https://arxiv.org/abs/2302.09880). 
 
-(if this doesn't work or you are doing this in your own venv make sure you have the 'numpy' dependency installed 'pip3.x install numpy')
+### Refined Unlearning Meta Algorithm (RUM)
+This is effectively where we target the most or least memorized samples in the memory and unlearn them. This is done by using
+precomputed memorization scores to determine which samples are the most and least memorized.
 
-### 5.) ssh kudu
+The source for memorization scores for the CIFAR-100 can be found from the paper "What Neural Networks Memorize and Why: Discovering the Long Tail via Influence Estimation" by Vitaly Feldman and Chiyuan Zhang the download for the memorization scores 
+is [here](https://pluskid.github.io/influence-memorization/#cifar100-dl)
 
-### 6.) sbatch remoterun.sbatch
+The paper that discusses this method is "What makes unlearning hard and what to do about it" by Kairan Zhao, Meghdad Kurmanji, George-Octavian Bărbulescu, Eleni Triantafillou, Peter Triantafillou (2023). The paper can be found [here](https://arxiv.org/abs/2406.01257).
 
-### Additional notes: You can now use a 75% accuracy pretrained model with the '.pth' extension. Pytorch has a guide to load these models in the documentation.
+### SalUn
+This is a method for unlearning data from a model by using the saliency of the data to determine which samples to unlearn. This allows the model to "unlearn" the data by removing the influence of the most salient samples from the model.
+The paper that discusses this method is "SalUn: Empowering Machine Unlearning via Gradient-based Weight Saliency in Both Image Classification and Generation" by Chongyu Fan et al. (2024). The paper can be found [here](https://arxiv.org/abs/2310.12508).
 
-You must have the class template for the Resnet model imported into the file you want to use the PTM in 'ResNet18CIFAR'.
+# 3.) Methodology
 
-# Load the model
-```python
-model = ResNet18CIFAR()
+It has been proven that we are able to continually learn tasks without the risk of catastrophic forgetting.
+From papers such as "Gradient Episodic Memory for Continual Learning" by Lopez-Paz and Ranzato (2017) and "Averaged Gradient Episodic Memory for Continual Learning" by Chaudhry et al. (2018), we can see that we are able to learn many tasks by using a small
+memory buffer alongside constraints on the gradient of the model to retain accuracy on the previous tasks.
 
-model = torch.load('resnet18_cifar77ACC.pth',  map_location=torch.device('cpu'))
-model.eval()
-```
+Our question is: Can we apply these same constraints in the opposite direction to continually unlearn tasks using
+a subset of the memory buffer?
 
-# Tests
+First of all, let us define a task: A task in the case of CIFAR100 for our experiment is being able to classify between 5 of the classes out of 100 classes from CIFAR100.
+This means that we are able to learn 20 tasks in total, and we can unlearn any of the tasks at any time.
 
-in order to run tests write python -m unittest discover -s tests -p "test_cifar.py" in root directory
+The main idea is to use the memory buffer to compute the gradient of the model with respect to the task that we want to unlearn, and then use this gradient to update the model parameters in the opposite direction. This allows us to "unlearn" the task by removing its influence from the model. However we apply the same constraints as GEM and AGEM to ensure that we do not forget the other tasks while unlearning the task.
+
+The main experiment being ran here is to:
+
+1. Train a model on the CIFAR100 dataset using the GEM or AGEM algorithms continually learning 20 randomized tasks.
+2. Unlearn all tasks backwards from 20 to 2 (we retain on 1) using a combination of NegGrad+, NegGem, RUM and SalUn.
+3. Evaluate the model on the tasks after unlearning to see if we are able to retain accuracy on the tasks that we have not unlearned.
+
+There are more experiments to be ran with respect to ordering of tasks, but this is the main experiment that we are running here.
+We want to ensure that we are able to unlearn the tasks without forgetting the other tasks, and task 1 in this case
+is the task that has been retained the longest through 20 rounds of continual learning and 19 rounds of continual unlearning.
+
+# 4.) Results
+
+(To be completed upon all tests)
+
+# 5.) Conclusion
+
+(To be completed upon all tests)
+
+# 6.) References
+- David Lopez-Paz, Marc'Aurelio Ranzato. Gradient Episodic Memory for Continual Learning. In NeurIPS, 2017. [here](https://arxiv.org/abs/1706.08840)
+- Chaudhry, A., Rohrbach, M., Akata, Z., Schmid, C., & Tuytelaars, T. (2018). Averaged Gradient Episodic Memory for Continual Learning. In European Conference on Computer Vision (ECCV) (pp. 633-648). Springer. [here](https://arxiv.org/abs/1812.00420)
+- Feldman, V., & Zhang, C. (2021). What Neural Networks Memorize and Why: Discovering the Long Tail via Influence Estimation. In International Conference on Learning Representations (ICLR). [here](https://arxiv.org/abs/2009.07832)
+- Meghdad Kurmanji, Peter Triantafillou, Jamie Hayes, Eleni Triantafillou (2023). Towards Unbounded Machine Unlearning. In NeurIPS. [here](https://arxiv.org/abs/2302.09880)
+- Vitaly Feldman and Chiyuan Zhang (2021). What Neural Networks Memorize and Why: Discovering the Long Tail via Influence Estimation. [here](https://arxiv.org/abs/2008.03703)
+- Kairan Zhao, Meghdad Kurmanji, George-Octavian Bărbulescu, Eleni Triantafillou, Peter Triantafillou (2023). What makes unlearning hard and what to do about it. [here](https://arxiv.org/abs/2406.01257)
+- Chongyu Fan, Yujun Shen, Zhaoyang Lv, Yujia Zhang, Jiajun Wu, Zexiang Xu (2024). SalUn: Empowering Machine Unlearning via Gradient-based Weight Saliency in Both Image Classification and Generation. [here](https://arxiv.org/abs/2310.12508)
+
+# 7.) Extra notes on distributed computing
+
+## Using DCS
+The code is set up to work with DCS systems. We specifically target the `gecko` nodes
+to distribute multiple model across multiple GPUs. The single GPU `falcon` nodes
+take 1hr 5 minutes to train the average of 1 run using batch size 10 which was the recommended batch size from the original GEM paper.
+Hence, average of 3 runs would take 3hr 15 minutes to train on a single GPU.
+The `gecko` nodes however gives us access to 3 GPUs at the same time. I have found a way to use torch
+multiprocessing libraries to train multiple models concurrently. This way the average of 3 runs
+on `gecko` takes the same time as the average of 1 run on `gecko`. This means that the average
+of 3 runs on `gecko` takes 1hr 25 minutes to train.
+
+You can use the single node version of the code by using the old branch:
+`housekeeping_rum_memorization`
+But because we need averaged results fast, please use this branch if 3 GPUs are available.
