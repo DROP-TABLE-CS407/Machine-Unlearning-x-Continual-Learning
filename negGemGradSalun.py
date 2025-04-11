@@ -74,7 +74,7 @@ from negGem.util import *
 from negGem.eval import *
 from negGem.salun import *
 from negGem.net import *
-
+print("hi")
 mem_data = np.load("Memorization/cifar100_mem.npz")  # Replace with actual file path
 mem_scores = mem_data["tr_mem"]
 
