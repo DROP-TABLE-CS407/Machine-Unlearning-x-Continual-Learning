@@ -219,9 +219,9 @@ class Net(nn.Module):
             current_grad = torch.cat(current_grad).unsqueeze(1)
             
             # now find the grads of the previous tasks
-            for tt in range(t + 1):
+            for tt in self.observed_tasks:
                 self.zero_grad()
-                past_task = self.observed_tasks[tt]
+                past_task = tt
                 offset1, offset2 = compute_offsets(past_task, self.nc_per_task,
                                                     self.is_cifar)
                 ptloss = self.ce(
@@ -244,7 +244,7 @@ class Net(nn.Module):
             
             self.zero_grad()
             loss = self.ce(
-                        self.forward(self.memory_data[past_task][x1:x2], past_task)[:, offset1: offset2], self.memory_labs[past_task][x1:x2] - offset1)
+                        self.forward(self.memory_data[t][x1:x2], t)[:, offset1: offset2], self.memory_labs[t][x1:x2] - offset1)
             # negate loss for unlearning
             loss = -1 * loss
             loss.backward()
@@ -254,7 +254,7 @@ class Net(nn.Module):
                 else torch.LongTensor(self.observed_tasks[:-1])
                 
             forget_grads = self.grads[:, t].unsqueeze(1)
-            retain_indices = torch.tensor([i for i in range(self.grads.size(1)) if i in self.observed_tasks and i < t], device=self.grads.device)
+            retain_indices = torch.tensor([i for i in range(self.grads.size(1)) if i in self.observed_tasks and i != t], device=self.grads.device)
             retain_grads = self.grads.index_select(1, retain_indices)
 
             dotp = torch.mm(self.grads[:, t].unsqueeze(0),
@@ -276,9 +276,9 @@ class Net(nn.Module):
             unlike the previous method, we do not perform this in batches
             """
             # now find the grads of the previous tasks
-            for tt in range(t + 1):
+            for tt in self.observed_tasks:
                 self.zero_grad()
-                past_task = self.observed_tasks[tt]
+                past_task = tt
                 offset1, offset2 = compute_offsets(past_task, self.nc_per_task,
                                                     self.is_cifar)
                 ptloss = self.ce(
@@ -291,7 +291,7 @@ class Net(nn.Module):
                 store_grad(self.parameters, self.grads, self.grad_dims,
                             past_task)
             forget_grads = self.grads[:, t].unsqueeze(1)
-            retain_indices = torch.tensor([i for i in range(self.grads.size(1)) if i in self.observed_tasks and i < t], device=self.grads.device)
+            retain_indices = torch.tensor([i for i in range(self.grads.size(1)) if i in self.observed_tasks and i != t], device=self.grads.device)
             retain_grads = self.grads.index_select(1, retain_indices)
             
             self.zero_grad()
@@ -300,6 +300,127 @@ class Net(nn.Module):
             project2neggrad2(forget_grads, retain_grads, alpha)
             overwrite_grad(self.parameters, forget_grads, self.grad_dims)
             self.opt.step()
+        elif algorithm == "RL-GEM":
+            # otherwise we need to unlearn the task 
+            ## we compute the gradients of all learnt tasks
+            current_grad = []
+            
+            for param in self.parameters():
+                if param.grad is not None:
+                    current_grad.append(param.grad.data.view(-1))
+            current_grad = torch.cat(current_grad).unsqueeze(1)
+            
+            # now find the grads of the previous tasks
+            for tt in self.observed_tasks:
+                self.zero_grad()
+                past_task = tt
+                offset1, offset2 = compute_offsets(past_task, self.nc_per_task,
+                                                    self.is_cifar)
+                ptloss = self.ce(
+                        self.forward(
+                            self.memory_data[past_task],
+                            past_task)[:, offset1: offset2],
+                        self.memory_labs[past_task] - offset1)
+                if tt == t:
+                    ptloss = self.ce(
+                        self.forward(
+                            self.memory_data[past_task][x1:x2],
+                            past_task)[:, offset1: offset2],
+                        random.shuffle(self.memory_labs[past_task][x1:x2]) - offset1)
+                    
+                ptloss.backward()
+                store_grad(self.parameters, self.grads, self.grad_dims,
+                            past_task)
+            ## so now, we have the gradients of all the tasks we can now do our projection,
+            ## first we check if it is even neccessary to do so, if not simply do a optimiser.step()
+            
+            self.zero_grad()
+            loss = self.ce(
+                        self.forward(self.memory_data[past_task][x1:x2], t)[:, offset1: offset2], random.shuffle(self.memory_labs[t][x1:x2]) - offset1)
+            # negate loss for unlearning
+            loss.backward()
+            
+            store_grad(self.parameters, self.grads, self.grad_dims, t)
+            indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+                else torch.LongTensor(self.observed_tasks[:-1])
+                
+            forget_grads = self.grads[:, t].unsqueeze(1)
+            retain_indices = torch.tensor([i for i in range(self.grads.size(1)) if i in self.observed_tasks and i != t], device=self.grads.device)
+            retain_grads = self.grads.index_select(1, retain_indices)
+
+            dotp = torch.mm(self.grads[:, t].unsqueeze(0),
+                                self.grads.index_select(1, indx))
+            if (dotp < 0).sum() != 0:
+                print("Projection needed")
+                if self.salun:
+                    apply_salun(forget_grads, self.salun_threshold)
+                NegAGEM(forget_grads, retain_grads, self.unlearn_memory_strength)
+                self.grads[:, t] = forget_grads.squeeze(1)
+                # copy gradients back
+                overwrite_grad(self.parameters, self.grads[:, t],
+                            self.grad_dims)
+            self.opt.step()
+
+            
+        elif algorithm == "RL-AGEM":
+            current_grad = []
+            
+            for param in self.parameters():
+                if param.grad is not None:
+                    current_grad.append(param.grad.data.view(-1))
+            current_grad = torch.cat(current_grad).unsqueeze(1)
+            
+            # now find the grads of the previous tasks
+            for tt in self.observed_tasks:
+                self.zero_grad()
+                past_task = tt
+                offset1, offset2 = compute_offsets(past_task, self.nc_per_task,
+                                                    self.is_cifar)
+                ptloss = self.ce(
+                        self.forward(
+                            self.memory_data[past_task],
+                            past_task)[:, offset1: offset2],
+                        self.memory_labs[past_task] - offset1)
+                if tt == t:
+                    ptloss = self.ce(
+                        self.forward(
+                            self.memory_data[past_task][x1:x2],
+                            past_task)[:, offset1: offset2],
+                        random.shuffle(self.memory_labs[past_task][x1:x2]) - offset1)
+                    
+                ptloss.backward()
+                store_grad(self.parameters, self.grads, self.grad_dims,
+                            past_task)
+            ## so now, we have the gradients of all the tasks we can now do our projection,
+            ## first we check if it is even neccessary to do so, if not simply do a optimiser.step()
+            
+            self.zero_grad()
+            loss = self.ce(
+                        self.forward(self.memory_data[past_task][x1:x2], t)[:, offset1: offset2], random.shuffle(self.memory_labs[t][x1:x2]) - offset1)
+            # negate loss for unlearning
+            loss.backward()
+            
+            store_grad(self.parameters, self.grads, self.grad_dims, t)
+            indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+                else torch.LongTensor(self.observed_tasks[:-1])
+                
+            forget_grads = self.grads[:, t].unsqueeze(1)
+            retain_indices = torch.tensor([i for i in range(self.grads.size(1)) if i in self.observed_tasks and i != t], device=self.grads.device)
+            retain_grads = self.grads.index_select(1, retain_indices)
+
+            dotp = torch.mm(self.grads[:, t].unsqueeze(0),
+                                self.grads.index_select(1, indx))
+            if (dotp < 0).sum() != 0:
+                print("Projection needed")
+                if self.salun:
+                    apply_salun(forget_grads, self.salun_threshold)
+                agemprojection(forget_grads, retain_grads, self.unlearn_memory_strength)
+                self.grads[:, t] = forget_grads.squeeze(1)
+                # copy gradients back
+                overwrite_grad(self.parameters, self.grads[:, t],
+                            self.grad_dims)
+            self.opt.step()
+            
         else:
             print("Invalid Algorithm")
             

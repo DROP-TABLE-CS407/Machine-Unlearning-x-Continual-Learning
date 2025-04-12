@@ -1,0 +1,94 @@
+Requirement already satisfied: pyyaml in /usr/lib64/python3.12/site-packages (6.0.1)
+Requirement already satisfied: setuptools in /usr/lib/python3.12/site-packages (68.2.2)
+Requirement already satisfied: matplotlib in /dcs/21/u2140671/.local/lib/python3.12/site-packages (3.10.1)
+Requirement already satisfied: contourpy>=1.0.1 in /dcs/21/u2140671/.local/lib/python3.12/site-packages (from matplotlib) (1.3.1)
+Requirement already satisfied: cycler>=0.10 in /dcs/21/u2140671/.local/lib/python3.12/site-packages (from matplotlib) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /dcs/21/u2140671/.local/lib/python3.12/site-packages (from matplotlib) (4.57.0)
+Requirement already satisfied: kiwisolver>=1.3.1 in /dcs/21/u2140671/.local/lib/python3.12/site-packages (from matplotlib) (1.4.8)
+Requirement already satisfied: numpy>=1.23 in /dcs/21/u2140671/.local/lib/python3.12/site-packages (from matplotlib) (2.2.4)
+Requirement already satisfied: packaging>=20.0 in /dcs/21/u2140671/.local/lib/python3.12/site-packages (from matplotlib) (24.1)
+Requirement already satisfied: pillow>=8 in /dcs/21/u2140671/.local/lib/python3.12/site-packages (from matplotlib) (11.1.0)
+Requirement already satisfied: pyparsing>=2.3.1 in /dcs/21/u2140671/.local/lib/python3.12/site-packages (from matplotlib) (3.2.3)
+Requirement already satisfied: python-dateutil>=2.7 in /dcs/21/u2140671/.local/lib/python3.12/site-packages (from matplotlib) (2.9.0.post0)
+Requirement already satisfied: six>=1.5 in /dcs/21/u2140671/.local/lib/python3.12/site-packages (from python-dateutil>=2.7->matplotlib) (1.16.0)
+Requirement already satisfied: quadprog in /dcs/21/u2140671/.local/lib/python3.12/site-packages (0.1.13)
+Requirement already satisfied: numpy in /dcs/21/u2140671/.local/lib/python3.12/site-packages (from quadprog) (2.2.4)
+Requirement already satisfied: pyparsing in /dcs/21/u2140671/.local/lib/python3.12/site-packages (3.2.3)
+Requirement already satisfied: pandas in /dcs/21/u2140671/.local/lib/python3.12/site-packages (2.2.3)
+Requirement already satisfied: numpy>=1.26.0 in /dcs/21/u2140671/.local/lib/python3.12/site-packages (from pandas) (2.2.4)
+Requirement already satisfied: python-dateutil>=2.8.2 in /dcs/21/u2140671/.local/lib/python3.12/site-packages (from pandas) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in /dcs/21/u2140671/.local/lib/python3.12/site-packages (from pandas) (2025.2)
+Requirement already satisfied: tzdata>=2022.7 in /dcs/21/u2140671/.local/lib/python3.12/site-packages (from pandas) (2025.2)
+Requirement already satisfied: six>=1.5 in /dcs/21/u2140671/.local/lib/python3.12/site-packages (from python-dateutil>=2.8.2->pandas) (1.16.0)
+Requirement already satisfied: numpy in /dcs/21/u2140671/.local/lib/python3.12/site-packages (2.2.4)
+Fri Apr 11 22:59:40 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.144.03             Driver Version: 550.144.03     CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA RTX A5000               Off |   00000000:01:00.0 Off |                  Off |
+| 30%   55C    P0             N/A /  230W |       1MiB /  24564MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Python 3.12.8
+Fri Apr 11 22:59:44 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.144.03             Driver Version: 550.144.03     CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA RTX A5000               Off |   00000000:01:00.0 Off |                  Off |
+| 30%   56C    P0             N/A /  230W |       1MiB /  24564MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+0.6
+16
+3
+0
+0.2
+0
+0.1
+most
+Number of GPUs visible:  1
+Available GPUs: 3. Will distribute runs among them.
+60
+60
+Plot  0  Done
+Average Retain Accuracies:  [0.4552, 0.4192, 0.3984, 0.4096, 0.3952, 0.424, 0.386, 0.408, 0.3744, 0.3948, 0.4084, 0.3864, 0.3096, 0.3368, 0.3632, 0.4208, 0.374, 0.378, 0.3296, 0.3304]
+Average Forget Accuracies:  [0.8006526315789474, 0.6787578947368421, 0.5886947368421053, 0.5708210526315789, 0.58, 0.5698315789473685, 0.5311157894736842, 0.49490526315789474, 0.46012631578947366, 0.4634736842105263, 0.44307368421052634, 0.4223368421052632, 0.39629473684210526, 0.37522105263157896, 0.34387368421052633, 0.30534736842105265, 0.28623157894736845, 0.2577684210526316, 0.21606315789473685, 0.1627578947368421]
+Average Retain Test Accuracies:  [0.41, 0.36, 0.304, 0.33, 0.314, 0.384, 0.346, 0.374, 0.326, 0.34, 0.376, 0.34, 0.24, 0.25, 0.31, 0.312, 0.316, 0.316, 0.258, 0.312]
+Average Forget Test Accuracies:  [0.6994736842105264, 0.5933684210526315, 0.5110526315789473, 0.502421052631579, 0.5051578947368421, 0.5070526315789474, 0.4762105263157895, 0.4478947368421053, 0.4107368421052632, 0.4171578947368421, 0.4074736842105263, 0.3917894736842105, 0.3706315789473684, 0.3409473684210526, 0.32442105263157894, 0.2873684210526316, 0.268, 0.24505263157894736, 0.21073684210526317, 0.16242105263157894]
+Done
+Plot  1  Done
+Average Retain Accuracies:  [0.6356, 0.5284, 0.546, 0.52, 0.558, 0.5376, 0.4908, 0.5396, 0.5496, 0.4644, 0.5184, 0.4632, 0.5532, 0.4596, 0.53, 0.4696, 0.4808, 0.46, 0.4508, 0.4432]
+Average Forget Accuracies:  [0.7704842105263158, 0.6552631578947369, 0.6102947368421052, 0.5553894736842105, 0.5468, 0.5200210526315789, 0.4861473684210526, 0.47513684210526314, 0.4693894736842105, 0.4530526315789474, 0.38273684210526315, 0.3550105263157895, 0.4179157894736842, 0.35189473684210526, 0.3350526315789474, 0.3304, 0.30166315789473686, 0.25696842105263157, 0.21509473684210526, 0.20917894736842105]
+Average Retain Test Accuracies:  [0.604, 0.516, 0.53, 0.49, 0.556, 0.538, 0.462, 0.526, 0.52, 0.448, 0.484, 0.466, 0.524, 0.462, 0.482, 0.444, 0.444, 0.416, 0.41, 0.406]
+Average Forget Test Accuracies:  [0.6622105263157895, 0.5701052631578948, 0.5261052631578947, 0.4896842105263158, 0.48305263157894734, 0.4668421052631579, 0.42926315789473685, 0.41789473684210526, 0.42357894736842105, 0.4086315789473684, 0.3456842105263158, 0.3277894736842105, 0.378, 0.3277894736842105, 0.31494736842105264, 0.31305263157894736, 0.2845263157894737, 0.2483157894736842, 0.20178947368421052, 0.2034736842105263]
+Done
+Plot  2  Done
+Average Retain Accuracies:  [0.7, 0.6512, 0.6172, 0.5296, 0.654, 0.6504, 0.4836, 0.6168, 0.5672, 0.564, 0.5148, 0.6156, 0.5368, 0.5408, 0.5544, 0.5648, 0.5748, 0.5368, 0.5068, 0.4204]
+Average Forget Accuracies:  [0.7799157894736842, 0.6527578947368421, 0.6215368421052632, 0.6043368421052632, 0.6136842105263158, 0.5673052631578948, 0.4959578947368421, 0.5088, 0.47810526315789476, 0.42082105263157893, 0.45623157894736843, 0.42473684210526313, 0.3823578947368421, 0.34789473684210526, 0.36332631578947366, 0.3471578947368421, 0.34402105263157895, 0.3064421052631579, 0.25692631578947367, 0.20216842105263158]
+Average Retain Test Accuracies:  [0.674, 0.608, 0.572, 0.516, 0.634, 0.63, 0.482, 0.6, 0.558, 0.534, 0.5, 0.55, 0.518, 0.502, 0.518, 0.51, 0.556, 0.514, 0.51, 0.398]
+Average Forget Test Accuracies:  [0.6762105263157895, 0.5574736842105263, 0.5412631578947369, 0.5353684210526316, 0.5374736842105263, 0.5033684210526316, 0.44652631578947366, 0.4553684210526316, 0.42305263157894735, 0.372, 0.41221052631578947, 0.3876842105263158, 0.35010526315789475, 0.32694736842105265, 0.3430526315789474, 0.3202105263157895, 0.32073684210526315, 0.29189473684210526, 0.24578947368421053, 0.1996842105263158]
+Done

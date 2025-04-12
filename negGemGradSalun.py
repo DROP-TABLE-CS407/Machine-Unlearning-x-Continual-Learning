@@ -33,7 +33,7 @@ os.system('python3.12 --version')
 
 THERE IS ALSO A DIRECTORY YOU NEED TO CHANGE AT THE BOTTOM OF THE FILE YOU SPERG
 
-simply highlight the directory /dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem
+simply highlight the directory /dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning
 
 hold down ctrl + d then ctrl + v (assuming you already have your directory copied)
 
@@ -44,11 +44,11 @@ if you dont know what directory you're in, use pwd in the cmd line
 # set directory /dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning
 # please change these dependent on your own specific path variable
 
-os.chdir('/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem')
+os.chdir('/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning')
 
-save_path_1 = '/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/GEM/Results4/'
+save_path_1 = '/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/GEM/Results4/'
 
-save_path_2 = '/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/GEM/Results/'
+save_path_2 = '/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/GEM/Results/'
 
 import torch
 import numpy as np
@@ -74,7 +74,6 @@ from negGem.util import *
 from negGem.eval import *
 from negGem.salun import *
 from negGem.net import *
-print("hi")
 mem_data = np.load("Memorization/cifar100_mem.npz")  # Replace with actual file path
 mem_scores = mem_data["tr_mem"]
 
@@ -101,7 +100,8 @@ if DATASET == 'cifar-10':
     CLASSES = CLASSES.copy()
 elif DATASET == 'cifar-100':
     CLASSES = negGem.cifar.CLASSES_100_UNORDERED
-    
+
+NUM_OF_GPU = 1
 def run_cifar(algorithm, args, n_inputs=N_INPUTS, n_outputs=N_OUTPUTS, n_tasks=N_TASKS, size_of_task=SIZE_OF_TASKS, newclasses = [], mem_split=0, mem_type="a", device = 0, mem_data_local = []):
     SHUFFLEDCLASSES = newclasses
     ALL_TASK_UNLEARN_ACCURACIES = []
@@ -384,7 +384,7 @@ def single_run(run_idx, SHUFFLEDCLASSES, cmd_args, mem_data_local):
     # make a copy of the mem_data .copy() doesn't work as it's a NpzFile
     
     # Assign GPU in round-robin fashion
-    dev = run_idx % 3
+    dev = run_idx % NUM_OF_GPU
     #os.environ["CUDA_VISIBLE_DEVICES"] = str(dev)
     torch.cuda.set_device(dev)
     torch.cuda.empty_cache()
@@ -474,9 +474,9 @@ if __name__ == "__main__":
     all_results = []
     mem_data_run = {key: np.copy(mem_data[key]) for key in mem_data.files}
     
-    for j in range(0, average_runs, 3):
-        with mp.Pool(processes=3) as pool:
-            all_results = pool.starmap(single_run, [(i, SHUFFLEDCLASSES, cmd_args, mem_data_run) for i in range(3)])
+    for j in range(0, average_runs, NUM_OF_GPU):
+        with mp.Pool(processes=NUM_OF_GPU) as pool:
+            all_results = pool.starmap(single_run, [(i, SHUFFLEDCLASSES, cmd_args, mem_data_run) for i in range(NUM_OF_GPU)])
         # Close the pool
         pool.close()
         pool.join()
@@ -715,8 +715,8 @@ if __name__ == "__main__":
     # save the model
     #torch.save(model, 'Results' + str(cur_date) + 'MemoryStrength' + str(cmd_args.unlearn_mem_strength) + 'BatchSize' + str(cmd_args.unlearn_batch_size) + 'Model.pt')
 
-    # change the directory to /dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem
-    os.chdir('/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem')
+    # change the directory to /dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning
+    os.chdir('/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning')
 
     os.mkdir('Results' + str(cur_date) + 'MemoryStrength' + str(cmd_args.unlearn_mem_strength) + 'BatchSize' + str(cmd_args.unlearn_batch_size))
 

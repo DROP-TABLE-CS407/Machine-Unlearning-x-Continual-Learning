@@ -24,3 +24,20 @@ def apply_salun(gradient, threshold):
         grad.mul_(mask)
     
     return grad.view(gradient.shape)
+
+def apply_salun(gradient, threshold):
+    '''
+    Applies "SalUn-like" filtering to a raw gradient tensor by keeping only gradient values
+    with absolute value greater than or equal to the threshold and setting others to zero.
+
+    For example, threshold=0.01 means keep only gradient values with magnitude >= 0.01.
+    '''
+    # Flatten the gradient for easier manipulation
+    grad = gradient.view(-1)
+    grad_abs = torch.abs(grad)
+
+    # Zero out gradients smaller than the threshold
+    mask = grad_abs >= threshold
+    filtered_grad = grad * mask
+
+    return filtered_grad.view(gradient.shape)
