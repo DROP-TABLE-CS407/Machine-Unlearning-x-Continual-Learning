@@ -8,7 +8,7 @@ import quadprog
 
 def conv3x3(in_planes, out_planes, stride=1):
     return nn.Conv2d(in_planes, out_planes, kernel_size=3, stride=stride,
-                     padding=1, bias=False)
+                    padding=1, bias=False)
 
 class BasicBlock(nn.Module):
     expansion = 1
@@ -24,7 +24,7 @@ class BasicBlock(nn.Module):
         if stride != 1 or in_planes != self.expansion * planes:
             self.shortcut = nn.Sequential(
                 nn.Conv2d(in_planes, self.expansion * planes, kernel_size=1,
-                          stride=stride, bias=False),
+                        stride=stride, bias=False),
                 nn.BatchNorm2d(self.expansion * planes)
             )
 
@@ -70,8 +70,6 @@ class ResNet(nn.Module):
 
 def ResNet18(nclasses, nf=20):
     return ResNet(BasicBlock, [2, 2, 2, 2], nclasses, nf)
-
-
 
 ############### GEM ###############
 
@@ -128,7 +126,7 @@ def overwrite_grad(pp, newgrad, grad_dims):
             param.grad.data.copy_(this_grad)
         cnt += 1
 
-def NegAGEM(gradient, memories, margin=0.5, eps=1e-3):
+def NegGEM(gradient, memories, margin=0.5, eps=1e-3):
     """
         Solves the GEM dual QP described in the paper given a proposed
         gradient "gradient", and a memory of task gradients "memories".
@@ -160,6 +158,33 @@ def NegAGEM(gradient, memories, margin=0.5, eps=1e-3):
     h = np.zeros(t) + margin
     v = quadprog.solve_qp(P, q, G, h)[0]
     x = np.dot(v, memories_np) + gradient_np
+    gradient.copy_(torch.Tensor(x).view(-1, 1))
+    
+def NegAGEM(gradient, memories):
+    """
+    Projection of gradients for A-GEM with the memory approach
+    Use averaged gradient memory for projection
+    
+    input:  gradient, g-reference
+    output: gradient, g-projected
+    """
+
+    gref = memories.t().double().mean(axis=0).cuda() # * margin
+    g = gradient.contiguous().view(-1).double().cuda()
+
+    dot_prod = torch.dot(g, gref)
+    
+    #if dot_prod < 0:
+    #    x = g
+    #    gradient.copy_(torch.Tensor(x).view(-1, 1))
+    #    return
+    
+    # avoid division by zero
+    dot_prod = dot_prod/(torch.dot(gref, gref))
+    
+    # epsvector = torch.Tensor([eps]).cuda()
+    
+    x = g*0.5 + gref * abs(dot_prod)  # + epsvector
     gradient.copy_(torch.Tensor(x).view(-1, 1))
     
 def project2neggrad2(gradient, memories, alpha = 0.9):
