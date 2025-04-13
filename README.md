@@ -23,6 +23,12 @@ They are in the following file(s):
 ## Running a test
 To run a test, use the provided sbatch scripts. The example jobs provided should work out of the box after downloading the repo.
 The arguments that can be passed to the python scripts are:
+time python3.12 negGemGradSalun.py --algorithm neggem --alpha 0 --number_of_gpus 3 --learn_mem_strength 0.5 --learn_batch_size 10 --unlearn_mem_strength 0.6 --unlearn_batch_size 10 --average_over_n_runs 3 --salun 1 --salun_strength 0.2 --rum 1 --rum_split 0.99 --rum_memorization most
+- ` --algorithm` neggem : Defines what unlearning algorithm to use. The options are `neggem`, `negagem`, `RL-GEM`, `RL-AGEM`, `ALT-NEGGEM` and `neggrad`. 
+- ` --alpha` 0.9 : The alpha value for the neggrad algorithm. This is the default value, but can be changed to whatever you want.
+- ` --number_of_gpus` 3 : The number of GPUs to use for training. This is set to 3 by default, but you may only want to use 1 GPU for testing.
+- ` --learn_mem_strength ` 0.5 : Strength of the learning memory during the continual learning phase for GEM.
+- ` --learn_batch_size ` 10 : Batch size for learning during the continual learning phase for GEM/AGEM.
 - ` --unlearn_mem_strength ` 0.6 : Strength of the unlearning memory
 - ` --unlearn_batch_size ` 10 : Batch size for unlearning
 - ` --average_over_n_runs ` 3 : Number of runs to average over
@@ -34,8 +40,7 @@ The arguments that can be passed to the python scripts are:
 - ` --rum_memorization ` most : Determines if we want to use the most or least memorized samples for RUM. `a` means randomly selected samples.
 
 There are other arguments that can be passed to the scripts in `./negGem/args.py`, but we do not have to change them for now.
-Additionally, we can change the unlearning algorithm used, in line `274` of `negGemGradSalun.py` we can change the unlearning algorithm used. The default is `neggem`, but we also have access to `neggrad` where we can specify an alpha value.
-The default is `0.9` but we can change this to be whatever we want.
+Additionally, we have changed it so we can specify what unlearning algorithm to use which makes it very convenient.
 
 # 2.) Related Work
 
