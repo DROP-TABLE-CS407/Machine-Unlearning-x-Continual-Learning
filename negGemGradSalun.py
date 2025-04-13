@@ -7,6 +7,11 @@ import torch.multiprocessing as mp
 # average over_n_runs, salun on/off, salun strength, rum on/off, rum_split, rum_memorization
 
 parser = argparse.ArgumentParser()
+parser.add_argument('--number_of_gpus', dest='number_of_gpus', type=str, help='Add number of GPUs')
+parser.add_argument('--algorithm', dest='algorithm', type=str, help='Add algorithm')
+parser.add_argument('--alpha', dest='alpha', type=str, help='Add alpha')
+parser.add_argument('--learn_mem_strength', dest='learn_mem_strength', type=str, help='Add learn_mem_strength')
+parser.add_argument('--learn_batch_size', dest='learn_batch_size', type=str, help='Add learn_batch_size')
 parser.add_argument('--unlearn_mem_strength', dest='unlearn_mem_strength', type=str, help='Add unlearn_mem_strength')
 parser.add_argument('--unlearn_batch_size', dest='unlearn_batch_size', type=str, help='Add unlearn_batch_size')
 parser.add_argument('--average_over_n_runs', dest='average_over_n_runs', type=str, help='Add average_over_n_runs')
@@ -17,14 +22,20 @@ parser.add_argument('--rum_split', dest='rum_split', type=str, help='Add rum_spl
 parser.add_argument('--rum_memorization', dest='rum_memorization', type=str, help='Add rum_memorization')
 cmd_args = parser.parse_args()
 
-print (cmd_args.unlearn_mem_strength)
-print (cmd_args.unlearn_batch_size)
-print (cmd_args.average_over_n_runs)
-print (cmd_args.salun)
-print (cmd_args.salun_strength)
-print (cmd_args.rum)
-print (cmd_args.rum_split)
-print (cmd_args.rum_memorization)
+print("Command line arguments:")
+print("number_of_gpus:", cmd_args.number_of_gpus)
+print("algorithm:", cmd_args.algorithm)
+print("alpha:", cmd_args.alpha)
+print("learn_mem_strength:", cmd_args.learn_mem_strength)
+print("learn_batch_size:", cmd_args.learn_batch_size)
+print("unlearn_mem_strength:", cmd_args.unlearn_mem_strength)
+print("unlearn_batch_size:", cmd_args.unlearn_batch_size)
+print("average_over_n_runs:", cmd_args.average_over_n_runs)
+print("salun:", cmd_args.salun)
+print("salun_strength:", cmd_args.salun_strength)
+print("rum:", cmd_args.rum)
+print("rum_split:", cmd_args.rum_split)
+print("rum_memorization:", cmd_args.rum_memorization)
 
 # run command to check python version
 os.system('python3.12 --version')
@@ -33,7 +44,7 @@ os.system('python3.12 --version')
 
 THERE IS ALSO A DIRECTORY YOU NEED TO CHANGE AT THE BOTTOM OF THE FILE YOU SPERG
 
-simply highlight the directory /dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning
+simply highlight the directory /dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning
 
 hold down ctrl + d then ctrl + v (assuming you already have your directory copied)
 
@@ -44,11 +55,11 @@ if you dont know what directory you're in, use pwd in the cmd line
 # set directory /dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning
 # please change these dependent on your own specific path variable
 
-os.chdir('/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning')
+os.chdir('/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning')
 
-save_path_1 = '/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/GEM/Results4/'
+save_path_1 = '/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning/GEM/Results4/'
 
-save_path_2 = '/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/GEM/Results/'
+save_path_2 = '/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning/GEM/Results/'
 
 import torch
 import numpy as np
@@ -74,6 +85,7 @@ from negGem.util import *
 from negGem.eval import *
 from negGem.salun import *
 from negGem.net import *
+
 mem_data = np.load("Memorization/cifar100_mem.npz")  # Replace with actual file path
 mem_scores = mem_data["tr_mem"]
 
@@ -100,13 +112,18 @@ if DATASET == 'cifar-10':
     CLASSES = CLASSES.copy()
 elif DATASET == 'cifar-100':
     CLASSES = negGem.cifar.CLASSES_100_UNORDERED
-
-NUM_OF_GPU = 1
-def run_cifar(algorithm, args, n_inputs=N_INPUTS, n_outputs=N_OUTPUTS, n_tasks=N_TASKS, size_of_task=SIZE_OF_TASKS, newclasses = [], mem_split=0, mem_type="a", device = 0, mem_data_local = []):
+    
+NUMBER_OF_GPUS = 1
+    
+def run_cifar(algorithm, args, n_inputs=N_INPUTS, n_outputs=N_OUTPUTS, n_tasks=N_TASKS, size_of_task=SIZE_OF_TASKS, newclasses = [], mem_split=0, mem_type="a", device = 0, mem_data_local = [], task_sequence=[]):
+    # Default to standard sequence if none provided: learn all tasks in order
+    if not task_sequence:
+        task_sequence = list(range(n_tasks))
+    
     SHUFFLEDCLASSES = newclasses
-    ALL_TASK_UNLEARN_ACCURACIES = []
-    ALL_TASK_UNLEARN_CONFIDENCES = []
-    ALL_TASK_CONTINUAL_LEARNING_ACCURACIES = []
+    ALL_TASK_ACCURACIES = []  # Single list to track accuracies for all operations
+    ALL_TASK_CONFIDENCES = []  # Single list to track confidence for all operations
+    
     # Set up the model
     model = Net(n_inputs, n_outputs, n_tasks, args)
     if args.cuda:
@@ -161,7 +178,6 @@ def run_cifar(algorithm, args, n_inputs=N_INPUTS, n_outputs=N_OUTPUTS, n_tasks=N
         tasks = [[pretrain_data, pretrain_labels]]
         tests = [pretest_data, pretest_labels]
     else:
-
         tasks = []
         tests = []
     for i in range(n_tasks):
@@ -182,215 +198,154 @@ def run_cifar(algorithm, args, n_inputs=N_INPUTS, n_outputs=N_OUTPUTS, n_tasks=N
             tests.append(partition_test_data)
             tests.append(partition_test_labels)
 
-    # Train the model
-    for task in range(n_tasks):
-        print("Training task: ", task  + 1)
-        
-        x = torch.Tensor(tasks[task][0].reshape(-1, 32*32*3)).float()
-        y = torch.Tensor(tasks[task][1]).long()
-        
-        if args.cuda:
-            x, y = x.cuda(), y.cuda()
-    
-        max_idx = 0
-        for epoch in range(args.n_epochs):
-            for j in range(0, len(tasks[task][0]), args.batch_size):
-                current_data = x[j: j + args.batch_size]
-                current_labels = y[j: j + args.batch_size]
-                model.train()
-                model.observe(algorithm, current_data, task, current_labels)
-                max_idx += args.batch_size
-            
-            #test the model after each epoch
-            correct = 0
-            total = len(tasks[task][0])
-            for j in range(0,len(tasks[task][0]), test_bs):
-                current_data = x[j: j + test_bs]
-                current_labels = y[j: j + test_bs]
-                output = model.forward(current_data, task)
-                pred = output.data.max(1)[1]
-
-            if correct / total > 0.80:
-                break
-            #   output loss only
-            
-        if args.use_rum:
-            # *** Global Memory Update Step ***
-            # After training on the task, update the replay buffer using the entire training set.
-            print("Updating memory for task", task + 1, "using global selection.")
-            # *** Memory Selection Step ***
-            mem_split = args.rum_split
-            mem_type = args.rum_memorization
-            
-            # Update the memory for the current task using the selected examples.
-            model.update_memory_from_dataset(x[:max_idx], y[:max_idx], task, task_mapping, mem_scores, mem_data_local, mem_split, mem_type)
-            
-        # Test the model after training
-        temp_test_accuracies = []
-        for task_test in range(n_tasks):
-            test, _ = eval_task(model, args,
-                                        tests[task_test * 2], tests[task_test * 2 + 1],
-                                        task_test)
-            temp_test_accuracies.append(test)
-        print(temp_test_accuracies)
-        ALL_TASK_CONTINUAL_LEARNING_ACCURACIES.append(temp_test_accuracies)
-
-    # Test the model after training
-        average_confidence = []
-        for i in range(0, len(tests), 2):
-            correct = 0
-            total = len(tests[i])     
-
-            # Test the model
-            
-            x = torch.Tensor(tests[i].reshape(-1, 32*32*3)).float()
-            y = torch.Tensor(tests[i+1]).long()
-            if args.cuda:
-                x, y = x.cuda(), y.cuda()
-            model.eval()
-            average_confidence_task = []
-            # keep track of average confidence score
-            for j in range(0,len(tests[i]), test_bs):
-                current_data = x[j: j + test_bs]
-                current_labels = y[j: j + test_bs]
-                output = model.forward(current_data, i // 2)
-                # apply softmax to get predictions
-                probabilities = torch.nn.functional.softmax(output, dim=1)
-                # get the maximum value of the probabilities for each image
-                predicted = torch.max(probabilities, 1).values
-                # get the average confidence score of the batch
-                average_confidence_task.append(torch.mean(predicted).item())
-                
-                pred = output.data.max(1)[1]
-                correct += (pred == current_labels).sum().item()
-
-            test_accuracies.append(correct / total)
-            average_confidence.append(sum(average_confidence_task) / len(average_confidence_task))
-            
-    # if it's the first model, save the model
-    #if iternumb == 1:
-    #    torch.save(model.state_dict(), 'model.pth')
-    
-    unlearning_algo = "neggem"
-    #unlearning_algo = "neggrad"
-    if unlearning_algo == "neggrad":
-        args.unlearn_batch_size = args.n_memories
-    ## after training lets unlearn the last task and test the model again
-    print("Unlearning task: ", n_tasks)
-    
-    retain_set = tasks[:1]
-    forget_set = tasks[-19:]
+    retain_set = tasks[:1]  # First task as retain set
+    forget_set = tasks[1:]  # Rest as forget set (will be used for evaluation only)
     test_set = tests
     
     retain_accuracies = []
-    
     forget_accuracies = []
     testing_accuracies = []
-    
     testing_accuracies_forget = []
     
-    # set the optimiser lr to 0.01
+    unlearning_algo = args.algorithm
     
-    model.opt = torch.optim.SGD(model.parameters(), args.unlearning_rate)
-    
-    retain_accuracies, forget_accuracies, testing_accuracies, testing_accuracies_forget = eval_retain_forget_test(model, args,
-                                                        retain_set, forget_set, test_set, retain_accuracies, forget_accuracies,
-                                                        testing_accuracies, testing_accuracies_forget)
-    
-    # eval performance on 20 individual tasks using the eval_task function
-    temp_test_accuracies = []
-    temp_test_confidences = []
-    for task in range(n_tasks):
+    # Process the task sequence
+    for operation in task_sequence:
+        if operation >= 0:  # Learn task
+            task = operation
+            print("Training task: ", task + 1)
+            
+            x = torch.Tensor(tasks[task][0].reshape(-1, 32*32*3)).float()
+            y = torch.Tensor(tasks[task][1]).long()
+            
+            if args.cuda:
+                x, y = x.cuda(), y.cuda()
         
-        test, confidence = eval_task(model, args,
-                                    tests[task * 2], tests[task * 2 + 1],
-                                    task)
-        temp_test_accuracies.append(test)
-        temp_test_confidences.append(confidence)
-        print(temp_test_accuracies)
-        
-    ALL_TASK_UNLEARN_ACCURACIES.append(temp_test_accuracies)
-    ALL_TASK_UNLEARN_CONFIDENCES.append(temp_test_confidences)
-
-    for i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]: # 
-        #torch.cuda.empty_cache()
-        model.train()
-        flag = False
-        for epoch in range(args.unlearn_epochs):
-            if flag:
-                print("broken out of loop")
-                break
-            for j in range(0, args.n_memories, args.unlearn_batch_size):
-                # test the model on the memories for the task we are unlearning
-                # we want to see if the model is unlearning the task
-                memory_data = model.memory_data[n_tasks - i]
-                memory_labels = model.memory_labs[n_tasks - i]
+            max_idx = 0
+            for epoch in range(args.n_epochs):
+                for j in range(0, len(tasks[task][0]), args.batch_size):
+                    current_data = x[j: j + args.batch_size]
+                    current_labels = y[j: j + args.batch_size]
+                    model.train()
+                    model.observe(algorithm, current_data, task, current_labels)
+                    max_idx += args.batch_size
+                
+                # Test the model after each epoch
                 correct = 0
-                total = len(memory_data)
-                for k in range(0, len(memory_data), min(test_bs, len(memory_data))):
-                    current_data = memory_data[k: k + min(test_bs, len(memory_data))]
-                    current_labels = memory_labels[k: k + min(test_bs, len(memory_data))]
-                    output = model.forward(current_data, n_tasks - i)
-                    pred = output.data.max(1)[1] 
-                    correct += (pred == current_labels).sum().item()
-                if correct / total <= 0.35:
-                    flag = True
+                total = len(tasks[task][0])
+                for j in range(0, len(tasks[task][0]), test_bs):
+                    current_data = x[j: j + test_bs]
+                    current_labels = y[j: j + test_bs]
+                    output = model.forward(current_data, task)
+                    pred = output.data.max(1)[1]
+
+                if correct / total > 0.7:
                     break
-                if not flag:
-                    model.unlearn(unlearning_algo, n_tasks - i, x1 = j, x2 = j + args.unlearn_batch_size)
-
-
-        model.observed_tasks = model.observed_tasks[:-1]
+                
+            if args.use_rum:
+                # Memory update after learning a task
+                print(f"Updating memory for task {task + 1} using global selection.")
+                mem_split = args.rum_split
+                mem_type = args.rum_memorization
+                
+                # Update the memory for the current task using the selected examples
+                model.update_memory_from_dataset(x[:max_idx], y[:max_idx], task, task_mapping, mem_scores, mem_data_local, mem_split, mem_type)
         
+        else:  # Unlearn task (negative value)
+            task_to_unlearn = abs(operation)
+            print(f"Unlearning task: {task_to_unlearn + 1}")
+            
+            model.train()
+            model.opt = torch.optim.SGD(model.parameters(), args.unlearning_rate)
+            flag = False
+            
+            for epoch in range(args.unlearn_epochs):
+                if flag:
+                    print("broken out of loop")
+                    break
+                    
+                for j in range(0, args.n_memories, args.unlearn_batch_size):
+                    # Check if the model has sufficiently unlearned the task
+                    memory_data = model.memory_data[task_to_unlearn]
+                    memory_labels = model.memory_labs[task_to_unlearn]
+                    correct = 0
+                    total = len(memory_data)
+                    
+                    for k in range(0, len(memory_data), min(test_bs, len(memory_data))):
+                        current_data = memory_data[k: k + min(test_bs, len(memory_data))]
+                        current_labels = memory_labels[k: k + min(test_bs, len(memory_data))]
+                        output = model.forward(current_data, task_to_unlearn)
+                        pred = output.data.max(1)[1] 
+                        correct += (pred == current_labels).sum().item()
+                        
+                    if correct / total <= 0.333333333333333333:
+                        flag = True
+                        break
+                        
+                    if not flag:
+                        model.unlearn(unlearning_algo, task_to_unlearn, x1=j, x2=j + args.unlearn_batch_size, alpha=args.alpha)
+            
+            # Remove the unlearned task from observed tasks
+            if task_to_unlearn in model.observed_tasks:
+                model.observed_tasks.remove(task_to_unlearn)
+        
+        # Evaluate performance after each operation (both learning and unlearning)
         model.eval()
-        retain_accuracies, forget_accuracies, testing_accuracies, testing_accuracies_forget = eval_retain_forget_test(model, args,
-                                                            retain_set, forget_set, test_set, retain_accuracies, forget_accuracies,
-                                                            testing_accuracies, testing_accuracies_forget)
+        temp_retain_acc, temp_forget_acc, temp_testing_acc, temp_testing_forget_acc = eval_retain_forget_test(
+            model, args, retain_set, forget_set, test_set, [], [], [], [])
         
-        # eval performance on 20 individual tasks using the eval_task function
+        retain_accuracies.append(temp_retain_acc)
+        forget_accuracies.append(temp_forget_acc)
+        testing_accuracies.append(temp_testing_acc)
+        testing_accuracies_forget.append(temp_testing_forget_acc)
+        
+        # Evaluate performance on all individual tasks
         temp_test_accuracies = []
         temp_test_confidences = []
-        for task in range(n_tasks):
-            
-            test, confidence = eval_task(model, args,
-                                        tests[task * 2], tests[task * 2 + 1],
-                                        task)
-            temp_test_accuracies.append(test)
+        for task_idx in range(n_tasks):
+            test_acc, confidence = eval_task(model, args,
+                                        tests[task_idx * 2], tests[task_idx * 2 + 1],
+                                        task_idx)
+            temp_test_accuracies.append(test_acc)
             temp_test_confidences.append(confidence)
-            print(temp_test_accuracies)
-            
-        ALL_TASK_UNLEARN_ACCURACIES.append(temp_test_accuracies)
-        ALL_TASK_UNLEARN_CONFIDENCES.append(temp_test_confidences)
-    # we want the last item in the list
-    print(ALL_TASK_UNLEARN_ACCURACIES)
-    after_unlearn_accuracies = ALL_TASK_UNLEARN_ACCURACIES[-1]
-    confidence_after_unlearn = ALL_TASK_UNLEARN_CONFIDENCES[-1]
+        
+        ALL_TASK_ACCURACIES.append(temp_test_accuracies)
+        ALL_TASK_CONFIDENCES.append(temp_test_confidences)
+        
+        # Print current state
+        print(f"After {'learning' if operation >= 0 else 'unlearning'} task {abs(operation) + 1}")
+        print(f"Task accuracies: {temp_test_accuracies}")
+    
+    # For compatibility with the existing code
+    after_unlearn_accuracies = ALL_TASK_ACCURACIES[-1] if ALL_TASK_ACCURACIES else []
+    confidence_after_unlearn = ALL_TASK_CONFIDENCES[-1] if ALL_TASK_CONFIDENCES else []
     
     return (model,
             test_accuracies,
-            average_confidence ,
+            [],  # average_confidence - now integrated in ALL_TASK_CONFIDENCES
             after_unlearn_accuracies,
             confidence_after_unlearn,
             retain_accuracies,
             forget_accuracies,
             testing_accuracies,
             testing_accuracies_forget,
-            ALL_TASK_UNLEARN_ACCURACIES,
-            ALL_TASK_UNLEARN_CONFIDENCES,
-            ALL_TASK_CONTINUAL_LEARNING_ACCURACIES)
+            ALL_TASK_ACCURACIES,
+            ALL_TASK_CONFIDENCES)  # Empty for ALL_TASK_CONTINUAL_LEARNING_ACCURACIES as it's now integrated
 
 # We move the single run logic into a function:
 def single_run(run_idx, SHUFFLEDCLASSES, cmd_args, mem_data_local):
     # make a copy of the mem_data .copy() doesn't work as it's a NpzFile
     
     # Assign GPU in round-robin fashion
-    dev = run_idx % NUM_OF_GPU
+    dev = run_idx % NUMBER_OF_GPUS
     #os.environ["CUDA_VISIBLE_DEVICES"] = str(dev)
     torch.cuda.set_device(dev)
     torch.cuda.empty_cache()
 
     random.shuffle(SHUFFLEDCLASSES)
     args = Args()
+    args.memory_strength = float(cmd_args.learn_mem_strength)
+    args.batch_size = int(cmd_args.learn_batch_size)
     args.unlearn_memory_strength = float(cmd_args.unlearn_mem_strength)
     args.unlearn_batch_size = int(cmd_args.unlearn_batch_size)
     if int(cmd_args.salun) == 1:
@@ -407,6 +362,11 @@ def single_run(run_idx, SHUFFLEDCLASSES, cmd_args, mem_data_local):
         args.use_rum = False
         args.rum_split = 0.5
         args.rum_memorization = "a"
+        
+    args.algorithm = cmd_args.algorithm
+    args.alpha = float(cmd_args.alpha)
+        
+    task_sequence = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, -19, -18, -17, -16, -15, -14, -13, -12, -11, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1]
 
     # Run your main training/unlearning (the run_cifar function, etc.)
     # Replace "..." with your original code for a single iteration
@@ -420,9 +380,8 @@ def single_run(run_idx, SHUFFLEDCLASSES, cmd_args, mem_data_local):
     forget_accuracies,
     testing_accuracies,
     testing_accuracies_forget,
-    ALL_TASK_UNLEARN_ACCURACIES,
-    ALL_TASK_UNLEARN_CONFIDENCES,
-    ALL_TASK_CONTINUAL_LEARNING_ACCURACIES) = run_cifar('GEM', args, device=dev, mem_data_local=mem_data_local, newclasses=SHUFFLEDCLASSES)
+    ALL_TASK_ACCURACIES,
+    ALL_TASK_UNLEARN_CONFIDENCES) = run_cifar('GEM', args, device=dev, mem_data_local=mem_data_local, newclasses=SHUFFLEDCLASSES, task_sequence=task_sequence)
 
     return (
         test_accuracies_GEM[-20:],
@@ -431,27 +390,32 @@ def single_run(run_idx, SHUFFLEDCLASSES, cmd_args, mem_data_local):
         forget_accuracies,
         testing_accuracies,
         testing_accuracies_forget,
-        ALL_TASK_UNLEARN_ACCURACIES,
-        ALL_TASK_UNLEARN_CONFIDENCES,
-        ALL_TASK_CONTINUAL_LEARNING_ACCURACIES
+        ALL_TASK_ACCURACIES,
+        ALL_TASK_UNLEARN_CONFIDENCES
     )
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--unlearn_mem_strength', dest='unlearn_mem_strength', type=str)
-    parser.add_argument('--unlearn_batch_size', dest='unlearn_batch_size', type=str)
-    parser.add_argument('--average_over_n_runs', dest='average_over_n_runs', type=str)
-    parser.add_argument('--salun', dest='salun', type=str)
-    parser.add_argument('--salun_strength', dest='salun_strength', type=str)
-    parser.add_argument('--rum', dest='rum', type=str)
-    parser.add_argument('--rum_split', dest='rum_split', type=str)
-    parser.add_argument('--rum_memorization', dest='rum_memorization', type=str)
+    parser.add_argument('--number_of_gpus', dest='number_of_gpus', type=str, help='Add number of GPUs')
+    parser.add_argument('--algorithm', dest='algorithm', type=str, help='Add algorithm: neggem, negagem, neggrad+')
+    parser.add_argument('--alpha', dest='alpha', type=str, help='Add alpha')
+    parser.add_argument('--learn_mem_strength', dest='learn_mem_strength', type=str, help='Add learn_mem_strength')
+    parser.add_argument('--learn_batch_size', dest='learn_batch_size', type=str, help='Add learn_batch_size')
+    parser.add_argument('--unlearn_mem_strength', dest='unlearn_mem_strength', type=str, help='Add unlearn_mem_strength')
+    parser.add_argument('--unlearn_batch_size', dest='unlearn_batch_size', type=str, help='Add unlearn_batch_size')
+    parser.add_argument('--average_over_n_runs', dest='average_over_n_runs', type=str, help='Add average_over_n_runs')
+    parser.add_argument('--salun', dest='salun', type=str, help='Add salun on/off')
+    parser.add_argument('--salun_strength', dest='salun_strength', type=str, help='Add salun strength')
+    parser.add_argument('--rum', dest='rum', type=str, help='Add rum on/off')
+    parser.add_argument('--rum_split', dest='rum_split', type=str, help='Add rum_split')
+    parser.add_argument('--rum_memorization', dest='rum_memorization', type=str, help='Add rum_memorization')
     cmd_args = parser.parse_args()
 
     # GPU info
-    print("Available GPUs: 3. Will distribute runs among them.")
+    print("Available GPUs: ", torch.cuda.device_count())    
     from negGem.cifar import CLASSES_100_UNORDERED
     SHUFFLEDCLASSES = CLASSES_100_UNORDERED.copy()
+    NUMBER_OF_GPUS = int(cmd_args.number_of_gpus)
     
     # print all available GPUs
     os.system('nvidia-smi')
@@ -464,9 +428,8 @@ if __name__ == "__main__":
     forget_accuracies_all = []
     testing_accuracies_all = []
     testing_accuracies_forget_all = []
-    ALL_TASK_UNLEARN_ACCURACIES = []
-    ALL_TASK_UNLEARN_CONFIDENCES = []
-    ALL_TASK_CONTINUAL_LEARNING_ACCURACIES = []
+    ALL_TASK_ACCURACIES = []
+    ALL_TASK_CONFIDENCES = []
 
     # Prepare parallel runs
     average_runs = int(cmd_args.average_over_n_runs)
@@ -474,9 +437,9 @@ if __name__ == "__main__":
     all_results = []
     mem_data_run = {key: np.copy(mem_data[key]) for key in mem_data.files}
     
-    for j in range(0, average_runs, NUM_OF_GPU):
-        with mp.Pool(processes=NUM_OF_GPU) as pool:
-            all_results = pool.starmap(single_run, [(i, SHUFFLEDCLASSES, cmd_args, mem_data_run) for i in range(NUM_OF_GPU)])
+    for j in range(0, average_runs, NUMBER_OF_GPUS):
+        with mp.Pool(processes=NUMBER_OF_GPUS) as pool:
+            all_results = pool.starmap(single_run, [(i, SHUFFLEDCLASSES, cmd_args, mem_data_run) for i in range(NUMBER_OF_GPUS)])
         # Close the pool
         pool.close()
         pool.join()
@@ -488,186 +451,73 @@ if __name__ == "__main__":
             forget_accuracies_all.append(res[3])
             testing_accuracies_all.append(res[4])
             testing_accuracies_forget_all.append(res[5])
-            ALL_TASK_UNLEARN_ACCURACIES.append(res[6])
-            ALL_TASK_UNLEARN_CONFIDENCES.append(res[7])
-            ALL_TASK_CONTINUAL_LEARNING_ACCURACIES.append(res[8])
+            ALL_TASK_ACCURACIES.append(res[6])
+            ALL_TASK_CONFIDENCES.append(res[7])
+            
+    # calculate the average of the test accuracies over multiple runs on ALL_TASK_ACCURACIES
+    ALL_TASK_ACCURACIES_AVERAGED = np.mean(ALL_TASK_ACCURACIES, axis=0)
+    ALL_TASK_CONFIDENCES_AVERAGED = np.mean(ALL_TASK_CONFIDENCES, axis=0)
+    
+    # convert to list
+    ALL_TASK_ACCURACIES_AVERAGED = ALL_TASK_ACCURACIES_AVERAGED.tolist()
+    ALL_TASK_CONFIDENCES_AVERAGED = ALL_TASK_CONFIDENCES_AVERAGED.tolist()
     
     # ALL_TASKS... need to be concatenated
-    ALL_TASK_UNLEARN_ACCURACIES = np.concatenate(ALL_TASK_UNLEARN_ACCURACIES, axis=0)
-    ALL_TASK_UNLEARN_CONFIDENCES = np.concatenate(ALL_TASK_UNLEARN_CONFIDENCES, axis=0)
-    ALL_TASK_CONTINUAL_LEARNING_ACCURACIES = np.concatenate(ALL_TASK_CONTINUAL_LEARNING_ACCURACIES, axis=0)
+    ALL_TASK_ACCURACIES = np.concatenate(ALL_TASK_ACCURACIES, axis=0)
+    ALL_TASK_CONFIDENCES = np.concatenate(ALL_TASK_CONFIDENCES, axis=0)
     
     # convert back to lists
-    ALL_TASK_UNLEARN_ACCURACIES = ALL_TASK_UNLEARN_ACCURACIES.tolist()
-    ALL_TASK_UNLEARN_CONFIDENCES = ALL_TASK_UNLEARN_CONFIDENCES.tolist()
-    ALL_TASK_CONTINUAL_LEARNING_ACCURACIES = ALL_TASK_CONTINUAL_LEARNING_ACCURACIES.tolist()
-
-    # Continue with plotting/saving as in your original code:
-    # (omitted for brevity—paste your existing plotting and saving logic here)
-
-    ## average column-wise the test accuracies 
-    average_test_accuracies_GEM = np.mean(test_accuracies_GEM_all_last_iter, axis=0)
-    average_unlearn_accuracies_GEM = np.mean(unlearn_accuracies_GEM_all_last_iter, axis=0)
-
-    retain_accuracies_avg = np.mean(retain_accuracies_all, axis = 0)
-    forget_accuracies_avg = np.mean(forget_accuracies_all, axis = 0)
-    testing_accuracies_avg = np.mean(testing_accuracies_all, axis = 0)
-    testing_accuracies_forget_avg = np.mean(testing_accuracies_forget_all, axis = 0)
-
-    plt.figure()
-    plt.bar(range(1, 21), average_test_accuracies_GEM)
-    plt.title('Average Test Set for each task after learning all 20 Accuracy Comparison')
-    plt.ylabel('Accuracy (%)')
-    plt.xlabel('Tasks')
-    plt.savefig('average_task_20_accuracy_comparison.png')
-    plt.show()
-
-    plt.figure()
-    plt.bar(range(1, 21), average_unlearn_accuracies_GEM)
-    plt.title('Average Test Set for each task after unlearning the last task Accuracy Comparison')
-    plt.ylabel('Accuracy (%)')
-    plt.xlabel('Tasks')
-    plt.savefig('average_task_20_accuracy_comparison_after_unlearning.png')
-    plt.show()
-
-    plt.figure()
-    difference = average_test_accuracies_GEM - average_unlearn_accuracies_GEM
-    plt.bar(range(1, 21), difference)
-    plt.title('Difference between average test accuracies and average unlearn accuracies')
-    plt.ylabel('Accuracy (%)')
-    plt.xlabel('Tasks')
-    plt.savefig('average_difference_task_20_accuracy_comparison.png')
-    plt.show()
-
-    # Define your x values
-    x = [21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2]
-    #x = [21, 20]
-    # cuda function to flush the memory
-
-
-    # Convert each x value into a string label
-    x_labels = [str(xi) for xi in x]
-    #x = [0, 1]
-    x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
-    plt.figure()
-    # Plot your lines
-    #plt.plot(x, retain_accuracies_avg, label="Retain Accuracies", linestyle="-")
-    #plt.plot(x, forget_accuracies_avg, label="Forget Accuracies", linestyle="-.")
-    plt.plot(x, testing_accuracies_avg, label="Retain Test Accuracies", linestyle="-")
-    plt.plot(x, testing_accuracies_forget_avg, label="Forget Test Accuracies", linestyle="-")
-    # Set y-axis range
-    plt.ylim(0, 1)
-    # Add axis labels
-    plt.xlabel("Task Unlearned")
-    plt.ylabel("Accuracy")
-    # Use the custom string labels for the x-axis
-    x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
-    #x = [0, 1]
-    plt.xticks(x, x_labels)
-    # Display legend and plot 
-    plt.legend()
-    plt.savefig('RetainForgetTest.png')
-    plt.show()
-
-    # reverse the ALL_TASK_CONTINUAL_LEARNING_ACCURACIES list
-    ALL_TASK_CONTINUAL_LEARNING_ACCURACIES.reverse()
-
-    print(len(ALL_TASK_CONTINUAL_LEARNING_ACCURACIES))
-    print(len(ALL_TASK_UNLEARN_ACCURACIES))
-
-    avg_cont_learning_accuracies = []
+    ALL_TASK_ACCURACIES = ALL_TASK_ACCURACIES.tolist()
+    ALL_TASK_CONFIDENCES = ALL_TASK_CONFIDENCES.tolist()
+    
+    # make 1 BIG figure which will contain all the plots 4x5 grid, each subplot will be 1 of the different tasks accuracy as it runs
+    plt.figure(figsize=(20, 15))
+    plt.suptitle('Task test set accuracies for each task as it runs', fontsize=20)
+    
+    import matplotlib.cm as cm
+    
+    # Define a colormap to get distinct colors for each task
+    colors = cm.rainbow(np.linspace(0, 1, 20))
+    
     for i in range(20):
-        avg_cont_learning_accuracies.append([])
-
-    for i in range(len(ALL_TASK_CONTINUAL_LEARNING_ACCURACIES)):
-        avg_cont_learning_accuracies[i%20].append(ALL_TASK_CONTINUAL_LEARNING_ACCURACIES[i])
-        
-    avg_cont_learning_accuracies = np.mean(avg_cont_learning_accuracies, axis = 1)
-
-    avg_cont_unlearning_accuracies = []
-    for i in range(20):
-        avg_cont_unlearning_accuracies.append([])
-        
-    for i in range(len(ALL_TASK_UNLEARN_ACCURACIES)):
-        avg_cont_unlearning_accuracies[i%20].append(ALL_TASK_UNLEARN_ACCURACIES[i])
-
-    avg_cont_unlearning_accuracies = np.mean(avg_cont_unlearning_accuracies, axis = 1)
-
-    # get the column 0 of the avg_cont_learning_accuracies
-    avg_retain_cont_learning_accuracies = avg_cont_learning_accuracies[:, 0]
-
-    # the forget accuracies are the average of the last 19 columns
-    avg_forget_cont_learning_accuracies = np.mean(avg_cont_learning_accuracies[:, 1:], axis = 1)
-
-    # get the column 0 of the avg_cont_unlearning_accuracies
-    avg_retain_cont_unlearning_accuracies = avg_cont_unlearning_accuracies[:, 0]
-
-    # the forget accuracies are the average of the last 19 columns
-    avg_forget_cont_unlearning_accuracies = np.mean(avg_cont_unlearning_accuracies[:, 1:], axis = 1)
-
-    plt.figure()
-    plt.plot(x, avg_retain_cont_unlearning_accuracies, label="Retain Cont. Unlearn Test Accuracies", linestyle="-")
-    plt.plot(x, avg_forget_cont_unlearning_accuracies, label="Forget Cont. Unlearn Test Accuracies", linestyle="--")
-    plt.plot(x, avg_retain_cont_learning_accuracies, label="Retain Cont. Learn Test Accuracies (Baseline)", linestyle="-")
-    plt.plot(x, avg_forget_cont_learning_accuracies, label="Forget Cont. Learn Test Accuracies (Baseline)", linestyle="--")
-    plt.xticks(x, x_labels)
-    plt.ylim(0, 1)
-    plt.xlabel("Task")
-    plt.ylabel("Accuracy")
-    plt.legend()
-    plt.savefig('RetainForgetContLearningUnlearning.png')
-    plt.show()
-
-    # now we want to create a plot similar to above but rather than plotting the retain/forget accuracies, we plot and track the accuracies of each individual task
-    plt.figure()
-    for i in range(avg_cont_unlearning_accuracies.shape[1]):
-        plt.plot(x, avg_cont_unlearning_accuracies[:, i], label="Task " + str(i+1), linestyle="-")
-    plt.xticks(x, x_labels)
-    plt.ylim(0, 1)
-    plt.xlabel("Task")
-    plt.ylabel("Accuracy")
-    plt.legend()
-    plt.savefig('ContLearningUnlearningAllTasks.png')
-    plt.show()
-
-    plt.figure()
-    for i in range(avg_cont_learning_accuracies.shape[1]):
-        plt.plot(x, avg_cont_learning_accuracies[:, i], label="Task " + str(i+1), linestyle="-")
-    plt.xticks(x, x_labels)
-    plt.ylim(0, 1)
-    plt.xlabel("Task")
-    plt.ylabel("Accuracy")
-    plt.legend()
-    plt.savefig('ContLearningAllTasks.png')
-    plt.show()
-
-    # for each run in retain_accuracies_all, forget_accuracies_all, testing_accuracies_all, testing_accuracies_forget_all, plot the exactly like the cell above
-    for i in range(len(retain_accuracies_all)):
-        retain_accuracies_avg = retain_accuracies_all[i]
-        forget_accuracies_avg = forget_accuracies_all[i]
-        testing_accuracies_avg = testing_accuracies_all[i]
-        testing_accuracies_forget_avg = testing_accuracies_forget_all[i]
-        plt.figure()
-        #plt.plot(x, retain_accuracies_avg, label="Retain Accuracies", linestyle="-")
-        #plt.plot(x, forget_accuracies_avg, label="Forget Accuracies", linestyle="-.")
-        plt.plot(x, testing_accuracies_avg, label="Retain Test Accuracies", linestyle="-")
-        plt.plot(x, testing_accuracies_forget_avg, label="Forget Test Accuracies", linestyle="-")
+        plt.subplot(4, 5, i + 1)
+        # Extract task i accuracy at each iteration (column-wise)
+        task_i_accuracies = [iteration[i] for iteration in ALL_TASK_ACCURACIES_AVERAGED]
+        plt.plot(task_i_accuracies, color=colors[i])
+        plt.title('Task ' + str(i + 1))
+        plt.xlabel('Iterations')
+        plt.ylabel('Accuracy')
         plt.ylim(0, 1)
-        plt.xlabel("Task Unlearned")
-        plt.ylabel("Accuracy")
-        plt.xticks(x, x_labels)
-        plt.legend()
-        plt.savefig('RetainForgetTest' + str(i) + '.png')
-        plt.show()
-        print("Plot ", i, " Done")
-        print("Average Retain Accuracies: ", retain_accuracies_avg)
-        print("Average Forget Accuracies: ", forget_accuracies_avg)
-        print("Average Retain Test Accuracies: ", testing_accuracies_avg)
-        print("Average Forget Test Accuracies: ", testing_accuracies_forget_avg)
-        print("Done")
-        
-    # create a new folder to store the results, use the mkdir command combined with the current time and memory strength and batch size
-
+        plt.grid()
+    plt.tight_layout()
+    plt.subplots_adjust(top=0.88)  # Adjust the top to make room for the suptitle
+    plt.savefig('ALL_TASK_ACCURACIES.png')
+    plt.show()
+    # save the figure
+    plt.savefig('ALL_TASK_ACCURACIES.png')
+    plt.close()
+    
+    # do the same plot for confidence
+    plt.figure(figsize=(20, 15))
+    plt.suptitle('Task test set confidences for each task as it runs', fontsize=20)
+    for i in range(20):
+        plt.subplot(4, 5, i + 1)
+        # Extract task i confidence at each iteration (column-wise)
+        task_i_confidences = [iteration[i] for iteration in ALL_TASK_CONFIDENCES_AVERAGED]
+        plt.plot(task_i_confidences, color=colors[i])
+        plt.title('Task ' + str(i + 1))
+        plt.xlabel('Iterations')
+        plt.ylabel('Confidence')
+        plt.ylim(0, 1)
+        plt.grid()
+    plt.tight_layout()
+    plt.subplots_adjust(top=0.88)  # Adjust the top to make room for the suptitle
+    plt.savefig('ALL_TASK_CONFIDENCES.png')
+    plt.show()
+    # save the figure
+    plt.savefig('ALL_TASK_CONFIDENCES.png')
+    plt.close()
+    
     import datetime
 
     cur_date = str(datetime.datetime.now())
@@ -676,47 +526,20 @@ if __name__ == "__main__":
     cur_date = cur_date.replace(" ", "_")
     cur_date = cur_date.replace(":", "_")
 
-    # save all the accuracies using pandas
+    
+    # write the ALL_TASK_ACCURACIES data to a pandas dataframe
     import pandas as pd
-
-    df = pd.DataFrame(test_accuracies_GEM_all_last_iter)
-    df.to_csv('Results' + str(cur_date) + 'MemoryStrength' + str(cmd_args.unlearn_mem_strength) + 'BatchSize' + str(cmd_args.unlearn_batch_size) + 'TestAccuracies.csv')
-
-    df = pd.DataFrame(unlearn_accuracies_GEM_all_last_iter)
-    df.to_csv('Results' + str(cur_date) + 'MemoryStrength' + str(cmd_args.unlearn_mem_strength) + 'BatchSize' + str(cmd_args.unlearn_batch_size) + 'UnlearnAccuracies.csv')
-
-    df = pd.DataFrame(retain_accuracies_all)
-    df.to_csv('Results' + str(cur_date) + 'MemoryStrength' + str(cmd_args.unlearn_mem_strength) + 'BatchSize' + str(cmd_args.unlearn_batch_size) + 'RetainAccuracies.csv')
-
-    df = pd.DataFrame(forget_accuracies_all)
-    df.to_csv('Results' + str(cur_date) + 'MemoryStrength' + str(cmd_args.unlearn_mem_strength) + 'BatchSize' + str(cmd_args.unlearn_batch_size) + 'ForgetAccuracies.csv')
-
-    df = pd.DataFrame(testing_accuracies_all)
-    df.to_csv('Results' + str(cur_date) + 'MemoryStrength' + str(cmd_args.unlearn_mem_strength) + 'BatchSize' + str(cmd_args.unlearn_batch_size) + 'TestingAccuracies.csv')
-
-    df = pd.DataFrame(testing_accuracies_forget_all)
-    df.to_csv('Results' + str(cur_date) + 'MemoryStrength' + str(cmd_args.unlearn_mem_strength) + 'BatchSize' + str(cmd_args.unlearn_batch_size) + 'TestingAccuraciesForget.csv')
-
-    df = pd.DataFrame(ALL_TASK_UNLEARN_ACCURACIES)
-    df.to_csv('Results' + str(cur_date) + 'MemoryStrength' + str(cmd_args.unlearn_mem_strength) + 'BatchSize' + str(cmd_args.unlearn_batch_size) + 'AllTaskUnlearnAccuracies.csv')
-
-    df = pd.DataFrame(ALL_TASK_UNLEARN_CONFIDENCES)
-    df.to_csv('Results' + str(cur_date) + 'MemoryStrength' + str(cmd_args.unlearn_mem_strength) + 'BatchSize' + str(cmd_args.unlearn_batch_size) + 'AllTaskUnlearnConfidences.csv')
-
-    df = pd.DataFrame(ALL_TASK_CONTINUAL_LEARNING_ACCURACIES)
-    df.to_csv('Results' + str(cur_date) + 'MemoryStrength' + str(cmd_args.unlearn_mem_strength) + 'BatchSize' + str(cmd_args.unlearn_batch_size) + 'AllTaskContinualLearningAccuracies.csv')
-
-    df = pd.DataFrame(avg_cont_learning_accuracies)
-    df.to_csv('Results' + str(cur_date) + 'MemoryStrength' + str(cmd_args.unlearn_mem_strength) + 'BatchSize' + str(cmd_args.unlearn_batch_size) + 'AvgContLearningAccuracies.csv')
-
-    df = pd.DataFrame(avg_cont_unlearning_accuracies)
-    df.to_csv('Results' + str(cur_date) + 'MemoryStrength' + str(cmd_args.unlearn_mem_strength) + 'BatchSize' + str(cmd_args.unlearn_batch_size) + 'AvgContUnlearningAccuracies.csv')
-
-    # save the model
-    #torch.save(model, 'Results' + str(cur_date) + 'MemoryStrength' + str(cmd_args.unlearn_mem_strength) + 'BatchSize' + str(cmd_args.unlearn_batch_size) + 'Model.pt')
-
-    # change the directory to /dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning
-    os.chdir('/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning')
+    df = pd.DataFrame(ALL_TASK_ACCURACIES)
+    df.to_csv('Results' + str(cur_date) + 'MemoryStrength' + str(cmd_args.unlearn_mem_strength) + 'BatchSize' + str(cmd_args.unlearn_batch_size) + 'ALL_TASK_ACCURACIES.csv')
+    
+    df = pd.DataFrame(ALL_TASK_ACCURACIES_AVERAGED)
+    df.to_csv('Results' + str(cur_date) + 'MemoryStrength' + str(cmd_args.unlearn_mem_strength) + 'BatchSize' + str(cmd_args.unlearn_batch_size) + 'ALL_TASK_ACCURACIES_AVERAGED.csv')
+    
+    df = pd.DataFrame(ALL_TASK_CONFIDENCES)
+    df.to_csv('Results' + str(cur_date) + 'MemoryStrength' + str(cmd_args.unlearn_mem_strength) + 'BatchSize' + str(cmd_args.unlearn_batch_size) + 'ALL_TASK_CONFIDENCES.csv')
+    
+    # change the directory to /dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning
+    os.chdir('/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning')
 
     os.mkdir('Results' + str(cur_date) + 'MemoryStrength' + str(cmd_args.unlearn_mem_strength) + 'BatchSize' + str(cmd_args.unlearn_batch_size))
 
