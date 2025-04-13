@@ -18,8 +18,11 @@ class Args:
         
         self.unlearn_batch_size = 10
         self.unlearn_epochs = 3
-        self.unlearning_rate = 0.01
+        self.unlearning_rate = 0.0125
         self.unlearn_mem_strength = 0.5
+        
+        self.algorithm = 'neggem'
+        self.alpha = 0.5
         
         # for rum
         self.use_rum = False
