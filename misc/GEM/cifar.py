@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Path to the dataset
-DATASET_PATH = 'cifar-10-batches-py' 
+DATASET_PATH = 'cifar-10-python' 
 CLASSES = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
 # Load a single batch file
 def load_batch(filename):

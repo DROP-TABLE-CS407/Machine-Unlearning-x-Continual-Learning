@@ -19,12 +19,12 @@ def unpickle(file):
         dict = pickle.load(fo, encoding='bytes')
     return dict
 
-cifar10_train_1 = unpickle('cifar-10-batches-py/data_batch_1')
-cifar10_train_2 = unpickle('cifar-10-batches-py/data_batch_2')
-cifar10_train_3 = unpickle('cifar-10-batches-py/data_batch_3')
-cifar10_train_4 = unpickle('cifar-10-batches-py/data_batch_4')
-cifar10_train_5 = unpickle('cifar-10-batches-py/data_batch_5')
-cifar10_test = unpickle('cifar-10-batches-py/test_batch')
+cifar10_train_1 = unpickle('cifar-10-python/data_batch_1')
+cifar10_train_2 = unpickle('cifar-10-python/data_batch_2')
+cifar10_train_3 = unpickle('cifar-10-python/data_batch_3')
+cifar10_train_4 = unpickle('cifar-10-python/data_batch_4')
+cifar10_train_5 = unpickle('cifar-10-python/data_batch_5')
+cifar10_test = unpickle('cifar-10-python/test_batch')
 
 cifar10_train = cifar10_train_1 + cifar10_train_2 + cifar10_train_3 + cifar10_train_4 + cifar10_train_5
 

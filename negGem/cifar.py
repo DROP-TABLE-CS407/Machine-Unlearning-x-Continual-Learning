@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Path to the dataset
-DATASET_PATH = 'cifar-10-batches-py' 
+DATASET_PATH = 'cifar-10-python' 
 DATASET_PATH_100 = 'cifar-100-python'
 CLASSES = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
 CLASSES_100_UNORDERED = [

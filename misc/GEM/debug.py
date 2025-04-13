@@ -17,7 +17,7 @@ import torch.nn as nn
 
 
 # Globals 
-DATASET_PATH = 'cifar-10-batches-py' 
+DATASET_PATH = 'cifar-10-python' 
 CLASSES = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
 
 ## Scraped code fundamental for GEM this is the code required to create a resnet18 model from scratch 

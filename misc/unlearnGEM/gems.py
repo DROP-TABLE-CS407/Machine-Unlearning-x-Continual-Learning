@@ -19,7 +19,7 @@ import quadprog
 AGEM = True
 PRETRAIN = 0 # number of initial classes to pretrain on
 # Globals 
-DATASET_PATH = 'cifar-10-batches-py' 
+DATASET_PATH = 'cifar-10-python' 
 CLASSES = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
 SHUFFLEDCLASSES = CLASSES.copy()
 
