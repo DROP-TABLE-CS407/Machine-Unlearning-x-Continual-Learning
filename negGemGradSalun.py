@@ -44,7 +44,7 @@ os.system('python3.12 --version')
 
 THERE IS ALSO A DIRECTORY YOU NEED TO CHANGE AT THE BOTTOM OF THE FILE YOU SPERG
 
-simply highlight the directory /dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning
+simply highlight the directory /dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning
 
 hold down ctrl + d then ctrl + v (assuming you already have your directory copied)
 
@@ -55,11 +55,11 @@ if you dont know what directory you're in, use pwd in the cmd line
 # set directory /dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning
 # please change these dependent on your own specific path variable
 
-os.chdir('/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning')
+os.chdir('/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning')
 
-save_path_1 = '/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning/GEM/Results4/'
+save_path_1 = '/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/GEM/Results4/'
 
-save_path_2 = '/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning/GEM/Results/'
+save_path_2 = '/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/GEM/Results/'
 
 import torch
 import numpy as np
@@ -538,8 +538,8 @@ if __name__ == "__main__":
     df = pd.DataFrame(ALL_TASK_CONFIDENCES)
     df.to_csv('Results' + str(cur_date) + 'MemoryStrength' + str(cmd_args.unlearn_mem_strength) + 'BatchSize' + str(cmd_args.unlearn_batch_size) + 'ALL_TASK_CONFIDENCES.csv')
     
-    # change the directory to /dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning
-    os.chdir('/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning')
+    # change the directory to /dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning
+    os.chdir('/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning')
 
     os.mkdir('Results' + str(cur_date) + 'MemoryStrength' + str(cmd_args.unlearn_mem_strength) + 'BatchSize' + str(cmd_args.unlearn_batch_size))
 
