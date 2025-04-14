@@ -28,8 +28,10 @@ class Net(nn.Module):
 
         self.opt = torch.optim.SGD(self.parameters(), args.lr)
 
-        self.n_memories = args.n_memories
         self.gpu = args.cuda
+        
+        self.n_learn_memories = args.n_learn_memories
+        self.n_unlearn_memories = args.n_unlearn_memories
         
 
         """
@@ -40,12 +42,25 @@ class Net(nn.Module):
         """
 
         # allocate episodic memory
-        self.memory_data = torch.FloatTensor(
-            n_tasks, self.n_memories, n_inputs)
-        self.memory_labs = torch.LongTensor(n_tasks, self.n_memories)
+        self.learn_memory_data = torch.FloatTensor(n_tasks, self.n_learn_memories, n_inputs)
+        self.learn_memory_labs = torch.LongTensor(n_tasks, self.n_learn_memories)
         if args.cuda:
-            self.memory_data = self.memory_data.cuda()
-            self.memory_labs = self.memory_labs.cuda()
+            self.learn_memory_data = self.learn_memory_data.cuda()
+            self.learn_memory_labs = self.learn_memory_labs.cuda()
+
+        if args.mem_unlearning_buffer:
+            self.unlearn_memory_data = torch.FloatTensor(n_tasks, self.n_unlearn_memories, n_inputs)
+            self.unlearn_memory_labs = torch.LongTensor(n_tasks, self.n_unlearn_memories)
+            if args.cuda:
+                self.unlearn_memory_data = self.unlearn_memory_data.cuda()
+                self.unlearn_memory_labs = self.unlearn_memory_labs.cuda()
+        else:
+            # reuse the learn buffer if it exists
+            self.unlearn_memory_data = self.learn_memory_data
+            self.unlearn_memory_labs = self.learn_memory_labs
+
+        self.mem_learning_buffer = args.mem_learning_buffer
+        self.mem_unlearning_buffer = args.mem_unlearning_buffer
 
         # allocate temporary synaptic memory
         """ This is the memory that stores the gradients of the parameters of the network
@@ -118,18 +133,19 @@ class Net(nn.Module):
             self.opt.step()
             return
         
-        endcnt = min(self.mem_cnt + bsz, self.n_memories) #256
-        effbsz = endcnt - self.mem_cnt # 256
-        self.memory_data[t, self.mem_cnt: endcnt].copy_(
-            x.data[: effbsz])
-        if bsz == 1:
-            self.memory_labs[t, self.mem_cnt] = y.data[0]
-        else:
-            self.memory_labs[t, self.mem_cnt: endcnt].copy_(
-                y.data[: effbsz])
-        self.mem_cnt += effbsz
-        if self.mem_cnt == self.n_memories:
-            self.mem_cnt = 0
+        if not self.mem_learning_buffer:
+            endcnt = min(self.mem_cnt + bsz, self.n_learn_memories) #256
+            effbsz = endcnt - self.mem_cnt # 256
+            self.learn_memory_data[t, self.mem_cnt: endcnt].copy_(
+                x.data[: effbsz])
+            if bsz == 1:
+                self.learn_memory_labs[t, self.mem_cnt] = y.data[0]
+            else:
+                self.learn_memory_labs[t, self.mem_cnt: endcnt].copy_(
+                    y.data[: effbsz])
+            self.mem_cnt += effbsz
+            if self.mem_cnt == self.n_learn_memories:
+                self.mem_cnt = 0
 
         # compute gradient on previous tasks
         # if PRETRAIN == 0:
@@ -146,9 +162,9 @@ class Net(nn.Module):
                                                 self.is_cifar)
                 ptloss = self.ce(
                     self.forward(
-                        self.memory_data[past_task],
+                        self.learn_memory_data[past_task],
                         past_task)[:, offset1: offset2],
-                    self.memory_labs[past_task] - offset1)
+                    self.learn_memory_labs[past_task] - offset1)
                 ptloss.backward()
                 store_grad(self.parameters, self.grads, self.grad_dims,
                         past_task)
@@ -237,15 +253,15 @@ class Net(nn.Module):
                                                     self.is_cifar)
                 ptloss = self.ce(
                         self.forward(
-                            self.memory_data[past_task],
+                            self.learn_memory_data[past_task],
                             past_task)[:, offset1: offset2],
-                        self.memory_labs[past_task] - offset1)
+                        self.learn_memory_labs[past_task] - offset1)
                 if tt == t:
                     ptloss = self.ce(
                         self.forward(
-                            self.memory_data[past_task][x1:x2],
+                            self.unlearn_memory_data[past_task][x1:x2],
                             past_task)[:, offset1: offset2],
-                        self.memory_labs[past_task][x1:x2] - offset1)
+                        self.unlearn_memory_labs[past_task][x1:x2] - offset1)
                     
                 ptloss.backward()
                 store_grad(self.parameters, self.grads, self.grad_dims,
@@ -255,7 +271,7 @@ class Net(nn.Module):
             
             self.zero_grad()
             loss = self.ce(
-                        self.forward(self.memory_data[self.observed_tasks[t]][x1:x2], self.observed_tasks[t])[:, offset1: offset2], self.memory_labs[self.observed_tasks[t]][x1:x2] - offset1)
+                        self.forward(self.unlearn_memory_data[self.observed_tasks[t]][x1:x2], self.observed_tasks[t])[:, offset1: offset2], self.unlearn_memory_labs[self.observed_tasks[t]][x1:x2] - offset1)
             # negate loss for unlearning
             loss = -1 * loss
             loss.backward()
@@ -299,15 +315,15 @@ class Net(nn.Module):
                                                     self.is_cifar)
                 ptloss = self.ce(
                         self.forward(
-                            self.memory_data[past_task],
+                            self.learn_memory_data[past_task],
                             past_task)[:, offset1: offset2],
-                        self.memory_labs[past_task] - offset1)
+                        self.learn_memory_labs[past_task] - offset1)
                 if tt == t:
                     ptloss = self.ce(
                         self.forward(
-                            self.memory_data[past_task][x1:x2],
+                            self.unlearn_memory_data[past_task][x1:x2],
                             past_task)[:, offset1: offset2],
-                        self.memory_labs[past_task][x1:x2] - offset1)
+                        self.unlearn_memory_labs[past_task][x1:x2] - offset1)
                     
                 ptloss.backward()
                 store_grad(self.parameters, self.grads, self.grad_dims,
@@ -317,7 +333,7 @@ class Net(nn.Module):
             
             self.zero_grad()
             loss = self.ce(
-                        self.forward(self.memory_data[self.observed_tasks[t]][x1:x2], self.observed_tasks[t])[:, offset1: offset2], self.memory_labs[self.observed_tasks[t]][x1:x2] - offset1)
+                        self.forward(self.unlearn_memory_data[self.observed_tasks[t]][x1:x2], self.observed_tasks[t])[:, offset1: offset2], self.unlearn_memory_labs[self.observed_tasks[t]][x1:x2] - offset1)
             # negate loss for unlearning
             loss = -1 * loss
             loss.backward()
@@ -362,15 +378,15 @@ class Net(nn.Module):
                                                     self.is_cifar)
                 ptloss = self.ce(
                         self.forward(
-                            self.memory_data[past_task],
+                            self.learn_memory_data[past_task],
                             past_task)[:, offset1: offset2],
-                        self.memory_labs[past_task] - offset1)
+                        self.learn_memory_labs[past_task] - offset1)
                 if tt == t:
-                    current_labs = (self.memory_labs[past_task][x1:x2] - offset1)
+                    current_labs = (self.unlearn_memory_labs[past_task][x1:x2] - offset1)
                     random.shuffle(current_labs)    
                     ptloss = self.ce(
                         self.forward(
-                            self.memory_data[past_task][x1:x2],
+                            self.unlearn_memory_data[past_task][x1:x2],
                             past_task)[:, offset1: offset2],
                         current_labs)
                     
@@ -381,10 +397,10 @@ class Net(nn.Module):
             ## first we check if it is even neccessary to do so, if not simply do a optimiser.step()
             
             self.zero_grad()
-            current_labs = (self.memory_labs[t][x1:x2] - offset1)
+            current_labs = (self.unlearn_memory_labs[t][x1:x2] - offset1)
             random.shuffle(current_labs)
             loss = self.ce(
-                        self.forward(self.memory_data[past_task][x1:x2], t)[:, offset1: offset2], current_labs)
+                        self.forward(self.unlearn_memory_data[past_task][x1:x2], t)[:, offset1: offset2], current_labs)
             # negate loss for unlearning
             loss.backward()
             
@@ -424,15 +440,15 @@ class Net(nn.Module):
                                                     self.is_cifar)
                 ptloss = self.ce(
                         self.forward(
-                            self.memory_data[past_task],
+                            self.learn_memory_data[past_task],
                             past_task)[:, offset1: offset2],
-                        self.memory_labs[past_task] - offset1)
+                        self.learn_memory_labs[past_task] - offset1)
                 if tt == t:
-                    current_labs = (self.memory_labs[past_task][x1:x2] - offset1)
+                    current_labs = (self.unlearn_memory_labs[past_task][x1:x2] - offset1)
                     random.shuffle(current_labs)
                     ptloss = self.ce(
                         self.forward(
-                            self.memory_data[past_task][x1:x2],
+                            self.unlearn_memory_data[past_task][x1:x2],
                             past_task)[:, offset1: offset2],
                         current_labs)
                     
@@ -443,10 +459,10 @@ class Net(nn.Module):
             ## first we check if it is even neccessary to do so, if not simply do a optimiser.step()
             
             self.zero_grad()
-            current_labs = (self.memory_labs[t][x1:x2] - offset1)
+            current_labs = (self.unlearn_memory_labs[t][x1:x2] - offset1)
             random.shuffle(current_labs)
             loss = self.ce(
-                        self.forward(self.memory_data[past_task][x1:x2], t)[:, offset1: offset2], current_labs)
+                        self.forward(self.unlearn_memory_data[past_task][x1:x2], t)[:, offset1: offset2], current_labs)
             # negate loss for unlearning
             loss.backward()
             
@@ -488,15 +504,15 @@ class Net(nn.Module):
                                                     self.is_cifar)
                 ptloss = self.ce(
                         self.forward(
-                            self.memory_data[past_task],
+                            self.learn_memory_data[past_task],
                             past_task)[:, offset1: offset2],
-                        self.memory_labs[past_task] - offset1)
+                        self.learn_memory_labs[past_task] - offset1)
                 if tt == t:
                     ptloss = self.ce(
                         self.forward(
-                            self.memory_data[past_task][x1:x2],
+                            self.unlearn_memory_data[past_task][x1:x2],
                             past_task)[:, offset1: offset2],
-                        self.memory_labs[past_task][x1:x2] - offset1)
+                        self.unlearn_memory_labs[past_task][x1:x2] - offset1)
                     
                 ptloss.backward()
                 store_grad(self.parameters, self.grads, self.grad_dims,
@@ -506,7 +522,7 @@ class Net(nn.Module):
             
             self.zero_grad()
             loss = self.ce(
-                        self.forward(self.memory_data[t][x1:x2], t)[:, offset1: offset2], self.memory_labs[t][x1:x2] - offset1)
+                        self.forward(self.unlearn_memory_data[t][x1:x2], t)[:, offset1: offset2], self.unlearn_memory_labs[t][x1:x2] - offset1)
             # negate loss for unlearning
             loss = -1 * loss
             loss.backward()
@@ -550,16 +566,21 @@ class Net(nn.Module):
                                                     self.is_cifar)
                 ptloss = self.ce(
                         self.forward(
-                            self.memory_data[past_task],
+                            self.learn_memory_data[past_task],
                             past_task)[:, offset1: offset2],
-                        self.memory_labs[past_task] - offset1)
-                    
+                        self.learn_memory_labs[past_task] - offset1)
+                if tt == t:
+                    ptloss = self.ce(
+                        self.forward(
+                            self.unlearn_memory_data[past_task],
+                            past_task)[:, offset1: offset2],
+                        self.unlearn_memory_labs[past_task] - offset1)
                 ptloss.backward()
                 store_grad(self.parameters, self.grads, self.grad_dims,
                             past_task)
                 
             loss = self.ce(
-                        self.forward(self.memory_data[t], t)[:, offset1: offset2], self.memory_labs[t] - offset1)
+                        self.forward(self.unlearn_memory_data[t], t)[:, offset1: offset2], self.unlearn_memory_labs[t] - offset1)
             # negate loss for unlearning
             loss = -1 * loss
             loss.backward()
@@ -582,18 +603,25 @@ class Net(nn.Module):
         else:
             print("Invalid Algorithm")
             
-    def update_memory_from_dataset(self, x_all, y_all, t, t_mapping, mem_scores, mem_data, split, mem_type):
+    def update_memory_from_dataset(self, x_all, y_all, t, t_mapping, mem_scores, mem_data, mem_split, mem_type, buffer_type):
         """
         Update the episodic memory for task t using the entire training set for that task.
         Computes the memorization score for each example and selects the top (or bottom)
-        self.n_memories examples based on the "selection" criteria.
-        
-        If criteria_params is not a dict (e.g. a string "GEM"), this function does nothing.
+        self.n_{learn/unlearn}_memories examples based on the "selection" criteria.
         """
+        print(f"[Memory Update] Task {t}, Buffer: {buffer_type}, Type: {mem_type}, Split: {mem_split}")
+        if buffer_type == 'learn':
+            target_data = self.learn_memory_data
+            target_labs = self.learn_memory_labs
+            n_memories = self.n_learn_memories
+        elif buffer_type == 'unlearn':
+            target_data = self.unlearn_memory_data
+            target_labs = self.unlearn_memory_labs
+            n_memories = self.n_unlearn_memories
+
         task_orig_indices = []
         classes_in_task = t_mapping[t]
         for cls in classes_in_task:
-            # Append indices for this class.
             task_orig_indices.extend(mem_data[f"tr_classidx_{cls}"])
         task_orig_indices = task_orig_indices[:len(x_all)]
         task_orig_indices = np.array(task_orig_indices)
@@ -615,20 +643,19 @@ class Net(nn.Module):
 
         arr = [i for i in range(len(mem_scores))]
         random.shuffle(arr)
-        torch.tensor(arr)
         
-        num_to_select = min(self.n_memories, N)
+        num_to_select = min(n_memories, N)
 
-        if split > 1 or split < 0:
+        if mem_split > 1 or mem_split < 0:
             raise ValueError("split must be in the range [0,1]")
 
-        mem_selection = round(num_to_select * split)
+        mem_selection = round(num_to_select * mem_split)
 
         selected_indices = sorted_indices[:mem_selection].tolist()
         selected_indices = arr[:(num_to_select-mem_selection)] + selected_indices
         random.shuffle(selected_indices)
         
         # Update the memory for task t with the selected examples.
-        self.memory_data[t, :num_to_select].copy_(x_all[selected_indices])
-        self.memory_labs[t, :num_to_select].copy_(y_all[selected_indices])
-        self.mem_cnt = num_to_select  # update the pointer for task t
+        with torch.no_grad():
+            target_data[t, :num_to_select].copy_(x_all[selected_indices])
+            target_labs[t, :num_to_select].copy_(y_all[selected_indices])
