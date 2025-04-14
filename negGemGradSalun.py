@@ -17,9 +17,14 @@ parser.add_argument('--unlearn_batch_size', dest='unlearn_batch_size', type=str,
 parser.add_argument('--average_over_n_runs', dest='average_over_n_runs', type=str, help='Add average_over_n_runs')
 parser.add_argument('--salun', dest='salun', type=str, help='Add salun on/off')
 parser.add_argument('--salun_strength', dest='salun_strength', type=str, help='Add salun strength')
-parser.add_argument('--rum', dest='rum', type=str, help='Add rum on/off')
-parser.add_argument('--rum_split', dest='rum_split', type=str, help='Add rum_split')
-parser.add_argument('--rum_memorization', dest='rum_memorization', type=str, help='Add rum_memorization')
+parser.add_argument('--mem_learning_buffer', type=int, default=1, help='Enable memorization optimised memory buffer for learning')
+parser.add_argument('--learning_buffer_split', type=float, default=0.2, help='Proportion of buffer selected by score vs random')
+parser.add_argument('--learning_buffer_type', type=str, default="least", choices=["least", "most", "random"], help='Memorization type used for selecting learning buffer samples')
+
+# Unlearning buffer settings
+parser.add_argument('--mem_unlearning_buffer', type=int, default=1, help='Enable memorization optimised buffer for unlearning')
+parser.add_argument('--unlearning_buffer_split', type=float, default=0.2, help='Proportion of buffer selected by score vs random for unlearning')
+parser.add_argument('--unlearning_buffer_type', type=str, default="most", choices=["least", "most", "random"], help='Memorization type used for selecting unlearning buffer samples')
 cmd_args = parser.parse_args()
 
 print("Command line arguments:")
@@ -33,9 +38,6 @@ print("unlearn_batch_size:", cmd_args.unlearn_batch_size)
 print("average_over_n_runs:", cmd_args.average_over_n_runs)
 print("salun:", cmd_args.salun)
 print("salun_strength:", cmd_args.salun_strength)
-print("rum:", cmd_args.rum)
-print("rum_split:", cmd_args.rum_split)
-print("rum_memorization:", cmd_args.rum_memorization)
 
 # run command to check python version
 os.system('python3.12 --version')
@@ -242,14 +244,25 @@ def run_cifar(algorithm, args, n_inputs=N_INPUTS, n_outputs=N_OUTPUTS, n_tasks=N
                 if correct / total > 0.7:
                     break
                 
-            if args.use_rum:
-                # Memory update after learning a task
-                print(f"Updating memory for task {task + 1} using global selection.")
-                mem_split = args.rum_split
-                mem_type = args.rum_memorization
-                
-                # Update the memory for the current task using the selected examples
-                model.update_memory_from_dataset(x[:max_idx], y[:max_idx], task, task_mapping, mem_scores, mem_data_local, mem_split, mem_type)
+            if args.mem_learning_buffer:
+                print(f"[Learn Buffer] Updating memory for task {task + 1} using {args.learning_buffer_type} memorization.")
+                model.update_memory_from_dataset(
+                    x[:max_idx], y[:max_idx], task, task_mapping,
+                    mem_scores, mem_data_local,
+                    mem_split=args.learning_buffer_split,
+                    mem_type=args.learning_buffer_type,
+                    buffer_type='learn'
+                )
+
+            if args.mem_unlearning_buffer:
+                print(f"[Unlearn Buffer] Updating memory for task {task + 1} using {args.unlearning_buffer_type} memorization.")
+                model.update_memory_from_dataset(
+                    x[:max_idx], y[:max_idx], task, task_mapping,
+                    mem_scores, mem_data_local,
+                    mem_split=args.unlearning_buffer_split,
+                    mem_type=args.unlearning_buffer_type,
+                    buffer_type='unlearn'
+                )
         
         else:  # Unlearn task (negative value)
             task_to_unlearn = abs(operation)
@@ -266,8 +279,8 @@ def run_cifar(algorithm, args, n_inputs=N_INPUTS, n_outputs=N_OUTPUTS, n_tasks=N
                     
                 for j in range(0, args.n_memories, args.unlearn_batch_size):
                     # Check if the model has sufficiently unlearned the task
-                    memory_data = model.memory_data[task_to_unlearn]
-                    memory_labels = model.memory_labs[task_to_unlearn]
+                    memory_data = model.unlearn_memory_data[task_to_unlearn]
+                    memory_labels = model.unlearn_memory_labs[task_to_unlearn]
                     correct = 0
                     total = len(memory_data)
                     
@@ -353,18 +366,17 @@ def single_run(run_idx, SHUFFLEDCLASSES, cmd_args, mem_data_local):
         args.salun_threshold = float(cmd_args.salun_strength)
     else:
         args.salun = False
-
-    if int(cmd_args.rum) == 1:
-        args.use_rum = True
-        args.rum_split = float(cmd_args.rum_split)
-        args.rum_memorization = cmd_args.rum_memorization
-    else:
-        args.use_rum = False
-        args.rum_split = 0.5
-        args.rum_memorization = "a"
         
     args.algorithm = cmd_args.algorithm
     args.alpha = float(cmd_args.alpha)
+    
+    args.mem_learning_buffer = int(cmd_args.mem_learning_buffer)
+    args.learning_buffer_split = float(cmd_args.learning_buffer_split)
+    args.learning_buffer_type = cmd_args.learning_buffer_type
+    
+    args.mem_unlearning_buffer = int(cmd_args.mem_unlearning_buffer)
+    args.unlearning_buffer_split = float(cmd_args.unlearning_buffer_split)
+    args.unlearning_buffer_type = cmd_args.unlearning_buffer_type
         
     task_sequence = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, -19, -18, -17, -16, -15, -14, -13, -12, -11, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1]
 
@@ -406,9 +418,16 @@ if __name__ == "__main__":
     parser.add_argument('--average_over_n_runs', dest='average_over_n_runs', type=str, help='Add average_over_n_runs')
     parser.add_argument('--salun', dest='salun', type=str, help='Add salun on/off')
     parser.add_argument('--salun_strength', dest='salun_strength', type=str, help='Add salun strength')
-    parser.add_argument('--rum', dest='rum', type=str, help='Add rum on/off')
-    parser.add_argument('--rum_split', dest='rum_split', type=str, help='Add rum_split')
-    parser.add_argument('--rum_memorization', dest='rum_memorization', type=str, help='Add rum_memorization')
+    
+    # Learning buffer settings
+    parser.add_argument('--mem_learning_buffer', type=int, default=1, help='Enable memorization optimised memory buffer for learning')
+    parser.add_argument('--learning_buffer_split', type=float, default=0.2, help='Proportion of buffer selected by score vs random')
+    parser.add_argument('--learning_buffer_type', type=str, default="least", choices=["least", "most", "random"], help='Memorization type used for selecting learning buffer samples')
+
+    # Unlearning buffer settings
+    parser.add_argument('--mem_unlearning_buffer', type=int, default=1, help='Enable memorization optimised buffer for unlearning')
+    parser.add_argument('--unlearning_buffer_split', type=float, default=0.2, help='Proportion of buffer selected by score vs random for unlearning')
+    parser.add_argument('--unlearning_buffer_type', type=str, default="most", choices=["least", "most", "random"], help='Memorization type used for selecting unlearning buffer samples')
     cmd_args = parser.parse_args()
 
     # GPU info
@@ -537,6 +556,29 @@ if __name__ == "__main__":
     
     df = pd.DataFrame(ALL_TASK_CONFIDENCES)
     df.to_csv('Results' + str(cur_date) + 'MemoryStrength' + str(cmd_args.unlearn_mem_strength) + 'BatchSize' + str(cmd_args.unlearn_batch_size) + 'ALL_TASK_CONFIDENCES.csv')
+    
+    # make a dataframe of all the hyperparameters used
+    hyperparameters = {
+        'number_of_gpus': cmd_args.number_of_gpus,
+        'algorithm': cmd_args.algorithm,
+        'alpha': cmd_args.alpha,
+        'learn_mem_strength': cmd_args.learn_mem_strength,
+        'learn_batch_size': cmd_args.learn_batch_size,
+        'unlearn_mem_strength': cmd_args.unlearn_mem_strength,
+        'unlearn_batch_size': cmd_args.unlearn_batch_size,
+        'average_over_n_runs': cmd_args.average_over_n_runs,
+        'salun': cmd_args.salun,
+        'salun_strength': cmd_args.salun_strength,
+        'mem_learning_buffer': cmd_args.mem_learning_buffer,
+        'learning_buffer_split': cmd_args.learning_buffer_split,
+        'learning_buffer_type': cmd_args.learning_buffer_type,
+        'mem_unlearning_buffer': cmd_args.mem_unlearning_buffer,
+        'unlearning_buffer_split': cmd_args.unlearning_buffer_split,
+        'unlearning_buffer_type': cmd_args.unlearning_buffer_type,
+    }
+    
+    df = pd.DataFrame(hyperparameters, index=[0])
+    df.to_csv('Results' + str(cur_date) + 'MemoryStrength' + str(cmd_args.unlearn_mem_strength) + 'BatchSize' + str(cmd_args.unlearn_batch_size) + 'HYPERPARAMETERS.csv')
     
     # change the directory to /dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning
     os.chdir('/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning')
