@@ -7,6 +7,8 @@ class Args:
 
         # memory parameters
         self.n_memories = 256
+        self.n_learn_memories = 256
+        self.n_unlearn_memories = 256
         self.memory_strength = 0.5
         self.finetune = 'no'
         self.mem_cnt = 5120
@@ -17,9 +19,18 @@ class Args:
         self.lr = learning_rate
         
         self.unlearn_batch_size = 10
-        self.unlearn_epochs = 3
-        self.unlearning_rate = 0.0125
+        self.unlearn_epochs = 5
+        self.unlearning_rate = 0.01
         self.unlearn_mem_strength = 0.5
+        
+        # memorization buffers
+        self.mem_learning_buffer = True
+        self.learning_buffer_split = 0.5
+        self.learning_buffer_type = "least"
+
+        self.mem_unlearning_buffer = True
+        self.unlearning_buffer_split = 0.5
+        self.unlearning_buffer_type = "most"
         
         self.algorithm = 'neggem'
         self.alpha = 0.5
