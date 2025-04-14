@@ -1,12 +1,12 @@
 #!/bin/bash
 #
 #SBATCH --job-name=neggem     # Job name for tracking
-#SBATCH --partition=gecko      # Partition you wish to use (see above for list)
+#SBATCH --partition=falcon      # Partition you wish to use (see above for list)
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=48      # Number of CPU threads used by your job
-#SBATCH --gres=gpu:3           # Number of GPUs to use 
+#SBATCH --cpus-per-task=6      # Number of CPU threads used by your job
+#SBATCH --gres=gpu:1           # Number of GPUs to use 
 #SBATCH --mem=60G            # 60GB RAM
-#SBATCH --time=23:00:00        # Job time limit set to 12 hours
+#SBATCH --time=2:00:00        # Job time limit set to 12 hours
 #
 #SBATCH --output=joboutput_%j.out # Standard out from your job
 #SBATCH --error=joboutput_%j.err  # Standard error from your job
@@ -30,16 +30,30 @@ export CUDA_VISIBLE_DEVICES=0,1,2
 
 nvidia-smi
 
-# args are as follows (in respective orders): unlearn_mem_strength, unlearn_batch_size,
-# average over_n_runs, salun on/off, salun strength, rum on/off, rum_split, rum_memorization
-time python3.12 negGemGradSalun.py --algorithm neggem --alpha 0 --number_of_gpus 3 --learn_mem_strength 0.5 --learn_batch_size 10 --unlearn_mem_strength 0.6 --unlearn_batch_size 10 --average_over_n_runs 3 --salun 1 --salun_strength 0.2 --rum 1 --rum_split 0.99 --rum_memorization most
-time python3.12 negGemGradSalun.py --algorithm negagem --alpha 0 --number_of_gpus 3 --learn_mem_strength 0.5 --learn_batch_size 10 --unlearn_mem_strength 0.6 --unlearn_batch_size 10 --average_over_n_runs 3 --salun 1 --salun_strength 0.2 --rum 1 --rum_split 0.99 --rum_memorization most
-time python3.12 negGemGradSalun.py --algorithm RL-GEM --alpha 0 --number_of_gpus 3 --learn_mem_strength 0.5 --learn_batch_size 10 --unlearn_mem_strength 0.6 --unlearn_batch_size 10 --average_over_n_runs 3 --salun 1 --salun_strength 0.2 --rum 1 --rum_split 0.99 --rum_memorization most
-time python3.12 negGemGradSalun.py --algorithm RL-AGEM --alpha 0 --number_of_gpus 3 --learn_mem_strength 0.5 --learn_batch_size 10 --unlearn_mem_strength 0.6 --unlearn_batch_size 10 --average_over_n_runs 3 --salun 1 --salun_strength 0.2 --rum 1 --rum_split 0.99 --rum_memorization most
-time python3.12 negGemGradSalun.py --algorithm ALT-NEGGEM --alpha 0 --number_of_gpus 3 --learn_mem_strength 0.5 --learn_batch_size 10 --unlearn_mem_strength 0.6 --unlearn_batch_size 10 --average_over_n_runs 3 --salun 1 --salun_strength 0.2 --rum 1 --rum_split 0.99 --rum_memorization most
-time python3.12 negGemGradSalun.py --algorithm neggrad --alpha 0.9 --number_of_gpus 3 --learn_mem_strength 0.5 --learn_batch_size 10 --unlearn_mem_strength 0.6 --unlearn_batch_size 10 --average_over_n_runs 3 --salun 1 --salun_strength 0.2 --rum 1 --rum_split 0.99 --rum_memorization most
+BUFFER_ARGS="--mem_learning_buffer 1 \
+    --learning_buffer_split 0.99 \
+    --learning_buffer_type least \
+    --mem_unlearning_buffer 1 \
+    --unlearning_buffer_split 0.2 \
+    --unlearning_buffer_type most"
 
-# move all the results and joboutput files to all_algos_unlearn
-#mv joboutput_*.out ./all_algos_unlearn
-#mv joboutput_*.err ./all_algos_unlearn
-#mv ./Results* ./all_algos_unlearn
+SALUN_ARGS="--salun 1 \
+    --salun_strength 0.2"
+
+MEM_STRENGTH_ARGS="--learn_mem_strength 0.5 \
+    --unlearn_mem_strength 0.6"
+
+LEARN_BATCH_SIZE_ARGS="--learn_batch_size 10 \
+    --unlearn_batch_size 10"
+
+ALPHA_ARGS="--alpha 0"
+
+NUMBER_ARGS="--number_of_gpus 1 \
+    --average_over_n_runs 1"
+
+time python3.12 negGemGradSalun.py --algorithm neggem $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
+
+# move all the results and joboutput files to dual_buffer
+mv joboutput_*.out ./dual_buffer
+mv joboutput_*.err ./dual_buffer
+mv ./Results* ./dual_buffer
