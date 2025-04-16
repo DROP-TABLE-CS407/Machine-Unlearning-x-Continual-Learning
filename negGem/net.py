@@ -153,10 +153,10 @@ class Net(nn.Module):
         # else:
         #     val = 0
         if len(self.observed_tasks) > 0: ### CHANGED FROM 1 to 0 SINCE WE PRETRAIN ON FST 5 CLASSES 
-            for tt in range(len(self.observed_tasks) -1): ### CHANGED FROM -1 to -0 SINCE WE PRETRAIN ON FST 5 CLASSES 
+            for tt in self.observed_tasks: ### CHANGED FROM -1 to -0 SINCE WE PRETRAIN ON FST 5 CLASSES 
                 self.zero_grad()
                 # fwd/bwd on the examples in the memory
-                past_task = self.observed_tasks[tt]
+                past_task = tt
                 
                 offset1, offset2 = compute_offsets(past_task, self.nc_per_task,
                                                 self.is_cifar)

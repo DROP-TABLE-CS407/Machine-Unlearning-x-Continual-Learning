@@ -73,6 +73,9 @@ from negGem.cifar import load_cifar10_data, split_into_classes, get_class_indexe
 import negGem.cifar
 from torch.utils.data import DataLoader
 import random
+# torch.cuda.empty_cache()
+# torch.cuda.reset_peak_memory_stats()
+# torch.cuda.reset_accumulated_memory_stats()
 
 import sys
 sys.path.append(os.path.abspath("."))  # Adds the current directory
@@ -378,7 +381,7 @@ def single_run(run_idx, SHUFFLEDCLASSES, cmd_args, mem_data_local):
     args.unlearning_buffer_split = float(cmd_args.unlearning_buffer_split)
     args.unlearning_buffer_type = cmd_args.unlearning_buffer_type
         
-    task_sequence = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, -19, -18, -17, -16, -15, -14, -13, -12, -11, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1]
+    task_sequence = [0, 1, -1, 1, 2, -2, 2, 3, -3, 3, 4, -4, 4, 5, -5, 5, 6, -6, 6, 7, -7, 7, 8, -8, 8, 9, -9, 9, 10, -10, 10, 11, -11, 11, 12, -12, 12, 13, -13, 13, 14, -14, 14, 15, -15, 15, 16, -16, 16, 17, -17, 17, 18, -18, 18, 19, -19, 19]
 
     # Run your main training/unlearning (the run_cifar function, etc.)
     # Replace "..." with your original code for a single iteration
