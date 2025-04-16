@@ -18,8 +18,8 @@ class Args:
         self.batch_size = 10
         self.lr = learning_rate
         
-        self.unlearn_batch_size = 10
-        self.unlearn_epochs = 5
+        self.unlearn_batch_size = 8
+        self.unlearn_epochs = 10
         self.unlearning_rate = 0.01
         self.unlearn_mem_strength = 0.5
         
