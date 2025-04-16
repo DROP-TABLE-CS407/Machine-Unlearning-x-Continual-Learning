@@ -1,6 +1,5 @@
 import torch
-
-def apply_salun(gradient, threshold):
+def apply_salun(gradient, threshold, mask=None):
     '''
     Applies "SalUn-like" filtering to a raw gradient tensor by keeping only the largest 
     fraction of gradient values (by absolute value) and setting the others to zero.
@@ -10,6 +9,16 @@ def apply_salun(gradient, threshold):
     # Flatten the gradient for easier manipulation
     grad = gradient.view(-1)
     grad_abs = torch.abs(grad)
+    
+    if mask is not None:
+        # If mask is a tuple (gradient, mask) from previous call, extract the mask
+        if isinstance(mask, tuple) and len(mask) == 2:
+            mask = mask[1]
+        # Apply the mask to the gradient as well
+        grad = grad.mul_(mask)
+        return grad.view(gradient.shape), mask
+    
+    mask = grad_abs > 0.0
     
     if threshold <= 0.0:
         grad.zero_()
@@ -23,8 +32,9 @@ def apply_salun(gradient, threshold):
         mask = grad_abs >= cutoff
         grad.mul_(mask)
     
-    return grad.view(gradient.shape)
+    return grad.view(gradient.shape), mask
 
+"""
 def apply_salun(gradient, threshold):
     '''
     Applies "SalUn-like" filtering to a raw gradient tensor by keeping only gradient values
@@ -41,3 +51,4 @@ def apply_salun(gradient, threshold):
     filtered_grad = grad * mask
 
     return filtered_grad.view(gradient.shape)
+"""
