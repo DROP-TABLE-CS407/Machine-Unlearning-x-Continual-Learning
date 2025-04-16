@@ -188,7 +188,7 @@ def NegAGEM(gradient, memories):
     gradient.copy_(torch.Tensor(x).view(-1, 1))
     
 def project2neggrad2(gradient, memories, alpha = 0.9):
-    gref = memories.t().double().sum(axis=0).cuda() # * margin
+    gref = memories.t().double().mean(axis=0).cuda() # * margin
     g = gradient.contiguous().view(-1).double().cuda()
     x = gref*alpha + g * (1-alpha)
     gradient.copy_(torch.Tensor(x).view(-1, 1))
