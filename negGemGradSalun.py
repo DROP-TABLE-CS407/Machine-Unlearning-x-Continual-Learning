@@ -73,9 +73,6 @@ from negGem.cifar import load_cifar10_data, split_into_classes, get_class_indexe
 import negGem.cifar
 from torch.utils.data import DataLoader
 import random
-# torch.cuda.empty_cache()
-# torch.cuda.reset_peak_memory_stats()
-# torch.cuda.reset_accumulated_memory_stats()
 
 import sys
 sys.path.append(os.path.abspath("."))  # Adds the current directory
@@ -274,6 +271,7 @@ def run_cifar(algorithm, args, n_inputs=N_INPUTS, n_outputs=N_OUTPUTS, n_tasks=N
             model.train()
             model.opt = torch.optim.SGD(model.parameters(), args.unlearning_rate)
             flag = False
+            mask = None
             
             for epoch in range(args.unlearn_epochs):
                 if flag:
@@ -299,7 +297,7 @@ def run_cifar(algorithm, args, n_inputs=N_INPUTS, n_outputs=N_OUTPUTS, n_tasks=N
                         break
                         
                     if not flag:
-                        model.unlearn(unlearning_algo, task_to_unlearn, x1=j, x2=j + args.unlearn_batch_size, alpha=args.alpha)
+                        mask = model.unlearn(unlearning_algo, task_to_unlearn, x1=j, x2=j + args.unlearn_batch_size, alpha=args.alpha, mask=mask)
             
             # Remove the unlearned task from observed tasks
             if task_to_unlearn in model.observed_tasks:
@@ -380,7 +378,7 @@ def single_run(run_idx, SHUFFLEDCLASSES, cmd_args, mem_data_local):
     args.mem_unlearning_buffer = int(cmd_args.mem_unlearning_buffer)
     args.unlearning_buffer_split = float(cmd_args.unlearning_buffer_split)
     args.unlearning_buffer_type = cmd_args.unlearning_buffer_type
-        
+    
     task_sequence = [0, 1, -1, 1, 2, -2, 2, 3, -3, 3, 4, -4, 4, 5, -5, 5, 6, -6, 6, 7, -7, 7, 8, -8, 8, 9, -9, 9, 10, -10, 10, 11, -11, 11, 12, -12, 12, 13, -13, 13, 14, -14, 14, 15, -15, 15, 16, -16, 16, 17, -17, 17, 18, -18, 18, 19, -19, 19]
 
     # Run your main training/unlearning (the run_cifar function, etc.)
