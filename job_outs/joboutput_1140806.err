@@ -1,0 +1,14 @@
+/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGradSalun.py:474: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+mv: cannot stat '*.pt': No such file or directory
+
+real	9m40.534s
+user	39m12.280s
+sys	2m39.996s
+/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGradSalun.py:474: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+mv: cannot stat '*.pt': No such file or directory
+
+real	10m27.876s
+user	43m12.683s
+sys	2m51.945s

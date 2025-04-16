@@ -22,7 +22,7 @@ if torch.cuda.is_available():
     model = model.cuda()
 
 # Path to the dataset
-DATASET_PATH = 'cifar-10-batches-py'  # Replace with your actual path
+DATASET_PATH = 'cifar-10-python'  # Replace with your actual path
 
 # Load CIFAR-10 data
 train_data, train_labels, test_data, test_labels = load_cifar10_data(DATASET_PATH)

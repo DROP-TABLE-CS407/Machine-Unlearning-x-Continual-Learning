@@ -1,0 +1,51 @@
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 51, in starmapstar
+    return list(itertools.starmap(args[0], args[1]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGemGradSalun.py", line 397, in single_run
+    ALL_TASK_UNLEARN_CONFIDENCES) = run_cifar('GEM', args, device=dev, mem_data_local=mem_data_local, newclasses=SHUFFLEDCLASSES, task_sequence=task_sequence)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGemGradSalun.py", line 233, in run_cifar
+    model.observe(algorithm, current_data, task, current_labels)
+  File "/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py", line 168, in observe
+    ptloss.backward()
+  File "/dcs/21/u2140671/.local/lib/python3.12/site-packages/torch/_tensor.py", line 626, in backward
+    torch.autograd.backward(
+  File "/dcs/21/u2140671/.local/lib/python3.12/site-packages/torch/autograd/__init__.py", line 340, in backward
+    grad_tensors_ = _make_grads(tensors, grad_tensors_, is_grads_batched=False)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/21/u2140671/.local/lib/python3.12/site-packages/torch/autograd/__init__.py", line 220, in _make_grads
+    torch.ones_like(out, memory_format=torch.preserve_format)
+RuntimeError: CUDA error: device-side assert triggered
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGemGradSalun.py", line 462, in <module>
+    all_results = pool.starmap(single_run, [(i, SHUFFLEDCLASSES, cmd_args, mem_data_run) for i in range(NUMBER_OF_GPUS)])
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 375, in starmap
+    return self._map_async(func, iterable, starmapstar, chunksize).get()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 774, in get
+    raise self._value
+RuntimeError: CUDA error: device-side assert triggered
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+
+real	0m9.256s
+user	0m3.512s
+sys	0m0.810s
+mv: cannot stat './Results*': No such file or directory

@@ -1,0 +1,36 @@
+/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGradSalun.py:474: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+Traceback (most recent call last):
+  File "/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGradSalun.py", line 1107, in <module>
+    model, test_accuracies_GEM, confidence , after_unlearn_acc, after_unlearn_conf, retain_accuracies, forget_accuracies, testing_accuracies, testing_accuracies_forget = run_cifar('GEM', args)
+                                                                                                                                                                          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGradSalun.py", line 1048, in run_cifar
+    model.unlearn(unlearning_algo, n_tasks - i, x1 = j, x2 = j + args.unlearn_batch_size)
+  File "/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGradSalun.py", line 553, in unlearn
+    overwrite_grad(self.parameters, current_grad, self.grad_dims)
+  File "/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGradSalun.py", line 189, in overwrite_grad
+    this_grad = newgrad[beg: en].contiguous().view(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: shape '[20, 3, 3, 3]' is invalid for input of size 19
+
+real	8m45.212s
+user	35m27.946s
+sys	2m32.138s
+/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGradSalun.py:474: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+Traceback (most recent call last):
+  File "/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGradSalun.py", line 1107, in <module>
+    model, test_accuracies_GEM, confidence , after_unlearn_acc, after_unlearn_conf, retain_accuracies, forget_accuracies, testing_accuracies, testing_accuracies_forget = run_cifar('GEM', args)
+                                                                                                                                                                          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGradSalun.py", line 1048, in run_cifar
+    model.unlearn(unlearning_algo, n_tasks - i, x1 = j, x2 = j + args.unlearn_batch_size)
+  File "/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGradSalun.py", line 553, in unlearn
+    overwrite_grad(self.parameters, current_grad, self.grad_dims)
+  File "/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGradSalun.py", line 189, in overwrite_grad
+    this_grad = newgrad[beg: en].contiguous().view(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: shape '[20, 3, 3, 3]' is invalid for input of size 19
+
+real	8m37.506s
+user	35m24.432s
+sys	2m32.563s

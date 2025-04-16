@@ -1,0 +1,17 @@
+/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGrad.py:418: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+Traceback (most recent call last):
+  File "/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGrad.py", line 953, in <module>
+    model, test_accuracies_GEM, confidence , after_unlearn_acc, after_unlearn_conf, retain_accuracies, forget_accuracies, testing_accuracies, testing_accuracies_forget = run_cifar('GEM', Args())
+                                                                                                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGrad.py", line 816, in run_cifar
+    model.observe(algorithm, current_data, task, current_labels)
+  File "/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGrad.py", line 423, in observe
+    project2cone2(self.grads[:, t].unsqueeze(1),
+  File "/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGrad.py", line 190, in project2cone2
+    memories_np *= abs(dot_prod)
+TypeError: unsupported operand type(s) for *=: 'numpy.ndarray' and 'Tensor'
+
+real	0m7.028s
+user	0m14.757s
+sys	0m1.327s

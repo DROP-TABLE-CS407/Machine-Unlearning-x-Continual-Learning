@@ -1,0 +1,173 @@
+Requirement already satisfied: pyyaml in /usr/lib64/python3.12/site-packages (6.0.1)
+Requirement already satisfied: setuptools in /usr/lib/python3.12/site-packages (68.2.2)
+Requirement already satisfied: matplotlib in /dcs/21/u2145461/.local/lib/python3.12/site-packages (3.10.1)
+Requirement already satisfied: contourpy>=1.0.1 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (1.3.1)
+Requirement already satisfied: cycler>=0.10 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (4.56.0)
+Requirement already satisfied: kiwisolver>=1.3.1 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (1.4.8)
+Requirement already satisfied: numpy>=1.23 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (2.2.3)
+Requirement already satisfied: packaging>=20.0 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (24.2)
+Requirement already satisfied: pillow>=8 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (11.0.0)
+Requirement already satisfied: pyparsing>=2.3.1 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (3.2.1)
+Requirement already satisfied: python-dateutil>=2.7 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (2.9.0.post0)
+Requirement already satisfied: six>=1.5 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from python-dateutil>=2.7->matplotlib) (1.17.0)
+Requirement already satisfied: quadprog in /dcs/21/u2145461/.local/lib/python3.12/site-packages (0.1.13)
+Requirement already satisfied: numpy in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from quadprog) (2.2.3)
+Requirement already satisfied: pyparsing in /dcs/21/u2145461/.local/lib/python3.12/site-packages (3.2.1)
+Collecting pandas
+  Obtaining dependency information for pandas from https://files.pythonhosted.org/packages/38/f8/d8fddee9ed0d0c0f4a2132c1dfcf0e3e53265055da8df952a53e7eaf178c/pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata
+  Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (89 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 89.9/89.9 kB 1.3 MB/s eta 0:00:00
+Requirement already satisfied: numpy>=1.26.0 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from pandas) (2.2.3)
+Requirement already satisfied: python-dateutil>=2.8.2 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from pandas) (2.9.0.post0)
+Collecting pytz>=2020.1 (from pandas)
+  Obtaining dependency information for pytz>=2020.1 from https://files.pythonhosted.org/packages/eb/38/ac33370d784287baa1c3d538978b5e2ea064d4c1b93ffbd12826c190dd10/pytz-2025.1-py2.py3-none-any.whl.metadata
+  Downloading pytz-2025.1-py2.py3-none-any.whl.metadata (22 kB)
+Collecting tzdata>=2022.7 (from pandas)
+  Obtaining dependency information for tzdata>=2022.7 from https://files.pythonhosted.org/packages/0f/dd/84f10e23edd882c6f968c21c2434fe67bd4a528967067515feca9e611e5e/tzdata-2025.1-py2.py3-none-any.whl.metadata
+  Downloading tzdata-2025.1-py2.py3-none-any.whl.metadata (1.4 kB)
+Requirement already satisfied: six>=1.5 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from python-dateutil>=2.8.2->pandas) (1.17.0)
+Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.7/12.7 MB 35.5 MB/s eta 0:00:00
+Downloading pytz-2025.1-py2.py3-none-any.whl (507 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 507.9/507.9 kB 25.6 MB/s eta 0:00:00
+Downloading tzdata-2025.1-py2.py3-none-any.whl (346 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 346.8/346.8 kB 21.2 MB/s eta 0:00:00
+Installing collected packages: pytz, tzdata, pandas
+Successfully installed pandas-2.2.3 pytz-2025.1 tzdata-2025.1
+Requirement already satisfied: numpy in /dcs/21/u2145461/.local/lib/python3.12/site-packages (2.2.3)
+Sat Mar  8 03:51:24 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.144.03             Driver Version: 550.144.03     CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA RTX A5000               Off |   00000000:01:00.0 Off |                  Off |
+| 30%   55C    P0             N/A /  230W |       1MiB /  24564MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Python 3.12.8
+./cifar-100-python/train
+./cifar-100-python/test
+Unlearn Batch Size:  32
+Unlearn MEM Strength:  0.6
+cifar-100-python/train
+cifar-100-python/test
+new ordering of classes:  ['girl', 'bus', 'road', 'train', 'flatfish', 'sea', 'kangaroo', 'spider', 'porcupine', 'crab', 'apples', 'sunflowers', 'tiger', 'telephone', 'rocket', 'beaver', 'bee', 'crocodile', 'castle', 'shrew', 'fox', 'camel', 'cans', 'maple', 'elephant', 'plain', 'orchids', 'otter', 'seal', 'bear', 'wolf', 'rabbit', 'willow', 'roses', 'mushrooms', 'lion', 'squirrel', 'beetle', 'shark', 'hamster', 'cloud', 'possum', 'couch', 'bicycle', 'lobster', 'bottles', 'lamp', 'woman', 'cattle', 'bowls', 'worm', 'poppies', 'man', 'dolphin', 'ray', 'pickup truck', 'whale', 'sweet peppers', 'butterfly', 'mountain', 'motorcycle', 'skunk', 'skyscraper', 'baby', 'oak', 'pine', 'plates', 'lizard', 'caterpillar', 'snake', 'streetcar', 'cockroach', 'palm', 'clock', 'table', 'leopard', 'tank', 'aquarium fish', 'turtle', 'tractor', 'dinosaur', 'tulips', 'chair', 'pears', 'oranges', 'television', 'house', 'raccoon', 'mouse', 'forest', 'boy', 'lawn-mower', 'trout', 'chimpanzee', 'wardrobe', 'bridge', 'computer keyboard', 'cups', 'bed', 'snail']
+Training task:  1
+Training task:  2
+Training task:  3
+Training task:  4
+Training task:  5
+Training task:  6
+Training task:  7
+Training task:  8
+Training task:  9
+Training task:  10
+Training task:  11
+Training task:  12
+Training task:  13
+Training task:  14
+Training task:  15
+Training task:  16
+Training task:  17
+Training task:  18
+Training task:  19
+Training task:  20
+Unlearning task:  20
+Total correct retain:  1667  Total retain:  2500
+Total correct forget:  36065  Total forget:  47500
+Total correct test:  311  Total test:  500
+Total correct forget test:  6471  Total test forget:  9500
+Total correct retain:  1539  Total retain:  2500
+Total correct forget:  31855  Total forget:  47500
+Total correct test:  264  Total test:  500
+Total correct forget test:  5796  Total test forget:  9500
+Total correct retain:  1523  Total retain:  2500
+Total correct forget:  32096  Total forget:  47500
+Total correct test:  259  Total test:  500
+Total correct forget test:  5856  Total test forget:  9500
+Total correct retain:  1532  Total retain:  2500
+Total correct forget:  32317  Total forget:  47500
+Total correct test:  261  Total test:  500
+Total correct forget test:  5879  Total test forget:  9500
+Total correct retain:  1530  Total retain:  2500
+Total correct forget:  32472  Total forget:  47500
+Total correct test:  254  Total test:  500
+Total correct forget test:  5896  Total test forget:  9500
+Total correct retain:  1585  Total retain:  2500
+Total correct forget:  32672  Total forget:  47500
+Total correct test:  280  Total test:  500
+Total correct forget test:  5935  Total test forget:  9500
+Total correct retain:  1592  Total retain:  2500
+Total correct forget:  33030  Total forget:  47500
+Total correct test:  278  Total test:  500
+Total correct forget test:  6004  Total test forget:  9500
+Total correct retain:  1570  Total retain:  2500
+Total correct forget:  33377  Total forget:  47500
+Total correct test:  283  Total test:  500
+Total correct forget test:  6035  Total test forget:  9500
+Total correct retain:  1223  Total retain:  2500
+Total correct forget:  14691  Total forget:  47500
+Total correct test:  216  Total test:  500
+Total correct forget test:  2815  Total test forget:  9500
+Total correct retain:  1515  Total retain:  2500
+Total correct forget:  22841  Total forget:  47500
+Total correct test:  270  Total test:  500
+Total correct forget test:  4182  Total test forget:  9500
+Total correct retain:  1508  Total retain:  2500
+Total correct forget:  23011  Total forget:  47500
+Total correct test:  268  Total test:  500
+Total correct forget test:  4210  Total test forget:  9500
+Total correct retain:  1500  Total retain:  2500
+Total correct forget:  22859  Total forget:  47500
+Total correct test:  269  Total test:  500
+Total correct forget test:  4177  Total test forget:  9500
+Total correct retain:  1548  Total retain:  2500
+Total correct forget:  22956  Total forget:  47500
+Total correct test:  273  Total test:  500
+Total correct forget test:  4203  Total test forget:  9500
+Total correct retain:  1548  Total retain:  2500
+Total correct forget:  23228  Total forget:  47500
+Total correct test:  273  Total test:  500
+Total correct forget test:  4246  Total test forget:  9500
+Total correct retain:  1532  Total retain:  2500
+Total correct forget:  23256  Total forget:  47500
+Total correct test:  273  Total test:  500
+Total correct forget test:  4194  Total test forget:  9500
+Total correct retain:  1560  Total retain:  2500
+Total correct forget:  23260  Total forget:  47500
+Total correct test:  278  Total test:  500
+Total correct forget test:  4232  Total test forget:  9500
+Total correct retain:  1566  Total retain:  2500
+Total correct forget:  23164  Total forget:  47500
+Total correct test:  280  Total test:  500
+Total correct forget test:  4253  Total test forget:  9500
+Total correct retain:  1595  Total retain:  2500
+Total correct forget:  23491  Total forget:  47500
+Total correct test:  278  Total test:  500
+Total correct forget test:  4280  Total test forget:  9500
+Total correct retain:  1572  Total retain:  2500
+Total correct forget:  23576  Total forget:  47500
+Total correct test:  271  Total test:  500
+Total correct forget test:  4318  Total test forget:  9500
+Total correct retain:  1656  Total retain:  2500
+Total correct forget:  23342  Total forget:  47500
+Total correct test:  294  Total test:  500
+Total correct forget test:  4253  Total test forget:  9500
+Plot  0  Done
+Average Retain Accuracies:  [0.6668, 0.6156, 0.6092, 0.6128, 0.612, 0.634, 0.6368, 0.628, 0.4892, 0.606, 0.6032, 0.6, 0.6192, 0.6192, 0.6128, 0.624, 0.6264, 0.638, 0.6288, 0.6624]
+Average Forget Accuracies:  [0.7592631578947369, 0.6706315789473685, 0.6757052631578947, 0.680357894736842, 0.6836210526315789, 0.6878315789473685, 0.6953684210526315, 0.7026736842105263, 0.3092842105263158, 0.4808631578947368, 0.4844421052631579, 0.4812421052631579, 0.4832842105263158, 0.48901052631578945, 0.4896, 0.4896842105263158, 0.48766315789473685, 0.4945473684210526, 0.49633684210526313, 0.49141052631578946]
+Average Retain Test Accuracies:  [0.622, 0.528, 0.518, 0.522, 0.508, 0.56, 0.556, 0.566, 0.432, 0.54, 0.536, 0.538, 0.546, 0.546, 0.546, 0.556, 0.56, 0.556, 0.542, 0.588]
+Average Forget Test Accuracies:  [0.6811578947368421, 0.6101052631578947, 0.616421052631579, 0.6188421052631579, 0.6206315789473684, 0.6247368421052631, 0.632, 0.6352631578947369, 0.2963157894736842, 0.4402105263157895, 0.4431578947368421, 0.4396842105263158, 0.44242105263157894, 0.44694736842105265, 0.4414736842105263, 0.4454736842105263, 0.4476842105263158, 0.45052631578947366, 0.45452631578947367, 0.4476842105263158]
+Done

@@ -1,0 +1,6 @@
+/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGrad.py:442: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+
+real	10m46.361s
+user	133m36.372s
+sys	5m6.631s

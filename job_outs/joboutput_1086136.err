@@ -1,0 +1,19 @@
+/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGrad.py:453: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+Traceback (most recent call last):
+  File "/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGrad.py", line 1007, in <module>
+    model, test_accuracies_GEM, confidence , after_unlearn_acc, after_unlearn_conf, retain_accuracies, forget_accuracies, testing_accuracies, testing_accuracies_forget = run_cifar('GEM', args)
+                                                                                                                                                                          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGrad.py", line 956, in run_cifar
+    model.unlearn(unlearning_algo, n_tasks - i, x1 = j, x2 = j + args.unlearn_batch_size)
+  File "/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGrad.py", line 544, in unlearn
+    NegAGEM(forget_grads, retain_grads, self.unlearn_memory_strength)
+  File "/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGrad.py", line 210, in NegAGEM
+    v = quadprog.solve_qp(P, q, G, h)[0]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "quadprog/quadprog.pyx", line 103, in quadprog.solve_qp
+ValueError: constraints are inconsistent, no solution
+
+real	15m30.035s
+user	163m49.081s
+sys	4m38.517s

@@ -1,0 +1,41 @@
+/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGrad.py:453: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+Traceback (most recent call last):
+  File "/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGrad.py", line 1006, in <module>
+    model, test_accuracies_GEM, confidence , after_unlearn_acc, after_unlearn_conf, retain_accuracies, forget_accuracies, testing_accuracies, testing_accuracies_forget = run_cifar('GEM', args)
+                                                                                                                                                                          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGrad.py", line 971, in run_cifar
+    test, confidence = eval_task(model, args,
+                       ^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGrad.py", line 687, in eval_task
+    output = model.forward(current_data, task)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGrad.py", line 355, in forward
+    output = self.net(x)
+             ^^^^^^^^^^^
+  File "/dcs/21/u2145461/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/21/u2145461/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGrad.py", line 114, in forward
+    out = relu(self.bn1(self.conv1(x.view(bsz, 3, 32, 32))))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/21/u2145461/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/21/u2145461/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/21/u2145461/.local/lib/python3.12/site-packages/torch/nn/modules/conv.py", line 554, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/21/u2145461/.local/lib/python3.12/site-packages/torch/nn/modules/conv.py", line 549, in _conv_forward
+    return F.conv2d(
+           ^^^^^^^^^
+RuntimeError: Input type (torch.FloatTensor) and weight type (torch.cuda.FloatTensor) should be the same or input should be a MKLDNN tensor and weight is a dense tensor
+
+real	0m28.191s
+user	7m26.020s
+sys	0m10.235s

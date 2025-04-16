@@ -1,0 +1,19 @@
+/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGradSalun.py:474: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+Traceback (most recent call last):
+  File "/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGradSalun.py", line 1107, in <module>
+    model, test_accuracies_GEM, confidence , after_unlearn_acc, after_unlearn_conf, retain_accuracies, forget_accuracies, testing_accuracies, testing_accuracies_forget = run_cifar('GEM', args)
+                                                                                                                                                                          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGradSalun.py", line 1048, in run_cifar
+    model.unlearn(unlearning_algo, n_tasks - i, x1 = j, x2 = j + args.unlearn_batch_size)
+  File "/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGradSalun.py", line 523, in unlearn
+    past_task = self.observed_tasks[tt]
+                ~~~~~~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+
+real	9m35.643s
+user	41m51.596s
+sys	2m42.702s
+/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGradSalun.py:474: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+slurmstepd: error: *** JOB 1140794 ON falcon-02 CANCELLED AT 2025-04-06T22:37:13 ***

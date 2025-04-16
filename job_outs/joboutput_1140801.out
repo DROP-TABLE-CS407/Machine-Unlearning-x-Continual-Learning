@@ -1,0 +1,189 @@
+Requirement already satisfied: pyyaml in /usr/lib64/python3.12/site-packages (6.0.1)
+Requirement already satisfied: setuptools in /usr/lib/python3.12/site-packages (68.2.2)
+Requirement already satisfied: matplotlib in /dcs/21/u2145461/.local/lib/python3.12/site-packages (3.10.1)
+Requirement already satisfied: contourpy>=1.0.1 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (1.3.1)
+Requirement already satisfied: cycler>=0.10 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (4.56.0)
+Requirement already satisfied: kiwisolver>=1.3.1 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (1.4.8)
+Requirement already satisfied: numpy>=1.23 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (2.2.3)
+Requirement already satisfied: packaging>=20.0 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (24.2)
+Requirement already satisfied: pillow>=8 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (11.0.0)
+Requirement already satisfied: pyparsing>=2.3.1 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (3.2.1)
+Requirement already satisfied: python-dateutil>=2.7 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (2.9.0.post0)
+Requirement already satisfied: six>=1.5 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from python-dateutil>=2.7->matplotlib) (1.17.0)
+Requirement already satisfied: quadprog in /dcs/21/u2145461/.local/lib/python3.12/site-packages (0.1.13)
+Requirement already satisfied: numpy in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from quadprog) (2.2.3)
+Requirement already satisfied: pyparsing in /dcs/21/u2145461/.local/lib/python3.12/site-packages (3.2.1)
+Requirement already satisfied: pandas in /dcs/21/u2145461/.local/lib/python3.12/site-packages (2.2.3)
+Requirement already satisfied: numpy>=1.26.0 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from pandas) (2.2.3)
+Requirement already satisfied: python-dateutil>=2.8.2 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from pandas) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from pandas) (2025.1)
+Requirement already satisfied: tzdata>=2022.7 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from pandas) (2025.1)
+Requirement already satisfied: six>=1.5 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from python-dateutil>=2.8.2->pandas) (1.17.0)
+Requirement already satisfied: numpy in /dcs/21/u2145461/.local/lib/python3.12/site-packages (2.2.3)
+Sun Apr  6 22:59:17 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.144.03             Driver Version: 550.144.03     CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA RTX A5000               Off |   00000000:01:00.0 Off |                  Off |
+| 30%   55C    P0             N/A /  230W |       1MiB /  24564MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Python 3.12.8
+./cifar-100-python/train
+./cifar-100-python/test
+Unlearn Batch Size:  16
+Unlearn MEM Strength:  0.6
+cifar-100-python/train
+cifar-100-python/test
+new ordering of classes:  ['forest', 'plates', 'skunk', 'computer keyboard', 'porcupine', 'tractor', 'worm', 'mushrooms', 'wardrobe', 'willow', 'boy', 'bee', 'maple', 'flatfish', 'sunflowers', 'telephone', 'wolf', 'bus', 'beaver', 'squirrel', 'shark', 'mouse', 'couch', 'palm', 'snake', 'bridge', 'man', 'ray', 'trout', 'oak', 'snail', 'rocket', 'camel', 'dolphin', 'caterpillar', 'cockroach', 'possum', 'dinosaur', 'lamp', 'tulips', 'road', 'cattle', 'shrew', 'bottles', 'hamster', 'bear', 'seal', 'whale', 'lobster', 'kangaroo', 'house', 'bowls', 'chimpanzee', 'skyscraper', 'cups', 'baby', 'train', 'aquarium fish', 'rabbit', 'lion', 'bicycle', 'bed', 'sea', 'butterfly', 'pickup truck', 'clock', 'crab', 'motorcycle', 'lawn-mower', 'girl', 'pine', 'apples', 'castle', 'tank', 'oranges', 'spider', 'television', 'mountain', 'plain', 'orchids', 'table', 'cans', 'fox', 'roses', 'tiger', 'crocodile', 'elephant', 'pears', 'otter', 'leopard', 'chair', 'cloud', 'turtle', 'lizard', 'poppies', 'raccoon', 'streetcar', 'beetle', 'woman', 'sweet peppers']
+Training task:  1
+[0.632, 0.212, 0.2, 0.2, 0.202, 0.132, 0.198, 0.21, 0.208, 0.196, 0.15, 0.212, 0.19, 0.156, 0.202, 0.216, 0.184, 0.234, 0.174, 0.214]
+Training task:  2
+[0.568, 0.802, 0.204, 0.198, 0.196, 0.188, 0.212, 0.214, 0.198, 0.188, 0.14, 0.226, 0.214, 0.226, 0.234, 0.228, 0.174, 0.122, 0.144, 0.198]
+Training task:  3
+[0.552, 0.748, 0.834, 0.194, 0.186, 0.216, 0.212, 0.28, 0.228, 0.15, 0.11, 0.22, 0.196, 0.2, 0.21, 0.168, 0.204, 0.164, 0.164, 0.172]
+Training task:  4
+[0.572, 0.62, 0.642, 0.664, 0.196, 0.108, 0.228, 0.21, 0.202, 0.188, 0.142, 0.244, 0.184, 0.152, 0.294, 0.184, 0.166, 0.158, 0.23, 0.284]
+Training task:  5
+[0.61, 0.674, 0.634, 0.624, 0.73, 0.114, 0.2, 0.214, 0.266, 0.21, 0.126, 0.2, 0.172, 0.208, 0.312, 0.192, 0.202, 0.176, 0.16, 0.232]
+Training task:  6
+[0.578, 0.708, 0.648, 0.618, 0.68, 0.82, 0.218, 0.24, 0.262, 0.208, 0.132, 0.234, 0.194, 0.216, 0.198, 0.202, 0.216, 0.164, 0.18, 0.206]
+Training task:  7
+[0.574, 0.698, 0.662, 0.542, 0.628, 0.788, 0.72, 0.288, 0.238, 0.216, 0.102, 0.22, 0.206, 0.168, 0.168, 0.228, 0.184, 0.186, 0.19, 0.218]
+Training task:  8
+[0.604, 0.71, 0.638, 0.582, 0.654, 0.74, 0.6, 0.818, 0.232, 0.216, 0.152, 0.198, 0.188, 0.166, 0.292, 0.232, 0.156, 0.252, 0.2, 0.164]
+Training task:  9
+[0.596, 0.698, 0.672, 0.552, 0.64, 0.74, 0.622, 0.794, 0.806, 0.228, 0.148, 0.188, 0.21, 0.172, 0.35, 0.294, 0.172, 0.248, 0.222, 0.174]
+Training task:  10
+[0.608, 0.646, 0.554, 0.572, 0.608, 0.72, 0.582, 0.732, 0.72, 0.694, 0.206, 0.182, 0.216, 0.192, 0.324, 0.262, 0.208, 0.208, 0.19, 0.18]
+Training task:  11
+[0.59, 0.682, 0.568, 0.564, 0.608, 0.716, 0.602, 0.766, 0.714, 0.646, 0.816, 0.208, 0.214, 0.182, 0.276, 0.284, 0.212, 0.204, 0.164, 0.186]
+Training task:  12
+[0.58, 0.688, 0.632, 0.59, 0.624, 0.76, 0.616, 0.76, 0.682, 0.612, 0.758, 0.764, 0.216, 0.184, 0.26, 0.268, 0.222, 0.17, 0.148, 0.166]
+Training task:  13
+[0.628, 0.676, 0.626, 0.598, 0.602, 0.736, 0.612, 0.744, 0.684, 0.606, 0.75, 0.69, 0.83, 0.208, 0.304, 0.356, 0.228, 0.186, 0.148, 0.146]
+Training task:  14
+[0.652, 0.716, 0.614, 0.604, 0.63, 0.73, 0.576, 0.732, 0.68, 0.554, 0.72, 0.644, 0.75, 0.794, 0.344, 0.276, 0.202, 0.198, 0.17, 0.152]
+Training task:  15
+[0.658, 0.7, 0.654, 0.546, 0.612, 0.738, 0.568, 0.744, 0.672, 0.552, 0.712, 0.65, 0.754, 0.728, 0.894, 0.306, 0.236, 0.194, 0.174, 0.156]
+Training task:  16
+[0.64, 0.716, 0.576, 0.55, 0.59, 0.746, 0.558, 0.758, 0.696, 0.578, 0.7, 0.61, 0.742, 0.706, 0.804, 0.888, 0.178, 0.166, 0.126, 0.138]
+Training task:  17
+[0.652, 0.704, 0.654, 0.558, 0.594, 0.702, 0.546, 0.774, 0.664, 0.528, 0.69, 0.672, 0.718, 0.698, 0.818, 0.796, 0.754, 0.216, 0.122, 0.156]
+Training task:  18
+[0.66, 0.684, 0.61, 0.57, 0.614, 0.71, 0.516, 0.748, 0.67, 0.556, 0.694, 0.652, 0.712, 0.678, 0.796, 0.756, 0.708, 0.758, 0.156, 0.134]
+Training task:  19
+[0.626, 0.706, 0.618, 0.592, 0.574, 0.69, 0.538, 0.748, 0.672, 0.524, 0.652, 0.652, 0.736, 0.65, 0.8, 0.8, 0.704, 0.72, 0.814, 0.16]
+Training task:  20
+[0.638, 0.716, 0.66, 0.58, 0.584, 0.724, 0.582, 0.76, 0.676, 0.53, 0.644, 0.65, 0.704, 0.662, 0.796, 0.764, 0.718, 0.732, 0.81, 0.828]
+Unlearning task:  20
+Total correct retain:  1698  Total retain:  2500
+Total correct forget:  37695  Total forget:  47500
+Total correct test:  319  Total test:  500
+Total correct forget test:  6560  Total test forget:  9500
+[0.638]
+[0.638, 0.716]
+[0.638, 0.716, 0.66]
+[0.638, 0.716, 0.66, 0.58]
+[0.638, 0.716, 0.66, 0.58, 0.584]
+[0.638, 0.716, 0.66, 0.58, 0.584, 0.724]
+[0.638, 0.716, 0.66, 0.58, 0.584, 0.724, 0.582]
+[0.638, 0.716, 0.66, 0.58, 0.584, 0.724, 0.582, 0.76]
+[0.638, 0.716, 0.66, 0.58, 0.584, 0.724, 0.582, 0.76, 0.676]
+[0.638, 0.716, 0.66, 0.58, 0.584, 0.724, 0.582, 0.76, 0.676, 0.53]
+[0.638, 0.716, 0.66, 0.58, 0.584, 0.724, 0.582, 0.76, 0.676, 0.53, 0.644]
+[0.638, 0.716, 0.66, 0.58, 0.584, 0.724, 0.582, 0.76, 0.676, 0.53, 0.644, 0.65]
+[0.638, 0.716, 0.66, 0.58, 0.584, 0.724, 0.582, 0.76, 0.676, 0.53, 0.644, 0.65, 0.704]
+[0.638, 0.716, 0.66, 0.58, 0.584, 0.724, 0.582, 0.76, 0.676, 0.53, 0.644, 0.65, 0.704, 0.662]
+[0.638, 0.716, 0.66, 0.58, 0.584, 0.724, 0.582, 0.76, 0.676, 0.53, 0.644, 0.65, 0.704, 0.662, 0.796]
+[0.638, 0.716, 0.66, 0.58, 0.584, 0.724, 0.582, 0.76, 0.676, 0.53, 0.644, 0.65, 0.704, 0.662, 0.796, 0.764]
+[0.638, 0.716, 0.66, 0.58, 0.584, 0.724, 0.582, 0.76, 0.676, 0.53, 0.644, 0.65, 0.704, 0.662, 0.796, 0.764, 0.718]
+[0.638, 0.716, 0.66, 0.58, 0.584, 0.724, 0.582, 0.76, 0.676, 0.53, 0.644, 0.65, 0.704, 0.662, 0.796, 0.764, 0.718, 0.732]
+[0.638, 0.716, 0.66, 0.58, 0.584, 0.724, 0.582, 0.76, 0.676, 0.53, 0.644, 0.65, 0.704, 0.662, 0.796, 0.764, 0.718, 0.732, 0.81]
+[0.638, 0.716, 0.66, 0.58, 0.584, 0.724, 0.582, 0.76, 0.676, 0.53, 0.644, 0.65, 0.704, 0.662, 0.796, 0.764, 0.718, 0.732, 0.81, 0.828]
+Python 3.12.8
+./cifar-100-python/train
+./cifar-100-python/test
+Unlearn Batch Size:  16
+Unlearn MEM Strength:  0.6
+cifar-100-python/train
+cifar-100-python/test
+new ordering of classes:  ['kangaroo', 'cockroach', 'leopard', 'bear', 'wolf', 'lizard', 'bowls', 'bicycle', 'lobster', 'whale', 'mountain', 'aquarium fish', 'lion', 'tulips', 'cans', 'castle', 'clock', 'lawn-mower', 'pears', 'tractor', 'motorcycle', 'skyscraper', 'train', 'beetle', 'bus', 'crab', 'orchids', 'snake', 'cattle', 'beaver', 'plain', 'roses', 'computer keyboard', 'pickup truck', 'rocket', 'ray', 'tank', 'shark', 'shrew', 'sweet peppers', 'turtle', 'porcupine', 'plates', 'chimpanzee', 'seal', 'cups', 'elephant', 'woman', 'willow', 'butterfly', 'girl', 'telephone', 'table', 'baby', 'lamp', 'crocodile', 'snail', 'dinosaur', 'flatfish', 'road', 'squirrel', 'skunk', 'sea', 'bridge', 'boy', 'mushrooms', 'rabbit', 'television', 'oranges', 'sunflowers', 'otter', 'palm', 'couch', 'streetcar', 'mouse', 'cloud', 'fox', 'wardrobe', 'dolphin', 'bed', 'camel', 'oak', 'bottles', 'forest', 'caterpillar', 'poppies', 'house', 'apples', 'possum', 'raccoon', 'pine', 'spider', 'maple', 'trout', 'tiger', 'man', 'worm', 'bee', 'hamster', 'chair']
+Training task:  1
+[0.57, 0.2, 0.208, 0.22, 0.174, 0.214, 0.228, 0.152, 0.152, 0.158, 0.21, 0.232, 0.136, 0.124, 0.236, 0.204, 0.206, 0.202, 0.218, 0.186]
+Training task:  2
+[0.492, 0.544, 0.17, 0.19, 0.174, 0.206, 0.25, 0.092, 0.18, 0.19, 0.186, 0.2, 0.22, 0.208, 0.17, 0.212, 0.224, 0.212, 0.158, 0.218]
+Training task:  3
+[0.608, 0.604, 0.832, 0.234, 0.152, 0.14, 0.258, 0.09, 0.214, 0.214, 0.168, 0.224, 0.236, 0.216, 0.18, 0.194, 0.202, 0.15, 0.118, 0.206]
+Training task:  4
+[0.556, 0.618, 0.748, 0.77, 0.204, 0.13, 0.33, 0.118, 0.198, 0.194, 0.214, 0.244, 0.236, 0.28, 0.226, 0.22, 0.222, 0.178, 0.144, 0.204]
+Training task:  5
+[0.55, 0.612, 0.74, 0.694, 0.834, 0.16, 0.286, 0.098, 0.218, 0.188, 0.166, 0.246, 0.3, 0.278, 0.25, 0.258, 0.268, 0.164, 0.148, 0.222]
+Training task:  6
+[0.544, 0.592, 0.724, 0.684, 0.766, 0.694, 0.282, 0.172, 0.2, 0.188, 0.164, 0.22, 0.18, 0.288, 0.242, 0.236, 0.242, 0.214, 0.172, 0.228]
+Training task:  7
+[0.556, 0.614, 0.718, 0.662, 0.74, 0.65, 0.852, 0.108, 0.21, 0.176, 0.188, 0.23, 0.226, 0.28, 0.26, 0.222, 0.254, 0.206, 0.174, 0.214]
+Training task:  8
+[0.49, 0.59, 0.686, 0.66, 0.724, 0.596, 0.772, 0.774, 0.214, 0.17, 0.146, 0.244, 0.242, 0.27, 0.262, 0.234, 0.208, 0.266, 0.132, 0.22]
+Training task:  9
+[0.508, 0.556, 0.67, 0.636, 0.69, 0.588, 0.712, 0.74, 0.666, 0.188, 0.152, 0.224, 0.214, 0.276, 0.306, 0.258, 0.244, 0.278, 0.178, 0.192]
+Training task:  10
+[0.526, 0.558, 0.696, 0.65, 0.674, 0.552, 0.738, 0.708, 0.62, 0.728, 0.174, 0.218, 0.196, 0.252, 0.268, 0.206, 0.222, 0.216, 0.192, 0.196]
+Training task:  11
+[0.538, 0.538, 0.7, 0.654, 0.682, 0.544, 0.724, 0.678, 0.586, 0.646, 0.656, 0.218, 0.214, 0.25, 0.278, 0.186, 0.202, 0.242, 0.146, 0.244]
+Training task:  12
+[0.518, 0.584, 0.694, 0.646, 0.674, 0.494, 0.746, 0.694, 0.564, 0.666, 0.538, 0.842, 0.238, 0.286, 0.304, 0.16, 0.202, 0.252, 0.196, 0.254]
+Training task:  13
+[0.504, 0.556, 0.744, 0.644, 0.686, 0.508, 0.754, 0.668, 0.558, 0.67, 0.526, 0.786, 0.848, 0.23, 0.338, 0.17, 0.2, 0.234, 0.178, 0.222]
+Training task:  14
+[0.51, 0.538, 0.728, 0.638, 0.646, 0.48, 0.69, 0.698, 0.592, 0.614, 0.53, 0.722, 0.748, 0.826, 0.278, 0.176, 0.186, 0.194, 0.184, 0.304]
+Training task:  15
+[0.51, 0.584, 0.692, 0.642, 0.676, 0.498, 0.714, 0.692, 0.6, 0.634, 0.544, 0.738, 0.754, 0.73, 0.754, 0.162, 0.214, 0.186, 0.17, 0.266]
+Training task:  16
+[0.526, 0.56, 0.69, 0.602, 0.664, 0.496, 0.728, 0.71, 0.604, 0.636, 0.56, 0.762, 0.75, 0.722, 0.732, 0.86, 0.228, 0.182, 0.152, 0.316]
+Training task:  17
+[0.49, 0.554, 0.698, 0.622, 0.704, 0.522, 0.752, 0.706, 0.58, 0.656, 0.51, 0.714, 0.736, 0.698, 0.674, 0.788, 0.79, 0.234, 0.11, 0.268]
+Training task:  18
+[0.504, 0.594, 0.706, 0.61, 0.646, 0.52, 0.702, 0.662, 0.56, 0.516, 0.49, 0.626, 0.648, 0.71, 0.566, 0.672, 0.582, 0.66, 0.194, 0.306]
+Training task:  19
+[0.498, 0.554, 0.706, 0.62, 0.646, 0.51, 0.75, 0.678, 0.556, 0.602, 0.46, 0.656, 0.71, 0.676, 0.574, 0.66, 0.656, 0.62, 0.68, 0.25]
+Training task:  20
+[0.516, 0.568, 0.696, 0.628, 0.676, 0.49, 0.728, 0.668, 0.572, 0.622, 0.506, 0.684, 0.694, 0.694, 0.574, 0.708, 0.632, 0.624, 0.624, 0.81]
+Unlearning task:  20
+Total correct retain:  1453  Total retain:  2500
+Total correct forget:  34190  Total forget:  47500
+Total correct test:  258  Total test:  500
+Total correct forget test:  6099  Total test forget:  9500
+[0.516]
+[0.516, 0.568]
+[0.516, 0.568, 0.696]
+[0.516, 0.568, 0.696, 0.628]
+[0.516, 0.568, 0.696, 0.628, 0.676]
+[0.516, 0.568, 0.696, 0.628, 0.676, 0.49]
+[0.516, 0.568, 0.696, 0.628, 0.676, 0.49, 0.728]
+[0.516, 0.568, 0.696, 0.628, 0.676, 0.49, 0.728, 0.668]
+[0.516, 0.568, 0.696, 0.628, 0.676, 0.49, 0.728, 0.668, 0.572]
+[0.516, 0.568, 0.696, 0.628, 0.676, 0.49, 0.728, 0.668, 0.572, 0.622]
+[0.516, 0.568, 0.696, 0.628, 0.676, 0.49, 0.728, 0.668, 0.572, 0.622, 0.506]
+[0.516, 0.568, 0.696, 0.628, 0.676, 0.49, 0.728, 0.668, 0.572, 0.622, 0.506, 0.684]
+[0.516, 0.568, 0.696, 0.628, 0.676, 0.49, 0.728, 0.668, 0.572, 0.622, 0.506, 0.684, 0.694]
+[0.516, 0.568, 0.696, 0.628, 0.676, 0.49, 0.728, 0.668, 0.572, 0.622, 0.506, 0.684, 0.694, 0.694]
+[0.516, 0.568, 0.696, 0.628, 0.676, 0.49, 0.728, 0.668, 0.572, 0.622, 0.506, 0.684, 0.694, 0.694, 0.574]
+[0.516, 0.568, 0.696, 0.628, 0.676, 0.49, 0.728, 0.668, 0.572, 0.622, 0.506, 0.684, 0.694, 0.694, 0.574, 0.708]
+[0.516, 0.568, 0.696, 0.628, 0.676, 0.49, 0.728, 0.668, 0.572, 0.622, 0.506, 0.684, 0.694, 0.694, 0.574, 0.708, 0.632]
+[0.516, 0.568, 0.696, 0.628, 0.676, 0.49, 0.728, 0.668, 0.572, 0.622, 0.506, 0.684, 0.694, 0.694, 0.574, 0.708, 0.632, 0.624]
+[0.516, 0.568, 0.696, 0.628, 0.676, 0.49, 0.728, 0.668, 0.572, 0.622, 0.506, 0.684, 0.694, 0.694, 0.574, 0.708, 0.632, 0.624, 0.624]
+[0.516, 0.568, 0.696, 0.628, 0.676, 0.49, 0.728, 0.668, 0.572, 0.622, 0.506, 0.684, 0.694, 0.694, 0.574, 0.708, 0.632, 0.624, 0.624, 0.81]

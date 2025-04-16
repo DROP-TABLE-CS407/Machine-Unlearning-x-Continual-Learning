@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGrad.py", line 1046, in <module>
+    model, test_accuracies_GEM, confidence , after_unlearn_acc, after_unlearn_conf, retain_accuracies, forget_accuracies, testing_accuracies, testing_accuracies_forget = run_cifar('GEM', args)
+                                                                                                                                                                          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGrad.py", line 821, in run_cifar
+    model = Net(n_inputs, n_outputs, n_tasks, args)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem/negGemGrad.py", line 342, in __init__
+    self.memory_data = self.memory_data.cuda()
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/21/u2145461/.local/lib/python3.12/site-packages/torch/cuda/__init__.py", line 376, in _lazy_init
+    torch._C._cuda_init()
+RuntimeError: No CUDA GPUs are available
+
+real	0m14.479s
+user	0m3.203s
+sys	0m0.649s

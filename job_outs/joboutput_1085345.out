@@ -1,0 +1,80 @@
+Requirement already satisfied: pyyaml in /usr/lib64/python3.12/site-packages (6.0.1)
+Requirement already satisfied: setuptools in /usr/lib/python3.12/site-packages (68.2.2)
+Requirement already satisfied: matplotlib in /dcs/21/u2145461/.local/lib/python3.12/site-packages (3.10.1)
+Requirement already satisfied: contourpy>=1.0.1 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (1.3.1)
+Requirement already satisfied: cycler>=0.10 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (4.56.0)
+Requirement already satisfied: kiwisolver>=1.3.1 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (1.4.8)
+Requirement already satisfied: numpy>=1.23 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (2.2.3)
+Requirement already satisfied: packaging>=20.0 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (24.2)
+Requirement already satisfied: pillow>=8 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (11.0.0)
+Requirement already satisfied: pyparsing>=2.3.1 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (3.2.1)
+Requirement already satisfied: python-dateutil>=2.7 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from matplotlib) (2.9.0.post0)
+Requirement already satisfied: six>=1.5 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from python-dateutil>=2.7->matplotlib) (1.17.0)
+Requirement already satisfied: quadprog in /dcs/21/u2145461/.local/lib/python3.12/site-packages (0.1.13)
+Requirement already satisfied: numpy in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from quadprog) (2.2.3)
+Requirement already satisfied: pyparsing in /dcs/21/u2145461/.local/lib/python3.12/site-packages (3.2.1)
+Requirement already satisfied: pandas in /dcs/21/u2145461/.local/lib/python3.12/site-packages (2.2.3)
+Requirement already satisfied: numpy>=1.26.0 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from pandas) (2.2.3)
+Requirement already satisfied: python-dateutil>=2.8.2 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from pandas) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from pandas) (2025.1)
+Requirement already satisfied: tzdata>=2022.7 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from pandas) (2025.1)
+Requirement already satisfied: six>=1.5 in /dcs/21/u2145461/.local/lib/python3.12/site-packages (from python-dateutil>=2.8.2->pandas) (1.17.0)
+Requirement already satisfied: numpy in /dcs/21/u2145461/.local/lib/python3.12/site-packages (2.2.3)
+Sat Mar  8 05:11:42 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.144.03             Driver Version: 550.144.03     CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A10                     On  |   00000000:25:00.0 Off |                    0 |
+|  0%   27C    P8             15W /  150W |       1MiB /  23028MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Python 3.12.8
+./cifar-100-python/train
+./cifar-100-python/test
+Unlearn Batch Size:  256
+Unlearn MEM Strength:  0.6
+cifar-100-python/train
+cifar-100-python/test
+new ordering of classes:  ['lamp', 'train', 'dolphin', 'mountain', 'cups', 'wolf', 'tulips', 'raccoon', 'willow', 'mouse', 'lobster', 'beaver', 'chair', 'spider', 'table', 'ray', 'orchids', 'worm', 'shark', 'bowls', 'telephone', 'lion', 'pickup truck', 'snake', 'tractor', 'sunflowers', 'sweet peppers', 'snail', 'seal', 'woman', 'cockroach', 'bicycle', 'turtle', 'bus', 'cloud', 'bridge', 'oranges', 'leopard', 'beetle', 'man', 'motorcycle', 'palm', 'roses', 'bee', 'squirrel', 'pears', 'lawn-mower', 'otter', 'television', 'girl', 'apples', 'chimpanzee', 'skyscraper', 'tank', 'camel', 'hamster', 'kangaroo', 'mushrooms', 'caterpillar', 'wardrobe', 'castle', 'computer keyboard', 'rabbit', 'crocodile', 'oak', 'trout', 'cattle', 'bed', 'porcupine', 'shrew', 'house', 'whale', 'tiger', 'plain', 'aquarium fish', 'bear', 'boy', 'road', 'sea', 'lizard', 'fox', 'cans', 'dinosaur', 'poppies', 'crab', 'baby', 'forest', 'butterfly', 'streetcar', 'elephant', 'maple', 'rocket', 'plates', 'couch', 'possum', 'skunk', 'clock', 'bottles', 'flatfish', 'pine']
+Training task:  1
+Training task:  2
+Training task:  3
+Training task:  4
+Training task:  5
+Training task:  6
+Training task:  7
+Training task:  8
+Training task:  9
+Training task:  10
+Training task:  11
+Training task:  12
+Training task:  13
+Training task:  14
+Training task:  15
+Training task:  16
+Training task:  17
+Training task:  18
+Training task:  19
+Training task:  20
+Unlearning task:  20
+Total correct retain:  850  Total retain:  2500
+Total correct forget:  18586  Total forget:  47500
+Total correct test:  158  Total test:  500
+Total correct forget test:  3694  Total test forget:  9500
+Total correct retain:  840  Total retain:  2500
+Total correct forget:  19935  Total forget:  47500
+Total correct test:  158  Total test:  500
+Total correct forget test:  4083  Total test forget:  9500
