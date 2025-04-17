@@ -1,3 +1,5 @@
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:195: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
 multiprocessing.pool.RemoteTraceback: 
 """
 Traceback (most recent call last):
@@ -10,17 +12,12 @@ Traceback (most recent call last):
   File "/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGemGradSalun.py", line 397, in single_run
     ALL_TASK_UNLEARN_CONFIDENCES) = run_cifar('GEM', args, device=dev, mem_data_local=mem_data_local, newclasses=SHUFFLEDCLASSES, task_sequence=task_sequence)
                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGemGradSalun.py", line 233, in run_cifar
-    model.observe(algorithm, current_data, task, current_labels)
-  File "/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py", line 168, in observe
-    ptloss.backward()
-  File "/dcs/21/u2140671/.local/lib/python3.12/site-packages/torch/_tensor.py", line 626, in backward
-    torch.autograd.backward(
-  File "/dcs/21/u2140671/.local/lib/python3.12/site-packages/torch/autograd/__init__.py", line 340, in backward
-    grad_tensors_ = _make_grads(tensors, grad_tensors_, is_grads_batched=False)
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/dcs/21/u2140671/.local/lib/python3.12/site-packages/torch/autograd/__init__.py", line 220, in _make_grads
-    torch.ones_like(out, memory_format=torch.preserve_format)
+  File "/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGemGradSalun.py", line 300, in run_cifar
+    mask = model.unlearn(unlearning_algo, task_to_unlearn, x1=j, x2=j + args.unlearn_batch_size, alpha=args.alpha, mask=mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py", line 268, in unlearn
+    loss = -1 * loss
+           ~~~^~~~~~
 RuntimeError: CUDA error: device-side assert triggered
 CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
 For debugging consider passing CUDA_LAUNCH_BLOCKING=1
@@ -45,7 +42,7 @@ For debugging consider passing CUDA_LAUNCH_BLOCKING=1
 Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
 
 
-real	0m9.256s
-user	0m3.512s
-sys	0m0.810s
+real	50m31.431s
+user	251m5.124s
+sys	14m21.013s
 mv: cannot stat './Results*': No such file or directory

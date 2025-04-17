@@ -1,9 +1,9 @@
 #!/bin/bash
 #
 #SBATCH --job-name=neggem     # Job name for tracking
-#SBATCH --partition=eagle      # Partition you wish to use (see above for list)
+#SBATCH --partition=gecko      # Partition you wish to use (see above for list)
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=6     # Number of CPU threads used by your job
+#SBATCH --cpus-per-task=24     # Number of CPU threads used by your job
 #SBATCH --gres=gpu:1           # Number of GPUs to use 
 #SBATCH --mem=60G            # 60GB RAM
 #SBATCH --time=24:00:00        # Job time limit set to 12 hours
@@ -38,7 +38,7 @@ BUFFER_ARGS="--mem_learning_buffer 1 \
     --unlearning_buffer_split 0.99 \
     --unlearning_buffer_type most"
 
-SALUN_ARGS="--salun 1 \
+SALUN_ARGS="--salun 0 \
     --salun_strength 0.5"
 
 MEM_STRENGTH_ARGS="--learn_mem_strength 0.5 \
@@ -55,6 +55,6 @@ NUMBER_ARGS="--number_of_gpus 1 \
 time python3.12 negGemGradSalun.py --algorithm neggem $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
 
 # move all the results and joboutput files to finetune
-mv joboutput_*.out ./D4wSalun
-mv joboutput_*.err ./D4wSalun
-mv ./Results* ./D4wSalun
+mv joboutput_*.out ./D4
+mv joboutput_*.err ./D4
+mv ./Results* ./D4
