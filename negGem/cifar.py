@@ -3,8 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Path to the dataset
-DATASET_PATH = 'cifar-10-python' 
-DATASET_PATH_100 = 'cifar-100-python'
+DATASET_PATH = './cifar-10-python' 
+DATASET_PATH_100 = './cifar-100-python'
 CLASSES = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
 CLASSES_100_UNORDERED = [
     "beaver", "dolphin", "otter", "seal", "whale",
@@ -40,6 +40,7 @@ def load_batch(filename, dataset = "cifar-10"):
         return data, labels
     elif dataset == "cifar-100":
         with open(filename, 'rb') as f:
+            print(filename)
             batch = pickle.load(f, encoding='bytes')
         data = batch[b'data']
         labels = batch[b'fine_labels']
@@ -151,10 +152,10 @@ def get_class_indexes(selected_classes, classes):
     return indexes
 
 # Show a random image from the training set
-random_idx = np.random.randint(len(train_data))
-show_image(train_data[random_idx], train_labels[random_idx])
-random_idx = np.random.randint(len(train_data_100))
-show_image(train_data_100[random_idx], train_labels_100[random_idx], dataset = "cifar-100")
+#random_idx = np.random.randint(len(train_data))
+#show_image(train_data[random_idx], train_labels[random_idx])
+#random_idx = np.random.randint(len(train_data_100))
+#show_image(train_data_100[random_idx], train_labels_100[random_idx], dataset = "cifar-100")
 
 
 
