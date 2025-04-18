@@ -8,6 +8,7 @@
 #SBATCH --mem=60G            # 60GB RAM
 #SBATCH --time=24:00:00        # Job time limit set to 12 hours
 #
+#SBATCH --mail-type=END,FAIL,TIME_LIMIT_80 # Events to send email on, remove if you don't want this
 #SBATCH --output=joboutput_%j.out # Standard out from your job
 #SBATCH --error=joboutput_%j.err  # Standard error from your job
 
@@ -52,13 +53,13 @@ NUMBER_ARGS="--number_of_gpus 1 \
     --average_over_n_runs 3"
 
 time python3.12 negGemGradA4.py --algorithm neggem $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
-time python3.12 negGemGradA4.py --algorithm negagem $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
-time python3.12 negGemGradA4.py --algorithm RL-GEM $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
-time python3.12 negGemGradA4.py --algorithm RL-AGEM $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
-time python3.12 negGemGradA4.py --algorithm ALT-NEGGEM $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
-time python3.12 negGemGradA4.py --algorithm neggrad --alpha 0.5 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $NUMBER_ARGS
+# time python3.12 negGemGradA4.py --algorithm negagem $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
+# time python3.12 negGemGradA4.py --algorithm RL-GEM $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
+# time python3.12 negGemGradA4.py --algorithm RL-AGEM $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
+# time python3.12 negGemGradA4.py --algorithm ALT-NEGGEM $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
+# time python3.12 negGemGradA4.py --algorithm neggrad --alpha 0.5 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $NUMBER_ARGS
 
 # move all the results and joboutput files to 4tests/A4
-mv joboutput_*.out ./4tests/A4
-mv joboutput_*.err ./4tests/A4
-mv ./Results* ./4tests/A4
+mv joboutput_*.out ./4tests/A4/noSalunNoMemtest
+mv joboutput_*.err ./4tests/A4/noSalunNoMemtest
+mv ./Results* ./4tests/A4/noSalunNoMemtest
