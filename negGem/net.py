@@ -398,7 +398,7 @@ class Net(nn.Module):
             
             self.opt.step()
             
-        elif algorithm == "RL-GEM":
+        elif algorithm == 'RL-GEM':
             # otherwise we need to unlearn the task 
             ## we compute the gradients of all learnt tasks
             
@@ -456,7 +456,7 @@ class Net(nn.Module):
                 overwrite_grad(self.parameters, self.grads[:, t],
                             self.grad_dims)
             self.opt.step()
-        elif algorithm == "RL-AGEM":
+        elif algorithm == 'RL-AGEM':
             # now find the grads of the previous tasks
             for tt in self.observed_tasks:
                 self.zero_grad()
@@ -511,7 +511,7 @@ class Net(nn.Module):
                 overwrite_grad(self.parameters, self.grads[:, t],
                             self.grad_dims)
             self.opt.step()
-        elif algorithm == "ALT-NEGGEM":
+        elif algorithm == 'ALT-NEGGEM':
             # now find the grads of the previous tasks
             for tt in self.observed_tasks:
                 self.zero_grad()
@@ -563,13 +563,13 @@ class Net(nn.Module):
                 if self.salun:
                     mask = apply_salun(average_grad_of_retain, self.salun_threshold, mask=mask)
                 NegGEM(average_grad_of_retain, all_grads, self.unlearn_memory_strength)
-                self.grads[:, t] = forget_grads.squeeze(1)
+                self.grads[:, t] = average_grad_of_retain.squeeze(1)
                 # copy gradients back
                 overwrite_grad(self.parameters, self.grads[:, t],
                             self.grad_dims)
             
             self.opt.step()
-        elif algorithm == "neggrad":
+        elif algorithm == 'neggrad':
             """
             use the project2neggrad2 function to project the gradient to unlearn the task
             unlike the previous method, we do not perform this in batches
@@ -588,15 +588,15 @@ class Net(nn.Module):
                 if tt == t:
                     ptloss = self.ce(
                         self.forward(
-                            self.unlearn_memory_data[past_task],
+                            self.unlearn_memory_data[past_task][x1:x2],
                             past_task)[:, offset1: offset2],
-                        self.unlearn_memory_labs[past_task] - offset1)
+                        self.unlearn_memory_labs[past_task][x1:x2] - offset1)
                 ptloss.backward()
                 store_grad(self.parameters, self.grads, self.grad_dims,
                             past_task)
-                
+            self.zero_grad()
             loss = self.ce(
-                        self.forward(self.unlearn_memory_data[t], t)[:, offset1: offset2], self.unlearn_memory_labs[t] - offset1)
+                        self.forward(self.unlearn_memory_data[t][x1:x2], t)[:, offset1: offset2], self.unlearn_memory_labs[t][x1:x2] - offset1)
             # negate loss for unlearning
             loss = -1 * loss
             loss.backward()
@@ -608,13 +608,12 @@ class Net(nn.Module):
             retain_indices = torch.tensor([i for i in range(self.grads.size(1)) if i in self.observed_tasks and i != t], device=self.grads.device)
             retain_grads = self.grads.index_select(1, retain_indices)
             
-            self.zero_grad()
-            
             if self.salun:
                 mask = apply_salun(forget_grads, self.salun_threshold, mask=mask)
             
             project2neggrad2(forget_grads, retain_grads, alpha = self.alpha)
-            overwrite_grad(self.parameters, forget_grads, self.grad_dims)
+            self.grads[:, t] = forget_grads.squeeze(1)
+            overwrite_grad(self.parameters, self.grads[:, t], self.grad_dims)
             self.opt.step()
         else:
             print("Invalid Algorithm")
