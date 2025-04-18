@@ -169,7 +169,7 @@ def NegAGEM(gradient, memories):
     output: gradient, g-projected
     """
 
-    gref = memories.t().double().mean(axis=0).cuda() # * margin
+    gref = memories.t().double().sum(axis=0).cuda() # * margin
     g = gradient.contiguous().view(-1).double().cuda()
 
     dot_prod = torch.dot(g, gref)
@@ -184,11 +184,11 @@ def NegAGEM(gradient, memories):
     
     # epsvector = torch.Tensor([eps]).cuda()
     
-    x = g*0.5 + gref * abs(dot_prod)  # + epsvector
+    x = g + gref * abs(dot_prod)  # + epsvector
     gradient.copy_(torch.Tensor(x).view(-1, 1))
     
-def project2neggrad2(gradient, memories, alpha = 0.9):
-    gref = memories.t().double().mean(axis=0).cuda() # * margin
+def project2neggrad2(gradient, memories, alpha = 0.5):
+    gref = memories.t().double().sum(axis=0).cuda() # * margin
     g = gradient.contiguous().view(-1).double().cuda()
     x = gref*alpha + g * (1-alpha)
     gradient.copy_(torch.Tensor(x).view(-1, 1))
@@ -226,7 +226,7 @@ def agemprojection(gradient, gradient_memory, margin=0.5, eps=1e-5):
     output: gradient, g-projected
     """
 
-    gref = gradient_memory.t().double().mean(axis=0).cuda() # * margin
+    gref = gradient_memory.t().double().sum(axis=0).cuda() # * margin
     g = gradient.contiguous().view(-1).double().cuda()
 
     dot_prod = torch.dot(g, gref)
@@ -241,7 +241,7 @@ def agemprojection(gradient, gradient_memory, margin=0.5, eps=1e-5):
     
     # epsvector = torch.Tensor([eps]).cuda()
     
-    x = g*0.5 + gref * abs(dot_prod)  # + epsvector
+    x = g + gref * abs(dot_prod)  # + epsvector
     gradient.copy_(torch.Tensor(x).view(-1, 1))
     
 def replay(gradient, gradient_memory):
