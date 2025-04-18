@@ -43,7 +43,7 @@ SALUN_ARGS="--salun 1 \
 MEM_STRENGTH_ARGS="--learn_mem_strength 0.5 \
     --unlearn_mem_strength 0.5"
 
-LEARN_BATCH_SIZE_ARGS="--learn_batch_size 100 \
+LEARN_BATCH_SIZE_ARGS="--learn_batch_size 1000 \
     --unlearn_batch_size 8"
 
 ALPHA_ARGS="--alpha 0.5"
