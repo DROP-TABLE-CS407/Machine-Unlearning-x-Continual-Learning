@@ -42,26 +42,16 @@ print("salun_strength:", cmd_args.salun_strength)
 # run command to check python version
 os.system('python3.12 --version')
 
-"""
-
-THERE IS ALSO A DIRECTORY YOU NEED TO CHANGE AT THE BOTTOM OF THE FILE YOU SPERG
-
-simply highlight the directory /dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning
-
-hold down ctrl + d then ctrl + v (assuming you already have your directory copied)
-
-if you dont know what directory you're in, use pwd in the cmd line
-
-"""
-
 # set directory /dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning
 # please change these dependent on your own specific path variable
 
-os.chdir('/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning')
+# output pwd, PRINT IT
+print("Current working directory: ", os.getcwd())
 
-save_path_1 = '/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/GEM/Results4/'
+# now use the pwd command
+os.system('pwd')
 
-save_path_2 = '/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/GEM/Results/'
+os.chdir(os.getcwd())
 
 import torch
 import numpy as np
@@ -125,6 +115,8 @@ def run_cifar(algorithm, args, n_inputs=N_INPUTS, n_outputs=N_OUTPUTS, n_tasks=N
     SHUFFLEDCLASSES = newclasses
     ALL_TASK_ACCURACIES = []  # Single list to track accuracies for all operations
     ALL_TASK_CONFIDENCES = []  # Single list to track confidence for all operations
+    ALL_TASK_ACCURACIES_TRAIN = []  # Single list to track accuracies for all operations
+    ALL_TASK_CONFIDENCES_TRAIN = []  # Single list to track confidence for all operations
     
     # Set up the model
     model = Net(n_inputs, n_outputs, n_tasks, args)
@@ -316,15 +308,24 @@ def run_cifar(algorithm, args, n_inputs=N_INPUTS, n_outputs=N_OUTPUTS, n_tasks=N
         # Evaluate performance on all individual tasks
         temp_test_accuracies = []
         temp_test_confidences = []
+        temp_train_accuracies = []
+        temp_train_confidences = []
         for task_idx in range(n_tasks):
             test_acc, confidence = eval_task(model, args,
                                         tests[task_idx * 2], tests[task_idx * 2 + 1],
                                         task_idx)
             temp_test_accuracies.append(test_acc)
             temp_test_confidences.append(confidence)
+            train_acc, train_confidence = eval_task(model, args,
+                                        tasks[task_idx][0], tasks[task_idx][1],
+                                        task_idx)
+            temp_train_accuracies.append(train_acc)
+            temp_train_confidences.append(train_confidence)
         
         ALL_TASK_ACCURACIES.append(temp_test_accuracies)
         ALL_TASK_CONFIDENCES.append(temp_test_confidences)
+        ALL_TASK_ACCURACIES_TRAIN.append(temp_train_accuracies)
+        ALL_TASK_CONFIDENCES_TRAIN.append(temp_train_confidences)
         
         # Print current state
         print(f"After {'learning' if operation >= 0 else 'unlearning'} task {abs(operation) + 1}")
@@ -344,7 +345,9 @@ def run_cifar(algorithm, args, n_inputs=N_INPUTS, n_outputs=N_OUTPUTS, n_tasks=N
             testing_accuracies,
             testing_accuracies_forget,
             ALL_TASK_ACCURACIES,
-            ALL_TASK_CONFIDENCES)  # Empty for ALL_TASK_CONTINUAL_LEARNING_ACCURACIES as it's now integrated
+            ALL_TASK_CONFIDENCES,
+            ALL_TASK_ACCURACIES_TRAIN,
+            ALL_TASK_CONFIDENCES_TRAIN)  # Empty for ALL_TASK_CONTINUAL_LEARNING_ACCURACIES as it's now integrated
 
 # We move the single run logic into a function:
 def single_run(run_idx, SHUFFLEDCLASSES, cmd_args, mem_data_local):
@@ -369,6 +372,10 @@ def single_run(run_idx, SHUFFLEDCLASSES, cmd_args, mem_data_local):
         args.salun = False
         
     args.algorithm = cmd_args.algorithm
+    if args.algorithm == 'RL-GEM':
+        args.unlearning_rate = 0.03
+    if args.algorithm == 'RL-AGEM':
+        args.unlearning_rate = 0.03
     args.alpha = float(cmd_args.alpha)
     
     args.mem_learning_buffer = int(cmd_args.mem_learning_buffer)
@@ -378,8 +385,8 @@ def single_run(run_idx, SHUFFLEDCLASSES, cmd_args, mem_data_local):
     args.mem_unlearning_buffer = int(cmd_args.mem_unlearning_buffer)
     args.unlearning_buffer_split = float(cmd_args.unlearning_buffer_split)
     args.unlearning_buffer_type = cmd_args.unlearning_buffer_type
-    
-    task_sequence = [0, 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,-18, -17, -16, -15, -13, -12, -11, -10, -8, -7, -6, -5 ,-3, -2, -1]
+        
+    task_sequence = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, -19, -18, -17, -16, -15, -14, -13, -12, -11, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1]
 
     # Run your main training/unlearning (the run_cifar function, etc.)
     # Replace "..." with your original code for a single iteration
@@ -394,7 +401,9 @@ def single_run(run_idx, SHUFFLEDCLASSES, cmd_args, mem_data_local):
     testing_accuracies,
     testing_accuracies_forget,
     ALL_TASK_ACCURACIES,
-    ALL_TASK_UNLEARN_CONFIDENCES) = run_cifar('GEM', args, device=dev, mem_data_local=mem_data_local, newclasses=SHUFFLEDCLASSES, task_sequence=task_sequence)
+    ALL_TASK_UNLEARN_CONFIDENCES,
+    ALL_TASK_ACCURACIES_TRAIN,
+    ALL_TASK_CONFIDENCES_TRAIN) = run_cifar('GEM', args, device=dev, mem_data_local=mem_data_local, newclasses=SHUFFLEDCLASSES, task_sequence=task_sequence)
 
     return (
         test_accuracies_GEM[-20:],
@@ -404,7 +413,9 @@ def single_run(run_idx, SHUFFLEDCLASSES, cmd_args, mem_data_local):
         testing_accuracies,
         testing_accuracies_forget,
         ALL_TASK_ACCURACIES,
-        ALL_TASK_UNLEARN_CONFIDENCES
+        ALL_TASK_UNLEARN_CONFIDENCES,
+        ALL_TASK_ACCURACIES_TRAIN,
+        ALL_TASK_CONFIDENCES_TRAIN
     )
 
 if __name__ == "__main__":
@@ -450,6 +461,8 @@ if __name__ == "__main__":
     testing_accuracies_forget_all = []
     ALL_TASK_ACCURACIES = []
     ALL_TASK_CONFIDENCES = []
+    ALL_TASK_ACCURACIES_TRAIN = []
+    ALL_TASK_CONFIDENCES_TRAIN = []
 
     # Prepare parallel runs
     average_runs = int(cmd_args.average_over_n_runs)
@@ -457,38 +470,68 @@ if __name__ == "__main__":
     all_results = []
     mem_data_run = {key: np.copy(mem_data[key]) for key in mem_data.files}
     
-    for j in range(0, average_runs, NUMBER_OF_GPUS):
-        with mp.Pool(processes=NUMBER_OF_GPUS) as pool:
-            all_results = pool.starmap(single_run, [(i, SHUFFLEDCLASSES, cmd_args, mem_data_run) for i in range(NUMBER_OF_GPUS)])
-        # Close the pool
-        pool.close()
-        pool.join()
+    all_results = []  # Initialize to collect all results
 
-        for res in all_results:
-            test_accuracies_GEM_all_last_iter.append(res[0])
-            unlearn_accuracies_GEM_all_last_iter.append(res[1])
-            retain_accuracies_all.append(res[2])
-            forget_accuracies_all.append(res[3])
-            testing_accuracies_all.append(res[4])
-            testing_accuracies_forget_all.append(res[5])
-            ALL_TASK_ACCURACIES.append(res[6])
-            ALL_TASK_CONFIDENCES.append(res[7])
+    for j in range(0, average_runs, NUMBER_OF_GPUS):
+        # Calculate how many processes to run in this batch (might be less than NUMBER_OF_GPUS for the last batch)
+        current_batch_size = min([NUMBER_OF_GPUS], average_runs - j)
+        
+        # Create the process pool
+        with mp.Pool(processes=current_batch_size) as pool:
+            # Calculate the correct indices for this batch
+            batch_indices = list(range(j, j + current_batch_size))
+            
+            # Start the processes and wait for them to complete
+            batch_results = pool.starmap(
+                single_run, 
+                [(i, SHUFFLEDCLASSES, cmd_args, mem_data_run) for i in batch_indices]
+            )
+            
+            # Pool is automatically closed and joined when exiting the with block
+            
+        # Append results from this batch to our overall results list
+        all_results.extend(batch_results)
+
+    # Now process all the collected results after all runs are complete
+    for res in all_results:
+        test_accuracies_GEM_all_last_iter.append(res[0])
+        unlearn_accuracies_GEM_all_last_iter.append(res[1])
+        retain_accuracies_all.append(res[2])
+        forget_accuracies_all.append(res[3])
+        testing_accuracies_all.append(res[4])
+        testing_accuracies_forget_all.append(res[5])
+        ALL_TASK_ACCURACIES.append(res[6])
+        ALL_TASK_CONFIDENCES.append(res[7])
+        ALL_TASK_ACCURACIES_TRAIN.append(res[8])
+        ALL_TASK_CONFIDENCES_TRAIN.append(res[9])
             
     # calculate the average of the test accuracies over multiple runs on ALL_TASK_ACCURACIES
     ALL_TASK_ACCURACIES_AVERAGED = np.mean(ALL_TASK_ACCURACIES, axis=0)
     ALL_TASK_CONFIDENCES_AVERAGED = np.mean(ALL_TASK_CONFIDENCES, axis=0)
     
+    ALL_TRAIN_ACCURACIES_AVERAGED = np.mean(ALL_TASK_ACCURACIES_TRAIN, axis=0)
+    ALL_TRAIN_CONFIDENCES_AVERAGED = np.mean(ALL_TASK_CONFIDENCES_TRAIN, axis=0)
+    
     # convert to list
     ALL_TASK_ACCURACIES_AVERAGED = ALL_TASK_ACCURACIES_AVERAGED.tolist()
     ALL_TASK_CONFIDENCES_AVERAGED = ALL_TASK_CONFIDENCES_AVERAGED.tolist()
+    
+    ALL_TRAIN_ACCURACIES_AVERAGED = ALL_TRAIN_ACCURACIES_AVERAGED.tolist()
+    ALL_TRAIN_CONFIDENCES_AVERAGED = ALL_TRAIN_CONFIDENCES_AVERAGED.tolist()
     
     # ALL_TASKS... need to be concatenated
     ALL_TASK_ACCURACIES = np.concatenate(ALL_TASK_ACCURACIES, axis=0)
     ALL_TASK_CONFIDENCES = np.concatenate(ALL_TASK_CONFIDENCES, axis=0)
     
+    ALL_TASK_ACCURACIES_TRAIN = np.concatenate(ALL_TASK_ACCURACIES_TRAIN, axis=0)
+    ALL_TASK_CONFIDENCES_TRAIN = np.concatenate(ALL_TASK_CONFIDENCES_TRAIN, axis=0)
+    
     # convert back to lists
     ALL_TASK_ACCURACIES = ALL_TASK_ACCURACIES.tolist()
     ALL_TASK_CONFIDENCES = ALL_TASK_CONFIDENCES.tolist()
+    
+    ALL_TASK_ACCURACIES_TRAIN = ALL_TASK_ACCURACIES_TRAIN.tolist()
+    ALL_TASK_CONFIDENCES_TRAIN = ALL_TASK_CONFIDENCES_TRAIN.tolist()
     
     # make 1 BIG figure which will contain all the plots 4x5 grid, each subplot will be 1 of the different tasks accuracy as it runs
     plt.figure(figsize=(20, 15))
@@ -538,6 +581,43 @@ if __name__ == "__main__":
     plt.savefig('ALL_TASK_CONFIDENCES.png')
     plt.close()
     
+    # do the same plot for training accuracy
+    plt.figure(figsize=(20, 15))
+    plt.suptitle('Task training set accuracies for each task as it runs', fontsize=20)
+    for i in range(20):
+        plt.subplot(4, 5, i + 1)
+        # Extract task i accuracy at each iteration (column-wise)
+        task_i_accuracies = [iteration[i] for iteration in ALL_TRAIN_ACCURACIES_AVERAGED]
+        plt.plot(task_i_accuracies, color=colors[i])
+        plt.title('Task ' + str(i + 1))
+        plt.xlabel('Iterations')
+        plt.ylabel('Accuracy')
+        plt.ylim(0, 1)
+        plt.grid()
+    plt.tight_layout()
+    plt.subplots_adjust(top=0.88)  # Adjust the top to make room for the suptitle
+    plt.savefig('ALL_TRAIN_ACCURACIES.png')
+    plt.show()
+
+    # do the same plot for training confidence
+    plt.figure(figsize=(20, 15))
+    plt.suptitle('Task training set confidences for each task as it runs', fontsize=20)
+    for i in range(20):
+        plt.subplot(4, 5, i + 1)
+        # Extract task i confidence at each iteration (column-wise)
+        task_i_confidences = [iteration[i] for iteration in ALL_TRAIN_CONFIDENCES_AVERAGED]
+        plt.plot(task_i_confidences, color=colors[i])
+        plt.title('Task ' + str(i + 1))
+        plt.xlabel('Iterations')
+        plt.ylabel('Confidence')
+        plt.ylim(0, 1)
+        plt.grid()
+    plt.tight_layout()
+    plt.subplots_adjust(top=0.88)  # Adjust the top to make room for the suptitle
+    plt.savefig('ALL_TRAIN_CONFIDENCES.png')
+    plt.show()
+    # save the figure
+    
     import datetime
 
     cur_date = str(datetime.datetime.now())
@@ -545,7 +625,6 @@ if __name__ == "__main__":
     #remove spaces from the date
     cur_date = cur_date.replace(" ", "_")
     cur_date = cur_date.replace(":", "_")
-
     
     # write the ALL_TASK_ACCURACIES data to a pandas dataframe
     import pandas as pd
@@ -557,6 +636,12 @@ if __name__ == "__main__":
     
     df = pd.DataFrame(ALL_TASK_CONFIDENCES)
     df.to_csv('Results' + str(cur_date) + 'MemoryStrength' + str(cmd_args.unlearn_mem_strength) + 'BatchSize' + str(cmd_args.unlearn_batch_size) + 'ALL_TASK_CONFIDENCES.csv')
+    
+    df = pd.DataFrame(ALL_TASK_CONFIDENCES_AVERAGED)
+    df.to_csv('Results' + str(cur_date) + 'MemoryStrength' + str(cmd_args.unlearn_mem_strength) + 'BatchSize' + str(cmd_args.unlearn_batch_size) + 'ALL_TASK_CONFIDENCES_AVERAGED.csv')
+    
+    df = pd.DataFrame(ALL_TRAIN_ACCURACIES_AVERAGED)
+    df.to_csv('Results' + str(cur_date) + 'MemoryStrength' + str(cmd_args.unlearn_mem_strength) + 'BatchSize' + str(cmd_args.unlearn_batch_size) + 'ALL_TRAIN_ACCURACIES_AVERAGED.csv')
     
     # make a dataframe of all the hyperparameters used
     hyperparameters = {
@@ -581,8 +666,8 @@ if __name__ == "__main__":
     df = pd.DataFrame(hyperparameters, index=[0])
     df.to_csv('Results' + str(cur_date) + 'MemoryStrength' + str(cmd_args.unlearn_mem_strength) + 'BatchSize' + str(cmd_args.unlearn_batch_size) + 'HYPERPARAMETERS.csv')
     
-    # change the directory to /dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning
-    os.chdir('/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning')
+    # change the directory to /dcs/large/u2145461/cs407/Machine-Unlearning-x-Continual-Learning-neggem
+    os.chdir(os.getcwd())
 
     os.mkdir('Results' + str(cur_date) + 'MemoryStrength' + str(cmd_args.unlearn_mem_strength) + 'BatchSize' + str(cmd_args.unlearn_batch_size))
 

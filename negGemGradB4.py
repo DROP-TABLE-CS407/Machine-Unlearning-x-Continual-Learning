@@ -457,31 +457,47 @@ if __name__ == "__main__":
     ALL_TASK_CONFIDENCES = []
     ALL_TASK_ACCURACIES_TRAIN = []
     ALL_TASK_CONFIDENCES_TRAIN = []
-
+    
     # Prepare parallel runs
     average_runs = int(cmd_args.average_over_n_runs)
     # spawn a separate process for each run using the spawn method in multiprocessing
     all_results = []
     mem_data_run = {key: np.copy(mem_data[key]) for key in mem_data.files}
     
-    for j in range(0, average_runs, NUMBER_OF_GPUS):
-        with mp.Pool(processes=NUMBER_OF_GPUS) as pool:
-            all_results = pool.starmap(single_run, [(i, SHUFFLEDCLASSES, cmd_args, mem_data_run) for i in range(NUMBER_OF_GPUS)])
-        # Close the pool
-        pool.close()
-        pool.join()
+    all_results = []  # Initialize to collect all results
 
-        for res in all_results:
-            test_accuracies_GEM_all_last_iter.append(res[0])
-            unlearn_accuracies_GEM_all_last_iter.append(res[1])
-            retain_accuracies_all.append(res[2])
-            forget_accuracies_all.append(res[3])
-            testing_accuracies_all.append(res[4])
-            testing_accuracies_forget_all.append(res[5])
-            ALL_TASK_ACCURACIES.append(res[6])
-            ALL_TASK_CONFIDENCES.append(res[7])
-            ALL_TASK_ACCURACIES_TRAIN.append(res[8])
-            ALL_TASK_CONFIDENCES_TRAIN.append(res[9])
+    for j in range(0, average_runs, NUMBER_OF_GPUS):
+        # Calculate how many processes to run in this batch (might be less than NUMBER_OF_GPUS for the last batch)
+        current_batch_size = min([NUMBER_OF_GPUS], average_runs - j)
+        
+        # Create the process pool
+        with mp.Pool(processes=current_batch_size) as pool:
+            # Calculate the correct indices for this batch
+            batch_indices = list(range(j, j + current_batch_size))
+            
+            # Start the processes and wait for them to complete
+            batch_results = pool.starmap(
+                single_run, 
+                [(i, SHUFFLEDCLASSES, cmd_args, mem_data_run) for i in batch_indices]
+            )
+            
+            # Pool is automatically closed and joined when exiting the with block
+            
+        # Append results from this batch to our overall results list
+        all_results.extend(batch_results)
+
+    # Now process all the collected results after all runs are complete
+    for res in all_results:
+        test_accuracies_GEM_all_last_iter.append(res[0])
+        unlearn_accuracies_GEM_all_last_iter.append(res[1])
+        retain_accuracies_all.append(res[2])
+        forget_accuracies_all.append(res[3])
+        testing_accuracies_all.append(res[4])
+        testing_accuracies_forget_all.append(res[5])
+        ALL_TASK_ACCURACIES.append(res[6])
+        ALL_TASK_CONFIDENCES.append(res[7])
+        ALL_TASK_ACCURACIES_TRAIN.append(res[8])
+        ALL_TASK_CONFIDENCES_TRAIN.append(res[9])
             
     # calculate the average of the test accuracies over multiple runs on ALL_TASK_ACCURACIES
     ALL_TASK_ACCURACIES_AVERAGED = np.mean(ALL_TASK_ACCURACIES, axis=0)
