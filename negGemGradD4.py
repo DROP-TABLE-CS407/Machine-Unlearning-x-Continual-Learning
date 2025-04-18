@@ -468,7 +468,7 @@ if __name__ == "__main__":
 
     for j in range(0, average_runs, NUMBER_OF_GPUS):
         # Calculate how many processes to run in this batch (might be less than NUMBER_OF_GPUS for the last batch)
-        current_batch_size = min([NUMBER_OF_GPUS], average_runs - j)
+        current_batch_size = min(NUMBER_OF_GPUS, average_runs - j)
         
         # Create the process pool
         with mp.Pool(processes=current_batch_size) as pool:
