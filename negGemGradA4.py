@@ -380,7 +380,7 @@ def single_run(run_idx, SHUFFLEDCLASSES, cmd_args, mem_data_local):
     args.unlearning_buffer_split = float(cmd_args.unlearning_buffer_split)
     args.unlearning_buffer_type = cmd_args.unlearning_buffer_type
         
-    task_sequence = [0, 1, -1, 1]  # Example sequence for 5 tasks
+    task_sequence = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, -19, -18, -17, -16, -15, -14, -13, -12, -11, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1]  # Example sequence for 5 tasks
 
     # Run your main training/unlearning (the run_cifar function, etc.)
     # Replace "..." with your original code for a single iteration
