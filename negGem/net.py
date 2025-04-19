@@ -240,7 +240,7 @@ class Net(nn.Module):
             # now find the grads of the previous tasks
             for tt in self.observed_tasks:
                 self.zero_grad()
-                past_task = self.observed_tasks[tt]
+                past_task = tt
                 offset1, offset2 = compute_offsets(past_task, self.nc_per_task,
                                                     self.is_cifar)
                 ptloss = self.ce(
@@ -350,7 +350,7 @@ class Net(nn.Module):
             # now find the grads of the previous tasks
             for tt in self.observed_tasks:
                 self.zero_grad()
-                past_task = self.observed_tasks[tt]
+                past_task = tt
                 offset1, offset2 = compute_offsets(past_task, self.nc_per_task,
                                                     self.is_cifar)
                 ptloss = self.ce(
@@ -583,7 +583,7 @@ class Net(nn.Module):
             # now find the grads of the previous tasks
             for tt in self.observed_tasks:
                 self.zero_grad()
-                past_task = self.observed_tasks[tt]
+                past_task = tt
                 offset1, offset2 = compute_offsets(past_task, self.nc_per_task,
                                                     self.is_cifar)
                 ptloss = self.ce(
@@ -600,6 +600,7 @@ class Net(nn.Module):
                 ptloss.backward()
                 store_grad(self.parameters, self.grads, self.grad_dims,
                             past_task)
+                
             offset1, offset2 = compute_offsets(t, self.nc_per_task, self.is_cifar)
             loss = self.ce(
                         self.forward(self.unlearn_memory_data[t], t)[:, offset1: offset2], self.unlearn_memory_labs[t] - offset1)
