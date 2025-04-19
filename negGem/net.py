@@ -239,6 +239,11 @@ class Net(nn.Module):
             print("Only one task has been learned - resetting the model")
             self.reset()
             return
+
+        # for all grads NOT in self.observed tasks, set to 0
+        for tt in range(20):
+            if tt not in self.observed_tasks:
+                self.grads[:, tt].fill_(0.0)
             
         if algorithm == 'neggem':
             
