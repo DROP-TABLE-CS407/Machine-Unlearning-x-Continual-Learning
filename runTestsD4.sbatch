@@ -30,14 +30,14 @@ export CUDA_VISIBLE_DEVICES=0,1,2
 
 nvidia-smi
 
-BUFFER_ARGS="--mem_learning_buffer 0 \
+BUFFER_ARGS="--mem_learning_buffer 1 \
     --learning_buffer_split 0.2 \
     --learning_buffer_type least \
-    --mem_unlearning_buffer 0 \
+    --mem_unlearning_buffer 1 \
     --unlearning_buffer_split 0.99 \
     --unlearning_buffer_type most"
 
-SALUN_ARGS="--salun 0 \
+SALUN_ARGS="--salun 1 \
     --salun_strength 0.5"
 
 MEM_STRENGTH_ARGS="--learn_mem_strength 0.5 \
