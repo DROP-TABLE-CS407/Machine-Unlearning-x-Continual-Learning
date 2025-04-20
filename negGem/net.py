@@ -171,7 +171,7 @@ class Net(nn.Module):
 
         # now compute the grad on the current minibatch
         self.zero_grad()
-
+        
         # for all grads NOT in self.observed tasks, set to 0
         for tt in range(20):
             if tt not in self.observed_tasks:
@@ -197,6 +197,10 @@ class Net(nn.Module):
             # copy gradient
             elif algorithm == 'GEM':
                 store_grad(self.parameters, self.grads, self.grad_dims, t)
+                # for all grads NOT in self.observed tasks, set to 0
+                for tt in range(20):
+                    if tt not in self.observed_tasks:
+                        self.grads[:, tt].fill_(0.0)
                 indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
                     else torch.LongTensor(self.observed_tasks[:-1])
                 dotp = torch.mm(self.grads[:, t].unsqueeze(0),
@@ -225,6 +229,10 @@ class Net(nn.Module):
                 # copy gradients back
                 overwrite_grad(self.parameters, self.grads[:, t],
                             self.grad_dims)
+        # for all grads NOT in self.observed tasks, set to 0
+        for tt in range(20):
+            if tt not in self.observed_tasks:
+                self.grads[:, tt].fill_(0.0)
         self.opt.step()
 
 
@@ -239,7 +247,7 @@ class Net(nn.Module):
             print("Only one task has been learned - resetting the model")
             self.reset()
             return
-
+        
         # for all grads NOT in self.observed tasks, set to 0
         for tt in range(20):
             if tt not in self.observed_tasks:
@@ -255,15 +263,15 @@ class Net(nn.Module):
                                                     self.is_cifar)
                 ptloss = self.ce(
                         self.forward(
-                            self.unlearn_memory_data[past_task],
+                            self.learn_memory_data[past_task],
                             past_task)[:, offset1: offset2],
-                        self.unlearn_memory_labs[past_task] - offset1)
-                if tt == t:
+                        self.learn_memory_labs[past_task] - offset1)
+                if past_task == t:
                     ptloss = self.ce(
                         self.forward(
-                            self.unlearn_memory_data[past_task][x1:x2],
+                            self.learn_memory_data[past_task][x1:x2],
                             past_task)[:, offset1: offset2],
-                        self.unlearn_memory_labs[past_task][x1:x2] - offset1)
+                        self.learn_memory_labs[past_task][x1:x2] - offset1)
                     
                 ptloss.backward()
                 store_grad(self.parameters, self.grads, self.grad_dims,
@@ -274,7 +282,11 @@ class Net(nn.Module):
             self.zero_grad()
             offset1,offset2 = compute_offsets(t, self.nc_per_task, self.is_cifar)
             loss = self.ce(
-                        self.forward(self.unlearn_memory_data[t][x1:x2], t)[:, offset1: offset2], self.unlearn_memory_labs[t][x1:x2] - offset1)
+                        self.forward(self.unlearn_memory_data[t][x1:x2],
+                            t)[:, offset1: offset2], self.unlearn_memory_labs[t][x1:x2] - offset1)
+            loss += self.ce(
+                        self.forward(self.learn_memory_data[t][x1:x2],
+                            t)[:, offset1: offset2], self.learn_memory_labs[t][x1:x2] - offset1)
             # negate loss for unlearning
             loss = -1 * loss
             loss.backward()
@@ -308,15 +320,15 @@ class Net(nn.Module):
                                                     self.is_cifar)
                 ptloss = self.ce(
                         self.forward(
-                            self.unlearn_memory_data[past_task],
+                            self.learn_memory_data[past_task],
                             past_task)[:, offset1: offset2],
-                        self.unlearn_memory_labs[past_task] - offset1)
-                if tt == t:
-                    current_labs = (self.unlearn_memory_labs[past_task][x1:x2] - offset1)
+                        self.learn_memory_labs[past_task] - offset1)
+                if past_task == t:
+                    current_labs = (self.learn_memory_labs[past_task][x1:x2] - offset1)
                     random.shuffle(current_labs)    
                     ptloss = self.ce(
                         self.forward(
-                            self.unlearn_memory_data[past_task][x1:x2],
+                            self.learn_memory_data[past_task][x1:x2],
                             past_task)[:, offset1: offset2],
                         current_labs)
                     
@@ -327,11 +339,15 @@ class Net(nn.Module):
             ## first we check if it is even neccessary to do so, if not simply do a optimiser.step()
             
             self.zero_grad()
-            offset1, offset2 = compute_offsets(t, self.nc_per_task, self.is_cifar)
-            current_labs = (self.unlearn_memory_labs[t][x1:x2] - offset1)
+            offset1,offset2 = compute_offsets(t, self.nc_per_task, self.is_cifar)
+            current_labs = (self.learn_memory_labs[t][x1:x2] - offset1)
             random.shuffle(current_labs)
             loss = self.ce(
-                        self.forward(self.unlearn_memory_data[t][x1:x2], t)[:, offset1: offset2], current_labs)
+                        self.forward(self.learn_memory_data[past_task][x1:x2], t)[:, offset1: offset2], current_labs)
+            current_labs = (self.unlearn_memory_labs[t][x1:x2] - offset1)
+            random.shuffle(current_labs)
+            loss += self.ce(
+                        self.forward(self.unlearn_memory_data[past_task][x1:x2], t)[:, offset1: offset2], current_labs)
             # negate loss for unlearning
             loss.backward()
             
@@ -365,13 +381,13 @@ class Net(nn.Module):
                                                     self.is_cifar)
                 ptloss = self.ce(
                         self.forward(
-                            self.unlearn_memory_data[past_task],
+                            self.learn_memory_data[past_task],
                             past_task)[:, offset1: offset2],
                         self.unlearn_memory_labs[past_task] - offset1)
-                if tt == t:
+                if past_task == t:
                     ptloss = self.ce(
                         self.forward(
-                            self.unlearn_memory_data[past_task][x1:x2],
+                            self.learn_memory_data[past_task][x1:x2],
                             past_task)[:, offset1: offset2],
                         self.unlearn_memory_labs[past_task][x1:x2] - offset1)
                     
@@ -382,9 +398,11 @@ class Net(nn.Module):
             ## first we check if it is even neccessary to do so, if not simply do a optimiser.step()
             
             self.zero_grad()
-            offset1  , offset2 = compute_offsets(t, self.nc_per_task, self.is_cifar)
+            offset1, offset2 = compute_offsets(past_task, self.nc_per_task, self.is_cifar)
             loss = self.ce(
-                        self.forward(self.unlearn_memory_data[t][x1:x2], t)[:, offset1: offset2], self.unlearn_memory_labs[t][x1:x2] - offset1)
+                        self.forward(self.unlearn_memory_data[self.observed_tasks[t]][x1:x2], self.observed_tasks[t])[:, offset1: offset2], self.unlearn_memory_labs[self.observed_tasks[t]][x1:x2] - offset1)
+            loss += self.ce(
+                        self.forward(self.learn_memory_data[self.observed_tasks[t]][x1:x2], self.observed_tasks[t])[:, offset1: offset2], self.learn_memory_labs[self.observed_tasks[t]][x1:x2] - offset1)
             # negate loss for unlearning
             loss = -1 * loss
             loss.backward()
@@ -411,7 +429,7 @@ class Net(nn.Module):
             
             self.opt.step()
             
-        elif algorithm == "RL-GEM":
+        elif algorithm == 'RL-GEM':
             # otherwise we need to unlearn the task 
             ## we compute the gradients of all learnt tasks
             
@@ -423,15 +441,15 @@ class Net(nn.Module):
                                                     self.is_cifar)
                 ptloss = self.ce(
                         self.forward(
-                            self.unlearn_memory_data[past_task],
+                            self.learn_memory_data[past_task],
                             past_task)[:, offset1: offset2],
-                        self.unlearn_memory_labs[past_task] - offset1)
-                if tt == t:
-                    current_labs = (self.unlearn_memory_labs[past_task][x1:x2] - offset1)
+                        self.learn_memory_labs[past_task] - offset1)
+                if past_task == t:
+                    current_labs = (self.learn_memory_labs[past_task][x1:x2] - offset1)
                     random.shuffle(current_labs)    
                     ptloss = self.ce(
                         self.forward(
-                            self.unlearn_memory_data[past_task][x1:x2],
+                            self.learn_memory_data[past_task][x1:x2],
                             past_task)[:, offset1: offset2],
                         current_labs)
                     
@@ -442,11 +460,15 @@ class Net(nn.Module):
             ## first we check if it is even neccessary to do so, if not simply do a optimiser.step()
             
             self.zero_grad()
-            offset1, offset2 = compute_offsets(t, self.nc_per_task, self.is_cifar)
-            current_labs = (self.unlearn_memory_labs[t][x1:x2] - offset1)
+            offset1,offset2 = compute_offsets(t, self.nc_per_task, self.is_cifar)
+            current_labs = (self.learn_memory_labs[t][x1:x2] - offset1)
             random.shuffle(current_labs)
             loss = self.ce(
-                        self.forward(self.unlearn_memory_data[t][x1:x2], t)[:, offset1: offset2], current_labs)
+                        self.forward(self.learn_memory_data[past_task][x1:x2], t)[:, offset1: offset2], current_labs)
+            current_labs = (self.unlearn_memory_labs[t][x1:x2] - offset1)
+            random.shuffle(current_labs)
+            loss += self.ce(
+                        self.forward(self.unlearn_memory_data[past_task][x1:x2], t)[:, offset1: offset2], current_labs)
             # negate loss for unlearning
             loss.backward()
             
@@ -470,7 +492,7 @@ class Net(nn.Module):
                 overwrite_grad(self.parameters, self.grads[:, t],
                             self.grad_dims)
             self.opt.step()
-        elif algorithm == "RL-AGEM":
+        elif algorithm == 'RL-AGEM':
             # now find the grads of the previous tasks
             for tt in self.observed_tasks:
                 self.zero_grad()
@@ -479,15 +501,15 @@ class Net(nn.Module):
                                                     self.is_cifar)
                 ptloss = self.ce(
                         self.forward(
-                            self.unlearn_memory_data[past_task],
+                            self.learn_memory_data[past_task],
                             past_task)[:, offset1: offset2],
-                        self.unlearn_memory_labs[past_task] - offset1)
-                if tt == t:
-                    current_labs = (self.unlearn_memory_labs[past_task][x1:x2] - offset1)
+                        self.learn_memory_labs[past_task] - offset1)
+                if past_task == t:
+                    current_labs = (self.learn_memory_labs[past_task][x1:x2] - offset1)
                     random.shuffle(current_labs)
                     ptloss = self.ce(
                         self.forward(
-                            self.unlearn_memory_data[past_task][x1:x2],
+                            self.learn_memory_data[past_task][x1:x2],
                             past_task)[:, offset1: offset2],
                         current_labs)
                     
@@ -498,11 +520,15 @@ class Net(nn.Module):
             ## first we check if it is even neccessary to do so, if not simply do a optimiser.step()
             
             self.zero_grad()
-            offset1 , offset2 = compute_offsets(t, self.nc_per_task, self.is_cifar)
+            offset1,offset2 = compute_offsets(t, self.nc_per_task, self.is_cifar)
             current_labs = (self.unlearn_memory_labs[t][x1:x2] - offset1)
             random.shuffle(current_labs)
             loss = self.ce(
-                        self.forward(self.unlearn_memory_data[t][x1:x2], t)[:, offset1: offset2], current_labs)
+                        self.forward(self.unlearn_memory_data[past_task][x1:x2], t)[:, offset1: offset2], current_labs)
+            current_labs = (self.learn_memory_labs[t][x1:x2] - offset1)
+            random.shuffle(current_labs)
+            loss += self.ce(
+                        self.forward(self.learn_memory_data[past_task][x1:x2], t)[:, offset1: offset2], current_labs)
             # negate loss for unlearning
             loss.backward()
             
@@ -526,7 +552,7 @@ class Net(nn.Module):
                 overwrite_grad(self.parameters, self.grads[:, t],
                             self.grad_dims)
             self.opt.step()
-        elif algorithm == "ALT-NEGGEM":
+        elif algorithm == 'ALT-NEGGEM':
             # now find the grads of the previous tasks
             for tt in self.observed_tasks:
                 self.zero_grad()
@@ -535,15 +561,15 @@ class Net(nn.Module):
                                                     self.is_cifar)
                 ptloss = self.ce(
                         self.forward(
-                            self.unlearn_memory_data[past_task],
+                            self.learn_memory_data[past_task],
                             past_task)[:, offset1: offset2],
-                        self.unlearn_memory_labs[past_task] - offset1)
-                if tt == t:
+                        self.learn_memory_labs[past_task] - offset1)
+                if past_task == t:
                     ptloss = self.ce(
                         self.forward(
-                            self.unlearn_memory_data[past_task][x1:x2],
+                            self.learn_memory_data[past_task][x1:x2],
                             past_task)[:, offset1: offset2],
-                        self.unlearn_memory_labs[past_task][x1:x2] - offset1)
+                        self.learn_memory_labs[past_task][x1:x2] - offset1)
                     
                 ptloss.backward()
                 store_grad(self.parameters, self.grads, self.grad_dims,
@@ -552,9 +578,11 @@ class Net(nn.Module):
             ## first we check if it is even neccessary to do so, if not simply do a optimiser.step()
             
             self.zero_grad()
-            offset1, offset2 = compute_offsets(t, self.nc_per_task, self.is_cifar)
+            offset1,offset2 = compute_offsets(t, self.nc_per_task, self.is_cifar)
             loss = self.ce(
                         self.forward(self.unlearn_memory_data[t][x1:x2], t)[:, offset1: offset2], self.unlearn_memory_labs[t][x1:x2] - offset1)
+            loss += self.ce(
+                        self.forward(self.learn_memory_data[t][x1:x2], t)[:, offset1: offset2], self.learn_memory_labs[t][x1:x2] - offset1)
             # negate loss for unlearning
             loss = -1 * loss
             loss.backward()
@@ -579,13 +607,13 @@ class Net(nn.Module):
                 if self.salun:
                     mask = apply_salun(average_grad_of_retain, self.salun_threshold, mask=mask)
                 NegGEM(average_grad_of_retain, all_grads, self.unlearn_memory_strength)
-                self.grads[:, t] = forget_grads.squeeze(1)
+                self.grads[:, t] = average_grad_of_retain.squeeze(1)
                 # copy gradients back
                 overwrite_grad(self.parameters, self.grads[:, t],
                             self.grad_dims)
             
             self.opt.step()
-        elif algorithm == "neggrad":
+        elif algorithm == 'neggrad':
             """
             use the project2neggrad2 function to project the gradient to unlearn the task
             unlike the previous method, we do not perform this in batches
@@ -598,22 +626,24 @@ class Net(nn.Module):
                                                     self.is_cifar)
                 ptloss = self.ce(
                         self.forward(
-                            self.unlearn_memory_data[past_task],
+                            self.learn_memory_data[past_task],
                             past_task)[:, offset1: offset2],
-                        self.unlearn_memory_labs[past_task] - offset1)
-                if tt == t:
+                        self.learn_memory_labs[past_task] - offset1)
+                if past_task == t:
                     ptloss = self.ce(
                         self.forward(
-                            self.unlearn_memory_data[past_task],
+                            self.learn_memory_data[past_task][x1:x2],
                             past_task)[:, offset1: offset2],
-                        self.unlearn_memory_labs[past_task] - offset1)
+                        self.learn_memory_labs[past_task][x1:x2] - offset1)
                 ptloss.backward()
                 store_grad(self.parameters, self.grads, self.grad_dims,
                             past_task)
-                
-            offset1, offset2 = compute_offsets(t, self.nc_per_task, self.is_cifar)
+            
+            offset1,offset2 = compute_offsets(t, self.nc_per_task, self.is_cifar)
             loss = self.ce(
-                        self.forward(self.unlearn_memory_data[t], t)[:, offset1: offset2], self.unlearn_memory_labs[t] - offset1)
+                        self.forward(self.unlearn_memory_data[t][x1:x2], t)[:, offset1: offset2], self.unlearn_memory_labs[t][x1:x2] - offset1)
+            loss += self.ce(
+                        self.forward(self.learn_memory_data[t][x1:x2], t)[:, offset1: offset2], self.learn_memory_labs[t][x1:x2] - offset1)
             # negate loss for unlearning
             loss = -1 * loss
             loss.backward()
@@ -631,7 +661,8 @@ class Net(nn.Module):
                 mask = apply_salun(forget_grads, self.salun_threshold, mask=mask)
             
             project2neggrad2(forget_grads, retain_grads, alpha = self.alpha)
-            overwrite_grad(self.parameters, forget_grads, self.grad_dims) ### DO WE EVEN NEED THIS LINE???? PERHAPS WHY NEGGRAD DOES SHIT
+            self.grads[:, t] = forget_grads.squeeze(1)
+            overwrite_grad(self.parameters, self.grads[:, t], self.grad_dims)
             self.opt.step()
         else:
             print("Invalid Algorithm")
