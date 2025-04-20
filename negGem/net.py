@@ -172,6 +172,11 @@ class Net(nn.Module):
         # now compute the grad on the current minibatch
         self.zero_grad()
 
+        # for all grads NOT in self.observed tasks, set to 0
+        for tt in range(20):
+            if tt not in self.observed_tasks:
+                self.grads[:, tt].fill_(0.0)
+
         offset1, offset2 = compute_offsets(t, self.nc_per_task, self.is_cifar) 
         loss = self.ce(self.forward(x, t)[:, offset1: offset2], y - offset1)
         loss.backward()
@@ -234,6 +239,11 @@ class Net(nn.Module):
             print("Only one task has been learned - resetting the model")
             self.reset()
             return
+
+        # for all grads NOT in self.observed tasks, set to 0
+        for tt in range(20):
+            if tt not in self.observed_tasks:
+                self.grads[:, tt].fill_(0.0)
             
         if algorithm == 'neggem':
             
