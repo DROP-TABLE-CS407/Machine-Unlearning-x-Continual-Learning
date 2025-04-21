@@ -655,8 +655,6 @@ class Net(nn.Module):
             retain_indices = torch.tensor([i for i in range(self.grads.size(1)) if i in self.observed_tasks and i != t], device=self.grads.device)
             retain_grads = self.grads.index_select(1, retain_indices)
             
-            self.zero_grad()
-            
             if self.salun:
                 mask = apply_salun(forget_grads, self.salun_threshold, mask=mask)
             
