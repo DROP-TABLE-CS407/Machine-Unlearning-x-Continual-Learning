@@ -1,0 +1,389 @@
+  WARNING: The script isympy is installed in '/dcs/21/u2123566/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The scripts convert-caffe2-to-onnx, convert-onnx-to-caffe2 and torchrun are installed in '/dcs/21/u2123566/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.2.4 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGemGradA4.py", line 4, in <module>
+    import torch.multiprocessing as mp
+  File "/dcs/21/u2123566/.local/lib/python3.12/site-packages/torch/__init__.py", line 1471, in <module>
+    from .functional import *  # noqa: F403
+  File "/dcs/21/u2123566/.local/lib/python3.12/site-packages/torch/functional.py", line 9, in <module>
+    import torch.nn.functional as F
+  File "/dcs/21/u2123566/.local/lib/python3.12/site-packages/torch/nn/__init__.py", line 1, in <module>
+    from .modules import *  # noqa: F403
+  File "/dcs/21/u2123566/.local/lib/python3.12/site-packages/torch/nn/modules/__init__.py", line 35, in <module>
+    from .transformer import TransformerEncoder, TransformerDecoder, \
+  File "/dcs/21/u2123566/.local/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 20, in <module>
+    device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+/dcs/21/u2123566/.local/lib/python3.12/site-packages/torch/nn/modules/transformer.py:20: UserWarning: Failed to initialize NumPy: _ARRAY_API not found (Triggered internally at ../torch/csrc/utils/tensor_numpy.cpp:84.)
+  device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGem/net.py:195: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at ../torch/csrc/tensor/python_tensor.cpp:83.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 51, in starmapstar
+    return list(itertools.starmap(args[0], args[1]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGemGradA4.py", line 400, in single_run
+    ALL_TASK_CONFIDENCES_TRAIN) = run_cifar('GEM', args, device=dev, mem_data_local=mem_data_local, newclasses=SHUFFLEDCLASSES, task_sequence=task_sequence)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGemGradA4.py", line 218, in run_cifar
+    model.observe(algorithm, current_data, task, current_labels)
+  File "/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGem/net.py", line 200, in observe
+    project2cone2(self.grads[:, t].unsqueeze(1),
+  File "/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGem/util.py", line 207, in project2cone2
+    memories_np = memories.cpu().t().double().numpy()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Numpy is not available
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGemGradA4.py", line 479, in <module>
+    batch_results = pool.starmap(
+                    ^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 375, in starmap
+    return self._map_async(func, iterable, starmapstar, chunksize).get()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 774, in get
+    raise self._value
+RuntimeError: Numpy is not available
+
+real	1m1.962s
+user	0m58.155s
+sys	0m0.903s
+
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.2.4 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGemGradA4.py", line 4, in <module>
+    import torch.multiprocessing as mp
+  File "/dcs/21/u2123566/.local/lib/python3.12/site-packages/torch/__init__.py", line 1471, in <module>
+    from .functional import *  # noqa: F403
+  File "/dcs/21/u2123566/.local/lib/python3.12/site-packages/torch/functional.py", line 9, in <module>
+    import torch.nn.functional as F
+  File "/dcs/21/u2123566/.local/lib/python3.12/site-packages/torch/nn/__init__.py", line 1, in <module>
+    from .modules import *  # noqa: F403
+  File "/dcs/21/u2123566/.local/lib/python3.12/site-packages/torch/nn/modules/__init__.py", line 35, in <module>
+    from .transformer import TransformerEncoder, TransformerDecoder, \
+  File "/dcs/21/u2123566/.local/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 20, in <module>
+    device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+/dcs/21/u2123566/.local/lib/python3.12/site-packages/torch/nn/modules/transformer.py:20: UserWarning: Failed to initialize NumPy: _ARRAY_API not found (Triggered internally at ../torch/csrc/utils/tensor_numpy.cpp:84.)
+  device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGem/net.py:195: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at ../torch/csrc/tensor/python_tensor.cpp:83.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 51, in starmapstar
+    return list(itertools.starmap(args[0], args[1]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGemGradA4.py", line 400, in single_run
+    ALL_TASK_CONFIDENCES_TRAIN) = run_cifar('GEM', args, device=dev, mem_data_local=mem_data_local, newclasses=SHUFFLEDCLASSES, task_sequence=task_sequence)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGemGradA4.py", line 218, in run_cifar
+    model.observe(algorithm, current_data, task, current_labels)
+  File "/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGem/net.py", line 200, in observe
+    project2cone2(self.grads[:, t].unsqueeze(1),
+  File "/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGem/util.py", line 207, in project2cone2
+    memories_np = memories.cpu().t().double().numpy()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Numpy is not available
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGemGradA4.py", line 479, in <module>
+    batch_results = pool.starmap(
+                    ^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 375, in starmap
+    return self._map_async(func, iterable, starmapstar, chunksize).get()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 774, in get
+    raise self._value
+RuntimeError: Numpy is not available
+
+real	0m59.500s
+user	0m58.167s
+sys	0m0.696s
+
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.2.4 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGemGradA4.py", line 4, in <module>
+    import torch.multiprocessing as mp
+  File "/dcs/21/u2123566/.local/lib/python3.12/site-packages/torch/__init__.py", line 1471, in <module>
+    from .functional import *  # noqa: F403
+  File "/dcs/21/u2123566/.local/lib/python3.12/site-packages/torch/functional.py", line 9, in <module>
+    import torch.nn.functional as F
+  File "/dcs/21/u2123566/.local/lib/python3.12/site-packages/torch/nn/__init__.py", line 1, in <module>
+    from .modules import *  # noqa: F403
+  File "/dcs/21/u2123566/.local/lib/python3.12/site-packages/torch/nn/modules/__init__.py", line 35, in <module>
+    from .transformer import TransformerEncoder, TransformerDecoder, \
+  File "/dcs/21/u2123566/.local/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 20, in <module>
+    device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+/dcs/21/u2123566/.local/lib/python3.12/site-packages/torch/nn/modules/transformer.py:20: UserWarning: Failed to initialize NumPy: _ARRAY_API not found (Triggered internally at ../torch/csrc/utils/tensor_numpy.cpp:84.)
+  device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGem/net.py:195: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at ../torch/csrc/tensor/python_tensor.cpp:83.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 51, in starmapstar
+    return list(itertools.starmap(args[0], args[1]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGemGradA4.py", line 400, in single_run
+    ALL_TASK_CONFIDENCES_TRAIN) = run_cifar('GEM', args, device=dev, mem_data_local=mem_data_local, newclasses=SHUFFLEDCLASSES, task_sequence=task_sequence)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGemGradA4.py", line 218, in run_cifar
+    model.observe(algorithm, current_data, task, current_labels)
+  File "/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGem/net.py", line 200, in observe
+    project2cone2(self.grads[:, t].unsqueeze(1),
+  File "/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGem/util.py", line 207, in project2cone2
+    memories_np = memories.cpu().t().double().numpy()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Numpy is not available
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGemGradA4.py", line 479, in <module>
+    batch_results = pool.starmap(
+                    ^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 375, in starmap
+    return self._map_async(func, iterable, starmapstar, chunksize).get()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 774, in get
+    raise self._value
+RuntimeError: Numpy is not available
+
+real	0m58.210s
+user	0m57.062s
+sys	0m0.769s
+
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.2.4 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGemGradA4.py", line 4, in <module>
+    import torch.multiprocessing as mp
+  File "/dcs/21/u2123566/.local/lib/python3.12/site-packages/torch/__init__.py", line 1471, in <module>
+    from .functional import *  # noqa: F403
+  File "/dcs/21/u2123566/.local/lib/python3.12/site-packages/torch/functional.py", line 9, in <module>
+    import torch.nn.functional as F
+  File "/dcs/21/u2123566/.local/lib/python3.12/site-packages/torch/nn/__init__.py", line 1, in <module>
+    from .modules import *  # noqa: F403
+  File "/dcs/21/u2123566/.local/lib/python3.12/site-packages/torch/nn/modules/__init__.py", line 35, in <module>
+    from .transformer import TransformerEncoder, TransformerDecoder, \
+  File "/dcs/21/u2123566/.local/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 20, in <module>
+    device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+/dcs/21/u2123566/.local/lib/python3.12/site-packages/torch/nn/modules/transformer.py:20: UserWarning: Failed to initialize NumPy: _ARRAY_API not found (Triggered internally at ../torch/csrc/utils/tensor_numpy.cpp:84.)
+  device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGem/net.py:195: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at ../torch/csrc/tensor/python_tensor.cpp:83.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 51, in starmapstar
+    return list(itertools.starmap(args[0], args[1]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGemGradA4.py", line 400, in single_run
+    ALL_TASK_CONFIDENCES_TRAIN) = run_cifar('GEM', args, device=dev, mem_data_local=mem_data_local, newclasses=SHUFFLEDCLASSES, task_sequence=task_sequence)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGemGradA4.py", line 218, in run_cifar
+    model.observe(algorithm, current_data, task, current_labels)
+  File "/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGem/net.py", line 200, in observe
+    project2cone2(self.grads[:, t].unsqueeze(1),
+  File "/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGem/util.py", line 207, in project2cone2
+    memories_np = memories.cpu().t().double().numpy()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Numpy is not available
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGemGradA4.py", line 479, in <module>
+    batch_results = pool.starmap(
+                    ^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 375, in starmap
+    return self._map_async(func, iterable, starmapstar, chunksize).get()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 774, in get
+    raise self._value
+RuntimeError: Numpy is not available
+
+real	0m59.782s
+user	0m58.687s
+sys	0m0.678s
+
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.2.4 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGemGradA4.py", line 4, in <module>
+    import torch.multiprocessing as mp
+  File "/dcs/21/u2123566/.local/lib/python3.12/site-packages/torch/__init__.py", line 1471, in <module>
+    from .functional import *  # noqa: F403
+  File "/dcs/21/u2123566/.local/lib/python3.12/site-packages/torch/functional.py", line 9, in <module>
+    import torch.nn.functional as F
+  File "/dcs/21/u2123566/.local/lib/python3.12/site-packages/torch/nn/__init__.py", line 1, in <module>
+    from .modules import *  # noqa: F403
+  File "/dcs/21/u2123566/.local/lib/python3.12/site-packages/torch/nn/modules/__init__.py", line 35, in <module>
+    from .transformer import TransformerEncoder, TransformerDecoder, \
+  File "/dcs/21/u2123566/.local/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 20, in <module>
+    device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+/dcs/21/u2123566/.local/lib/python3.12/site-packages/torch/nn/modules/transformer.py:20: UserWarning: Failed to initialize NumPy: _ARRAY_API not found (Triggered internally at ../torch/csrc/utils/tensor_numpy.cpp:84.)
+  device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGem/net.py:195: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at ../torch/csrc/tensor/python_tensor.cpp:83.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 51, in starmapstar
+    return list(itertools.starmap(args[0], args[1]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGemGradA4.py", line 400, in single_run
+    ALL_TASK_CONFIDENCES_TRAIN) = run_cifar('GEM', args, device=dev, mem_data_local=mem_data_local, newclasses=SHUFFLEDCLASSES, task_sequence=task_sequence)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGemGradA4.py", line 218, in run_cifar
+    model.observe(algorithm, current_data, task, current_labels)
+  File "/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGem/net.py", line 200, in observe
+    project2cone2(self.grads[:, t].unsqueeze(1),
+  File "/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGem/util.py", line 207, in project2cone2
+    memories_np = memories.cpu().t().double().numpy()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Numpy is not available
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGemGradA4.py", line 479, in <module>
+    batch_results = pool.starmap(
+                    ^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 375, in starmap
+    return self._map_async(func, iterable, starmapstar, chunksize).get()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 774, in get
+    raise self._value
+RuntimeError: Numpy is not available
+
+real	1m0.336s
+user	0m58.701s
+sys	0m0.701s
+
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.2.4 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGemGradA4.py", line 4, in <module>
+    import torch.multiprocessing as mp
+  File "/dcs/21/u2123566/.local/lib/python3.12/site-packages/torch/__init__.py", line 1471, in <module>
+    from .functional import *  # noqa: F403
+  File "/dcs/21/u2123566/.local/lib/python3.12/site-packages/torch/functional.py", line 9, in <module>
+    import torch.nn.functional as F
+  File "/dcs/21/u2123566/.local/lib/python3.12/site-packages/torch/nn/__init__.py", line 1, in <module>
+    from .modules import *  # noqa: F403
+  File "/dcs/21/u2123566/.local/lib/python3.12/site-packages/torch/nn/modules/__init__.py", line 35, in <module>
+    from .transformer import TransformerEncoder, TransformerDecoder, \
+  File "/dcs/21/u2123566/.local/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 20, in <module>
+    device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+/dcs/21/u2123566/.local/lib/python3.12/site-packages/torch/nn/modules/transformer.py:20: UserWarning: Failed to initialize NumPy: _ARRAY_API not found (Triggered internally at ../torch/csrc/utils/tensor_numpy.cpp:84.)
+  device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGem/net.py:195: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at ../torch/csrc/tensor/python_tensor.cpp:83.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 51, in starmapstar
+    return list(itertools.starmap(args[0], args[1]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGemGradA4.py", line 400, in single_run
+    ALL_TASK_CONFIDENCES_TRAIN) = run_cifar('GEM', args, device=dev, mem_data_local=mem_data_local, newclasses=SHUFFLEDCLASSES, task_sequence=task_sequence)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGemGradA4.py", line 218, in run_cifar
+    model.observe(algorithm, current_data, task, current_labels)
+  File "/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGem/net.py", line 200, in observe
+    project2cone2(self.grads[:, t].unsqueeze(1),
+  File "/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGem/util.py", line 207, in project2cone2
+    memories_np = memories.cpu().t().double().numpy()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Numpy is not available
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/dcs/21/u2123566/Year4/Machine-Unlearning-x-Continual-Learning/negGemGradA4.py", line 479, in <module>
+    batch_results = pool.starmap(
+                    ^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 375, in starmap
+    return self._map_async(func, iterable, starmapstar, chunksize).get()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 774, in get
+    raise self._value
+RuntimeError: Numpy is not available
+
+real	1m0.045s
+user	0m58.689s
+sys	0m0.705s
+mv: cannot stat './Results*': No such file or directory

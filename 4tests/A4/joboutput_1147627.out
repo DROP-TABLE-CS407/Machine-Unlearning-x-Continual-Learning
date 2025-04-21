@@ -1,0 +1,288 @@
+Requirement already satisfied: pyyaml in /usr/lib64/python3.12/site-packages (6.0.1)
+Requirement already satisfied: setuptools in /usr/lib/python3.12/site-packages (68.2.2)
+Requirement already satisfied: matplotlib in /dcs/21/u2123566/.local/lib/python3.12/site-packages (3.10.1)
+Requirement already satisfied: contourpy>=1.0.1 in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from matplotlib) (1.3.2)
+Requirement already satisfied: cycler>=0.10 in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from matplotlib) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from matplotlib) (4.57.0)
+Requirement already satisfied: kiwisolver>=1.3.1 in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from matplotlib) (1.4.8)
+Requirement already satisfied: numpy>=1.23 in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from matplotlib) (1.26.4)
+Requirement already satisfied: packaging>=20.0 in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from matplotlib) (24.2)
+Requirement already satisfied: pillow>=8 in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from matplotlib) (11.2.1)
+Requirement already satisfied: pyparsing>=2.3.1 in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from matplotlib) (3.2.3)
+Requirement already satisfied: python-dateutil>=2.7 in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from matplotlib) (2.9.0.post0)
+Requirement already satisfied: six>=1.5 in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from python-dateutil>=2.7->matplotlib) (1.17.0)
+Requirement already satisfied: quadprog in /dcs/21/u2123566/.local/lib/python3.12/site-packages (0.1.13)
+Requirement already satisfied: numpy in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from quadprog) (1.26.4)
+Requirement already satisfied: pyparsing in /dcs/21/u2123566/.local/lib/python3.12/site-packages (3.2.3)
+Requirement already satisfied: pandas in /dcs/21/u2123566/.local/lib/python3.12/site-packages (2.2.3)
+Requirement already satisfied: numpy>=1.26.0 in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from pandas) (1.26.4)
+Requirement already satisfied: python-dateutil>=2.8.2 in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from pandas) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from pandas) (2025.2)
+Requirement already satisfied: tzdata>=2022.7 in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from pandas) (2025.2)
+Requirement already satisfied: six>=1.5 in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from python-dateutil>=2.8.2->pandas) (1.17.0)
+Requirement already satisfied: numpy<2 in /dcs/21/u2123566/.local/lib/python3.12/site-packages (1.26.4)
+Looking in indexes: https://download.pytorch.org/whl/cu118
+Requirement already satisfied: torch==2.2.0+cu118 in /dcs/21/u2123566/.local/lib/python3.12/site-packages (2.2.0+cu118)
+Requirement already satisfied: torchvision==0.17.0+cu118 in /dcs/21/u2123566/.local/lib/python3.12/site-packages (0.17.0+cu118)
+Requirement already satisfied: torchaudio==2.2.0+cu118 in /dcs/21/u2123566/.local/lib/python3.12/site-packages (2.2.0+cu118)
+Requirement already satisfied: filelock in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from torch==2.2.0+cu118) (3.13.1)
+Requirement already satisfied: typing-extensions>=4.8.0 in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from torch==2.2.0+cu118) (4.12.2)
+Requirement already satisfied: sympy in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from torch==2.2.0+cu118) (1.13.1)
+Requirement already satisfied: networkx in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from torch==2.2.0+cu118) (3.3)
+Requirement already satisfied: jinja2 in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from torch==2.2.0+cu118) (3.1.4)
+Requirement already satisfied: fsspec in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from torch==2.2.0+cu118) (2024.6.1)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu11==11.8.89 in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from torch==2.2.0+cu118) (11.8.89)
+Requirement already satisfied: nvidia-cuda-runtime-cu11==11.8.89 in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from torch==2.2.0+cu118) (11.8.89)
+Requirement already satisfied: nvidia-cuda-cupti-cu11==11.8.87 in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from torch==2.2.0+cu118) (11.8.87)
+Requirement already satisfied: nvidia-cudnn-cu11==8.7.0.84 in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from torch==2.2.0+cu118) (8.7.0.84)
+Requirement already satisfied: nvidia-cublas-cu11==11.11.3.6 in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from torch==2.2.0+cu118) (11.11.3.6)
+Requirement already satisfied: nvidia-cufft-cu11==10.9.0.58 in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from torch==2.2.0+cu118) (10.9.0.58)
+Requirement already satisfied: nvidia-curand-cu11==10.3.0.86 in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from torch==2.2.0+cu118) (10.3.0.86)
+Requirement already satisfied: nvidia-cusolver-cu11==11.4.1.48 in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from torch==2.2.0+cu118) (11.4.1.48)
+Requirement already satisfied: nvidia-cusparse-cu11==11.7.5.86 in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from torch==2.2.0+cu118) (11.7.5.86)
+Requirement already satisfied: nvidia-nccl-cu11==2.19.3 in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from torch==2.2.0+cu118) (2.19.3)
+Requirement already satisfied: nvidia-nvtx-cu11==11.8.86 in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from torch==2.2.0+cu118) (11.8.86)
+Requirement already satisfied: numpy in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from torchvision==0.17.0+cu118) (1.26.4)
+Requirement already satisfied: requests in /usr/lib/python3.12/site-packages (from torchvision==0.17.0+cu118) (2.28.2)
+Requirement already satisfied: pillow!=8.3.*,>=5.3.0 in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from torchvision==0.17.0+cu118) (11.2.1)
+Requirement already satisfied: MarkupSafe>=2.0 in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from jinja2->torch==2.2.0+cu118) (2.1.5)
+Requirement already satisfied: charset_normalizer<4,>=2 in /usr/lib/python3.12/site-packages (from requests->torchvision==0.17.0+cu118) (3.3.0)
+Requirement already satisfied: idna<4,>=2.5 in /usr/lib/python3.12/site-packages (from requests->torchvision==0.17.0+cu118) (3.4)
+Requirement already satisfied: urllib3<1.27,>=1.21.1 in /usr/lib/python3.12/site-packages (from requests->torchvision==0.17.0+cu118) (1.26.19)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /dcs/21/u2123566/.local/lib/python3.12/site-packages (from sympy->torch==2.2.0+cu118) (1.3.0)
+Fri Apr 18 20:55:49 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.144.03             Driver Version: 550.144.03     CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA RTX A5000               Off |   00000000:01:00.0 Off |                  Off |
+| 30%   34C    P0             N/A /  230W |       1MiB /  24564MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Python 3.12.8
+Fri Apr 18 20:55:53 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.144.03             Driver Version: 550.144.03     CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA RTX A5000               Off |   00000000:01:00.0 Off |                  Off |
+| 30%   34C    P0             N/A /  230W |       1MiB /  24564MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Command line arguments:
+number_of_gpus: 1
+algorithm: neggem
+alpha: 0
+learn_mem_strength: 0.5
+learn_batch_size: 10
+unlearn_mem_strength: 0.5
+unlearn_batch_size: 8
+average_over_n_runs: 3
+salun: 1
+salun_strength: 0.5
+./cifar-100-python/train
+./cifar-100-python/test
+Number of GPUs visible:  1
+Available GPUs:  1
+Python 3.12.8
+Sat Apr 19 00:16:20 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.144.03             Driver Version: 550.144.03     CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA RTX A5000               Off |   00000000:01:00.0 Off |                  Off |
+| 35%   59C    P0             N/A /  230W |       1MiB /  24564MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Command line arguments:
+number_of_gpus: 1
+algorithm: negagem
+alpha: 0
+learn_mem_strength: 0.5
+learn_batch_size: 10
+unlearn_mem_strength: 0.5
+unlearn_batch_size: 8
+average_over_n_runs: 3
+salun: 1
+salun_strength: 0.5
+./cifar-100-python/train
+./cifar-100-python/test
+Number of GPUs visible:  1
+Available GPUs:  1
+Python 3.12.8
+Sat Apr 19 02:59:18 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.144.03             Driver Version: 550.144.03     CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA RTX A5000               Off |   00000000:01:00.0 Off |                  Off |
+| 46%   64C    P0             N/A /  230W |       1MiB /  24564MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Command line arguments:
+number_of_gpus: 1
+algorithm: RL-GEM
+alpha: 0
+learn_mem_strength: 0.5
+learn_batch_size: 10
+unlearn_mem_strength: 0.5
+unlearn_batch_size: 8
+average_over_n_runs: 3
+salun: 1
+salun_strength: 0.5
+./cifar-100-python/train
+./cifar-100-python/test
+Number of GPUs visible:  1
+Available GPUs:  1
+Python 3.12.8
+Sat Apr 19 06:23:41 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.144.03             Driver Version: 550.144.03     CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA RTX A5000               Off |   00000000:01:00.0 Off |                  Off |
+| 48%   64C    P0             N/A /  230W |       1MiB /  24564MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Command line arguments:
+number_of_gpus: 1
+algorithm: RL-AGEM
+alpha: 0
+learn_mem_strength: 0.5
+learn_batch_size: 10
+unlearn_mem_strength: 0.5
+unlearn_batch_size: 8
+average_over_n_runs: 3
+salun: 1
+salun_strength: 0.5
+./cifar-100-python/train
+./cifar-100-python/test
+Number of GPUs visible:  1
+Available GPUs:  1
+Python 3.12.8
+Sat Apr 19 09:39:54 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.144.03             Driver Version: 550.144.03     CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA RTX A5000               Off |   00000000:01:00.0 Off |                  Off |
+| 50%   65C    P0             N/A /  230W |       1MiB /  24564MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Command line arguments:
+number_of_gpus: 1
+algorithm: ALT-NEGGEM
+alpha: 0
+learn_mem_strength: 0.5
+learn_batch_size: 10
+unlearn_mem_strength: 0.5
+unlearn_batch_size: 8
+average_over_n_runs: 3
+salun: 1
+salun_strength: 0.5
+./cifar-100-python/train
+./cifar-100-python/test
+Number of GPUs visible:  1
+Available GPUs:  1
+Python 3.12.8
+Sat Apr 19 12:40:07 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.144.03             Driver Version: 550.144.03     CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA RTX A5000               Off |   00000000:01:00.0 Off |                  Off |
+| 49%   65C    P0             N/A /  230W |       1MiB /  24564MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Command line arguments:
+number_of_gpus: 1
+algorithm: neggrad
+alpha: 0.5
+learn_mem_strength: 0.5
+learn_batch_size: 10
+unlearn_mem_strength: 0.5
+unlearn_batch_size: 8
+average_over_n_runs: 3
+salun: 1
+salun_strength: 0.5
+./cifar-100-python/train
+./cifar-100-python/test
+Number of GPUs visible:  1
+Available GPUs:  1
