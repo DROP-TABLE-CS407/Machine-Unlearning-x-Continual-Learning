@@ -1,0 +1,7 @@
+algorithm,mean,std
+neggrad,0.5644,0.0421
+RL-AGEM,0.506,0.0199
+neggem,0.504,0.0199
+ALT-NEGGEM,0.5011,0.0187
+RL-GEM,0.4972,0.023
+negagem,0.4876,0.0157
