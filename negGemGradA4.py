@@ -7,6 +7,7 @@ import torch.multiprocessing as mp
 # average over_n_runs, salun on/off, salun strength, rum on/off, rum_split, rum_memorization
 
 parser = argparse.ArgumentParser()
+parser.add_argument('--task_sequence', dest='task_sequence', type=str, help='Add task sequence')
 parser.add_argument('--number_of_gpus', dest='number_of_gpus', type=str, help='Add number of GPUs')
 parser.add_argument('--algorithm', dest='algorithm', type=str, help='Add algorithm')
 parser.add_argument('--alpha', dest='alpha', type=str, help='Add alpha')
@@ -28,6 +29,7 @@ parser.add_argument('--unlearning_buffer_type', type=str, default="most", choice
 cmd_args = parser.parse_args()
 
 print("Command line arguments:")
+print("task_sequence:", cmd_args.task_sequence)
 print("number_of_gpus:", cmd_args.number_of_gpus)
 print("algorithm:", cmd_args.algorithm)
 print("alpha:", cmd_args.alpha)
@@ -227,7 +229,7 @@ def run_cifar(algorithm, args, n_inputs=N_INPUTS, n_outputs=N_OUTPUTS, n_tasks=N
                     output = model.forward(current_data, task)
                     pred = output.data.max(1)[1]
 
-                if correct / total > 0.7:
+                if correct / total > 0.8:
                     break
                 
             if args.mem_learning_buffer:
@@ -278,7 +280,7 @@ def run_cifar(algorithm, args, n_inputs=N_INPUTS, n_outputs=N_OUTPUTS, n_tasks=N
                         pred = output.data.max(1)[1] 
                         correct += (pred == current_labels).sum().item()
                         
-                    if correct / total <= 0.333333333333333333:
+                    if correct / total <= 0.2:
                         flag = True
                         break
                         
@@ -364,12 +366,11 @@ def single_run(run_idx, SHUFFLEDCLASSES, cmd_args, mem_data_local):
         args.salun_threshold = float(cmd_args.salun_strength)
     else:
         args.salun = False
+        args.salun_threshold = 0.5
+        
+    learning_algorithm = 'GEM'
         
     args.algorithm = cmd_args.algorithm
-    if args.algorithm == 'RL-GEM':
-        args.unlearning_rate = 0.03
-    if args.algorithm == 'RL-AGEM':
-        args.unlearning_rate = 0.03
     args.alpha = float(cmd_args.alpha)
     
     args.mem_learning_buffer = int(cmd_args.mem_learning_buffer)
@@ -379,8 +380,50 @@ def single_run(run_idx, SHUFFLEDCLASSES, cmd_args, mem_data_local):
     args.mem_unlearning_buffer = int(cmd_args.mem_unlearning_buffer)
     args.unlearning_buffer_split = float(cmd_args.unlearning_buffer_split)
     args.unlearning_buffer_type = cmd_args.unlearning_buffer_type
+    
+    if args.algorithm == 'RL-GEM':
+        args.unlearning_rate = 0.01
+    if args.algorithm == 'RL-AGEM':
+        args.lr = 0.03
+        args.unlearning_rate = 0.003
+        args.n_memories = 65
+        args.n_learn_memories = 65
+        args.n_unlearn_memories = 65
+        args.mem_cnt = 1300
+        learning_algorithm = 'AGEM'
+    if args.algorithm == 'negagem':
+        args.lr = 0.03
+        args.unlearning_rate = 0.003
+        args.n_memories = 65
+        args.n_learn_memories = 65
+        args.n_unlearn_memories = 65
+        args.mem_cnt = 1300
+        learning_algorithm = 'AGEM'
         
-    task_sequence = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, -19, -18, -17, -16, -15, -14, -13, -12, -11, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1]  # Example sequence for 5 tasks
+    task_sequence = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+        
+    if cmd_args.task_sequence == 'A4':
+        task_sequence = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, -19, -18, -17, -16, -15, -14, -13, -12, -11, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1]
+    elif cmd_args.task_sequence == 'B4':
+        task_sequence = [0, 1, -1, 1, 2, -2, 2, 3, -3, 3, 4, -4, 4, 5, -5, 5, 6, -6, 6, 7, -7, 7, 8, -8, 8, 9, -9, 9, 10, -10, 10, 11, -11, 11, 12, -12, 12, 13, -13, 13, 14, -14, 14, 15, -15, 15, 16, -16, 16, 17, -17, 17, 18, -18, 18, 19, -19, 19]
+    elif cmd_args.task_sequence == 'C4':
+        task_sequence = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, -14, -13, -12, -11, -10, 15, 16, 17, 18, 19]
+    elif cmd_args.task_sequence == 'C4v2':
+        task_sequence = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, -9, -8, -7, -6, -5, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+    elif cmd_args.task_sequence == 'D4':
+        task_sequence = [0, 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,-18, -17, -16, -15, -13, -12, -11, -10, -8, -7, -6, -5 ,-3, -2, -1]
+    elif cmd_args.task_sequence == 'E4':
+        random_forget = random.randint(0, 19) * -1
+        print("Randomly selected task to forget: ", random_forget)
+        task_sequence = [0, 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19, random_forget]
+    elif cmd_args.task_sequence == 'F4':
+        task_sequence = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, -9, -8, -7, -6, -5, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 5, 6, 7, 8, 9]
+    elif cmd_args.task_sequence == 'G4':
+        task_sequence = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, -9, -8, -7, -6, -5, 10, 11, 12, 13, 14, 5, 6, 7, 8, 9, 15, 16, 17, 18, 19]
+    elif cmd_args.task_sequence == 'H4':
+        task_sequence = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, -0, -4, -9, -14]
+    ## subset of above
+    #task_sequence = [0, 1, 2, 3, 4, -4, -3, -2, -1]
 
     # Run your main training/unlearning (the run_cifar function, etc.)
     # Replace "..." with your original code for a single iteration
@@ -397,7 +440,19 @@ def single_run(run_idx, SHUFFLEDCLASSES, cmd_args, mem_data_local):
     ALL_TASK_ACCURACIES,
     ALL_TASK_UNLEARN_CONFIDENCES,
     ALL_TASK_ACCURACIES_TRAIN,
-    ALL_TASK_CONFIDENCES_TRAIN) = run_cifar('GEM', args, device=dev, mem_data_local=mem_data_local, newclasses=SHUFFLEDCLASSES, task_sequence=task_sequence)
+    ALL_TASK_CONFIDENCES_TRAIN) = run_cifar(learning_algorithm, args, device=dev, mem_data_local=mem_data_local, newclasses=SHUFFLEDCLASSES, task_sequence=task_sequence)
+    
+    # output the number of constraint violations to a csv
+    # print the number of constraint violations
+    print("Number of constraint violations: ", model.constraint_violation_count)
+    
+    # OUTPUT TO CSV FILE AS WELL BECAUSE IT DOESN'T PRINT PROPERLY
+    import pandas as pd
+    df = pd.DataFrame([model.constraint_violation_count])
+    if not model.salun:
+        df.to_csv('0constraint_violations.csv', index=False)
+    else:
+        df.to_csv('1constraint_violations.csv', index=False)
 
     return (
         test_accuracies_GEM[-20:],
@@ -414,6 +469,7 @@ def single_run(run_idx, SHUFFLEDCLASSES, cmd_args, mem_data_local):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
+    parser.add_argument('--task_sequence', dest='task_sequence', type=str, help='Add task sequence')
     parser.add_argument('--number_of_gpus', dest='number_of_gpus', type=str, help='Add number of GPUs')
     parser.add_argument('--algorithm', dest='algorithm', type=str, help='Add algorithm: neggem, negagem, neggrad+')
     parser.add_argument('--alpha', dest='alpha', type=str, help='Add alpha')
@@ -652,6 +708,7 @@ if __name__ == "__main__":
     
     # make a dataframe of all the hyperparameters used
     hyperparameters = {
+        'task_sequence': cmd_args.task_sequence,
         'number_of_gpus': cmd_args.number_of_gpus,
         'algorithm': cmd_args.algorithm,
         'alpha': cmd_args.alpha,
