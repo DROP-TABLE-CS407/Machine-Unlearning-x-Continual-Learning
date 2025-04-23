@@ -160,35 +160,8 @@ def NegGEM(gradient, memories, margin=0.5, eps=1e-3):
     x = np.dot(v, memories_np) + gradient_np
     gradient.copy_(torch.Tensor(x).view(-1, 1))
     
-def NegAGEM(gradient, memories):
-    """
-    Projection of gradients for A-GEM with the memory approach
-    Use averaged gradient memory for projection
-    
-    input:  gradient, g-reference
-    output: gradient, g-projected
-    """
-
-    gref = memories.t().double().sum(axis=0).cuda() # * margin
-    g = gradient.contiguous().view(-1).double().cuda()
-
-    dot_prod = torch.dot(g, gref)
-    
-    #if dot_prod < 0:
-    #    x = g
-    #    gradient.copy_(torch.Tensor(x).view(-1, 1))
-    #    return
-    
-    # avoid division by zero
-    dot_prod = dot_prod/(torch.dot(gref, gref))
-    
-    # epsvector = torch.Tensor([eps]).cuda()
-    
-    x = g + gref * abs(dot_prod)  # + epsvector
-    gradient.copy_(torch.Tensor(x).view(-1, 1))
-    
 def project2neggrad2(gradient, memories, alpha = 0.5):
-    gref = memories.t().double().sum(axis=0).cuda() # * margin
+    gref = memories.t().double().mean(axis=0).cuda() # * margin
     g = gradient.contiguous().view(-1).double().cuda()
     x = gref*alpha + g * (1-alpha)
     gradient.copy_(torch.Tensor(x).view(-1, 1))
@@ -266,7 +239,7 @@ def naiveretraining(gradient):
     """
     g = gradient.t().double().mean(axis=0).cuda()
     gradient.copy_(torch.Tensor(g).view(-1, 1))
-    
+
 def project2cone2_neggrad_dual(gradient, forget_memories, retain_memories,
                             margin=0.5, eps=1e-10):
     """
@@ -347,3 +320,4 @@ def project2cone2_neggrad_dual(gradient, forget_memories, retain_memories,
         gradient.copy_(x_torch)
     except:
         margin /= 2
+        
