@@ -33,6 +33,7 @@ class Net(nn.Module):
         self.n_learn_memories = args.n_learn_memories
         self.n_unlearn_memories = args.n_unlearn_memories
         
+        self.constraint_violation_count = 0
 
         """
         Allocate episodic memory
@@ -298,12 +299,17 @@ class Net(nn.Module):
             forget_grads = self.grads[:, t].unsqueeze(1)
             retain_indices = torch.tensor([i for i in range(self.grads.size(1)) if i in self.observed_tasks and i != t], device=self.grads.device)
             retain_grads = self.grads.index_select(1, retain_indices)
+            
+            if self.salun:
+                mask = apply_salun(forget_grads, self.salun_threshold, mask=mask)
+                
+            self.grads[:, t] = forget_grads.squeeze(1)
 
             dotp = torch.mm(self.grads[:, t].unsqueeze(0),
                                 self.grads.index_select(1, indx))
-            if self.salun:
-                mask = apply_salun(forget_grads, self.salun_threshold, mask=mask)
+
             if (dotp < 0).sum() != 0:
+                self.constraint_violation_count += 1
                 print("Projection needed")
                 NegGEM(forget_grads, retain_grads, self.unlearn_memory_strength)
                 self.grads[:, t] = forget_grads.squeeze(1)
@@ -324,6 +330,7 @@ class Net(nn.Module):
                             past_task)[:, offset1: offset2],
                         self.learn_memory_labs[past_task] - offset1)
                 if past_task == t:
+                    continue
                     current_labs = (self.learn_memory_labs[past_task][x1:x2] - offset1)
                     random.shuffle(current_labs)    
                     ptloss = self.ce(
@@ -364,6 +371,7 @@ class Net(nn.Module):
             if self.salun:
                 mask = apply_salun(forget_grads, self.salun_threshold, mask=mask)
             if (dotp < 0).sum() != 0:
+                self.constraint_violation_count += 1
                 print("Projection needed")
                 NegGEM(forget_grads, retain_grads, self.unlearn_memory_strength)
                 self.grads[:, t] = forget_grads.squeeze(1)
@@ -385,6 +393,7 @@ class Net(nn.Module):
                             past_task)[:, offset1: offset2],
                         self.unlearn_memory_labs[past_task] - offset1)
                 if past_task == t:
+                    continue
                     ptloss = self.ce(
                         self.forward(
                             self.learn_memory_data[past_task][x1:x2],
@@ -420,6 +429,7 @@ class Net(nn.Module):
             if self.salun:
                 mask = apply_salun(forget_grads, self.salun_threshold, mask=mask)
             if (dotp < 0).sum() != 0:
+                self.constraint_violation_count += 1
                 print("Projection needed")
                 agemprojection(forget_grads, retain_grads)
                 self.grads[:, t] = forget_grads.squeeze(1)
@@ -445,6 +455,7 @@ class Net(nn.Module):
                             past_task)[:, offset1: offset2],
                         self.learn_memory_labs[past_task] - offset1)
                 if past_task == t:
+                    continue
                     current_labs = (self.learn_memory_labs[past_task][x1:x2] - offset1)
                     random.shuffle(current_labs)    
                     ptloss = self.ce(
@@ -470,6 +481,7 @@ class Net(nn.Module):
             loss += self.ce(
                         self.forward(self.unlearn_memory_data[past_task][x1:x2], t)[:, offset1: offset2], current_labs)
             # negate loss for unlearning
+            loss = -1 * loss
             loss.backward()
             
             store_grad(self.parameters, self.grads, self.grad_dims, t)
@@ -479,12 +491,17 @@ class Net(nn.Module):
             forget_grads = self.grads[:, t].unsqueeze(1)
             retain_indices = torch.tensor([i for i in range(self.grads.size(1)) if i in self.observed_tasks and i != t], device=self.grads.device)
             retain_grads = self.grads.index_select(1, retain_indices)
+            
+            if self.salun:
+                mask = apply_salun(forget_grads, self.salun_threshold, mask=mask)
+                
+            self.grads[:, t] = forget_grads.squeeze(1)
 
             dotp = torch.mm(self.grads[:, t].unsqueeze(0),
                                 self.grads.index_select(1, indx))
-            if self.salun:
-                mask = apply_salun(forget_grads, self.salun_threshold, mask=mask)
+
             if (dotp < 0).sum() != 0:
+                self.constraint_violation_count += 1
                 print("Projection needed")
                 NegGEM(forget_grads, retain_grads, self.unlearn_memory_strength)
                 self.grads[:, t] = forget_grads.squeeze(1)
@@ -505,6 +522,7 @@ class Net(nn.Module):
                             past_task)[:, offset1: offset2],
                         self.learn_memory_labs[past_task] - offset1)
                 if past_task == t:
+                    continue
                     current_labs = (self.learn_memory_labs[past_task][x1:x2] - offset1)
                     random.shuffle(current_labs)
                     ptloss = self.ce(
@@ -529,7 +547,8 @@ class Net(nn.Module):
             random.shuffle(current_labs)
             loss += self.ce(
                         self.forward(self.learn_memory_data[past_task][x1:x2], t)[:, offset1: offset2], current_labs)
-            # negate loss for unlearning
+            # negate loss for unlearning i cant be fucked just make it betterer like no joke this is cracked
+            loss = -1 * loss
             loss.backward()
             
             store_grad(self.parameters, self.grads, self.grad_dims, t)
@@ -539,11 +558,15 @@ class Net(nn.Module):
             forget_grads = self.grads[:, t].unsqueeze(1)
             retain_indices = torch.tensor([i for i in range(self.grads.size(1)) if i in self.observed_tasks and i != t], device=self.grads.device)
             retain_grads = self.grads.index_select(1, retain_indices)
+            
+            if self.salun:
+                mask = apply_salun(forget_grads, self.salun_threshold, mask=mask)
+            
+            self.grads[:, t] = forget_grads.squeeze(1)
 
             dotp = torch.mm(self.grads[:, t].unsqueeze(0),
                                 self.grads.index_select(1, indx))
-            if self.salun:
-                mask = apply_salun(forget_grads, self.salun_threshold, mask=mask)
+
             if (dotp < 0).sum() != 0:
                 print("Projection needed")
                 agemprojection(forget_grads, retain_grads)
