@@ -1,0 +1,66 @@
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+mv: cannot stat '*.pt': No such file or directory
+
+real	76m56.284s
+user	3148m29.642s
+sys	31m41.465s
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+mv: cannot stat '*.pt': No such file or directory
+
+real	73m48.247s
+user	3028m11.235s
+sys	30m0.346s
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+mv: cannot stat '*.pt': No such file or directory
+
+real	78m23.509s
+user	3167m41.290s
+sys	34m53.756s
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+mv: cannot stat '*.pt': No such file or directory
+
+real	75m2.710s
+user	2893m7.868s
+sys	34m56.071s
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+mv: cannot stat '*.pt': No such file or directory
+
+real	75m23.969s
+user	3102m15.520s
+sys	30m50.680s
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+mv: cannot stat '*.pt': No such file or directory
+
+real	74m36.455s
+user	2992m37.620s
+sys	32m25.802s

@@ -1,0 +1,130 @@
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+mv: cannot stat '*.pt': No such file or directory
+
+real	118m17.722s
+user	4329m45.121s
+sys	87m8.112s
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+/pytorch/aten/src/ATen/native/cuda/Loss.cu:250: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [0,0,0] Assertion `t >= 0 && t < n_classes` failed.
+/pytorch/aten/src/ATen/native/cuda/Loss.cu:250: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [1,0,0] Assertion `t >= 0 && t < n_classes` failed.
+/pytorch/aten/src/ATen/native/cuda/Loss.cu:250: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [2,0,0] Assertion `t >= 0 && t < n_classes` failed.
+/pytorch/aten/src/ATen/native/cuda/Loss.cu:250: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [3,0,0] Assertion `t >= 0 && t < n_classes` failed.
+/pytorch/aten/src/ATen/native/cuda/Loss.cu:250: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [4,0,0] Assertion `t >= 0 && t < n_classes` failed.
+/pytorch/aten/src/ATen/native/cuda/Loss.cu:250: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [5,0,0] Assertion `t >= 0 && t < n_classes` failed.
+/pytorch/aten/src/ATen/native/cuda/Loss.cu:250: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [6,0,0] Assertion `t >= 0 && t < n_classes` failed.
+/pytorch/aten/src/ATen/native/cuda/Loss.cu:250: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [7,0,0] Assertion `t >= 0 && t < n_classes` failed.
+/pytorch/aten/src/ATen/native/cuda/Loss.cu:250: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [0,0,0] Assertion `t >= 0 && t < n_classes` failed.
+/pytorch/aten/src/ATen/native/cuda/Loss.cu:250: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [1,0,0] Assertion `t >= 0 && t < n_classes` failed.
+/pytorch/aten/src/ATen/native/cuda/Loss.cu:250: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [2,0,0] Assertion `t >= 0 && t < n_classes` failed.
+/pytorch/aten/src/ATen/native/cuda/Loss.cu:250: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [3,0,0] Assertion `t >= 0 && t < n_classes` failed.
+/pytorch/aten/src/ATen/native/cuda/Loss.cu:250: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [4,0,0] Assertion `t >= 0 && t < n_classes` failed.
+/pytorch/aten/src/ATen/native/cuda/Loss.cu:250: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [5,0,0] Assertion `t >= 0 && t < n_classes` failed.
+/pytorch/aten/src/ATen/native/cuda/Loss.cu:250: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [6,0,0] Assertion `t >= 0 && t < n_classes` failed.
+/pytorch/aten/src/ATen/native/cuda/Loss.cu:250: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [7,0,0] Assertion `t >= 0 && t < n_classes` failed.
+/pytorch/aten/src/ATen/native/cuda/Loss.cu:250: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [0,0,0] Assertion `t >= 0 && t < n_classes` failed.
+/pytorch/aten/src/ATen/native/cuda/Loss.cu:250: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [1,0,0] Assertion `t >= 0 && t < n_classes` failed.
+/pytorch/aten/src/ATen/native/cuda/Loss.cu:250: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [2,0,0] Assertion `t >= 0 && t < n_classes` failed.
+/pytorch/aten/src/ATen/native/cuda/Loss.cu:250: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [3,0,0] Assertion `t >= 0 && t < n_classes` failed.
+/pytorch/aten/src/ATen/native/cuda/Loss.cu:250: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [4,0,0] Assertion `t >= 0 && t < n_classes` failed.
+/pytorch/aten/src/ATen/native/cuda/Loss.cu:250: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [5,0,0] Assertion `t >= 0 && t < n_classes` failed.
+/pytorch/aten/src/ATen/native/cuda/Loss.cu:250: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [6,0,0] Assertion `t >= 0 && t < n_classes` failed.
+/pytorch/aten/src/ATen/native/cuda/Loss.cu:250: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [7,0,0] Assertion `t >= 0 && t < n_classes` failed.
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 51, in starmapstar
+    return list(itertools.starmap(args[0], args[1]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGemGradD4.py", line 400, in single_run
+    ALL_TASK_CONFIDENCES_TRAIN) = run_cifar('GEM', args, device=dev, mem_data_local=mem_data_local, newclasses=SHUFFLEDCLASSES, task_sequence=task_sequence)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGemGradD4.py", line 286, in run_cifar
+    mask = model.unlearn(unlearning_algo, task_to_unlearn, x1=j, x2=j + args.unlearn_batch_size, alpha=args.alpha, mask=mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py", line 407, in unlearn
+    loss = -1 * loss
+           ~~~^~~~~~
+RuntimeError: CUDA error: device-side assert triggered
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGemGradD4.py", line 479, in <module>
+    batch_results = pool.starmap(
+                    ^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 375, in starmap
+    return self._map_async(func, iterable, starmapstar, chunksize).get()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 774, in get
+    raise self._value
+RuntimeError: CUDA error: device-side assert triggered
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+
+real	80m24.326s
+user	2885m59.084s
+sys	57m49.501s
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+mv: cannot stat '*.pt': No such file or directory
+
+real	105m53.576s
+user	3883m4.258s
+sys	74m34.786s
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+mv: cannot stat '*.pt': No such file or directory
+
+real	97m46.735s
+user	2982m35.096s
+sys	76m2.632s
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+mv: cannot stat '*.pt': No such file or directory
+
+real	86m28.382s
+user	3071m43.865s
+sys	62m28.899s
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+mv: cannot stat '*.pt': No such file or directory
+
+real	94m52.338s
+user	2967m6.528s
+sys	73m11.334s
