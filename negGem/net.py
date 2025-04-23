@@ -310,7 +310,6 @@ class Net(nn.Module):
 
             if (dotp < 0).sum() != 0:
                 self.constraint_violation_count += 1
-                print("Projection needed")
                 NegGEM(forget_grads, retain_grads, self.unlearn_memory_strength)
                 self.grads[:, t] = forget_grads.squeeze(1)
                 # copy gradients back
@@ -372,7 +371,6 @@ class Net(nn.Module):
                 mask = apply_salun(forget_grads, self.salun_threshold, mask=mask)
             if (dotp < 0).sum() != 0:
                 self.constraint_violation_count += 1
-                print("Projection needed")
                 NegGEM(forget_grads, retain_grads, self.unlearn_memory_strength)
                 self.grads[:, t] = forget_grads.squeeze(1)
                 # copy gradients back
@@ -430,7 +428,6 @@ class Net(nn.Module):
                 mask = apply_salun(forget_grads, self.salun_threshold, mask=mask)
             if (dotp < 0).sum() != 0:
                 self.constraint_violation_count += 1
-                print("Projection needed")
                 agemprojection(forget_grads, retain_grads)
                 self.grads[:, t] = forget_grads.squeeze(1)
                 # copy gradients back
@@ -502,7 +499,6 @@ class Net(nn.Module):
 
             if (dotp < 0).sum() != 0:
                 self.constraint_violation_count += 1
-                print("Projection needed")
                 NegGEM(forget_grads, retain_grads, self.unlearn_memory_strength)
                 self.grads[:, t] = forget_grads.squeeze(1)
                 # copy gradients back
@@ -568,7 +564,6 @@ class Net(nn.Module):
                                 self.grads.index_select(1, indx))
 
             if (dotp < 0).sum() != 0:
-                print("Projection needed")
                 agemprojection(forget_grads, retain_grads)
                 self.grads[:, t] = forget_grads.squeeze(1)
                 # copy gradients back
@@ -626,7 +621,6 @@ class Net(nn.Module):
             dotp = torch.mm(self.grads[:, t].unsqueeze(0),
                                 self.grads.index_select(1, indx))
             if (dotp < 0).sum() != 0:
-                print("Projection needed")
                 if self.salun:
                     mask = apply_salun(average_grad_of_retain, self.salun_threshold, mask=mask)
                 NegGEM(average_grad_of_retain, all_grads, self.unlearn_memory_strength)
