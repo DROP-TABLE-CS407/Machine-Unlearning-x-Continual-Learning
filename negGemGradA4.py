@@ -280,7 +280,7 @@ def run_cifar(algorithm, args, n_inputs=N_INPUTS, n_outputs=N_OUTPUTS, n_tasks=N
                         pred = output.data.max(1)[1] 
                         correct += (pred == current_labels).sum().item()
                         
-                    if correct / total <= 0.2:
+                    if correct / total <= 0.275:
                         flag = True
                         break
                         
