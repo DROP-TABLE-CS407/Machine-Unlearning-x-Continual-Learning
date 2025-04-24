@@ -1,0 +1,3330 @@
+Requirement already satisfied: pyyaml in /usr/lib64/python3.12/site-packages (6.0.1)
+Requirement already satisfied: setuptools in /usr/lib/python3.12/site-packages (68.2.2)
+Requirement already satisfied: matplotlib in /dcs/21/u2110391/.local/lib/python3.12/site-packages (3.10.1)
+Requirement already satisfied: contourpy>=1.0.1 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from matplotlib) (1.3.1)
+Requirement already satisfied: cycler>=0.10 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from matplotlib) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from matplotlib) (4.56.0)
+Requirement already satisfied: kiwisolver>=1.3.1 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from matplotlib) (1.4.8)
+Requirement already satisfied: numpy>=1.23 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from matplotlib) (2.2.4)
+Requirement already satisfied: packaging>=20.0 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from matplotlib) (24.2)
+Requirement already satisfied: pillow>=8 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from matplotlib) (11.1.0)
+Requirement already satisfied: pyparsing>=2.3.1 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from matplotlib) (3.2.3)
+Requirement already satisfied: python-dateutil>=2.7 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from matplotlib) (2.9.0.post0)
+Requirement already satisfied: six>=1.5 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from python-dateutil>=2.7->matplotlib) (1.17.0)
+Requirement already satisfied: quadprog in /dcs/21/u2110391/.local/lib/python3.12/site-packages (0.1.13)
+Requirement already satisfied: numpy in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from quadprog) (2.2.4)
+Requirement already satisfied: pyparsing in /dcs/21/u2110391/.local/lib/python3.12/site-packages (3.2.3)
+Requirement already satisfied: pandas in /dcs/21/u2110391/.local/lib/python3.12/site-packages (2.2.3)
+Requirement already satisfied: numpy>=1.26.0 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from pandas) (2.2.4)
+Requirement already satisfied: python-dateutil>=2.8.2 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from pandas) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from pandas) (2025.2)
+Requirement already satisfied: tzdata>=2022.7 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from pandas) (2025.2)
+Requirement already satisfied: six>=1.5 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from python-dateutil>=2.8.2->pandas) (1.17.0)
+Requirement already satisfied: numpy in /dcs/21/u2110391/.local/lib/python3.12/site-packages (2.2.4)
+Thu Apr 24 04:47:24 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.144.03             Driver Version: 550.144.03     CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 2080 Ti     Off |   00000000:01:00.0 Off |                  N/A |
+| 15%   63C    P0             N/A /  250W |       1MiB /  11264MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Command line arguments:
+number_of_gpus: 1
+algorithm: neggem
+alpha: 0
+learn_mem_strength: 0.5
+learn_batch_size: 10
+unlearn_mem_strength: 0.5
+unlearn_batch_size: 10
+average_over_n_runs: 3
+salun: 0
+salun_strength: 0.2
+Python 3.12.8
+./cifar-100-python/train
+./cifar-100-python/test
+Number of GPUs visible:  1
+Available GPUs:  1
+Thu Apr 24 04:47:41 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.144.03             Driver Version: 550.144.03     CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 2080 Ti     Off |   00000000:01:00.0 Off |                  N/A |
+| 15%   64C    P0             N/A /  250W |       1MiB /  11264MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Running on device:  NVIDIA GeForce RTX 2080 Ti
+Unlearn Batch Size:  10
+Unlearn MEM Strength:  0.5
+cifar-100-python/train
+cifar-100-python/test
+new ordering of classes:  ['raccoon', 'butterfly', 'lobster', 'wardrobe', 'crab', 'baby', 'possum', 'woman', 'boy', 'hamster', 'shark', 'snake', 'sweet peppers', 'leopard', 'seal', 'maple', 'telephone', 'dolphin', 'lion', 'snail', 'spider', 'bed', 'bridge', 'lawn-mower', 'sea', 'beetle', 'ray', 'pears', 'pine', 'house', 'porcupine', 'lamp', 'train', 'dinosaur', 'mountain', 'whale', 'bus', 'flatfish', 'turtle', 'wolf', 'cockroach', 'tulips', 'tiger', 'rabbit', 'bowls', 'roses', 'mushrooms', 'kangaroo', 'oranges', 'aquarium fish', 'tractor', 'rocket', 'fox', 'chair', 'castle', 'squirrel', 'forest', 'willow', 'elephant', 'worm', 'palm', 'bottles', 'girl', 'mouse', 'tank', 'apples', 'lizard', 'plain', 'cups', 'bear', 'sunflowers', 'caterpillar', 'cans', 'television', 'pickup truck', 'poppies', 'motorcycle', 'table', 'computer keyboard', 'man', 'camel', 'crocodile', 'beaver', 'skunk', 'road', 'clock', 'oak', 'otter', 'skyscraper', 'orchids', 'cloud', 'chimpanzee', 'cattle', 'trout', 'couch', 'streetcar', 'bee', 'plates', 'bicycle', 'shrew']
+Training task:  1
+[Learn Buffer] Updating memory for task 1 using least memorization.
+[Memory Update] Task 0, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 1 using most memorization.
+[Memory Update] Task 0, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  2095  Total retain:  2500
+Total correct forget:  9085  Total forget:  47500
+Total correct test:  323  Total test:  500
+Total correct forget test:  1826  Total test forget:  9500
+After learning task 1
+Task accuracies: [0.646, 0.218, 0.21, 0.17, 0.094, 0.218, 0.164, 0.162, 0.132, 0.164, 0.164, 0.206, 0.188, 0.314, 0.216, 0.22, 0.198, 0.214, 0.2, 0.2]
+Training task:  2
+[Learn Buffer] Updating memory for task 2 using least memorization.
+[Memory Update] Task 1, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 2 using most memorization.
+[Memory Update] Task 1, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1692  Total retain:  2500
+Total correct forget:  11435  Total forget:  47500
+Total correct test:  287  Total test:  500
+Total correct forget test:  2117  Total test forget:  9500
+After learning task 2
+Task accuracies: [0.574, 0.508, 0.128, 0.214, 0.188, 0.254, 0.23, 0.218, 0.126, 0.206, 0.212, 0.214, 0.23, 0.228, 0.298, 0.178, 0.2, 0.22, 0.21, 0.172]
+Training task:  3
+[Learn Buffer] Updating memory for task 3 using least memorization.
+[Memory Update] Task 2, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 3 using most memorization.
+[Memory Update] Task 2, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1601  Total retain:  2500
+Total correct forget:  14035  Total forget:  47500
+Total correct test:  262  Total test:  500
+Total correct forget test:  2510  Total test forget:  9500
+After learning task 3
+Task accuracies: [0.524, 0.468, 0.712, 0.194, 0.102, 0.308, 0.23, 0.222, 0.15, 0.302, 0.254, 0.234, 0.194, 0.254, 0.266, 0.324, 0.172, 0.232, 0.24, 0.162]
+Training task:  4
+[Learn Buffer] Updating memory for task 4 using least memorization.
+[Memory Update] Task 3, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 4 using most memorization.
+[Memory Update] Task 3, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1618  Total retain:  2500
+Total correct forget:  15307  Total forget:  47500
+Total correct test:  290  Total test:  500
+Total correct forget test:  2777  Total test forget:  9500
+After learning task 4
+Task accuracies: [0.58, 0.492, 0.622, 0.796, 0.106, 0.284, 0.206, 0.184, 0.17, 0.254, 0.236, 0.242, 0.224, 0.284, 0.25, 0.26, 0.176, 0.278, 0.294, 0.196]
+Training task:  5
+[Learn Buffer] Updating memory for task 5 using least memorization.
+[Memory Update] Task 4, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 5 using most memorization.
+[Memory Update] Task 4, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1625  Total retain:  2500
+Total correct forget:  17158  Total forget:  47500
+Total correct test:  289  Total test:  500
+Total correct forget test:  3048  Total test forget:  9500
+After learning task 5
+Task accuracies: [0.578, 0.482, 0.622, 0.664, 0.808, 0.294, 0.208, 0.216, 0.122, 0.234, 0.208, 0.206, 0.212, 0.254, 0.306, 0.27, 0.18, 0.328, 0.292, 0.19]
+Training task:  6
+[Learn Buffer] Updating memory for task 6 using least memorization.
+[Memory Update] Task 5, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 6 using most memorization.
+[Memory Update] Task 5, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1633  Total retain:  2500
+Total correct forget:  18422  Total forget:  47500
+Total correct test:  294  Total test:  500
+Total correct forget test:  3274  Total test forget:  9500
+After learning task 6
+Task accuracies: [0.588, 0.504, 0.636, 0.658, 0.732, 0.824, 0.226, 0.238, 0.104, 0.218, 0.246, 0.244, 0.198, 0.272, 0.258, 0.246, 0.192, 0.276, 0.28, 0.196]
+Training task:  7
+[Learn Buffer] Updating memory for task 7 using least memorization.
+[Memory Update] Task 6, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 7 using most memorization.
+[Memory Update] Task 6, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1601  Total retain:  2500
+Total correct forget:  19628  Total forget:  47500
+Total correct test:  286  Total test:  500
+Total correct forget test:  3537  Total test forget:  9500
+After learning task 7
+Task accuracies: [0.572, 0.488, 0.664, 0.622, 0.734, 0.72, 0.84, 0.238, 0.15, 0.242, 0.228, 0.266, 0.192, 0.3, 0.274, 0.226, 0.17, 0.3, 0.216, 0.204]
+Training task:  8
+[Learn Buffer] Updating memory for task 8 using least memorization.
+[Memory Update] Task 7, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 8 using most memorization.
+[Memory Update] Task 7, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1608  Total retain:  2500
+Total correct forget:  20578  Total forget:  47500
+Total correct test:  302  Total test:  500
+Total correct forget test:  3672  Total test forget:  9500
+After learning task 8
+Task accuracies: [0.604, 0.484, 0.62, 0.628, 0.708, 0.704, 0.78, 0.826, 0.148, 0.206, 0.222, 0.288, 0.2, 0.246, 0.252, 0.214, 0.182, 0.252, 0.186, 0.198]
+Training task:  9
+[Learn Buffer] Updating memory for task 9 using least memorization.
+[Memory Update] Task 8, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 9 using most memorization.
+[Memory Update] Task 8, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1640  Total retain:  2500
+Total correct forget:  22674  Total forget:  47500
+Total correct test:  309  Total test:  500
+Total correct forget test:  4022  Total test forget:  9500
+After learning task 9
+Task accuracies: [0.618, 0.518, 0.656, 0.636, 0.694, 0.744, 0.69, 0.758, 0.774, 0.242, 0.278, 0.284, 0.156, 0.258, 0.26, 0.254, 0.174, 0.276, 0.196, 0.196]
+Training task:  10
+[Learn Buffer] Updating memory for task 10 using least memorization.
+[Memory Update] Task 9, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 10 using most memorization.
+[Memory Update] Task 9, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1659  Total retain:  2500
+Total correct forget:  23943  Total forget:  47500
+Total correct test:  309  Total test:  500
+Total correct forget test:  4237  Total test forget:  9500
+After learning task 10
+Task accuracies: [0.618, 0.482, 0.622, 0.628, 0.682, 0.758, 0.686, 0.708, 0.754, 0.83, 0.252, 0.256, 0.18, 0.256, 0.266, 0.21, 0.18, 0.318, 0.206, 0.2]
+Training task:  11
+[Learn Buffer] Updating memory for task 11 using least memorization.
+[Memory Update] Task 10, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 11 using most memorization.
+[Memory Update] Task 10, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1682  Total retain:  2500
+Total correct forget:  25249  Total forget:  47500
+Total correct test:  306  Total test:  500
+Total correct forget test:  4504  Total test forget:  9500
+After learning task 11
+Task accuracies: [0.612, 0.518, 0.63, 0.658, 0.674, 0.746, 0.688, 0.718, 0.728, 0.752, 0.888, 0.268, 0.174, 0.266, 0.242, 0.222, 0.174, 0.25, 0.21, 0.202]
+Unlearning task: 11
+[DEBUG][MIA] Forget Set Loss: mean=0.0247, std=0.1374
+[DEBUG][MIA] Test Set Loss:   mean=0.6237, std=1.8568
+Before unlearning: {'type': 'basic', 'attack_acc': 0.609375, 'cv_acc': 0.1843137254901961, 'auc': 0.668853759765625, 'task': 10}
+Accuracy, Confidence: (0.99609375, 0.9920122623443604)
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+broken out of loop
+[DEBUG] Task 10 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=3.0151, std=2.7387
+[DEBUG][MIA] Test Set Loss:   mean=2.0966, std=2.0434
+After unlearning: {'type': 'basic', 'attack_acc': 0.55078125, 'cv_acc': 0.13725490196078433, 'auc': 0.59185791015625, 'task': 10}
+Accuracy, Confidence: (0.26171875, 0.6640644669532776)
+Total correct retain:  1562  Total retain:  2500
+Total correct forget:  21526  Total forget:  47500
+Total correct test:  288  Total test:  500
+Total correct forget test:  3703  Total test forget:  9500
+After unlearning task 11
+Task accuracies: [0.576, 0.336, 0.54, 0.578, 0.586, 0.626, 0.546, 0.644, 0.664, 0.676, 0.364, 0.222, 0.16, 0.238, 0.216, 0.204, 0.186, 0.23, 0.19, 0.2]
+Unlearning task: 10
+[DEBUG][MIA] Forget Set Loss: mean=0.2303, std=0.9414
+[DEBUG][MIA] Test Set Loss:   mean=1.7671, std=3.3724
+Before unlearning: {'type': 'basic', 'attack_acc': 0.640625, 'cv_acc': 0.21960784313725493, 'auc': 0.676788330078125, 'task': 9}
+Accuracy, Confidence: (0.91015625, 0.9480762481689453)
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+broken out of loop
+[DEBUG] Task 9 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=2.4375, std=2.9425
+[DEBUG][MIA] Test Set Loss:   mean=2.5778, std=2.3931
+After unlearning: {'type': 'basic', 'attack_acc': 0.4765625, 'cv_acc': 0.08235294117647059, 'auc': 0.43731689453125, 'task': 9}
+Accuracy, Confidence: (0.390625, 0.7096097469329834)
+Total correct retain:  1439  Total retain:  2500
+Total correct forget:  20580  Total forget:  47500
+Total correct test:  266  Total test:  500
+Total correct forget test:  3544  Total test forget:  9500
+After unlearning task 10
+Task accuracies: [0.532, 0.322, 0.494, 0.58, 0.572, 0.616, 0.61, 0.674, 0.604, 0.342, 0.408, 0.25, 0.166, 0.24, 0.21, 0.21, 0.184, 0.19, 0.216, 0.2]
+Unlearning task: 9
+[DEBUG][MIA] Forget Set Loss: mean=0.0211, std=0.0615
+[DEBUG][MIA] Test Set Loss:   mean=2.0222, std=3.3952
+Before unlearning: {'type': 'basic', 'attack_acc': 0.74609375, 'cv_acc': 0.6705882352941177, 'auc': 0.815155029296875, 'task': 8}
+Accuracy, Confidence: (1.0, 0.9760403633117676)
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+broken out of loop
+[DEBUG] Task 8 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=2.0314, std=2.2281
+[DEBUG][MIA] Test Set Loss:   mean=2.7652, std=2.2517
+After unlearning: {'type': 'basic', 'attack_acc': 0.57421875, 'cv_acc': 0.3019607843137255, 'auc': 0.60845947265625, 'task': 8}
+Accuracy, Confidence: (0.45703125, 0.7271125316619873)
+Total correct retain:  1460  Total retain:  2500
+Total correct forget:  19522  Total forget:  47500
+Total correct test:  265  Total test:  500
+Total correct forget test:  3365  Total test forget:  9500
+After unlearning task 9
+Task accuracies: [0.53, 0.354, 0.49, 0.566, 0.578, 0.612, 0.634, 0.634, 0.25, 0.308, 0.434, 0.21, 0.19, 0.252, 0.204, 0.196, 0.202, 0.186, 0.228, 0.202]
+Unlearning task: 8
+[DEBUG][MIA] Forget Set Loss: mean=0.0331, std=0.0895
+[DEBUG][MIA] Test Set Loss:   mean=1.1878, std=1.8100
+Before unlearning: {'type': 'basic', 'attack_acc': 0.7421875, 'cv_acc': 0.7019607843137254, 'auc': 0.82989501953125, 'task': 7}
+Accuracy, Confidence: (0.9921875, 0.9678612947463989)
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+broken out of loop
+[DEBUG] Task 7 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=1.9483, std=2.8651
+[DEBUG][MIA] Test Set Loss:   mean=3.0714, std=3.2301
+After unlearning: {'type': 'basic', 'attack_acc': 0.609375, 'cv_acc': 0.12156862745098038, 'auc': 0.647216796875, 'task': 7}
+Accuracy, Confidence: (0.5, 0.7051061391830444)
+Total correct retain:  1404  Total retain:  2500
+Total correct forget:  18068  Total forget:  47500
+Total correct test:  254  Total test:  500
+Total correct forget test:  3197  Total test forget:  9500
+After unlearning task 8
+Task accuracies: [0.508, 0.35, 0.518, 0.514, 0.582, 0.608, 0.564, 0.348, 0.246, 0.308, 0.37, 0.23, 0.174, 0.224, 0.216, 0.256, 0.204, 0.252, 0.23, 0.2]
+Unlearning task: 7
+[DEBUG][MIA] Forget Set Loss: mean=0.0166, std=0.0309
+[DEBUG][MIA] Test Set Loss:   mean=1.4572, std=2.1015
+Before unlearning: {'type': 'basic', 'attack_acc': 0.765625, 'cv_acc': 0.7254901960784313, 'auc': 0.83203125, 'task': 6}
+Accuracy, Confidence: (1.0, 0.9844187498092651)
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+broken out of loop
+[DEBUG] Task 6 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=0.7919, std=1.2665
+[DEBUG][MIA] Test Set Loss:   mean=2.4715, std=2.8559
+After unlearning: {'type': 'basic', 'attack_acc': 0.70703125, 'cv_acc': 0.5686274509803921, 'auc': 0.7498779296875, 'task': 6}
+Accuracy, Confidence: (0.73046875, 0.7510060667991638)
+Total correct retain:  1418  Total retain:  2500
+Total correct forget:  16971  Total forget:  47500
+Total correct test:  251  Total test:  500
+Total correct forget test:  2998  Total test forget:  9500
+After unlearning task 7
+Task accuracies: [0.502, 0.312, 0.498, 0.568, 0.568, 0.568, 0.36, 0.304, 0.23, 0.28, 0.29, 0.216, 0.196, 0.212, 0.234, 0.28, 0.204, 0.25, 0.226, 0.2]
+Unlearning task: 6
+[DEBUG][MIA] Forget Set Loss: mean=0.0439, std=0.0908
+[DEBUG][MIA] Test Set Loss:   mean=1.4689, std=2.0969
+Before unlearning: {'type': 'basic', 'attack_acc': 0.7734375, 'cv_acc': 0.6784313725490196, 'auc': 0.8663330078125, 'task': 5}
+Accuracy, Confidence: (0.99609375, 0.9551160335540771)
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+broken out of loop
+[DEBUG] Task 5 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=0.8556, std=1.0431
+[DEBUG][MIA] Test Set Loss:   mean=1.8405, std=1.5450
+After unlearning: {'type': 'basic', 'attack_acc': 0.66015625, 'cv_acc': 0.4980392156862745, 'auc': 0.7174072265625, 'task': 5}
+Accuracy, Confidence: (0.66796875, 0.6755158305168152)
+Total correct retain:  1486  Total retain:  2500
+Total correct forget:  16071  Total forget:  47500
+Total correct test:  269  Total test:  500
+Total correct forget test:  2800  Total test forget:  9500
+After unlearning task 6
+Task accuracies: [0.538, 0.292, 0.478, 0.56, 0.544, 0.354, 0.312, 0.262, 0.214, 0.218, 0.284, 0.228, 0.192, 0.246, 0.256, 0.252, 0.2, 0.28, 0.228, 0.2]
+Unlearning task: 5
+[DEBUG][MIA] Forget Set Loss: mean=0.0975, std=0.2072
+[DEBUG][MIA] Test Set Loss:   mean=1.3829, std=1.6601
+Before unlearning: {'type': 'basic', 'attack_acc': 0.75390625, 'cv_acc': 0.803921568627451, 'auc': 0.7811279296875, 'task': 4}
+Accuracy, Confidence: (0.984375, 0.9341014623641968)
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+broken out of loop
+[DEBUG] Task 4 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=1.2437, std=2.0321
+[DEBUG][MIA] Test Set Loss:   mean=2.6440, std=2.1555
+After unlearning: {'type': 'basic', 'attack_acc': 0.703125, 'cv_acc': 0.48235294117647065, 'auc': 0.75830078125, 'task': 4}
+Accuracy, Confidence: (0.70703125, 0.6816273927688599)
+Total correct retain:  1382  Total retain:  2500
+Total correct forget:  14733  Total forget:  47500
+Total correct test:  238  Total test:  500
+Total correct forget test:  2624  Total test forget:  9500
+After unlearning task 5
+Task accuracies: [0.476, 0.32, 0.468, 0.494, 0.254, 0.334, 0.27, 0.226, 0.19, 0.22, 0.25, 0.236, 0.194, 0.268, 0.25, 0.274, 0.2, 0.362, 0.238, 0.2]
+Unlearning task: 4
+[DEBUG][MIA] Forget Set Loss: mean=0.0881, std=0.1100
+[DEBUG][MIA] Test Set Loss:   mean=1.3543, std=1.6133
+Before unlearning: {'type': 'basic', 'attack_acc': 0.80859375, 'cv_acc': 0.776470588235294, 'auc': 0.8536376953125, 'task': 3}
+Accuracy, Confidence: (1.0, 0.9271861910820007)
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+broken out of loop
+[DEBUG] Task 3 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=1.3566, std=2.0552
+[DEBUG][MIA] Test Set Loss:   mean=2.8809, std=2.9846
+After unlearning: {'type': 'basic', 'attack_acc': 0.6484375, 'cv_acc': 0.5215686274509805, 'auc': 0.7265625, 'task': 3}
+Accuracy, Confidence: (0.6875, 0.7639206647872925)
+Total correct retain:  1438  Total retain:  2500
+Total correct forget:  13204  Total forget:  47500
+Total correct test:  245  Total test:  500
+Total correct forget test:  2359  Total test forget:  9500
+After unlearning task 4
+Task accuracies: [0.49, 0.314, 0.448, 0.312, 0.224, 0.314, 0.172, 0.162, 0.192, 0.208, 0.208, 0.228, 0.188, 0.254, 0.224, 0.292, 0.202, 0.356, 0.22, 0.2]
+Unlearning task: 3
+[DEBUG][MIA] Forget Set Loss: mean=0.0765, std=0.1114
+[DEBUG][MIA] Test Set Loss:   mean=1.6685, std=1.7937
+Before unlearning: {'type': 'basic', 'attack_acc': 0.8359375, 'cv_acc': 0.7921568627450981, 'auc': 0.844970703125, 'task': 2}
+Accuracy, Confidence: (1.0, 0.9322083592414856)
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+broken out of loop
+[DEBUG] Task 2 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=0.6565, std=0.6782
+[DEBUG][MIA] Test Set Loss:   mean=2.4388, std=1.7688
+After unlearning: {'type': 'basic', 'attack_acc': 0.7734375, 'cv_acc': 0.6156862745098041, 'auc': 0.8427734375, 'task': 2}
+Accuracy, Confidence: (0.7421875, 0.6870321035385132)
+Total correct retain:  1451  Total retain:  2500
+Total correct forget:  11866  Total forget:  47500
+Total correct test:  256  Total test:  500
+Total correct forget test:  2145  Total test forget:  9500
+After unlearning task 3
+Task accuracies: [0.512, 0.332, 0.242, 0.302, 0.218, 0.23, 0.166, 0.11, 0.17, 0.17, 0.192, 0.23, 0.192, 0.252, 0.234, 0.262, 0.202, 0.366, 0.22, 0.2]
+Unlearning task: 2
+[DEBUG][MIA] Forget Set Loss: mean=0.1247, std=0.1185
+[DEBUG][MIA] Test Set Loss:   mean=1.9860, std=1.6879
+Before unlearning: {'type': 'basic', 'attack_acc': 0.87890625, 'cv_acc': 0.8941176470588236, 'auc': 0.94012451171875, 'task': 1}
+Accuracy, Confidence: (1.0, 0.8871458768844604)
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+broken out of loop
+[DEBUG] Task 1 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=0.8039, std=0.9847
+[DEBUG][MIA] Test Set Loss:   mean=1.9952, std=1.4036
+After unlearning: {'type': 'basic', 'attack_acc': 0.7265625, 'cv_acc': 0.6000000000000001, 'auc': 0.7899169921875, 'task': 1}
+Accuracy, Confidence: (0.74609375, 0.6357893943786621)
+Total correct retain:  1358  Total retain:  2500
+Total correct forget:  10520  Total forget:  47500
+Total correct test:  241  Total test:  500
+Total correct forget test:  1968  Total test forget:  9500
+After unlearning task 2
+Task accuracies: [0.482, 0.256, 0.218, 0.222, 0.21, 0.196, 0.132, 0.084, 0.158, 0.14, 0.168, 0.226, 0.224, 0.258, 0.264, 0.234, 0.2, 0.356, 0.19, 0.2]
+Running on device:  NVIDIA GeForce RTX 2080 Ti
+Unlearn Batch Size:  10
+Unlearn MEM Strength:  0.5
+cifar-100-python/train
+cifar-100-python/test
+new ordering of classes:  ['telephone', 'apples', 'shrew', 'plates', 'forest', 'girl', 'willow', 'leopard', 'snake', 'pickup truck', 'raccoon', 'wolf', 'mountain', 'tiger', 'lamp', 'shark', 'caterpillar', 'snail', 'cloud', 'worm', 'turtle', 'chair', 'roses', 'television', 'boy', 'skyscraper', 'cockroach', 'bottles', 'woman', 'motorcycle', 'bowls', 'bridge', 'oranges', 'tractor', 'dinosaur', 'orchids', 'cups', 'maple', 'couch', 'hamster', 'tulips', 'otter', 'camel', 'bee', 'lion', 'plain', 'bed', 'rocket', 'cans', 'sweet peppers', 'pine', 'ray', 'cattle', 'road', 'bear', 'mouse', 'elephant', 'baby', 'fox', 'squirrel', 'aquarium fish', 'possum', 'whale', 'lobster', 'pears', 'streetcar', 'table', 'butterfly', 'crocodile', 'dolphin', 'lawn-mower', 'chimpanzee', 'tank', 'sunflowers', 'castle', 'flatfish', 'rabbit', 'house', 'porcupine', 'beaver', 'poppies', 'bicycle', 'lizard', 'mushrooms', 'crab', 'spider', 'kangaroo', 'trout', 'wardrobe', 'man', 'clock', 'sea', 'bus', 'skunk', 'beetle', 'computer keyboard', 'oak', 'palm', 'train', 'seal']
+Training task:  1
+[Learn Buffer] Updating memory for task 1 using least memorization.
+[Memory Update] Task 0, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 1 using most memorization.
+[Memory Update] Task 0, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  2126  Total retain:  2500
+Total correct forget:  9008  Total forget:  47500
+Total correct test:  367  Total test:  500
+Total correct forget test:  1843  Total test forget:  9500
+After learning task 1
+Task accuracies: [0.734, 0.214, 0.182, 0.216, 0.186, 0.242, 0.15, 0.164, 0.196, 0.158, 0.234, 0.178, 0.2, 0.182, 0.19, 0.212, 0.2, 0.162, 0.22, 0.2]
+Training task:  2
+[Learn Buffer] Updating memory for task 2 using least memorization.
+[Memory Update] Task 1, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 2 using most memorization.
+[Memory Update] Task 1, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1932  Total retain:  2500
+Total correct forget:  11507  Total forget:  47500
+Total correct test:  335  Total test:  500
+Total correct forget test:  2168  Total test forget:  9500
+After learning task 2
+Task accuracies: [0.67, 0.758, 0.274, 0.18, 0.21, 0.21, 0.154, 0.234, 0.202, 0.152, 0.204, 0.15, 0.204, 0.218, 0.172, 0.202, 0.204, 0.184, 0.228, 0.196]
+Training task:  3
+[Learn Buffer] Updating memory for task 3 using least memorization.
+[Memory Update] Task 2, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 3 using most memorization.
+[Memory Update] Task 2, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1844  Total retain:  2500
+Total correct forget:  12943  Total forget:  47500
+Total correct test:  337  Total test:  500
+Total correct forget test:  2411  Total test forget:  9500
+After learning task 3
+Task accuracies: [0.674, 0.74, 0.754, 0.164, 0.246, 0.234, 0.14, 0.232, 0.198, 0.118, 0.204, 0.168, 0.25, 0.222, 0.22, 0.162, 0.2, 0.162, 0.212, 0.196]
+Training task:  4
+[Learn Buffer] Updating memory for task 4 using least memorization.
+[Memory Update] Task 3, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 4 using most memorization.
+[Memory Update] Task 3, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1750  Total retain:  2500
+Total correct forget:  14442  Total forget:  47500
+Total correct test:  322  Total test:  500
+Total correct forget test:  2617  Total test forget:  9500
+After learning task 4
+Task accuracies: [0.644, 0.618, 0.658, 0.742, 0.262, 0.242, 0.19, 0.186, 0.194, 0.074, 0.214, 0.182, 0.23, 0.24, 0.244, 0.176, 0.198, 0.126, 0.26, 0.198]
+Training task:  5
+[Learn Buffer] Updating memory for task 5 using least memorization.
+[Memory Update] Task 4, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 5 using most memorization.
+[Memory Update] Task 4, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1804  Total retain:  2500
+Total correct forget:  15217  Total forget:  47500
+Total correct test:  336  Total test:  500
+Total correct forget test:  2727  Total test forget:  9500
+After learning task 5
+Task accuracies: [0.672, 0.59, 0.616, 0.644, 0.814, 0.248, 0.122, 0.186, 0.19, 0.05, 0.188, 0.174, 0.276, 0.23, 0.202, 0.184, 0.208, 0.084, 0.25, 0.198]
+Training task:  6
+[Learn Buffer] Updating memory for task 6 using least memorization.
+[Memory Update] Task 5, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 6 using most memorization.
+[Memory Update] Task 5, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1730  Total retain:  2500
+Total correct forget:  16498  Total forget:  47500
+Total correct test:  313  Total test:  500
+Total correct forget test:  2962  Total test forget:  9500
+After learning task 6
+Task accuracies: [0.626, 0.55, 0.61, 0.628, 0.748, 0.85, 0.12, 0.206, 0.208, 0.066, 0.186, 0.148, 0.218, 0.22, 0.218, 0.196, 0.208, 0.118, 0.212, 0.214]
+Training task:  7
+[Learn Buffer] Updating memory for task 7 using least memorization.
+[Memory Update] Task 6, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 7 using most memorization.
+[Memory Update] Task 6, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1789  Total retain:  2500
+Total correct forget:  18256  Total forget:  47500
+Total correct test:  339  Total test:  500
+Total correct forget test:  3277  Total test forget:  9500
+After learning task 7
+Task accuracies: [0.678, 0.576, 0.584, 0.638, 0.73, 0.768, 0.85, 0.178, 0.198, 0.056, 0.216, 0.152, 0.238, 0.218, 0.236, 0.166, 0.196, 0.126, 0.236, 0.192]
+Training task:  8
+[Learn Buffer] Updating memory for task 8 using least memorization.
+[Memory Update] Task 7, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 8 using most memorization.
+[Memory Update] Task 7, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1756  Total retain:  2500
+Total correct forget:  19904  Total forget:  47500
+Total correct test:  344  Total test:  500
+Total correct forget test:  3533  Total test forget:  9500
+After learning task 8
+Task accuracies: [0.688, 0.628, 0.566, 0.572, 0.676, 0.732, 0.812, 0.778, 0.206, 0.09, 0.204, 0.16, 0.224, 0.206, 0.3, 0.182, 0.208, 0.128, 0.21, 0.184]
+Training task:  9
+[Learn Buffer] Updating memory for task 9 using least memorization.
+[Memory Update] Task 8, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 9 using most memorization.
+[Memory Update] Task 8, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1768  Total retain:  2500
+Total correct forget:  21073  Total forget:  47500
+Total correct test:  331  Total test:  500
+Total correct forget test:  3742  Total test forget:  9500
+After learning task 9
+Task accuracies: [0.662, 0.63, 0.546, 0.56, 0.708, 0.72, 0.78, 0.714, 0.758, 0.066, 0.206, 0.164, 0.232, 0.242, 0.286, 0.168, 0.2, 0.098, 0.21, 0.196]
+Training task:  10
+[Learn Buffer] Updating memory for task 10 using least memorization.
+[Memory Update] Task 9, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 10 using most memorization.
+[Memory Update] Task 9, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1773  Total retain:  2500
+Total correct forget:  22860  Total forget:  47500
+Total correct test:  334  Total test:  500
+Total correct forget test:  4104  Total test forget:  9500
+After learning task 10
+Task accuracies: [0.668, 0.574, 0.558, 0.598, 0.716, 0.676, 0.784, 0.706, 0.688, 0.836, 0.192, 0.18, 0.23, 0.248, 0.312, 0.196, 0.196, 0.114, 0.21, 0.194]
+Training task:  11
+[Learn Buffer] Updating memory for task 11 using least memorization.
+[Memory Update] Task 10, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 11 using most memorization.
+[Memory Update] Task 10, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1721  Total retain:  2500
+Total correct forget:  24522  Total forget:  47500
+Total correct test:  334  Total test:  500
+Total correct forget test:  4349  Total test forget:  9500
+After learning task 11
+Task accuracies: [0.668, 0.63, 0.588, 0.576, 0.65, 0.672, 0.778, 0.718, 0.638, 0.784, 0.782, 0.178, 0.238, 0.252, 0.29, 0.216, 0.19, 0.132, 0.202, 0.184]
+Unlearning task: 11
+[DEBUG][MIA] Forget Set Loss: mean=0.0475, std=0.2771
+[DEBUG][MIA] Test Set Loss:   mean=0.9723, std=2.2045
+Before unlearning: {'type': 'basic', 'attack_acc': 0.640625, 'cv_acc': 0.21960784313725493, 'auc': 0.667144775390625, 'task': 10}
+Accuracy, Confidence: (0.98828125, 0.9819526672363281)
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+broken out of loop
+[DEBUG] Task 10 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=4.5072, std=4.7800
+[DEBUG][MIA] Test Set Loss:   mean=4.0905, std=4.1509
+After unlearning: {'type': 'basic', 'attack_acc': 0.5234375, 'cv_acc': 0.15294117647058825, 'auc': 0.5037841796875, 'task': 10}
+Accuracy, Confidence: (0.296875, 0.7297192215919495)
+Total correct retain:  1652  Total retain:  2500
+Total correct forget:  21842  Total forget:  47500
+Total correct test:  319  Total test:  500
+Total correct forget test:  3878  Total test forget:  9500
+After unlearning task 11
+Task accuracies: [0.638, 0.58, 0.584, 0.576, 0.618, 0.598, 0.71, 0.63, 0.592, 0.732, 0.286, 0.176, 0.22, 0.232, 0.286, 0.196, 0.2, 0.11, 0.222, 0.208]
+Unlearning task: 10
+[DEBUG][MIA] Forget Set Loss: mean=0.0888, std=0.4587
+[DEBUG][MIA] Test Set Loss:   mean=0.9513, std=1.9767
+Before unlearning: {'type': 'basic', 'attack_acc': 0.625, 'cv_acc': 0.23137254901960783, 'auc': 0.681976318359375, 'task': 9}
+Accuracy, Confidence: (0.96875, 0.9663019180297852)
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+broken out of loop
+[DEBUG] Task 9 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=2.7403, std=3.4194
+[DEBUG][MIA] Test Set Loss:   mean=3.0349, std=3.1975
+After unlearning: {'type': 'basic', 'attack_acc': 0.55078125, 'cv_acc': 0.13333333333333333, 'auc': 0.5576171875, 'task': 9}
+Accuracy, Confidence: (0.49609375, 0.7944701313972473)
+Total correct retain:  1567  Total retain:  2500
+Total correct forget:  20003  Total forget:  47500
+Total correct test:  301  Total test:  500
+Total correct forget test:  3533  Total test forget:  9500
+After unlearning task 10
+Task accuracies: [0.602, 0.556, 0.538, 0.564, 0.568, 0.6, 0.684, 0.628, 0.484, 0.332, 0.302, 0.156, 0.216, 0.228, 0.234, 0.226, 0.194, 0.128, 0.22, 0.208]
+Unlearning task: 9
+[DEBUG][MIA] Forget Set Loss: mean=0.2762, std=0.6258
+[DEBUG][MIA] Test Set Loss:   mean=3.0318, std=3.6097
+Before unlearning: {'type': 'basic', 'attack_acc': 0.7265625, 'cv_acc': 0.5215686274509804, 'auc': 0.765594482421875, 'task': 8}
+Accuracy, Confidence: (0.88671875, 0.9063088297843933)
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+broken out of loop
+[DEBUG] Task 8 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=1.2163, std=1.8803
+[DEBUG][MIA] Test Set Loss:   mean=2.5880, std=2.5015
+After unlearning: {'type': 'basic', 'attack_acc': 0.62890625, 'cv_acc': 0.3215686274509804, 'auc': 0.70709228515625, 'task': 8}
+Accuracy, Confidence: (0.578125, 0.776860237121582)
+Total correct retain:  1632  Total retain:  2500
+Total correct forget:  18997  Total forget:  47500
+Total correct test:  313  Total test:  500
+Total correct forget test:  3377  Total test forget:  9500
+After unlearning task 9
+Task accuracies: [0.626, 0.562, 0.552, 0.542, 0.556, 0.596, 0.682, 0.63, 0.322, 0.296, 0.332, 0.162, 0.214, 0.208, 0.184, 0.2, 0.194, 0.104, 0.206, 0.212]
+Unlearning task: 8
+[DEBUG][MIA] Forget Set Loss: mean=0.0232, std=0.0593
+[DEBUG][MIA] Test Set Loss:   mean=1.5378, std=2.1468
+Before unlearning: {'type': 'basic', 'attack_acc': 0.7421875, 'cv_acc': 0.6862745098039216, 'auc': 0.821685791015625, 'task': 7}
+Accuracy, Confidence: (1.0, 0.9788997173309326)
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+broken out of loop
+[DEBUG] Task 7 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=1.3215, std=1.4182
+[DEBUG][MIA] Test Set Loss:   mean=2.1561, std=1.8352
+After unlearning: {'type': 'basic', 'attack_acc': 0.6015625, 'cv_acc': 0.12549019607843137, 'auc': 0.640625, 'task': 7}
+Accuracy, Confidence: (0.55859375, 0.7002801895141602)
+Total correct retain:  1634  Total retain:  2500
+Total correct forget:  17835  Total forget:  47500
+Total correct test:  314  Total test:  500
+Total correct forget test:  3176  Total test forget:  9500
+After unlearning task 8
+Task accuracies: [0.628, 0.512, 0.492, 0.548, 0.576, 0.614, 0.674, 0.352, 0.324, 0.246, 0.28, 0.138, 0.216, 0.212, 0.228, 0.206, 0.2, 0.126, 0.206, 0.202]
+Unlearning task: 7
+[DEBUG][MIA] Forget Set Loss: mean=0.0399, std=0.0611
+[DEBUG][MIA] Test Set Loss:   mean=1.0135, std=1.5759
+Before unlearning: {'type': 'basic', 'attack_acc': 0.734375, 'cv_acc': 0.611764705882353, 'auc': 0.7989501953125, 'task': 6}
+Accuracy, Confidence: (1.0, 0.9667004346847534)
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+broken out of loop
+[DEBUG] Task 6 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=0.9711, std=1.1181
+[DEBUG][MIA] Test Set Loss:   mean=2.3657, std=1.8655
+After unlearning: {'type': 'basic', 'attack_acc': 0.69921875, 'cv_acc': 0.20392156862745098, 'auc': 0.73736572265625, 'task': 6}
+Accuracy, Confidence: (0.58984375, 0.6998255252838135)
+Total correct retain:  1535  Total retain:  2500
+Total correct forget:  16764  Total forget:  47500
+Total correct test:  291  Total test:  500
+Total correct forget test:  2945  Total test forget:  9500
+After unlearning task 7
+Task accuracies: [0.582, 0.51, 0.524, 0.546, 0.558, 0.612, 0.326, 0.352, 0.288, 0.198, 0.294, 0.156, 0.208, 0.212, 0.204, 0.198, 0.196, 0.128, 0.178, 0.202]
+Unlearning task: 6
+[DEBUG][MIA] Forget Set Loss: mean=0.0268, std=0.0520
+[DEBUG][MIA] Test Set Loss:   mean=1.4972, std=2.1388
+Before unlearning: {'type': 'basic', 'attack_acc': 0.765625, 'cv_acc': 0.7411764705882353, 'auc': 0.82568359375, 'task': 5}
+Accuracy, Confidence: (1.0, 0.973426878452301)
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+broken out of loop
+[DEBUG] Task 5 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=0.8074, std=0.9485
+[DEBUG][MIA] Test Set Loss:   mean=2.3056, std=2.0229
+After unlearning: {'type': 'basic', 'attack_acc': 0.68359375, 'cv_acc': 0.5254901960784314, 'auc': 0.773681640625, 'task': 5}
+Accuracy, Confidence: (0.71875, 0.7131161689758301)
+Total correct retain:  1566  Total retain:  2500
+Total correct forget:  15626  Total forget:  47500
+Total correct test:  307  Total test:  500
+Total correct forget test:  2724  Total test forget:  9500
+After unlearning task 6
+Task accuracies: [0.614, 0.494, 0.488, 0.544, 0.548, 0.34, 0.346, 0.278, 0.268, 0.194, 0.254, 0.156, 0.204, 0.206, 0.2, 0.202, 0.198, 0.134, 0.192, 0.202]
+Unlearning task: 5
+[DEBUG][MIA] Forget Set Loss: mean=0.1367, std=0.5533
+[DEBUG][MIA] Test Set Loss:   mean=1.3667, std=1.7412
+Before unlearning: {'type': 'basic', 'attack_acc': 0.75, 'cv_acc': 0.7215686274509803, 'auc': 0.81402587890625, 'task': 4}
+Accuracy, Confidence: (0.98046875, 0.9337199926376343)
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+broken out of loop
+[DEBUG] Task 4 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=0.9942, std=1.4277
+[DEBUG][MIA] Test Set Loss:   mean=2.4206, std=2.1012
+After unlearning: {'type': 'basic', 'attack_acc': 0.6953125, 'cv_acc': 0.26666666666666666, 'auc': 0.7513427734375, 'task': 4}
+Accuracy, Confidence: (0.6953125, 0.7562723159790039)
+Total correct retain:  1582  Total retain:  2500
+Total correct forget:  14271  Total forget:  47500
+Total correct test:  294  Total test:  500
+Total correct forget test:  2506  Total test forget:  9500
+After unlearning task 5
+Task accuracies: [0.588, 0.514, 0.472, 0.506, 0.304, 0.306, 0.208, 0.288, 0.246, 0.204, 0.278, 0.152, 0.212, 0.208, 0.208, 0.178, 0.196, 0.126, 0.204, 0.202]
+Unlearning task: 4
+[DEBUG][MIA] Forget Set Loss: mean=0.2605, std=0.5451
+[DEBUG][MIA] Test Set Loss:   mean=1.9399, std=2.1717
+Before unlearning: {'type': 'basic', 'attack_acc': 0.7109375, 'cv_acc': 0.5529411764705883, 'auc': 0.769287109375, 'task': 3}
+Accuracy, Confidence: (0.90625, 0.8706943988800049)
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+broken out of loop
+[DEBUG] Task 3 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=0.7224, std=0.8819
+[DEBUG][MIA] Test Set Loss:   mean=2.0375, std=1.8973
+After unlearning: {'type': 'basic', 'attack_acc': 0.6875, 'cv_acc': 0.5882352941176471, 'auc': 0.73809814453125, 'task': 3}
+Accuracy, Confidence: (0.69140625, 0.7205319404602051)
+Total correct retain:  1503  Total retain:  2500
+Total correct forget:  12623  Total forget:  47500
+Total correct test:  288  Total test:  500
+Total correct forget test:  2291  Total test forget:  9500
+After unlearning task 4
+Task accuracies: [0.576, 0.522, 0.506, 0.344, 0.312, 0.212, 0.152, 0.276, 0.218, 0.132, 0.186, 0.18, 0.202, 0.224, 0.214, 0.176, 0.2, 0.134, 0.19, 0.202]
+Unlearning task: 3
+[DEBUG][MIA] Forget Set Loss: mean=0.1082, std=0.2483
+[DEBUG][MIA] Test Set Loss:   mean=1.5630, std=2.1797
+Before unlearning: {'type': 'basic', 'attack_acc': 0.74609375, 'cv_acc': 0.7098039215686274, 'auc': 0.82672119140625, 'task': 2}
+Accuracy, Confidence: (0.984375, 0.9170604944229126)
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+broken out of loop
+[DEBUG] Task 2 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=0.7770, std=1.0557
+[DEBUG][MIA] Test Set Loss:   mean=2.1682, std=1.5800
+After unlearning: {'type': 'basic', 'attack_acc': 0.7265625, 'cv_acc': 0.588235294117647, 'auc': 0.79010009765625, 'task': 2}
+Accuracy, Confidence: (0.7265625, 0.7219131588935852)
+Total correct retain:  1511  Total retain:  2500
+Total correct forget:  11536  Total forget:  47500
+Total correct test:  282  Total test:  500
+Total correct forget test:  2074  Total test forget:  9500
+After unlearning task 3
+Task accuracies: [0.564, 0.498, 0.328, 0.258, 0.268, 0.172, 0.092, 0.256, 0.202, 0.13, 0.248, 0.152, 0.204, 0.21, 0.218, 0.18, 0.2, 0.144, 0.188, 0.2]
+Unlearning task: 2
+[DEBUG][MIA] Forget Set Loss: mean=0.0868, std=0.1181
+[DEBUG][MIA] Test Set Loss:   mean=1.6307, std=1.8030
+Before unlearning: {'type': 'basic', 'attack_acc': 0.82421875, 'cv_acc': 0.7843137254901962, 'auc': 0.8582763671875, 'task': 1}
+Accuracy, Confidence: (1.0, 0.9266459941864014)
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+broken out of loop
+[DEBUG] Task 1 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=0.6168, std=0.7755
+[DEBUG][MIA] Test Set Loss:   mean=2.2389, std=1.7085
+After unlearning: {'type': 'basic', 'attack_acc': 0.7578125, 'cv_acc': 0.6745098039215686, 'auc': 0.83099365234375, 'task': 1}
+Accuracy, Confidence: (0.79296875, 0.716558575630188)
+Total correct retain:  1581  Total retain:  2500
+Total correct forget:  10415  Total forget:  47500
+Total correct test:  305  Total test:  500
+Total correct forget test:  1879  Total test forget:  9500
+After unlearning task 2
+Task accuracies: [0.61, 0.322, 0.28, 0.246, 0.236, 0.164, 0.1, 0.188, 0.184, 0.144, 0.214, 0.154, 0.208, 0.2, 0.204, 0.172, 0.2, 0.156, 0.184, 0.202]
+Running on device:  NVIDIA GeForce RTX 2080 Ti
+Unlearn Batch Size:  10
+Unlearn MEM Strength:  0.5
+cifar-100-python/train
+cifar-100-python/test
+new ordering of classes:  ['table', 'worm', 'orchids', 'chair', 'sea', 'kangaroo', 'bicycle', 'train', 'plain', 'tulips', 'bee', 'lizard', 'tank', 'leopard', 'apples', 'tractor', 'cups', 'mushrooms', 'bowls', 'beetle', 'camel', 'possum', 'television', 'motorcycle', 'streetcar', 'crab', 'mouse', 'spider', 'baby', 'porcupine', 'pears', 'dolphin', 'snake', 'bus', 'road', 'rocket', 'whale', 'snail', 'castle', 'telephone', 'house', 'dinosaur', 'crocodile', 'bed', 'bridge', 'trout', 'fox', 'beaver', 'lion', 'raccoon', 'sweet peppers', 'clock', 'couch', 'oak', 'cloud', 'shrew', 'plates', 'elephant', 'pickup truck', 'aquarium fish', 'tiger', 'cattle', 'turtle', 'bear', 'girl', 'butterfly', 'roses', 'lobster', 'caterpillar', 'willow', 'skyscraper', 'chimpanzee', 'hamster', 'wardrobe', 'flatfish', 'poppies', 'wolf', 'cans', 'ray', 'woman', 'palm', 'man', 'lamp', 'maple', 'boy', 'lawn-mower', 'squirrel', 'seal', 'pine', 'oranges', 'sunflowers', 'mountain', 'shark', 'rabbit', 'forest', 'computer keyboard', 'skunk', 'bottles', 'otter', 'cockroach']
+Training task:  1
+[Learn Buffer] Updating memory for task 1 using least memorization.
+[Memory Update] Task 0, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 1 using most memorization.
+[Memory Update] Task 0, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  2258  Total retain:  2500
+Total correct forget:  8963  Total forget:  47500
+Total correct test:  384  Total test:  500
+Total correct forget test:  1812  Total test forget:  9500
+After learning task 1
+Task accuracies: [0.768, 0.146, 0.2, 0.208, 0.192, 0.196, 0.202, 0.126, 0.2, 0.124, 0.24, 0.21, 0.206, 0.208, 0.154, 0.25, 0.216, 0.182, 0.168, 0.196]
+Training task:  2
+[Learn Buffer] Updating memory for task 2 using least memorization.
+[Memory Update] Task 1, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 2 using most memorization.
+[Memory Update] Task 1, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1997  Total retain:  2500
+Total correct forget:  11487  Total forget:  47500
+Total correct test:  356  Total test:  500
+Total correct forget test:  2149  Total test forget:  9500
+After learning task 2
+Task accuracies: [0.712, 0.83, 0.248, 0.202, 0.198, 0.202, 0.246, 0.082, 0.198, 0.118, 0.188, 0.212, 0.198, 0.186, 0.17, 0.236, 0.196, 0.226, 0.168, 0.194]
+Training task:  3
+[Learn Buffer] Updating memory for task 3 using least memorization.
+[Memory Update] Task 2, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 3 using most memorization.
+[Memory Update] Task 2, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1844  Total retain:  2500
+Total correct forget:  13318  Total forget:  47500
+Total correct test:  344  Total test:  500
+Total correct forget test:  2514  Total test forget:  9500
+After learning task 3
+Task accuracies: [0.688, 0.772, 0.77, 0.166, 0.18, 0.2, 0.196, 0.09, 0.208, 0.172, 0.264, 0.268, 0.202, 0.196, 0.224, 0.318, 0.212, 0.222, 0.176, 0.192]
+Training task:  4
+[Learn Buffer] Updating memory for task 4 using least memorization.
+[Memory Update] Task 3, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 4 using most memorization.
+[Memory Update] Task 3, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1814  Total retain:  2500
+Total correct forget:  14891  Total forget:  47500
+Total correct test:  335  Total test:  500
+Total correct forget test:  2736  Total test forget:  9500
+After learning task 4
+Task accuracies: [0.67, 0.748, 0.688, 0.732, 0.21, 0.214, 0.208, 0.058, 0.208, 0.174, 0.246, 0.238, 0.2, 0.204, 0.186, 0.316, 0.226, 0.254, 0.17, 0.192]
+Training task:  5
+[Learn Buffer] Updating memory for task 5 using least memorization.
+[Memory Update] Task 4, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 5 using most memorization.
+[Memory Update] Task 4, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1760  Total retain:  2500
+Total correct forget:  16108  Total forget:  47500
+Total correct test:  340  Total test:  500
+Total correct forget test:  2927  Total test forget:  9500
+After learning task 5
+Task accuracies: [0.68, 0.75, 0.67, 0.704, 0.778, 0.2, 0.2, 0.038, 0.194, 0.172, 0.16, 0.204, 0.194, 0.242, 0.224, 0.288, 0.222, 0.254, 0.174, 0.186]
+Training task:  6
+[Learn Buffer] Updating memory for task 6 using least memorization.
+[Memory Update] Task 5, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 6 using most memorization.
+[Memory Update] Task 5, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1718  Total retain:  2500
+Total correct forget:  17250  Total forget:  47500
+Total correct test:  324  Total test:  500
+Total correct forget test:  3029  Total test forget:  9500
+After learning task 6
+Task accuracies: [0.648, 0.696, 0.682, 0.62, 0.672, 0.666, 0.196, 0.06, 0.204, 0.198, 0.184, 0.218, 0.196, 0.25, 0.14, 0.304, 0.2, 0.202, 0.172, 0.198]
+Training task:  7
+[Learn Buffer] Updating memory for task 7 using least memorization.
+[Memory Update] Task 6, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 7 using most memorization.
+[Memory Update] Task 6, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1795  Total retain:  2500
+Total correct forget:  19023  Total forget:  47500
+Total correct test:  332  Total test:  500
+Total correct forget test:  3390  Total test forget:  9500
+After learning task 7
+Task accuracies: [0.664, 0.746, 0.678, 0.658, 0.676, 0.572, 0.868, 0.04, 0.204, 0.206, 0.22, 0.198, 0.198, 0.234, 0.186, 0.304, 0.21, 0.266, 0.138, 0.178]
+Training task:  8
+[Learn Buffer] Updating memory for task 8 using least memorization.
+[Memory Update] Task 7, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 8 using most memorization.
+[Memory Update] Task 7, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1779  Total retain:  2500
+Total correct forget:  20738  Total forget:  47500
+Total correct test:  334  Total test:  500
+Total correct forget test:  3716  Total test forget:  9500
+After learning task 8
+Task accuracies: [0.668, 0.768, 0.624, 0.638, 0.698, 0.574, 0.808, 0.834, 0.16, 0.206, 0.188, 0.224, 0.194, 0.282, 0.136, 0.284, 0.208, 0.242, 0.17, 0.194]
+Training task:  9
+[Learn Buffer] Updating memory for task 9 using least memorization.
+[Memory Update] Task 8, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 9 using most memorization.
+[Memory Update] Task 8, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1793  Total retain:  2500
+Total correct forget:  22005  Total forget:  47500
+Total correct test:  343  Total test:  500
+Total correct forget test:  3917  Total test forget:  9500
+After learning task 9
+Task accuracies: [0.686, 0.726, 0.658, 0.656, 0.672, 0.562, 0.764, 0.772, 0.82, 0.18, 0.208, 0.244, 0.202, 0.218, 0.132, 0.274, 0.212, 0.184, 0.156, 0.194]
+Training task:  10
+[Learn Buffer] Updating memory for task 10 using least memorization.
+[Memory Update] Task 9, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 10 using most memorization.
+[Memory Update] Task 9, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1666  Total retain:  2500
+Total correct forget:  23393  Total forget:  47500
+Total correct test:  312  Total test:  500
+Total correct forget test:  4053  Total test forget:  9500
+After learning task 10
+Task accuracies: [0.624, 0.724, 0.65, 0.592, 0.614, 0.566, 0.732, 0.726, 0.726, 0.712, 0.164, 0.272, 0.188, 0.216, 0.186, 0.322, 0.194, 0.196, 0.146, 0.18]
+Training task:  11
+[Learn Buffer] Updating memory for task 11 using least memorization.
+[Memory Update] Task 10, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 11 using most memorization.
+[Memory Update] Task 10, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1726  Total retain:  2500
+Total correct forget:  25293  Total forget:  47500
+Total correct test:  335  Total test:  500
+Total correct forget test:  4434  Total test forget:  9500
+After learning task 11
+Task accuracies: [0.67, 0.714, 0.666, 0.616, 0.64, 0.568, 0.784, 0.754, 0.702, 0.628, 0.828, 0.268, 0.2, 0.174, 0.168, 0.378, 0.212, 0.2, 0.18, 0.188]
+Unlearning task: 11
+[DEBUG][MIA] Forget Set Loss: mean=0.0195, std=0.1952
+[DEBUG][MIA] Test Set Loss:   mean=0.8249, std=2.2353
+Before unlearning: {'type': 'basic', 'attack_acc': 0.609375, 'cv_acc': 0.19607843137254902, 'auc': 0.605682373046875, 'task': 10}
+Accuracy, Confidence: (0.98828125, 0.9924628734588623)
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+broken out of loop
+[DEBUG] Task 10 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=3.3417, std=3.7657
+[DEBUG][MIA] Test Set Loss:   mean=3.3737, std=3.8527
+After unlearning: {'type': 'basic', 'attack_acc': 0.5078125, 'cv_acc': 0.09411764705882353, 'auc': 0.49444580078125, 'task': 10}
+Accuracy, Confidence: (0.34765625, 0.7498049736022949)
+Total correct retain:  1523  Total retain:  2500
+Total correct forget:  22664  Total forget:  47500
+Total correct test:  305  Total test:  500
+Total correct forget test:  3894  Total test forget:  9500
+After unlearning task 11
+Task accuracies: [0.61, 0.674, 0.622, 0.59, 0.608, 0.446, 0.648, 0.702, 0.668, 0.574, 0.35, 0.286, 0.19, 0.19, 0.202, 0.264, 0.206, 0.204, 0.174, 0.19]
+Unlearning task: 10
+[DEBUG][MIA] Forget Set Loss: mean=0.0322, std=0.1848
+[DEBUG][MIA] Test Set Loss:   mean=1.8467, std=2.9582
+Before unlearning: {'type': 'basic', 'attack_acc': 0.70703125, 'cv_acc': 0.7372549019607844, 'auc': 0.753326416015625, 'task': 9}
+Accuracy, Confidence: (0.9921875, 0.9875996112823486)
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+broken out of loop
+[DEBUG] Task 9 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=2.1900, std=2.6277
+[DEBUG][MIA] Test Set Loss:   mean=3.1473, std=2.8411
+After unlearning: {'type': 'basic', 'attack_acc': 0.58203125, 'cv_acc': 0.11372549019607844, 'auc': 0.6195068359375, 'task': 9}
+Accuracy, Confidence: (0.42578125, 0.7374033331871033)
+Total correct retain:  1524  Total retain:  2500
+Total correct forget:  20320  Total forget:  47500
+Total correct test:  290  Total test:  500
+Total correct forget test:  3491  Total test forget:  9500
+After unlearning task 10
+Task accuracies: [0.58, 0.598, 0.594, 0.572, 0.536, 0.392, 0.604, 0.652, 0.58, 0.292, 0.34, 0.22, 0.198, 0.188, 0.222, 0.228, 0.204, 0.176, 0.2, 0.186]
+Unlearning task: 9
+[DEBUG][MIA] Forget Set Loss: mean=0.0419, std=0.1286
+[DEBUG][MIA] Test Set Loss:   mean=2.1141, std=3.2234
+Before unlearning: {'type': 'basic', 'attack_acc': 0.70703125, 'cv_acc': 0.6980392156862745, 'auc': 0.760101318359375, 'task': 8}
+Accuracy, Confidence: (0.9921875, 0.9628112316131592)
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+broken out of loop
+[DEBUG] Task 8 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=1.5861, std=1.8756
+[DEBUG][MIA] Test Set Loss:   mean=2.4258, std=2.3702
+After unlearning: {'type': 'basic', 'attack_acc': 0.58203125, 'cv_acc': 0.4235294117647059, 'auc': 0.60870361328125, 'task': 8}
+Accuracy, Confidence: (0.5, 0.7056946754455566)
+Total correct retain:  1558  Total retain:  2500
+Total correct forget:  19854  Total forget:  47500
+Total correct test:  293  Total test:  500
+Total correct forget test:  3451  Total test forget:  9500
+After unlearning task 9
+Task accuracies: [0.586, 0.69, 0.6, 0.542, 0.568, 0.408, 0.634, 0.66, 0.28, 0.302, 0.344, 0.196, 0.2, 0.214, 0.202, 0.276, 0.206, 0.206, 0.182, 0.192]
+Unlearning task: 8
+[DEBUG][MIA] Forget Set Loss: mean=0.0189, std=0.0316
+[DEBUG][MIA] Test Set Loss:   mean=1.3714, std=2.3806
+Before unlearning: {'type': 'basic', 'attack_acc': 0.7578125, 'cv_acc': 0.5843137254901961, 'auc': 0.77471923828125, 'task': 7}
+Accuracy, Confidence: (1.0, 0.9801400303840637)
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+broken out of loop
+[DEBUG] Task 7 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=1.0226, std=1.1886
+[DEBUG][MIA] Test Set Loss:   mean=2.3163, std=2.1091
+After unlearning: {'type': 'basic', 'attack_acc': 0.640625, 'cv_acc': 0.5529411764705883, 'auc': 0.70367431640625, 'task': 7}
+Accuracy, Confidence: (0.66015625, 0.6910423636436462)
+Total correct retain:  1511  Total retain:  2500
+Total correct forget:  18932  Total forget:  47500
+Total correct test:  287  Total test:  500
+Total correct forget test:  3293  Total test forget:  9500
+After unlearning task 8
+Task accuracies: [0.574, 0.662, 0.63, 0.536, 0.562, 0.392, 0.64, 0.352, 0.254, 0.288, 0.338, 0.192, 0.198, 0.226, 0.214, 0.286, 0.212, 0.212, 0.206, 0.186]
+Unlearning task: 7
+[DEBUG][MIA] Forget Set Loss: mean=0.0304, std=0.0710
+[DEBUG][MIA] Test Set Loss:   mean=1.0683, std=1.6203
+Before unlearning: {'type': 'basic', 'attack_acc': 0.75, 'cv_acc': 0.6901960784313725, 'auc': 0.83319091796875, 'task': 6}
+Accuracy, Confidence: (1.0, 0.9751619100570679)
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+broken out of loop
+[DEBUG] Task 6 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=1.2982, std=2.1349
+[DEBUG][MIA] Test Set Loss:   mean=2.4926, std=2.3214
+After unlearning: {'type': 'basic', 'attack_acc': 0.65234375, 'cv_acc': 0.15294117647058825, 'auc': 0.7015380859375, 'task': 6}
+Accuracy, Confidence: (0.6640625, 0.7437271475791931)
+Total correct retain:  1483  Total retain:  2500
+Total correct forget:  17411  Total forget:  47500
+Total correct test:  283  Total test:  500
+Total correct forget test:  2971  Total test forget:  9500
+After unlearning task 7
+Task accuracies: [0.566, 0.612, 0.574, 0.528, 0.524, 0.398, 0.322, 0.316, 0.21, 0.258, 0.292, 0.208, 0.196, 0.25, 0.2, 0.264, 0.204, 0.192, 0.202, 0.192]
+Unlearning task: 6
+[DEBUG][MIA] Forget Set Loss: mean=0.0345, std=0.0518
+[DEBUG][MIA] Test Set Loss:   mean=2.6141, std=2.6888
+Before unlearning: {'type': 'basic', 'attack_acc': 0.86328125, 'cv_acc': 0.8509803921568627, 'auc': 0.86798095703125, 'task': 5}
+Accuracy, Confidence: (1.0, 0.964694082736969)
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+broken out of loop
+[DEBUG] Task 5 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=0.7909, std=0.9728
+[DEBUG][MIA] Test Set Loss:   mean=2.8408, std=2.1011
+After unlearning: {'type': 'basic', 'attack_acc': 0.7265625, 'cv_acc': 0.6666666666666667, 'auc': 0.81927490234375, 'task': 5}
+Accuracy, Confidence: (0.66796875, 0.7168681621551514)
+Total correct retain:  1475  Total retain:  2500
+Total correct forget:  16447  Total forget:  47500
+Total correct test:  294  Total test:  500
+Total correct forget test:  2852  Total test forget:  9500
+After unlearning task 6
+Task accuracies: [0.588, 0.63, 0.566, 0.52, 0.514, 0.26, 0.326, 0.328, 0.202, 0.23, 0.248, 0.204, 0.222, 0.228, 0.208, 0.222, 0.202, 0.194, 0.204, 0.196]
+Unlearning task: 5
+[DEBUG][MIA] Forget Set Loss: mean=0.1075, std=0.2268
+[DEBUG][MIA] Test Set Loss:   mean=1.9564, std=2.1948
+Before unlearning: {'type': 'basic', 'attack_acc': 0.75390625, 'cv_acc': 0.6196078431372548, 'auc': 0.8446044921875, 'task': 4}
+Accuracy, Confidence: (0.94921875, 0.9025818109512329)
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+broken out of loop
+[DEBUG] Task 4 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=0.8089, std=0.9321
+[DEBUG][MIA] Test Set Loss:   mean=2.0174, std=1.7978
+After unlearning: {'type': 'basic', 'attack_acc': 0.66796875, 'cv_acc': 0.5764705882352942, 'auc': 0.71270751953125, 'task': 4}
+Accuracy, Confidence: (0.69921875, 0.7093847990036011)
+Total correct retain:  1528  Total retain:  2500
+Total correct forget:  15404  Total forget:  47500
+Total correct test:  294  Total test:  500
+Total correct forget test:  2721  Total test forget:  9500
+After unlearning task 5
+Task accuracies: [0.588, 0.638, 0.556, 0.528, 0.346, 0.232, 0.312, 0.3, 0.21, 0.238, 0.24, 0.206, 0.218, 0.206, 0.202, 0.232, 0.2, 0.192, 0.188, 0.198]
+Unlearning task: 4
+[DEBUG][MIA] Forget Set Loss: mean=0.0671, std=0.1039
+[DEBUG][MIA] Test Set Loss:   mean=1.7680, std=1.9899
+Before unlearning: {'type': 'basic', 'attack_acc': 0.8203125, 'cv_acc': 0.7529411764705882, 'auc': 0.859130859375, 'task': 3}
+Accuracy, Confidence: (1.0, 0.9433310031890869)
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+broken out of loop
+[DEBUG] Task 3 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=0.5971, std=0.8310
+[DEBUG][MIA] Test Set Loss:   mean=1.8858, std=1.5498
+After unlearning: {'type': 'basic', 'attack_acc': 0.7109375, 'cv_acc': 0.5607843137254902, 'auc': 0.79022216796875, 'task': 3}
+Accuracy, Confidence: (0.80078125, 0.7306668758392334)
+Total correct retain:  1526  Total retain:  2500
+Total correct forget:  14219  Total forget:  47500
+Total correct test:  292  Total test:  500
+Total correct forget test:  2524  Total test forget:  9500
+After unlearning task 4
+Task accuracies: [0.584, 0.638, 0.57, 0.342, 0.296, 0.232, 0.274, 0.236, 0.172, 0.25, 0.234, 0.2, 0.238, 0.21, 0.158, 0.25, 0.2, 0.158, 0.19, 0.2]
+Unlearning task: 3
+[DEBUG][MIA] Forget Set Loss: mean=0.0965, std=0.1327
+[DEBUG][MIA] Test Set Loss:   mean=1.0202, std=1.2281
+Before unlearning: {'type': 'basic', 'attack_acc': 0.7578125, 'cv_acc': 0.6784313725490196, 'auc': 0.80389404296875, 'task': 2}
+Accuracy, Confidence: (0.99609375, 0.9132053852081299)
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+broken out of loop
+[DEBUG] Task 2 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=0.6983, std=0.7207
+[DEBUG][MIA] Test Set Loss:   mean=1.8618, std=1.4959
+After unlearning: {'type': 'basic', 'attack_acc': 0.66015625, 'cv_acc': 0.6431372549019607, 'auc': 0.75982666015625, 'task': 2}
+Accuracy, Confidence: (0.73828125, 0.6803629398345947)
+Total correct retain:  1532  Total retain:  2500
+Total correct forget:  12696  Total forget:  47500
+Total correct test:  305  Total test:  500
+Total correct forget test:  2260  Total test forget:  9500
+After unlearning task 3
+Task accuracies: [0.61, 0.63, 0.348, 0.33, 0.274, 0.204, 0.188, 0.21, 0.164, 0.216, 0.212, 0.198, 0.24, 0.216, 0.142, 0.192, 0.2, 0.17, 0.186, 0.2]
+Unlearning task: 2
+[DEBUG][MIA] Forget Set Loss: mean=0.0655, std=0.1052
+[DEBUG][MIA] Test Set Loss:   mean=1.1157, std=1.4440
+Before unlearning: {'type': 'basic', 'attack_acc': 0.734375, 'cv_acc': 0.7019607843137254, 'auc': 0.79107666015625, 'task': 1}
+Accuracy, Confidence: (0.9921875, 0.9394212365150452)
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+Projection needed
+broken out of loop
+[DEBUG] Task 1 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=1.2770, std=1.8660
+[DEBUG][MIA] Test Set Loss:   mean=2.4650, std=2.2900
+After unlearning: {'type': 'basic', 'attack_acc': 0.66015625, 'cv_acc': 0.3137254901960784, 'auc': 0.6990966796875, 'task': 1}
+Accuracy, Confidence: (0.671875, 0.6893898248672485)
+Total correct retain:  1431  Total retain:  2500
+Total correct forget:  10724  Total forget:  47500
+Total correct test:  269  Total test:  500
+Total correct forget test:  1944  Total test forget:  9500
+After unlearning task 2
+Task accuracies: [0.538, 0.3, 0.246, 0.262, 0.258, 0.192, 0.13, 0.218, 0.154, 0.206, 0.194, 0.196, 0.25, 0.22, 0.172, 0.154, 0.2, 0.138, 0.198, 0.2]
+Command line arguments:
+number_of_gpus: 1
+algorithm: neggrad
+alpha: 0.5
+learn_mem_strength: 0.5
+learn_batch_size: 10
+unlearn_mem_strength: 0.5
+unlearn_batch_size: 10
+average_over_n_runs: 3
+salun: 0
+salun_strength: 0.2
+Python 3.12.8
+./cifar-100-python/train
+./cifar-100-python/test
+Number of GPUs visible:  1
+Available GPUs:  1
+Thu Apr 24 09:53:53 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.144.03             Driver Version: 550.144.03     CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 2080 Ti     Off |   00000000:01:00.0 Off |                  N/A |
+| 38%   69C    P0             N/A /  250W |       1MiB /  11264MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Running on device:  NVIDIA GeForce RTX 2080 Ti
+Unlearn Batch Size:  10
+Unlearn MEM Strength:  0.5
+cifar-100-python/train
+cifar-100-python/test
+new ordering of classes:  ['turtle', 'sweet peppers', 'computer keyboard', 'flatfish', 'lobster', 'bicycle', 'clock', 'caterpillar', 'kangaroo', 'bowls', 'motorcycle', 'house', 'leopard', 'man', 'plain', 'bed', 'camel', 'whale', 'table', 'fox', 'otter', 'pears', 'forest', 'tank', 'skyscraper', 'possum', 'streetcar', 'chimpanzee', 'worm', 'snail', 'sunflowers', 'pine', 'dinosaur', 'cattle', 'hamster', 'snake', 'wardrobe', 'cloud', 'lamp', 'trout', 'rocket', 'mouse', 'shark', 'lizard', 'boy', 'bottles', 'lawn-mower', 'apples', 'woman', 'beaver', 'beetle', 'squirrel', 'orchids', 'shrew', 'pickup truck', 'spider', 'cups', 'dolphin', 'bus', 'bridge', 'train', 'rabbit', 'mountain', 'plates', 'butterfly', 'ray', 'seal', 'cans', 'roses', 'television', 'palm', 'aquarium fish', 'crocodile', 'willow', 'lion', 'tractor', 'bear', 'skunk', 'oak', 'telephone', 'bee', 'mushrooms', 'maple', 'sea', 'baby', 'road', 'tulips', 'cockroach', 'poppies', 'girl', 'chair', 'raccoon', 'castle', 'oranges', 'couch', 'tiger', 'wolf', 'crab', 'porcupine', 'elephant']
+Training task:  1
+[Learn Buffer] Updating memory for task 1 using least memorization.
+[Memory Update] Task 0, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 1 using most memorization.
+[Memory Update] Task 0, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1760  Total retain:  2500
+Total correct forget:  9868  Total forget:  47500
+Total correct test:  305  Total test:  500
+Total correct forget test:  1946  Total test forget:  9500
+After learning task 1
+Task accuracies: [0.61, 0.21, 0.166, 0.204, 0.22, 0.176, 0.2, 0.198, 0.204, 0.196, 0.192, 0.22, 0.196, 0.236, 0.18, 0.192, 0.16, 0.33, 0.232, 0.18]
+Training task:  2
+[Learn Buffer] Updating memory for task 2 using least memorization.
+[Memory Update] Task 1, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 2 using most memorization.
+[Memory Update] Task 1, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1587  Total retain:  2500
+Total correct forget:  11601  Total forget:  47500
+Total correct test:  288  Total test:  500
+Total correct forget test:  2150  Total test forget:  9500
+After learning task 2
+Task accuracies: [0.576, 0.648, 0.228, 0.226, 0.182, 0.252, 0.208, 0.198, 0.23, 0.138, 0.214, 0.236, 0.216, 0.17, 0.156, 0.182, 0.15, 0.292, 0.192, 0.182]
+Training task:  3
+[Learn Buffer] Updating memory for task 3 using least memorization.
+[Memory Update] Task 2, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 3 using most memorization.
+[Memory Update] Task 2, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1596  Total retain:  2500
+Total correct forget:  13390  Total forget:  47500
+Total correct test:  303  Total test:  500
+Total correct forget test:  2463  Total test forget:  9500
+After learning task 3
+Task accuracies: [0.606, 0.59, 0.798, 0.218, 0.186, 0.238, 0.204, 0.198, 0.328, 0.128, 0.212, 0.27, 0.21, 0.14, 0.212, 0.176, 0.116, 0.364, 0.2, 0.138]
+Training task:  4
+[Learn Buffer] Updating memory for task 4 using least memorization.
+[Memory Update] Task 3, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 4 using most memorization.
+[Memory Update] Task 3, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1593  Total retain:  2500
+Total correct forget:  14911  Total forget:  47500
+Total correct test:  295  Total test:  500
+Total correct forget test:  2722  Total test forget:  9500
+After learning task 4
+Task accuracies: [0.59, 0.55, 0.71, 0.726, 0.168, 0.23, 0.222, 0.198, 0.402, 0.15, 0.224, 0.264, 0.22, 0.184, 0.148, 0.212, 0.102, 0.352, 0.194, 0.188]
+Training task:  5
+[Learn Buffer] Updating memory for task 5 using least memorization.
+[Memory Update] Task 4, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 5 using most memorization.
+[Memory Update] Task 4, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1578  Total retain:  2500
+Total correct forget:  15956  Total forget:  47500
+Total correct test:  287  Total test:  500
+Total correct forget test:  2841  Total test forget:  9500
+After learning task 5
+Task accuracies: [0.574, 0.534, 0.708, 0.67, 0.786, 0.198, 0.156, 0.192, 0.344, 0.164, 0.214, 0.238, 0.16, 0.174, 0.108, 0.188, 0.13, 0.29, 0.22, 0.208]
+Training task:  6
+[Learn Buffer] Updating memory for task 6 using least memorization.
+[Memory Update] Task 5, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 6 using most memorization.
+[Memory Update] Task 5, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1556  Total retain:  2500
+Total correct forget:  17388  Total forget:  47500
+Total correct test:  286  Total test:  500
+Total correct forget test:  3054  Total test forget:  9500
+After learning task 6
+Task accuracies: [0.572, 0.552, 0.678, 0.614, 0.732, 0.766, 0.184, 0.188, 0.274, 0.148, 0.228, 0.252, 0.194, 0.182, 0.116, 0.196, 0.15, 0.27, 0.222, 0.162]
+Training task:  7
+[Learn Buffer] Updating memory for task 7 using least memorization.
+[Memory Update] Task 6, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 7 using most memorization.
+[Memory Update] Task 6, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1556  Total retain:  2500
+Total correct forget:  18316  Total forget:  47500
+Total correct test:  279  Total test:  500
+Total correct forget test:  3240  Total test forget:  9500
+After learning task 7
+Task accuracies: [0.558, 0.506, 0.646, 0.6, 0.736, 0.678, 0.828, 0.194, 0.272, 0.184, 0.204, 0.242, 0.194, 0.18, 0.122, 0.196, 0.136, 0.222, 0.18, 0.16]
+Training task:  8
+[Learn Buffer] Updating memory for task 8 using least memorization.
+[Memory Update] Task 7, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 8 using most memorization.
+[Memory Update] Task 7, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1500  Total retain:  2500
+Total correct forget:  19563  Total forget:  47500
+Total correct test:  280  Total test:  500
+Total correct forget test:  3482  Total test forget:  9500
+After learning task 8
+Task accuracies: [0.56, 0.506, 0.678, 0.6, 0.696, 0.64, 0.772, 0.8, 0.264, 0.184, 0.212, 0.236, 0.172, 0.166, 0.106, 0.17, 0.12, 0.256, 0.204, 0.182]
+Training task:  9
+[Learn Buffer] Updating memory for task 9 using least memorization.
+[Memory Update] Task 8, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 9 using most memorization.
+[Memory Update] Task 8, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1506  Total retain:  2500
+Total correct forget:  21076  Total forget:  47500
+Total correct test:  272  Total test:  500
+Total correct forget test:  3646  Total test forget:  9500
+After learning task 9
+Task accuracies: [0.544, 0.5, 0.7, 0.558, 0.676, 0.62, 0.726, 0.722, 0.736, 0.156, 0.222, 0.264, 0.184, 0.176, 0.134, 0.162, 0.114, 0.25, 0.204, 0.188]
+Training task:  10
+[Learn Buffer] Updating memory for task 10 using least memorization.
+[Memory Update] Task 9, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 10 using most memorization.
+[Memory Update] Task 9, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1531  Total retain:  2500
+Total correct forget:  22332  Total forget:  47500
+Total correct test:  270  Total test:  500
+Total correct forget test:  3846  Total test forget:  9500
+After learning task 10
+Task accuracies: [0.54, 0.492, 0.684, 0.576, 0.658, 0.59, 0.698, 0.69, 0.692, 0.79, 0.222, 0.272, 0.16, 0.168, 0.116, 0.134, 0.106, 0.248, 0.216, 0.18]
+Training task:  11
+[Learn Buffer] Updating memory for task 11 using least memorization.
+[Memory Update] Task 10, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 11 using most memorization.
+[Memory Update] Task 10, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1540  Total retain:  2500
+Total correct forget:  23869  Total forget:  47500
+Total correct test:  309  Total test:  500
+Total correct forget test:  4139  Total test forget:  9500
+After learning task 11
+Task accuracies: [0.618, 0.504, 0.712, 0.598, 0.636, 0.626, 0.73, 0.678, 0.672, 0.74, 0.762, 0.278, 0.164, 0.17, 0.108, 0.142, 0.132, 0.242, 0.2, 0.184]
+Unlearning task: 11
+[DEBUG][MIA] Forget Set Loss: mean=0.0404, std=0.2278
+[DEBUG][MIA] Test Set Loss:   mean=0.9215, std=2.1948
+Before unlearning: {'type': 'basic', 'attack_acc': 0.62890625, 'cv_acc': 0.25882352941176473, 'auc': 0.634063720703125, 'task': 10}
+Accuracy, Confidence: (0.9921875, 0.9872475266456604)
+[DEBUG] Task 10 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=0.1389, std=0.7732
+[DEBUG][MIA] Test Set Loss:   mean=2.0150, std=4.0912
+After unlearning: {'type': 'basic', 'attack_acc': 0.640625, 'cv_acc': 0.19215686274509802, 'auc': 0.676361083984375, 'task': 10}
+Accuracy, Confidence: (0.9375, 0.9628666639328003)
+Total correct retain:  1480  Total retain:  2500
+Total correct forget:  23336  Total forget:  47500
+Total correct test:  293  Total test:  500
+Total correct forget test:  4078  Total test forget:  9500
+After unlearning task 11
+Task accuracies: [0.586, 0.504, 0.712, 0.554, 0.618, 0.626, 0.706, 0.634, 0.622, 0.706, 0.708, 0.288, 0.154, 0.168, 0.122, 0.16, 0.216, 0.26, 0.21, 0.188]
+Unlearning task: 10
+[DEBUG][MIA] Forget Set Loss: mean=0.0667, std=0.2027
+[DEBUG][MIA] Test Set Loss:   mean=1.9403, std=3.4382
+Before unlearning: {'type': 'basic', 'attack_acc': 0.66015625, 'cv_acc': 0.23137254901960783, 'auc': 0.715728759765625, 'task': 9}
+Accuracy, Confidence: (0.96875, 0.9637599587440491)
+[DEBUG] Task 9 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=7.5706, std=15.7327
+[DEBUG][MIA] Test Set Loss:   mean=12.2636, std=19.4014
+After unlearning: {'type': 'basic', 'attack_acc': 0.5703125, 'cv_acc': 0.11764705882352941, 'auc': 0.627685546875, 'task': 9}
+Accuracy, Confidence: (0.6171875, 0.960168719291687)
+Total correct retain:  1386  Total retain:  2500
+Total correct forget:  20703  Total forget:  47500
+Total correct test:  249  Total test:  500
+Total correct forget test:  3598  Total test forget:  9500
+After unlearning task 10
+Task accuracies: [0.498, 0.462, 0.632, 0.506, 0.584, 0.544, 0.664, 0.62, 0.608, 0.45, 0.644, 0.254, 0.144, 0.142, 0.11, 0.16, 0.148, 0.18, 0.186, 0.158]
+Unlearning task: 9
+[DEBUG][MIA] Forget Set Loss: mean=0.0963, std=0.2738
+[DEBUG][MIA] Test Set Loss:   mean=2.4617, std=4.0230
+Before unlearning: {'type': 'basic', 'attack_acc': 0.68359375, 'cv_acc': 0.26666666666666666, 'auc': 0.7178955078125, 'task': 8}
+Accuracy, Confidence: (0.9609375, 0.9557394981384277)
+broken out of loop
+[DEBUG] Task 8 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=4.7355, std=8.5483
+[DEBUG][MIA] Test Set Loss:   mean=8.6745, std=9.7812
+After unlearning: {'type': 'basic', 'attack_acc': 0.609375, 'cv_acc': 0.12941176470588237, 'auc': 0.6171875, 'task': 8}
+Accuracy, Confidence: (0.54296875, 0.9287682771682739)
+Total correct retain:  1364  Total retain:  2500
+Total correct forget:  19019  Total forget:  47500
+Total correct test:  256  Total test:  500
+Total correct forget test:  3382  Total test forget:  9500
+After unlearning task 9
+Task accuracies: [0.512, 0.442, 0.622, 0.482, 0.5, 0.546, 0.644, 0.582, 0.37, 0.418, 0.612, 0.254, 0.144, 0.126, 0.124, 0.174, 0.136, 0.212, 0.198, 0.178]
+Unlearning task: 8
+[DEBUG][MIA] Forget Set Loss: mean=0.4312, std=1.2428
+[DEBUG][MIA] Test Set Loss:   mean=2.4540, std=3.8283
+Before unlearning: {'type': 'basic', 'attack_acc': 0.63671875, 'cv_acc': 0.2627450980392157, 'auc': 0.694976806640625, 'task': 7}
+Accuracy, Confidence: (0.8828125, 0.9431630373001099)
+broken out of loop
+[DEBUG] Task 7 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=3.0929, std=5.0524
+[DEBUG][MIA] Test Set Loss:   mean=5.0215, std=6.3749
+After unlearning: {'type': 'basic', 'attack_acc': 0.5859375, 'cv_acc': 0.1450980392156863, 'auc': 0.585723876953125, 'task': 7}
+Accuracy, Confidence: (0.58203125, 0.9181349277496338)
+Total correct retain:  1328  Total retain:  2500
+Total correct forget:  17640  Total forget:  47500
+Total correct test:  250  Total test:  500
+Total correct forget test:  3155  Total test forget:  9500
+After unlearning task 8
+Task accuracies: [0.5, 0.44, 0.6, 0.484, 0.438, 0.514, 0.596, 0.392, 0.326, 0.36, 0.576, 0.262, 0.154, 0.156, 0.134, 0.182, 0.132, 0.198, 0.196, 0.17]
+Unlearning task: 7
+[DEBUG][MIA] Forget Set Loss: mean=0.2693, std=0.9050
+[DEBUG][MIA] Test Set Loss:   mean=2.4595, std=3.7978
+Before unlearning: {'type': 'basic', 'attack_acc': 0.6875, 'cv_acc': 0.2549019607843137, 'auc': 0.7362060546875, 'task': 6}
+Accuracy, Confidence: (0.9140625, 0.9444642066955566)
+broken out of loop
+[DEBUG] Task 6 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=2.9147, std=4.8670
+[DEBUG][MIA] Test Set Loss:   mean=5.4291, std=6.9487
+After unlearning: {'type': 'basic', 'attack_acc': 0.61328125, 'cv_acc': 0.21176470588235294, 'auc': 0.64447021484375, 'task': 6}
+Accuracy, Confidence: (0.58984375, 0.9295035600662231)
+Total correct retain:  1121  Total retain:  2500
+Total correct forget:  16169  Total forget:  47500
+Total correct test:  214  Total test:  500
+Total correct forget test:  2967  Total test forget:  9500
+After unlearning task 7
+Task accuracies: [0.428, 0.404, 0.562, 0.384, 0.36, 0.51, 0.354, 0.382, 0.344, 0.35, 0.572, 0.268, 0.192, 0.162, 0.128, 0.182, 0.18, 0.202, 0.22, 0.178]
+Unlearning task: 6
+[DEBUG][MIA] Forget Set Loss: mean=0.2250, std=0.8209
+[DEBUG][MIA] Test Set Loss:   mean=3.3217, std=4.8210
+Before unlearning: {'type': 'basic', 'attack_acc': 0.734375, 'cv_acc': 0.6352941176470588, 'auc': 0.82757568359375, 'task': 5}
+Accuracy, Confidence: (0.92578125, 0.9407459497451782)
+broken out of loop
+[DEBUG] Task 5 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=1.5081, std=3.5849
+[DEBUG][MIA] Test Set Loss:   mean=4.6739, std=5.7342
+After unlearning: {'type': 'basic', 'attack_acc': 0.66796875, 'cv_acc': 0.4196078431372549, 'auc': 0.7491455078125, 'task': 5}
+Accuracy, Confidence: (0.73828125, 0.9171255826950073)
+Total correct retain:  1274  Total retain:  2500
+Total correct forget:  16161  Total forget:  47500
+Total correct test:  238  Total test:  500
+Total correct forget test:  2888  Total test forget:  9500
+After unlearning task 6
+Task accuracies: [0.476, 0.426, 0.524, 0.434, 0.382, 0.338, 0.392, 0.404, 0.35, 0.35, 0.556, 0.278, 0.166, 0.162, 0.13, 0.184, 0.128, 0.178, 0.22, 0.174]
+Unlearning task: 5
+[DEBUG][MIA] Forget Set Loss: mean=0.4832, std=1.4189
+[DEBUG][MIA] Test Set Loss:   mean=5.1717, std=5.7463
+Before unlearning: {'type': 'basic', 'attack_acc': 0.7578125, 'cv_acc': 0.6862745098039216, 'auc': 0.82720947265625, 'task': 4}
+Accuracy, Confidence: (0.8828125, 0.9265226125717163)
+broken out of loop
+[DEBUG] Task 4 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=3.1448, std=5.8409
+[DEBUG][MIA] Test Set Loss:   mean=8.4951, std=9.3107
+After unlearning: {'type': 'basic', 'attack_acc': 0.66015625, 'cv_acc': 0.6039215686274509, 'auc': 0.71630859375, 'task': 4}
+Accuracy, Confidence: (0.59765625, 0.8953876495361328)
+Total correct retain:  1116  Total retain:  2500
+Total correct forget:  14729  Total forget:  47500
+Total correct test:  202  Total test:  500
+Total correct forget test:  2699  Total test forget:  9500
+After unlearning task 5
+Task accuracies: [0.404, 0.398, 0.532, 0.436, 0.254, 0.368, 0.29, 0.308, 0.28, 0.344, 0.54, 0.25, 0.174, 0.212, 0.136, 0.194, 0.12, 0.186, 0.196, 0.18]
+Unlearning task: 4
+[DEBUG][MIA] Forget Set Loss: mean=0.7540, std=1.7871
+[DEBUG][MIA] Test Set Loss:   mean=4.5898, std=6.3924
+Before unlearning: {'type': 'basic', 'attack_acc': 0.6875, 'cv_acc': 0.588235294117647, 'auc': 0.7276611328125, 'task': 3}
+Accuracy, Confidence: (0.79296875, 0.9245781898498535)
+broken out of loop
+[DEBUG] Task 3 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=1.8325, std=3.4159
+[DEBUG][MIA] Test Set Loss:   mean=6.8120, std=7.0886
+After unlearning: {'type': 'basic', 'attack_acc': 0.66015625, 'cv_acc': 0.6823529411764706, 'auc': 0.726959228515625, 'task': 3}
+Accuracy, Confidence: (0.69140625, 0.9013214111328125)
+Total correct retain:  1158  Total retain:  2500
+Total correct forget:  14834  Total forget:  47500
+Total correct test:  220  Total test:  500
+Total correct forget test:  2615  Total test forget:  9500
+After unlearning task 4
+Task accuracies: [0.44, 0.412, 0.532, 0.322, 0.288, 0.302, 0.292, 0.34, 0.292, 0.342, 0.54, 0.266, 0.152, 0.184, 0.132, 0.176, 0.122, 0.13, 0.21, 0.196]
+Unlearning task: 3
+[DEBUG][MIA] Forget Set Loss: mean=0.1610, std=0.6358
+[DEBUG][MIA] Test Set Loss:   mean=3.3408, std=5.4137
+Before unlearning: {'type': 'basic', 'attack_acc': 0.6953125, 'cv_acc': 0.6588235294117648, 'auc': 0.678436279296875, 'task': 2}
+Accuracy, Confidence: (0.96484375, 0.9560916423797607)
+broken out of loop
+[DEBUG] Task 2 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=2.8501, std=6.7243
+[DEBUG][MIA] Test Set Loss:   mean=7.5293, std=7.9502
+After unlearning: {'type': 'basic', 'attack_acc': 0.68359375, 'cv_acc': 0.21176470588235294, 'auc': 0.739105224609375, 'task': 2}
+Accuracy, Confidence: (0.64453125, 0.9268020391464233)
+Total correct retain:  1115  Total retain:  2500
+Total correct forget:  13216  Total forget:  47500
+Total correct test:  226  Total test:  500
+Total correct forget test:  2383  Total test forget:  9500
+After unlearning task 3
+Task accuracies: [0.452, 0.406, 0.338, 0.292, 0.232, 0.252, 0.29, 0.29, 0.232, 0.292, 0.496, 0.25, 0.146, 0.178, 0.16, 0.19, 0.158, 0.17, 0.204, 0.19]
+Unlearning task: 2
+[DEBUG][MIA] Forget Set Loss: mean=0.5076, std=1.2269
+[DEBUG][MIA] Test Set Loss:   mean=4.4680, std=5.8049
+Before unlearning: {'type': 'basic', 'attack_acc': 0.69921875, 'cv_acc': 0.7058823529411764, 'auc': 0.758148193359375, 'task': 1}
+Accuracy, Confidence: (0.87890625, 0.9300979375839233)
+broken out of loop
+[DEBUG] Task 1 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=0.7932, std=1.7141
+[DEBUG][MIA] Test Set Loss:   mean=6.2019, std=7.4616
+After unlearning: {'type': 'basic', 'attack_acc': 0.70703125, 'cv_acc': 0.6745098039215687, 'auc': 0.792327880859375, 'task': 1}
+Accuracy, Confidence: (0.76953125, 0.9063546657562256)
+Total correct retain:  1053  Total retain:  2500
+Total correct forget:  12495  Total forget:  47500
+Total correct test:  201  Total test:  500
+Total correct forget test:  2279  Total test forget:  9500
+After unlearning task 2
+Task accuracies: [0.402, 0.334, 0.304, 0.284, 0.238, 0.242, 0.284, 0.294, 0.222, 0.27, 0.476, 0.264, 0.164, 0.19, 0.154, 0.18, 0.144, 0.122, 0.196, 0.196]
+Running on device:  NVIDIA GeForce RTX 2080 Ti
+Unlearn Batch Size:  10
+Unlearn MEM Strength:  0.5
+cifar-100-python/train
+cifar-100-python/test
+new ordering of classes:  ['road', 'castle', 'spider', 'butterfly', 'ray', 'seal', 'tulips', 'otter', 'skunk', 'tank', 'camel', 'chimpanzee', 'worm', 'cups', 'orchids', 'bed', 'pears', 'man', 'streetcar', 'television', 'apples', 'beetle', 'couch', 'dolphin', 'pickup truck', 'sunflowers', 'boy', 'cloud', 'skyscraper', 'sea', 'chair', 'hamster', 'crab', 'oranges', 'possum', 'elephant', 'cockroach', 'girl', 'sweet peppers', 'rocket', 'palm', 'mountain', 'maple', 'train', 'roses', 'porcupine', 'whale', 'woman', 'bowls', 'kangaroo', 'aquarium fish', 'telephone', 'rabbit', 'fox', 'trout', 'shrew', 'poppies', 'bus', 'bicycle', 'dinosaur', 'flatfish', 'forest', 'crocodile', 'table', 'willow', 'bottles', 'tiger', 'computer keyboard', 'caterpillar', 'turtle', 'bear', 'plates', 'lamp', 'cans', 'squirrel', 'cattle', 'tractor', 'snail', 'lion', 'lawn-mower', 'beaver', 'house', 'bee', 'bridge', 'baby', 'plain', 'leopard', 'pine', 'wolf', 'raccoon', 'oak', 'mushrooms', 'shark', 'snake', 'lobster', 'wardrobe', 'mouse', 'motorcycle', 'lizard', 'clock']
+Training task:  1
+[Learn Buffer] Updating memory for task 1 using least memorization.
+[Memory Update] Task 0, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 1 using most memorization.
+[Memory Update] Task 0, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  2224  Total retain:  2500
+Total correct forget:  9864  Total forget:  47500
+Total correct test:  386  Total test:  500
+Total correct forget test:  2005  Total test forget:  9500
+After learning task 1
+Task accuracies: [0.772, 0.168, 0.258, 0.198, 0.216, 0.234, 0.198, 0.198, 0.214, 0.162, 0.204, 0.212, 0.238, 0.192, 0.208, 0.196, 0.184, 0.17, 0.356, 0.204]
+Training task:  2
+[Learn Buffer] Updating memory for task 2 using least memorization.
+[Memory Update] Task 1, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 2 using most memorization.
+[Memory Update] Task 1, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1956  Total retain:  2500
+Total correct forget:  11208  Total forget:  47500
+Total correct test:  347  Total test:  500
+Total correct forget test:  2102  Total test forget:  9500
+After learning task 2
+Task accuracies: [0.694, 0.716, 0.166, 0.192, 0.104, 0.276, 0.206, 0.198, 0.342, 0.126, 0.2, 0.232, 0.148, 0.162, 0.184, 0.2, 0.152, 0.136, 0.294, 0.17]
+Training task:  3
+[Learn Buffer] Updating memory for task 3 using least memorization.
+[Memory Update] Task 2, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 3 using most memorization.
+[Memory Update] Task 2, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1835  Total retain:  2500
+Total correct forget:  13142  Total forget:  47500
+Total correct test:  328  Total test:  500
+Total correct forget test:  2451  Total test forget:  9500
+After learning task 3
+Task accuracies: [0.656, 0.642, 0.816, 0.192, 0.086, 0.168, 0.196, 0.218, 0.276, 0.178, 0.2, 0.246, 0.192, 0.198, 0.176, 0.238, 0.188, 0.18, 0.288, 0.224]
+Training task:  4
+[Learn Buffer] Updating memory for task 4 using least memorization.
+[Memory Update] Task 3, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 4 using most memorization.
+[Memory Update] Task 3, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1821  Total retain:  2500
+Total correct forget:  14694  Total forget:  47500
+Total correct test:  326  Total test:  500
+Total correct forget test:  2668  Total test forget:  9500
+After learning task 4
+Task accuracies: [0.652, 0.612, 0.69, 0.744, 0.076, 0.3, 0.206, 0.2, 0.264, 0.18, 0.256, 0.248, 0.152, 0.208, 0.178, 0.246, 0.126, 0.156, 0.294, 0.2]
+Training task:  5
+[Learn Buffer] Updating memory for task 5 using least memorization.
+[Memory Update] Task 4, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 5 using most memorization.
+[Memory Update] Task 4, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1756  Total retain:  2500
+Total correct forget:  16596  Total forget:  47500
+Total correct test:  313  Total test:  500
+Total correct forget test:  3048  Total test forget:  9500
+After learning task 5
+Task accuracies: [0.626, 0.614, 0.674, 0.708, 0.84, 0.262, 0.212, 0.212, 0.282, 0.258, 0.242, 0.216, 0.19, 0.212, 0.168, 0.228, 0.12, 0.152, 0.27, 0.236]
+Training task:  6
+[Learn Buffer] Updating memory for task 6 using least memorization.
+[Memory Update] Task 5, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 6 using most memorization.
+[Memory Update] Task 5, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1788  Total retain:  2500
+Total correct forget:  17757  Total forget:  47500
+Total correct test:  332  Total test:  500
+Total correct forget test:  3180  Total test forget:  9500
+After learning task 6
+Task accuracies: [0.664, 0.572, 0.57, 0.674, 0.736, 0.864, 0.202, 0.206, 0.324, 0.202, 0.228, 0.224, 0.164, 0.228, 0.15, 0.244, 0.15, 0.126, 0.292, 0.204]
+Training task:  7
+[Learn Buffer] Updating memory for task 7 using least memorization.
+[Memory Update] Task 6, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 7 using most memorization.
+[Memory Update] Task 6, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1798  Total retain:  2500
+Total correct forget:  19080  Total forget:  47500
+Total correct test:  347  Total test:  500
+Total correct forget test:  3450  Total test forget:  9500
+After learning task 7
+Task accuracies: [0.694, 0.632, 0.578, 0.68, 0.732, 0.844, 0.844, 0.194, 0.326, 0.172, 0.248, 0.236, 0.116, 0.234, 0.1, 0.214, 0.142, 0.138, 0.276, 0.194]
+Training task:  8
+[Learn Buffer] Updating memory for task 8 using least memorization.
+[Memory Update] Task 7, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 8 using most memorization.
+[Memory Update] Task 7, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1782  Total retain:  2500
+Total correct forget:  21271  Total forget:  47500
+Total correct test:  348  Total test:  500
+Total correct forget test:  3904  Total test forget:  9500
+After learning task 8
+Task accuracies: [0.696, 0.636, 0.584, 0.674, 0.72, 0.812, 0.806, 0.844, 0.312, 0.232, 0.262, 0.26, 0.202, 0.232, 0.178, 0.222, 0.154, 0.178, 0.27, 0.23]
+Training task:  9
+[Learn Buffer] Updating memory for task 9 using least memorization.
+[Memory Update] Task 8, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 9 using most memorization.
+[Memory Update] Task 8, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1790  Total retain:  2500
+Total correct forget:  22305  Total forget:  47500
+Total correct test:  332  Total test:  500
+Total correct forget test:  4078  Total test forget:  9500
+After learning task 9
+Task accuracies: [0.664, 0.644, 0.59, 0.644, 0.724, 0.802, 0.756, 0.758, 0.85, 0.24, 0.274, 0.224, 0.242, 0.184, 0.216, 0.206, 0.146, 0.154, 0.272, 0.23]
+Training task:  10
+[Learn Buffer] Updating memory for task 10 using least memorization.
+[Memory Update] Task 9, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 10 using most memorization.
+[Memory Update] Task 9, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1797  Total retain:  2500
+Total correct forget:  23747  Total forget:  47500
+Total correct test:  353  Total test:  500
+Total correct forget test:  4415  Total test forget:  9500
+After learning task 10
+Task accuracies: [0.706, 0.644, 0.622, 0.666, 0.726, 0.81, 0.79, 0.776, 0.796, 0.822, 0.254, 0.25, 0.228, 0.21, 0.164, 0.198, 0.126, 0.182, 0.296, 0.27]
+Training task:  11
+[Learn Buffer] Updating memory for task 11 using least memorization.
+[Memory Update] Task 10, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 11 using most memorization.
+[Memory Update] Task 10, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1733  Total retain:  2500
+Total correct forget:  25233  Total forget:  47500
+Total correct test:  340  Total test:  500
+Total correct forget test:  4633  Total test forget:  9500
+After learning task 11
+Task accuracies: [0.68, 0.622, 0.602, 0.692, 0.75, 0.83, 0.796, 0.754, 0.74, 0.764, 0.774, 0.254, 0.214, 0.22, 0.138, 0.248, 0.134, 0.17, 0.302, 0.262]
+Unlearning task: 11
+[DEBUG][MIA] Forget Set Loss: mean=0.0042, std=0.0398
+[DEBUG][MIA] Test Set Loss:   mean=1.1780, std=2.6736
+Before unlearning: {'type': 'basic', 'attack_acc': 0.65625, 'cv_acc': 0.2392156862745098, 'auc': 0.68121337890625, 'task': 10}
+Accuracy, Confidence: (1.0, 0.9951567649841309)
+[DEBUG] Task 10 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=0.2212, std=1.4473
+[DEBUG][MIA] Test Set Loss:   mean=2.0259, std=4.1439
+After unlearning: {'type': 'basic', 'attack_acc': 0.63671875, 'cv_acc': 0.19215686274509808, 'auc': 0.70550537109375, 'task': 10}
+Accuracy, Confidence: (0.953125, 0.983174204826355)
+Total correct retain:  1717  Total retain:  2500
+Total correct forget:  24639  Total forget:  47500
+Total correct test:  341  Total test:  500
+Total correct forget test:  4469  Total test forget:  9500
+After unlearning task 11
+Task accuracies: [0.682, 0.6, 0.586, 0.644, 0.684, 0.796, 0.776, 0.726, 0.73, 0.732, 0.724, 0.24, 0.2, 0.21, 0.132, 0.254, 0.17, 0.17, 0.308, 0.256]
+Unlearning task: 10
+[DEBUG][MIA] Forget Set Loss: mean=0.0010, std=0.0024
+[DEBUG][MIA] Test Set Loss:   mean=1.0192, std=2.1794
+Before unlearning: {'type': 'basic', 'attack_acc': 0.65625, 'cv_acc': 0.3019607843137255, 'auc': 0.74554443359375, 'task': 9}
+Accuracy, Confidence: (1.0, 0.9980265498161316)
+broken out of loop
+[DEBUG] Task 9 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=8.2801, std=12.4094
+[DEBUG][MIA] Test Set Loss:   mean=9.8411, std=12.5661
+After unlearning: {'type': 'basic', 'attack_acc': 0.546875, 'cv_acc': 0.10980392156862746, 'auc': 0.575103759765625, 'task': 9}
+Accuracy, Confidence: (0.46875, 0.9538031220436096)
+Total correct retain:  1758  Total retain:  2500
+Total correct forget:  21627  Total forget:  47500
+Total correct test:  344  Total test:  500
+Total correct forget test:  3997  Total test forget:  9500
+After unlearning task 10
+Task accuracies: [0.688, 0.586, 0.494, 0.61, 0.65, 0.738, 0.664, 0.656, 0.624, 0.35, 0.644, 0.224, 0.2, 0.194, 0.2, 0.224, 0.21, 0.128, 0.31, 0.288]
+Unlearning task: 9
+[DEBUG][MIA] Forget Set Loss: mean=0.3755, std=0.9915
+[DEBUG][MIA] Test Set Loss:   mean=1.8599, std=3.0403
+Before unlearning: {'type': 'basic', 'attack_acc': 0.625, 'cv_acc': 0.27450980392156865, 'auc': 0.67022705078125, 'task': 8}
+Accuracy, Confidence: (0.9140625, 0.9384527206420898)
+broken out of loop
+[DEBUG] Task 8 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=10.6806, std=13.9041
+[DEBUG][MIA] Test Set Loss:   mean=11.2024, std=12.7238
+After unlearning: {'type': 'basic', 'attack_acc': 0.515625, 'cv_acc': 0.11372549019607844, 'auc': 0.5340576171875, 'task': 8}
+Accuracy, Confidence: (0.3671875, 0.9183763265609741)
+Total correct retain:  1455  Total retain:  2500
+Total correct forget:  19653  Total forget:  47500
+Total correct test:  278  Total test:  500
+Total correct forget test:  3545  Total test forget:  9500
+After unlearning task 9
+Task accuracies: [0.556, 0.45, 0.406, 0.518, 0.572, 0.674, 0.686, 0.622, 0.292, 0.326, 0.622, 0.234, 0.192, 0.218, 0.17, 0.248, 0.216, 0.178, 0.266, 0.2]
+Unlearning task: 8
+[DEBUG][MIA] Forget Set Loss: mean=0.2095, std=0.6803
+[DEBUG][MIA] Test Set Loss:   mean=2.0793, std=3.3619
+Before unlearning: {'type': 'basic', 'attack_acc': 0.6953125, 'cv_acc': 0.24705882352941178, 'auc': 0.723388671875, 'task': 7}
+Accuracy, Confidence: (0.9453125, 0.930283784866333)
+broken out of loop
+[DEBUG] Task 7 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=3.1986, std=4.2622
+[DEBUG][MIA] Test Set Loss:   mean=5.3990, std=5.9798
+After unlearning: {'type': 'basic', 'attack_acc': 0.546875, 'cv_acc': 0.2, 'auc': 0.629638671875, 'task': 7}
+Accuracy, Confidence: (0.51171875, 0.8987811207771301)
+Total correct retain:  1453  Total retain:  2500
+Total correct forget:  18924  Total forget:  47500
+Total correct test:  276  Total test:  500
+Total correct forget test:  3436  Total test forget:  9500
+After unlearning task 8
+Task accuracies: [0.552, 0.494, 0.408, 0.584, 0.592, 0.656, 0.658, 0.332, 0.3, 0.338, 0.662, 0.258, 0.214, 0.222, 0.168, 0.222, 0.176, 0.118, 0.262, 0.208]
+Unlearning task: 7
+[DEBUG][MIA] Forget Set Loss: mean=0.1957, std=0.6161
+[DEBUG][MIA] Test Set Loss:   mean=1.4883, std=2.5174
+Before unlearning: {'type': 'basic', 'attack_acc': 0.65625, 'cv_acc': 0.2705882352941177, 'auc': 0.6888427734375, 'task': 6}
+Accuracy, Confidence: (0.92578125, 0.9484275579452515)
+broken out of loop
+[DEBUG] Task 6 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=5.6825, std=8.7913
+[DEBUG][MIA] Test Set Loss:   mean=6.6534, std=8.7766
+After unlearning: {'type': 'basic', 'attack_acc': 0.5078125, 'cv_acc': 0.14901960784313725, 'auc': 0.536468505859375, 'task': 6}
+Accuracy, Confidence: (0.48828125, 0.8938676118850708)
+Total correct retain:  1452  Total retain:  2500
+Total correct forget:  17261  Total forget:  47500
+Total correct test:  266  Total test:  500
+Total correct forget test:  3194  Total test forget:  9500
+After unlearning task 7
+Task accuracies: [0.532, 0.492, 0.456, 0.544, 0.582, 0.624, 0.354, 0.324, 0.284, 0.336, 0.52, 0.232, 0.2, 0.212, 0.238, 0.236, 0.16, 0.14, 0.222, 0.232]
+Unlearning task: 6
+[DEBUG][MIA] Forget Set Loss: mean=0.7758, std=1.7998
+[DEBUG][MIA] Test Set Loss:   mean=2.3179, std=4.0392
+Before unlearning: {'type': 'basic', 'attack_acc': 0.57421875, 'cv_acc': 0.20392156862745098, 'auc': 0.6259765625, 'task': 5}
+Accuracy, Confidence: (0.8125, 0.9282979965209961)
+broken out of loop
+[DEBUG] Task 5 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=5.9380, std=8.8880
+[DEBUG][MIA] Test Set Loss:   mean=7.7010, std=9.9330
+After unlearning: {'type': 'basic', 'attack_acc': 0.5390625, 'cv_acc': 0.18823529411764706, 'auc': 0.54888916015625, 'task': 5}
+Accuracy, Confidence: (0.50390625, 0.9367560744285583)
+Total correct retain:  1327  Total retain:  2500
+Total correct forget:  15818  Total forget:  47500
+Total correct test:  240  Total test:  500
+Total correct forget test:  2902  Total test forget:  9500
+After unlearning task 6
+Task accuracies: [0.48, 0.446, 0.394, 0.472, 0.53, 0.406, 0.268, 0.322, 0.26, 0.302, 0.494, 0.212, 0.208, 0.194, 0.224, 0.244, 0.198, 0.182, 0.186, 0.262]
+Unlearning task: 5
+[DEBUG][MIA] Forget Set Loss: mean=0.4291, std=1.2358
+[DEBUG][MIA] Test Set Loss:   mean=2.3914, std=3.5437
+Before unlearning: {'type': 'basic', 'attack_acc': 0.65625, 'cv_acc': 0.6666666666666667, 'auc': 0.74322509765625, 'task': 4}
+Accuracy, Confidence: (0.88671875, 0.9190880656242371)
+broken out of loop
+[DEBUG] Task 4 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=1.7169, std=3.1016
+[DEBUG][MIA] Test Set Loss:   mean=4.6269, std=5.7398
+After unlearning: {'type': 'basic', 'attack_acc': 0.61328125, 'cv_acc': 0.2117647058823529, 'auc': 0.65167236328125, 'task': 4}
+Accuracy, Confidence: (0.64453125, 0.899938702583313)
+Total correct retain:  1277  Total retain:  2500
+Total correct forget:  15388  Total forget:  47500
+Total correct test:  227  Total test:  500
+Total correct forget test:  2746  Total test forget:  9500
+After unlearning task 5
+Task accuracies: [0.454, 0.474, 0.392, 0.458, 0.348, 0.364, 0.262, 0.278, 0.278, 0.312, 0.514, 0.192, 0.232, 0.208, 0.226, 0.184, 0.162, 0.152, 0.178, 0.278]
+Unlearning task: 4
+[DEBUG][MIA] Forget Set Loss: mean=0.1257, std=0.2882
+[DEBUG][MIA] Test Set Loss:   mean=3.4311, std=5.2736
+Before unlearning: {'type': 'basic', 'attack_acc': 0.7109375, 'cv_acc': 0.7019607843137254, 'auc': 0.763824462890625, 'task': 3}
+Accuracy, Confidence: (0.93359375, 0.9208574295043945)
+broken out of loop
+[DEBUG] Task 3 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=2.2103, std=3.6536
+[DEBUG][MIA] Test Set Loss:   mean=6.6565, std=8.0158
+After unlearning: {'type': 'basic', 'attack_acc': 0.66015625, 'cv_acc': 0.22745098039215686, 'auc': 0.694091796875, 'task': 3}
+Accuracy, Confidence: (0.59765625, 0.9004701375961304)
+Total correct retain:  1086  Total retain:  2500
+Total correct forget:  13928  Total forget:  47500
+Total correct test:  192  Total test:  500
+Total correct forget test:  2547  Total test forget:  9500
+After unlearning task 4
+Task accuracies: [0.384, 0.404, 0.378, 0.332, 0.322, 0.316, 0.218, 0.242, 0.262, 0.308, 0.46, 0.206, 0.242, 0.188, 0.22, 0.204, 0.17, 0.156, 0.164, 0.302]
+Unlearning task: 3
+[DEBUG][MIA] Forget Set Loss: mean=0.9145, std=2.0992
+[DEBUG][MIA] Test Set Loss:   mean=5.5116, std=6.8052
+Before unlearning: {'type': 'basic', 'attack_acc': 0.70703125, 'cv_acc': 0.6470588235294118, 'auc': 0.779815673828125, 'task': 2}
+Accuracy, Confidence: (0.80078125, 0.9279757738113403)
+broken out of loop
+[DEBUG] Task 2 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=3.1798, std=4.5849
+[DEBUG][MIA] Test Set Loss:   mean=8.8837, std=9.8399
+After unlearning: {'type': 'basic', 'attack_acc': 0.6328125, 'cv_acc': 0.5843137254901961, 'auc': 0.687744140625, 'task': 2}
+Accuracy, Confidence: (0.55078125, 0.9213670492172241)
+Total correct retain:  1244  Total retain:  2500
+Total correct forget:  13289  Total forget:  47500
+Total correct test:  227  Total test:  500
+Total correct forget test:  2393  Total test forget:  9500
+After unlearning task 3
+Task accuracies: [0.454, 0.396, 0.286, 0.284, 0.288, 0.282, 0.182, 0.256, 0.238, 0.294, 0.472, 0.196, 0.248, 0.176, 0.216, 0.184, 0.172, 0.17, 0.148, 0.298]
+Unlearning task: 2
+[DEBUG][MIA] Forget Set Loss: mean=0.2289, std=0.6699
+[DEBUG][MIA] Test Set Loss:   mean=3.3996, std=3.8644
+Before unlearning: {'type': 'basic', 'attack_acc': 0.78515625, 'cv_acc': 0.7176470588235293, 'auc': 0.842926025390625, 'task': 1}
+Accuracy, Confidence: (0.92578125, 0.9163451790809631)
+broken out of loop
+[DEBUG] Task 1 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=1.2159, std=2.3289
+[DEBUG][MIA] Test Set Loss:   mean=5.1388, std=5.7111
+After unlearning: {'type': 'basic', 'attack_acc': 0.69921875, 'cv_acc': 0.5960784313725491, 'auc': 0.76416015625, 'task': 1}
+Accuracy, Confidence: (0.71875, 0.8877726793289185)
+Total correct retain:  1186  Total retain:  2500
+Total correct forget:  11942  Total forget:  47500
+Total correct test:  214  Total test:  500
+Total correct forget test:  2126  Total test forget:  9500
+After unlearning task 2
+Task accuracies: [0.428, 0.264, 0.246, 0.268, 0.226, 0.242, 0.18, 0.208, 0.196, 0.288, 0.394, 0.2, 0.236, 0.166, 0.204, 0.168, 0.174, 0.174, 0.13, 0.288]
+Running on device:  NVIDIA GeForce RTX 2080 Ti
+Unlearn Batch Size:  10
+Unlearn MEM Strength:  0.5
+cifar-100-python/train
+cifar-100-python/test
+new ordering of classes:  ['kangaroo', 'bowls', 'bicycle', 'skunk', 'pine', 'snail', 'cockroach', 'dinosaur', 'computer keyboard', 'castle', 'cattle', 'chimpanzee', 'pears', 'palm', 'elephant', 'turtle', 'lamp', 'plates', 'telephone', 'bus', 'clock', 'mouse', 'snake', 'woman', 'tractor', 'tiger', 'mushrooms', 'spider', 'apples', 'lawn-mower', 'cans', 'mountain', 'leopard', 'camel', 'poppies', 'whale', 'cloud', 'shark', 'rabbit', 'willow', 'train', 'table', 'television', 'oranges', 'squirrel', 'roses', 'trout', 'caterpillar', 'shrew', 'fox', 'baby', 'man', 'road', 'couch', 'sea', 'otter', 'girl', 'crab', 'lion', 'ray', 'streetcar', 'bed', 'cups', 'tank', 'pickup truck', 'crocodile', 'beaver', 'maple', 'lizard', 'dolphin', 'wolf', 'lobster', 'bottles', 'orchids', 'wardrobe', 'sunflowers', 'motorcycle', 'possum', 'aquarium fish', 'seal', 'flatfish', 'bee', 'beetle', 'hamster', 'sweet peppers', 'bridge', 'boy', 'house', 'chair', 'bear', 'skyscraper', 'worm', 'butterfly', 'rocket', 'plain', 'forest', 'tulips', 'raccoon', 'oak', 'porcupine']
+Training task:  1
+[Learn Buffer] Updating memory for task 1 using least memorization.
+[Memory Update] Task 0, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 1 using most memorization.
+[Memory Update] Task 0, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  2284  Total retain:  2500
+Total correct forget:  9095  Total forget:  47500
+Total correct test:  376  Total test:  500
+Total correct forget test:  1812  Total test forget:  9500
+After learning task 1
+Task accuracies: [0.752, 0.216, 0.154, 0.238, 0.172, 0.19, 0.2, 0.198, 0.196, 0.152, 0.198, 0.196, 0.164, 0.196, 0.216, 0.176, 0.216, 0.156, 0.212, 0.178]
+Training task:  2
+[Learn Buffer] Updating memory for task 2 using least memorization.
+[Memory Update] Task 1, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 2 using most memorization.
+[Memory Update] Task 1, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  2010  Total retain:  2500
+Total correct forget:  11235  Total forget:  47500
+Total correct test:  352  Total test:  500
+Total correct forget test:  2146  Total test forget:  9500
+After learning task 2
+Task accuracies: [0.704, 0.806, 0.206, 0.222, 0.208, 0.158, 0.188, 0.194, 0.19, 0.184, 0.198, 0.218, 0.176, 0.286, 0.204, 0.24, 0.132, 0.216, 0.128, 0.138]
+Training task:  3
+[Learn Buffer] Updating memory for task 3 using least memorization.
+[Memory Update] Task 2, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 3 using most memorization.
+[Memory Update] Task 2, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1947  Total retain:  2500
+Total correct forget:  12455  Total forget:  47500
+Total correct test:  365  Total test:  500
+Total correct forget test:  2295  Total test forget:  9500
+After learning task 3
+Task accuracies: [0.73, 0.732, 0.776, 0.238, 0.168, 0.186, 0.206, 0.206, 0.168, 0.176, 0.206, 0.214, 0.174, 0.192, 0.194, 0.18, 0.248, 0.146, 0.106, 0.074]
+Training task:  4
+[Learn Buffer] Updating memory for task 4 using least memorization.
+[Memory Update] Task 3, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 4 using most memorization.
+[Memory Update] Task 3, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1875  Total retain:  2500
+Total correct forget:  14220  Total forget:  47500
+Total correct test:  361  Total test:  500
+Total correct forget test:  2555  Total test forget:  9500
+After learning task 4
+Task accuracies: [0.722, 0.666, 0.68, 0.754, 0.122, 0.144, 0.218, 0.206, 0.188, 0.21, 0.198, 0.202, 0.146, 0.266, 0.212, 0.218, 0.248, 0.172, 0.196, 0.064]
+Training task:  5
+[Learn Buffer] Updating memory for task 5 using least memorization.
+[Memory Update] Task 4, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 5 using most memorization.
+[Memory Update] Task 4, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1873  Total retain:  2500
+Total correct forget:  16580  Total forget:  47500
+Total correct test:  353  Total test:  500
+Total correct forget test:  2952  Total test forget:  9500
+After learning task 5
+Task accuracies: [0.706, 0.7, 0.652, 0.708, 0.676, 0.258, 0.22, 0.208, 0.22, 0.244, 0.184, 0.19, 0.164, 0.272, 0.24, 0.246, 0.25, 0.19, 0.202, 0.08]
+Training task:  6
+[Learn Buffer] Updating memory for task 6 using least memorization.
+[Memory Update] Task 5, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 6 using most memorization.
+[Memory Update] Task 5, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1839  Total retain:  2500
+Total correct forget:  17748  Total forget:  47500
+Total correct test:  348  Total test:  500
+Total correct forget test:  3096  Total test forget:  9500
+After learning task 6
+Task accuracies: [0.696, 0.646, 0.654, 0.686, 0.592, 0.8, 0.206, 0.194, 0.214, 0.254, 0.19, 0.228, 0.158, 0.224, 0.222, 0.266, 0.21, 0.196, 0.142, 0.11]
+Training task:  7
+[Learn Buffer] Updating memory for task 7 using least memorization.
+[Memory Update] Task 6, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 7 using most memorization.
+[Memory Update] Task 6, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1832  Total retain:  2500
+Total correct forget:  19486  Total forget:  47500
+Total correct test:  340  Total test:  500
+Total correct forget test:  3492  Total test forget:  9500
+After learning task 7
+Task accuracies: [0.68, 0.686, 0.646, 0.696, 0.57, 0.748, 0.85, 0.202, 0.226, 0.272, 0.202, 0.254, 0.152, 0.23, 0.188, 0.274, 0.282, 0.2, 0.222, 0.084]
+Training task:  8
+[Learn Buffer] Updating memory for task 8 using least memorization.
+[Memory Update] Task 7, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 8 using most memorization.
+[Memory Update] Task 7, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1831  Total retain:  2500
+Total correct forget:  20738  Total forget:  47500
+Total correct test:  346  Total test:  500
+Total correct forget test:  3672  Total test forget:  9500
+After learning task 8
+Task accuracies: [0.692, 0.712, 0.62, 0.63, 0.552, 0.674, 0.78, 0.794, 0.216, 0.26, 0.19, 0.254, 0.198, 0.228, 0.172, 0.304, 0.274, 0.182, 0.196, 0.108]
+Training task:  9
+[Learn Buffer] Updating memory for task 9 using least memorization.
+[Memory Update] Task 8, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 9 using most memorization.
+[Memory Update] Task 8, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1829  Total retain:  2500
+Total correct forget:  22590  Total forget:  47500
+Total correct test:  334  Total test:  500
+Total correct forget test:  3979  Total test forget:  9500
+After learning task 9
+Task accuracies: [0.668, 0.704, 0.68, 0.672, 0.538, 0.698, 0.796, 0.698, 0.802, 0.282, 0.184, 0.23, 0.158, 0.234, 0.238, 0.282, 0.248, 0.154, 0.262, 0.098]
+Training task:  10
+[Learn Buffer] Updating memory for task 10 using least memorization.
+[Memory Update] Task 9, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 10 using most memorization.
+[Memory Update] Task 9, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1815  Total retain:  2500
+Total correct forget:  23414  Total forget:  47500
+Total correct test:  338  Total test:  500
+Total correct forget test:  4055  Total test forget:  9500
+After learning task 10
+Task accuracies: [0.676, 0.686, 0.666, 0.638, 0.512, 0.668, 0.796, 0.68, 0.72, 0.79, 0.188, 0.232, 0.15, 0.226, 0.176, 0.266, 0.24, 0.164, 0.2, 0.112]
+Training task:  11
+[Learn Buffer] Updating memory for task 11 using least memorization.
+[Memory Update] Task 10, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 11 using most memorization.
+[Memory Update] Task 10, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1780  Total retain:  2500
+Total correct forget:  24784  Total forget:  47500
+Total correct test:  328  Total test:  500
+Total correct forget test:  4352  Total test forget:  9500
+After learning task 11
+Task accuracies: [0.656, 0.722, 0.668, 0.646, 0.544, 0.646, 0.76, 0.68, 0.714, 0.752, 0.776, 0.218, 0.168, 0.238, 0.204, 0.258, 0.31, 0.14, 0.152, 0.108]
+Unlearning task: 11
+[DEBUG][MIA] Forget Set Loss: mean=0.0100, std=0.0507
+[DEBUG][MIA] Test Set Loss:   mean=0.6614, std=1.9043
+Before unlearning: {'type': 'basic', 'attack_acc': 0.60546875, 'cv_acc': 0.25098039215686274, 'auc': 0.6287841796875, 'task': 10}
+Accuracy, Confidence: (0.99609375, 0.9918413758277893)
+[DEBUG] Task 10 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=0.4517, std=2.3574
+[DEBUG][MIA] Test Set Loss:   mean=1.9585, std=4.3725
+After unlearning: {'type': 'basic', 'attack_acc': 0.6171875, 'cv_acc': 0.203921568627451, 'auc': 0.670654296875, 'task': 10}
+Accuracy, Confidence: (0.94921875, 0.9821274280548096)
+Total correct retain:  1733  Total retain:  2500
+Total correct forget:  24084  Total forget:  47500
+Total correct test:  326  Total test:  500
+Total correct forget test:  4218  Total test forget:  9500
+After unlearning task 11
+Task accuracies: [0.652, 0.686, 0.64, 0.602, 0.544, 0.612, 0.736, 0.664, 0.698, 0.706, 0.748, 0.22, 0.17, 0.26, 0.214, 0.252, 0.288, 0.132, 0.152, 0.112]
+Unlearning task: 10
+[DEBUG][MIA] Forget Set Loss: mean=0.0468, std=0.2587
+[DEBUG][MIA] Test Set Loss:   mean=1.1254, std=2.0594
+Before unlearning: {'type': 'basic', 'attack_acc': 0.67578125, 'cv_acc': 0.2627450980392157, 'auc': 0.734161376953125, 'task': 9}
+Accuracy, Confidence: (0.98828125, 0.980687141418457)
+[DEBUG] Task 9 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=9.7350, std=15.3172
+[DEBUG][MIA] Test Set Loss:   mean=15.3285, std=20.9197
+After unlearning: {'type': 'basic', 'attack_acc': 0.546875, 'cv_acc': 0.1607843137254902, 'auc': 0.6083984375, 'task': 9}
+Accuracy, Confidence: (0.55078125, 0.9643983840942383)
+Total correct retain:  1508  Total retain:  2500
+Total correct forget:  21400  Total forget:  47500
+Total correct test:  279  Total test:  500
+Total correct forget test:  3802  Total test forget:  9500
+After unlearning task 10
+Task accuracies: [0.558, 0.58, 0.568, 0.534, 0.518, 0.568, 0.722, 0.59, 0.638, 0.432, 0.684, 0.29, 0.164, 0.256, 0.204, 0.252, 0.212, 0.142, 0.166, 0.084]
+Unlearning task: 9
+[DEBUG][MIA] Forget Set Loss: mean=0.0310, std=0.1127
+[DEBUG][MIA] Test Set Loss:   mean=1.7456, std=3.1076
+Before unlearning: {'type': 'basic', 'attack_acc': 0.6875, 'cv_acc': 0.40784313725490196, 'auc': 0.7493896484375, 'task': 8}
+Accuracy, Confidence: (0.9921875, 0.977400541305542)
+broken out of loop
+[DEBUG] Task 8 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=12.7387, std=25.0886
+[DEBUG][MIA] Test Set Loss:   mean=16.2186, std=26.7360
+After unlearning: {'type': 'basic', 'attack_acc': 0.58203125, 'cv_acc': 0.17647058823529413, 'auc': 0.586273193359375, 'task': 8}
+Accuracy, Confidence: (0.48828125, 0.9487422704696655)
+Total correct retain:  1496  Total retain:  2500
+Total correct forget:  19769  Total forget:  47500
+Total correct test:  273  Total test:  500
+Total correct forget test:  3504  Total test forget:  9500
+After unlearning task 9
+Task accuracies: [0.546, 0.63, 0.496, 0.48, 0.42, 0.51, 0.588, 0.628, 0.348, 0.388, 0.666, 0.328, 0.164, 0.212, 0.196, 0.238, 0.238, 0.18, 0.19, 0.108]
+Unlearning task: 8
+[DEBUG][MIA] Forget Set Loss: mean=0.2901, std=0.8300
+[DEBUG][MIA] Test Set Loss:   mean=1.7836, std=2.8105
+Before unlearning: {'type': 'basic', 'attack_acc': 0.6484375, 'cv_acc': 0.2235294117647059, 'auc': 0.724029541015625, 'task': 7}
+Accuracy, Confidence: (0.88671875, 0.9159854650497437)
+broken out of loop
+[DEBUG] Task 7 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=5.8252, std=9.5696
+[DEBUG][MIA] Test Set Loss:   mean=8.9561, std=10.6671
+After unlearning: {'type': 'basic', 'attack_acc': 0.41796875, 'cv_acc': 0.09803921568627451, 'auc': 0.392974853515625, 'task': 7}
+Accuracy, Confidence: (0.53125, 0.9318989515304565)
+Total correct retain:  1415  Total retain:  2500
+Total correct forget:  18981  Total forget:  47500
+Total correct test:  255  Total test:  500
+Total correct forget test:  3393  Total test forget:  9500
+After unlearning task 8
+Task accuracies: [0.51, 0.526, 0.512, 0.496, 0.462, 0.482, 0.638, 0.342, 0.404, 0.408, 0.692, 0.272, 0.184, 0.238, 0.21, 0.252, 0.194, 0.168, 0.184, 0.122]
+Unlearning task: 7
+[DEBUG][MIA] Forget Set Loss: mean=0.0444, std=0.1762
+[DEBUG][MIA] Test Set Loss:   mean=1.8736, std=3.1862
+Before unlearning: {'type': 'basic', 'attack_acc': 0.6796875, 'cv_acc': 0.2901960784313726, 'auc': 0.767364501953125, 'task': 6}
+Accuracy, Confidence: (0.96484375, 0.9666523337364197)
+broken out of loop
+[DEBUG] Task 6 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=6.2782, std=13.3043
+[DEBUG][MIA] Test Set Loss:   mean=11.0983, std=15.5088
+After unlearning: {'type': 'basic', 'attack_acc': 0.5859375, 'cv_acc': 0.12549019607843137, 'auc': 0.678436279296875, 'task': 6}
+Accuracy, Confidence: (0.61328125, 0.9416982531547546)
+Total correct retain:  1377  Total retain:  2500
+Total correct forget:  16701  Total forget:  47500
+Total correct test:  263  Total test:  500
+Total correct forget test:  2974  Total test forget:  9500
+After unlearning task 7
+Task accuracies: [0.526, 0.522, 0.484, 0.438, 0.454, 0.504, 0.378, 0.26, 0.352, 0.332, 0.468, 0.256, 0.16, 0.226, 0.202, 0.222, 0.262, 0.156, 0.178, 0.094]
+Unlearning task: 6
+[DEBUG][MIA] Forget Set Loss: mean=0.2150, std=0.8481
+[DEBUG][MIA] Test Set Loss:   mean=3.2553, std=4.8417
+Before unlearning: {'type': 'basic', 'attack_acc': 0.70703125, 'cv_acc': 0.6745098039215687, 'auc': 0.78582763671875, 'task': 5}
+Accuracy, Confidence: (0.92578125, 0.9454439878463745)
+broken out of loop
+[DEBUG] Task 5 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=1.6704, std=3.1559
+[DEBUG][MIA] Test Set Loss:   mean=6.2014, std=6.1693
+After unlearning: {'type': 'basic', 'attack_acc': 0.69140625, 'cv_acc': 0.5529411764705883, 'auc': 0.7723388671875, 'task': 5}
+Accuracy, Confidence: (0.67578125, 0.8970469832420349)
+Total correct retain:  1229  Total retain:  2500
+Total correct forget:  15630  Total forget:  47500
+Total correct test:  240  Total test:  500
+Total correct forget test:  2776  Total test forget:  9500
+After unlearning task 6
+Task accuracies: [0.48, 0.508, 0.454, 0.406, 0.416, 0.314, 0.294, 0.286, 0.31, 0.318, 0.432, 0.292, 0.154, 0.218, 0.176, 0.216, 0.254, 0.174, 0.196, 0.134]
+Unlearning task: 5
+[DEBUG][MIA] Forget Set Loss: mean=0.0582, std=0.1988
+[DEBUG][MIA] Test Set Loss:   mean=4.2950, std=5.3910
+Before unlearning: {'type': 'basic', 'attack_acc': 0.8125, 'cv_acc': 0.7529411764705882, 'auc': 0.882476806640625, 'task': 4}
+Accuracy, Confidence: (0.96484375, 0.9538283348083496)
+broken out of loop
+[DEBUG] Task 4 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=0.9242, std=2.0220
+[DEBUG][MIA] Test Set Loss:   mean=6.4553, std=7.2134
+After unlearning: {'type': 'basic', 'attack_acc': 0.70703125, 'cv_acc': 0.6666666666666667, 'auc': 0.766021728515625, 'task': 4}
+Accuracy, Confidence: (0.796875, 0.9211586117744446)
+Total correct retain:  1350  Total retain:  2500
+Total correct forget:  15410  Total forget:  47500
+Total correct test:  264  Total test:  500
+Total correct forget test:  2726  Total test forget:  9500
+After unlearning task 5
+Task accuracies: [0.528, 0.544, 0.484, 0.398, 0.342, 0.302, 0.306, 0.308, 0.324, 0.266, 0.44, 0.288, 0.158, 0.224, 0.178, 0.218, 0.232, 0.176, 0.17, 0.094]
+Unlearning task: 4
+[DEBUG][MIA] Forget Set Loss: mean=0.5703, std=1.5943
+[DEBUG][MIA] Test Set Loss:   mean=6.3766, std=7.5457
+Before unlearning: {'type': 'basic', 'attack_acc': 0.734375, 'cv_acc': 0.6627450980392157, 'auc': 0.80718994140625, 'task': 3}
+Accuracy, Confidence: (0.84375, 0.9339337348937988)
+broken out of loop
+[DEBUG] Task 3 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=1.5065, std=3.2187
+[DEBUG][MIA] Test Set Loss:   mean=8.3454, std=8.0194
+After unlearning: {'type': 'basic', 'attack_acc': 0.74609375, 'cv_acc': 0.6627450980392157, 'auc': 0.801025390625, 'task': 3}
+Accuracy, Confidence: (0.734375, 0.9055696725845337)
+Total correct retain:  1353  Total retain:  2500
+Total correct forget:  14208  Total forget:  47500
+Total correct test:  251  Total test:  500
+Total correct forget test:  2574  Total test forget:  9500
+After unlearning task 4
+Task accuracies: [0.502, 0.512, 0.434, 0.33, 0.33, 0.276, 0.302, 0.258, 0.304, 0.24, 0.434, 0.254, 0.176, 0.226, 0.204, 0.204, 0.224, 0.166, 0.178, 0.096]
+Unlearning task: 3
+[DEBUG][MIA] Forget Set Loss: mean=0.7522, std=1.7861
+[DEBUG][MIA] Test Set Loss:   mean=5.3064, std=7.0007
+Before unlearning: {'type': 'basic', 'attack_acc': 0.6875, 'cv_acc': 0.6745098039215687, 'auc': 0.754669189453125, 'task': 2}
+Accuracy, Confidence: (0.82421875, 0.9433035254478455)
+broken out of loop
+[DEBUG] Task 2 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=4.0102, std=7.5784
+[DEBUG][MIA] Test Set Loss:   mean=6.7050, std=8.5781
+After unlearning: {'type': 'basic', 'attack_acc': 0.609375, 'cv_acc': 0.4862745098039216, 'auc': 0.64208984375, 'task': 2}
+Accuracy, Confidence: (0.64453125, 0.9298058748245239)
+Total correct retain:  1216  Total retain:  2500
+Total correct forget:  13259  Total forget:  47500
+Total correct test:  236  Total test:  500
+Total correct forget test:  2366  Total test forget:  9500
+After unlearning task 3
+Task accuracies: [0.472, 0.462, 0.328, 0.284, 0.304, 0.266, 0.25, 0.182, 0.296, 0.244, 0.374, 0.274, 0.16, 0.198, 0.19, 0.178, 0.242, 0.184, 0.194, 0.122]
+Unlearning task: 2
+[DEBUG][MIA] Forget Set Loss: mean=1.3547, std=2.6956
+[DEBUG][MIA] Test Set Loss:   mean=3.6538, std=4.4485
+Before unlearning: {'type': 'basic', 'attack_acc': 0.6171875, 'cv_acc': 0.2549019607843137, 'auc': 0.724884033203125, 'task': 1}
+Accuracy, Confidence: (0.7265625, 0.9131476879119873)
+broken out of loop
+[DEBUG] Task 1 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=5.8035, std=8.9131
+[DEBUG][MIA] Test Set Loss:   mean=9.1450, std=10.4112
+After unlearning: {'type': 'basic', 'attack_acc': 0.58984375, 'cv_acc': 0.32549019607843144, 'auc': 0.63983154296875, 'task': 1}
+Accuracy, Confidence: (0.51171875, 0.9193801879882812)
+Total correct retain:  1314  Total retain:  2500
+Total correct forget:  12687  Total forget:  47500
+Total correct test:  245  Total test:  500
+Total correct forget test:  2354  Total test forget:  9500
+After unlearning task 2
+Task accuracies: [0.49, 0.286, 0.328, 0.308, 0.322, 0.306, 0.254, 0.16, 0.292, 0.244, 0.418, 0.21, 0.184, 0.226, 0.22, 0.196, 0.242, 0.172, 0.198, 0.142]

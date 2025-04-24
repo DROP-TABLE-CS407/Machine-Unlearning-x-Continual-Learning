@@ -1,0 +1,28 @@
+/dcs/21/u2110391/CS407/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+/dcs/21/u2110391/CS407/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+/dcs/21/u2110391/CS407/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+mv: cannot stat '*.csv': No such file or directory
+mv: cannot stat '*.pt': No such file or directory
+
+real	1m33.462s
+user	2m4.580s
+sys	0m2.764s
+/dcs/21/u2110391/CS407/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+/dcs/21/u2110391/CS407/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+/dcs/21/u2110391/CS407/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+mv: cannot stat '*.csv': No such file or directory
+mv: cannot stat '*.pt': No such file or directory
+
+real	1m25.383s
+user	2m5.927s
+sys	0m2.531s
+
+real	0m1.056s
+user	0m1.116s
+sys	0m0.093s

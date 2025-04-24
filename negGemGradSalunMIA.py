@@ -1,4 +1,5 @@
 from collections import defaultdict
+import csv
 import os
 import sys
 import argparse
@@ -230,8 +231,8 @@ def run_cifar(algorithm, args, n_inputs=N_INPUTS, n_outputs=N_OUTPUTS, n_tasks=N
                     output = model.forward(current_data, task)
                     pred = output.data.max(1)[1]
 
-                if correct / total > 0.7:
-                    break
+                # if correct / total > 0.7:
+                    # break
                 
             if args.mem_learning_buffer:
                 print(f"[Learn Buffer] Updating memory for task {task + 1} using {args.learning_buffer_type} memorization.")
@@ -252,10 +253,53 @@ def run_cifar(algorithm, args, n_inputs=N_INPUTS, n_outputs=N_OUTPUTS, n_tasks=N
                     mem_type=args.unlearning_buffer_type,
                     buffer_type='unlearn'
                 )
+
+            if 0 in model.learn_memory_data:
+                task0_pre_mia = run_mia(
+                    method="basic",
+                    model=model,
+                    forget_data=model.learn_memory_data[0],
+                    forget_labels=model.learn_memory_labs[0],
+                    test_data=tests[0], 
+                    test_labels=tests[1],
+                    task_idx=0,
+                    device=torch.device(f"cuda:{device}" if args.cuda else "cpu")
+                )
+                print("Post-learn MIA (Buff) on Task 0:", task0_pre_mia)
+                log_mia_results(0, task0_pre_mia, task0_pre_mia, log_path=f"MIA5/task0_postlearn_{args.algorithm}_mia_results_buff.csv")
+
+            task0_pre_mia = run_mia(
+                    method="basic",
+                    model=model,
+                    forget_data=tasks[0][0],
+                    forget_labels=tasks[0][1],
+                    test_data=tests[0], 
+                    test_labels=tests[1],
+                    task_idx=0,
+                    device=torch.device(f"cuda:{device}" if args.cuda else "cpu")
+                )
+            print("Post-learn MIA on Task 0:", task0_pre_mia)
+            log_mia_results(0, task0_pre_mia, task0_pre_mia, log_path=f"MIA5/task0_postlearn_{args.algorithm}_mia_results.csv")
         
+
         else:  # Unlearn task (negative value)
             task_to_unlearn = abs(operation)
             print(f"Unlearning task: {task_to_unlearn + 1}")
+            acc_buf = eval_task(model, args, model.learn_memory_data[task_to_unlearn], model.learn_memory_labs[task_to_unlearn], task_to_unlearn)
+            # pre_mia_result = run_mia(
+            #     method="basic",
+            #     model=model,
+            #     forget_data = model.learn_memory_data[task_to_unlearn],
+            #     forget_labels = model.learn_memory_labs[task_to_unlearn],
+            #     # forget_data=tasks[task_to_unlearn][0],
+            #     # forget_labels=tasks[task_to_unlearn][1],
+            #     test_data=tests[2 * task_to_unlearn], 
+            #     test_labels=tests[2 * task_to_unlearn + 1],
+            #     task_idx=task_to_unlearn,
+            #     device=torch.device(f"cuda:{device}" if args.cuda else "cpu")
+            #     )
+            # print("Before unlearning:", pre_mia_result)
+            print(f"Accuracy, Confidence: {acc_buf}")
             
             model.train()
             model.opt = torch.optim.SGD(model.parameters(), args.unlearning_rate)
@@ -293,19 +337,55 @@ def run_cifar(algorithm, args, n_inputs=N_INPUTS, n_outputs=N_OUTPUTS, n_tasks=N
                 model.observed_tasks.remove(task_to_unlearn)
             
             # MIA after each unlearning step
-            print(f"[DEBUG] Task {task_to_unlearn} — Forget: {len(tasks[task_to_unlearn][0])}, Test: {len(tests[2 * task_to_unlearn])}")
-            mia_result = run_mia(
+            # print(f"[DEBUG] Task {task_to_unlearn} — Forget: {len(tasks[task_to_unlearn][0])}, Test: {len(tests[2 * task_to_unlearn])}")
+            # mia_result = run_mia(
+            #     method="basic",
+            #     model=model,
+            #     forget_data = model.learn_memory_data[task_to_unlearn],
+            #     forget_labels = model.learn_memory_labs[task_to_unlearn],
+            #     # forget_data=tasks[task_to_unlearn][0],
+            #     # forget_labels=tasks[task_to_unlearn][1],
+            #     test_data=tests[2 * task_to_unlearn], 
+            #     test_labels=tests[2 * task_to_unlearn + 1],
+            #     task_idx=task_to_unlearn,
+            #     device=torch.device(f"cuda:{device}" if args.cuda else "cpu")
+            #     )
+            # print("After unlearning:", mia_result)
+            acc_buf = eval_task(model, args, model.learn_memory_data[task_to_unlearn], model.learn_memory_labs[task_to_unlearn], task_to_unlearn)
+            print(f"Accuracy, Confidence: {acc_buf}")
+
+            # mia_result["task"] = task_to_unlearn 
+            # ALL_TASK_MIA_RESULTS.append(mia_result)
+
+            if 0 in model.learn_memory_data:
+                task0_post_mia = run_mia(
+                    method="basic",
+                    model=model,
+                    forget_data=model.learn_memory_data[0],
+                    forget_labels=model.learn_memory_labs[0],
+                    test_data=tests[0], 
+                    test_labels=tests[1],
+                    task_idx=0,
+                    device=torch.device(f"cuda:{device}" if args.cuda else "cpu")
+                )
+                print("Post-unlearn MIA on Task 0:", task0_post_mia)
+                log_mia_results(0, task0_post_mia, task0_post_mia, log_path=f"MIA5/task0_postunlearn_{args.algorithm}_mia_results_buff.csv")
+           
+            task0_post_mia = run_mia(
                 method="basic",
                 model=model,
-                forget_data=tasks[task_to_unlearn][0],
-                forget_labels=tasks[task_to_unlearn][1],
-                test_data=tests[2 * task_to_unlearn], 
-                test_labels=tests[2 * task_to_unlearn + 1],
-                task_idx=task_to_unlearn,
+                forget_data=tasks[0][0],
+                forget_labels=tasks[0][1],
+                test_data=tests[0], 
+                test_labels=tests[1],
+                task_idx=0,
                 device=torch.device(f"cuda:{device}" if args.cuda else "cpu")
-                )
-            mia_result["task"] = task_to_unlearn 
-            ALL_TASK_MIA_RESULTS.append(mia_result)
+            )
+            print("Post-unlearn MIA on Task 0:", task0_post_mia)
+            log_mia_results(0, task0_post_mia, task0_post_mia, log_path=f"MIA5/task0_postunlearn_{args.algorithm}_mia_results.csv")
+
+            # log_mia_results(task_to_unlearn, pre_mia_result, mia_result)
+
         
         # Evaluate performance after each operation (both learning and unlearning)
         model.eval()
@@ -346,7 +426,8 @@ def run_cifar(algorithm, args, n_inputs=N_INPUTS, n_outputs=N_OUTPUTS, n_tasks=N
     # For compatibility with the existing code
     after_unlearn_accuracies = ALL_TASK_ACCURACIES[-1] if ALL_TASK_ACCURACIES else []
     confidence_after_unlearn = ALL_TASK_CONFIDENCES[-1] if ALL_TASK_CONFIDENCES else []
-    
+
+    torch.save(model, f"MIA5/10TrainedModel.pt")  
     return (model,
             test_accuracies,
             [],  # average_confidence - now integrated in ALL_TASK_CONFIDENCES
@@ -399,11 +480,13 @@ def single_run(run_idx, SHUFFLEDCLASSES, cmd_args, mem_data_local):
     args.unlearning_buffer_split = float(cmd_args.unlearning_buffer_split)
     args.unlearning_buffer_type = cmd_args.unlearning_buffer_type
         
-    task_sequence = [0, 1, 2, 3, 4, 5, -5, -4, -3, -2, -1]
+    # task_sequence = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -10, -9, -8, -7,-6, -5, -4, -3, -2, -1]
+    task_sequence = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    # task_sequence = [1, 2, -1]  # Example sequence for 5 tasks
+    # task_sequence = [0,1,2,3,-3,-2,-1]
     # all_tasks = list(range(20))
     # random_tasks = random.sample(all_tasks, k=5)       
     # task_sequence =  all_tasks + [-t for t in random_tasks] 
-
     # Run your main training/unlearning (the run_cifar function, etc.)
     # Replace "..." with your original code for a single iteration
     # (omitting code details here to keep it concise)
@@ -633,43 +716,6 @@ if __name__ == "__main__":
     plt.savefig('ALL_TRAIN_CONFIDENCES.png')
     plt.show()
     # save the figure
-
-    def plot_avg_mia_bar(all_runs, save_dir="MIA", metric="attack_acc"):
-        flat_results = []
-        for run_id, run in enumerate(all_runs):
-            for result in run:
-                flat_results.append({
-                    "run": run_id,
-                    "task": result["task"],
-                    metric: result[metric]
-                })
-
-        # Save full results to CSV
-        df = pd.DataFrame(flat_results)
-        csv_path = os.path.join(save_dir, f"{cmd_args.algorithm}_{metric}_all.csv")
-        df.to_csv(csv_path, index=False)
-
-        # Group by task for bar plot (optional)
-        grouped = df.groupby("task")[metric]
-        means = grouped.mean()
-        stds = grouped.std()
-        tasks = sorted(grouped.groups.keys())
-
-        # Plot
-        plt.figure(figsize=(10, 5))
-        plt.bar(tasks, means, yerr=stds, capsize=5, alpha=0.75, color='skyblue')
-        plt.xlabel("Task")
-        plt.ylabel(f"{metric.replace('_', ' ').title()} (Avg ± Std)")
-        plt.title(f"MIA {metric.replace('_', ' ').title()} per Task")
-        plt.xticks(tasks)
-        plt.ylim(0, 1)
-        plt.grid(axis='y', linestyle='--', alpha=0.6)
-        plt.tight_layout()
-        plt.savefig(os.path.join(save_dir, f"{cmd_args.algorithm}_{metric}_bar_avg_per_task.png"))
-        plt.close()
-    
-    plot_avg_mia_bar(ALL_TASK_MIA_RESULTS, metric="auc")
-    plot_avg_mia_bar(ALL_TASK_MIA_RESULTS, metric="attack_acc")
     
     import datetime
 
@@ -730,9 +776,6 @@ if __name__ == "__main__":
     save_df(ALL_TASK_ACCURACIES_AVERAGED, "AllTaskAccuraciesAvg")
     save_df(ALL_TASK_CONFIDENCES, "AllTaskConfidences")
     save_df([hyperparameters], "Hyperparameters")
-
-    # Optionally save model
-    # torch.save(model, f"{folder_name}/Model.pt")
 
     # Move all related output files into the results folder
     os.system(f"mv -f *.png {folder_name}")

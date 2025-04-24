@@ -20,27 +20,58 @@ They are in the following file(s):
 
 # 1.) Introduction
 
-## Running a test
-To run a test, use the provided sbatch scripts. The example jobs provided should work out of the box after downloading the repo.
-The arguments that can be passed to the python scripts are:
-time python3.12 negGemGradSalun.py --algorithm neggem --alpha 0 --number_of_gpus 3 --learn_mem_strength 0.5 --learn_batch_size 10 --unlearn_mem_strength 0.6 --unlearn_batch_size 10 --average_over_n_runs 3 --salun 1 --salun_strength 0.2 --rum 1 --rum_split 0.99 --rum_memorization most
-- ` --algorithm` neggem : Defines what unlearning algorithm to use. The options are `neggem`, `negagem`, `RL-GEM`, `RL-AGEM`, `ALT-NEGGEM` and `neggrad`. 
-- ` --alpha` 0.9 : The alpha value for the neggrad algorithm. This is the default value, but can be changed to whatever you want.
-- ` --number_of_gpus` 3 : The number of GPUs to use for training. This is set to 3 by default, but you may only want to use 1 GPU for testing.
-- ` --learn_mem_strength ` 0.5 : Strength of the learning memory during the continual learning phase for GEM.
-- ` --learn_batch_size ` 10 : Batch size for learning during the continual learning phase for GEM/AGEM.
-- ` --unlearn_mem_strength ` 0.6 : Strength of the unlearning memory
-- ` --unlearn_batch_size ` 10 : Batch size for unlearning
-- ` --average_over_n_runs ` 3 : Number of runs to average over
-- ` --salun ` 1 : Use salun or not
-- ` --salun_strength ` 0.2 : Strength of the salun, we use the top percentage quartile for salun. What this means is that if this 
-                             value is set to 0.2 for example, it means the largest absolute magnitude top 20% of the weights are used for salun and the rest are set to 0. (The original paper just used a hard threshold which effectively gave 0 update in cases where the gradient was small)
-- ` --rum ` 1 : Use rum or not
-- ` --rum_split ` 0.1 : Determines how much of the memories are filled with `most` or `least` memorized samples for RUM.
-- ` --rum_memorization ` most : Determines if we want to use the most or least memorized samples for RUM. `a` means randomly selected samples.
+## Running a Test
 
-There are other arguments that can be passed to the scripts in `./negGem/args.py`, but we do not have to change them for now.
-Additionally, we have changed it so we can specify what unlearning algorithm to use which makes it very convenient.
+To run an experiment, use the provided `sbatch` scripts or execute a command directly via terminal. The repository includes sample job scripts that should work out of the box once dependencies are installed and the dataset is downloaded.
+
+### Example Command
+
+```bash
+time python3.12 negGemGradSalun.py \
+  --algorithm neggem \
+  --alpha 0.9 \
+  --number_of_gpus 3 \
+  --learn_mem_strength 0.5 \
+  --learn_batch_size 10 \
+  --unlearn_mem_strength 0.6 \
+  --unlearn_batch_size 10 \
+  --average_over_n_runs 3 \
+  --salun 1 \
+  --salun_strength 0.2 \
+  --mem_learning_buffer 1 \
+  --learning_buffer_split 0.2 \
+  --learning_buffer_type least \
+  --mem_unlearning_buffer 1 \
+  --unlearning_buffer_split 0.2 \
+  --unlearning_buffer_type most
+```
+
+### Argument Descriptions
+
+| Argument | Description |
+|----------|-------------|
+| `--algorithm` | Defines which unlearning algorithm to use. Options: `neggem`, `negagem`, `RL-GEM`, `RL-AGEM`, `ALT-NEGGEM`, `neggrad`. |
+| `--alpha` | Projection parameter for `neggrad` and related algorithms. |
+| `--number_of_gpus` | Number of GPUs to use in parallel (e.g., for multi-run averaging). |
+| `--learn_mem_strength` | GEM margin used during continual learning. |
+| `--learn_batch_size` | Mini-batch size used during continual learning. |
+| `--unlearn_mem_strength` | Margin for projection in unlearning algorithms. |
+| `--unlearn_batch_size` | Batch size for unlearning updates. |
+| `--average_over_n_runs` | Number of runs to average results over. |
+| `--salun` | Toggle SaLUn on/off (`1` for enabled, `0` for disabled). |
+| `--salun_strength` | Fraction of gradient elements retained by magnitude (e.g., `0.2` keeps top 20%). |
+| `--mem_learning_buffer` | Enables memory buffer based on memorisation for learning. |
+| `--learning_buffer_split` | Portion of learn buffer filled using memorisation scores; rest is random. |
+| `--learning_buffer_type` | Score type used for selection: `least`, `most`, or `random`. |
+| `--mem_unlearning_buffer` | Enables memory buffer based on memorisation for unlearning. |
+| `--unlearning_buffer_split` | Portion of unlearn buffer filled using memorisation scores; rest is random. |
+| `--unlearning_buffer_type` | Score type used for selection: `most`, `least`, or `random`. |
+
+### Additional Notes
+
+- All hyperparameters are defined in `negGem/args.py`. Only the arguments listed above are required for standard experiments.
+- Class/task order is shuffled internally per run to simulate continual learning in realistic task sequences.
+- Results are saved under `Results_*/`, including plots and CSV logs for metrics.
 
 # 2.) Related Work
 

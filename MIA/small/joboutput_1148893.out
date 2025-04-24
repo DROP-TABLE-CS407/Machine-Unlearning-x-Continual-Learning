@@ -1,0 +1,319 @@
+Requirement already satisfied: pyyaml in /usr/lib64/python3.12/site-packages (6.0.1)
+Requirement already satisfied: setuptools in /usr/lib/python3.12/site-packages (68.2.2)
+Requirement already satisfied: matplotlib in /dcs/21/u2110391/.local/lib/python3.12/site-packages (3.10.1)
+Requirement already satisfied: contourpy>=1.0.1 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from matplotlib) (1.3.1)
+Requirement already satisfied: cycler>=0.10 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from matplotlib) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from matplotlib) (4.56.0)
+Requirement already satisfied: kiwisolver>=1.3.1 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from matplotlib) (1.4.8)
+Requirement already satisfied: numpy>=1.23 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from matplotlib) (2.2.4)
+Requirement already satisfied: packaging>=20.0 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from matplotlib) (24.2)
+Requirement already satisfied: pillow>=8 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from matplotlib) (11.1.0)
+Requirement already satisfied: pyparsing>=2.3.1 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from matplotlib) (3.2.3)
+Requirement already satisfied: python-dateutil>=2.7 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from matplotlib) (2.9.0.post0)
+Requirement already satisfied: six>=1.5 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from python-dateutil>=2.7->matplotlib) (1.17.0)
+Requirement already satisfied: quadprog in /dcs/21/u2110391/.local/lib/python3.12/site-packages (0.1.13)
+Requirement already satisfied: numpy in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from quadprog) (2.2.4)
+Requirement already satisfied: pyparsing in /dcs/21/u2110391/.local/lib/python3.12/site-packages (3.2.3)
+Requirement already satisfied: pandas in /dcs/21/u2110391/.local/lib/python3.12/site-packages (2.2.3)
+Requirement already satisfied: numpy>=1.26.0 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from pandas) (2.2.4)
+Requirement already satisfied: python-dateutil>=2.8.2 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from pandas) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from pandas) (2025.2)
+Requirement already satisfied: tzdata>=2022.7 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from pandas) (2025.2)
+Requirement already satisfied: six>=1.5 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from python-dateutil>=2.8.2->pandas) (1.17.0)
+Requirement already satisfied: numpy in /dcs/21/u2110391/.local/lib/python3.12/site-packages (2.2.4)
+Thu Apr 24 03:53:23 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.144.03             Driver Version: 550.144.03     CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 2080 Ti     Off |   00000000:01:00.0 Off |                  N/A |
+| 12%   63C    P0             N/A /  250W |       1MiB /  11264MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Command line arguments:
+number_of_gpus: 1
+algorithm: neggem
+alpha: 0
+learn_mem_strength: 0.5
+learn_batch_size: 100
+unlearn_mem_strength: 0.5
+unlearn_batch_size: 10
+average_over_n_runs: 3
+salun: 0
+salun_strength: 0.2
+Python 3.12.8
+./cifar-100-python/train
+./cifar-100-python/test
+Number of GPUs visible:  1
+Available GPUs:  1
+Thu Apr 24 03:53:41 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.144.03             Driver Version: 550.144.03     CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 2080 Ti     Off |   00000000:01:00.0 Off |                  N/A |
+| 12%   63C    P0             N/A /  250W |       1MiB /  11264MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Running on device:  NVIDIA GeForce RTX 2080 Ti
+Unlearn Batch Size:  10
+Unlearn MEM Strength:  0.5
+cifar-100-python/train
+cifar-100-python/test
+new ordering of classes:  ['woman', 'bear', 'girl', 'clock', 'spider', 'lawn-mower', 'computer keyboard', 'lobster', 'wardrobe', 'pine', 'lamp', 'worm', 'mouse', 'train', 'couch', 'sunflowers', 'wolf', 'dolphin', 'skunk', 'baby', 'flatfish', 'cattle', 'boy', 'snail', 'tank', 'snake', 'chair', 'tulips', 'butterfly', 'aquarium fish', 'bottles', 'porcupine', 'bowls', 'crocodile', 'house', 'telephone', 'cloud', 'plates', 'pickup truck', 'dinosaur', 'sweet peppers', 'skyscraper', 'oranges', 'cups', 'orchids', 'chimpanzee', 'television', 'bridge', 'bed', 'maple', 'bee', 'trout', 'motorcycle', 'shrew', 'sea', 'plain', 'roses', 'rabbit', 'streetcar', 'man', 'leopard', 'bus', 'elephant', 'lizard', 'cockroach', 'apples', 'mountain', 'road', 'camel', 'cans', 'palm', 'seal', 'ray', 'rocket', 'tiger', 'tractor', 'possum', 'poppies', 'turtle', 'forest', 'oak', 'beetle', 'whale', 'squirrel', 'crab', 'shark', 'fox', 'willow', 'otter', 'hamster', 'castle', 'raccoon', 'bicycle', 'lion', 'kangaroo', 'mushrooms', 'caterpillar', 'beaver', 'pears', 'table']
+Training task:  2
+[Learn Buffer] Updating memory for task 2 using least memorization.
+[Memory Update] Task 1, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 2 using most memorization.
+[Memory Update] Task 1, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  481  Total retain:  2500
+Total correct forget:  11759  Total forget:  47500
+Total correct test:  99  Total test:  500
+Total correct forget test:  2299  Total test forget:  9500
+After learning task 2
+Task accuracies: [0.198, 0.79, 0.186, 0.238, 0.254, 0.15, 0.204, 0.208, 0.252, 0.292, 0.2, 0.224, 0.24, 0.202, 0.236, 0.18, 0.192, 0.144, 0.222, 0.184]
+Unlearning task: 2
+[DEBUG][MIA] Forget Set Loss: mean=0.0092, std=0.0252
+[DEBUG][MIA] Test Set Loss:   mean=0.5871, std=1.3497
+Before unlearning: {'type': 'basic', 'attack_acc': 0.662, 'cv_acc': 0.254, 'auc': 0.67428, 'task': 1}
+Accuracy, Confidence: (0.99609375, 0.989185094833374)
+broken out of loop
+[DEBUG] Task 1 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=5.6604, std=4.9657
+[DEBUG][MIA] Test Set Loss:   mean=6.2141, std=4.7653
+After unlearning: {'type': 'basic', 'attack_acc': 0.484, 'cv_acc': 0.10800000000000001, 'auc': 0.45919999999999994, 'task': 1}
+Accuracy, Confidence: (0.23828125, 0.8861663341522217)
+Total correct retain:  442  Total retain:  2500
+Total correct forget:  9865  Total forget:  47500
+Total correct test:  87  Total test:  500
+Total correct forget test:  1996  Total test forget:  9500
+After unlearning task 2
+Task accuracies: [0.174, 0.238, 0.27, 0.196, 0.18, 0.2, 0.104, 0.196, 0.194, 0.21, 0.2, 0.25, 0.176, 0.264, 0.272, 0.176, 0.17, 0.192, 0.276, 0.228]
+Running on device:  NVIDIA GeForce RTX 2080 Ti
+Unlearn Batch Size:  10
+Unlearn MEM Strength:  0.5
+cifar-100-python/train
+cifar-100-python/test
+new ordering of classes:  ['tulips', 'woman', 'turtle', 'tank', 'snail', 'skyscraper', 'clock', 'pickup truck', 'boy', 'roses', 'raccoon', 'wardrobe', 'beaver', 'elephant', 'mouse', 'cloud', 'house', 'lawn-mower', 'mountain', 'sea', 'worm', 'streetcar', 'dinosaur', 'poppies', 'crocodile', 'bicycle', 'beetle', 'cups', 'bottles', 'telephone', 'computer keyboard', 'television', 'snake', 'forest', 'plain', 'bear', 'camel', 'crab', 'table', 'lamp', 'skunk', 'porcupine', 'possum', 'girl', 'maple', 'kangaroo', 'castle', 'rabbit', 'squirrel', 'ray', 'butterfly', 'tractor', 'shark', 'leopard', 'lion', 'bed', 'train', 'couch', 'whale', 'caterpillar', 'chimpanzee', 'aquarium fish', 'sweet peppers', 'hamster', 'oak', 'wolf', 'mushrooms', 'bridge', 'shrew', 'lizard', 'plates', 'tiger', 'bus', 'pears', 'otter', 'flatfish', 'trout', 'motorcycle', 'sunflowers', 'baby', 'willow', 'cans', 'pine', 'fox', 'dolphin', 'oranges', 'cattle', 'palm', 'man', 'chair', 'bowls', 'orchids', 'rocket', 'bee', 'lobster', 'apples', 'spider', 'road', 'cockroach', 'seal']
+Training task:  2
+[Learn Buffer] Updating memory for task 2 using least memorization.
+[Memory Update] Task 1, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 2 using most memorization.
+[Memory Update] Task 1, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  665  Total retain:  2500
+Total correct forget:  11652  Total forget:  47500
+Total correct test:  144  Total test:  500
+Total correct forget test:  2218  Total test forget:  9500
+After learning task 2
+Task accuracies: [0.288, 0.798, 0.178, 0.27, 0.222, 0.198, 0.21, 0.224, 0.158, 0.158, 0.2, 0.208, 0.198, 0.198, 0.256, 0.15, 0.23, 0.158, 0.196, 0.226]
+Unlearning task: 2
+[DEBUG][MIA] Forget Set Loss: mean=0.0624, std=0.3609
+[DEBUG][MIA] Test Set Loss:   mean=0.6194, std=1.3302
+Before unlearning: {'type': 'basic', 'attack_acc': 0.642, 'cv_acc': 0.22000000000000003, 'auc': 0.655288, 'task': 1}
+Accuracy, Confidence: (0.98046875, 0.9711928367614746)
+broken out of loop
+[DEBUG] Task 1 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=8.6591, std=9.3042
+[DEBUG][MIA] Test Set Loss:   mean=9.5443, std=9.8612
+After unlearning: {'type': 'basic', 'attack_acc': 0.514, 'cv_acc': 0.092, 'auc': 0.523616, 'task': 1}
+Accuracy, Confidence: (0.1171875, 0.8694027662277222)
+Total correct retain:  620  Total retain:  2500
+Total correct forget:  9423  Total forget:  47500
+Total correct test:  110  Total test:  500
+Total correct forget test:  1851  Total test forget:  9500
+After unlearning task 2
+Task accuracies: [0.22, 0.15, 0.202, 0.198, 0.284, 0.208, 0.194, 0.228, 0.154, 0.126, 0.194, 0.216, 0.188, 0.198, 0.236, 0.242, 0.242, 0.15, 0.2, 0.092]
+Running on device:  NVIDIA GeForce RTX 2080 Ti
+Unlearn Batch Size:  10
+Unlearn MEM Strength:  0.5
+cifar-100-python/train
+cifar-100-python/test
+new ordering of classes:  ['caterpillar', 'fox', 'turtle', 'spider', 'roses', 'cattle', 'bowls', 'squirrel', 'telephone', 'lobster', 'sunflowers', 'maple', 'forest', 'poppies', 'bear', 'kangaroo', 'camel', 'cans', 'oranges', 'lizard', 'clock', 'shrew', 'train', 'house', 'raccoon', 'wolf', 'sweet peppers', 'ray', 'flatfish', 'pears', 'man', 'mushrooms', 'baby', 'trout', 'dolphin', 'leopard', 'skyscraper', 'television', 'possum', 'whale', 'rabbit', 'lawn-mower', 'tank', 'bus', 'crocodile', 'computer keyboard', 'seal', 'bicycle', 'apples', 'willow', 'beetle', 'cloud', 'dinosaur', 'rocket', 'butterfly', 'couch', 'cups', 'chimpanzee', 'bed', 'tractor', 'wardrobe', 'plain', 'snail', 'tulips', 'beaver', 'pine', 'pickup truck', 'woman', 'bee', 'orchids', 'shark', 'aquarium fish', 'crab', 'motorcycle', 'otter', 'sea', 'oak', 'chair', 'lamp', 'castle', 'worm', 'bridge', 'snake', 'elephant', 'cockroach', 'mountain', 'road', 'lion', 'plates', 'palm', 'streetcar', 'girl', 'hamster', 'tiger', 'boy', 'porcupine', 'mouse', 'skunk', 'table', 'bottles']
+Training task:  2
+[Learn Buffer] Updating memory for task 2 using least memorization.
+[Memory Update] Task 1, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 2 using most memorization.
+[Memory Update] Task 1, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  677  Total retain:  2500
+Total correct forget:  11510  Total forget:  47500
+Total correct test:  147  Total test:  500
+Total correct forget test:  2080  Total test forget:  9500
+After learning task 2
+Task accuracies: [0.294, 0.57, 0.206, 0.146, 0.146, 0.186, 0.2, 0.214, 0.242, 0.252, 0.202, 0.228, 0.194, 0.204, 0.222, 0.252, 0.176, 0.138, 0.204, 0.178]
+Unlearning task: 2
+[DEBUG][MIA] Forget Set Loss: mean=0.1953, std=0.4614
+[DEBUG][MIA] Test Set Loss:   mean=1.5041, std=2.0280
+Before unlearning: {'type': 'basic', 'attack_acc': 0.682, 'cv_acc': 0.624, 'auc': 0.731984, 'task': 1}
+Accuracy, Confidence: (0.9453125, 0.9276391267776489)
+broken out of loop
+[DEBUG] Task 1 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=6.1887, std=4.5955
+[DEBUG][MIA] Test Set Loss:   mean=5.8181, std=4.8679
+After unlearning: {'type': 'basic', 'attack_acc': 0.468, 'cv_acc': 0.13199999999999998, 'auc': 0.475248, 'task': 1}
+Accuracy, Confidence: (0.19921875, 0.9125266075134277)
+Total correct retain:  396  Total retain:  2500
+Total correct forget:  9516  Total forget:  47500
+Total correct test:  63  Total test:  500
+Total correct forget test:  1867  Total test forget:  9500
+After unlearning task 2
+Task accuracies: [0.126, 0.212, 0.242, 0.196, 0.108, 0.166, 0.2, 0.208, 0.194, 0.206, 0.202, 0.156, 0.206, 0.2, 0.158, 0.26, 0.224, 0.228, 0.2, 0.168]
+Command line arguments:
+number_of_gpus: 1
+algorithm: neggrad
+alpha: 0.5
+learn_mem_strength: 0.5
+learn_batch_size: 100
+unlearn_mem_strength: 0.5
+unlearn_batch_size: 10
+average_over_n_runs: 3
+salun: 0
+salun_strength: 0.2
+Python 3.12.8
+./cifar-100-python/train
+./cifar-100-python/test
+Number of GPUs visible:  1
+Available GPUs:  1
+Thu Apr 24 03:55:02 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.144.03             Driver Version: 550.144.03     CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 2080 Ti     Off |   00000000:01:00.0 Off |                  N/A |
+| 33%   63C    P0             N/A /  250W |       1MiB /  11264MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Running on device:  NVIDIA GeForce RTX 2080 Ti
+Unlearn Batch Size:  10
+Unlearn MEM Strength:  0.5
+cifar-100-python/train
+cifar-100-python/test
+new ordering of classes:  ['clock', 'ray', 'flatfish', 'computer keyboard', 'whale', 'leopard', 'rabbit', 'bottles', 'bowls', 'forest', 'tulips', 'man', 'sunflowers', 'kangaroo', 'squirrel', 'willow', 'dolphin', 'crocodile', 'plain', 'poppies', 'baby', 'mushrooms', 'spider', 'motorcycle', 'camel', 'snake', 'trout', 'road', 'skyscraper', 'tiger', 'woman', 'snail', 'palm', 'worm', 'lobster', 'girl', 'butterfly', 'cloud', 'television', 'boy', 'lamp', 'chimpanzee', 'shark', 'fox', 'bee', 'beaver', 'raccoon', 'pickup truck', 'beetle', 'bicycle', 'crab', 'table', 'otter', 'skunk', 'possum', 'wardrobe', 'rocket', 'shrew', 'dinosaur', 'sweet peppers', 'sea', 'chair', 'caterpillar', 'wolf', 'couch', 'telephone', 'bed', 'lawn-mower', 'cups', 'bear', 'tank', 'house', 'lizard', 'lion', 'orchids', 'oak', 'turtle', 'plates', 'aquarium fish', 'tractor', 'elephant', 'hamster', 'cans', 'train', 'mountain', 'castle', 'roses', 'bus', 'mouse', 'seal', 'cockroach', 'maple', 'porcupine', 'apples', 'pine', 'streetcar', 'oranges', 'cattle', 'bridge', 'pears']
+Training task:  2
+[Learn Buffer] Updating memory for task 2 using least memorization.
+[Memory Update] Task 1, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 2 using most memorization.
+[Memory Update] Task 1, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  512  Total retain:  2500
+Total correct forget:  11704  Total forget:  47500
+Total correct test:  99  Total test:  500
+Total correct forget test:  2188  Total test forget:  9500
+After learning task 2
+Task accuracies: [0.198, 0.63, 0.22, 0.2, 0.17, 0.204, 0.17, 0.208, 0.166, 0.184, 0.226, 0.292, 0.164, 0.27, 0.236, 0.182, 0.186, 0.22, 0.194, 0.254]
+Unlearning task: 2
+[DEBUG][MIA] Forget Set Loss: mean=0.2169, std=0.5225
+[DEBUG][MIA] Test Set Loss:   mean=1.3220, std=1.8313
+Before unlearning: {'type': 'basic', 'attack_acc': 0.658, 'cv_acc': 0.502, 'auc': 0.71704, 'task': 1}
+Accuracy, Confidence: (0.921875, 0.9047912359237671)
+broken out of loop
+[DEBUG] Task 1 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=6.8411, std=9.2827
+[DEBUG][MIA] Test Set Loss:   mean=7.4338, std=8.9728
+After unlearning: {'type': 'basic', 'attack_acc': 0.528, 'cv_acc': 0.08199999999999999, 'auc': 0.548336, 'task': 1}
+Accuracy, Confidence: (0.3046875, 0.8408448100090027)
+Total correct retain:  511  Total retain:  2500
+Total correct forget:  9995  Total forget:  47500
+Total correct test:  101  Total test:  500
+Total correct forget test:  1994  Total test forget:  9500
+After unlearning task 2
+Task accuracies: [0.202, 0.224, 0.212, 0.198, 0.228, 0.266, 0.18, 0.152, 0.202, 0.236, 0.196, 0.258, 0.096, 0.224, 0.268, 0.264, 0.198, 0.19, 0.252, 0.144]
+Running on device:  NVIDIA GeForce RTX 2080 Ti
+Unlearn Batch Size:  10
+Unlearn MEM Strength:  0.5
+cifar-100-python/train
+cifar-100-python/test
+new ordering of classes:  ['sweet peppers', 'plain', 'bottles', 'apples', 'man', 'roses', 'plates', 'palm', 'dolphin', 'caterpillar', 'worm', 'girl', 'poppies', 'camel', 'mouse', 'bee', 'bridge', 'dinosaur', 'otter', 'cockroach', 'squirrel', 'computer keyboard', 'seal', 'mushrooms', 'sea', 'trout', 'pickup truck', 'chair', 'crocodile', 'shrew', 'couch', 'cups', 'beaver', 'motorcycle', 'clock', 'turtle', 'chimpanzee', 'rocket', 'beetle', 'skunk', 'butterfly', 'tractor', 'rabbit', 'bicycle', 'snake', 'leopard', 'lawn-mower', 'forest', 'tank', 'possum', 'mountain', 'skyscraper', 'whale', 'road', 'wardrobe', 'spider', 'house', 'aquarium fish', 'oranges', 'sunflowers', 'wolf', 'cans', 'elephant', 'television', 'willow', 'lion', 'boy', 'kangaroo', 'pine', 'shark', 'pears', 'oak', 'bus', 'lobster', 'orchids', 'porcupine', 'woman', 'cattle', 'tulips', 'telephone', 'snail', 'cloud', 'bear', 'train', 'ray', 'lizard', 'flatfish', 'hamster', 'table', 'bowls', 'bed', 'streetcar', 'tiger', 'fox', 'baby', 'castle', 'maple', 'lamp', 'crab', 'raccoon']
+Training task:  2
+[Learn Buffer] Updating memory for task 2 using least memorization.
+[Memory Update] Task 1, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 2 using most memorization.
+[Memory Update] Task 1, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  451  Total retain:  2500
+Total correct forget:  11385  Total forget:  47500
+Total correct test:  91  Total test:  500
+Total correct forget test:  2195  Total test forget:  9500
+After learning task 2
+Task accuracies: [0.182, 0.806, 0.31, 0.206, 0.218, 0.278, 0.118, 0.232, 0.188, 0.218, 0.18, 0.168, 0.112, 0.142, 0.138, 0.172, 0.298, 0.218, 0.236, 0.152]
+Unlearning task: 2
+[DEBUG][MIA] Forget Set Loss: mean=0.1062, std=0.7726
+[DEBUG][MIA] Test Set Loss:   mean=0.6056, std=1.2548
+Before unlearning: {'type': 'basic', 'attack_acc': 0.624, 'cv_acc': 0.202, 'auc': 0.654664, 'task': 1}
+Accuracy, Confidence: (0.9765625, 0.9599499702453613)
+broken out of loop
+[DEBUG] Task 1 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=5.1212, std=5.5853
+[DEBUG][MIA] Test Set Loss:   mean=5.9931, std=6.5089
+After unlearning: {'type': 'basic', 'attack_acc': 0.512, 'cv_acc': 0.11399999999999999, 'auc': 0.5355200000000001, 'task': 1}
+Accuracy, Confidence: (0.3359375, 0.8895726203918457)
+Total correct retain:  570  Total retain:  2500
+Total correct forget:  9167  Total forget:  47500
+Total correct test:  109  Total test:  500
+Total correct forget test:  1833  Total test forget:  9500
+After unlearning task 2
+Task accuracies: [0.218, 0.294, 0.118, 0.156, 0.258, 0.206, 0.142, 0.19, 0.22, 0.216, 0.34, 0.13, 0.238, 0.12, 0.146, 0.218, 0.072, 0.202, 0.186, 0.214]
+Running on device:  NVIDIA GeForce RTX 2080 Ti
+Unlearn Batch Size:  10
+Unlearn MEM Strength:  0.5
+cifar-100-python/train
+cifar-100-python/test
+new ordering of classes:  ['computer keyboard', 'ray', 'bottles', 'cups', 'mountain', 'spider', 'tank', 'bridge', 'oranges', 'forest', 'beaver', 'orchids', 'wolf', 'roses', 'cans', 'pine', 'pears', 'cattle', 'table', 'maple', 'crab', 'chimpanzee', 'squirrel', 'apples', 'willow', 'pickup truck', 'road', 'turtle', 'baby', 'bowls', 'kangaroo', 'cockroach', 'lobster', 'caterpillar', 'skunk', 'lawn-mower', 'woman', 'couch', 'flatfish', 'lion', 'tractor', 'beetle', 'television', 'dolphin', 'crocodile', 'palm', 'wardrobe', 'trout', 'raccoon', 'telephone', 'bed', 'bear', 'cloud', 'seal', 'girl', 'hamster', 'plain', 'rabbit', 'skyscraper', 'castle', 'man', 'dinosaur', 'chair', 'clock', 'bee', 'sea', 'tulips', 'butterfly', 'oak', 'fox', 'shark', 'otter', 'snake', 'sunflowers', 'porcupine', 'aquarium fish', 'leopard', 'mushrooms', 'snail', 'possum', 'plates', 'train', 'bus', 'poppies', 'rocket', 'bicycle', 'whale', 'mouse', 'house', 'shrew', 'worm', 'lamp', 'camel', 'elephant', 'tiger', 'boy', 'motorcycle', 'streetcar', 'lizard', 'sweet peppers']
+Training task:  2
+[Learn Buffer] Updating memory for task 2 using least memorization.
+[Memory Update] Task 1, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 2 using most memorization.
+[Memory Update] Task 1, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  586  Total retain:  2500
+Total correct forget:  11635  Total forget:  47500
+Total correct test:  116  Total test:  500
+Total correct forget test:  2234  Total test forget:  9500
+After learning task 2
+Task accuracies: [0.232, 0.818, 0.21, 0.198, 0.118, 0.264, 0.192, 0.268, 0.162, 0.18, 0.082, 0.256, 0.08, 0.246, 0.142, 0.238, 0.366, 0.21, 0.234, 0.204]
+Unlearning task: 2
+[DEBUG][MIA] Forget Set Loss: mean=0.0868, std=0.3708
+[DEBUG][MIA] Test Set Loss:   mean=0.7063, std=1.6373
+Before unlearning: {'type': 'basic', 'attack_acc': 0.606, 'cv_acc': 0.164, 'auc': 0.6517679999999999, 'task': 1}
+Accuracy, Confidence: (0.9609375, 0.9546508193016052)
+broken out of loop
+[DEBUG] Task 1 — Forget: 2500, Test: 500
+[DEBUG][MIA] Forget Set Loss: mean=7.6413, std=7.7665
+[DEBUG][MIA] Test Set Loss:   mean=7.5216, std=7.2996
+After unlearning: {'type': 'basic', 'attack_acc': 0.506, 'cv_acc': 0.11000000000000001, 'auc': 0.499424, 'task': 1}
+Accuracy, Confidence: (0.328125, 0.918470561504364)
+Total correct retain:  472  Total retain:  2500
+Total correct forget:  11389  Total forget:  47500
+Total correct test:  91  Total test:  500
+Total correct forget test:  2248  Total test forget:  9500
+After unlearning task 2
+Task accuracies: [0.182, 0.29, 0.216, 0.202, 0.206, 0.258, 0.258, 0.162, 0.162, 0.17, 0.302, 0.238, 0.356, 0.176, 0.27, 0.228, 0.268, 0.162, 0.292, 0.28]
