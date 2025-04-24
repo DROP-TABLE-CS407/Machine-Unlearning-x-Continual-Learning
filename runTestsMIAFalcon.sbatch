@@ -38,18 +38,18 @@ BUFFER_ARGS="--mem_learning_buffer 1 \
     --unlearning_buffer_type most"
 
 SALUN_ARGS="--salun 0 \
-    --salun_strength 0.5"
+    --salun_strength 0.2"
 
 MEM_STRENGTH_ARGS="--learn_mem_strength 0.5 \
     --unlearn_mem_strength 0.5"
 
-LEARN_BATCH_SIZE_ARGS="--learn_batch_size 100 \
+LEARN_BATCH_SIZE_ARGS="--learn_batch_size 10 \
     --unlearn_batch_size 10"
 
 ALPHA_ARGS="--alpha 0"
 
 NUMBER_ARGS="--number_of_gpus 1 \
-    --average_over_n_runs 3"
+    --average_over_n_runs 1"
 
 time python3.12 negGemGradSalunMIA.py --algorithm neggem $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
 time python3.12 negGemGradSalunMIA.py --algorithm negagem $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
@@ -60,6 +60,6 @@ time python3.12 negGemGradSalunMIA.py --algorithm neggrad --alpha 0.5 $BUFFER_AR
 time python3.12 miacompile.py
 
 # move all the results and joboutput files to 4tests/H4
-mv joboutput_*.out ./MIA
-mv joboutput_*.err ./MIA
-mv ./Results* ./MIA
+mv joboutput_*.out ./MIA5
+mv joboutput_*.err ./MIA5
+mv ./Results* ./MIA5

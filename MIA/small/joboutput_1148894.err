@@ -1,0 +1,22 @@
+/dcs/21/u2110391/CS407/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+mv: cannot stat '*.csv': No such file or directory
+mv: cannot stat '*.pt': No such file or directory
+
+real	1m1.869s
+user	2m1.758s
+sys	0m2.167s
+/dcs/21/u2110391/CS407/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+mv: cannot stat '*.csv': No such file or directory
+mv: cannot stat '*.pt': No such file or directory
+
+real	1m1.705s
+user	1m48.586s
+sys	0m1.647s
+
+real	0m1.096s
+user	0m1.126s
+sys	0m0.082s
+mv: cannot move './Results_Learn-least-0.2_Unlearn-most-0.99_Algo-neggem' to './MIA5/Results_Learn-least-0.2_Unlearn-most-0.99_Algo-neggem': Directory not empty
+mv: cannot move './Results_Learn-least-0.2_Unlearn-most-0.99_Algo-neggrad' to './MIA5/Results_Learn-least-0.2_Unlearn-most-0.99_Algo-neggrad': Directory not empty

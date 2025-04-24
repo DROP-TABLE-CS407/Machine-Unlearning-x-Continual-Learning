@@ -1,0 +1,8 @@
+  File "/dcs/21/u2110391/CS407/Machine-Unlearning-x-Continual-Learning/basemiatest.py", line 2
+    print = functools.partial(print, flush=True)import torch
+                                                ^^^^^^
+SyntaxError: invalid syntax
+
+real	0m0.015s
+user	0m0.008s
+sys	0m0.002s
