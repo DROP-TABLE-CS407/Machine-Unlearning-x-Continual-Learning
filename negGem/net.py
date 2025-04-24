@@ -620,9 +620,9 @@ class Net(nn.Module):
                                 self.grads.index_select(1, indx))
             if (dotp < 0).sum() != 0:
                 if self.salun:
-                    mask = apply_salun(average_grad_of_retain, self.salun_threshold, mask=mask)
-                NegGEM(average_grad_of_retain, all_grads, self.unlearn_memory_strength)
-                self.grads[:, t] = average_grad_of_retain.squeeze(1)
+                    mask = apply_salun(forget_grads, self.salun_threshold, mask=mask)
+                NegGEM(forget_grads, all_grads, self.unlearn_memory_strength)
+                self.grads[:, t] = forget_grads.squeeze(1)
                 # copy gradients back
                 overwrite_grad(self.parameters, self.grads[:, t],
                             self.grad_dims)
