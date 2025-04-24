@@ -1,0 +1,41 @@
+/dcs/21/u2110391/CS407/Machine-Unlearning-x-Continual-Learning/negGem/net.py:204: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 51, in starmapstar
+    return list(itertools.starmap(args[0], args[1]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/21/u2110391/CS407/Machine-Unlearning-x-Continual-Learning/negGemGradSalunMIA.py", line 506, in single_run
+    ALL_TASK_MIA_RESULTS) = run_cifar('GEM', args, device=dev, mem_data_local=mem_data_local, newclasses=SHUFFLEDCLASSES, task_sequence=task_sequence)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/21/u2110391/CS407/Machine-Unlearning-x-Continual-Learning/negGemGradSalunMIA.py", line 274, in run_cifar
+    forget_data=tasks[task_to_unlearn][0],
+                      ^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'task_to_unlearn' where it is not associated with a value
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/dcs/21/u2110391/CS407/Machine-Unlearning-x-Continual-Learning/negGemGradSalunMIA.py", line 583, in <module>
+    batch_results = pool.starmap(
+                    ^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 375, in starmap
+    return self._map_async(func, iterable, starmapstar, chunksize).get()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 774, in get
+    raise self._value
+UnboundLocalError: cannot access local variable 'task_to_unlearn' where it is not associated with a value
+
+real	0m45.990s
+user	0m42.932s
+sys	0m0.981s
+
+real	0m1.106s
+user	0m1.118s
+sys	0m0.090s
+mv: cannot stat './Results*': No such file or directory

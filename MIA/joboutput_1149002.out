@@ -1,0 +1,272 @@
+Requirement already satisfied: pyyaml in /usr/lib64/python3.12/site-packages (6.0.1)
+Requirement already satisfied: setuptools in /usr/lib/python3.12/site-packages (68.2.2)
+Requirement already satisfied: matplotlib in /dcs/21/u2110391/.local/lib/python3.12/site-packages (3.10.1)
+Requirement already satisfied: contourpy>=1.0.1 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from matplotlib) (1.3.1)
+Requirement already satisfied: cycler>=0.10 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from matplotlib) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from matplotlib) (4.56.0)
+Requirement already satisfied: kiwisolver>=1.3.1 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from matplotlib) (1.4.8)
+Requirement already satisfied: numpy>=1.23 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from matplotlib) (2.2.4)
+Requirement already satisfied: packaging>=20.0 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from matplotlib) (24.2)
+Requirement already satisfied: pillow>=8 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from matplotlib) (11.1.0)
+Requirement already satisfied: pyparsing>=2.3.1 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from matplotlib) (3.2.3)
+Requirement already satisfied: python-dateutil>=2.7 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from matplotlib) (2.9.0.post0)
+Requirement already satisfied: six>=1.5 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from python-dateutil>=2.7->matplotlib) (1.17.0)
+Requirement already satisfied: quadprog in /dcs/21/u2110391/.local/lib/python3.12/site-packages (0.1.13)
+Requirement already satisfied: numpy in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from quadprog) (2.2.4)
+Requirement already satisfied: pyparsing in /dcs/21/u2110391/.local/lib/python3.12/site-packages (3.2.3)
+Requirement already satisfied: pandas in /dcs/21/u2110391/.local/lib/python3.12/site-packages (2.2.3)
+Requirement already satisfied: numpy>=1.26.0 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from pandas) (2.2.4)
+Requirement already satisfied: python-dateutil>=2.8.2 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from pandas) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from pandas) (2025.2)
+Requirement already satisfied: tzdata>=2022.7 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from pandas) (2025.2)
+Requirement already satisfied: six>=1.5 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from python-dateutil>=2.8.2->pandas) (1.17.0)
+Requirement already satisfied: numpy in /dcs/21/u2110391/.local/lib/python3.12/site-packages (2.2.4)
+Thu Apr 24 16:16:47 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.144.03             Driver Version: 550.144.03     CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 2080 Ti     Off |   00000000:01:00.0 Off |                  N/A |
+| 15%   63C    P0             N/A /  250W |       1MiB /  11264MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Command line arguments:
+number_of_gpus: 1
+algorithm: neggem
+alpha: 0
+learn_mem_strength: 0.5
+learn_batch_size: 10
+unlearn_mem_strength: 0.5
+unlearn_batch_size: 10
+average_over_n_runs: 1
+salun: 0
+salun_strength: 0.2
+Python 3.12.8
+./cifar-100-python/train
+./cifar-100-python/test
+Number of GPUs visible:  1
+Available GPUs:  1
+Thu Apr 24 16:17:03 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.144.03             Driver Version: 550.144.03     CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 2080 Ti     Off |   00000000:01:00.0 Off |                  N/A |
+| 19%   64C    P0             N/A /  250W |       1MiB /  11264MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Running on device:  NVIDIA GeForce RTX 2080 Ti
+Unlearn Batch Size:  10
+Unlearn MEM Strength:  0.5
+cifar-100-python/train
+cifar-100-python/test
+new ordering of classes:  ['trout', 'willow', 'castle', 'mushrooms', 'lamp', 'whale', 'lizard', 'pears', 'telephone', 'mouse', 'apples', 'bridge', 'cloud', 'sweet peppers', 'woman', 'television', 'lawn-mower', 'roses', 'maple', 'tank', 'motorcycle', 'shark', 'beetle', 'possum', 'cans', 'pickup truck', 'tiger', 'mountain', 'aquarium fish', 'cockroach', 'seal', 'skunk', 'orchids', 'chimpanzee', 'man', 'plain', 'porcupine', 'girl', 'snake', 'dinosaur', 'clock', 'cattle', 'rabbit', 'rocket', 'fox', 'streetcar', 'poppies', 'bottles', 'butterfly', 'tulips', 'beaver', 'oak', 'ray', 'kangaroo', 'computer keyboard', 'table', 'bus', 'raccoon', 'crab', 'pine', 'wardrobe', 'spider', 'boy', 'skyscraper', 'elephant', 'train', 'couch', 'snail', 'palm', 'baby', 'flatfish', 'sunflowers', 'bear', 'plates', 'lion', 'road', 'house', 'wolf', 'bed', 'chair', 'squirrel', 'oranges', 'dolphin', 'camel', 'forest', 'worm', 'tractor', 'crocodile', 'caterpillar', 'shrew', 'hamster', 'leopard', 'cups', 'otter', 'bee', 'turtle', 'bicycle', 'bowls', 'lobster', 'sea']
+Training task:  1
+[Learn Buffer] Updating memory for task 1 using least memorization.
+[Memory Update] Task 0, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 1 using most memorization.
+[Memory Update] Task 0, Buffer: unlearn, Type: most, Split: 0.99
+[DEBUG][MIA] Forget Set Loss: mean=1.3125, std=2.3638
+[DEBUG][MIA] Test Set Loss:   mean=1.7177, std=2.7204
+Post-learn MIA (Buff) on Task 0: {'type': 'basic', 'attack_acc': 0.5390625, 'cv_acc': 0.11764705882352941, 'auc': 0.5841064453125, 'task': 0}
+[DEBUG][MIA] Forget Set Loss: mean=1.3777, std=2.5646
+[DEBUG][MIA] Test Set Loss:   mean=1.7772, std=2.7863
+Post-learn MIA on Task 0: {'type': 'basic', 'attack_acc': 0.55, 'cv_acc': 0.13200000000000003, 'auc': 0.5595439999999999, 'task': 0}
+Total correct retain:  1823  Total retain:  2500
+Total correct forget:  9751  Total forget:  47500
+Total correct test:  305  Total test:  500
+Total correct forget test:  1890  Total test forget:  9500
+After learning task 1
+Task accuracies: [0.61, 0.222, 0.204, 0.216, 0.104, 0.24, 0.194, 0.268, 0.184, 0.202, 0.198, 0.19, 0.2, 0.182, 0.16, 0.21, 0.204, 0.202, 0.206, 0.194]
+Training task:  2
+[Learn Buffer] Updating memory for task 2 using least memorization.
+[Memory Update] Task 1, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 2 using most memorization.
+[Memory Update] Task 1, Buffer: unlearn, Type: most, Split: 0.99
+[DEBUG][MIA] Forget Set Loss: mean=0.0317, std=0.0868
+[DEBUG][MIA] Test Set Loss:   mean=1.7883, std=2.6755
+Post-learn MIA (Buff) on Task 0: {'type': 'basic', 'attack_acc': 0.734375, 'cv_acc': 0.6352941176470589, 'auc': 0.78533935546875, 'task': 0}
+[DEBUG][MIA] Forget Set Loss: mean=1.1378, std=2.1165
+[DEBUG][MIA] Test Set Loss:   mean=1.5567, std=2.4198
+Post-learn MIA on Task 0: {'type': 'basic', 'attack_acc': 0.542, 'cv_acc': 0.082, 'auc': 0.55244, 'task': 0}
+Total correct retain:  1815  Total retain:  2500
+Total correct forget:  11489  Total forget:  47500
+Total correct test:  309  Total test:  500
+Total correct forget test:  2160  Total test forget:  9500
+After learning task 2
+Task accuracies: [0.618, 0.698, 0.28, 0.192, 0.216, 0.174, 0.176, 0.248, 0.206, 0.192, 0.292, 0.19, 0.2, 0.16, 0.202, 0.198, 0.192, 0.154, 0.17, 0.18]
+Training task:  3
+[Learn Buffer] Updating memory for task 3 using least memorization.
+[Memory Update] Task 2, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 3 using most memorization.
+[Memory Update] Task 2, Buffer: unlearn, Type: most, Split: 0.99
+[DEBUG][MIA] Forget Set Loss: mean=0.0058, std=0.0108
+[DEBUG][MIA] Test Set Loss:   mean=1.7665, std=3.0627
+Post-learn MIA (Buff) on Task 0: {'type': 'basic', 'attack_acc': 0.7734375, 'cv_acc': 0.7058823529411764, 'auc': 0.8289794921875, 'task': 0}
+[DEBUG][MIA] Forget Set Loss: mean=1.4598, std=2.6477
+[DEBUG][MIA] Test Set Loss:   mean=1.6677, std=2.7045
+Post-learn MIA on Task 0: {'type': 'basic', 'attack_acc': 0.54, 'cv_acc': 0.13199999999999998, 'auc': 0.559896, 'task': 0}
+Total correct retain:  1718  Total retain:  2500
+Total correct forget:  12426  Total forget:  47500
+Total correct test:  323  Total test:  500
+Total correct forget test:  2303  Total test forget:  9500
+After learning task 3
+Task accuracies: [0.646, 0.644, 0.788, 0.204, 0.216, 0.148, 0.184, 0.254, 0.204, 0.17, 0.276, 0.16, 0.2, 0.146, 0.194, 0.158, 0.196, 0.13, 0.156, 0.178]
+Training task:  4
+[Learn Buffer] Updating memory for task 4 using least memorization.
+[Memory Update] Task 3, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 4 using most memorization.
+[Memory Update] Task 3, Buffer: unlearn, Type: most, Split: 0.99
+[DEBUG][MIA] Forget Set Loss: mean=0.0036, std=0.0131
+[DEBUG][MIA] Test Set Loss:   mean=1.7964, std=3.0762
+Post-learn MIA (Buff) on Task 0: {'type': 'basic', 'attack_acc': 0.71484375, 'cv_acc': 0.7333333333333333, 'auc': 0.779937744140625, 'task': 0}
+[DEBUG][MIA] Forget Set Loss: mean=1.5035, std=2.8801
+[DEBUG][MIA] Test Set Loss:   mean=1.8098, std=2.8353
+Post-learn MIA on Task 0: {'type': 'basic', 'attack_acc': 0.54, 'cv_acc': 0.13199999999999998, 'auc': 0.5464800000000001, 'task': 0}
+Total correct retain:  1697  Total retain:  2500
+Total correct forget:  14442  Total forget:  47500
+Total correct test:  299  Total test:  500
+Total correct forget test:  2665  Total test forget:  9500
+After learning task 4
+Task accuracies: [0.598, 0.638, 0.732, 0.868, 0.242, 0.182, 0.174, 0.276, 0.212, 0.212, 0.26, 0.188, 0.204, 0.112, 0.186, 0.156, 0.23, 0.11, 0.16, 0.188]
+Training task:  5
+[Learn Buffer] Updating memory for task 5 using least memorization.
+[Memory Update] Task 4, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 5 using most memorization.
+[Memory Update] Task 4, Buffer: unlearn, Type: most, Split: 0.99
+[DEBUG][MIA] Forget Set Loss: mean=0.0031, std=0.0245
+[DEBUG][MIA] Test Set Loss:   mean=2.1368, std=3.7278
+Post-learn MIA (Buff) on Task 0: {'type': 'basic', 'attack_acc': 0.73828125, 'cv_acc': 0.2980392156862745, 'auc': 0.847869873046875, 'task': 0}
+[DEBUG][MIA] Forget Set Loss: mean=2.0357, std=3.6072
+[DEBUG][MIA] Test Set Loss:   mean=1.6022, std=2.8944
+Post-learn MIA on Task 0: {'type': 'basic', 'attack_acc': 0.478, 'cv_acc': 0.10600000000000001, 'auc': 0.4958, 'task': 0}
+Total correct retain:  1712  Total retain:  2500
+Total correct forget:  15826  Total forget:  47500
+Total correct test:  333  Total test:  500
+Total correct forget test:  2912  Total test forget:  9500
+After learning task 5
+Task accuracies: [0.666, 0.648, 0.706, 0.806, 0.758, 0.176, 0.176, 0.296, 0.23, 0.22, 0.284, 0.184, 0.202, 0.094, 0.202, 0.146, 0.216, 0.14, 0.13, 0.21]
+Training task:  6
+[Learn Buffer] Updating memory for task 6 using least memorization.
+[Memory Update] Task 5, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 6 using most memorization.
+[Memory Update] Task 5, Buffer: unlearn, Type: most, Split: 0.99
+[DEBUG][MIA] Forget Set Loss: mean=0.0019, std=0.0097
+[DEBUG][MIA] Test Set Loss:   mean=1.6292, std=2.7825
+Post-learn MIA (Buff) on Task 0: {'type': 'basic', 'attack_acc': 0.734375, 'cv_acc': 0.2980392156862745, 'auc': 0.8516845703125, 'task': 0}
+[DEBUG][MIA] Forget Set Loss: mean=1.6427, std=3.0464
+[DEBUG][MIA] Test Set Loss:   mean=1.5402, std=2.6798
+Post-learn MIA on Task 0: {'type': 'basic', 'attack_acc': 0.494, 'cv_acc': 0.11200000000000002, 'auc': 0.54224, 'task': 0}
+Total correct retain:  1728  Total retain:  2500
+Total correct forget:  18221  Total forget:  47500
+Total correct test:  329  Total test:  500
+Total correct forget test:  3348  Total test forget:  9500
+After learning task 6
+Task accuracies: [0.658, 0.634, 0.706, 0.8, 0.734, 0.886, 0.206, 0.334, 0.24, 0.256, 0.284, 0.18, 0.216, 0.128, 0.188, 0.156, 0.21, 0.154, 0.148, 0.236]
+Training task:  7
+[Learn Buffer] Updating memory for task 7 using least memorization.
+[Memory Update] Task 6, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 7 using most memorization.
+[Memory Update] Task 6, Buffer: unlearn, Type: most, Split: 0.99
+[DEBUG][MIA] Forget Set Loss: mean=0.0019, std=0.0080
+[DEBUG][MIA] Test Set Loss:   mean=2.2358, std=3.4040
+Post-learn MIA (Buff) on Task 0: {'type': 'basic', 'attack_acc': 0.765625, 'cv_acc': 0.7333333333333333, 'auc': 0.848602294921875, 'task': 0}
+[DEBUG][MIA] Forget Set Loss: mean=1.8390, std=3.5390
+[DEBUG][MIA] Test Set Loss:   mean=2.0597, std=3.2316
+Post-learn MIA on Task 0: {'type': 'basic', 'attack_acc': 0.528, 'cv_acc': 0.11400000000000002, 'auc': 0.55904, 'task': 0}
+Total correct retain:  1705  Total retain:  2500
+Total correct forget:  19511  Total forget:  47500
+Total correct test:  287  Total test:  500
+Total correct forget test:  3511  Total test forget:  9500
+After learning task 7
+Task accuracies: [0.574, 0.654, 0.712, 0.748, 0.706, 0.76, 0.746, 0.332, 0.208, 0.252, 0.276, 0.202, 0.196, 0.134, 0.176, 0.148, 0.216, 0.146, 0.154, 0.256]
+Training task:  8
+[Learn Buffer] Updating memory for task 8 using least memorization.
+[Memory Update] Task 7, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 8 using most memorization.
+[Memory Update] Task 7, Buffer: unlearn, Type: most, Split: 0.99
+[DEBUG][MIA] Forget Set Loss: mean=0.0003, std=0.0007
+[DEBUG][MIA] Test Set Loss:   mean=2.0111, std=3.4636
+Post-learn MIA (Buff) on Task 0: {'type': 'basic', 'attack_acc': 0.72265625, 'cv_acc': 0.7372549019607844, 'auc': 0.85504150390625, 'task': 0}
+[DEBUG][MIA] Forget Set Loss: mean=1.6807, std=3.1225
+[DEBUG][MIA] Test Set Loss:   mean=1.7621, std=2.9558
+Post-learn MIA on Task 0: {'type': 'basic', 'attack_acc': 0.51, 'cv_acc': 0.10200000000000001, 'auc': 0.536024, 'task': 0}
+Total correct retain:  1711  Total retain:  2500
+Total correct forget:  20810  Total forget:  47500
+Total correct test:  312  Total test:  500
+Total correct forget test:  3752  Total test forget:  9500
+After learning task 8
+Task accuracies: [0.624, 0.664, 0.69, 0.748, 0.732, 0.792, 0.668, 0.828, 0.204, 0.236, 0.266, 0.232, 0.202, 0.124, 0.176, 0.15, 0.224, 0.15, 0.154, 0.264]
+Training task:  9
+[Learn Buffer] Updating memory for task 9 using least memorization.
+[Memory Update] Task 8, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 9 using most memorization.
+[Memory Update] Task 8, Buffer: unlearn, Type: most, Split: 0.99
+[DEBUG][MIA] Forget Set Loss: mean=0.0017, std=0.0081
+[DEBUG][MIA] Test Set Loss:   mean=2.0883, std=3.3335
+Post-learn MIA (Buff) on Task 0: {'type': 'basic', 'attack_acc': 0.76171875, 'cv_acc': 0.7372549019607844, 'auc': 0.87042236328125, 'task': 0}
+[DEBUG][MIA] Forget Set Loss: mean=2.0337, std=3.3323
+[DEBUG][MIA] Test Set Loss:   mean=2.0256, std=3.1893
+Post-learn MIA on Task 0: {'type': 'basic', 'attack_acc': 0.514, 'cv_acc': 0.10400000000000001, 'auc': 0.5366559999999999, 'task': 0}
+Total correct retain:  1667  Total retain:  2500
+Total correct forget:  21978  Total forget:  47500
+Total correct test:  291  Total test:  500
+Total correct forget test:  3907  Total test forget:  9500
+After learning task 9
+Task accuracies: [0.582, 0.67, 0.696, 0.71, 0.692, 0.75, 0.682, 0.762, 0.75, 0.226, 0.284, 0.208, 0.2, 0.12, 0.18, 0.152, 0.192, 0.14, 0.156, 0.244]
+Training task:  10
+[Learn Buffer] Updating memory for task 10 using least memorization.
+[Memory Update] Task 9, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 10 using most memorization.
+[Memory Update] Task 9, Buffer: unlearn, Type: most, Split: 0.99
+[DEBUG][MIA] Forget Set Loss: mean=0.0352, std=0.1944
+[DEBUG][MIA] Test Set Loss:   mean=2.5094, std=4.4462
+Post-learn MIA (Buff) on Task 0: {'type': 'basic', 'attack_acc': 0.72265625, 'cv_acc': 0.2823529411764706, 'auc': 0.796173095703125, 'task': 0}
+[DEBUG][MIA] Forget Set Loss: mean=2.1582, std=3.9195
+[DEBUG][MIA] Test Set Loss:   mean=2.2975, std=3.9118
+Post-learn MIA on Task 0: {'type': 'basic', 'attack_acc': 0.512, 'cv_acc': 0.1, 'auc': 0.528104, 'task': 0}
+Total correct retain:  1635  Total retain:  2500
+Total correct forget:  22779  Total forget:  47500
+Total correct test:  301  Total test:  500
+Total correct forget test:  4005  Total test forget:  9500
+After learning task 10
+Task accuracies: [0.602, 0.584, 0.68, 0.772, 0.654, 0.732, 0.65, 0.68, 0.676, 0.724, 0.264, 0.23, 0.21, 0.116, 0.162, 0.15, 0.212, 0.13, 0.162, 0.222]
+Training task:  11
+[Learn Buffer] Updating memory for task 11 using least memorization.
+[Memory Update] Task 10, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 11 using most memorization.
+[Memory Update] Task 10, Buffer: unlearn, Type: most, Split: 0.99
+[DEBUG][MIA] Forget Set Loss: mean=0.0005, std=0.0024
+[DEBUG][MIA] Test Set Loss:   mean=1.7115, std=3.1706
+Post-learn MIA (Buff) on Task 0: {'type': 'basic', 'attack_acc': 0.703125, 'cv_acc': 0.2823529411764706, 'auc': 0.818878173828125, 'task': 0}
+[DEBUG][MIA] Forget Set Loss: mean=1.1916, std=2.6536
+[DEBUG][MIA] Test Set Loss:   mean=1.9090, std=3.1471
+Post-learn MIA on Task 0: {'type': 'basic', 'attack_acc': 0.554, 'cv_acc': 0.098, 'auc': 0.573168, 'task': 0}
+Total correct retain:  1748  Total retain:  2500
+Total correct forget:  24350  Total forget:  47500
+Total correct test:  331  Total test:  500
+Total correct forget test:  4273  Total test forget:  9500
+After learning task 11
+Task accuracies: [0.662, 0.6, 0.656, 0.766, 0.67, 0.742, 0.636, 0.732, 0.636, 0.666, 0.804, 0.192, 0.202, 0.12, 0.164, 0.142, 0.238, 0.152, 0.18, 0.248]

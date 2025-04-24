@@ -1,11 +1,13 @@
 from __future__ import annotations
+import csv
+import os
 import numpy as np
 import torch
 import torch.nn.functional as F
 from torch.utils.data import TensorDataset, DataLoader
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, roc_auc_score, roc_curve
-from typing import List, Tuple, Dict, Any, Sequence
+from sklearn.metrics import accuracy_score, roc_auc_score
+from typing import Dict, Sequence
 
 # -----------------------------------------------------------------------------
 # Helper utilities (loader & forward‑pass collectors)
@@ -16,13 +18,15 @@ def _to_loader(data: np.ndarray | Sequence,
                batch: int = 1024,
                device: str | torch.device = "cpu",
                shuffle: bool = False) -> DataLoader:
-    """Wrap numpy arrays in a DataLoader living on *device* for fast iter."""
+    """Wrap numpy arrays in a DataLoader for fast iter."""
     x = torch.as_tensor(data, dtype=torch.float32, device=device)
     y = torch.as_tensor(labels, dtype=torch.long,   device=device)
     return DataLoader(TensorDataset(x, y), batch_size=batch, shuffle=shuffle)
 
 
 def _collect(model, loader, task_idx, op="loss"):
+    """Collect per-sample statistics from a model's outputs 
+    for a specific task using the provided data loader."""
     model.eval()
     outputs = []
     with torch.no_grad():
@@ -45,7 +49,7 @@ def _collect(model, loader, task_idx, op="loss"):
     return np.concatenate(outputs)
 
 # -----------------------------------------------------------------------------
-# 1) Basic MIA (loss‑based, SCRUB‑style)
+# Basic MIA (loss‑based, SCRUB‑inspired)
 # -----------------------------------------------------------------------------
 
 def basic_mia(model,
@@ -89,6 +93,9 @@ def basic_mia(model,
     lf_ev = _collect(model, loaders["f_eval"],  task_idx, op="loss")
     lt_ev = _collect(model, loaders["t_eval"],  task_idx, op="loss")
 
+    print(f"[DEBUG][MIA] Forget Set Loss: mean={lf_ev.mean():.4f}, std={lf_ev.std():.4f}")
+    print(f"[DEBUG][MIA] Test Set Loss:   mean={lt_ev.mean():.4f}, std={lt_ev.std():.4f}")
+
     clip = lambda v: np.clip(v, -clip_val, clip_val)
     lf_tr, lt_tr, lf_ev, lt_ev = map(clip, [lf_tr, lt_tr, lf_ev, lt_ev])
 
@@ -127,7 +134,6 @@ def run_mia(method: str,
             task_idx: int | None,
             device="cpu",
             **kwargs):
-    """Unified entry‑point.  *task_idx* can be None to bypass head masking."""
     if method.lower() == "basic":
         return basic_mia(model, forget_data, forget_labels,
                           test_data, test_labels,
@@ -136,3 +142,35 @@ def run_mia(method: str,
                           cv_splits=kwargs.get("cv_splits", 5))
     else:
         raise ValueError(f"Unknown MIA method '{method}'")
+    
+
+
+def log_mia_results(task_id: int, pre_result: dict, post_result: dict, log_path: "a.csv"):
+    """Append MIA results before and after unlearning to a CSV file."""
+    
+    file_exists = os.path.exists(log_path)
+    
+    with open(log_path, mode="a", newline="") as file:
+        writer = csv.writer(file)
+        
+        # Write header if file doesn't exist
+        if not file_exists:
+            writer.writerow([
+                "task", "stage", "attack_acc", "cv_acc", "auc"
+            ])
+        
+        # Write pre-unlearning result
+        writer.writerow([
+            task_id, "pre",
+            round(pre_result["attack_acc"], 4),
+            round(pre_result["cv_acc"], 4),
+            round(pre_result["auc"], 4)
+        ])
+        
+        # Write post-unlearning result
+        writer.writerow([
+            task_id, "post",
+            round(post_result["attack_acc"], 4),
+            round(post_result["cv_acc"], 4),
+            round(post_result["auc"], 4)
+        ])

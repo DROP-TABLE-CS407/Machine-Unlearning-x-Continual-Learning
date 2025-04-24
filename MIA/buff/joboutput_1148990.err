@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/dcs/21/u2110391/CS407/Machine-Unlearning-x-Continual-Learning/negGemGradSalunMIA.py", line 75, in <module>
+    from negGem.MIA import *
+  File "/dcs/21/u2110391/CS407/Machine-Unlearning-x-Continual-Learning/negGem/MIA.py", line 262, in <module>
+    def log_mia_results(task_id: int, pre_result: dict, post_result: dict, log_path: str = f"MIA5/{cmd_args.algorithm}_mia_results.csv"):
+                                                                                                   ^^^^^^^^
+NameError: name 'cmd_args' is not defined
+
+real	0m5.898s
+user	0m4.058s
+sys	0m0.489s
+
+real	0m0.952s
+user	0m1.105s
+sys	0m0.089s
+mv: cannot stat './Results*': No such file or directory
