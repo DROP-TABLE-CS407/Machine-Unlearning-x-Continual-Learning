@@ -260,6 +260,19 @@ def run_cifar(algorithm, args, n_inputs=N_INPUTS, n_outputs=N_OUTPUTS, n_tasks=N
             model.opt = torch.optim.SGD(model.parameters(), args.unlearning_rate)
             flag = False
             mask = None
+
+            if unlearning_algo == 'neggem':
+                accuracy_cutoff = 0.275
+            elif unlearning_algo == 'negagem':
+                accuracy_cutoff = 0.3
+            elif unlearning_algo == 'RL-GEM':
+                accuracy_cutoff = 0.275
+            elif unlearning_algo == 'RL-AGEM':
+                accuracy_cutoff = 0.3
+            elif unlearning_algo == 'ALT-NEGGEM':
+                accuracy_cutoff = 0.35
+            elif unlearning_algo == 'neggrad':
+                accuracy_cutoff = 0.275
             
             for epoch in range(args.unlearn_epochs):
                 if flag:
