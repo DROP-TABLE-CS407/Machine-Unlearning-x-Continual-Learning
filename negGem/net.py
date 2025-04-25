@@ -289,7 +289,7 @@ class Net(nn.Module):
                         self.forward(self.learn_memory_data[t][x1:x2],
                             t)[:, offset1: offset2], self.learn_memory_labs[t][x1:x2] - offset1)
             # negate loss for unlearning
-            loss = -1 * loss
+            loss = -5 * loss
             loss.backward()
             
             store_grad(self.parameters, self.grads, self.grad_dims, t)
@@ -354,7 +354,7 @@ class Net(nn.Module):
             random.shuffle(current_labs)
             loss += self.ce(
                         self.forward(self.unlearn_memory_data[past_task][x1:x2], t)[:, offset1: offset2], current_labs)
-            # negate loss for unlearning
+            # no need to multiply loss, use random labelling
             loss.backward()
             
             store_grad(self.parameters, self.grads, self.grad_dims, t)
@@ -478,7 +478,7 @@ class Net(nn.Module):
             loss += self.ce(
                         self.forward(self.unlearn_memory_data[past_task][x1:x2], t)[:, offset1: offset2], current_labs)
             # negate loss for unlearning
-            loss = -1 * loss
+            loss = -5 * loss
             loss.backward()
             
             store_grad(self.parameters, self.grads, self.grad_dims, t)
@@ -631,7 +631,7 @@ class Net(nn.Module):
         elif algorithm == 'neggrad':
             """
             use the project2neggrad2 function to project the gradient to unlearn the task
-            unlike the previous method, we do not perform this in batches
+            unlike the previous method, we should not perform this in batches
             """
             # now find the grads of the previous tasks
             for tt in self.observed_tasks:
