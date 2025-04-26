@@ -355,6 +355,7 @@ class Net(nn.Module):
             loss += self.ce(
                         self.forward(self.unlearn_memory_data[past_task][x1:x2], t)[:, offset1: offset2], current_labs)
             # no need to multiply loss, use random labelling
+            loss = 5*loss
             loss.backward()
             
             store_grad(self.parameters, self.grads, self.grad_dims, t)
