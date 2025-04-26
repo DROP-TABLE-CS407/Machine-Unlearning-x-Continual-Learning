@@ -52,26 +52,48 @@ NUMBER_ARGS="--number_of_gpus 1 \
     --average_over_n_runs 3"
 
 
-#time python3.12 negGemGradA4.py --algorithm neggem --task_sequence A4 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
+time python3.12 negGemGradA4.py --algorithm neggem --task_sequence G4 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
 
 LEARN_BATCH_SIZE_ARGS="--learn_batch_size 10 \
     --unlearn_batch_size 1"
 
-time python3.12 negGemGradA4.py --algorithm negagem --task_sequence A4 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
-time python3.12 negGemGradA4.py --algorithm RL-AGEM --task_sequence A4 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
+# time python3.12 negGemGradA4.py --algorithm negagem --task_sequence G4 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
+# time python3.12 negGemGradA4.py --algorithm RL-AGEM --task_sequence G4 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
 
 LEARN_BATCH_SIZE_ARGS="--learn_batch_size 10 \
     --unlearn_batch_size 2"
 
-time python3.12 negGemGradA4.py --algorithm RL-GEM --task_sequence A4 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
-time python3.12 negGemGradA4.py --algorithm ALT-NEGGEM --task_sequence A4 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
+# time python3.12 negGemGradA4.py --algorithm RL-GEM --task_sequence G4 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
+# time python3.12 negGemGradA4.py --algorithm ALT-NEGGEM --task_sequence G4 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
 
 LEARN_BATCH_SIZE_ARGS="--learn_batch_size 10 \
     --unlearn_batch_size 4"
 
-time python3.12 negGemGradA4.py --algorithm neggrad --alpha 0.95 --task_sequence A4 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $NUMBER_ARGS
+# time python3.12 negGemGradA4.py --algorithm neggrad --alpha 0.95 --task_sequence G4 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $NUMBER_ARGS
 
 # move all the results and joboutput files to 4tests/A4
-mv joboutput_*.out ./4tests/A4
-mv joboutput_*.err ./4tests/A4
-mv ./Results* ./4tests/A4
+mv joboutput_*.out ./4tests/G4
+mv joboutput_*.err ./4tests/G4
+mv ./Results* ./4tests/G4
+
+LEARN_BATCH_SIZE_ARGS="--learn_batch_size 10 \
+    --unlearn_batch_size 1"
+
+time python3.12 negGemGradA4.py --algorithm negagem --task_sequence H4 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
+# time python3.12 negGemGradA4.py --algorithm RL-AGEM --task_sequence H4 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
+
+LEARN_BATCH_SIZE_ARGS="--learn_batch_size 10 \
+    --unlearn_batch_size 2"
+time python3.12 negGemGradA4.py --algorithm neggem --task_sequence H4 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
+
+# time python3.12 negGemGradA4.py --algorithm RL-GEM --task_sequence H4 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
+# time python3.12 negGemGradA4.py --algorithm ALT-NEGGEM --task_sequence H4 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
+
+LEARN_BATCH_SIZE_ARGS="--learn_batch_size 10 \
+    --unlearn_batch_size 4"
+
+# time python3.12 negGemGradA4.py --algorithm neggrad --alpha 0.95 --task_sequence H4 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $NUMBER_ARGS
+
+mv joboutput_*.out ./4tests/H4
+mv joboutput_*.err ./4tests/H4
+mv ./Results* ./4tests/H4

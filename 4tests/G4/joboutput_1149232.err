@@ -1,0 +1,106 @@
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:205: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:205: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:205: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+mv: cannot stat '*.pt': No such file or directory
+
+real	190m56.808s
+user	1067m11.045s
+sys	50m12.797s
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:189: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+/pytorch/aten/src/ATen/native/cuda/Loss.cu:250: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [0,0,0] Assertion `t >= 0 && t < n_classes` failed.
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 51, in starmapstar
+    return list(itertools.starmap(args[0], args[1]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGemGradA4.py", line 456, in single_run
+    ALL_TASK_CONFIDENCES_TRAIN) = run_cifar(learning_algorithm, args, device=dev, mem_data_local=mem_data_local, newclasses=SHUFFLEDCLASSES, task_sequence=task_sequence)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGemGradA4.py", line 301, in run_cifar
+    mask = model.unlearn(unlearning_algo, task_to_unlearn, x1=j, x2=j + args.unlearn_batch_size, alpha=args.alpha, mask=mask)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py", line 412, in unlearn
+    self.forward(self.learn_memory_data[self.observed_tasks[t]][x1:x2], self.observed_tasks[t])[:, offset1: offset2], self.learn_memory_labs[self.observed_tasks[t]][x1:x2] - offset1)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py", line 97, in forward
+    output = self.net(x)
+             ^^^^^^^^^^^
+  File "/dcs/21/u2140671/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/21/u2140671/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/util.py", line 63, in forward
+    out = self.layer3(out)
+          ^^^^^^^^^^^^^^^^
+  File "/dcs/21/u2140671/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/21/u2140671/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/21/u2140671/.local/lib/python3.12/site-packages/torch/nn/modules/container.py", line 250, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "/dcs/21/u2140671/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/21/u2140671/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/util.py", line 32, in forward
+    out = relu(self.bn1(self.conv1(x)))
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/21/u2140671/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/21/u2140671/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dcs/21/u2140671/.local/lib/python3.12/site-packages/torch/nn/modules/batchnorm.py", line 193, in forward
+    return F.batch_norm(
+           ^^^^^^^^^^^^^
+  File "/dcs/21/u2140671/.local/lib/python3.12/site-packages/torch/nn/functional.py", line 2822, in batch_norm
+    return torch.batch_norm(
+           ^^^^^^^^^^^^^^^^^
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM_STREAM_MISMATCH
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGemGradA4.py", line 548, in <module>
+    batch_results = pool.starmap(
+                    ^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 375, in starmap
+    return self._map_async(func, iterable, starmapstar, chunksize).get()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/multiprocessing/pool.py", line 774, in get
+    raise self._value
+RuntimeError: cuDNN error: CUDNN_STATUS_BAD_PARAM_STREAM_MISMATCH
+
+real	16m59.429s
+user	19m3.574s
+sys	0m3.785s
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:205: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:205: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+/dcs/large/u2140671/drop-table/Machine-Unlearning-x-Continual-Learning/negGem/net.py:205: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+mv: cannot stat '*.pt': No such file or directory
+
+real	172m34.770s
+user	820m11.591s
+sys	49m51.902s
+mv: cannot stat 'joboutput_*.out': No such file or directory
+mv: cannot stat 'joboutput_*.err': No such file or directory
