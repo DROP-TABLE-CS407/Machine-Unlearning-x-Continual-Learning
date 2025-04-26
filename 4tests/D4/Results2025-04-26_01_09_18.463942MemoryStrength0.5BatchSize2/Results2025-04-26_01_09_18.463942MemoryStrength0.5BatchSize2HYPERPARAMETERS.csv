@@ -1,0 +1,2 @@
+,task_sequence,number_of_gpus,algorithm,alpha,learn_mem_strength,learn_batch_size,unlearn_mem_strength,unlearn_batch_size,average_over_n_runs,salun,salun_strength,mem_learning_buffer,learning_buffer_split,learning_buffer_type,mem_unlearning_buffer,unlearning_buffer_split,unlearning_buffer_type
+0,D4,3,ALT-NEGGEM,0,0.5,10,0.5,2,3,1,0.05,1,0.2,least,1,0.99,most
