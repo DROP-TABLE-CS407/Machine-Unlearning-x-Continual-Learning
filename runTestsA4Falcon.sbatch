@@ -6,7 +6,7 @@
 #SBATCH --cpus-per-task=12      # Number of CPU threads used by your job
 #SBATCH --gres=gpu:1           # Number of GPUs to use 
 #SBATCH --mem=60G            # 60GB RAM
-#SBATCH --time=23:00:00        # Job time limit set to 12 hours
+#SBATCH --time=23:59:00        # Job time limit set to 12 hours
 #
 #SBATCH --output=joboutput_%j.out # Standard out from your job
 #SBATCH --error=joboutput_%j.err  # Standard error from your job
@@ -52,48 +52,27 @@ NUMBER_ARGS="--number_of_gpus 1 \
     --average_over_n_runs 3"
 
 
-time python3.12 negGemGradA4.py --algorithm neggem --task_sequence G4 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
+time python3.12 negGemGradA4.py --algorithm neggem --task_sequence C4v2 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
+time python3.12 negGemGradA4.py --algorithm RL-GEM --task_sequence C4v2 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
 
 LEARN_BATCH_SIZE_ARGS="--learn_batch_size 10 \
     --unlearn_batch_size 1"
 
-# time python3.12 negGemGradA4.py --algorithm negagem --task_sequence G4 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
-# time python3.12 negGemGradA4.py --algorithm RL-AGEM --task_sequence G4 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
+time python3.12 negGemGradA4.py --algorithm negagem --task_sequence C4v2 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
+time python3.12 negGemGradA4.py --algorithm RL-AGEM --task_sequence C4v2 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
 
 LEARN_BATCH_SIZE_ARGS="--learn_batch_size 10 \
     --unlearn_batch_size 2"
 
-# time python3.12 negGemGradA4.py --algorithm RL-GEM --task_sequence G4 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
-# time python3.12 negGemGradA4.py --algorithm ALT-NEGGEM --task_sequence G4 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
+time python3.12 negGemGradA4.py --algorithm ALT-NEGGEM --task_sequence C4v2 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
 
 LEARN_BATCH_SIZE_ARGS="--learn_batch_size 10 \
     --unlearn_batch_size 4"
 
-# time python3.12 negGemGradA4.py --algorithm neggrad --alpha 0.95 --task_sequence G4 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $NUMBER_ARGS
+time python3.12 negGemGradA4.py --algorithm neggrad --alpha 0.5 --task_sequence C4v2 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $NUMBER_ARGS
 
 # move all the results and joboutput files to 4tests/A4
-mv joboutput_*.out ./4tests/G4
-mv joboutput_*.err ./4tests/G4
-mv ./Results* ./4tests/G4
+mv joboutput_*.out ./4tests/C4v2
+mv joboutput_*.err ./4tests/C4v2
+mv ./Results* ./4tests/C4v2
 
-LEARN_BATCH_SIZE_ARGS="--learn_batch_size 10 \
-    --unlearn_batch_size 1"
-
-time python3.12 negGemGradA4.py --algorithm negagem --task_sequence H4 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
-# time python3.12 negGemGradA4.py --algorithm RL-AGEM --task_sequence H4 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
-
-LEARN_BATCH_SIZE_ARGS="--learn_batch_size 10 \
-    --unlearn_batch_size 2"
-time python3.12 negGemGradA4.py --algorithm neggem --task_sequence H4 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
-
-# time python3.12 negGemGradA4.py --algorithm RL-GEM --task_sequence H4 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
-# time python3.12 negGemGradA4.py --algorithm ALT-NEGGEM --task_sequence H4 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
-
-LEARN_BATCH_SIZE_ARGS="--learn_batch_size 10 \
-    --unlearn_batch_size 4"
-
-# time python3.12 negGemGradA4.py --algorithm neggrad --alpha 0.95 --task_sequence H4 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $NUMBER_ARGS
-
-mv joboutput_*.out ./4tests/H4
-mv joboutput_*.err ./4tests/H4
-mv ./Results* ./4tests/H4

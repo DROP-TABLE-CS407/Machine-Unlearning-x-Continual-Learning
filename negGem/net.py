@@ -406,7 +406,7 @@ class Net(nn.Module):
             ## first we check if it is even neccessary to do so, if not simply do a optimiser.step()
             
             self.zero_grad()
-            offset1, offset2 = compute_offsets(past_task, self.nc_per_task, self.is_cifar)
+            offset1, offset2 = compute_offsets(t, self.nc_per_task, self.is_cifar)
             loss = self.ce(
                         self.forward(self.unlearn_memory_data[self.observed_tasks[t]][x1:x2], self.observed_tasks[t])[:, offset1: offset2], self.unlearn_memory_labs[self.observed_tasks[t]][x1:x2] - offset1)
             loss += self.ce(
