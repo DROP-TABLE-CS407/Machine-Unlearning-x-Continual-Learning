@@ -186,6 +186,9 @@ class Net(nn.Module):
         if len(self.observed_tasks) > 0: ### CHANGED FROM 1 to 0 SINCE WE PRETRAIN ON FST 5 CLASSES 
             if algorithm == 'AGEM':
                 store_grad(self.parameters, self.grads, self.grad_dims, t)
+                for tt in range(20):
+                    if tt not in self.observed_tasks:
+                        self.grads[:, tt].fill_(0.0)
                 indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
                     else torch.LongTensor(self.observed_tasks[:-1])
                 dotp = torch.mm(self.grads[:, t].unsqueeze(0),
@@ -310,7 +313,7 @@ class Net(nn.Module):
 
             if (dotp < 0).sum() != 0:
                 self.constraint_violation_count += 1
-                NegGEM(forget_grads, retain_grads, self.unlearn_memory_strength)
+                project2cone2(forget_grads, retain_grads, self.unlearn_memory_strength)
                 self.grads[:, t] = forget_grads.squeeze(1)
                 # copy gradients back
                 overwrite_grad(self.parameters, self.grads[:, t],
@@ -355,7 +358,7 @@ class Net(nn.Module):
             loss += self.ce(
                         self.forward(self.unlearn_memory_data[past_task][x1:x2], t)[:, offset1: offset2], current_labs)
             # no need to multiply loss, use random labelling
-            loss = 5*loss
+            loss = 5 * loss
             loss.backward()
             
             store_grad(self.parameters, self.grads, self.grad_dims, t)
@@ -408,9 +411,9 @@ class Net(nn.Module):
             self.zero_grad()
             offset1, offset2 = compute_offsets(t, self.nc_per_task, self.is_cifar)
             loss = self.ce(
-                        self.forward(self.unlearn_memory_data[self.observed_tasks[t]][x1:x2], self.observed_tasks[t])[:, offset1: offset2], self.unlearn_memory_labs[self.observed_tasks[t]][x1:x2] - offset1)
+                        self.forward(self.unlearn_memory_data[t][x1:x2], t)[:, offset1: offset2], self.unlearn_memory_labs[t][x1:x2] - offset1)
             loss += self.ce(
-                        self.forward(self.learn_memory_data[self.observed_tasks[t]][x1:x2], self.observed_tasks[t])[:, offset1: offset2], self.learn_memory_labs[self.observed_tasks[t]][x1:x2] - offset1)
+                        self.forward(self.learn_memory_data[t][x1:x2], t)[:, offset1: offset2], self.learn_memory_labs[t][x1:x2] - offset1)
             # negate loss for unlearning
             loss = -1 * loss
             loss.backward()
@@ -479,7 +482,7 @@ class Net(nn.Module):
             loss += self.ce(
                         self.forward(self.unlearn_memory_data[past_task][x1:x2], t)[:, offset1: offset2], current_labs)
             # negate loss for unlearning
-            loss = -5 * loss
+            loss = 5 * loss
             loss.backward()
             
             store_grad(self.parameters, self.grads, self.grad_dims, t)
@@ -544,8 +547,8 @@ class Net(nn.Module):
             random.shuffle(current_labs)
             loss += self.ce(
                         self.forward(self.learn_memory_data[past_task][x1:x2], t)[:, offset1: offset2], current_labs)
-            # negate loss for unlearning i cant be fucked just make it betterer like no joke this is cracked
-            loss = -1 * loss
+            # negate loss for unlearning
+            loss = 5 * loss
             loss.backward()
             
             store_grad(self.parameters, self.grads, self.grad_dims, t)
