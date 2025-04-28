@@ -416,15 +416,15 @@ class Net(nn.Module):
             loss.backward()
             
             store_grad(self.parameters, self.grads, self.grad_dims, t)
-            indx = torch.cuda.LongTensor([i for i in self.observed_tasks if i != t]) if self.gpu \
-                else torch.LongTensor([i for i in self.observed_tasks if i != t])
+            # indx = torch.cuda.LongTensor([i for i in self.observed_tasks if i != t]) if self.gpu \
+            #     else torch.LongTensor([i for i in self.observed_tasks if i != t])
                 
             forget_grads = self.grads[:, t].unsqueeze(1)
             retain_indices = torch.tensor([i for i in range(self.grads.size(1)) if i in self.observed_tasks and i != t], device=self.grads.device)
             retain_grads = self.grads.index_select(1, retain_indices)
 
             dotp = torch.mm(self.grads[:, t].unsqueeze(0),
-                                self.grads.index_select(1, indx))
+                                self.grads.index_select(1, retain_indices))
             if self.salun:
                 mask = apply_salun(forget_grads, self.salun_threshold, mask=mask)
             if (dotp < 0).sum() != 0:
