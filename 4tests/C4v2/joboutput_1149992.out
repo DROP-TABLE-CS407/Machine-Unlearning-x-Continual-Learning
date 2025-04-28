@@ -1,0 +1,1461 @@
+Requirement already satisfied: pyyaml in /usr/lib64/python3.12/site-packages (6.0.1)
+Requirement already satisfied: setuptools in /usr/lib/python3.12/site-packages (68.2.2)
+Requirement already satisfied: matplotlib in /dcs/21/u2140671/.local/lib/python3.12/site-packages (3.10.1)
+Requirement already satisfied: contourpy>=1.0.1 in /dcs/21/u2140671/.local/lib/python3.12/site-packages (from matplotlib) (1.3.1)
+Requirement already satisfied: cycler>=0.10 in /dcs/21/u2140671/.local/lib/python3.12/site-packages (from matplotlib) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /dcs/21/u2140671/.local/lib/python3.12/site-packages (from matplotlib) (4.57.0)
+Requirement already satisfied: kiwisolver>=1.3.1 in /dcs/21/u2140671/.local/lib/python3.12/site-packages (from matplotlib) (1.4.8)
+Requirement already satisfied: numpy>=1.23 in /dcs/21/u2140671/.local/lib/python3.12/site-packages (from matplotlib) (2.2.4)
+Requirement already satisfied: packaging>=20.0 in /dcs/21/u2140671/.local/lib/python3.12/site-packages (from matplotlib) (24.1)
+Requirement already satisfied: pillow>=8 in /dcs/21/u2140671/.local/lib/python3.12/site-packages (from matplotlib) (11.1.0)
+Requirement already satisfied: pyparsing>=2.3.1 in /dcs/21/u2140671/.local/lib/python3.12/site-packages (from matplotlib) (3.2.3)
+Requirement already satisfied: python-dateutil>=2.7 in /dcs/21/u2140671/.local/lib/python3.12/site-packages (from matplotlib) (2.9.0.post0)
+Requirement already satisfied: six>=1.5 in /dcs/21/u2140671/.local/lib/python3.12/site-packages (from python-dateutil>=2.7->matplotlib) (1.16.0)
+Requirement already satisfied: quadprog in /dcs/21/u2140671/.local/lib/python3.12/site-packages (0.1.13)
+Requirement already satisfied: numpy in /dcs/21/u2140671/.local/lib/python3.12/site-packages (from quadprog) (2.2.4)
+Requirement already satisfied: pyparsing in /dcs/21/u2140671/.local/lib/python3.12/site-packages (3.2.3)
+Requirement already satisfied: pandas in /dcs/21/u2140671/.local/lib/python3.12/site-packages (2.2.3)
+Requirement already satisfied: numpy>=1.26.0 in /dcs/21/u2140671/.local/lib/python3.12/site-packages (from pandas) (2.2.4)
+Requirement already satisfied: python-dateutil>=2.8.2 in /dcs/21/u2140671/.local/lib/python3.12/site-packages (from pandas) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in /dcs/21/u2140671/.local/lib/python3.12/site-packages (from pandas) (2025.2)
+Requirement already satisfied: tzdata>=2022.7 in /dcs/21/u2140671/.local/lib/python3.12/site-packages (from pandas) (2025.2)
+Requirement already satisfied: six>=1.5 in /dcs/21/u2140671/.local/lib/python3.12/site-packages (from python-dateutil>=2.8.2->pandas) (1.16.0)
+Requirement already satisfied: numpy in /dcs/21/u2140671/.local/lib/python3.12/site-packages (2.2.4)
+Mon Apr 28 17:56:39 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.144.03             Driver Version: 550.144.03     CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A10                     On  |   00000000:25:00.0 Off |                    0 |
+|  0%   55C    P0             45W /  150W |       1MiB /  23028MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA A10                     On  |   00000000:81:00.0 Off |                    0 |
+|  0%   26C    P8             15W /  150W |       1MiB /  23028MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA A10                     On  |   00000000:E1:00.0 Off |                    0 |
+|  0%   27C    P8             15W /  150W |       1MiB /  23028MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Python 3.12.8
+Mon Apr 28 17:56:49 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.144.03             Driver Version: 550.144.03     CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A10                     On  |   00000000:25:00.0 Off |                    0 |
+|  0%   49C    P8             17W /  150W |       1MiB /  23028MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA A10                     On  |   00000000:81:00.0 Off |                    0 |
+|  0%   26C    P8             15W /  150W |       1MiB /  23028MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA A10                     On  |   00000000:E1:00.0 Off |                    0 |
+|  0%   27C    P8             15W /  150W |       1MiB /  23028MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Command line arguments:
+task_sequence: C4v2
+number_of_gpus: 3
+algorithm: negagem
+alpha: 0
+learn_mem_strength: 0.5
+learn_batch_size: 10
+unlearn_mem_strength: 0.5
+unlearn_batch_size: 1
+average_over_n_runs: 3
+salun: 1
+salun_strength: 0.02
+./cifar-100-python/train
+./cifar-100-python/test
+Number of GPUs visible:  3
+Available GPUs:  3
+Running on device:  NVIDIA A10
+Unlearn Batch Size:  1
+Unlearn MEM Strength:  0.5
+cifar-100-python/train
+cifar-100-python/test
+new ordering of classes:  ['worm', 'lawn-mower', 'bee', 'couch', 'ray', 'bicycle', 'dinosaur', 'boy', 'butterfly', 'trout', 'dolphin', 'bridge', 'spider', 'tank', 'cloud', 'oranges', 'pickup truck', 'cans', 'palm', 'elephant', 'cups', 'aquarium fish', 'motorcycle', 'computer keyboard', 'apples', 'raccoon', 'plates', 'roses', 'man', 'woman', 'mushrooms', 'whale', 'otter', 'mountain', 'fox', 'chair', 'maple', 'porcupine', 'shark', 'beaver', 'bear', 'pine', 'wolf', 'sunflowers', 'seal', 'chimpanzee', 'clock', 'skyscraper', 'bus', 'tulips', 'sweet peppers', 'willow', 'lobster', 'leopard', 'streetcar', 'castle', 'rabbit', 'squirrel', 'shrew', 'train', 'sea', 'oak', 'caterpillar', 'bottles', 'lamp', 'house', 'lion', 'forest', 'cockroach', 'crab', 'bowls', 'camel', 'plain', 'table', 'tractor', 'mouse', 'possum', 'orchids', 'beetle', 'cattle', 'baby', 'girl', 'pears', 'snake', 'telephone', 'tiger', 'poppies', 'crocodile', 'wardrobe', 'road', 'skunk', 'television', 'turtle', 'flatfish', 'kangaroo', 'lizard', 'rocket', 'bed', 'hamster', 'snail']
+Training task:  1
+[Learn Buffer] Updating memory for task 1 using least memorization.
+[Memory Update] Task 0, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 1 using most memorization.
+[Memory Update] Task 0, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1453  Total retain:  2500
+Total correct forget:  9197  Total forget:  47500
+Total correct test:  267  Total test:  500
+Total correct forget test:  1834  Total test forget:  9500
+After learning task 1
+Task accuracies: [0.534, 0.306, 0.196, 0.114, 0.2, 0.222, 0.184, 0.2, 0.216, 0.262, 0.128, 0.228, 0.194, 0.16, 0.214, 0.21, 0.204, 0.082, 0.186, 0.162]
+Training task:  2
+[Learn Buffer] Updating memory for task 2 using least memorization.
+[Memory Update] Task 1, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 2 using most memorization.
+[Memory Update] Task 1, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1325  Total retain:  2500
+Total correct forget:  10676  Total forget:  47500
+Total correct test:  273  Total test:  500
+Total correct forget test:  2077  Total test forget:  9500
+After learning task 2
+Task accuracies: [0.546, 0.74, 0.144, 0.154, 0.2, 0.294, 0.302, 0.198, 0.202, 0.22, 0.218, 0.15, 0.2, 0.152, 0.216, 0.172, 0.2, 0.106, 0.112, 0.174]
+Training task:  3
+[Learn Buffer] Updating memory for task 3 using least memorization.
+[Memory Update] Task 2, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 3 using most memorization.
+[Memory Update] Task 2, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1226  Total retain:  2500
+Total correct forget:  12234  Total forget:  47500
+Total correct test:  250  Total test:  500
+Total correct forget test:  2325  Total test forget:  9500
+After learning task 3
+Task accuracies: [0.5, 0.582, 0.75, 0.164, 0.214, 0.228, 0.252, 0.174, 0.188, 0.22, 0.13, 0.192, 0.202, 0.184, 0.198, 0.198, 0.22, 0.158, 0.168, 0.228]
+Training task:  4
+[Learn Buffer] Updating memory for task 4 using least memorization.
+[Memory Update] Task 3, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 4 using most memorization.
+[Memory Update] Task 3, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1203  Total retain:  2500
+Total correct forget:  13019  Total forget:  47500
+Total correct test:  244  Total test:  500
+Total correct forget test:  2470  Total test forget:  9500
+After learning task 4
+Task accuracies: [0.488, 0.576, 0.614, 0.704, 0.2, 0.264, 0.236, 0.18, 0.062, 0.216, 0.164, 0.24, 0.2, 0.18, 0.214, 0.19, 0.14, 0.228, 0.13, 0.202]
+Training task:  5
+[Learn Buffer] Updating memory for task 5 using least memorization.
+[Memory Update] Task 4, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 5 using most memorization.
+[Memory Update] Task 4, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1304  Total retain:  2500
+Total correct forget:  14709  Total forget:  47500
+Total correct test:  241  Total test:  500
+Total correct forget test:  2855  Total test forget:  9500
+After learning task 5
+Task accuracies: [0.482, 0.62, 0.574, 0.668, 0.776, 0.328, 0.262, 0.192, 0.116, 0.246, 0.158, 0.218, 0.226, 0.202, 0.19, 0.2, 0.176, 0.16, 0.16, 0.238]
+Training task:  6
+[Learn Buffer] Updating memory for task 6 using least memorization.
+[Memory Update] Task 5, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 6 using most memorization.
+[Memory Update] Task 5, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1184  Total retain:  2500
+Total correct forget:  14545  Total forget:  47500
+Total correct test:  228  Total test:  500
+Total correct forget test:  2786  Total test forget:  9500
+After learning task 6
+Task accuracies: [0.456, 0.5, 0.534, 0.646, 0.658, 0.626, 0.278, 0.202, 0.092, 0.228, 0.126, 0.21, 0.202, 0.142, 0.206, 0.188, 0.214, 0.122, 0.17, 0.228]
+Training task:  7
+[Learn Buffer] Updating memory for task 7 using least memorization.
+[Memory Update] Task 6, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 7 using most memorization.
+[Memory Update] Task 6, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1201  Total retain:  2500
+Total correct forget:  15555  Total forget:  47500
+Total correct test:  229  Total test:  500
+Total correct forget test:  2936  Total test forget:  9500
+After learning task 7
+Task accuracies: [0.458, 0.558, 0.552, 0.612, 0.66, 0.554, 0.676, 0.144, 0.126, 0.21, 0.138, 0.2, 0.22, 0.134, 0.174, 0.198, 0.176, 0.15, 0.182, 0.208]
+Training task:  8
+[Learn Buffer] Updating memory for task 8 using least memorization.
+[Memory Update] Task 7, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 8 using most memorization.
+[Memory Update] Task 7, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1149  Total retain:  2500
+Total correct forget:  17531  Total forget:  47500
+Total correct test:  215  Total test:  500
+Total correct forget test:  3324  Total test forget:  9500
+After learning task 8
+Task accuracies: [0.43, 0.554, 0.582, 0.552, 0.584, 0.494, 0.702, 0.784, 0.122, 0.246, 0.184, 0.244, 0.198, 0.138, 0.23, 0.194, 0.232, 0.186, 0.19, 0.232]
+Training task:  9
+[Learn Buffer] Updating memory for task 9 using least memorization.
+[Memory Update] Task 8, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 9 using most memorization.
+[Memory Update] Task 8, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1172  Total retain:  2500
+Total correct forget:  18957  Total forget:  47500
+Total correct test:  239  Total test:  500
+Total correct forget test:  3640  Total test forget:  9500
+After learning task 9
+Task accuracies: [0.478, 0.494, 0.592, 0.618, 0.572, 0.538, 0.63, 0.732, 0.678, 0.242, 0.186, 0.26, 0.188, 0.202, 0.176, 0.208, 0.286, 0.14, 0.266, 0.272]
+Training task:  10
+[Learn Buffer] Updating memory for task 10 using least memorization.
+[Memory Update] Task 9, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 10 using most memorization.
+[Memory Update] Task 9, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1241  Total retain:  2500
+Total correct forget:  20891  Total forget:  47500
+Total correct test:  242  Total test:  500
+Total correct forget test:  3897  Total test forget:  9500
+After learning task 10
+Task accuracies: [0.484, 0.592, 0.562, 0.652, 0.57, 0.562, 0.692, 0.712, 0.646, 0.854, 0.128, 0.256, 0.204, 0.154, 0.232, 0.202, 0.2, 0.112, 0.18, 0.284]
+Unlearning task: 10
+broken out of loop
+Total correct retain:  1227  Total retain:  2500
+Total correct forget:  18962  Total forget:  47500
+Total correct test:  242  Total test:  500
+Total correct forget test:  3588  Total test forget:  9500
+After unlearning task 10
+Task accuracies: [0.484, 0.58, 0.552, 0.656, 0.572, 0.58, 0.684, 0.718, 0.638, 0.248, 0.12, 0.266, 0.204, 0.168, 0.204, 0.204, 0.194, 0.12, 0.192, 0.276]
+Unlearning task: 9
+broken out of loop
+Total correct retain:  1222  Total retain:  2500
+Total correct forget:  17867  Total forget:  47500
+Total correct test:  239  Total test:  500
+Total correct forget test:  3413  Total test forget:  9500
+After unlearning task 9
+Task accuracies: [0.478, 0.574, 0.546, 0.636, 0.568, 0.566, 0.694, 0.714, 0.37, 0.246, 0.094, 0.252, 0.204, 0.162, 0.212, 0.204, 0.19, 0.114, 0.198, 0.282]
+Unlearning task: 8
+broken out of loop
+Total correct retain:  1208  Total retain:  2500
+Total correct forget:  16782  Total forget:  47500
+Total correct test:  238  Total test:  500
+Total correct forget test:  3201  Total test forget:  9500
+After unlearning task 8
+Task accuracies: [0.476, 0.574, 0.556, 0.644, 0.54, 0.568, 0.672, 0.276, 0.362, 0.282, 0.116, 0.258, 0.204, 0.168, 0.184, 0.214, 0.194, 0.116, 0.184, 0.29]
+Unlearning task: 7
+broken out of loop
+Total correct retain:  1198  Total retain:  2500
+Total correct forget:  15340  Total forget:  47500
+Total correct test:  236  Total test:  500
+Total correct forget test:  2948  Total test forget:  9500
+After unlearning task 7
+Task accuracies: [0.472, 0.588, 0.552, 0.646, 0.554, 0.552, 0.21, 0.276, 0.344, 0.272, 0.092, 0.276, 0.202, 0.16, 0.198, 0.212, 0.194, 0.112, 0.18, 0.276]
+Unlearning task: 6
+broken out of loop
+Total correct retain:  1183  Total retain:  2500
+Total correct forget:  13646  Total forget:  47500
+Total correct test:  228  Total test:  500
+Total correct forget test:  2688  Total test forget:  9500
+After unlearning task 6
+Task accuracies: [0.456, 0.55, 0.518, 0.57, 0.56, 0.294, 0.206, 0.25, 0.29, 0.216, 0.11, 0.252, 0.204, 0.162, 0.21, 0.214, 0.214, 0.072, 0.186, 0.298]
+Training task:  11
+[Learn Buffer] Updating memory for task 11 using least memorization.
+[Memory Update] Task 10, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 11 using most memorization.
+[Memory Update] Task 10, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1211  Total retain:  2500
+Total correct forget:  16171  Total forget:  47500
+Total correct test:  238  Total test:  500
+Total correct forget test:  3127  Total test forget:  9500
+After learning task 11
+Task accuracies: [0.476, 0.564, 0.564, 0.72, 0.582, 0.242, 0.21, 0.228, 0.352, 0.204, 0.72, 0.3, 0.196, 0.164, 0.222, 0.2, 0.226, 0.104, 0.186, 0.27]
+Training task:  12
+[Learn Buffer] Updating memory for task 12 using least memorization.
+[Memory Update] Task 11, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 12 using most memorization.
+[Memory Update] Task 11, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1160  Total retain:  2500
+Total correct forget:  16977  Total forget:  47500
+Total correct test:  227  Total test:  500
+Total correct forget test:  3305  Total test forget:  9500
+After learning task 12
+Task accuracies: [0.454, 0.55, 0.6, 0.694, 0.576, 0.224, 0.2, 0.22, 0.374, 0.204, 0.73, 0.648, 0.2, 0.162, 0.236, 0.198, 0.226, 0.102, 0.2, 0.266]
+Training task:  13
+[Learn Buffer] Updating memory for task 13 using least memorization.
+[Memory Update] Task 12, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 13 using most memorization.
+[Memory Update] Task 12, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1095  Total retain:  2500
+Total correct forget:  18244  Total forget:  47500
+Total correct test:  217  Total test:  500
+Total correct forget test:  3569  Total test forget:  9500
+After learning task 13
+Task accuracies: [0.434, 0.546, 0.586, 0.682, 0.6, 0.222, 0.2, 0.21, 0.296, 0.202, 0.734, 0.584, 0.806, 0.18, 0.25, 0.2, 0.25, 0.094, 0.19, 0.306]
+Training task:  14
+[Learn Buffer] Updating memory for task 14 using least memorization.
+[Memory Update] Task 13, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 14 using most memorization.
+[Memory Update] Task 13, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1241  Total retain:  2500
+Total correct forget:  19567  Total forget:  47500
+Total correct test:  241  Total test:  500
+Total correct forget test:  3802  Total test forget:  9500
+After learning task 14
+Task accuracies: [0.482, 0.576, 0.562, 0.678, 0.59, 0.22, 0.2, 0.222, 0.302, 0.2, 0.724, 0.558, 0.756, 0.676, 0.282, 0.204, 0.256, 0.054, 0.218, 0.326]
+Training task:  15
+[Learn Buffer] Updating memory for task 15 using least memorization.
+[Memory Update] Task 14, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 15 using most memorization.
+[Memory Update] Task 14, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1253  Total retain:  2500
+Total correct forget:  20702  Total forget:  47500
+Total correct test:  243  Total test:  500
+Total correct forget test:  4032  Total test forget:  9500
+After learning task 15
+Task accuracies: [0.486, 0.56, 0.63, 0.678, 0.612, 0.236, 0.2, 0.206, 0.262, 0.2, 0.706, 0.592, 0.77, 0.612, 0.77, 0.21, 0.228, 0.086, 0.194, 0.312]
+Training task:  16
+[Learn Buffer] Updating memory for task 16 using least memorization.
+[Memory Update] Task 15, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 16 using most memorization.
+[Memory Update] Task 15, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1278  Total retain:  2500
+Total correct forget:  21862  Total forget:  47500
+Total correct test:  255  Total test:  500
+Total correct forget test:  4200  Total test forget:  9500
+After learning task 16
+Task accuracies: [0.51, 0.594, 0.618, 0.626, 0.608, 0.238, 0.2, 0.206, 0.264, 0.2, 0.716, 0.562, 0.734, 0.594, 0.716, 0.644, 0.242, 0.094, 0.206, 0.338]
+Training task:  17
+[Learn Buffer] Updating memory for task 17 using least memorization.
+[Memory Update] Task 16, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 17 using most memorization.
+[Memory Update] Task 16, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1248  Total retain:  2500
+Total correct forget:  23058  Total forget:  47500
+Total correct test:  240  Total test:  500
+Total correct forget test:  4432  Total test forget:  9500
+After learning task 17
+Task accuracies: [0.48, 0.64, 0.594, 0.632, 0.596, 0.238, 0.2, 0.204, 0.292, 0.2, 0.75, 0.568, 0.718, 0.6, 0.708, 0.598, 0.664, 0.074, 0.254, 0.334]
+Training task:  18
+[Learn Buffer] Updating memory for task 18 using least memorization.
+[Memory Update] Task 17, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 18 using most memorization.
+[Memory Update] Task 17, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1272  Total retain:  2500
+Total correct forget:  24756  Total forget:  47500
+Total correct test:  243  Total test:  500
+Total correct forget test:  4719  Total test forget:  9500
+After learning task 18
+Task accuracies: [0.486, 0.606, 0.604, 0.654, 0.542, 0.254, 0.2, 0.2, 0.226, 0.2, 0.698, 0.562, 0.744, 0.566, 0.72, 0.6, 0.634, 0.896, 0.228, 0.304]
+Training task:  19
+[Learn Buffer] Updating memory for task 19 using least memorization.
+[Memory Update] Task 18, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 19 using most memorization.
+[Memory Update] Task 18, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1258  Total retain:  2500
+Total correct forget:  26081  Total forget:  47500
+Total correct test:  245  Total test:  500
+Total correct forget test:  4964  Total test forget:  9500
+After learning task 19
+Task accuracies: [0.49, 0.53, 0.618, 0.7, 0.604, 0.242, 0.2, 0.2, 0.266, 0.2, 0.7, 0.536, 0.752, 0.572, 0.73, 0.59, 0.6, 0.84, 0.762, 0.286]
+Training task:  20
+[Learn Buffer] Updating memory for task 20 using least memorization.
+[Memory Update] Task 19, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 20 using most memorization.
+[Memory Update] Task 19, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1212  Total retain:  2500
+Total correct forget:  27360  Total forget:  47500
+Total correct test:  220  Total test:  500
+Total correct forget test:  5204  Total test forget:  9500
+After learning task 20
+Task accuracies: [0.44, 0.562, 0.6, 0.664, 0.658, 0.24, 0.2, 0.202, 0.264, 0.2, 0.718, 0.552, 0.732, 0.546, 0.724, 0.598, 0.602, 0.84, 0.73, 0.776]
+Number of constraint violations:  91
+Running on device:  NVIDIA A10
+Unlearn Batch Size:  1
+Unlearn MEM Strength:  0.5
+cifar-100-python/train
+cifar-100-python/test
+new ordering of classes:  ['kangaroo', 'mushrooms', 'lobster', 'chair', 'cups', 'elephant', 'maple', 'telephone', 'tulips', 'caterpillar', 'mouse', 'lamp', 'plain', 'shrew', 'train', 'cloud', 'hamster', 'wardrobe', 'worm', 'girl', 'bed', 'orchids', 'table', 'spider', 'crab', 'castle', 'rocket', 'streetcar', 'snake', 'boy', 'pears', 'leopard', 'squirrel', 'trout', 'couch', 'fox', 'woman', 'mountain', 'roses', 'whale', 'possum', 'cattle', 'motorcycle', 'sea', 'dinosaur', 'poppies', 'willow', 'bus', 'bear', 'bicycle', 'man', 'plates', 'cockroach', 'sunflowers', 'oak', 'tank', 'television', 'seal', 'raccoon', 'otter', 'beetle', 'ray', 'house', 'road', 'forest', 'cans', 'aquarium fish', 'skyscraper', 'porcupine', 'beaver', 'apples', 'crocodile', 'snail', 'sweet peppers', 'bee', 'baby', 'flatfish', 'turtle', 'bridge', 'computer keyboard', 'oranges', 'rabbit', 'pine', 'bottles', 'clock', 'skunk', 'pickup truck', 'lion', 'shark', 'wolf', 'lawn-mower', 'butterfly', 'tractor', 'lizard', 'dolphin', 'palm', 'bowls', 'camel', 'chimpanzee', 'tiger']
+Training task:  1
+[Learn Buffer] Updating memory for task 1 using least memorization.
+[Memory Update] Task 0, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 1 using most memorization.
+[Memory Update] Task 0, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1603  Total retain:  2500
+Total correct forget:  10797  Total forget:  47500
+Total correct test:  291  Total test:  500
+Total correct forget test:  2142  Total test forget:  9500
+After learning task 1
+Task accuracies: [0.582, 0.3, 0.206, 0.214, 0.198, 0.214, 0.2, 0.2, 0.194, 0.27, 0.244, 0.218, 0.282, 0.282, 0.202, 0.194, 0.224, 0.244, 0.204, 0.194]
+Training task:  2
+[Learn Buffer] Updating memory for task 2 using least memorization.
+[Memory Update] Task 1, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 2 using most memorization.
+[Memory Update] Task 1, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1239  Total retain:  2500
+Total correct forget:  11470  Total forget:  47500
+Total correct test:  234  Total test:  500
+Total correct forget test:  2277  Total test forget:  9500
+After learning task 2
+Task accuracies: [0.468, 0.682, 0.218, 0.196, 0.272, 0.262, 0.262, 0.2, 0.166, 0.222, 0.128, 0.198, 0.198, 0.29, 0.31, 0.218, 0.174, 0.172, 0.182, 0.204]
+Training task:  3
+[Learn Buffer] Updating memory for task 3 using least memorization.
+[Memory Update] Task 2, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 3 using most memorization.
+[Memory Update] Task 2, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1218  Total retain:  2500
+Total correct forget:  12657  Total forget:  47500
+Total correct test:  237  Total test:  500
+Total correct forget test:  2403  Total test forget:  9500
+After learning task 3
+Task accuracies: [0.474, 0.54, 0.626, 0.314, 0.2, 0.236, 0.184, 0.2, 0.206, 0.218, 0.28, 0.206, 0.16, 0.284, 0.176, 0.218, 0.178, 0.248, 0.206, 0.126]
+Training task:  4
+[Learn Buffer] Updating memory for task 4 using least memorization.
+[Memory Update] Task 3, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 4 using most memorization.
+[Memory Update] Task 3, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1232  Total retain:  2500
+Total correct forget:  13388  Total forget:  47500
+Total correct test:  227  Total test:  500
+Total correct forget test:  2593  Total test forget:  9500
+After learning task 4
+Task accuracies: [0.454, 0.49, 0.59, 0.786, 0.266, 0.222, 0.208, 0.2, 0.218, 0.174, 0.158, 0.168, 0.212, 0.306, 0.204, 0.192, 0.216, 0.224, 0.2, 0.152]
+Training task:  5
+[Learn Buffer] Updating memory for task 5 using least memorization.
+[Memory Update] Task 4, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 5 using most memorization.
+[Memory Update] Task 4, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1182  Total retain:  2500
+Total correct forget:  13846  Total forget:  47500
+Total correct test:  210  Total test:  500
+Total correct forget test:  2628  Total test forget:  9500
+After learning task 5
+Task accuracies: [0.42, 0.528, 0.444, 0.632, 0.626, 0.212, 0.178, 0.2, 0.212, 0.084, 0.318, 0.156, 0.204, 0.23, 0.31, 0.182, 0.16, 0.196, 0.19, 0.194]
+Training task:  6
+[Learn Buffer] Updating memory for task 6 using least memorization.
+[Memory Update] Task 5, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 6 using most memorization.
+[Memory Update] Task 5, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1194  Total retain:  2500
+Total correct forget:  16564  Total forget:  47500
+Total correct test:  213  Total test:  500
+Total correct forget test:  3116  Total test forget:  9500
+After learning task 6
+Task accuracies: [0.426, 0.56, 0.542, 0.728, 0.556, 0.812, 0.232, 0.2, 0.216, 0.21, 0.272, 0.19, 0.204, 0.318, 0.28, 0.22, 0.15, 0.188, 0.198, 0.156]
+Training task:  7
+[Learn Buffer] Updating memory for task 7 using least memorization.
+[Memory Update] Task 6, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 7 using most memorization.
+[Memory Update] Task 6, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1135  Total retain:  2500
+Total correct forget:  16218  Total forget:  47500
+Total correct test:  216  Total test:  500
+Total correct forget test:  2981  Total test forget:  9500
+After learning task 7
+Task accuracies: [0.432, 0.42, 0.474, 0.578, 0.492, 0.612, 0.644, 0.2, 0.232, 0.128, 0.19, 0.178, 0.198, 0.286, 0.338, 0.214, 0.15, 0.224, 0.24, 0.164]
+Training task:  8
+[Learn Buffer] Updating memory for task 8 using least memorization.
+[Memory Update] Task 7, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 8 using most memorization.
+[Memory Update] Task 7, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1197  Total retain:  2500
+Total correct forget:  17921  Total forget:  47500
+Total correct test:  207  Total test:  500
+Total correct forget test:  3340  Total test forget:  9500
+After learning task 8
+Task accuracies: [0.414, 0.48, 0.558, 0.686, 0.498, 0.652, 0.536, 0.724, 0.258, 0.098, 0.352, 0.176, 0.2, 0.282, 0.17, 0.276, 0.162, 0.196, 0.246, 0.13]
+Training task:  9
+[Learn Buffer] Updating memory for task 9 using least memorization.
+[Memory Update] Task 8, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 9 using most memorization.
+[Memory Update] Task 8, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1217  Total retain:  2500
+Total correct forget:  18623  Total forget:  47500
+Total correct test:  228  Total test:  500
+Total correct forget test:  3444  Total test forget:  9500
+After learning task 9
+Task accuracies: [0.456, 0.44, 0.518, 0.654, 0.516, 0.622, 0.52, 0.648, 0.79, 0.142, 0.22, 0.136, 0.204, 0.214, 0.196, 0.21, 0.184, 0.204, 0.308, 0.162]
+Training task:  10
+[Learn Buffer] Updating memory for task 10 using least memorization.
+[Memory Update] Task 9, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 10 using most memorization.
+[Memory Update] Task 9, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1217  Total retain:  2500
+Total correct forget:  20769  Total forget:  47500
+Total correct test:  226  Total test:  500
+Total correct forget test:  3870  Total test forget:  9500
+After learning task 10
+Task accuracies: [0.452, 0.566, 0.608, 0.63, 0.5, 0.672, 0.514, 0.658, 0.682, 0.832, 0.138, 0.168, 0.2, 0.3, 0.188, 0.302, 0.166, 0.206, 0.248, 0.162]
+Unlearning task: 10
+broken out of loop
+Total correct retain:  1215  Total retain:  2500
+Total correct forget:  19010  Total forget:  47500
+Total correct test:  214  Total test:  500
+Total correct forget test:  3579  Total test forget:  9500
+After unlearning task 10
+Task accuracies: [0.428, 0.57, 0.598, 0.618, 0.5, 0.674, 0.526, 0.638, 0.668, 0.314, 0.148, 0.172, 0.2, 0.3, 0.188, 0.288, 0.162, 0.202, 0.236, 0.156]
+Unlearning task: 9
+broken out of loop
+Total correct retain:  1236  Total retain:  2500
+Total correct forget:  18334  Total forget:  47500
+Total correct test:  237  Total test:  500
+Total correct forget test:  3466  Total test forget:  9500
+After unlearning task 9
+Task accuracies: [0.474, 0.558, 0.602, 0.636, 0.49, 0.702, 0.478, 0.656, 0.354, 0.358, 0.146, 0.184, 0.196, 0.288, 0.178, 0.292, 0.17, 0.218, 0.256, 0.17]
+Unlearning task: 8
+broken out of loop
+Total correct retain:  1172  Total retain:  2500
+Total correct forget:  16779  Total forget:  47500
+Total correct test:  227  Total test:  500
+Total correct forget test:  3213  Total test forget:  9500
+After unlearning task 8
+Task accuracies: [0.454, 0.552, 0.59, 0.628, 0.47, 0.686, 0.49, 0.242, 0.344, 0.316, 0.14, 0.18, 0.198, 0.294, 0.196, 0.286, 0.164, 0.224, 0.242, 0.184]
+Unlearning task: 7
+broken out of loop
+Total correct retain:  1175  Total retain:  2500
+Total correct forget:  15973  Total forget:  47500
+Total correct test:  222  Total test:  500
+Total correct forget test:  3081  Total test forget:  9500
+After unlearning task 7
+Task accuracies: [0.444, 0.592, 0.594, 0.614, 0.496, 0.63, 0.25, 0.258, 0.316, 0.332, 0.132, 0.18, 0.202, 0.288, 0.18, 0.304, 0.158, 0.212, 0.24, 0.184]
+Unlearning task: 6
+broken out of loop
+Total correct retain:  1219  Total retain:  2500
+Total correct forget:  14899  Total forget:  47500
+Total correct test:  232  Total test:  500
+Total correct forget test:  2907  Total test forget:  9500
+After unlearning task 6
+Task accuracies: [0.464, 0.546, 0.584, 0.646, 0.508, 0.266, 0.218, 0.238, 0.33, 0.362, 0.166, 0.176, 0.196, 0.29, 0.192, 0.304, 0.148, 0.232, 0.24, 0.172]
+Training task:  11
+[Learn Buffer] Updating memory for task 11 using least memorization.
+[Memory Update] Task 10, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 11 using most memorization.
+[Memory Update] Task 10, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1238  Total retain:  2500
+Total correct forget:  16459  Total forget:  47500
+Total correct test:  238  Total test:  500
+Total correct forget test:  3195  Total test forget:  9500
+After learning task 11
+Task accuracies: [0.476, 0.61, 0.574, 0.68, 0.508, 0.242, 0.214, 0.236, 0.246, 0.224, 0.894, 0.164, 0.196, 0.26, 0.214, 0.282, 0.158, 0.214, 0.244, 0.23]
+Training task:  12
+[Learn Buffer] Updating memory for task 12 using least memorization.
+[Memory Update] Task 11, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 12 using most memorization.
+[Memory Update] Task 11, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1288  Total retain:  2500
+Total correct forget:  17546  Total forget:  47500
+Total correct test:  248  Total test:  500
+Total correct forget test:  3387  Total test forget:  9500
+After learning task 12
+Task accuracies: [0.496, 0.586, 0.568, 0.692, 0.53, 0.232, 0.212, 0.24, 0.288, 0.234, 0.856, 0.642, 0.202, 0.256, 0.182, 0.264, 0.154, 0.228, 0.224, 0.184]
+Training task:  13
+[Learn Buffer] Updating memory for task 13 using least memorization.
+[Memory Update] Task 12, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 13 using most memorization.
+[Memory Update] Task 12, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1261  Total retain:  2500
+Total correct forget:  18633  Total forget:  47500
+Total correct test:  239  Total test:  500
+Total correct forget test:  3599  Total test forget:  9500
+After learning task 13
+Task accuracies: [0.478, 0.578, 0.594, 0.648, 0.48, 0.226, 0.22, 0.234, 0.284, 0.208, 0.856, 0.62, 0.734, 0.254, 0.166, 0.262, 0.138, 0.228, 0.234, 0.234]
+Training task:  14
+[Learn Buffer] Updating memory for task 14 using least memorization.
+[Memory Update] Task 13, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 14 using most memorization.
+[Memory Update] Task 13, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1291  Total retain:  2500
+Total correct forget:  20174  Total forget:  47500
+Total correct test:  246  Total test:  500
+Total correct forget test:  3888  Total test forget:  9500
+After learning task 14
+Task accuracies: [0.492, 0.614, 0.604, 0.696, 0.532, 0.23, 0.208, 0.27, 0.28, 0.252, 0.824, 0.606, 0.706, 0.774, 0.178, 0.224, 0.098, 0.204, 0.26, 0.216]
+Training task:  15
+[Learn Buffer] Updating memory for task 15 using least memorization.
+[Memory Update] Task 14, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 15 using most memorization.
+[Memory Update] Task 14, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1331  Total retain:  2500
+Total correct forget:  21072  Total forget:  47500
+Total correct test:  258  Total test:  500
+Total correct forget test:  4053  Total test forget:  9500
+After learning task 15
+Task accuracies: [0.516, 0.6, 0.548, 0.624, 0.544, 0.232, 0.22, 0.246, 0.28, 0.232, 0.82, 0.538, 0.664, 0.704, 0.73, 0.284, 0.158, 0.23, 0.222, 0.23]
+Training task:  16
+[Learn Buffer] Updating memory for task 16 using least memorization.
+[Memory Update] Task 15, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 16 using most memorization.
+[Memory Update] Task 15, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1275  Total retain:  2500
+Total correct forget:  22224  Total forget:  47500
+Total correct test:  247  Total test:  500
+Total correct forget test:  4259  Total test forget:  9500
+After learning task 16
+Task accuracies: [0.494, 0.606, 0.564, 0.622, 0.554, 0.22, 0.214, 0.256, 0.328, 0.24, 0.81, 0.562, 0.648, 0.674, 0.618, 0.778, 0.146, 0.23, 0.238, 0.21]
+Training task:  17
+[Learn Buffer] Updating memory for task 17 using least memorization.
+[Memory Update] Task 16, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 17 using most memorization.
+[Memory Update] Task 16, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1320  Total retain:  2500
+Total correct forget:  23583  Total forget:  47500
+Total correct test:  245  Total test:  500
+Total correct forget test:  4472  Total test forget:  9500
+After learning task 17
+Task accuracies: [0.49, 0.57, 0.532, 0.628, 0.546, 0.22, 0.208, 0.254, 0.296, 0.204, 0.836, 0.56, 0.634, 0.67, 0.636, 0.728, 0.794, 0.2, 0.238, 0.19]
+Training task:  18
+[Learn Buffer] Updating memory for task 18 using least memorization.
+[Memory Update] Task 17, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 18 using most memorization.
+[Memory Update] Task 17, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1301  Total retain:  2500
+Total correct forget:  24747  Total forget:  47500
+Total correct test:  237  Total test:  500
+Total correct forget test:  4735  Total test forget:  9500
+After learning task 18
+Task accuracies: [0.474, 0.584, 0.552, 0.636, 0.506, 0.216, 0.212, 0.242, 0.318, 0.2, 0.808, 0.562, 0.636, 0.676, 0.6, 0.738, 0.766, 0.82, 0.248, 0.15]
+Training task:  19
+[Learn Buffer] Updating memory for task 19 using least memorization.
+[Memory Update] Task 18, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 19 using most memorization.
+[Memory Update] Task 18, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1265  Total retain:  2500
+Total correct forget:  26014  Total forget:  47500
+Total correct test:  228  Total test:  500
+Total correct forget test:  4937  Total test forget:  9500
+After learning task 19
+Task accuracies: [0.456, 0.6, 0.586, 0.634, 0.528, 0.212, 0.222, 0.24, 0.296, 0.21, 0.776, 0.552, 0.65, 0.664, 0.588, 0.696, 0.772, 0.778, 0.704, 0.166]
+Training task:  20
+[Learn Buffer] Updating memory for task 20 using least memorization.
+[Memory Update] Task 19, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 20 using most memorization.
+[Memory Update] Task 19, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1301  Total retain:  2500
+Total correct forget:  27498  Total forget:  47500
+Total correct test:  243  Total test:  500
+Total correct forget test:  5200  Total test forget:  9500
+After learning task 20
+Task accuracies: [0.486, 0.622, 0.562, 0.62, 0.526, 0.208, 0.206, 0.226, 0.296, 0.21, 0.82, 0.57, 0.656, 0.664, 0.594, 0.704, 0.736, 0.74, 0.664, 0.776]
+Number of constraint violations:  111
+Python 3.12.8
+Mon Apr 28 18:14:32 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.144.03             Driver Version: 550.144.03     CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A10                     On  |   00000000:25:00.0 Off |                    0 |
+|  0%   42C    P8             16W /  150W |       1MiB /  23028MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA A10                     On  |   00000000:81:00.0 Off |                    0 |
+|  0%   46C    P8             16W /  150W |       1MiB /  23028MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA A10                     On  |   00000000:E1:00.0 Off |                    0 |
+|  0%   49C    P8             17W /  150W |       1MiB /  23028MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Command line arguments:
+task_sequence: C4v2
+number_of_gpus: 3
+algorithm: RL-AGEM
+alpha: 0
+learn_mem_strength: 0.5
+learn_batch_size: 10
+unlearn_mem_strength: 0.5
+unlearn_batch_size: 1
+average_over_n_runs: 3
+salun: 1
+salun_strength: 0.02
+./cifar-100-python/train
+./cifar-100-python/test
+Number of GPUs visible:  3
+Available GPUs:  3
+Running on device:  NVIDIA A10
+Unlearn Batch Size:  1
+Unlearn MEM Strength:  0.5
+cifar-100-python/train
+cifar-100-python/test
+new ordering of classes:  ['lamp', 'fox', 'possum', 'maple', 'roses', 'raccoon', 'willow', 'oranges', 'hamster', 'otter', 'bear', 'seal', 'caterpillar', 'rocket', 'mushrooms', 'shark', 'porcupine', 'elephant', 'tank', 'bed', 'road', 'bowls', 'beaver', 'bridge', 'camel', 'plates', 'mountain', 'skunk', 'clock', 'mouse', 'sunflowers', 'man', 'cockroach', 'cattle', 'wardrobe', 'beetle', 'telephone', 'lizard', 'pine', 'computer keyboard', 'boy', 'couch', 'bus', 'palm', 'cans', 'worm', 'castle', 'dinosaur', 'leopard', 'flatfish', 'woman', 'lion', 'spider', 'turtle', 'snail', 'tractor', 'pickup truck', 'cloud', 'shrew', 'oak', 'sweet peppers', 'bee', 'streetcar', 'cups', 'orchids', 'sea', 'girl', 'chimpanzee', 'tiger', 'plain', 'crocodile', 'television', 'tulips', 'kangaroo', 'crab', 'poppies', 'forest', 'rabbit', 'whale', 'pears', 'skyscraper', 'train', 'ray', 'house', 'chair', 'snake', 'butterfly', 'lawn-mower', 'lobster', 'bottles', 'aquarium fish', 'wolf', 'apples', 'baby', 'table', 'squirrel', 'bicycle', 'trout', 'dolphin', 'motorcycle']
+Training task:  1
+[Learn Buffer] Updating memory for task 1 using least memorization.
+[Memory Update] Task 0, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 1 using most memorization.
+[Memory Update] Task 0, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1834  Total retain:  2500
+Total correct forget:  9221  Total forget:  47500
+Total correct test:  343  Total test:  500
+Total correct forget test:  1798  Total test forget:  9500
+After learning task 1
+Task accuracies: [0.686, 0.156, 0.222, 0.216, 0.196, 0.196, 0.23, 0.204, 0.222, 0.092, 0.184, 0.068, 0.19, 0.224, 0.184, 0.228, 0.2, 0.2, 0.21, 0.174]
+Training task:  2
+[Learn Buffer] Updating memory for task 2 using least memorization.
+[Memory Update] Task 1, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 2 using most memorization.
+[Memory Update] Task 1, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1586  Total retain:  2500
+Total correct forget:  10434  Total forget:  47500
+Total correct test:  309  Total test:  500
+Total correct forget test:  2097  Total test forget:  9500
+After learning task 2
+Task accuracies: [0.618, 0.71, 0.288, 0.256, 0.192, 0.196, 0.252, 0.196, 0.196, 0.102, 0.178, 0.064, 0.16, 0.222, 0.204, 0.146, 0.188, 0.224, 0.236, 0.184]
+Training task:  3
+[Learn Buffer] Updating memory for task 3 using least memorization.
+[Memory Update] Task 2, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 3 using most memorization.
+[Memory Update] Task 2, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1439  Total retain:  2500
+Total correct forget:  12173  Total forget:  47500
+Total correct test:  279  Total test:  500
+Total correct forget test:  2304  Total test forget:  9500
+After learning task 3
+Task accuracies: [0.558, 0.606, 0.604, 0.202, 0.2, 0.212, 0.376, 0.202, 0.188, 0.182, 0.14, 0.132, 0.186, 0.268, 0.142, 0.224, 0.184, 0.154, 0.252, 0.154]
+Training task:  4
+[Learn Buffer] Updating memory for task 4 using least memorization.
+[Memory Update] Task 3, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 4 using most memorization.
+[Memory Update] Task 3, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1214  Total retain:  2500
+Total correct forget:  12977  Total forget:  47500
+Total correct test:  240  Total test:  500
+Total correct forget test:  2465  Total test forget:  9500
+After learning task 4
+Task accuracies: [0.48, 0.528, 0.492, 0.692, 0.214, 0.182, 0.278, 0.2, 0.254, 0.18, 0.112, 0.162, 0.172, 0.336, 0.094, 0.222, 0.168, 0.214, 0.234, 0.196]
+Training task:  5
+[Learn Buffer] Updating memory for task 5 using least memorization.
+[Memory Update] Task 4, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 5 using most memorization.
+[Memory Update] Task 4, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1235  Total retain:  2500
+Total correct forget:  14075  Total forget:  47500
+Total correct test:  221  Total test:  500
+Total correct forget test:  2659  Total test forget:  9500
+After learning task 5
+Task accuracies: [0.442, 0.564, 0.492, 0.554, 0.684, 0.19, 0.218, 0.202, 0.2, 0.216, 0.182, 0.124, 0.162, 0.326, 0.238, 0.146, 0.194, 0.196, 0.244, 0.186]
+Training task:  6
+[Learn Buffer] Updating memory for task 6 using least memorization.
+[Memory Update] Task 5, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 6 using most memorization.
+[Memory Update] Task 5, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1274  Total retain:  2500
+Total correct forget:  14233  Total forget:  47500
+Total correct test:  237  Total test:  500
+Total correct forget test:  2652  Total test forget:  9500
+After learning task 6
+Task accuracies: [0.474, 0.548, 0.516, 0.502, 0.602, 0.732, 0.18, 0.136, 0.15, 0.122, 0.176, 0.178, 0.202, 0.268, 0.214, 0.116, 0.116, 0.17, 0.198, 0.178]
+Training task:  7
+[Learn Buffer] Updating memory for task 7 using least memorization.
+[Memory Update] Task 6, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 7 using most memorization.
+[Memory Update] Task 6, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1333  Total retain:  2500
+Total correct forget:  16630  Total forget:  47500
+Total correct test:  250  Total test:  500
+Total correct forget test:  3141  Total test forget:  9500
+After learning task 7
+Task accuracies: [0.5, 0.602, 0.536, 0.524, 0.62, 0.574, 0.838, 0.184, 0.206, 0.172, 0.184, 0.12, 0.228, 0.28, 0.288, 0.212, 0.14, 0.172, 0.22, 0.182]
+Training task:  8
+[Learn Buffer] Updating memory for task 8 using least memorization.
+[Memory Update] Task 7, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 8 using most memorization.
+[Memory Update] Task 7, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1324  Total retain:  2500
+Total correct forget:  17266  Total forget:  47500
+Total correct test:  264  Total test:  500
+Total correct forget test:  3214  Total test forget:  9500
+After learning task 8
+Task accuracies: [0.528, 0.606, 0.464, 0.5, 0.558, 0.57, 0.708, 0.746, 0.218, 0.182, 0.156, 0.134, 0.194, 0.258, 0.216, 0.176, 0.19, 0.142, 0.2, 0.21]
+Training task:  9
+[Learn Buffer] Updating memory for task 9 using least memorization.
+[Memory Update] Task 8, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 9 using most memorization.
+[Memory Update] Task 8, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1409  Total retain:  2500
+Total correct forget:  17664  Total forget:  47500
+Total correct test:  273  Total test:  500
+Total correct forget test:  3314  Total test forget:  9500
+After learning task 9
+Task accuracies: [0.546, 0.534, 0.48, 0.516, 0.526, 0.528, 0.698, 0.656, 0.688, 0.232, 0.16, 0.08, 0.174, 0.298, 0.204, 0.144, 0.182, 0.158, 0.152, 0.218]
+Training task:  10
+[Learn Buffer] Updating memory for task 10 using least memorization.
+[Memory Update] Task 9, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 10 using most memorization.
+[Memory Update] Task 9, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1360  Total retain:  2500
+Total correct forget:  19973  Total forget:  47500
+Total correct test:  258  Total test:  500
+Total correct forget test:  3778  Total test forget:  9500
+After learning task 10
+Task accuracies: [0.516, 0.666, 0.504, 0.504, 0.512, 0.576, 0.714, 0.636, 0.66, 0.796, 0.164, 0.088, 0.186, 0.256, 0.23, 0.154, 0.2, 0.21, 0.254, 0.246]
+Unlearning task: 10
+Total correct retain:  1401  Total retain:  2500
+Total correct forget:  20602  Total forget:  47500
+Total correct test:  280  Total test:  500
+Total correct forget test:  3905  Total test forget:  9500
+After unlearning task 10
+Task accuracies: [0.56, 0.678, 0.506, 0.534, 0.578, 0.59, 0.754, 0.66, 0.68, 0.816, 0.164, 0.08, 0.196, 0.262, 0.214, 0.188, 0.214, 0.218, 0.264, 0.214]
+Unlearning task: 9
+Total correct retain:  1474  Total retain:  2500
+Total correct forget:  20175  Total forget:  47500
+Total correct test:  283  Total test:  500
+Total correct forget test:  3836  Total test forget:  9500
+After unlearning task 9
+Task accuracies: [0.566, 0.654, 0.516, 0.534, 0.55, 0.594, 0.756, 0.688, 0.688, 0.754, 0.168, 0.074, 0.228, 0.262, 0.208, 0.16, 0.19, 0.182, 0.266, 0.2]
+Unlearning task: 8
+Total correct retain:  1430  Total retain:  2500
+Total correct forget:  20401  Total forget:  47500
+Total correct test:  283  Total test:  500
+Total correct forget test:  3879  Total test forget:  9500
+After unlearning task 8
+Task accuracies: [0.566, 0.692, 0.54, 0.542, 0.612, 0.59, 0.762, 0.654, 0.678, 0.776, 0.132, 0.07, 0.21, 0.276, 0.216, 0.186, 0.2, 0.194, 0.232, 0.196]
+Unlearning task: 7
+Total correct retain:  1448  Total retain:  2500
+Total correct forget:  19994  Total forget:  47500
+Total correct test:  272  Total test:  500
+Total correct forget test:  3771  Total test forget:  9500
+After unlearning task 7
+Task accuracies: [0.544, 0.672, 0.53, 0.566, 0.574, 0.57, 0.764, 0.636, 0.652, 0.736, 0.148, 0.068, 0.194, 0.266, 0.208, 0.186, 0.192, 0.166, 0.238, 0.176]
+Unlearning task: 6
+Total correct retain:  1405  Total retain:  2500
+Total correct forget:  19689  Total forget:  47500
+Total correct test:  280  Total test:  500
+Total correct forget test:  3781  Total test forget:  9500
+After unlearning task 6
+Task accuracies: [0.56, 0.654, 0.526, 0.558, 0.572, 0.628, 0.722, 0.608, 0.602, 0.74, 0.158, 0.1, 0.202, 0.27, 0.222, 0.16, 0.194, 0.186, 0.278, 0.182]
+Training task:  11
+[Learn Buffer] Updating memory for task 11 using least memorization.
+[Memory Update] Task 10, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 11 using most memorization.
+[Memory Update] Task 10, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1562  Total retain:  2500
+Total correct forget:  20900  Total forget:  47500
+Total correct test:  304  Total test:  500
+Total correct forget test:  3915  Total test forget:  9500
+After learning task 11
+Task accuracies: [0.608, 0.666, 0.546, 0.546, 0.526, 0.61, 0.736, 0.606, 0.632, 0.73, 0.58, 0.058, 0.216, 0.258, 0.214, 0.128, 0.188, 0.17, 0.224, 0.196]
+Training task:  12
+[Learn Buffer] Updating memory for task 12 using least memorization.
+[Memory Update] Task 11, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 12 using most memorization.
+[Memory Update] Task 11, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1525  Total retain:  2500
+Total correct forget:  22916  Total forget:  47500
+Total correct test:  301  Total test:  500
+Total correct forget test:  4309  Total test forget:  9500
+After learning task 12
+Task accuracies: [0.602, 0.698, 0.478, 0.566, 0.538, 0.608, 0.716, 0.566, 0.66, 0.738, 0.55, 0.842, 0.196, 0.29, 0.214, 0.172, 0.196, 0.194, 0.222, 0.174]
+Training task:  13
+[Learn Buffer] Updating memory for task 13 using least memorization.
+[Memory Update] Task 12, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 13 using most memorization.
+[Memory Update] Task 12, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1512  Total retain:  2500
+Total correct forget:  24173  Total forget:  47500
+Total correct test:  312  Total test:  500
+Total correct forget test:  4608  Total test forget:  9500
+After learning task 13
+Task accuracies: [0.624, 0.668, 0.492, 0.588, 0.544, 0.62, 0.712, 0.58, 0.614, 0.67, 0.502, 0.804, 0.76, 0.334, 0.222, 0.22, 0.208, 0.188, 0.272, 0.218]
+Training task:  14
+[Learn Buffer] Updating memory for task 14 using least memorization.
+[Memory Update] Task 13, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 14 using most memorization.
+[Memory Update] Task 13, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1503  Total retain:  2500
+Total correct forget:  25417  Total forget:  47500
+Total correct test:  317  Total test:  500
+Total correct forget test:  4852  Total test forget:  9500
+After learning task 14
+Task accuracies: [0.634, 0.698, 0.53, 0.596, 0.612, 0.61, 0.692, 0.57, 0.586, 0.67, 0.516, 0.748, 0.684, 0.828, 0.21, 0.206, 0.222, 0.194, 0.318, 0.214]
+Training task:  15
+[Learn Buffer] Updating memory for task 15 using least memorization.
+[Memory Update] Task 14, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 15 using most memorization.
+[Memory Update] Task 14, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1539  Total retain:  2500
+Total correct forget:  26182  Total forget:  47500
+Total correct test:  335  Total test:  500
+Total correct forget test:  4961  Total test forget:  9500
+After learning task 15
+Task accuracies: [0.67, 0.646, 0.466, 0.602, 0.566, 0.618, 0.672, 0.612, 0.616, 0.668, 0.494, 0.734, 0.672, 0.776, 0.754, 0.164, 0.19, 0.19, 0.324, 0.158]
+Training task:  16
+[Learn Buffer] Updating memory for task 16 using least memorization.
+[Memory Update] Task 15, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 16 using most memorization.
+[Memory Update] Task 15, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1607  Total retain:  2500
+Total correct forget:  27343  Total forget:  47500
+Total correct test:  338  Total test:  500
+Total correct forget test:  5195  Total test forget:  9500
+After learning task 16
+Task accuracies: [0.676, 0.674, 0.504, 0.596, 0.536, 0.6, 0.642, 0.532, 0.604, 0.634, 0.52, 0.728, 0.676, 0.748, 0.736, 0.726, 0.208, 0.176, 0.35, 0.2]
+Training task:  17
+[Learn Buffer] Updating memory for task 17 using least memorization.
+[Memory Update] Task 16, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 17 using most memorization.
+[Memory Update] Task 16, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1537  Total retain:  2500
+Total correct forget:  28676  Total forget:  47500
+Total correct test:  325  Total test:  500
+Total correct forget test:  5460  Total test forget:  9500
+After learning task 17
+Task accuracies: [0.65, 0.644, 0.492, 0.572, 0.612, 0.636, 0.66, 0.57, 0.654, 0.662, 0.496, 0.746, 0.648, 0.742, 0.646, 0.656, 0.842, 0.176, 0.302, 0.164]
+Training task:  18
+[Learn Buffer] Updating memory for task 18 using least memorization.
+[Memory Update] Task 17, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 18 using most memorization.
+[Memory Update] Task 17, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1568  Total retain:  2500
+Total correct forget:  29820  Total forget:  47500
+Total correct test:  323  Total test:  500
+Total correct forget test:  5636  Total test forget:  9500
+After learning task 18
+Task accuracies: [0.646, 0.662, 0.51, 0.582, 0.584, 0.594, 0.642, 0.524, 0.652, 0.66, 0.464, 0.716, 0.646, 0.762, 0.634, 0.67, 0.786, 0.658, 0.336, 0.19]
+Training task:  19
+[Learn Buffer] Updating memory for task 19 using least memorization.
+[Memory Update] Task 18, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 19 using most memorization.
+[Memory Update] Task 18, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1661  Total retain:  2500
+Total correct forget:  31014  Total forget:  47500
+Total correct test:  334  Total test:  500
+Total correct forget test:  5813  Total test forget:  9500
+After learning task 19
+Task accuracies: [0.668, 0.656, 0.524, 0.558, 0.57, 0.558, 0.678, 0.528, 0.636, 0.66, 0.508, 0.724, 0.644, 0.732, 0.668, 0.668, 0.772, 0.604, 0.758, 0.18]
+Training task:  20
+[Learn Buffer] Updating memory for task 20 using least memorization.
+[Memory Update] Task 19, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 20 using most memorization.
+[Memory Update] Task 19, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1535  Total retain:  2500
+Total correct forget:  30499  Total forget:  47500
+Total correct test:  321  Total test:  500
+Total correct forget test:  5728  Total test forget:  9500
+After learning task 20
+Task accuracies: [0.642, 0.58, 0.482, 0.546, 0.566, 0.542, 0.572, 0.484, 0.646, 0.65, 0.448, 0.702, 0.65, 0.682, 0.618, 0.62, 0.746, 0.61, 0.592, 0.72]
+Number of constraint violations:  0
+Running on device:  NVIDIA A10
+Unlearn Batch Size:  1
+Unlearn MEM Strength:  0.5
+cifar-100-python/train
+cifar-100-python/test
+new ordering of classes:  ['bowls', 'boy', 'shark', 'worm', 'chair', 'bus', 'orchids', 'dolphin', 'tractor', 'house', 'dinosaur', 'telephone', 'squirrel', 'shrew', 'cloud', 'leopard', 'fox', 'man', 'poppies', 'camel', 'bridge', 'mountain', 'cans', 'flatfish', 'raccoon', 'beaver', 'plain', 'bed', 'beetle', 'lamp', 'forest', 'elephant', 'spider', 'streetcar', 'lobster', 'lizard', 'pears', 'apples', 'maple', 'pickup truck', 'turtle', 'mushrooms', 'tulips', 'trout', 'butterfly', 'bee', 'oak', 'palm', 'skunk', 'snail', 'rabbit', 'tiger', 'lion', 'mouse', 'crocodile', 'oranges', 'possum', 'skyscraper', 'crab', 'wolf', 'sunflowers', 'willow', 'cockroach', 'porcupine', 'couch', 'bicycle', 'wardrobe', 'kangaroo', 'table', 'road', 'sweet peppers', 'bottles', 'chimpanzee', 'pine', 'cattle', 'sea', 'television', 'otter', 'woman', 'ray', 'hamster', 'train', 'girl', 'lawn-mower', 'castle', 'roses', 'baby', 'plates', 'bear', 'clock', 'motorcycle', 'computer keyboard', 'aquarium fish', 'tank', 'rocket', 'cups', 'caterpillar', 'whale', 'seal', 'snake']
+Training task:  1
+[Learn Buffer] Updating memory for task 1 using least memorization.
+[Memory Update] Task 0, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 1 using most memorization.
+[Memory Update] Task 0, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1814  Total retain:  2500
+Total correct forget:  9011  Total forget:  47500
+Total correct test:  333  Total test:  500
+Total correct forget test:  1805  Total test forget:  9500
+After learning task 1
+Task accuracies: [0.666, 0.204, 0.144, 0.202, 0.148, 0.208, 0.19, 0.196, 0.178, 0.202, 0.254, 0.206, 0.21, 0.212, 0.122, 0.18, 0.19, 0.262, 0.108, 0.194]
+Training task:  2
+[Learn Buffer] Updating memory for task 2 using least memorization.
+[Memory Update] Task 1, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 2 using most memorization.
+[Memory Update] Task 1, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1362  Total retain:  2500
+Total correct forget:  11751  Total forget:  47500
+Total correct test:  240  Total test:  500
+Total correct forget test:  2211  Total test forget:  9500
+After learning task 2
+Task accuracies: [0.48, 0.692, 0.174, 0.186, 0.17, 0.166, 0.222, 0.186, 0.264, 0.248, 0.218, 0.234, 0.198, 0.198, 0.232, 0.186, 0.178, 0.288, 0.264, 0.118]
+Training task:  3
+[Learn Buffer] Updating memory for task 3 using least memorization.
+[Memory Update] Task 2, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 3 using most memorization.
+[Memory Update] Task 2, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1466  Total retain:  2500
+Total correct forget:  13492  Total forget:  47500
+Total correct test:  274  Total test:  500
+Total correct forget test:  2552  Total test forget:  9500
+After learning task 3
+Task accuracies: [0.548, 0.584, 0.734, 0.202, 0.182, 0.252, 0.206, 0.172, 0.222, 0.168, 0.266, 0.292, 0.226, 0.208, 0.242, 0.26, 0.186, 0.268, 0.234, 0.2]
+Training task:  4
+[Learn Buffer] Updating memory for task 4 using least memorization.
+[Memory Update] Task 3, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 4 using most memorization.
+[Memory Update] Task 3, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1164  Total retain:  2500
+Total correct forget:  13678  Total forget:  47500
+Total correct test:  226  Total test:  500
+Total correct forget test:  2627  Total test forget:  9500
+After learning task 4
+Task accuracies: [0.452, 0.528, 0.54, 0.592, 0.23, 0.21, 0.172, 0.128, 0.272, 0.174, 0.236, 0.278, 0.306, 0.222, 0.212, 0.206, 0.172, 0.318, 0.204, 0.254]
+Training task:  5
+[Learn Buffer] Updating memory for task 5 using least memorization.
+[Memory Update] Task 4, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 5 using most memorization.
+[Memory Update] Task 4, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1293  Total retain:  2500
+Total correct forget:  14913  Total forget:  47500
+Total correct test:  253  Total test:  500
+Total correct forget test:  2821  Total test forget:  9500
+After learning task 5
+Task accuracies: [0.506, 0.476, 0.638, 0.526, 0.688, 0.214, 0.2, 0.182, 0.294, 0.162, 0.234, 0.262, 0.27, 0.192, 0.18, 0.192, 0.146, 0.31, 0.164, 0.312]
+Training task:  6
+[Learn Buffer] Updating memory for task 6 using least memorization.
+[Memory Update] Task 5, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 6 using most memorization.
+[Memory Update] Task 5, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1354  Total retain:  2500
+Total correct forget:  16209  Total forget:  47500
+Total correct test:  258  Total test:  500
+Total correct forget test:  3008  Total test forget:  9500
+After learning task 6
+Task accuracies: [0.516, 0.458, 0.6, 0.414, 0.618, 0.718, 0.236, 0.198, 0.29, 0.218, 0.264, 0.214, 0.22, 0.206, 0.188, 0.242, 0.178, 0.276, 0.178, 0.3]
+Training task:  7
+[Learn Buffer] Updating memory for task 7 using least memorization.
+[Memory Update] Task 6, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 7 using most memorization.
+[Memory Update] Task 6, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1177  Total retain:  2500
+Total correct forget:  16903  Total forget:  47500
+Total correct test:  208  Total test:  500
+Total correct forget test:  3229  Total test forget:  9500
+After learning task 7
+Task accuracies: [0.416, 0.532, 0.568, 0.462, 0.52, 0.602, 0.63, 0.208, 0.254, 0.254, 0.266, 0.222, 0.226, 0.242, 0.162, 0.356, 0.134, 0.368, 0.244, 0.208]
+Training task:  8
+[Learn Buffer] Updating memory for task 8 using least memorization.
+[Memory Update] Task 7, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 8 using most memorization.
+[Memory Update] Task 7, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1395  Total retain:  2500
+Total correct forget:  17891  Total forget:  47500
+Total correct test:  270  Total test:  500
+Total correct forget test:  3372  Total test forget:  9500
+After learning task 8
+Task accuracies: [0.54, 0.502, 0.61, 0.488, 0.59, 0.612, 0.566, 0.806, 0.218, 0.25, 0.254, 0.264, 0.234, 0.192, 0.186, 0.206, 0.12, 0.262, 0.208, 0.176]
+Training task:  9
+[Learn Buffer] Updating memory for task 9 using least memorization.
+[Memory Update] Task 8, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 9 using most memorization.
+[Memory Update] Task 8, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1276  Total retain:  2500
+Total correct forget:  18797  Total forget:  47500
+Total correct test:  246  Total test:  500
+Total correct forget test:  3501  Total test forget:  9500
+After learning task 9
+Task accuracies: [0.492, 0.514, 0.568, 0.504, 0.586, 0.622, 0.504, 0.654, 0.7, 0.176, 0.296, 0.258, 0.228, 0.204, 0.154, 0.202, 0.144, 0.23, 0.236, 0.222]
+Training task:  10
+[Learn Buffer] Updating memory for task 10 using least memorization.
+[Memory Update] Task 9, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 10 using most memorization.
+[Memory Update] Task 9, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1296  Total retain:  2500
+Total correct forget:  20077  Total forget:  47500
+Total correct test:  252  Total test:  500
+Total correct forget test:  3682  Total test forget:  9500
+After learning task 10
+Task accuracies: [0.504, 0.518, 0.592, 0.466, 0.572, 0.62, 0.496, 0.648, 0.632, 0.852, 0.296, 0.146, 0.184, 0.2, 0.166, 0.206, 0.176, 0.19, 0.152, 0.252]
+Unlearning task: 10
+Total correct retain:  1388  Total retain:  2500
+Total correct forget:  20342  Total forget:  47500
+Total correct test:  264  Total test:  500
+Total correct forget test:  3765  Total test forget:  9500
+After unlearning task 10
+Task accuracies: [0.528, 0.544, 0.63, 0.526, 0.612, 0.63, 0.562, 0.642, 0.656, 0.838, 0.288, 0.178, 0.174, 0.182, 0.132, 0.194, 0.158, 0.198, 0.174, 0.212]
+Unlearning task: 9
+Total correct retain:  1370  Total retain:  2500
+Total correct forget:  19978  Total forget:  47500
+Total correct test:  264  Total test:  500
+Total correct forget test:  3695  Total test forget:  9500
+After unlearning task 9
+Task accuracies: [0.528, 0.56, 0.612, 0.54, 0.616, 0.64, 0.558, 0.65, 0.642, 0.756, 0.258, 0.17, 0.198, 0.178, 0.148, 0.122, 0.136, 0.208, 0.198, 0.2]
+Unlearning task: 8
+Total correct retain:  1409  Total retain:  2500
+Total correct forget:  20040  Total forget:  47500
+Total correct test:  272  Total test:  500
+Total correct forget test:  3782  Total test forget:  9500
+After unlearning task 8
+Task accuracies: [0.544, 0.556, 0.632, 0.55, 0.64, 0.626, 0.562, 0.688, 0.596, 0.746, 0.26, 0.148, 0.262, 0.2, 0.158, 0.15, 0.14, 0.292, 0.198, 0.16]
+Unlearning task: 7
+Total correct retain:  1401  Total retain:  2500
+Total correct forget:  19486  Total forget:  47500
+Total correct test:  278  Total test:  500
+Total correct forget test:  3725  Total test forget:  9500
+After unlearning task 7
+Task accuracies: [0.556, 0.508, 0.588, 0.554, 0.608, 0.618, 0.562, 0.678, 0.602, 0.71, 0.294, 0.182, 0.252, 0.192, 0.178, 0.164, 0.13, 0.256, 0.204, 0.17]
+Unlearning task: 6
+Total correct retain:  1320  Total retain:  2500
+Total correct forget:  18807  Total forget:  47500
+Total correct test:  251  Total test:  500
+Total correct forget test:  3611  Total test forget:  9500
+After unlearning task 6
+Task accuracies: [0.502, 0.532, 0.632, 0.512, 0.624, 0.628, 0.57, 0.59, 0.564, 0.62, 0.278, 0.166, 0.268, 0.19, 0.196, 0.154, 0.12, 0.214, 0.184, 0.18]
+Training task:  11
+[Learn Buffer] Updating memory for task 11 using least memorization.
+[Memory Update] Task 10, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 11 using most memorization.
+[Memory Update] Task 10, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1387  Total retain:  2500
+Total correct forget:  19873  Total forget:  47500
+Total correct test:  269  Total test:  500
+Total correct forget test:  3773  Total test forget:  9500
+After learning task 11
+Task accuracies: [0.538, 0.522, 0.622, 0.52, 0.614, 0.61, 0.564, 0.596, 0.566, 0.626, 0.608, 0.122, 0.262, 0.186, 0.174, 0.172, 0.142, 0.218, 0.202, 0.22]
+Training task:  12
+[Learn Buffer] Updating memory for task 12 using least memorization.
+[Memory Update] Task 11, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 12 using most memorization.
+[Memory Update] Task 11, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1305  Total retain:  2500
+Total correct forget:  20770  Total forget:  47500
+Total correct test:  254  Total test:  500
+Total correct forget test:  3960  Total test forget:  9500
+After learning task 12
+Task accuracies: [0.508, 0.458, 0.622, 0.538, 0.58, 0.574, 0.518, 0.532, 0.53, 0.59, 0.5, 0.754, 0.264, 0.2, 0.21, 0.246, 0.16, 0.222, 0.254, 0.168]
+Training task:  13
+[Learn Buffer] Updating memory for task 13 using least memorization.
+[Memory Update] Task 12, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 13 using most memorization.
+[Memory Update] Task 12, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1294  Total retain:  2500
+Total correct forget:  21533  Total forget:  47500
+Total correct test:  245  Total test:  500
+Total correct forget test:  4111  Total test forget:  9500
+After learning task 13
+Task accuracies: [0.49, 0.47, 0.558, 0.534, 0.616, 0.554, 0.468, 0.508, 0.51, 0.608, 0.468, 0.742, 0.8, 0.192, 0.176, 0.232, 0.134, 0.192, 0.272, 0.188]
+Training task:  14
+[Learn Buffer] Updating memory for task 14 using least memorization.
+[Memory Update] Task 13, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 14 using most memorization.
+[Memory Update] Task 13, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1307  Total retain:  2500
+Total correct forget:  22591  Total forget:  47500
+Total correct test:  244  Total test:  500
+Total correct forget test:  4306  Total test forget:  9500
+After learning task 14
+Task accuracies: [0.488, 0.47, 0.522, 0.488, 0.58, 0.596, 0.486, 0.496, 0.512, 0.606, 0.508, 0.72, 0.748, 0.718, 0.168, 0.188, 0.138, 0.194, 0.26, 0.214]
+Training task:  15
+[Learn Buffer] Updating memory for task 15 using least memorization.
+[Memory Update] Task 14, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 15 using most memorization.
+[Memory Update] Task 14, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1301  Total retain:  2500
+Total correct forget:  24455  Total forget:  47500
+Total correct test:  254  Total test:  500
+Total correct forget test:  4623  Total test forget:  9500
+After learning task 15
+Task accuracies: [0.508, 0.472, 0.522, 0.534, 0.59, 0.596, 0.484, 0.492, 0.522, 0.576, 0.488, 0.688, 0.742, 0.656, 0.822, 0.214, 0.17, 0.2, 0.27, 0.208]
+Training task:  16
+[Learn Buffer] Updating memory for task 16 using least memorization.
+[Memory Update] Task 15, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 16 using most memorization.
+[Memory Update] Task 15, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1277  Total retain:  2500
+Total correct forget:  25961  Total forget:  47500
+Total correct test:  239  Total test:  500
+Total correct forget test:  4933  Total test forget:  9500
+After learning task 16
+Task accuracies: [0.478, 0.5, 0.518, 0.496, 0.594, 0.586, 0.502, 0.536, 0.554, 0.588, 0.472, 0.646, 0.716, 0.658, 0.786, 0.758, 0.178, 0.202, 0.29, 0.286]
+Training task:  17
+[Learn Buffer] Updating memory for task 17 using least memorization.
+[Memory Update] Task 16, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 17 using most memorization.
+[Memory Update] Task 16, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1137  Total retain:  2500
+Total correct forget:  26782  Total forget:  47500
+Total correct test:  216  Total test:  500
+Total correct forget test:  5088  Total test forget:  9500
+After learning task 17
+Task accuracies: [0.432, 0.456, 0.564, 0.462, 0.586, 0.596, 0.498, 0.49, 0.552, 0.648, 0.454, 0.652, 0.68, 0.654, 0.74, 0.744, 0.716, 0.214, 0.246, 0.224]
+Training task:  18
+[Learn Buffer] Updating memory for task 18 using least memorization.
+[Memory Update] Task 17, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 18 using most memorization.
+[Memory Update] Task 17, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1314  Total retain:  2500
+Total correct forget:  28253  Total forget:  47500
+Total correct test:  248  Total test:  500
+Total correct forget test:  5320  Total test forget:  9500
+After learning task 18
+Task accuracies: [0.496, 0.524, 0.542, 0.522, 0.58, 0.566, 0.502, 0.514, 0.53, 0.622, 0.43, 0.658, 0.7, 0.62, 0.75, 0.694, 0.658, 0.694, 0.254, 0.28]
+Training task:  19
+[Learn Buffer] Updating memory for task 19 using least memorization.
+[Memory Update] Task 18, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 19 using most memorization.
+[Memory Update] Task 18, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1227  Total retain:  2500
+Total correct forget:  28279  Total forget:  47500
+Total correct test:  229  Total test:  500
+Total correct forget test:  5322  Total test forget:  9500
+After learning task 19
+Task accuracies: [0.458, 0.488, 0.508, 0.47, 0.56, 0.526, 0.466, 0.462, 0.492, 0.608, 0.474, 0.61, 0.688, 0.614, 0.71, 0.682, 0.648, 0.618, 0.804, 0.216]
+Training task:  20
+[Learn Buffer] Updating memory for task 20 using least memorization.
+[Memory Update] Task 19, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 20 using most memorization.
+[Memory Update] Task 19, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1303  Total retain:  2500
+Total correct forget:  29700  Total forget:  47500
+Total correct test:  262  Total test:  500
+Total correct forget test:  5588  Total test forget:  9500
+After learning task 20
+Task accuracies: [0.524, 0.496, 0.554, 0.446, 0.586, 0.526, 0.482, 0.454, 0.492, 0.632, 0.482, 0.65, 0.68, 0.626, 0.738, 0.662, 0.666, 0.604, 0.74, 0.66]
+Number of constraint violations:  0
+Running on device:  NVIDIA A10
+Unlearn Batch Size:  1
+Unlearn MEM Strength:  0.5
+cifar-100-python/train
+cifar-100-python/test
+new ordering of classes:  ['seal', 'cockroach', 'mouse', 'pine', 'bee', 'bowls', 'computer keyboard', 'couch', 'roses', 'bus', 'squirrel', 'woman', 'turtle', 'beaver', 'raccoon', 'otter', 'leopard', 'orchids', 'television', 'poppies', 'hamster', 'streetcar', 'tiger', 'bottles', 'chair', 'palm', 'wardrobe', 'beetle', 'worm', 'elephant', 'butterfly', 'pickup truck', 'lizard', 'dinosaur', 'tulips', 'apples', 'skyscraper', 'shrew', 'plain', 'forest', 'clock', 'shark', 'camel', 'rabbit', 'fox', 'cans', 'whale', 'kangaroo', 'wolf', 'castle', 'man', 'chimpanzee', 'ray', 'porcupine', 'caterpillar', 'possum', 'bear', 'rocket', 'girl', 'bicycle', 'boy', 'crocodile', 'pears', 'lamp', 'sunflowers', 'baby', 'skunk', 'lion', 'telephone', 'house', 'motorcycle', 'crab', 'maple', 'cups', 'spider', 'lawn-mower', 'tank', 'dolphin', 'road', 'oak', 'oranges', 'bed', 'trout', 'cloud', 'mushrooms', 'train', 'bridge', 'flatfish', 'tractor', 'willow', 'cattle', 'plates', 'snake', 'snail', 'mountain', 'table', 'aquarium fish', 'sea', 'lobster', 'sweet peppers']
+Training task:  1
+[Learn Buffer] Updating memory for task 1 using least memorization.
+[Memory Update] Task 0, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 1 using most memorization.
+[Memory Update] Task 0, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1714  Total retain:  2500
+Total correct forget:  9735  Total forget:  47500
+Total correct test:  327  Total test:  500
+Total correct forget test:  1991  Total test forget:  9500
+After learning task 1
+Task accuracies: [0.654, 0.236, 0.194, 0.25, 0.172, 0.196, 0.196, 0.198, 0.206, 0.146, 0.146, 0.234, 0.202, 0.2, 0.236, 0.202, 0.204, 0.162, 0.316, 0.286]
+Training task:  2
+[Learn Buffer] Updating memory for task 2 using least memorization.
+[Memory Update] Task 1, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 2 using most memorization.
+[Memory Update] Task 1, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1218  Total retain:  2500
+Total correct forget:  10600  Total forget:  47500
+Total correct test:  233  Total test:  500
+Total correct forget test:  2102  Total test forget:  9500
+After learning task 2
+Task accuracies: [0.466, 0.514, 0.178, 0.25, 0.172, 0.172, 0.21, 0.246, 0.144, 0.226, 0.184, 0.192, 0.132, 0.206, 0.234, 0.296, 0.168, 0.244, 0.226, 0.21]
+Training task:  3
+[Learn Buffer] Updating memory for task 3 using least memorization.
+[Memory Update] Task 2, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 3 using most memorization.
+[Memory Update] Task 2, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1311  Total retain:  2500
+Total correct forget:  11990  Total forget:  47500
+Total correct test:  250  Total test:  500
+Total correct forget test:  2282  Total test forget:  9500
+After learning task 3
+Task accuracies: [0.5, 0.438, 0.53, 0.35, 0.148, 0.186, 0.154, 0.218, 0.136, 0.186, 0.184, 0.238, 0.22, 0.246, 0.194, 0.298, 0.174, 0.184, 0.304, 0.176]
+Training task:  4
+[Learn Buffer] Updating memory for task 4 using least memorization.
+[Memory Update] Task 3, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 4 using most memorization.
+[Memory Update] Task 3, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1355  Total retain:  2500
+Total correct forget:  12878  Total forget:  47500
+Total correct test:  260  Total test:  500
+Total correct forget test:  2424  Total test forget:  9500
+After learning task 4
+Task accuracies: [0.52, 0.444, 0.458, 0.756, 0.122, 0.168, 0.162, 0.192, 0.176, 0.212, 0.294, 0.224, 0.164, 0.248, 0.256, 0.192, 0.16, 0.184, 0.208, 0.228]
+Training task:  5
+[Learn Buffer] Updating memory for task 5 using least memorization.
+[Memory Update] Task 4, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 5 using most memorization.
+[Memory Update] Task 4, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1445  Total retain:  2500
+Total correct forget:  13184  Total forget:  47500
+Total correct test:  272  Total test:  500
+Total correct forget test:  2504  Total test forget:  9500
+After learning task 5
+Task accuracies: [0.544, 0.5, 0.354, 0.598, 0.722, 0.164, 0.152, 0.17, 0.14, 0.212, 0.152, 0.25, 0.152, 0.236, 0.242, 0.168, 0.176, 0.208, 0.3, 0.112]
+Training task:  6
+[Learn Buffer] Updating memory for task 6 using least memorization.
+[Memory Update] Task 5, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 6 using most memorization.
+[Memory Update] Task 5, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1357  Total retain:  2500
+Total correct forget:  14781  Total forget:  47500
+Total correct test:  273  Total test:  500
+Total correct forget test:  2771  Total test forget:  9500
+After learning task 6
+Task accuracies: [0.546, 0.472, 0.326, 0.514, 0.666, 0.824, 0.174, 0.2, 0.156, 0.204, 0.2, 0.204, 0.146, 0.184, 0.256, 0.172, 0.236, 0.154, 0.25, 0.204]
+Training task:  7
+[Learn Buffer] Updating memory for task 7 using least memorization.
+[Memory Update] Task 6, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 7 using most memorization.
+[Memory Update] Task 6, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1430  Total retain:  2500
+Total correct forget:  16266  Total forget:  47500
+Total correct test:  277  Total test:  500
+Total correct forget test:  3034  Total test forget:  9500
+After learning task 7
+Task accuracies: [0.554, 0.518, 0.326, 0.632, 0.624, 0.638, 0.75, 0.194, 0.142, 0.18, 0.208, 0.176, 0.214, 0.276, 0.262, 0.248, 0.178, 0.18, 0.2, 0.122]
+Training task:  8
+[Learn Buffer] Updating memory for task 8 using least memorization.
+[Memory Update] Task 7, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 8 using most memorization.
+[Memory Update] Task 7, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1376  Total retain:  2500
+Total correct forget:  17569  Total forget:  47500
+Total correct test:  274  Total test:  500
+Total correct forget test:  3272  Total test forget:  9500
+After learning task 8
+Task accuracies: [0.548, 0.536, 0.314, 0.594, 0.632, 0.582, 0.66, 0.876, 0.15, 0.126, 0.204, 0.192, 0.156, 0.272, 0.234, 0.23, 0.216, 0.172, 0.272, 0.126]
+Training task:  9
+[Learn Buffer] Updating memory for task 9 using least memorization.
+[Memory Update] Task 8, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 9 using most memorization.
+[Memory Update] Task 8, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1286  Total retain:  2500
+Total correct forget:  18563  Total forget:  47500
+Total correct test:  240  Total test:  500
+Total correct forget test:  3377  Total test forget:  9500
+After learning task 9
+Task accuracies: [0.48, 0.432, 0.376, 0.546, 0.596, 0.574, 0.6, 0.788, 0.73, 0.116, 0.212, 0.138, 0.178, 0.166, 0.31, 0.292, 0.16, 0.162, 0.258, 0.12]
+Training task:  10
+[Learn Buffer] Updating memory for task 10 using least memorization.
+[Memory Update] Task 9, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 10 using most memorization.
+[Memory Update] Task 9, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1258  Total retain:  2500
+Total correct forget:  19378  Total forget:  47500
+Total correct test:  253  Total test:  500
+Total correct forget test:  3531  Total test forget:  9500
+After learning task 10
+Task accuracies: [0.506, 0.422, 0.392, 0.498, 0.502, 0.544, 0.598, 0.746, 0.608, 0.76, 0.194, 0.164, 0.198, 0.196, 0.242, 0.252, 0.15, 0.158, 0.282, 0.156]
+Unlearning task: 10
+Total correct retain:  1350  Total retain:  2500
+Total correct forget:  20642  Total forget:  47500
+Total correct test:  284  Total test:  500
+Total correct forget test:  3760  Total test forget:  9500
+After unlearning task 10
+Task accuracies: [0.568, 0.512, 0.386, 0.604, 0.604, 0.62, 0.624, 0.812, 0.62, 0.824, 0.204, 0.168, 0.164, 0.184, 0.244, 0.256, 0.146, 0.118, 0.288, 0.142]
+Unlearning task: 9
+Total correct retain:  1415  Total retain:  2500
+Total correct forget:  20683  Total forget:  47500
+Total correct test:  281  Total test:  500
+Total correct forget test:  3776  Total test forget:  9500
+After unlearning task 9
+Task accuracies: [0.562, 0.5, 0.368, 0.64, 0.614, 0.66, 0.642, 0.804, 0.646, 0.79, 0.204, 0.168, 0.15, 0.204, 0.238, 0.254, 0.13, 0.128, 0.254, 0.158]
+Unlearning task: 8
+Total correct retain:  1409  Total retain:  2500
+Total correct forget:  20696  Total forget:  47500
+Total correct test:  269  Total test:  500
+Total correct forget test:  3825  Total test forget:  9500
+After unlearning task 8
+Task accuracies: [0.538, 0.53, 0.356, 0.644, 0.608, 0.672, 0.69, 0.776, 0.608, 0.75, 0.242, 0.172, 0.134, 0.22, 0.244, 0.252, 0.14, 0.138, 0.288, 0.186]
+Unlearning task: 7
+Total correct retain:  1454  Total retain:  2500
+Total correct forget:  20059  Total forget:  47500
+Total correct test:  296  Total test:  500
+Total correct forget test:  3744  Total test forget:  9500
+After unlearning task 7
+Task accuracies: [0.592, 0.542, 0.374, 0.6, 0.592, 0.636, 0.656, 0.726, 0.562, 0.728, 0.26, 0.21, 0.136, 0.232, 0.244, 0.238, 0.146, 0.154, 0.29, 0.162]
+Unlearning task: 6
+Total correct retain:  1425  Total retain:  2500
+Total correct forget:  19667  Total forget:  47500
+Total correct test:  296  Total test:  500
+Total correct forget test:  3705  Total test forget:  9500
+After unlearning task 6
+Task accuracies: [0.592, 0.544, 0.352, 0.622, 0.608, 0.656, 0.632, 0.736, 0.538, 0.708, 0.222, 0.234, 0.142, 0.22, 0.254, 0.172, 0.172, 0.146, 0.324, 0.128]
+Training task:  11
+[Learn Buffer] Updating memory for task 11 using least memorization.
+[Memory Update] Task 10, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 11 using most memorization.
+[Memory Update] Task 10, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1491  Total retain:  2500
+Total correct forget:  20719  Total forget:  47500
+Total correct test:  298  Total test:  500
+Total correct forget test:  3874  Total test forget:  9500
+After learning task 11
+Task accuracies: [0.596, 0.52, 0.366, 0.64, 0.568, 0.646, 0.628, 0.682, 0.59, 0.678, 0.666, 0.17, 0.14, 0.216, 0.2, 0.186, 0.148, 0.162, 0.344, 0.198]
+Training task:  12
+[Learn Buffer] Updating memory for task 12 using least memorization.
+[Memory Update] Task 11, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 12 using most memorization.
+[Memory Update] Task 11, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1365  Total retain:  2500
+Total correct forget:  21692  Total forget:  47500
+Total correct test:  268  Total test:  500
+Total correct forget test:  4072  Total test forget:  9500
+After learning task 12
+Task accuracies: [0.536, 0.498, 0.392, 0.604, 0.568, 0.612, 0.564, 0.696, 0.586, 0.644, 0.616, 0.696, 0.152, 0.216, 0.186, 0.234, 0.158, 0.152, 0.374, 0.196]
+Training task:  13
+[Learn Buffer] Updating memory for task 13 using least memorization.
+[Memory Update] Task 12, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 13 using most memorization.
+[Memory Update] Task 12, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1294  Total retain:  2500
+Total correct forget:  21786  Total forget:  47500
+Total correct test:  272  Total test:  500
+Total correct forget test:  4063  Total test forget:  9500
+After learning task 13
+Task accuracies: [0.544, 0.52, 0.312, 0.57, 0.474, 0.57, 0.556, 0.678, 0.578, 0.614, 0.588, 0.588, 0.646, 0.18, 0.204, 0.248, 0.176, 0.116, 0.378, 0.13]
+Training task:  14
+[Learn Buffer] Updating memory for task 14 using least memorization.
+[Memory Update] Task 13, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 14 using most memorization.
+[Memory Update] Task 13, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1305  Total retain:  2500
+Total correct forget:  23786  Total forget:  47500
+Total correct test:  251  Total test:  500
+Total correct forget test:  4458  Total test forget:  9500
+After learning task 14
+Task accuracies: [0.502, 0.504, 0.354, 0.58, 0.488, 0.538, 0.576, 0.694, 0.59, 0.62, 0.632, 0.602, 0.614, 0.772, 0.196, 0.242, 0.18, 0.13, 0.382, 0.222]
+Training task:  15
+[Learn Buffer] Updating memory for task 15 using least memorization.
+[Memory Update] Task 14, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 15 using most memorization.
+[Memory Update] Task 14, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1336  Total retain:  2500
+Total correct forget:  25515  Total forget:  47500
+Total correct test:  278  Total test:  500
+Total correct forget test:  4699  Total test forget:  9500
+After learning task 15
+Task accuracies: [0.556, 0.546, 0.328, 0.592, 0.496, 0.566, 0.57, 0.674, 0.554, 0.608, 0.608, 0.572, 0.57, 0.716, 0.76, 0.28, 0.224, 0.142, 0.362, 0.23]
+Training task:  16
+[Learn Buffer] Updating memory for task 16 using least memorization.
+[Memory Update] Task 15, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 16 using most memorization.
+[Memory Update] Task 15, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1408  Total retain:  2500
+Total correct forget:  26316  Total forget:  47500
+Total correct test:  290  Total test:  500
+Total correct forget test:  4862  Total test forget:  9500
+After learning task 16
+Task accuracies: [0.58, 0.52, 0.336, 0.612, 0.512, 0.578, 0.56, 0.654, 0.554, 0.642, 0.604, 0.58, 0.548, 0.692, 0.708, 0.808, 0.196, 0.152, 0.332, 0.136]
+Training task:  17
+[Learn Buffer] Updating memory for task 17 using least memorization.
+[Memory Update] Task 16, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 17 using most memorization.
+[Memory Update] Task 16, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1395  Total retain:  2500
+Total correct forget:  27334  Total forget:  47500
+Total correct test:  276  Total test:  500
+Total correct forget test:  5075  Total test forget:  9500
+After learning task 17
+Task accuracies: [0.552, 0.516, 0.324, 0.6, 0.522, 0.594, 0.538, 0.662, 0.596, 0.658, 0.572, 0.526, 0.554, 0.652, 0.688, 0.738, 0.822, 0.17, 0.282, 0.136]
+Training task:  18
+[Learn Buffer] Updating memory for task 18 using least memorization.
+[Memory Update] Task 17, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 18 using most memorization.
+[Memory Update] Task 17, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1409  Total retain:  2500
+Total correct forget:  28231  Total forget:  47500
+Total correct test:  289  Total test:  500
+Total correct forget test:  5166  Total test forget:  9500
+After learning task 18
+Task accuracies: [0.578, 0.488, 0.324, 0.578, 0.484, 0.574, 0.512, 0.648, 0.488, 0.634, 0.568, 0.532, 0.524, 0.694, 0.702, 0.782, 0.748, 0.626, 0.302, 0.124]
+Training task:  19
+[Learn Buffer] Updating memory for task 19 using least memorization.
+[Memory Update] Task 18, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 19 using most memorization.
+[Memory Update] Task 18, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1420  Total retain:  2500
+Total correct forget:  29271  Total forget:  47500
+Total correct test:  282  Total test:  500
+Total correct forget test:  5339  Total test forget:  9500
+After learning task 19
+Task accuracies: [0.564, 0.486, 0.354, 0.584, 0.488, 0.572, 0.504, 0.618, 0.536, 0.634, 0.53, 0.56, 0.57, 0.638, 0.676, 0.726, 0.744, 0.572, 0.758, 0.128]
+Training task:  20
+[Learn Buffer] Updating memory for task 20 using least memorization.
+[Memory Update] Task 19, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 20 using most memorization.
+[Memory Update] Task 19, Buffer: unlearn, Type: most, Split: 0.99
+Total correct retain:  1358  Total retain:  2500
+Total correct forget:  30153  Total forget:  47500
+Total correct test:  271  Total test:  500
+Total correct forget test:  5525  Total test forget:  9500
+After learning task 20
+Task accuracies: [0.542, 0.496, 0.288, 0.554, 0.452, 0.586, 0.522, 0.62, 0.562, 0.614, 0.524, 0.522, 0.568, 0.588, 0.64, 0.722, 0.754, 0.546, 0.722, 0.77]
+Number of constraint violations:  0

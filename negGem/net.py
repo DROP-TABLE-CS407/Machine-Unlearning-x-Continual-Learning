@@ -542,11 +542,11 @@ class Net(nn.Module):
             current_labs = (self.unlearn_memory_labs[t][x1:x2] - offset1)
             random.shuffle(current_labs)
             loss = self.ce(
-                        self.forward(self.unlearn_memory_data[past_task][x1:x2], t)[:, offset1: offset2], current_labs)
+                        self.forward(self.unlearn_memory_data[t][x1:x2], t)[:, offset1: offset2], current_labs)
             current_labs = (self.learn_memory_labs[t][x1:x2] - offset1)
             random.shuffle(current_labs)
             loss += self.ce(
-                        self.forward(self.learn_memory_data[past_task][x1:x2], t)[:, offset1: offset2], current_labs)
+                        self.forward(self.learn_memory_data[t][x1:x2], t)[:, offset1: offset2], current_labs)
             # negate loss for unlearning
             loss = 5 * loss
             loss.backward()
