@@ -1,0 +1,3252 @@
+Requirement already satisfied: pyyaml in /usr/lib64/python3.12/site-packages (6.0.1)
+Requirement already satisfied: setuptools in /usr/lib/python3.12/site-packages (68.2.2)
+Requirement already satisfied: matplotlib in /dcs/21/u2110391/.local/lib/python3.12/site-packages (3.10.1)
+Requirement already satisfied: contourpy>=1.0.1 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from matplotlib) (1.3.1)
+Requirement already satisfied: cycler>=0.10 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from matplotlib) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from matplotlib) (4.56.0)
+Requirement already satisfied: kiwisolver>=1.3.1 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from matplotlib) (1.4.8)
+Requirement already satisfied: numpy>=1.23 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from matplotlib) (2.2.4)
+Requirement already satisfied: packaging>=20.0 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from matplotlib) (24.2)
+Requirement already satisfied: pillow>=8 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from matplotlib) (11.1.0)
+Requirement already satisfied: pyparsing>=2.3.1 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from matplotlib) (3.2.3)
+Requirement already satisfied: python-dateutil>=2.7 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from matplotlib) (2.9.0.post0)
+Requirement already satisfied: six>=1.5 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from python-dateutil>=2.7->matplotlib) (1.17.0)
+Requirement already satisfied: quadprog in /dcs/21/u2110391/.local/lib/python3.12/site-packages (0.1.13)
+Requirement already satisfied: numpy in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from quadprog) (2.2.4)
+Requirement already satisfied: pyparsing in /dcs/21/u2110391/.local/lib/python3.12/site-packages (3.2.3)
+Requirement already satisfied: pandas in /dcs/21/u2110391/.local/lib/python3.12/site-packages (2.2.3)
+Requirement already satisfied: numpy>=1.26.0 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from pandas) (2.2.4)
+Requirement already satisfied: python-dateutil>=2.8.2 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from pandas) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from pandas) (2025.2)
+Requirement already satisfied: tzdata>=2022.7 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from pandas) (2025.2)
+Requirement already satisfied: six>=1.5 in /dcs/21/u2110391/.local/lib/python3.12/site-packages (from python-dateutil>=2.8.2->pandas) (1.17.0)
+Requirement already satisfied: numpy in /dcs/21/u2110391/.local/lib/python3.12/site-packages (2.2.4)
+Mon Apr 28 23:02:44 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.144.03             Driver Version: 550.144.03     CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA RTX A5000               Off |   00000000:01:00.0 Off |                  Off |
+| 30%   53C    P0             N/A /  230W |       1MiB /  24564MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Command line arguments:
+task_sequence: MIA
+number_of_gpus: 1
+algorithm: neggrad
+alpha: 0.5
+learn_mem_strength: 0.5
+learn_batch_size: 10
+unlearn_mem_strength: 0.5
+unlearn_batch_size: 4
+average_over_n_runs: 1
+salun: 1
+salun_strength: 0.05
+Python 3.12.8
+./cifar-100-python/train
+./cifar-100-python/test
+Number of GPUs visible:  1
+Available GPUs:  1
+Mon Apr 28 23:02:53 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.144.03             Driver Version: 550.144.03     CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA RTX A5000               Off |   00000000:01:00.0 Off |                  Off |
+| 30%   53C    P0             N/A /  230W |       1MiB /  24564MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Running on device:  NVIDIA RTX A5000
+Unlearn Batch Size:  4
+Unlearn MEM Strength:  0.5
+cifar-100-python/train
+cifar-100-python/test
+new ordering of classes:  ['cloud', 'shrew', 'tiger', 'bed', 'snake', 'spider', 'tractor', 'skunk', 'pine', 'snail', 'train', 'pickup truck', 'sea', 'streetcar', 'worm', 'leopard', 'man', 'pears', 'bottles', 'house', 'bowls', 'dinosaur', 'plates', 'mouse', 'flatfish', 'mushrooms', 'bicycle', 'rabbit', 'kangaroo', 'maple', 'palm', 'caterpillar', 'seal', 'crocodile', 'mountain', 'otter', 'hamster', 'rocket', 'shark', 'skyscraper', 'apples', 'lizard', 'tank', 'tulips', 'couch', 'possum', 'cans', 'whale', 'castle', 'lawn-mower', 'cattle', 'bee', 'table', 'trout', 'willow', 'lobster', 'cups', 'woman', 'chair', 'oranges', 'television', 'boy', 'ray', 'road', 'elephant', 'raccoon', 'aquarium fish', 'sweet peppers', 'wardrobe', 'lion', 'camel', 'cockroach', 'butterfly', 'beetle', 'porcupine', 'squirrel', 'forest', 'baby', 'motorcycle', 'bear', 'computer keyboard', 'wolf', 'roses', 'bus', 'crab', 'sunflowers', 'turtle', 'dolphin', 'fox', 'chimpanzee', 'beaver', 'telephone', 'girl', 'lamp', 'poppies', 'orchids', 'plain', 'bridge', 'oak', 'clock']
+Training task:  1
+[Learn Buffer] Updating memory for task 1 using least memorization.
+[Memory Update] Task 0, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 1 using most memorization.
+[Memory Update] Task 0, Buffer: unlearn, Type: most, Split: 0.99
+1 0
+Total correct retain:  2004  Total retain:  2500
+Total correct forget:  9620  Total forget:  47500
+Total correct test:  312  Total test:  500
+Total correct forget test:  1895  Total test forget:  9500
+After learning task 1
+Task accuracies: [0.624, 0.19, 0.2, 0.246, 0.196, 0.224, 0.218, 0.208, 0.19, 0.188, 0.282, 0.19, 0.206, 0.144, 0.186, 0.192, 0.162, 0.174, 0.196, 0.198]
+Training task:  2
+[Learn Buffer] Updating memory for task 2 using least memorization.
+[Memory Update] Task 1, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 2 using most memorization.
+[Memory Update] Task 1, Buffer: unlearn, Type: most, Split: 0.99
+1 1
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([8, 9, 9, 9, 8, 9, 5, 7, 5, 8], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=0.0268, std=0.1984
+[DEBUG][MIA] Test Set Loss:   mean=1.0289, std=2.6073
+[Task 1] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.6171875, 'cv_acc': 0.20784313725490197, 'auc': 0.6666259765625, 'task': 1}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [8 8 6 6 6 7 9 7 8 5]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=0.0465, std=0.2428
+[DEBUG][MIA] Test Set Loss:   mean=0.9006, std=2.1518
+[Task 1] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.612, 'cv_acc': 0.21800000000000003, 'auc': 0.6857359999999999, 'task': 1}
+2 1
+Total correct retain:  1845  Total retain:  2500
+Total correct forget:  11989  Total forget:  47500
+Total correct test:  305  Total test:  500
+Total correct forget test:  2220  Total test forget:  9500
+After learning task 2
+Task accuracies: [0.61, 0.794, 0.14, 0.17, 0.152, 0.212, 0.2, 0.198, 0.164, 0.164, 0.248, 0.218, 0.27, 0.188, 0.208, 0.194, 0.182, 0.18, 0.22, 0.338]
+Training task:  3
+[Learn Buffer] Updating memory for task 3 using least memorization.
+[Memory Update] Task 2, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 3 using most memorization.
+[Memory Update] Task 2, Buffer: unlearn, Type: most, Split: 0.99
+1 2
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([8, 9, 9, 9, 8, 9, 5, 7, 5, 8], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=0.0060, std=0.0253
+[DEBUG][MIA] Test Set Loss:   mean=1.5992, std=2.9920
+[Task 1] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.71484375, 'cv_acc': 0.2901960784313725, 'auc': 0.764862060546875, 'task': 1}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [8 8 6 6 6 7 9 7 8 5]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=0.7486, std=1.5993
+[DEBUG][MIA] Test Set Loss:   mean=1.3771, std=2.5195
+[Task 1] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.546, 'cv_acc': 0.16, 'auc': 0.5657519999999999, 'task': 1}
+2 2
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([10, 13, 10, 10, 11, 13, 12, 13, 12, 11], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=0.0121, std=0.0521
+[DEBUG][MIA] Test Set Loss:   mean=1.0615, std=2.2764
+[Task 2] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.671875, 'cv_acc': 0.2156862745098039, 'auc': 0.72686767578125, 'task': 2}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [10 12 12 13 10 12 14 14 13 13]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=0.0137, std=0.0837
+[DEBUG][MIA] Test Set Loss:   mean=1.0769, std=2.5614
+[Task 2] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.636, 'cv_acc': 0.22400000000000003, 'auc': 0.715656, 'task': 2}
+3 2
+Total correct retain:  1725  Total retain:  2500
+Total correct forget:  13658  Total forget:  47500
+Total correct test:  289  Total test:  500
+Total correct forget test:  2553  Total test forget:  9500
+After learning task 3
+Task accuracies: [0.578, 0.676, 0.774, 0.178, 0.19, 0.208, 0.226, 0.23, 0.156, 0.194, 0.276, 0.226, 0.268, 0.216, 0.21, 0.218, 0.204, 0.22, 0.216, 0.22]
+Training task:  4
+[Learn Buffer] Updating memory for task 4 using least memorization.
+[Memory Update] Task 3, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 4 using most memorization.
+[Memory Update] Task 3, Buffer: unlearn, Type: most, Split: 0.99
+1 3
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([8, 9, 9, 9, 8, 9, 5, 7, 5, 8], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=0.0039, std=0.0104
+[DEBUG][MIA] Test Set Loss:   mean=1.7815, std=2.7334
+[Task 1] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.76953125, 'cv_acc': 0.7607843137254902, 'auc': 0.84124755859375, 'task': 1}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [8 8 6 6 6 7 9 7 8 5]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=1.5146, std=2.6372
+[DEBUG][MIA] Test Set Loss:   mean=1.7805, std=2.7022
+[Task 1] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.534, 'cv_acc': 0.15399999999999997, 'auc': 0.54412, 'task': 1}
+2 3
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([10, 13, 10, 10, 11, 13, 12, 13, 12, 11], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=0.0112, std=0.0503
+[DEBUG][MIA] Test Set Loss:   mean=1.4143, std=2.6826
+[Task 2] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.7109375, 'cv_acc': 0.2627450980392157, 'auc': 0.765899658203125, 'task': 2}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [10 12 12 13 10 12 14 14 13 13]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=0.8256, std=2.0686
+[DEBUG][MIA] Test Set Loss:   mean=1.3047, std=2.4322
+[Task 2] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.552, 'cv_acc': 0.166, 'auc': 0.567768, 'task': 2}
+3 3
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([15, 17, 19, 18, 15, 18, 18, 16, 18, 18], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [18 17 15 17 18 17 16 18 17 15]
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG][MIA] Forget Set Loss: mean=0.0223, std=0.1185
+[DEBUG][MIA] Test Set Loss:   mean=1.4723, std=3.1607
+[Task 3] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.63671875, 'cv_acc': 0.27450980392156865, 'auc': 0.739959716796875, 'task': 3}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [15 18 16 15 19 15 16 19 16 16]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [18 17 15 17 18 17 16 18 17 15]
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG][MIA] Forget Set Loss: mean=0.0173, std=0.0966
+[DEBUG][MIA] Test Set Loss:   mean=1.2292, std=2.8579
+[Task 3] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.636, 'cv_acc': 0.248, 'auc': 0.717248, 'task': 3}
+4 3
+Total correct retain:  1659  Total retain:  2500
+Total correct forget:  15156  Total forget:  47500
+Total correct test:  286  Total test:  500
+Total correct forget test:  2783  Total test forget:  9500
+After learning task 4
+Task accuracies: [0.572, 0.614, 0.69, 0.748, 0.2, 0.24, 0.222, 0.144, 0.244, 0.198, 0.234, 0.246, 0.276, 0.224, 0.22, 0.22, 0.18, 0.21, 0.222, 0.234]
+Training task:  5
+[Learn Buffer] Updating memory for task 5 using least memorization.
+[Memory Update] Task 4, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 5 using most memorization.
+[Memory Update] Task 4, Buffer: unlearn, Type: most, Split: 0.99
+1 4
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([8, 9, 9, 9, 8, 9, 5, 7, 5, 8], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=0.0012, std=0.0026
+[DEBUG][MIA] Test Set Loss:   mean=1.7286, std=2.6131
+[Task 1] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.74609375, 'cv_acc': 0.7607843137254902, 'auc': 0.88531494140625, 'task': 1}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [8 8 6 6 6 7 9 7 8 5]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=1.4103, std=2.7931
+[DEBUG][MIA] Test Set Loss:   mean=1.9647, std=3.0954
+[Task 1] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.534, 'cv_acc': 0.094, 'auc': 0.58132, 'task': 1}
+2 4
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([10, 13, 10, 10, 11, 13, 12, 13, 12, 11], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=0.0026, std=0.0110
+[DEBUG][MIA] Test Set Loss:   mean=1.8996, std=2.9972
+[Task 2] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.71875, 'cv_acc': 0.28627450980392155, 'auc': 0.801422119140625, 'task': 2}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [10 12 12 13 10 12 14 14 13 13]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=0.8882, std=2.1361
+[DEBUG][MIA] Test Set Loss:   mean=1.8732, std=3.1885
+[Task 2] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.566, 'cv_acc': 0.14200000000000002, 'auc': 0.60656, 'task': 2}
+3 4
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([15, 17, 19, 18, 15, 18, 18, 16, 18, 18], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [18 17 15 17 18 17 16 18 17 15]
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG][MIA] Forget Set Loss: mean=0.0018, std=0.0035
+[DEBUG][MIA] Test Set Loss:   mean=1.8921, std=3.8134
+[Task 3] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.69140625, 'cv_acc': 0.7254901960784315, 'auc': 0.788787841796875, 'task': 3}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [15 18 16 15 19 15 16 19 16 16]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [18 17 15 17 18 17 16 18 17 15]
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG][MIA] Forget Set Loss: mean=0.2629, std=0.8719
+[DEBUG][MIA] Test Set Loss:   mean=2.0199, std=3.7359
+[Task 3] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.636, 'cv_acc': 0.22399999999999998, 'auc': 0.680464, 'task': 3}
+4 4
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([22, 22, 21, 24, 24, 24, 21, 22, 22, 21], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [24 22 20 24 23 20 24 23 24 20]
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG][MIA] Forget Set Loss: mean=0.0141, std=0.1232
+[DEBUG][MIA] Test Set Loss:   mean=0.8532, std=1.9181
+[Task 4] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.66796875, 'cv_acc': 0.24705882352941178, 'auc': 0.77752685546875, 'task': 4}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [24 23 24 22 24 24 21 21 24 22]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [24 22 20 24 23 20 24 23 24 20]
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG][MIA] Forget Set Loss: mean=0.0068, std=0.0373
+[DEBUG][MIA] Test Set Loss:   mean=1.2548, std=2.8494
+[Task 4] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.664, 'cv_acc': 0.20400000000000001, 'auc': 0.759552, 'task': 4}
+5 4
+Total correct retain:  1641  Total retain:  2500
+Total correct forget:  16863  Total forget:  47500
+Total correct test:  296  Total test:  500
+Total correct forget test:  2961  Total test forget:  9500
+After learning task 5
+Task accuracies: [0.592, 0.592, 0.632, 0.64, 0.79, 0.204, 0.276, 0.168, 0.14, 0.196, 0.258, 0.296, 0.244, 0.224, 0.214, 0.218, 0.154, 0.182, 0.226, 0.268]
+Training task:  6
+[Learn Buffer] Updating memory for task 6 using least memorization.
+[Memory Update] Task 5, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 6 using most memorization.
+[Memory Update] Task 5, Buffer: unlearn, Type: most, Split: 0.99
+1 5
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([8, 9, 9, 9, 8, 9, 5, 7, 5, 8], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=0.0003, std=0.0007
+[DEBUG][MIA] Test Set Loss:   mean=2.2616, std=3.4592
+[Task 1] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.765625, 'cv_acc': 0.30980392156862746, 'auc': 0.88323974609375, 'task': 1}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [8 8 6 6 6 7 9 7 8 5]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=1.5052, std=2.8748
+[DEBUG][MIA] Test Set Loss:   mean=1.9863, std=3.2935
+[Task 1] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.546, 'cv_acc': 0.11600000000000002, 'auc': 0.5645040000000001, 'task': 1}
+2 5
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([10, 13, 10, 10, 11, 13, 12, 13, 12, 11], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=0.0088, std=0.0243
+[DEBUG][MIA] Test Set Loss:   mean=2.1368, std=3.6735
+[Task 2] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.71875, 'cv_acc': 0.7019607843137254, 'auc': 0.780914306640625, 'task': 2}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [10 12 12 13 10 12 14 14 13 13]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=1.4524, std=2.9361
+[DEBUG][MIA] Test Set Loss:   mean=2.2967, std=3.4986
+[Task 2] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.574, 'cv_acc': 0.1, 'auc': 0.595008, 'task': 2}
+3 5
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([15, 17, 19, 18, 15, 18, 18, 16, 18, 18], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [18 17 15 17 18 17 16 18 17 15]
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG][MIA] Forget Set Loss: mean=0.0013, std=0.0030
+[DEBUG][MIA] Test Set Loss:   mean=2.3270, std=4.0209
+[Task 3] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.73046875, 'cv_acc': 0.28627450980392155, 'auc': 0.793853759765625, 'task': 3}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [15 18 16 15 19 15 16 19 16 16]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [18 17 15 17 18 17 16 18 17 15]
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG][MIA] Forget Set Loss: mean=0.6769, std=1.8806
+[DEBUG][MIA] Test Set Loss:   mean=2.1585, std=3.5314
+[Task 3] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.618, 'cv_acc': 0.21000000000000002, 'auc': 0.6466639999999999, 'task': 3}
+4 5
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([22, 22, 21, 24, 24, 24, 21, 22, 22, 21], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [24 22 20 24 23 20 24 23 24 20]
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG][MIA] Forget Set Loss: mean=0.0025, std=0.0066
+[DEBUG][MIA] Test Set Loss:   mean=1.8379, std=3.4448
+[Task 4] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.734375, 'cv_acc': 0.2823529411764706, 'auc': 0.8343505859375, 'task': 4}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [24 23 24 22 24 24 21 21 24 22]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [24 22 20 24 23 20 24 23 24 20]
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG][MIA] Forget Set Loss: mean=0.3292, std=1.1318
+[DEBUG][MIA] Test Set Loss:   mean=1.5112, std=3.0115
+[Task 4] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.63, 'cv_acc': 0.21200000000000002, 'auc': 0.681808, 'task': 4}
+5 5
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([26, 25, 26, 25, 25, 28, 25, 29, 26, 28], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [25 28 26 26 27 29 26 28 25 26]
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG][MIA] Forget Set Loss: mean=0.0075, std=0.0622
+[DEBUG][MIA] Test Set Loss:   mean=1.1044, std=2.6084
+[Task 5] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.66015625, 'cv_acc': 0.2, 'auc': 0.71234130859375, 'task': 5}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [28 28 26 26 29 27 29 29 25 28]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [25 28 26 26 27 29 26 28 25 26]
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG][MIA] Forget Set Loss: mean=0.0044, std=0.0398
+[DEBUG][MIA] Test Set Loss:   mean=0.9441, std=2.4871
+[Task 5] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.652, 'cv_acc': 0.21200000000000002, 'auc': 0.723888, 'task': 5}
+6 5
+Total correct retain:  1656  Total retain:  2500
+Total correct forget:  18576  Total forget:  47500
+Total correct test:  293  Total test:  500
+Total correct forget test:  3324  Total test forget:  9500
+After learning task 6
+Task accuracies: [0.586, 0.64, 0.646, 0.602, 0.664, 0.826, 0.278, 0.184, 0.218, 0.204, 0.3, 0.328, 0.25, 0.206, 0.218, 0.224, 0.164, 0.224, 0.222, 0.25]
+Training task:  7
+[Learn Buffer] Updating memory for task 7 using least memorization.
+[Memory Update] Task 6, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 7 using most memorization.
+[Memory Update] Task 6, Buffer: unlearn, Type: most, Split: 0.99
+1 6
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([8, 9, 9, 9, 8, 9, 5, 7, 5, 8], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=0.0004, std=0.0011
+[DEBUG][MIA] Test Set Loss:   mean=2.1284, std=3.6587
+[Task 1] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.75, 'cv_acc': 0.7254901960784313, 'auc': 0.85968017578125, 'task': 1}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [8 8 6 6 6 7 9 7 8 5]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=1.6861, std=3.0328
+[DEBUG][MIA] Test Set Loss:   mean=2.1241, std=3.5596
+[Task 1] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.518, 'cv_acc': 0.128, 'auc': 0.550984, 'task': 1}
+2 6
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([10, 13, 10, 10, 11, 13, 12, 13, 12, 11], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=0.0042, std=0.0260
+[DEBUG][MIA] Test Set Loss:   mean=1.8212, std=2.9278
+[Task 2] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.7421875, 'cv_acc': 0.2705882352941177, 'auc': 0.80926513671875, 'task': 2}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [10 12 12 13 10 12 14 14 13 13]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=1.2382, std=2.5569
+[DEBUG][MIA] Test Set Loss:   mean=1.9648, std=3.2662
+[Task 2] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.554, 'cv_acc': 0.13799999999999998, 'auc': 0.573056, 'task': 2}
+3 6
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([15, 17, 19, 18, 15, 18, 18, 16, 18, 18], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [18 17 15 17 18 17 16 18 17 15]
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG][MIA] Forget Set Loss: mean=0.0030, std=0.0115
+[DEBUG][MIA] Test Set Loss:   mean=1.9510, std=3.2627
+[Task 3] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.71484375, 'cv_acc': 0.7019607843137254, 'auc': 0.85162353515625, 'task': 3}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [15 18 16 15 19 15 16 19 16 16]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [18 17 15 17 18 17 16 18 17 15]
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG][MIA] Forget Set Loss: mean=1.0560, std=2.3691
+[DEBUG][MIA] Test Set Loss:   mean=2.4803, std=3.9884
+[Task 3] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.588, 'cv_acc': 0.22199999999999998, 'auc': 0.6234719999999999, 'task': 3}
+4 6
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([22, 22, 21, 24, 24, 24, 21, 22, 22, 21], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [24 22 20 24 23 20 24 23 24 20]
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG][MIA] Forget Set Loss: mean=0.0036, std=0.0163
+[DEBUG][MIA] Test Set Loss:   mean=1.3233, std=2.7330
+[Task 4] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.6953125, 'cv_acc': 0.7372549019607844, 'auc': 0.804168701171875, 'task': 4}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [24 23 24 22 24 24 21 21 24 22]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [24 22 20 24 23 20 24 23 24 20]
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG][MIA] Forget Set Loss: mean=0.5317, std=1.3490
+[DEBUG][MIA] Test Set Loss:   mean=1.2810, std=2.4322
+[Task 4] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.568, 'cv_acc': 0.194, 'auc': 0.5917279999999999, 'task': 4}
+5 6
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([26, 25, 26, 25, 25, 28, 25, 29, 26, 28], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [25 28 26 26 27 29 26 28 25 26]
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG][MIA] Forget Set Loss: mean=0.0007, std=0.0014
+[DEBUG][MIA] Test Set Loss:   mean=1.0744, std=2.4653
+[Task 5] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.66796875, 'cv_acc': 0.2549019607843137, 'auc': 0.80120849609375, 'task': 5}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [28 28 26 26 29 27 29 29 25 28]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [25 28 26 26 27 29 26 28 25 26]
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG][MIA] Forget Set Loss: mean=0.2380, std=0.8104
+[DEBUG][MIA] Test Set Loss:   mean=1.2113, std=2.5426
+[Task 5] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.584, 'cv_acc': 0.186, 'auc': 0.6579119999999999, 'task': 5}
+6 6
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([33, 34, 33, 33, 32, 31, 30, 32, 31, 33], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [34 32 34 30 34 30 31 30 31 31]
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG][MIA] Forget Set Loss: mean=0.0047, std=0.0253
+[DEBUG][MIA] Test Set Loss:   mean=0.5639, std=1.9630
+[Task 6] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.62109375, 'cv_acc': 0.21960784313725493, 'auc': 0.743499755859375, 'task': 6}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [33 34 30 32 31 34 31 30 33 33]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [34 32 34 30 34 30 31 30 31 31]
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG][MIA] Forget Set Loss: mean=0.0060, std=0.0722
+[DEBUG][MIA] Test Set Loss:   mean=0.6530, std=1.9488
+[Task 6] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.628, 'cv_acc': 0.2, 'auc': 0.6992079999999999, 'task': 6}
+7 6
+Total correct retain:  1559  Total retain:  2500
+Total correct forget:  19370  Total forget:  47500
+Total correct test:  292  Total test:  500
+Total correct forget test:  3478  Total test forget:  9500
+After learning task 7
+Task accuracies: [0.584, 0.628, 0.63, 0.594, 0.678, 0.726, 0.854, 0.11, 0.212, 0.178, 0.27, 0.282, 0.246, 0.24, 0.236, 0.232, 0.166, 0.186, 0.222, 0.266]
+Training task:  8
+[Learn Buffer] Updating memory for task 8 using least memorization.
+[Memory Update] Task 7, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 8 using most memorization.
+[Memory Update] Task 7, Buffer: unlearn, Type: most, Split: 0.99
+1 7
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([8, 9, 9, 9, 8, 9, 5, 7, 5, 8], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=0.0017, std=0.0141
+[DEBUG][MIA] Test Set Loss:   mean=2.2663, std=3.7529
+[Task 1] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.74609375, 'cv_acc': 0.29411764705882354, 'auc': 0.85406494140625, 'task': 1}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [8 8 6 6 6 7 9 7 8 5]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=1.3912, std=3.0028
+[DEBUG][MIA] Test Set Loss:   mean=1.9233, std=3.3171
+[Task 1] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.542, 'cv_acc': 0.094, 'auc': 0.556464, 'task': 1}
+2 7
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([10, 13, 10, 10, 11, 13, 12, 13, 12, 11], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=0.0010, std=0.0039
+[DEBUG][MIA] Test Set Loss:   mean=2.2465, std=4.2886
+[Task 2] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.703125, 'cv_acc': 0.2901960784313725, 'auc': 0.818939208984375, 'task': 2}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [10 12 12 13 10 12 14 14 13 13]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=1.6885, std=3.1747
+[DEBUG][MIA] Test Set Loss:   mean=2.1621, std=3.9209
+[Task 2] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.496, 'cv_acc': 0.12200000000000003, 'auc': 0.5365120000000001, 'task': 2}
+3 7
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([15, 17, 19, 18, 15, 18, 18, 16, 18, 18], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [18 17 15 17 18 17 16 18 17 15]
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG][MIA] Forget Set Loss: mean=0.0047, std=0.0158
+[DEBUG][MIA] Test Set Loss:   mean=2.4001, std=3.5206
+[Task 3] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.765625, 'cv_acc': 0.7058823529411764, 'auc': 0.840972900390625, 'task': 3}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [15 18 16 15 19 15 16 19 16 16]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [18 17 15 17 18 17 16 18 17 15]
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG][MIA] Forget Set Loss: mean=1.3934, std=2.6791
+[DEBUG][MIA] Test Set Loss:   mean=2.3050, std=3.6972
+[Task 3] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.552, 'cv_acc': 0.192, 'auc': 0.5683199999999999, 'task': 3}
+4 7
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([22, 22, 21, 24, 24, 24, 21, 22, 22, 21], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [24 22 20 24 23 20 24 23 24 20]
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG][MIA] Forget Set Loss: mean=0.0008, std=0.0023
+[DEBUG][MIA] Test Set Loss:   mean=1.7579, std=3.0558
+[Task 4] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.7421875, 'cv_acc': 0.7411764705882353, 'auc': 0.837066650390625, 'task': 4}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [24 23 24 22 24 24 21 21 24 22]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [24 22 20 24 23 20 24 23 24 20]
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG][MIA] Forget Set Loss: mean=0.7072, std=1.7662
+[DEBUG][MIA] Test Set Loss:   mean=1.7602, std=3.1610
+[Task 4] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.586, 'cv_acc': 0.16599999999999998, 'auc': 0.614992, 'task': 4}
+5 7
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([26, 25, 26, 25, 25, 28, 25, 29, 26, 28], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [25 28 26 26 27 29 26 28 25 26]
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG][MIA] Forget Set Loss: mean=0.0026, std=0.0078
+[DEBUG][MIA] Test Set Loss:   mean=1.7948, std=3.4001
+[Task 5] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.7265625, 'cv_acc': 0.29411764705882354, 'auc': 0.80621337890625, 'task': 5}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [28 28 26 26 29 27 29 29 25 28]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [25 28 26 26 27 29 26 28 25 26]
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG][MIA] Forget Set Loss: mean=0.6531, std=1.6081
+[DEBUG][MIA] Test Set Loss:   mean=1.6105, std=3.1727
+[Task 5] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.568, 'cv_acc': 0.15599999999999997, 'auc': 0.609232, 'task': 5}
+6 7
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([33, 34, 33, 33, 32, 31, 30, 32, 31, 33], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [34 32 34 30 34 30 31 30 31 31]
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG][MIA] Forget Set Loss: mean=0.0002, std=0.0003
+[DEBUG][MIA] Test Set Loss:   mean=0.9510, std=2.0910
+[Task 6] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.67578125, 'cv_acc': 0.25882352941176473, 'auc': 0.79644775390625, 'task': 6}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [33 34 30 32 31 34 31 30 33 33]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [34 32 34 30 34 30 31 30 31 31]
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG][MIA] Forget Set Loss: mean=0.1891, std=0.9226
+[DEBUG][MIA] Test Set Loss:   mean=0.8606, std=2.0247
+[Task 6] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.6, 'cv_acc': 0.194, 'auc': 0.6510639999999999, 'task': 6}
+7 7
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([37, 39, 39, 35, 36, 39, 37, 38, 35, 39], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [37 38 36 38 37 36 37 39 36 36]
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG][MIA] Forget Set Loss: mean=0.0230, std=0.2057
+[DEBUG][MIA] Test Set Loss:   mean=1.0106, std=2.2496
+[Task 7] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.66796875, 'cv_acc': 0.19607843137254902, 'auc': 0.718780517578125, 'task': 7}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [39 38 35 37 38 35 37 39 37 38]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [37 38 36 38 37 36 37 39 36 36]
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG][MIA] Forget Set Loss: mean=0.0291, std=0.2382
+[DEBUG][MIA] Test Set Loss:   mean=0.9278, std=2.3043
+[Task 7] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.622, 'cv_acc': 0.24, 'auc': 0.650288, 'task': 7}
+8 7
+Total correct retain:  1541  Total retain:  2500
+Total correct forget:  20984  Total forget:  47500
+Total correct test:  295  Total test:  500
+Total correct forget test:  3750  Total test forget:  9500
+After learning task 8
+Task accuracies: [0.59, 0.628, 0.668, 0.598, 0.646, 0.702, 0.766, 0.78, 0.166, 0.172, 0.288, 0.268, 0.224, 0.232, 0.248, 0.244, 0.2, 0.184, 0.238, 0.248]
+Training task:  9
+[Learn Buffer] Updating memory for task 9 using least memorization.
+[Memory Update] Task 8, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 9 using most memorization.
+[Memory Update] Task 8, Buffer: unlearn, Type: most, Split: 0.99
+1 8
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([8, 9, 9, 9, 8, 9, 5, 7, 5, 8], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=0.0002, std=0.0008
+[DEBUG][MIA] Test Set Loss:   mean=1.9210, std=3.4598
+[Task 1] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.73046875, 'cv_acc': 0.2823529411764706, 'auc': 0.820159912109375, 'task': 1}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [8 8 6 6 6 7 9 7 8 5]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=1.8451, std=3.5419
+[DEBUG][MIA] Test Set Loss:   mean=1.9178, std=3.4983
+[Task 1] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.504, 'cv_acc': 0.10200000000000001, 'auc': 0.514864, 'task': 1}
+2 8
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([10, 13, 10, 10, 11, 13, 12, 13, 12, 11], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=0.0022, std=0.0076
+[DEBUG][MIA] Test Set Loss:   mean=2.5654, std=3.7840
+[Task 2] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.7265625, 'cv_acc': 0.30196078431372547, 'auc': 0.786956787109375, 'task': 2}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [10 12 12 13 10 12 14 14 13 13]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=1.4811, std=3.0585
+[DEBUG][MIA] Test Set Loss:   mean=2.0541, std=3.5038
+[Task 2] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.556, 'cv_acc': 0.11399999999999999, 'auc': 0.558512, 'task': 2}
+3 8
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([15, 17, 19, 18, 15, 18, 18, 16, 18, 18], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [18 17 15 17 18 17 16 18 17 15]
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG][MIA] Forget Set Loss: mean=0.0016, std=0.0039
+[DEBUG][MIA] Test Set Loss:   mean=2.1074, std=3.6539
+[Task 3] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.7265625, 'cv_acc': 0.7294117647058824, 'auc': 0.821044921875, 'task': 3}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [15 18 16 15 19 15 16 19 16 16]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [18 17 15 17 18 17 16 18 17 15]
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG][MIA] Forget Set Loss: mean=1.5110, std=2.8225
+[DEBUG][MIA] Test Set Loss:   mean=2.2814, std=3.6406
+[Task 3] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.552, 'cv_acc': 0.166, 'auc': 0.574528, 'task': 3}
+4 8
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([22, 22, 21, 24, 24, 24, 21, 22, 22, 21], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [24 22 20 24 23 20 24 23 24 20]
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG][MIA] Forget Set Loss: mean=0.0010, std=0.0034
+[DEBUG][MIA] Test Set Loss:   mean=1.4204, std=2.5445
+[Task 4] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.73046875, 'cv_acc': 0.2980392156862745, 'auc': 0.8277587890625, 'task': 4}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [24 23 24 22 24 24 21 21 24 22]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [24 22 20 24 23 20 24 23 24 20]
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG][MIA] Forget Set Loss: mean=0.9180, std=2.3080
+[DEBUG][MIA] Test Set Loss:   mean=1.7502, std=3.3507
+[Task 4] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.568, 'cv_acc': 0.12600000000000003, 'auc': 0.595352, 'task': 4}
+5 8
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([26, 25, 26, 25, 25, 28, 25, 29, 26, 28], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [25 28 26 26 27 29 26 28 25 26]
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG][MIA] Forget Set Loss: mean=0.0003, std=0.0004
+[DEBUG][MIA] Test Set Loss:   mean=1.4419, std=2.4940
+[Task 5] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.72265625, 'cv_acc': 0.6078431372549019, 'auc': 0.820281982421875, 'task': 5}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [28 28 26 26 29 27 29 29 25 28]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [25 28 26 26 27 29 26 28 25 26]
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG][MIA] Forget Set Loss: mean=0.6887, std=1.8502
+[DEBUG][MIA] Test Set Loss:   mean=1.2777, std=2.6797
+[Task 5] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.546, 'cv_acc': 0.182, 'auc': 0.585024, 'task': 5}
+6 8
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([33, 34, 33, 33, 32, 31, 30, 32, 31, 33], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [34 32 34 30 34 30 31 30 31 31]
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG][MIA] Forget Set Loss: mean=0.0014, std=0.0052
+[DEBUG][MIA] Test Set Loss:   mean=1.2922, std=2.6107
+[Task 6] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.703125, 'cv_acc': 0.2901960784313726, 'auc': 0.77362060546875, 'task': 6}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [33 34 30 32 31 34 31 30 33 33]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [34 32 34 30 34 30 31 30 31 31]
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG][MIA] Forget Set Loss: mean=0.3682, std=1.0688
+[DEBUG][MIA] Test Set Loss:   mean=1.3553, std=2.4862
+[Task 6] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.592, 'cv_acc': 0.194, 'auc': 0.6410959999999999, 'task': 6}
+7 8
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([37, 39, 39, 35, 36, 39, 37, 38, 35, 39], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [37 38 36 38 37 36 37 39 36 36]
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG][MIA] Forget Set Loss: mean=0.0828, std=0.5102
+[DEBUG][MIA] Test Set Loss:   mean=2.0803, std=3.4847
+[Task 7] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.7109375, 'cv_acc': 0.29803921568627445, 'auc': 0.775390625, 'task': 7}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [39 38 35 37 38 35 37 39 37 38]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [37 38 36 38 37 36 37 39 36 36]
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG][MIA] Forget Set Loss: mean=0.4723, std=1.3942
+[DEBUG][MIA] Test Set Loss:   mean=1.6385, std=3.0537
+[Task 7] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.596, 'cv_acc': 0.202, 'auc': 0.641896, 'task': 7}
+8 8
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([42, 42, 41, 44, 40, 44, 42, 44, 40, 40], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [43 40 43 43 44 40 42 43 41 40]
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG][MIA] Forget Set Loss: mean=0.0085, std=0.0584
+[DEBUG][MIA] Test Set Loss:   mean=0.7439, std=1.9165
+[Task 8] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.63671875, 'cv_acc': 0.23529411764705882, 'auc': 0.72515869140625, 'task': 8}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [40 43 44 42 40 41 41 44 42 40]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [43 40 43 43 44 40 42 43 41 40]
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG][MIA] Forget Set Loss: mean=0.0393, std=0.2507
+[DEBUG][MIA] Test Set Loss:   mean=0.9145, std=2.0328
+[Task 8] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.65, 'cv_acc': 0.242, 'auc': 0.721736, 'task': 8}
+Total correct retain:  1596  Total retain:  2500
+Total correct forget:  22504  Total forget:  47500
+Total correct test:  293  Total test:  500
+Total correct forget test:  3975  Total test forget:  9500
+After learning task 9
+Task accuracies: [0.586, 0.64, 0.632, 0.584, 0.668, 0.686, 0.714, 0.694, 0.772, 0.162, 0.236, 0.298, 0.302, 0.242, 0.248, 0.25, 0.138, 0.176, 0.228, 0.28]
+Training task:  10
+[Learn Buffer] Updating memory for task 10 using least memorization.
+[Memory Update] Task 9, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 10 using most memorization.
+[Memory Update] Task 9, Buffer: unlearn, Type: most, Split: 0.99
+1 9
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([8, 9, 9, 9, 8, 9, 5, 7, 5, 8], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=0.0004, std=0.0030
+[DEBUG][MIA] Test Set Loss:   mean=2.2487, std=3.8760
+[Task 1] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.74609375, 'cv_acc': 0.7333333333333334, 'auc': 0.885101318359375, 'task': 1}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [8 8 6 6 6 7 9 7 8 5]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=1.2880, std=2.9553
+[DEBUG][MIA] Test Set Loss:   mean=2.0281, std=3.7431
+[Task 1] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.444, 'cv_acc': 0.088, 'auc': 0.41091999999999995, 'task': 1}
+2 9
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([10, 13, 10, 10, 11, 13, 12, 13, 12, 11], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=0.0067, std=0.0539
+[DEBUG][MIA] Test Set Loss:   mean=1.8656, std=3.2017
+[Task 2] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.71484375, 'cv_acc': 0.6941176470588235, 'auc': 0.791229248046875, 'task': 2}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [10 12 12 13 10 12 14 14 13 13]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=1.5995, std=3.4373
+[DEBUG][MIA] Test Set Loss:   mean=2.3316, std=3.9965
+[Task 2] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.546, 'cv_acc': 0.10200000000000001, 'auc': 0.585304, 'task': 2}
+3 9
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([15, 17, 19, 18, 15, 18, 18, 16, 18, 18], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [18 17 15 17 18 17 16 18 17 15]
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG][MIA] Forget Set Loss: mean=0.0021, std=0.0063
+[DEBUG][MIA] Test Set Loss:   mean=2.7707, std=4.4385
+[Task 3] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.7265625, 'cv_acc': 0.6980392156862745, 'auc': 0.825286865234375, 'task': 3}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [15 18 16 15 19 15 16 19 16 16]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [18 17 15 17 18 17 16 18 17 15]
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG][MIA] Forget Set Loss: mean=1.6201, std=3.3175
+[DEBUG][MIA] Test Set Loss:   mean=2.6642, std=4.2000
+[Task 3] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.546, 'cv_acc': 0.182, 'auc': 0.5869519999999999, 'task': 3}
+4 9
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([22, 22, 21, 24, 24, 24, 21, 22, 22, 21], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [24 22 20 24 23 20 24 23 24 20]
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG][MIA] Forget Set Loss: mean=0.0009, std=0.0021
+[DEBUG][MIA] Test Set Loss:   mean=1.3027, std=2.9796
+[Task 4] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.671875, 'cv_acc': 0.26666666666666666, 'auc': 0.739593505859375, 'task': 4}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [24 23 24 22 24 24 21 21 24 22]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [24 22 20 24 23 20 24 23 24 20]
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG][MIA] Forget Set Loss: mean=0.8748, std=2.3878
+[DEBUG][MIA] Test Set Loss:   mean=1.6690, std=3.4020
+[Task 4] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.548, 'cv_acc': 0.122, 'auc': 0.5928720000000001, 'task': 4}
+5 9
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([26, 25, 26, 25, 25, 28, 25, 29, 26, 28], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [25 28 26 26 27 29 26 28 25 26]
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG][MIA] Forget Set Loss: mean=0.0005, std=0.0015
+[DEBUG][MIA] Test Set Loss:   mean=1.0913, std=2.5478
+[Task 5] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.69140625, 'cv_acc': 0.7529411764705882, 'auc': 0.8099365234375, 'task': 5}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [28 28 26 26 29 27 29 29 25 28]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [25 28 26 26 27 29 26 28 25 26]
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG][MIA] Forget Set Loss: mean=1.0470, std=2.3827
+[DEBUG][MIA] Test Set Loss:   mean=1.5069, std=2.6538
+[Task 5] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.536, 'cv_acc': 0.12800000000000003, 'auc': 0.586232, 'task': 5}
+6 9
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([33, 34, 33, 33, 32, 31, 30, 32, 31, 33], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [34 32 34 30 34 30 31 30 31 31]
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG][MIA] Forget Set Loss: mean=0.0005, std=0.0019
+[DEBUG][MIA] Test Set Loss:   mean=1.3722, std=2.5801
+[Task 6] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.6796875, 'cv_acc': 0.25490196078431376, 'auc': 0.772674560546875, 'task': 6}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [33 34 30 32 31 34 31 30 33 33]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [34 32 34 30 34 30 31 30 31 31]
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG][MIA] Forget Set Loss: mean=0.4842, std=1.2509
+[DEBUG][MIA] Test Set Loss:   mean=1.2846, std=2.5099
+[Task 6] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.552, 'cv_acc': 0.16599999999999998, 'auc': 0.618776, 'task': 6}
+7 9
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([37, 39, 39, 35, 36, 39, 37, 38, 35, 39], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [37 38 36 38 37 36 37 39 36 36]
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG][MIA] Forget Set Loss: mean=0.0390, std=0.2314
+[DEBUG][MIA] Test Set Loss:   mean=1.6734, std=3.6030
+[Task 7] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.66796875, 'cv_acc': 0.25098039215686274, 'auc': 0.714263916015625, 'task': 7}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [39 38 35 37 38 35 37 39 37 38]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [37 38 36 38 37 36 37 39 36 36]
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG][MIA] Forget Set Loss: mean=0.3836, std=1.2412
+[DEBUG][MIA] Test Set Loss:   mean=1.5704, std=3.1325
+[Task 7] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.584, 'cv_acc': 0.166, 'auc': 0.64544, 'task': 7}
+8 9
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([42, 42, 41, 44, 40, 44, 42, 44, 40, 40], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [43 40 43 43 44 40 42 43 41 40]
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG][MIA] Forget Set Loss: mean=0.0032, std=0.0109
+[DEBUG][MIA] Test Set Loss:   mean=1.3864, std=2.6402
+[Task 8] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.67578125, 'cv_acc': 0.6784313725490196, 'auc': 0.705078125, 'task': 8}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [40 43 44 42 40 41 41 44 42 40]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [43 40 43 43 44 40 42 43 41 40]
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG][MIA] Forget Set Loss: mean=0.2882, std=0.9687
+[DEBUG][MIA] Test Set Loss:   mean=1.3123, std=2.6552
+[Task 8] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.586, 'cv_acc': 0.23399999999999999, 'auc': 0.629552, 'task': 8}
+Total correct retain:  1670  Total retain:  2500
+Total correct forget:  24493  Total forget:  47500
+Total correct test:  298  Total test:  500
+Total correct forget test:  4348  Total test forget:  9500
+After learning task 10
+Task accuracies: [0.596, 0.634, 0.652, 0.566, 0.722, 0.66, 0.76, 0.71, 0.702, 0.88, 0.28, 0.264, 0.22, 0.252, 0.284, 0.228, 0.17, 0.162, 0.272, 0.278]
+Training task:  11
+[Learn Buffer] Updating memory for task 11 using least memorization.
+[Memory Update] Task 10, Buffer: learn, Type: least, Split: 0.2
+[Unlearn Buffer] Updating memory for task 11 using most memorization.
+[Memory Update] Task 10, Buffer: unlearn, Type: most, Split: 0.99
+1 10
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([8, 9, 9, 9, 8, 9, 5, 7, 5, 8], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=0.0001, std=0.0002
+[DEBUG][MIA] Test Set Loss:   mean=2.2790, std=4.0756
+[Task 1] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.72265625, 'cv_acc': 0.30196078431372547, 'auc': 0.85809326171875, 'task': 1}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [8 8 6 6 6 7 9 7 8 5]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=1.3747, std=3.1735
+[DEBUG][MIA] Test Set Loss:   mean=1.8061, std=3.3214
+[Task 1] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.526, 'cv_acc': 0.11800000000000002, 'auc': 0.57264, 'task': 1}
+2 10
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([10, 13, 10, 10, 11, 13, 12, 13, 12, 11], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=0.0135, std=0.0525
+[DEBUG][MIA] Test Set Loss:   mean=2.2703, std=3.7411
+[Task 2] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.70703125, 'cv_acc': 0.2627450980392157, 'auc': 0.7593994140625, 'task': 2}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [10 12 12 13 10 12 14 14 13 13]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=1.2442, std=2.7640
+[DEBUG][MIA] Test Set Loss:   mean=2.1841, std=4.0826
+[Task 2] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.544, 'cv_acc': 0.11000000000000001, 'auc': 0.5749280000000001, 'task': 2}
+3 10
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([15, 17, 19, 18, 15, 18, 18, 16, 18, 18], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [18 17 15 17 18 17 16 18 17 15]
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG][MIA] Forget Set Loss: mean=0.0038, std=0.0175
+[DEBUG][MIA] Test Set Loss:   mean=2.8608, std=4.4890
+[Task 3] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.7734375, 'cv_acc': 0.29411764705882354, 'auc': 0.820068359375, 'task': 3}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [15 18 16 15 19 15 16 19 16 16]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [18 17 15 17 18 17 16 18 17 15]
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG][MIA] Forget Set Loss: mean=1.3849, std=2.8851
+[DEBUG][MIA] Test Set Loss:   mean=2.5197, std=3.9804
+[Task 3] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.562, 'cv_acc': 0.1, 'auc': 0.605856, 'task': 3}
+4 10
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([22, 22, 21, 24, 24, 24, 21, 22, 22, 21], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [24 22 20 24 23 20 24 23 24 20]
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG][MIA] Forget Set Loss: mean=0.0027, std=0.0103
+[DEBUG][MIA] Test Set Loss:   mean=1.4074, std=3.1496
+[Task 4] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.6484375, 'cv_acc': 0.2784313725490196, 'auc': 0.763153076171875, 'task': 4}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [24 23 24 22 24 24 21 21 24 22]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [24 22 20 24 23 20 24 23 24 20]
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG][MIA] Forget Set Loss: mean=1.0446, std=2.4074
+[DEBUG][MIA] Test Set Loss:   mean=1.4105, std=3.0709
+[Task 4] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.52, 'cv_acc': 0.13, 'auc': 0.5796159999999999, 'task': 4}
+5 10
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([26, 25, 26, 25, 25, 28, 25, 29, 26, 28], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [25 28 26 26 27 29 26 28 25 26]
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG][MIA] Forget Set Loss: mean=0.0001, std=0.0003
+[DEBUG][MIA] Test Set Loss:   mean=0.9982, std=1.8485
+[Task 5] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.6875, 'cv_acc': 0.7137254901960784, 'auc': 0.7962646484375, 'task': 5}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [28 28 26 26 29 27 29 29 25 28]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [25 28 26 26 27 29 26 28 25 26]
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG][MIA] Forget Set Loss: mean=0.9028, std=2.2829
+[DEBUG][MIA] Test Set Loss:   mean=1.4808, std=2.6527
+[Task 5] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.574, 'cv_acc': 0.17400000000000002, 'auc': 0.586784, 'task': 5}
+6 10
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([33, 34, 33, 33, 32, 31, 30, 32, 31, 33], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [34 32 34 30 34 30 31 30 31 31]
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG][MIA] Forget Set Loss: mean=0.0006, std=0.0024
+[DEBUG][MIA] Test Set Loss:   mean=1.0890, std=2.4060
+[Task 6] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.67578125, 'cv_acc': 0.2823529411764706, 'auc': 0.772979736328125, 'task': 6}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [33 34 30 32 31 34 31 30 33 33]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [34 32 34 30 34 30 31 30 31 31]
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG][MIA] Forget Set Loss: mean=0.6565, std=1.7769
+[DEBUG][MIA] Test Set Loss:   mean=1.2065, std=2.7041
+[Task 6] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.528, 'cv_acc': 0.176, 'auc': 0.5693520000000001, 'task': 6}
+7 10
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([37, 39, 39, 35, 36, 39, 37, 38, 35, 39], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [37 38 36 38 37 36 37 39 36 36]
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG][MIA] Forget Set Loss: mean=0.0675, std=0.3883
+[DEBUG][MIA] Test Set Loss:   mean=1.7772, std=3.4903
+[Task 7] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.6796875, 'cv_acc': 0.2392156862745098, 'auc': 0.7103271484375, 'task': 7}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [39 38 35 37 38 35 37 39 37 38]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [37 38 36 38 37 36 37 39 36 36]
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG][MIA] Forget Set Loss: mean=0.8393, std=1.8623
+[DEBUG][MIA] Test Set Loss:   mean=1.5418, std=3.2253
+[Task 7] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.54, 'cv_acc': 0.156, 'auc': 0.587664, 'task': 7}
+8 10
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([42, 42, 41, 44, 40, 44, 42, 44, 40, 40], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [43 40 43 43 44 40 42 43 41 40]
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG][MIA] Forget Set Loss: mean=0.0044, std=0.0149
+[DEBUG][MIA] Test Set Loss:   mean=1.6900, std=2.5591
+[Task 8] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.734375, 'cv_acc': 0.6980392156862745, 'auc': 0.77703857421875, 'task': 8}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [40 43 44 42 40 41 41 44 42 40]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [43 40 43 43 44 40 42 43 41 40]
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG][MIA] Forget Set Loss: mean=0.3238, std=0.9659
+[DEBUG][MIA] Test Set Loss:   mean=1.2623, std=2.4274
+[Task 8] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.598, 'cv_acc': 0.21200000000000002, 'auc': 0.630288, 'task': 8}
+Total correct retain:  1717  Total retain:  2500
+Total correct forget:  25561  Total forget:  47500
+Total correct test:  314  Total test:  500
+Total correct forget test:  4493  Total test forget:  9500
+After learning task 11
+Task accuracies: [0.628, 0.672, 0.666, 0.578, 0.674, 0.67, 0.728, 0.702, 0.658, 0.826, 0.822, 0.23, 0.24, 0.214, 0.256, 0.232, 0.14, 0.19, 0.222, 0.266]
+Unlearning task: 11
+broken out of loop
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([8, 9, 9, 9, 8, 9, 5, 7, 5, 8], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=0.0112, std=0.0729
+[DEBUG][MIA] Test Set Loss:   mean=2.7304, std=4.6783
+[Task 1] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.703125, 'cv_acc': 0.24705882352941178, 'auc': 0.765106201171875, 'task': 1}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [8 8 6 6 6 7 9 7 8 5]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=2.2113, std=4.2600
+[DEBUG][MIA] Test Set Loss:   mean=2.4025, std=4.3585
+[Task 1] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.518, 'cv_acc': 0.10400000000000001, 'auc': 0.512176, 'task': 1}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([10, 13, 10, 10, 11, 13, 12, 13, 12, 11], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=0.2414, std=1.5622
+[DEBUG][MIA] Test Set Loss:   mean=3.3763, std=6.5415
+[Task 2] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.671875, 'cv_acc': 0.2235294117647059, 'auc': 0.772552490234375, 'task': 2}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [10 12 12 13 10 12 14 14 13 13]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=2.3842, std=5.1713
+[DEBUG][MIA] Test Set Loss:   mean=3.0494, std=5.6681
+[Task 2] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.512, 'cv_acc': 0.10400000000000001, 'auc': 0.556264, 'task': 2}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([15, 17, 19, 18, 15, 18, 18, 16, 18, 18], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [18 17 15 17 18 17 16 18 17 15]
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG][MIA] Forget Set Loss: mean=0.5145, std=1.4207
+[DEBUG][MIA] Test Set Loss:   mean=3.5537, std=6.0981
+[Task 3] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.62890625, 'cv_acc': 0.2823529411764706, 'auc': 0.6732177734375, 'task': 3}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [15 18 16 15 19 15 16 19 16 16]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [18 17 15 17 18 17 16 18 17 15]
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG][MIA] Forget Set Loss: mean=2.7298, std=4.9586
+[DEBUG][MIA] Test Set Loss:   mean=4.1347, std=6.2168
+[Task 3] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.542, 'cv_acc': 0.098, 'auc': 0.5699120000000001, 'task': 3}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([22, 22, 21, 24, 24, 24, 21, 22, 22, 21], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [24 22 20 24 23 20 24 23 24 20]
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG][MIA] Forget Set Loss: mean=0.2127, std=0.7508
+[DEBUG][MIA] Test Set Loss:   mean=1.8158, std=3.0048
+[Task 4] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.65234375, 'cv_acc': 0.24705882352941178, 'auc': 0.70379638671875, 'task': 4}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [24 23 24 22 24 24 21 21 24 22]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [24 22 20 24 23 20 24 23 24 20]
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG][MIA] Forget Set Loss: mean=1.4436, std=3.0497
+[DEBUG][MIA] Test Set Loss:   mean=2.1258, std=3.4334
+[Task 4] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.552, 'cv_acc': 0.094, 'auc': 0.581008, 'task': 4}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([26, 25, 26, 25, 25, 28, 25, 29, 26, 28], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [25 28 26 26 27 29 26 28 25 26]
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG][MIA] Forget Set Loss: mean=0.0861, std=0.4404
+[DEBUG][MIA] Test Set Loss:   mean=1.7018, std=3.1512
+[Task 5] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.6875, 'cv_acc': 0.6705882352941177, 'auc': 0.77496337890625, 'task': 5}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [28 28 26 26 29 27 29 29 25 28]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [25 28 26 26 27 29 26 28 25 26]
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG][MIA] Forget Set Loss: mean=1.1448, std=2.3205
+[DEBUG][MIA] Test Set Loss:   mean=1.7797, std=3.3470
+[Task 5] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.542, 'cv_acc': 0.168, 'auc': 0.5785199999999999, 'task': 5}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([33, 34, 33, 33, 32, 31, 30, 32, 31, 33], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [34 32 34 30 34 30 31 30 31 31]
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG][MIA] Forget Set Loss: mean=0.0688, std=0.4587
+[DEBUG][MIA] Test Set Loss:   mean=1.9919, std=3.5956
+[Task 6] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.69140625, 'cv_acc': 0.25490196078431376, 'auc': 0.771942138671875, 'task': 6}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [33 34 30 32 31 34 31 30 33 33]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [34 32 34 30 34 30 31 30 31 31]
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG][MIA] Forget Set Loss: mean=1.1142, std=2.6032
+[DEBUG][MIA] Test Set Loss:   mean=1.8405, std=3.5415
+[Task 6] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.52, 'cv_acc': 0.164, 'auc': 0.543312, 'task': 6}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([37, 39, 39, 35, 36, 39, 37, 38, 35, 39], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [37 38 36 38 37 36 37 39 36 36]
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG][MIA] Forget Set Loss: mean=0.3655, std=1.3264
+[DEBUG][MIA] Test Set Loss:   mean=2.2118, std=4.4264
+[Task 7] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.6328125, 'cv_acc': 0.24705882352941178, 'auc': 0.7047119140625, 'task': 7}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [39 38 35 37 38 35 37 39 37 38]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [37 38 36 38 37 36 37 39 36 36]
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG][MIA] Forget Set Loss: mean=1.2923, std=2.6762
+[DEBUG][MIA] Test Set Loss:   mean=2.2198, std=4.0025
+[Task 7] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.538, 'cv_acc': 0.12999999999999998, 'auc': 0.550624, 'task': 7}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([42, 42, 41, 44, 40, 44, 42, 44, 40, 40], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [43 40 43 43 44 40 42 43 41 40]
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG][MIA] Forget Set Loss: mean=0.0765, std=0.3993
+[DEBUG][MIA] Test Set Loss:   mean=1.6226, std=2.8913
+[Task 8] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.69140625, 'cv_acc': 0.2784313725490196, 'auc': 0.714202880859375, 'task': 8}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [40 43 44 42 40 41 41 44 42 40]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [43 40 43 43 44 40 42 43 41 40]
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG][MIA] Forget Set Loss: mean=0.4637, std=1.3844
+[DEBUG][MIA] Test Set Loss:   mean=1.5043, std=2.9351
+[Task 8] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.594, 'cv_acc': 0.196, 'auc': 0.6438400000000001, 'task': 8}
+Total correct retain:  1649  Total retain:  2500
+Total correct forget:  22219  Total forget:  47500
+Total correct test:  301  Total test:  500
+Total correct forget test:  3975  Total test forget:  9500
+After unlearning task 11
+Task accuracies: [0.602, 0.624, 0.636, 0.53, 0.602, 0.654, 0.686, 0.66, 0.67, 0.786, 0.228, 0.248, 0.228, 0.202, 0.256, 0.212, 0.11, 0.182, 0.2, 0.236]
+Unlearning task: 10
+broken out of loop
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([8, 9, 9, 9, 8, 9, 5, 7, 5, 8], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=0.1661, std=0.6198
+[DEBUG][MIA] Test Set Loss:   mean=3.7798, std=4.8683
+[Task 1] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.7421875, 'cv_acc': 0.6431372549019608, 'auc': 0.785858154296875, 'task': 1}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [8 8 6 6 6 7 9 7 8 5]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=2.2926, std=3.5504
+[DEBUG][MIA] Test Set Loss:   mean=3.1680, std=4.7403
+[Task 1] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.532, 'cv_acc': 0.11000000000000001, 'auc': 0.534456, 'task': 1}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([10, 13, 10, 10, 11, 13, 12, 13, 12, 11], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=0.3020, std=0.9651
+[DEBUG][MIA] Test Set Loss:   mean=2.3163, std=4.1193
+[Task 2] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.63671875, 'cv_acc': 0.27450980392156865, 'auc': 0.671661376953125, 'task': 2}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [10 12 12 13 10 12 14 14 13 13]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=2.4116, std=4.6317
+[DEBUG][MIA] Test Set Loss:   mean=3.1780, std=5.1592
+[Task 2] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.536, 'cv_acc': 0.096, 'auc': 0.5573520000000001, 'task': 2}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([15, 17, 19, 18, 15, 18, 18, 16, 18, 18], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [18 17 15 17 18 17 16 18 17 15]
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG][MIA] Forget Set Loss: mean=1.7071, std=3.5892
+[DEBUG][MIA] Test Set Loss:   mean=5.1317, std=6.2148
+[Task 3] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.64453125, 'cv_acc': 0.3686274509803921, 'auc': 0.6923828125, 'task': 3}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [15 18 16 15 19 15 16 19 16 16]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [18 17 15 17 18 17 16 18 17 15]
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG][MIA] Forget Set Loss: mean=4.0074, std=5.6409
+[DEBUG][MIA] Test Set Loss:   mean=4.4963, std=5.9774
+[Task 3] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.516, 'cv_acc': 0.11399999999999999, 'auc': 0.51392, 'task': 3}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([22, 22, 21, 24, 24, 24, 21, 22, 22, 21], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [24 22 20 24 23 20 24 23 24 20]
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG][MIA] Forget Set Loss: mean=0.7694, std=1.5717
+[DEBUG][MIA] Test Set Loss:   mean=2.8535, std=3.9509
+[Task 4] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.6171875, 'cv_acc': 0.2156862745098039, 'auc': 0.69073486328125, 'task': 4}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [24 23 24 22 24 24 21 21 24 22]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [24 22 20 24 23 20 24 23 24 20]
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG][MIA] Forget Set Loss: mean=2.2703, std=3.5505
+[DEBUG][MIA] Test Set Loss:   mean=2.8295, std=4.0281
+[Task 4] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.516, 'cv_acc': 0.10200000000000001, 'auc': 0.552296, 'task': 4}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([26, 25, 26, 25, 25, 28, 25, 29, 26, 28], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [25 28 26 26 27 29 26 28 25 26]
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG][MIA] Forget Set Loss: mean=0.3272, std=0.9105
+[DEBUG][MIA] Test Set Loss:   mean=2.7320, std=4.5468
+[Task 5] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.64453125, 'cv_acc': 0.403921568627451, 'auc': 0.724365234375, 'task': 5}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [28 28 26 26 29 27 29 29 25 28]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [25 28 26 26 27 29 26 28 25 26]
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG][MIA] Forget Set Loss: mean=1.8538, std=2.9210
+[DEBUG][MIA] Test Set Loss:   mean=3.1194, std=4.5185
+[Task 5] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.554, 'cv_acc': 0.11000000000000001, 'auc': 0.5687439999999999, 'task': 5}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([33, 34, 33, 33, 32, 31, 30, 32, 31, 33], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [34 32 34 30 34 30 31 30 31 31]
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG][MIA] Forget Set Loss: mean=1.0884, std=2.9840
+[DEBUG][MIA] Test Set Loss:   mean=4.3188, std=5.7507
+[Task 6] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.65234375, 'cv_acc': 0.21176470588235294, 'auc': 0.68511962890625, 'task': 6}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [33 34 30 32 31 34 31 30 33 33]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [34 32 34 30 34 30 31 30 31 31]
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG][MIA] Forget Set Loss: mean=2.2637, std=4.1776
+[DEBUG][MIA] Test Set Loss:   mean=3.5135, std=5.3778
+[Task 6] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.544, 'cv_acc': 0.16599999999999998, 'auc': 0.5666640000000001, 'task': 6}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([37, 39, 39, 35, 36, 39, 37, 38, 35, 39], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [37 38 36 38 37 36 37 39 36 36]
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG][MIA] Forget Set Loss: mean=0.7686, std=1.8117
+[DEBUG][MIA] Test Set Loss:   mean=2.7369, std=4.8945
+[Task 7] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.59765625, 'cv_acc': 0.19215686274509805, 'auc': 0.6041259765625, 'task': 7}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [39 38 35 37 38 35 37 39 37 38]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [37 38 36 38 37 36 37 39 36 36]
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG][MIA] Forget Set Loss: mean=1.9476, std=3.3982
+[DEBUG][MIA] Test Set Loss:   mean=2.8792, std=4.5975
+[Task 7] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.548, 'cv_acc': 0.124, 'auc': 0.552992, 'task': 7}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([42, 42, 41, 44, 40, 44, 42, 44, 40, 40], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [43 40 43 43 44 40 42 43 41 40]
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG][MIA] Forget Set Loss: mean=0.8953, std=1.8601
+[DEBUG][MIA] Test Set Loss:   mean=2.7922, std=4.1621
+[Task 8] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.61328125, 'cv_acc': 0.22745098039215686, 'auc': 0.637542724609375, 'task': 8}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [40 43 44 42 40 41 41 44 42 40]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [43 40 43 43 44 40 42 43 41 40]
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG][MIA] Forget Set Loss: mean=1.7285, std=3.2251
+[DEBUG][MIA] Test Set Loss:   mean=2.5283, std=3.5319
+[Task 8] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.564, 'cv_acc': 0.12000000000000002, 'auc': 0.611984, 'task': 8}
+Total correct retain:  1461  Total retain:  2500
+Total correct forget:  18516  Total forget:  47500
+Total correct test:  269  Total test:  500
+Total correct forget test:  3396  Total test forget:  9500
+After unlearning task 10
+Task accuracies: [0.538, 0.526, 0.582, 0.458, 0.492, 0.542, 0.502, 0.596, 0.532, 0.284, 0.216, 0.242, 0.28, 0.206, 0.266, 0.21, 0.184, 0.19, 0.23, 0.254]
+Unlearning task: 9
+broken out of loop
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([8, 9, 9, 9, 8, 9, 5, 7, 5, 8], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=0.4459, std=1.4622
+[DEBUG][MIA] Test Set Loss:   mean=4.7517, std=5.7338
+[Task 1] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.734375, 'cv_acc': 0.2705882352941177, 'auc': 0.754058837890625, 'task': 1}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [8 8 6 6 6 7 9 7 8 5]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=3.1255, std=4.8176
+[DEBUG][MIA] Test Set Loss:   mean=3.4729, std=5.6181
+[Task 1] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.504, 'cv_acc': 0.15799999999999997, 'auc': 0.4987999999999999, 'task': 1}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([10, 13, 10, 10, 11, 13, 12, 13, 12, 11], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=0.7216, std=3.0850
+[DEBUG][MIA] Test Set Loss:   mean=3.1541, std=5.6722
+[Task 2] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.62890625, 'cv_acc': 0.28627450980392155, 'auc': 0.68255615234375, 'task': 2}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [10 12 12 13 10 12 14 14 13 13]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=2.5247, std=4.7002
+[DEBUG][MIA] Test Set Loss:   mean=3.3259, std=5.6584
+[Task 2] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.524, 'cv_acc': 0.118, 'auc': 0.5445679999999999, 'task': 2}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([15, 17, 19, 18, 15, 18, 18, 16, 18, 18], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [18 17 15 17 18 17 16 18 17 15]
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG][MIA] Forget Set Loss: mean=2.1620, std=3.9431
+[DEBUG][MIA] Test Set Loss:   mean=4.7254, std=6.1401
+[Task 3] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.609375, 'cv_acc': 0.2235294117647059, 'auc': 0.6458740234375, 'task': 3}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [15 18 16 15 19 15 16 19 16 16]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [18 17 15 17 18 17 16 18 17 15]
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG][MIA] Forget Set Loss: mean=4.3200, std=5.9400
+[DEBUG][MIA] Test Set Loss:   mean=5.2230, std=7.0998
+[Task 3] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.524, 'cv_acc': 0.10800000000000001, 'auc': 0.535784, 'task': 3}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([22, 22, 21, 24, 24, 24, 21, 22, 22, 21], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [24 22 20 24 23 20 24 23 24 20]
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG][MIA] Forget Set Loss: mean=0.4875, std=1.4629
+[DEBUG][MIA] Test Set Loss:   mean=2.6347, std=5.0766
+[Task 4] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.62109375, 'cv_acc': 0.21568627450980396, 'auc': 0.6363525390625, 'task': 4}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [24 23 24 22 24 24 21 21 24 22]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [24 22 20 24 23 20 24 23 24 20]
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG][MIA] Forget Set Loss: mean=2.3708, std=4.2895
+[DEBUG][MIA] Test Set Loss:   mean=2.6932, std=4.6497
+[Task 4] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.512, 'cv_acc': 0.10600000000000001, 'auc': 0.503568, 'task': 4}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([26, 25, 26, 25, 25, 28, 25, 29, 26, 28], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [25 28 26 26 27 29 26 28 25 26]
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG][MIA] Forget Set Loss: mean=0.4572, std=1.4611
+[DEBUG][MIA] Test Set Loss:   mean=3.3033, std=5.3735
+[Task 5] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.65625, 'cv_acc': 0.25882352941176473, 'auc': 0.735260009765625, 'task': 5}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [28 28 26 26 29 27 29 29 25 28]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [25 28 26 26 27 29 26 28 25 26]
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG][MIA] Forget Set Loss: mean=2.0922, std=4.0297
+[DEBUG][MIA] Test Set Loss:   mean=3.1783, std=5.0503
+[Task 5] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.548, 'cv_acc': 0.148, 'auc': 0.556824, 'task': 5}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([33, 34, 33, 33, 32, 31, 30, 32, 31, 33], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [34 32 34 30 34 30 31 30 31 31]
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG][MIA] Forget Set Loss: mean=0.8869, std=2.0758
+[DEBUG][MIA] Test Set Loss:   mean=3.1521, std=4.3954
+[Task 6] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.625, 'cv_acc': 0.2705882352941177, 'auc': 0.6614990234375, 'task': 6}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [33 34 30 32 31 34 31 30 33 33]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [34 32 34 30 34 30 31 30 31 31]
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG][MIA] Forget Set Loss: mean=2.1150, std=3.2338
+[DEBUG][MIA] Test Set Loss:   mean=2.9401, std=4.1394
+[Task 6] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.54, 'cv_acc': 0.158, 'auc': 0.538776, 'task': 6}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([37, 39, 39, 35, 36, 39, 37, 38, 35, 39], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [37 38 36 38 37 36 37 39 36 36]
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG][MIA] Forget Set Loss: mean=1.0913, std=2.3199
+[DEBUG][MIA] Test Set Loss:   mean=2.6633, std=4.0798
+[Task 7] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.59375, 'cv_acc': 0.23137254901960785, 'auc': 0.615020751953125, 'task': 7}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [39 38 35 37 38 35 37 39 37 38]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [37 38 36 38 37 36 37 39 36 36]
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG][MIA] Forget Set Loss: mean=1.8822, std=3.4351
+[DEBUG][MIA] Test Set Loss:   mean=2.5130, std=4.0603
+[Task 7] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.534, 'cv_acc': 0.12600000000000003, 'auc': 0.554928, 'task': 7}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([42, 42, 41, 44, 40, 44, 42, 44, 40, 40], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [43 40 43 43 44 40 42 43 41 40]
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG][MIA] Forget Set Loss: mean=10.5023, std=16.9599
+[DEBUG][MIA] Test Set Loss:   mean=11.5372, std=16.1051
+[Task 8] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.515625, 'cv_acc': 0.1568627450980392, 'auc': 0.56988525390625, 'task': 8}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [40 43 44 42 40 41 41 44 42 40]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [43 40 43 43 44 40 42 43 41 40]
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG][MIA] Forget Set Loss: mean=12.5541, std=17.9679
+[DEBUG][MIA] Test Set Loss:   mean=13.8392, std=18.5798
+[Task 8] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.528, 'cv_acc': 0.1, 'auc': 0.534448, 'task': 8}
+Total correct retain:  1490  Total retain:  2500
+Total correct forget:  18034  Total forget:  47500
+Total correct test:  275  Total test:  500
+Total correct forget test:  3297  Total test forget:  9500
+After unlearning task 9
+Task accuracies: [0.55, 0.532, 0.596, 0.454, 0.6, 0.534, 0.508, 0.61, 0.338, 0.26, 0.202, 0.236, 0.266, 0.16, 0.226, 0.194, 0.172, 0.214, 0.204, 0.288]
+Unlearning task: 8
+broken out of loop
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([8, 9, 9, 9, 8, 9, 5, 7, 5, 8], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=0.2612, std=1.0167
+[DEBUG][MIA] Test Set Loss:   mean=3.5419, std=4.9689
+[Task 1] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.70703125, 'cv_acc': 0.6862745098039216, 'auc': 0.75640869140625, 'task': 1}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [8 8 6 6 6 7 9 7 8 5]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=2.7167, std=4.2617
+[DEBUG][MIA] Test Set Loss:   mean=3.6671, std=5.3241
+[Task 1] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.542, 'cv_acc': 0.10600000000000001, 'auc': 0.5443279999999999, 'task': 1}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([10, 13, 10, 10, 11, 13, 12, 13, 12, 11], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=0.2566, std=0.8488
+[DEBUG][MIA] Test Set Loss:   mean=3.5972, std=5.5961
+[Task 2] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.69921875, 'cv_acc': 0.6156862745098038, 'auc': 0.7647705078125, 'task': 2}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [10 12 12 13 10 12 14 14 13 13]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=2.6107, std=4.3958
+[DEBUG][MIA] Test Set Loss:   mean=3.5148, std=5.3978
+[Task 2] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.518, 'cv_acc': 0.10400000000000001, 'auc': 0.5507759999999999, 'task': 2}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([15, 17, 19, 18, 15, 18, 18, 16, 18, 18], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [18 17 15 17 18 17 16 18 17 15]
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG][MIA] Forget Set Loss: mean=1.3086, std=2.6055
+[DEBUG][MIA] Test Set Loss:   mean=5.0144, std=6.6772
+[Task 3] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.63671875, 'cv_acc': 0.26666666666666666, 'auc': 0.666046142578125, 'task': 3}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [15 18 16 15 19 15 16 19 16 16]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [18 17 15 17 18 17 16 18 17 15]
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG][MIA] Forget Set Loss: mean=4.4152, std=6.1964
+[DEBUG][MIA] Test Set Loss:   mean=4.0461, std=5.8203
+[Task 3] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.5, 'cv_acc': 0.118, 'auc': 0.49670400000000003, 'task': 3}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([22, 22, 21, 24, 24, 24, 21, 22, 22, 21], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [24 22 20 24 23 20 24 23 24 20]
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG][MIA] Forget Set Loss: mean=0.4189, std=0.9359
+[DEBUG][MIA] Test Set Loss:   mean=2.9629, std=4.0802
+[Task 4] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.671875, 'cv_acc': 0.5686274509803921, 'auc': 0.71697998046875, 'task': 4}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [24 23 24 22 24 24 21 21 24 22]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [24 22 20 24 23 20 24 23 24 20]
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG][MIA] Forget Set Loss: mean=2.4104, std=4.2881
+[DEBUG][MIA] Test Set Loss:   mean=3.0643, std=4.4379
+[Task 4] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.534, 'cv_acc': 0.09, 'auc': 0.5422319999999999, 'task': 4}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([26, 25, 26, 25, 25, 28, 25, 29, 26, 28], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [25 28 26 26 27 29 26 28 25 26]
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG][MIA] Forget Set Loss: mean=0.4589, std=1.2096
+[DEBUG][MIA] Test Set Loss:   mean=3.9155, std=5.2287
+[Task 5] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.6875, 'cv_acc': 0.26666666666666666, 'auc': 0.7698974609375, 'task': 5}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [28 28 26 26 29 27 29 29 25 28]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [25 28 26 26 27 29 26 28 25 26]
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG][MIA] Forget Set Loss: mean=2.0931, std=3.8894
+[DEBUG][MIA] Test Set Loss:   mean=3.2261, std=4.7836
+[Task 5] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.562, 'cv_acc': 0.13799999999999998, 'auc': 0.585496, 'task': 5}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([33, 34, 33, 33, 32, 31, 30, 32, 31, 33], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [34 32 34 30 34 30 31 30 31 31]
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG][MIA] Forget Set Loss: mean=0.2972, std=0.9146
+[DEBUG][MIA] Test Set Loss:   mean=4.0503, std=4.9653
+[Task 6] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.734375, 'cv_acc': 0.6470588235294118, 'auc': 0.758880615234375, 'task': 6}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [33 34 30 32 31 34 31 30 33 33]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [34 32 34 30 34 30 31 30 31 31]
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG][MIA] Forget Set Loss: mean=1.7937, std=3.2454
+[DEBUG][MIA] Test Set Loss:   mean=3.3815, std=4.6272
+[Task 6] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.59, 'cv_acc': 0.12, 'auc': 0.6218880000000001, 'task': 6}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([37, 39, 39, 35, 36, 39, 37, 38, 35, 39], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [37 38 36 38 37 36 37 39 36 36]
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG][MIA] Forget Set Loss: mean=11.2549, std=19.2815
+[DEBUG][MIA] Test Set Loss:   mean=11.4920, std=15.3168
+[Task 7] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.52734375, 'cv_acc': 0.16470588235294117, 'auc': 0.55413818359375, 'task': 7}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [39 38 35 37 38 35 37 39 37 38]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [37 38 36 38 37 36 37 39 36 36]
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG][MIA] Forget Set Loss: mean=10.8372, std=15.5550
+[DEBUG][MIA] Test Set Loss:   mean=12.6701, std=17.9810
+[Task 7] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.514, 'cv_acc': 0.094, 'auc': 0.526344, 'task': 7}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([42, 42, 41, 44, 40, 44, 42, 44, 40, 40], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [43 40 43 43 44 40 42 43 41 40]
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG][MIA] Forget Set Loss: mean=6.3075, std=9.1253
+[DEBUG][MIA] Test Set Loss:   mean=8.8158, std=11.0746
+[Task 8] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.55859375, 'cv_acc': 0.15294117647058822, 'auc': 0.57135009765625, 'task': 8}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [40 43 44 42 40 41 41 44 42 40]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [43 40 43 43 44 40 42 43 41 40]
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG][MIA] Forget Set Loss: mean=8.0253, std=12.1108
+[DEBUG][MIA] Test Set Loss:   mean=8.1867, std=10.6710
+[Task 8] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.534, 'cv_acc': 0.092, 'auc': 0.504976, 'task': 8}
+Total correct retain:  1412  Total retain:  2500
+Total correct forget:  17280  Total forget:  47500
+Total correct test:  258  Total test:  500
+Total correct forget test:  3143  Total test forget:  9500
+After unlearning task 8
+Task accuracies: [0.516, 0.486, 0.522, 0.478, 0.524, 0.534, 0.468, 0.326, 0.402, 0.274, 0.202, 0.23, 0.256, 0.214, 0.246, 0.222, 0.186, 0.226, 0.232, 0.258]
+Unlearning task: 7
+broken out of loop
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([8, 9, 9, 9, 8, 9, 5, 7, 5, 8], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=0.3291, std=0.8747
+[DEBUG][MIA] Test Set Loss:   mean=3.5197, std=5.7204
+[Task 1] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.6640625, 'cv_acc': 0.6313725490196078, 'auc': 0.685699462890625, 'task': 1}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [8 8 6 6 6 7 9 7 8 5]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=2.7438, std=4.1165
+[DEBUG][MIA] Test Set Loss:   mean=3.6273, std=5.2753
+[Task 1] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.518, 'cv_acc': 0.13000000000000003, 'auc': 0.539704, 'task': 1}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([10, 13, 10, 10, 11, 13, 12, 13, 12, 11], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=0.4603, std=1.3060
+[DEBUG][MIA] Test Set Loss:   mean=3.9904, std=5.9688
+[Task 2] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.671875, 'cv_acc': 0.29411764705882354, 'auc': 0.717803955078125, 'task': 2}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [10 12 12 13 10 12 14 14 13 13]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=2.9131, std=5.6497
+[DEBUG][MIA] Test Set Loss:   mean=3.3148, std=5.2861
+[Task 2] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.532, 'cv_acc': 0.10800000000000001, 'auc': 0.5520240000000001, 'task': 2}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([15, 17, 19, 18, 15, 18, 18, 16, 18, 18], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [18 17 15 17 18 17 16 18 17 15]
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG][MIA] Forget Set Loss: mean=3.1105, std=5.6447
+[DEBUG][MIA] Test Set Loss:   mean=6.0535, std=7.8176
+[Task 3] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.60546875, 'cv_acc': 0.16862745098039217, 'auc': 0.618011474609375, 'task': 3}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [15 18 16 15 19 15 16 19 16 16]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [18 17 15 17 18 17 16 18 17 15]
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG][MIA] Forget Set Loss: mean=5.3563, std=7.4939
+[DEBUG][MIA] Test Set Loss:   mean=5.5846, std=7.2031
+[Task 3] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.48, 'cv_acc': 0.078, 'auc': 0.47818400000000005, 'task': 3}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([22, 22, 21, 24, 24, 24, 21, 22, 22, 21], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [24 22 20 24 23 20 24 23 24 20]
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG][MIA] Forget Set Loss: mean=1.0877, std=2.1286
+[DEBUG][MIA] Test Set Loss:   mean=3.1933, std=4.4741
+[Task 4] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.60546875, 'cv_acc': 0.211764705882353, 'auc': 0.67132568359375, 'task': 4}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [24 23 24 22 24 24 21 21 24 22]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [24 22 20 24 23 20 24 23 24 20]
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG][MIA] Forget Set Loss: mean=2.9474, std=4.5129
+[DEBUG][MIA] Test Set Loss:   mean=3.6719, std=5.4139
+[Task 4] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.546, 'cv_acc': 0.09, 'auc': 0.543616, 'task': 4}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([26, 25, 26, 25, 25, 28, 25, 29, 26, 28], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [25 28 26 26 27 29 26 28 25 26]
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG][MIA] Forget Set Loss: mean=0.3393, std=0.7881
+[DEBUG][MIA] Test Set Loss:   mean=2.5640, std=4.2880
+[Task 5] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.62890625, 'cv_acc': 0.2705882352941177, 'auc': 0.652862548828125, 'task': 5}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [28 28 26 26 29 27 29 29 25 28]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [25 28 26 26 27 29 26 28 25 26]
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG][MIA] Forget Set Loss: mean=2.3975, std=4.0741
+[DEBUG][MIA] Test Set Loss:   mean=3.1069, std=4.4986
+[Task 5] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.54, 'cv_acc': 0.13000000000000003, 'auc': 0.539808, 'task': 5}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([33, 34, 33, 33, 32, 31, 30, 32, 31, 33], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [34 32 34 30 34 30 31 30 31 31]
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG][MIA] Forget Set Loss: mean=10.2201, std=19.5956
+[DEBUG][MIA] Test Set Loss:   mean=14.7932, std=20.0107
+[Task 6] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.55859375, 'cv_acc': 0.07058823529411765, 'auc': 0.62939453125, 'task': 6}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [33 34 30 32 31 34 31 30 33 33]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [34 32 34 30 34 30 31 30 31 31]
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG][MIA] Forget Set Loss: mean=10.3808, std=15.8013
+[DEBUG][MIA] Test Set Loss:   mean=14.8736, std=19.8560
+[Task 6] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.552, 'cv_acc': 0.11000000000000001, 'auc': 0.5835199999999999, 'task': 6}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([37, 39, 39, 35, 36, 39, 37, 38, 35, 39], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [37 38 36 38 37 36 37 39 36 36]
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG][MIA] Forget Set Loss: mean=12.0780, std=21.4307
+[DEBUG][MIA] Test Set Loss:   mean=15.0301, std=21.8794
+[Task 7] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.546875, 'cv_acc': 0.09019607843137255, 'auc': 0.57904052734375, 'task': 7}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [39 38 35 37 38 35 37 39 37 38]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [37 38 36 38 37 36 37 39 36 36]
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG][MIA] Forget Set Loss: mean=13.7322, std=20.7295
+[DEBUG][MIA] Test Set Loss:   mean=13.7726, std=20.9502
+[Task 7] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.502, 'cv_acc': 0.098, 'auc': 0.505496, 'task': 7}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([42, 42, 41, 44, 40, 44, 42, 44, 40, 40], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [43 40 43 43 44 40 42 43 41 40]
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG][MIA] Forget Set Loss: mean=11.4691, std=16.9663
+[DEBUG][MIA] Test Set Loss:   mean=12.9143, std=15.3653
+[Task 8] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.51953125, 'cv_acc': 0.16078431372549018, 'auc': 0.540435791015625, 'task': 8}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [40 43 44 42 40 41 41 44 42 40]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [43 40 43 43 44 40 42 43 41 40]
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG][MIA] Forget Set Loss: mean=12.5264, std=16.9844
+[DEBUG][MIA] Test Set Loss:   mean=14.7696, std=18.3124
+[Task 8] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.472, 'cv_acc': 0.10400000000000001, 'auc': 0.45388, 'task': 8}
+Total correct retain:  1312  Total retain:  2500
+Total correct forget:  15873  Total forget:  47500
+Total correct test:  252  Total test:  500
+Total correct forget test:  2949  Total test forget:  9500
+After unlearning task 7
+Task accuracies: [0.504, 0.48, 0.524, 0.456, 0.492, 0.54, 0.272, 0.306, 0.35, 0.252, 0.2, 0.22, 0.262, 0.19, 0.24, 0.204, 0.186, 0.258, 0.224, 0.242]
+Unlearning task: 6
+broken out of loop
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([8, 9, 9, 9, 8, 9, 5, 7, 5, 8], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=0.5909, std=1.4268
+[DEBUG][MIA] Test Set Loss:   mean=3.3548, std=3.9831
+[Task 1] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.6875, 'cv_acc': 0.2392156862745098, 'auc': 0.76202392578125, 'task': 1}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [8 8 6 6 6 7 9 7 8 5]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=2.9514, std=4.4452
+[DEBUG][MIA] Test Set Loss:   mean=3.7642, std=4.8041
+[Task 1] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.538, 'cv_acc': 0.11200000000000002, 'auc': 0.5651360000000001, 'task': 1}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([10, 13, 10, 10, 11, 13, 12, 13, 12, 11], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=0.3730, std=1.0745
+[DEBUG][MIA] Test Set Loss:   mean=3.0137, std=4.7179
+[Task 2] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.640625, 'cv_acc': 0.2901960784313725, 'auc': 0.698272705078125, 'task': 2}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [10 12 12 13 10 12 14 14 13 13]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=2.9139, std=4.9427
+[DEBUG][MIA] Test Set Loss:   mean=3.2022, std=4.9106
+[Task 2] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.51, 'cv_acc': 0.148, 'auc': 0.535264, 'task': 2}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([15, 17, 19, 18, 15, 18, 18, 16, 18, 18], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [18 17 15 17 18 17 16 18 17 15]
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG][MIA] Forget Set Loss: mean=1.0588, std=2.0225
+[DEBUG][MIA] Test Set Loss:   mean=3.2739, std=5.7891
+[Task 3] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.58203125, 'cv_acc': 0.3843137254901961, 'auc': 0.614349365234375, 'task': 3}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [15 18 16 15 19 15 16 19 16 16]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [18 17 15 17 18 17 16 18 17 15]
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG][MIA] Forget Set Loss: mean=3.2191, std=4.8519
+[DEBUG][MIA] Test Set Loss:   mean=3.1814, std=4.4408
+[Task 3] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.5, 'cv_acc': 0.12000000000000002, 'auc': 0.522376, 'task': 3}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([22, 22, 21, 24, 24, 24, 21, 22, 22, 21], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [24 22 20 24 23 20 24 23 24 20]
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG][MIA] Forget Set Loss: mean=0.5595, std=1.4131
+[DEBUG][MIA] Test Set Loss:   mean=2.6088, std=3.7280
+[Task 4] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.65625, 'cv_acc': 0.2705882352941177, 'auc': 0.70489501953125, 'task': 4}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [24 23 24 22 24 24 21 21 24 22]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [24 22 20 24 23 20 24 23 24 20]
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG][MIA] Forget Set Loss: mean=1.7731, std=3.1093
+[DEBUG][MIA] Test Set Loss:   mean=2.9041, std=3.9029
+[Task 4] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.574, 'cv_acc': 0.10400000000000001, 'auc': 0.596904, 'task': 4}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([26, 25, 26, 25, 25, 28, 25, 29, 26, 28], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [25 28 26 26 27 29 26 28 25 26]
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG][MIA] Forget Set Loss: mean=5.2259, std=8.2115
+[DEBUG][MIA] Test Set Loss:   mean=10.1969, std=14.3833
+[Task 5] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.58984375, 'cv_acc': 0.14901960784313725, 'auc': 0.613739013671875, 'task': 5}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [28 28 26 26 29 27 29 29 25 28]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [25 28 26 26 27 29 26 28 25 26]
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG][MIA] Forget Set Loss: mean=7.8280, std=10.7302
+[DEBUG][MIA] Test Set Loss:   mean=10.2120, std=13.8355
+[Task 5] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.54, 'cv_acc': 0.098, 'auc': 0.557016, 'task': 5}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([33, 34, 33, 33, 32, 31, 30, 32, 31, 33], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [34 32 34 30 34 30 31 30 31 31]
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG][MIA] Forget Set Loss: mean=9.0608, std=16.8129
+[DEBUG][MIA] Test Set Loss:   mean=12.2048, std=14.5630
+[Task 6] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.578125, 'cv_acc': 0.10980392156862744, 'auc': 0.60174560546875, 'task': 6}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [33 34 30 32 31 34 31 30 33 33]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [34 32 34 30 34 30 31 30 31 31]
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG][MIA] Forget Set Loss: mean=9.3400, std=14.4927
+[DEBUG][MIA] Test Set Loss:   mean=10.7272, std=16.0107
+[Task 6] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.526, 'cv_acc': 0.134, 'auc': 0.541256, 'task': 6}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([37, 39, 39, 35, 36, 39, 37, 38, 35, 39], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [37 38 36 38 37 36 37 39 36 36]
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG][MIA] Forget Set Loss: mean=9.2048, std=17.0368
+[DEBUG][MIA] Test Set Loss:   mean=12.0009, std=21.4414
+[Task 7] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.56640625, 'cv_acc': 0.1215686274509804, 'auc': 0.582855224609375, 'task': 7}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [39 38 35 37 38 35 37 39 37 38]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [37 38 36 38 37 36 37 39 36 36]
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG][MIA] Forget Set Loss: mean=8.3175, std=15.3993
+[DEBUG][MIA] Test Set Loss:   mean=10.7755, std=17.7391
+[Task 7] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.536, 'cv_acc': 0.10400000000000001, 'auc': 0.54208, 'task': 7}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([42, 42, 41, 44, 40, 44, 42, 44, 40, 40], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [43 40 43 43 44 40 42 43 41 40]
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG][MIA] Forget Set Loss: mean=11.5824, std=17.7591
+[DEBUG][MIA] Test Set Loss:   mean=13.1887, std=19.0837
+[Task 8] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.5, 'cv_acc': 0.16862745098039217, 'auc': 0.539794921875, 'task': 8}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [40 43 44 42 40 41 41 44 42 40]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [43 40 43 43 44 40 42 43 41 40]
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG][MIA] Forget Set Loss: mean=10.4383, std=15.0294
+[DEBUG][MIA] Test Set Loss:   mean=11.1328, std=14.6331
+[Task 8] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.514, 'cv_acc': 0.088, 'auc': 0.5232, 'task': 8}
+Total correct retain:  1443  Total retain:  2500
+Total correct forget:  15247  Total forget:  47500
+Total correct test:  255  Total test:  500
+Total correct forget test:  2789  Total test forget:  9500
+After unlearning task 6
+Task accuracies: [0.51, 0.456, 0.536, 0.506, 0.502, 0.288, 0.28, 0.338, 0.28, 0.262, 0.2, 0.242, 0.248, 0.184, 0.24, 0.202, 0.166, 0.21, 0.186, 0.252]
+Unlearning task: 5
+broken out of loop
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([8, 9, 9, 9, 8, 9, 5, 7, 5, 8], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=0.0907, std=0.2836
+[DEBUG][MIA] Test Set Loss:   mean=2.8473, std=4.2432
+[Task 1] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.73046875, 'cv_acc': 0.6823529411764706, 'auc': 0.7872314453125, 'task': 1}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [8 8 6 6 6 7 9 7 8 5]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=2.5752, std=4.1648
+[DEBUG][MIA] Test Set Loss:   mean=3.7916, std=4.8106
+[Task 1] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.55, 'cv_acc': 0.10600000000000001, 'auc': 0.57692, 'task': 1}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([10, 13, 10, 10, 11, 13, 12, 13, 12, 11], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=0.2587, std=0.7026
+[DEBUG][MIA] Test Set Loss:   mean=3.3246, std=4.8042
+[Task 2] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.6953125, 'cv_acc': 0.4117647058823529, 'auc': 0.734130859375, 'task': 2}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [10 12 12 13 10 12 14 14 13 13]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=2.2620, std=3.9201
+[DEBUG][MIA] Test Set Loss:   mean=3.5205, std=5.1047
+[Task 2] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.552, 'cv_acc': 0.11599999999999999, 'auc': 0.590784, 'task': 2}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([15, 17, 19, 18, 15, 18, 18, 16, 18, 18], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [18 17 15 17 18 17 16 18 17 15]
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG][MIA] Forget Set Loss: mean=0.4691, std=1.0602
+[DEBUG][MIA] Test Set Loss:   mean=2.7360, std=3.4768
+[Task 3] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.66796875, 'cv_acc': 0.6588235294117647, 'auc': 0.71429443359375, 'task': 3}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [15 18 16 15 19 15 16 19 16 16]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [18 17 15 17 18 17 16 18 17 15]
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG][MIA] Forget Set Loss: mean=2.3148, std=3.4816
+[DEBUG][MIA] Test Set Loss:   mean=2.8406, std=3.6621
+[Task 3] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.542, 'cv_acc': 0.15, 'auc': 0.5316559999999999, 'task': 3}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([22, 22, 21, 24, 24, 24, 21, 22, 22, 21], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [24 22 20 24 23 20 24 23 24 20]
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG][MIA] Forget Set Loss: mean=34.1433, std=40.0567
+[DEBUG][MIA] Test Set Loss:   mean=40.5712, std=38.3358
+[Task 4] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.44921875, 'cv_acc': 0.11372549019607843, 'auc': 0.446258544921875, 'task': 4}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [24 23 24 22 24 24 21 21 24 22]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [24 22 20 24 23 20 24 23 24 20]
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG][MIA] Forget Set Loss: mean=42.7000, std=43.0611
+[DEBUG][MIA] Test Set Loss:   mean=40.8357, std=40.1128
+[Task 4] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.492, 'cv_acc': 0.08199999999999999, 'auc': 0.512536, 'task': 4}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([26, 25, 26, 25, 25, 28, 25, 29, 26, 28], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [25 28 26 26 27 29 26 28 25 26]
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG][MIA] Forget Set Loss: mean=5.1070, std=7.4773
+[DEBUG][MIA] Test Set Loss:   mean=10.5115, std=11.7593
+[Task 5] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.609375, 'cv_acc': 0.16078431372549018, 'auc': 0.64935302734375, 'task': 5}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [28 28 26 26 29 27 29 29 25 28]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [25 28 26 26 27 29 26 28 25 26]
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG][MIA] Forget Set Loss: mean=8.0799, std=9.6657
+[DEBUG][MIA] Test Set Loss:   mean=10.0837, std=11.7943
+[Task 5] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.548, 'cv_acc': 0.11000000000000001, 'auc': 0.543888, 'task': 5}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([33, 34, 33, 33, 32, 31, 30, 32, 31, 33], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [34 32 34 30 34 30 31 30 31 31]
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG][MIA] Forget Set Loss: mean=9.1740, std=10.3427
+[DEBUG][MIA] Test Set Loss:   mean=12.0518, std=12.0966
+[Task 6] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.5625, 'cv_acc': 0.10588235294117647, 'auc': 0.56597900390625, 'task': 6}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [33 34 30 32 31 34 31 30 33 33]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [34 32 34 30 34 30 31 30 31 31]
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG][MIA] Forget Set Loss: mean=11.2229, std=11.6105
+[DEBUG][MIA] Test Set Loss:   mean=12.9505, std=12.3051
+[Task 6] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.55, 'cv_acc': 0.076, 'auc': 0.545048, 'task': 6}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([37, 39, 39, 35, 36, 39, 37, 38, 35, 39], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [37 38 36 38 37 36 37 39 36 36]
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG][MIA] Forget Set Loss: mean=11.8245, std=13.0784
+[DEBUG][MIA] Test Set Loss:   mean=13.0923, std=13.8594
+[Task 7] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.51171875, 'cv_acc': 0.12941176470588237, 'auc': 0.53338623046875, 'task': 7}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [39 38 35 37 38 35 37 39 37 38]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [37 38 36 38 37 36 37 39 36 36]
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG][MIA] Forget Set Loss: mean=12.0256, std=11.6946
+[DEBUG][MIA] Test Set Loss:   mean=13.1555, std=14.4378
+[Task 7] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.51, 'cv_acc': 0.124, 'auc': 0.5024000000000001, 'task': 7}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([42, 42, 41, 44, 40, 44, 42, 44, 40, 40], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [43 40 43 43 44 40 42 43 41 40]
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG][MIA] Forget Set Loss: mean=8.3400, std=10.5695
+[DEBUG][MIA] Test Set Loss:   mean=14.8481, std=13.2144
+[Task 8] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.3828125, 'cv_acc': 0.10588235294117647, 'auc': 0.3526611328125, 'task': 8}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [40 43 44 42 40 41 41 44 42 40]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [43 40 43 43 44 40 42 43 41 40]
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG][MIA] Forget Set Loss: mean=11.4013, std=12.0587
+[DEBUG][MIA] Test Set Loss:   mean=12.5593, std=14.4499
+[Task 8] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.506, 'cv_acc': 0.122, 'auc': 0.5100480000000001, 'task': 8}
+Total correct retain:  1428  Total retain:  2500
+Total correct forget:  13696  Total forget:  47500
+Total correct test:  267  Total test:  500
+Total correct forget test:  2593  Total test forget:  9500
+After unlearning task 5
+Task accuracies: [0.534, 0.476, 0.528, 0.488, 0.25, 0.308, 0.242, 0.232, 0.314, 0.248, 0.2, 0.188, 0.21, 0.168, 0.242, 0.196, 0.214, 0.254, 0.178, 0.25]
+Unlearning task: 4
+broken out of loop
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([8, 9, 9, 9, 8, 9, 5, 7, 5, 8], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=0.4119, std=1.3039
+[DEBUG][MIA] Test Set Loss:   mean=3.5787, std=4.8343
+[Task 1] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.69921875, 'cv_acc': 0.4, 'auc': 0.730865478515625, 'task': 1}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [8 8 6 6 6 7 9 7 8 5]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=2.7558, std=4.2411
+[DEBUG][MIA] Test Set Loss:   mean=3.3224, std=4.8550
+[Task 1] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.514, 'cv_acc': 0.11200000000000002, 'auc': 0.5319280000000001, 'task': 1}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([10, 13, 10, 10, 11, 13, 12, 13, 12, 11], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=0.4299, std=1.1604
+[DEBUG][MIA] Test Set Loss:   mean=3.2482, std=4.5762
+[Task 2] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.6953125, 'cv_acc': 0.2352941176470588, 'auc': 0.7388916015625, 'task': 2}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [10 12 12 13 10 12 14 14 13 13]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=2.9809, std=4.7721
+[DEBUG][MIA] Test Set Loss:   mean=2.9597, std=4.4902
+[Task 2] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.5, 'cv_acc': 0.13, 'auc': 0.515472, 'task': 2}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([15, 17, 19, 18, 15, 18, 18, 16, 18, 18], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [18 17 15 17 18 17 16 18 17 15]
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG][MIA] Forget Set Loss: mean=11.4366, std=15.2573
+[DEBUG][MIA] Test Set Loss:   mean=16.6081, std=18.1012
+[Task 3] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.55859375, 'cv_acc': 0.20784313725490194, 'auc': 0.600677490234375, 'task': 3}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [15 18 16 15 19 15 16 19 16 16]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [18 17 15 17 18 17 16 18 17 15]
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG][MIA] Forget Set Loss: mean=14.0288, std=16.3444
+[DEBUG][MIA] Test Set Loss:   mean=16.0861, std=19.0160
+[Task 3] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.51, 'cv_acc': 0.096, 'auc': 0.51064, 'task': 3}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([22, 22, 21, 24, 24, 24, 21, 22, 22, 21], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [24 22 20 24 23 20 24 23 24 20]
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG][MIA] Forget Set Loss: mean=43.7255, std=40.3030
+[DEBUG][MIA] Test Set Loss:   mean=51.2616, std=42.2715
+[Task 4] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.53125, 'cv_acc': 0.10980392156862746, 'auc': 0.552490234375, 'task': 4}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [24 23 24 22 24 24 21 21 24 22]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [24 22 20 24 23 20 24 23 24 20]
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG][MIA] Forget Set Loss: mean=48.6066, std=42.0701
+[DEBUG][MIA] Test Set Loss:   mean=50.2874, std=40.9854
+[Task 4] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.496, 'cv_acc': 0.10400000000000001, 'auc': 0.490104, 'task': 4}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([26, 25, 26, 25, 25, 28, 25, 29, 26, 28], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [25 28 26 26 27 29 26 28 25 26]
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG][MIA] Forget Set Loss: mean=10.0356, std=10.9048
+[DEBUG][MIA] Test Set Loss:   mean=14.4498, std=12.7958
+[Task 5] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.58984375, 'cv_acc': 0.09411764705882353, 'auc': 0.59918212890625, 'task': 5}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [28 28 26 26 29 27 29 29 25 28]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [25 28 26 26 27 29 26 28 25 26]
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG][MIA] Forget Set Loss: mean=13.0690, std=11.8315
+[DEBUG][MIA] Test Set Loss:   mean=15.8091, std=13.8416
+[Task 5] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.464, 'cv_acc': 0.094, 'auc': 0.44701599999999997, 'task': 5}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([33, 34, 33, 33, 32, 31, 30, 32, 31, 33], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [34 32 34 30 34 30 31 30 31 31]
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG][MIA] Forget Set Loss: mean=7.8222, std=8.9027
+[DEBUG][MIA] Test Set Loss:   mean=9.9392, std=10.1184
+[Task 6] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.5546875, 'cv_acc': 0.13333333333333333, 'auc': 0.559967041015625, 'task': 6}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [33 34 30 32 31 34 31 30 33 33]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [34 32 34 30 34 30 31 30 31 31]
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG][MIA] Forget Set Loss: mean=8.0904, std=8.8533
+[DEBUG][MIA] Test Set Loss:   mean=8.4675, std=8.4550
+[Task 6] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.516, 'cv_acc': 0.11400000000000002, 'auc': 0.527984, 'task': 6}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([37, 39, 39, 35, 36, 39, 37, 38, 35, 39], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [37 38 36 38 37 36 37 39 36 36]
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG][MIA] Forget Set Loss: mean=7.1144, std=8.8971
+[DEBUG][MIA] Test Set Loss:   mean=9.6574, std=12.5474
+[Task 7] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.53125, 'cv_acc': 0.09411764705882353, 'auc': 0.5491943359375, 'task': 7}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [39 38 35 37 38 35 37 39 37 38]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [37 38 36 38 37 36 37 39 36 36]
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG][MIA] Forget Set Loss: mean=8.1788, std=10.1359
+[DEBUG][MIA] Test Set Loss:   mean=10.1247, std=10.5207
+[Task 7] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.434, 'cv_acc': 0.094, 'auc': 0.41870399999999997, 'task': 7}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([42, 42, 41, 44, 40, 44, 42, 44, 40, 40], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [43 40 43 43 44 40 42 43 41 40]
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG][MIA] Forget Set Loss: mean=12.3436, std=13.2329
+[DEBUG][MIA] Test Set Loss:   mean=13.0746, std=12.4295
+[Task 8] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.4921875, 'cv_acc': 0.10980392156862746, 'auc': 0.51861572265625, 'task': 8}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [40 43 44 42 40 41 41 44 42 40]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [43 40 43 43 44 40 42 43 41 40]
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG][MIA] Forget Set Loss: mean=14.9799, std=14.5961
+[DEBUG][MIA] Test Set Loss:   mean=15.1631, std=15.1680
+[Task 8] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.5, 'cv_acc': 0.092, 'auc': 0.50228, 'task': 8}
+Total correct retain:  1471  Total retain:  2500
+Total correct forget:  13222  Total forget:  47500
+Total correct test:  272  Total test:  500
+Total correct forget test:  2526  Total test forget:  9500
+After unlearning task 4
+Task accuracies: [0.544, 0.502, 0.528, 0.28, 0.232, 0.242, 0.304, 0.26, 0.242, 0.256, 0.2, 0.216, 0.246, 0.174, 0.222, 0.2, 0.266, 0.218, 0.184, 0.28]
+Unlearning task: 3
+broken out of loop
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([8, 9, 9, 9, 8, 9, 5, 7, 5, 8], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=0.6297, std=1.6124
+[DEBUG][MIA] Test Set Loss:   mean=2.9885, std=3.8265
+[Task 1] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.68359375, 'cv_acc': 0.24313725490196075, 'auc': 0.696990966796875, 'task': 1}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [8 8 6 6 6 7 9 7 8 5]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=2.5457, std=3.7109
+[DEBUG][MIA] Test Set Loss:   mean=3.0664, std=4.2080
+[Task 1] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.516, 'cv_acc': 0.086, 'auc': 0.530008, 'task': 1}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([10, 13, 10, 10, 11, 13, 12, 13, 12, 11], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=88.5237, std=100.2494
+[DEBUG][MIA] Test Set Loss:   mean=96.9110, std=100.2075
+[Task 2] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.53515625, 'cv_acc': 0.15294117647058822, 'auc': 0.529937744140625, 'task': 2}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [10 12 12 13 10 12 14 14 13 13]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=93.1571, std=99.2046
+[DEBUG][MIA] Test Set Loss:   mean=81.9088, std=89.4687
+[Task 2] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.51, 'cv_acc': 0.1, 'auc': 0.52464, 'task': 2}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([15, 17, 19, 18, 15, 18, 18, 16, 18, 18], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [18 17 15 17 18 17 16 18 17 15]
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG][MIA] Forget Set Loss: mean=17.6117, std=22.6993
+[DEBUG][MIA] Test Set Loss:   mean=18.6892, std=20.6749
+[Task 3] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.5390625, 'cv_acc': 0.1607843137254902, 'auc': 0.53668212890625, 'task': 3}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [15 18 16 15 19 15 16 19 16 16]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [18 17 15 17 18 17 16 18 17 15]
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG][MIA] Forget Set Loss: mean=19.0338, std=19.8144
+[DEBUG][MIA] Test Set Loss:   mean=22.7500, std=21.9929
+[Task 3] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.478, 'cv_acc': 0.138, 'auc': 0.45209599999999994, 'task': 3}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([22, 22, 21, 24, 24, 24, 21, 22, 22, 21], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [24 22 20 24 23 20 24 23 24 20]
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG][MIA] Forget Set Loss: mean=58.5547, std=53.2836
+[DEBUG][MIA] Test Set Loss:   mean=54.5513, std=47.5743
+[Task 4] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.4765625, 'cv_acc': 0.09411764705882353, 'auc': 0.492706298828125, 'task': 4}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [24 23 24 22 24 24 21 21 24 22]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [24 22 20 24 23 20 24 23 24 20]
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG][MIA] Forget Set Loss: mean=56.1695, std=55.2838
+[DEBUG][MIA] Test Set Loss:   mean=57.2275, std=52.5765
+[Task 4] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.486, 'cv_acc': 0.098, 'auc': 0.484288, 'task': 4}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([26, 25, 26, 25, 25, 28, 25, 29, 26, 28], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [25 28 26 26 27 29 26 28 25 26]
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG][MIA] Forget Set Loss: mean=16.4064, std=16.6688
+[DEBUG][MIA] Test Set Loss:   mean=17.8823, std=16.0434
+[Task 5] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.53125, 'cv_acc': 0.09803921568627451, 'auc': 0.532958984375, 'task': 5}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [28 28 26 26 29 27 29 29 25 28]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [25 28 26 26 27 29 26 28 25 26]
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG][MIA] Forget Set Loss: mean=17.8969, std=15.5033
+[DEBUG][MIA] Test Set Loss:   mean=18.7314, std=15.3320
+[Task 5] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.492, 'cv_acc': 0.10400000000000001, 'auc': 0.483688, 'task': 5}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([33, 34, 33, 33, 32, 31, 30, 32, 31, 33], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [34 32 34 30 34 30 31 30 31 31]
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG][MIA] Forget Set Loss: mean=11.2403, std=11.7982
+[DEBUG][MIA] Test Set Loss:   mean=10.3727, std=11.3035
+[Task 6] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.4609375, 'cv_acc': 0.12941176470588237, 'auc': 0.481201171875, 'task': 6}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [33 34 30 32 31 34 31 30 33 33]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [34 32 34 30 34 30 31 30 31 31]
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG][MIA] Forget Set Loss: mean=10.1748, std=10.6565
+[DEBUG][MIA] Test Set Loss:   mean=11.9885, std=11.5879
+[Task 6] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.53, 'cv_acc': 0.10400000000000001, 'auc': 0.544592, 'task': 6}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([37, 39, 39, 35, 36, 39, 37, 38, 35, 39], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [37 38 36 38 37 36 37 39 36 36]
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG][MIA] Forget Set Loss: mean=10.9227, std=13.3020
+[DEBUG][MIA] Test Set Loss:   mean=13.5569, std=18.0430
+[Task 7] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.5, 'cv_acc': 0.11764705882352941, 'auc': 0.51287841796875, 'task': 7}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [39 38 35 37 38 35 37 39 37 38]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [37 38 36 38 37 36 37 39 36 36]
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG][MIA] Forget Set Loss: mean=10.6345, std=12.1804
+[DEBUG][MIA] Test Set Loss:   mean=11.6665, std=16.4561
+[Task 7] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.496, 'cv_acc': 0.096, 'auc': 0.485808, 'task': 7}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([42, 42, 41, 44, 40, 44, 42, 44, 40, 40], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [43 40 43 43 44 40 42 43 41 40]
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG][MIA] Forget Set Loss: mean=21.5338, std=17.6971
+[DEBUG][MIA] Test Set Loss:   mean=17.4158, std=17.1598
+[Task 8] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.44921875, 'cv_acc': 0.14509803921568626, 'auc': 0.428070068359375, 'task': 8}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [40 43 44 42 40 41 41 44 42 40]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [43 40 43 43 44 40 42 43 41 40]
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG][MIA] Forget Set Loss: mean=20.5358, std=17.5012
+[DEBUG][MIA] Test Set Loss:   mean=20.5660, std=18.1056
+[Task 8] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.502, 'cv_acc': 0.10400000000000001, 'auc': 0.497936, 'task': 8}
+Total correct retain:  1238  Total retain:  2500
+Total correct forget:  11303  Total forget:  47500
+Total correct test:  224  Total test:  500
+Total correct forget test:  2226  Total test forget:  9500
+After unlearning task 3
+Task accuracies: [0.448, 0.486, 0.246, 0.224, 0.2, 0.184, 0.194, 0.236, 0.18, 0.222, 0.2, 0.21, 0.202, 0.224, 0.202, 0.198, 0.278, 0.224, 0.336, 0.206]
+Unlearning task: 2
+broken out of loop
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([8, 9, 9, 9, 8, 9, 5, 7, 5, 8], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=9.4994, std=12.4429
+[DEBUG][MIA] Test Set Loss:   mean=10.6746, std=11.2911
+[Task 1] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.546875, 'cv_acc': 0.19607843137254904, 'auc': 0.563995361328125, 'task': 1}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [8 8 6 6 6 7 9 7 8 5]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [7 7 7 9 9 6 7 8 9 8]
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG] Task idx: 1
+[DEBUG][MIA] Forget Set Loss: mean=12.2975, std=15.1839
+[DEBUG][MIA] Test Set Loss:   mean=11.6210, std=13.4765
+[Task 1] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.486, 'cv_acc': 0.10800000000000001, 'auc': 0.5034000000000001, 'task': 1}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([10, 13, 10, 10, 11, 13, 12, 13, 12, 11], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=58.0479, std=68.8098
+[DEBUG][MIA] Test Set Loss:   mean=69.0722, std=69.9796
+[Task 2] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.484375, 'cv_acc': 0.08235294117647059, 'auc': 0.430999755859375, 'task': 2}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [10 12 12 13 10 12 14 14 13 13]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [12 12 13 11 11 12 10 12 12 11]
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG] Task idx: 2
+[DEBUG][MIA] Forget Set Loss: mean=70.3601, std=72.5673
+[DEBUG][MIA] Test Set Loss:   mean=63.6700, std=66.0658
+[Task 2] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.486, 'cv_acc': 0.13, 'auc': 0.48046400000000006, 'task': 2}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([15, 17, 19, 18, 15, 18, 18, 16, 18, 18], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [18 17 15 17 18 17 16 18 17 15]
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG][MIA] Forget Set Loss: mean=11.1430, std=12.4923
+[DEBUG][MIA] Test Set Loss:   mean=13.5399, std=11.8320
+[Task 3] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.5625, 'cv_acc': 0.09411764705882353, 'auc': 0.5665283203125, 'task': 3}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [15 18 16 15 19 15 16 19 16 16]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [18 17 15 17 18 17 16 18 17 15]
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG] Task idx: 3
+[DEBUG][MIA] Forget Set Loss: mean=13.1310, std=12.7959
+[DEBUG][MIA] Test Set Loss:   mean=13.2834, std=14.7679
+[Task 3] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.524, 'cv_acc': 0.11200000000000002, 'auc': 0.5153840000000001, 'task': 3}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([22, 22, 21, 24, 24, 24, 21, 22, 22, 21], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [24 22 20 24 23 20 24 23 24 20]
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG][MIA] Forget Set Loss: mean=41.9372, std=41.4398
+[DEBUG][MIA] Test Set Loss:   mean=42.7791, std=46.1493
+[Task 4] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.51953125, 'cv_acc': 0.09803921568627451, 'auc': 0.49884033203125, 'task': 4}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [24 23 24 22 24 24 21 21 24 22]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [24 22 20 24 23 20 24 23 24 20]
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG] Task idx: 4
+[DEBUG][MIA] Forget Set Loss: mean=40.6860, std=42.1590
+[DEBUG][MIA] Test Set Loss:   mean=38.4589, std=40.7086
+[Task 4] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.488, 'cv_acc': 0.10400000000000001, 'auc': 0.48800800000000005, 'task': 4}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([26, 25, 26, 25, 25, 28, 25, 29, 26, 28], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [25 28 26 26 27 29 26 28 25 26]
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG][MIA] Forget Set Loss: mean=15.1572, std=15.0550
+[DEBUG][MIA] Test Set Loss:   mean=16.3085, std=14.1679
+[Task 5] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.44921875, 'cv_acc': 0.08235294117647059, 'auc': 0.468597412109375, 'task': 5}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [28 28 26 26 29 27 29 29 25 28]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [25 28 26 26 27 29 26 28 25 26]
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG] Task idx: 5
+[DEBUG][MIA] Forget Set Loss: mean=14.2727, std=12.8111
+[DEBUG][MIA] Test Set Loss:   mean=16.8752, std=14.8756
+[Task 5] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.532, 'cv_acc': 0.10200000000000001, 'auc': 0.545816, 'task': 5}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([33, 34, 33, 33, 32, 31, 30, 32, 31, 33], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [34 32 34 30 34 30 31 30 31 31]
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG][MIA] Forget Set Loss: mean=13.7788, std=16.3384
+[DEBUG][MIA] Test Set Loss:   mean=12.1534, std=13.8086
+[Task 6] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.515625, 'cv_acc': 0.1215686274509804, 'auc': 0.47698974609375, 'task': 6}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [33 34 30 32 31 34 31 30 33 33]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [34 32 34 30 34 30 31 30 31 31]
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG] Task idx: 6
+[DEBUG][MIA] Forget Set Loss: mean=12.8388, std=15.3641
+[DEBUG][MIA] Test Set Loss:   mean=12.8908, std=16.4724
+[Task 6] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.486, 'cv_acc': 0.12400000000000003, 'auc': 0.511648, 'task': 6}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([37, 39, 39, 35, 36, 39, 37, 38, 35, 39], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [37 38 36 38 37 36 37 39 36 36]
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG][MIA] Forget Set Loss: mean=19.2041, std=23.1566
+[DEBUG][MIA] Test Set Loss:   mean=23.1359, std=26.7826
+[Task 7] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.5546875, 'cv_acc': 0.13725490196078433, 'auc': 0.537109375, 'task': 7}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [39 38 35 37 38 35 37 39 37 38]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [37 38 36 38 37 36 37 39 36 36]
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG] Task idx: 7
+[DEBUG][MIA] Forget Set Loss: mean=20.1216, std=21.6063
+[DEBUG][MIA] Test Set Loss:   mean=22.1324, std=25.4525
+[Task 7] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.496, 'cv_acc': 0.092, 'auc': 0.488448, 'task': 7}
+[DEBUG] forget_labels dtype: torch.int64 shape: torch.Size([256])
+[DEBUG] forget_labels first 10: tensor([42, 42, 41, 44, 40, 44, 42, 44, 40, 40], device='cuda:0')
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [43 40 43 43 44 40 42 43 41 40]
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG][MIA] Forget Set Loss: mean=25.3420, std=19.4748
+[DEBUG][MIA] Test Set Loss:   mean=25.8051, std=18.7089
+[Task 8] Post-unlearn MIA (Buffer): {'type': 'basic', 'attack_acc': 0.50390625, 'cv_acc': 0.11764705882352941, 'auc': 0.500732421875, 'task': 8}
+[DEBUG] forget_labels dtype: int64 shape: (2500,)
+[DEBUG] forget_labels first 10: [40 43 44 42 40 41 41 44 42 40]
+[DEBUG] test_labels dtype: int64 shape: (500,)
+[DEBUG] test_labels first 10: [43 40 43 43 44 40 42 43 41 40]
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG] Task idx: 8
+[DEBUG][MIA] Forget Set Loss: mean=23.7659, std=20.0825
+[DEBUG][MIA] Test Set Loss:   mean=25.1025, std=20.2565
+[Task 8] Post-unlearn MIA (Train): {'type': 'basic', 'attack_acc': 0.524, 'cv_acc': 0.10600000000000001, 'auc': 0.519952, 'task': 8}
+Total correct retain:  1309  Total retain:  2500
+Total correct forget:  10667  Total forget:  47500
+Total correct test:  220  Total test:  500
+Total correct forget test:  2097  Total test forget:  9500
+After unlearning task 2
+Task accuracies: [0.44, 0.262, 0.228, 0.25, 0.2, 0.19, 0.27, 0.2, 0.208, 0.222, 0.2, 0.212, 0.216, 0.188, 0.222, 0.2, 0.216, 0.208, 0.304, 0.198]
+Number of constraint violations:  0

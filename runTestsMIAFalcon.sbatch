@@ -3,7 +3,7 @@
 #SBATCH --job-name=neggemMIA     # Job name for tracking
 #SBATCH --partition=eagle      # Partition you wish to use (see above for list)
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=4     # Number of CPU threads used by your job
+#SBATCH --cpus-per-task=4    # Number of CPU threads used by your job
 #SBATCH --gres=gpu:1           # Number of GPUs to use 
 #SBATCH --mem=60G            # 60GB RAM
 #SBATCH --time=24:00:00        # Job time limit set to 12 hours
@@ -43,23 +43,26 @@ SALUN_ARGS="--salun 0 \
 MEM_STRENGTH_ARGS="--learn_mem_strength 0.5 \
     --unlearn_mem_strength 0.5"
 
-LEARN_BATCH_SIZE_ARGS="--learn_batch_size 10 \
+LEARN_BATCH_SIZE_ARGS="--learn_batch_size 20 \
     --unlearn_batch_size 10"
 
 ALPHA_ARGS="--alpha 0"
 
 NUMBER_ARGS="--number_of_gpus 1 \
-    --average_over_n_runs 1"
+    --average_over_n_runs 3"
 
-time python3.12 negGemGradSalunMIA.py --algorithm neggem $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
-time python3.12 negGemGradSalunMIA.py --algorithm negagem $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
-time python3.12 negGemGradSalunMIA.py --algorithm RL-GEM $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
-time python3.12 negGemGradSalunMIA.py --algorithm RL-AGEM $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
-time python3.12 negGemGradSalunMIA.py --algorithm ALT-NEGGEM $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
-time python3.12 negGemGradSalunMIA.py --algorithm neggrad --alpha 0.5 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $NUMBER_ARGS
-time python3.12 miacompile.py
+export CUDA_LAUNCH_BLOCKING=1
+# time python3.12 negGemGradSalunMIA.py --algorithm neggem $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
+# time python3.12 negGemGradSalunMIA.py --algorithm negagem $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
+# time python3.12 negGemGradSalunMIA.py --algorithm RL-GEM $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
+# time python3.12 negGemGradSalunMIA.py --algorithm RL-AGEM $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
+# time python3.12 negGemGradSalunMIA.py --algorithm ALT-NEGGEM $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
+time python3.12 negGemGradSalunMIA.py --algorithm neggrad --alpha 0.95 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $NUMBER_ARGS
+# cd MIA
+# time python3.12 plotitu.py
+# cd ../
 
 # move all the results and joboutput files to 4tests/H4
-mv joboutput_*.out ./MIA5
-mv joboutput_*.err ./MIA5
-mv ./Results* ./MIA5
+mv joboutput_*.out ./MIA
+mv joboutput_*.err ./MIA
+mv ./Results* ./MIA

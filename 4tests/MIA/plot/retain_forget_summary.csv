@@ -1,0 +1,7 @@
+Algorithm,Mean Retain Accuracy,Mean Forget Accuracy
+neggem,61.45,24.23
+negagem,56.82,25.29
+RL-GEM,59.24,22.45
+RL-AGEM,56.79,22.98
+ALT-NEGGEM,62.64,24.9
+neggrad,57.49,22.5

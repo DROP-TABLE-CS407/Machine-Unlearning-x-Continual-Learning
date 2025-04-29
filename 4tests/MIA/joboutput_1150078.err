@@ -1,0 +1,7 @@
+/dcs/21/u2110391/CS407/Machine-Unlearning-x-Continual-Learning/negGem/net.py:208: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at /pytorch/torch/csrc/tensor/python_tensor.cpp:78.)
+  indx = torch.cuda.LongTensor(self.observed_tasks[:-1]) if self.gpu \
+mv: cannot stat '*.pt': No such file or directory
+
+real	58m54.068s
+user	389m35.701s
+sys	10m54.940s

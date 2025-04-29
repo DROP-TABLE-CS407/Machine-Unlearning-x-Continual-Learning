@@ -1,0 +1,97 @@
+Task,Algorithm,Dataset,Final AUC
+1,neggem,Training Set,0.51025
+2,neggem,Training Set,0.48410000000000003
+3,neggem,Training Set,0.52995
+4,neggem,Training Set,0.47795
+5,neggem,Training Set,0.48315
+6,neggem,Training Set,0.49124999999999996
+7,neggem,Training Set,0.53
+8,neggem,Training Set,0.48375
+1,neggem,Buffer,0.5991500000000001
+2,neggem,Buffer,0.49760000000000004
+3,neggem,Buffer,0.5733
+4,neggem,Buffer,0.5022500000000001
+5,neggem,Buffer,0.49205
+6,neggem,Buffer,0.6012
+7,neggem,Buffer,0.5103
+8,neggem,Buffer,0.4871
+1,negagem,Training Set,0.51705
+2,negagem,Training Set,0.47245000000000004
+3,negagem,Training Set,0.44594999999999996
+4,negagem,Training Set,0.5024500000000001
+5,negagem,Training Set,0.5176000000000001
+6,negagem,Training Set,0.49155
+7,negagem,Training Set,0.5166
+8,negagem,Training Set,0.5817
+1,negagem,Buffer,0.6936
+2,negagem,Buffer,0.7793
+3,negagem,Buffer,0.885
+4,negagem,Buffer,0.7681
+5,negagem,Buffer,0.80325
+6,negagem,Buffer,0.69555
+7,negagem,Buffer,0.7697499999999999
+8,negagem,Buffer,0.7292
+1,RL-GEM,Training Set,0.4848
+2,RL-GEM,Training Set,0.5083
+3,RL-GEM,Training Set,0.4996
+4,RL-GEM,Training Set,0.5072
+5,RL-GEM,Training Set,0.4842
+6,RL-GEM,Training Set,0.4414
+7,RL-GEM,Training Set,0.4681
+8,RL-GEM,Training Set,0.5141
+1,RL-GEM,Buffer,0.467
+2,RL-GEM,Buffer,0.5053
+3,RL-GEM,Buffer,0.5227
+4,RL-GEM,Buffer,0.4937
+5,RL-GEM,Buffer,0.5277
+6,RL-GEM,Buffer,0.5209
+7,RL-GEM,Buffer,0.5009
+8,RL-GEM,Buffer,0.64085
+1,RL-AGEM,Training Set,0.51645
+2,RL-AGEM,Training Set,0.51175
+3,RL-AGEM,Training Set,0.5273
+4,RL-AGEM,Training Set,0.5265
+5,RL-AGEM,Training Set,0.5025000000000001
+6,RL-AGEM,Training Set,0.5465
+7,RL-AGEM,Training Set,0.54435
+8,RL-AGEM,Training Set,0.511
+1,RL-AGEM,Buffer,0.8862
+2,RL-AGEM,Buffer,0.81155
+3,RL-AGEM,Buffer,0.81955
+4,RL-AGEM,Buffer,0.8357
+5,RL-AGEM,Buffer,0.75925
+6,RL-AGEM,Buffer,0.85475
+7,RL-AGEM,Buffer,0.8101
+8,RL-AGEM,Buffer,0.82055
+1,ALT-NEGGEM,Training Set,0.50195
+2,ALT-NEGGEM,Training Set,0.4647
+3,ALT-NEGGEM,Training Set,0.46565
+4,ALT-NEGGEM,Training Set,0.5033
+5,ALT-NEGGEM,Training Set,0.46425
+6,ALT-NEGGEM,Training Set,0.53345
+7,ALT-NEGGEM,Training Set,0.4993
+8,ALT-NEGGEM,Training Set,0.47
+1,ALT-NEGGEM,Buffer,0.5860000000000001
+2,ALT-NEGGEM,Buffer,0.56295
+3,ALT-NEGGEM,Buffer,0.50595
+4,ALT-NEGGEM,Buffer,0.48414999999999997
+5,ALT-NEGGEM,Buffer,0.5126999999999999
+6,ALT-NEGGEM,Buffer,0.5507500000000001
+7,ALT-NEGGEM,Buffer,0.57
+8,ALT-NEGGEM,Buffer,0.481
+1,neggrad,Training Set,0.49465
+2,neggrad,Training Set,0.52345
+3,neggrad,Training Set,0.5212000000000001
+4,neggrad,Training Set,0.46995
+5,neggrad,Training Set,0.5367999999999999
+6,neggrad,Training Set,0.54165
+7,neggrad,Training Set,0.51905
+8,neggrad,Training Set,0.48255000000000003
+1,neggrad,Buffer,0.5622499999999999
+2,neggrad,Buffer,0.54605
+3,neggrad,Buffer,0.57715
+4,neggrad,Buffer,0.49395
+5,neggrad,Buffer,0.60215
+6,neggrad,Buffer,0.59495
+7,neggrad,Buffer,0.52805
+8,neggrad,Buffer,0.57155

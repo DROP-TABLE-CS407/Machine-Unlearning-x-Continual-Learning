@@ -67,7 +67,7 @@ from torch.nn.functional import relu, avg_pool2d
 import torch.nn as nn
 import quadprog
 
-from negGem.args import *
+from negGem.argsa import *
 from negGem.util import *
 from negGem.eval import *
 from negGem.salun import *
@@ -200,7 +200,7 @@ def run_cifar(algorithm, args, n_inputs=N_INPUTS, n_outputs=N_OUTPUTS, n_tasks=N
     mia_results = []
     
     unlearning_algo = args.algorithm
-    
+    iter = 0
     # Process the task sequence
     for operation in task_sequence:
         if operation >= 0:  # Learn task
@@ -254,32 +254,43 @@ def run_cifar(algorithm, args, n_inputs=N_INPUTS, n_outputs=N_OUTPUTS, n_tasks=N
                     buffer_type='unlearn'
                 )
 
-            if 0 in model.learn_memory_data:
-                task0_pre_mia = run_mia(
-                    method="basic",
-                    model=model,
-                    forget_data=model.learn_memory_data[0],
-                    forget_labels=model.learn_memory_labs[0],
-                    test_data=tests[0], 
-                    test_labels=tests[1],
-                    task_idx=0,
-                    device=torch.device(f"cuda:{device}" if args.cuda else "cpu")
-                )
-                print("Post-learn MIA (Buff) on Task 0:", task0_pre_mia)
-                log_mia_results(0, task0_pre_mia, task0_pre_mia, log_path=f"MIA5/task0_postlearn_{args.algorithm}_mia_results_buff.csv")
+            for task_id in range(1, 9):  # tasks 1 to 8 inclusive
+                print(task_id, operation)
+                if task_id > operation:
+                    break
+                test_data_idx = 2 * task_id
+                test_label_idx = 2 * task_id + 1
 
-            task0_pre_mia = run_mia(
+                # -------------------- BUFFER MIA --------------------
+                if task_id in model.learn_memory_data:
+                    mia_result_buff = run_mia(
+                        method="basic",
+                        model=model,
+                        forget_data=model.learn_memory_data[task_id],
+                        forget_labels=model.learn_memory_labs[task_id],
+                        test_data=tests[test_data_idx],
+                        test_labels=tests[test_label_idx],
+                        task_idx=task_id,
+                        device=torch.device(f"cuda:{device}" if args.cuda else "cpu")
+                    )
+                    print(f"[Task {task_id}] Post-unlearn MIA (Buffer):", mia_result_buff)
+                    log_mia_results(task_id, iter, mia_result_buff,
+                                    log_path=f"MIA2/task{task_id}_postlearn_{args.algorithm}_mia_results_buff.csv")
+
+                # -------------------- TRAINING SET MIA --------------------
+                mia_result_train = run_mia(
                     method="basic",
                     model=model,
-                    forget_data=tasks[0][0],
-                    forget_labels=tasks[0][1],
-                    test_data=tests[0], 
-                    test_labels=tests[1],
-                    task_idx=0,
+                    forget_data=tasks[task_id][0],
+                    forget_labels=tasks[task_id][1],
+                    test_data=tests[test_data_idx],
+                    test_labels=tests[test_label_idx],
+                    task_idx=task_id,
                     device=torch.device(f"cuda:{device}" if args.cuda else "cpu")
                 )
-            print("Post-learn MIA on Task 0:", task0_pre_mia)
-            log_mia_results(0, task0_pre_mia, task0_pre_mia, log_path=f"MIA5/task0_postlearn_{args.algorithm}_mia_results.csv")
+                print(f"[Task {task_id}] Post-unlearn MIA (Train):", mia_result_train)
+                log_mia_results(task_id, iter, mia_result_train,
+                                log_path=f"MIA2/task{task_id}_postlearn_{args.algorithm}_mia_results.csv")
         
 
         else:  # Unlearn task (negative value)
@@ -357,35 +368,43 @@ def run_cifar(algorithm, args, n_inputs=N_INPUTS, n_outputs=N_OUTPUTS, n_tasks=N
             # mia_result["task"] = task_to_unlearn 
             # ALL_TASK_MIA_RESULTS.append(mia_result)
 
-            if 0 in model.learn_memory_data:
-                task0_post_mia = run_mia(
+            for task_id in range(1, 9):  # tasks 1 to 8 inclusive
+                test_data_idx = 2 * task_id
+                test_label_idx = 2 * task_id + 1
+
+                # -------------------- BUFFER MIA --------------------
+                if task_id in model.learn_memory_data:
+                    mia_result_buff = run_mia(
+                        method="basic",
+                        model=model,
+                        forget_data=model.learn_memory_data[task_id],
+                        forget_labels=model.learn_memory_labs[task_id],
+                        test_data=tests[test_data_idx],
+                        test_labels=tests[test_label_idx],
+                        task_idx=task_id,
+                        device=torch.device(f"cuda:{device}" if args.cuda else "cpu")
+                    )
+                    print(f"[Task {task_id}] Post-unlearn MIA (Buffer):", mia_result_buff)
+                    log_mia_results(task_id, iter, mia_result_buff,
+                                    log_path=f"MIA2/task{task_id}_postunlearn_{args.algorithm}_mia_results_buff.csv")
+
+                # -------------------- TRAINING SET MIA --------------------
+                mia_result_train = run_mia(
                     method="basic",
                     model=model,
-                    forget_data=model.learn_memory_data[0],
-                    forget_labels=model.learn_memory_labs[0],
-                    test_data=tests[0], 
-                    test_labels=tests[1],
-                    task_idx=0,
+                    forget_data=tasks[task_id][0],
+                    forget_labels=tasks[task_id][1],
+                    test_data=tests[test_data_idx],
+                    test_labels=tests[test_label_idx],
+                    task_idx=task_id,
                     device=torch.device(f"cuda:{device}" if args.cuda else "cpu")
                 )
-                print("Post-unlearn MIA on Task 0:", task0_post_mia)
-                log_mia_results(0, task0_post_mia, task0_post_mia, log_path=f"MIA5/task0_postunlearn_{args.algorithm}_mia_results_buff.csv")
-           
-            task0_post_mia = run_mia(
-                method="basic",
-                model=model,
-                forget_data=tasks[0][0],
-                forget_labels=tasks[0][1],
-                test_data=tests[0], 
-                test_labels=tests[1],
-                task_idx=0,
-                device=torch.device(f"cuda:{device}" if args.cuda else "cpu")
-            )
-            print("Post-unlearn MIA on Task 0:", task0_post_mia)
-            log_mia_results(0, task0_post_mia, task0_post_mia, log_path=f"MIA5/task0_postunlearn_{args.algorithm}_mia_results.csv")
+                print(f"[Task {task_id}] Post-unlearn MIA (Train):", mia_result_train)
+                log_mia_results(task_id, iter, mia_result_train,
+                                log_path=f"MIA2/task{task_id}_postunlearn_{args.algorithm}_mia_results.csv")
 
             # log_mia_results(task_to_unlearn, pre_mia_result, mia_result)
-
+        iter += 1
         
         # Evaluate performance after each operation (both learning and unlearning)
         model.eval()
@@ -427,7 +446,6 @@ def run_cifar(algorithm, args, n_inputs=N_INPUTS, n_outputs=N_OUTPUTS, n_tasks=N
     after_unlearn_accuracies = ALL_TASK_ACCURACIES[-1] if ALL_TASK_ACCURACIES else []
     confidence_after_unlearn = ALL_TASK_CONFIDENCES[-1] if ALL_TASK_CONFIDENCES else []
 
-    torch.save(model, f"MIA5/10TrainedModel.pt")  
     return (model,
             test_accuracies,
             [],  # average_confidence - now integrated in ALL_TASK_CONFIDENCES
@@ -480,8 +498,8 @@ def single_run(run_idx, SHUFFLEDCLASSES, cmd_args, mem_data_local):
     args.unlearning_buffer_split = float(cmd_args.unlearning_buffer_split)
     args.unlearning_buffer_type = cmd_args.unlearning_buffer_type
         
-    # task_sequence = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -10, -9, -8, -7,-6, -5, -4, -3, -2, -1]
-    task_sequence = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    task_sequence = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -10, -9, -8, -7,-6, -5, -4, -3, -2, -1]
+    # task_sequence = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     # task_sequence = [1, 2, -1]  # Example sequence for 5 tasks
     # task_sequence = [0,1,2,3,-3,-2,-1]
     # all_tasks = list(range(20))

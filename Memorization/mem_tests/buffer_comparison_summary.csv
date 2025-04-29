@@ -1,0 +1,4 @@
+Strategy,Final Average Test Accuracy (%),Average Task Accuracy (%),Average Forgetting (%),Final Training Accuracy (%)
+Random (None),90.72,136.32,936.65,198.29
+20% Most Memorized,90.72,136.12,937.1,200.05
+20% Least Memorized,92.14,137.02,936.15,201.94

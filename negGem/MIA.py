@@ -9,6 +9,9 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, roc_auc_score
 from typing import Dict, Sequence
 
+import functools
+print = functools.partial(print, flush=True)
+
 # -----------------------------------------------------------------------------
 # Helper utilities (loader & forward‑pass collectors)
 # -----------------------------------------------------------------------------
@@ -33,6 +36,7 @@ def _collect(model, loader, task_idx, op="loss"):
         for x, y in loader:
             x, y = x.to(next(model.parameters()).device), y.to(next(model.parameters()).device)
             logits = model(x, task_idx)
+            print(f"[DEBUG] Task idx: {task_idx}")
 
             if op == "loss":
                 loss = F.cross_entropy(logits, y, reduction='none')
@@ -61,6 +65,10 @@ def basic_mia(model,
     """Balanced loss‑based MIA using logistic regression."""
     rng = rng or np.random.default_rng()
 
+    print("[DEBUG] forget_labels dtype:", forget_labels.dtype, "shape:", forget_labels.shape)
+    print("[DEBUG] forget_labels first 10:", forget_labels[:10])
+    print("[DEBUG] test_labels dtype:", test_labels.dtype, "shape:", test_labels.shape)
+    print("[DEBUG] test_labels first 10:", test_labels[:10])
     # Determine balanced sample size
     n = min(len(forget_data), len(test_data)) // 2
     if n < 2:
@@ -145,32 +153,24 @@ def run_mia(method: str,
     
 
 
-def log_mia_results(task_id: int, pre_result: dict, post_result: dict, log_path: "a.csv"):
-    """Append MIA results before and after unlearning to a CSV file."""
+def log_mia_results(task_id: int, iter_id: int, result: dict, log_path: str = "a.csv"):
+    """Append a single MIA result (e.g., per iteration) to a CSV file."""
     
     file_exists = os.path.exists(log_path)
     
     with open(log_path, mode="a", newline="") as file:
         writer = csv.writer(file)
-        
-        # Write header if file doesn't exist
+
+        # Write header if it doesn't exist
         if not file_exists:
             writer.writerow([
-                "task", "stage", "attack_acc", "cv_acc", "auc"
+                "task", "iter", "attack_acc", "cv_acc", "auc"
             ])
-        
-        # Write pre-unlearning result
+
+        # Log one row for this iteration
         writer.writerow([
-            task_id, "pre",
-            round(pre_result["attack_acc"], 4),
-            round(pre_result["cv_acc"], 4),
-            round(pre_result["auc"], 4)
-        ])
-        
-        # Write post-unlearning result
-        writer.writerow([
-            task_id, "post",
-            round(post_result["attack_acc"], 4),
-            round(post_result["cv_acc"], 4),
-            round(post_result["auc"], 4)
+            task_id, iter_id,
+            round(result["attack_acc"], 4),
+            round(result["cv_acc"], 4),
+            round(result["auc"], 4)
         ])
