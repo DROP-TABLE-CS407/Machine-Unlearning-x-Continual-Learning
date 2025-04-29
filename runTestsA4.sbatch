@@ -58,7 +58,7 @@ LEARN_BATCH_SIZE_ARGS="--learn_batch_size 10 \
     --unlearn_batch_size 5"
 
 # time python3.12 negGemGradA4.py --algorithm negagem --task_sequence C4v2 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
-time python3.12 negGemGradA4.py --algorithm RL-AGEM --task_sequence C4v2 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
+time python3.12 negGemGradA4.py --algorithm RL-AGEM --task_sequence F4 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $ALPHA_ARGS $NUMBER_ARGS
 
 LEARN_BATCH_SIZE_ARGS="--learn_batch_size 10 \
     --unlearn_batch_size 2"
@@ -72,9 +72,9 @@ LEARN_BATCH_SIZE_ARGS="--learn_batch_size 10 \
 # time python3.12 negGemGradA4.py --algorithm neggrad --alpha 0.5 --task_sequence C4 $BUFFER_ARGS $SALUN_ARGS $MEM_STRENGTH_ARGS $LEARN_BATCH_SIZE_ARGS $NUMBER_ARGS
 
 # move all the results and joboutput files to 4tests/A4
-mv joboutput_*.out ./4tests/C4v2
-mv joboutput_*.err ./4tests/C4v2
-mv ./Results* ./4tests/C4v2
+mv joboutput_*.out ./4tests/F4
+mv joboutput_*.err ./4tests/F4
+mv ./Results* ./4tests/F4
 
 # LEARN_BATCH_SIZE_ARGS="--learn_batch_size 10 \
 #     --unlearn_batch_size 1"
