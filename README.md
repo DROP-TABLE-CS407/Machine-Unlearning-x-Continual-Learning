@@ -136,11 +136,11 @@ is the task that has been retained the longest through 20 rounds of continual le
 
 ### Our own continual learning results for the continuum of 20 tasks from CIFAR 100 running on AGEM and GEM variants:
 
-![Alt text](https://media.discordapp.net/attachments/891721126340853761/1373020483477438697/cifar100CLcomp.png?ex=6828e478&is=682792f8&hm=80d52ddc1f0a7068c3ef0610620a1197c5b9925c0c6dfc585ba74e4dd9ef8f28&=&format=webp&quality=lossless&width=1247&height=391) "Our own continual learning results for the continuum of 20 tasks from CIFAR 100 running on AGEM and GEM variants")
+![Alt text](https://media.discordapp.net/attachments/891721126340853761/1373020483477438697/cifar100CLcomp.png?ex=6828e478&is=682792f8&hm=80d52ddc1f0a7068c3ef0610620a1197c5b9925c0c6dfc585ba74e4dd9ef8f28&=&format=webp&quality=lossless&width=1247&height=391 "Our own continual learning results for the continuum of 20 tasks from CIFAR 100 running on AGEM and GEM variants")
 
 ### MIA results proving that a continual learner can maintain model utility whilst reducing risk of MIA AUC for samples of the the entire train set. Only the buffer samples (~10% of the original train data) become memorised protecting the rest of the train data:
 
-![Alt text](https://media.discordapp.net/attachments/891721126340853761/1373021328344612934/miaAGEM.png?ex=6828e542&is=682793c2&hm=a8135853fdd334736293cb4ea6cceca31ce5eca338381e1ff54b4c126c0287a4&=&format=webp&quality=lossless&width=1540&height=880) "MIA results proving that a continual learner can maintain model utility whilst reducing risk of MIA AUC for samples of the the entire train set. Only the buffer samples (~10% of the original train data) become memorised protecting the rest of the train data")
+![Alt text](https://media.discordapp.net/attachments/891721126340853761/1373021328344612934/miaAGEM.png?ex=6828e542&is=682793c2&hm=a8135853fdd334736293cb4ea6cceca31ce5eca338381e1ff54b4c126c0287a4&=&format=webp&quality=lossless&width=1540&height=880 "MIA results proving that a continual learner can maintain model utility whilst reducing risk of MIA AUC for samples of the the entire train set. Only the buffer samples (~10% of the original train data) become memorised protecting the rest of the train data")
 
 ### A4 Test Set Task Accuracies:
 
@@ -150,23 +150,41 @@ is the task that has been retained the longest through 20 rounds of continual le
 
 ![Alt text](https://media.discordapp.net/attachments/891721126340853761/1373023267379613880/tow_scores_a4.png?ex=6828e710&is=68279590&hm=3c1f165fb85b0b18ee4fd5fb017cac6dde8c911d34d3f428c359d34723e5ba7e&=&format=webp&quality=lossless&width=2254&height=1128 "A4 CL-TOW values across all algorithms")
 
-### A4 CLU_{mix} values across all algorithms
+### A4 $CLU_{mix}$ values across all algorithms
 
 ![Alt text](https://media.discordapp.net/attachments/891721126340853761/1373021355313856675/CLUA4.png?ex=6828e548&is=682793c8&hm=255c288d00562d7094ec264c86aae4e073931f6504343b7f883343f337d8aff6&=&format=webp&quality=lossless&width=2254&height=1128 "A4 CLUmix values across all algorithms")
 
-### B4 CLU_{mix} values across all algorithms
+### B4 $CLU_{mix}$ values across all algorithms
 
-### C4 CLU_{mix} values across all algorithms
+![Alt text](https://media.discordapp.net/attachments/891721126340853761/1373021368236511373/CLUB4.png?ex=6828e54b&is=682793cb&hm=26dcc999d126fb59a4dd964b5bbf1135ace6becc734dcd3f44990bc56bc44aaa&=&format=webp&quality=lossless&width=2254&height=1128 "B4 CLUmix values across all algorithms")
 
-### D4 CLU_{mix} values across all algorithms
+### C4 $CLU_{mix}$ values across all algorithms
 
-### E4 CLU_{mix} values across all algorithms
+![Alt text](https://media.discordapp.net/attachments/891721126340853761/1373021404508852395/CLUD4.png?ex=6828e554&is=682793d4&hm=b7c0386d9ffac48461b855d34744393c5b33f9b9c91f9e346dcfc509371613b1&=&format=webp&quality=lossless&width=2254&height=1128 "C4v2 CLUmix values across all algorithms")
 
-### F4 CLU_{mix} values across all algorithms
+### C4v2 $CLU_{mix}$ values across all algorithms
 
-### G4 CLU_{mix} values across all algorithms
+![Alt text](https://media.discordapp.net/attachments/891721126340853761/1373021376449089708/CLUc4v2.png?ex=6828e54d&is=682793cd&hm=088cbaf3934f8606fb71ef8918ab66fea0eee0d232994da20bc323d8f91de408&=&format=webp&quality=lossless&width=2254&height=1128 "C4 CLUmix values across all algorithms")
 
-### H4 CLU_{mix} values across all algorithms
+### D4 $CLU_{mix}$ values across all algorithms
+
+![Alt text](https://media.discordapp.net/attachments/891721126340853761/1373021388452925531/CLUC4.png?ex=6828e550&is=682793d0&hm=49585efd9afbca994a00b2020adcd9ceea1b736329eeb0c9971975fc12c9c93f&=&format=webp&quality=lossless&width=2254&height=1128 "D4 CLUmix values across all algorithms")
+
+### E4 $CLU_{mix}$ values across all algorithms
+
+![Alt text](https://media.discordapp.net/attachments/891721126340853761/1373021415011385475/CLUE4.png?ex=6828e556&is=682793d6&hm=f835dd0661839095017b581e034b99a49671828ac9c1fc930d494832c59a7fa8&=&format=webp&quality=lossless&width=2254&height=1128 "E4 CLUmix values across all algorithms")
+
+### F4 $CLU_{mix}$ values across all algorithms
+
+![Alt text](https://media.discordapp.net/attachments/891721126340853761/1373021428143882311/CLUF4.png?ex=6828e559&is=682793d9&hm=d0b9acb8c0dbcedf42aaf9d488b58c328041a37f679c3a4a7f9a9a60b66eba6a&=&format=webp&quality=lossless&width=2254&height=1128 "F4 CLUmix values across all algorithms")
+
+### G4 $CLU_{mix}$ values across all algorithms
+
+![Alt text](https://media.discordapp.net/attachments/891721126340853761/1373021439036358727/CLUG4.png?ex=6828e55c&is=682793dc&hm=8a8b5615e9fcbf752689ac4c8498e830f7e454e644489a25561d0605d3af933b&=&format=webp&quality=lossless&width=2254&height=1128 "G4 CLUmix values across all algorithms")
+
+### H4 $CLU_{mix}$ values across all algorithms
+
+![Alt text](https://media.discordapp.net/attachments/891721126340853761/1373021451065626674/CLUH4.png?ex=6828e55f&is=682793df&hm=dd39392485697ea162d2c93ca143b3c53147c5439e658362f55756b084e13109&=&format=webp&quality=lossless&width=2254&height=1128 "H4 CLUmix values across all algorithms")
 
 
 # 5.) Conclusion
