@@ -136,7 +136,7 @@ is the task that has been retained the longest through 20 rounds of continual le
 
 ### Our own continual learning results for the continuum of 20 tasks from CIFAR 100 running on AGEM and GEM variants:
 
-![Alt text]([https://cdn.discordapp.com/attachments/884782265866014760/1373016794071175260/ALL_TASK_ACCURACIES.png?ex=6828e109&is=68278f89&hm=19536202c550eaf56dc708140f548e24fb9b545470491c15027d2680acfdb4e1&](https://media.discordapp.net/attachments/891721126340853761/1373020483477438697/cifar100CLcomp.png?ex=6828e478&is=682792f8&hm=80d52ddc1f0a7068c3ef0610620a1197c5b9925c0c6dfc585ba74e4dd9ef8f28&=&format=webp&quality=lossless&width=1247&height=391) "Our own continual learning results for the continuum of 20 tasks from CIFAR 100 running on AGEM and GEM variants")
+![Alt text](https://media.discordapp.net/attachments/891721126340853761/1373020483477438697/cifar100CLcomp.png?ex=6828e478&is=682792f8&hm=80d52ddc1f0a7068c3ef0610620a1197c5b9925c0c6dfc585ba74e4dd9ef8f28&=&format=webp&quality=lossless&width=1247&height=391) "Our own continual learning results for the continuum of 20 tasks from CIFAR 100 running on AGEM and GEM variants")
 
 ### MIA results proving that a continual learner can maintain model utility whilst reducing risk of MIA AUC for samples of the the entire train set. Only the buffer samples (~10% of the original train data) become memorised protecting the rest of the train data:
 
