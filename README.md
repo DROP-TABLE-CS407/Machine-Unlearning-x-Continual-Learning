@@ -142,7 +142,7 @@ is the task that has been retained the longest through 20 rounds of continual le
 
 ![Alt text](https://media.discordapp.net/attachments/891721126340853761/1373021328344612934/miaAGEM.png?ex=6828e542&is=682793c2&hm=a8135853fdd334736293cb4ea6cceca31ce5eca338381e1ff54b4c126c0287a4&=&format=webp&quality=lossless&width=1540&height=880 "MIA results proving that a continual learner can maintain model utility whilst reducing risk of MIA AUC for samples of the the entire train set. Only the buffer samples (~10% of the original train data) become memorised protecting the rest of the train data")
 
-### A4 Test Set Task Accuracies:
+### A4 Test Set Task Accuracies Using NegGEM:
 
 ![Alt text](https://cdn.discordapp.com/attachments/884782265866014760/1373016794071175260/ALL_TASK_ACCURACIES.png?ex=6828e109&is=68278f89&hm=19536202c550eaf56dc708140f548e24fb9b545470491c15027d2680acfdb4e1& "NegGEM on task sequence A4, all test accuracies shown")
 
