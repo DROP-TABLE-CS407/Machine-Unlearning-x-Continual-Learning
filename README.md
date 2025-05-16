@@ -134,7 +134,40 @@ is the task that has been retained the longest through 20 rounds of continual le
 
 # 4.) Results
 
+### Our own continual learning results for the continuum of 20 tasks from CIFAR 100 running on AGEM and GEM variants:
+
+![Alt text]([https://cdn.discordapp.com/attachments/884782265866014760/1373016794071175260/ALL_TASK_ACCURACIES.png?ex=6828e109&is=68278f89&hm=19536202c550eaf56dc708140f548e24fb9b545470491c15027d2680acfdb4e1&](https://media.discordapp.net/attachments/891721126340853761/1373020483477438697/cifar100CLcomp.png?ex=6828e478&is=682792f8&hm=80d52ddc1f0a7068c3ef0610620a1197c5b9925c0c6dfc585ba74e4dd9ef8f28&=&format=webp&quality=lossless&width=1247&height=391) "Our own continual learning results for the continuum of 20 tasks from CIFAR 100 running on AGEM and GEM variants")
+
+### MIA results proving that a continual learner can maintain model utility whilst reducing risk of MIA AUC for samples of the the entire train set. Only the buffer samples (~10% of the original train data) become memorised protecting the rest of the train data:
+
+![Alt text](https://media.discordapp.net/attachments/891721126340853761/1373021328344612934/miaAGEM.png?ex=6828e542&is=682793c2&hm=a8135853fdd334736293cb4ea6cceca31ce5eca338381e1ff54b4c126c0287a4&=&format=webp&quality=lossless&width=1540&height=880) "MIA results proving that a continual learner can maintain model utility whilst reducing risk of MIA AUC for samples of the the entire train set. Only the buffer samples (~10% of the original train data) become memorised protecting the rest of the train data")
+
+### A4 Test Set Task Accuracies:
+
 ![Alt text](https://cdn.discordapp.com/attachments/884782265866014760/1373016794071175260/ALL_TASK_ACCURACIES.png?ex=6828e109&is=68278f89&hm=19536202c550eaf56dc708140f548e24fb9b545470491c15027d2680acfdb4e1& "NegGEM on task sequence A4, all test accuracies shown")
+
+### A4 CL-TOW values across all algorithms
+
+![Alt text](https://media.discordapp.net/attachments/891721126340853761/1373023267379613880/tow_scores_a4.png?ex=6828e710&is=68279590&hm=3c1f165fb85b0b18ee4fd5fb017cac6dde8c911d34d3f428c359d34723e5ba7e&=&format=webp&quality=lossless&width=2254&height=1128 "A4 CL-TOW values across all algorithms")
+
+### A4 CLU_{mix} values across all algorithms
+
+![Alt text](https://media.discordapp.net/attachments/891721126340853761/1373021355313856675/CLUA4.png?ex=6828e548&is=682793c8&hm=255c288d00562d7094ec264c86aae4e073931f6504343b7f883343f337d8aff6&=&format=webp&quality=lossless&width=2254&height=1128 "A4 CLUmix values across all algorithms")
+
+### B4 CLU_{mix} values across all algorithms
+
+### C4 CLU_{mix} values across all algorithms
+
+### D4 CLU_{mix} values across all algorithms
+
+### E4 CLU_{mix} values across all algorithms
+
+### F4 CLU_{mix} values across all algorithms
+
+### G4 CLU_{mix} values across all algorithms
+
+### H4 CLU_{mix} values across all algorithms
+
 
 # 5.) Conclusion
 
