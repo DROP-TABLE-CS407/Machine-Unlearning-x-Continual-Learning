@@ -134,11 +134,22 @@ is the task that has been retained the longest through 20 rounds of continual le
 
 # 4.) Results
 
-(To be completed upon all tests)
+![alt text][logo]
+
+[logo]: https://github.com/DROP-TABLE-CS407/Machine-Unlearning-x-Continual-Learning/tree/main/4tests/A4/neggemcracked/ALL_TASK_ACCURACIES.png "NegGEM on task sequence A4, all test accuracies shown"
 
 # 5.) Conclusion
 
-(To be completed upon all tests)
+Across all experiments, one conclusion becomes unavoidable:
+learning and unlearning must be designed together, not separately.
+
+Successful unlearning is not just about cancelling out past gradients or deleting memory buffers—it depends crucially on the structures laid down during initial learning.
+Algorithms that enforced structured learning updates (such as GEM-style constraints) created conditions where unlearning could be performed selectively, precisely, and efficiently, preserving the ability to learn new tasks and protecting privacy.
+
+By contrast, methods that treated learning and unlearning as independent phases—first memorising freely, then applying naive erasure techniques—struggled with residual memorisation, poor future learning capacity, and unstable forgetting.
+
+Thus, our results show that continual unlearning systems must adopt a holistic design philosophy: the way a model is trained must explicitly prepare it for the possibility of future unlearning.
+Learning and unlearning are two sides of the same coin, and only by crafting them to work synergistically can we achieve models that learn continuously, forget selectively, and do so with efficiency, robustness, and privacy.
 
 # 6.) References
 - David Lopez-Paz, Marc'Aurelio Ranzato. Gradient Episodic Memory for Continual Learning. In NeurIPS, 2017. [here](https://arxiv.org/abs/1706.08840)
