@@ -134,9 +134,7 @@ is the task that has been retained the longest through 20 rounds of continual le
 
 # 4.) Results
 
-![alt text][logo]
-
-![alt text](https://github.com/DROP-TABLE-CS407/Machine-Unlearning-x-Continual-Learning/tree/main/4tests/A4/neggemcracked/ALL_TASK_ACCURACIES.png "NegGEM on task sequence A4, all test accuracies shown")
+![Alt text](https://github.com/DROP-TABLE-CS407/Machine-Unlearning-x-Continual-Learning/tree/main/4tests/A4/neggemcracked/ALL_TASK_ACCURACIES.png "NegGEM on task sequence A4, all test accuracies shown")
 
 # 5.) Conclusion
 
