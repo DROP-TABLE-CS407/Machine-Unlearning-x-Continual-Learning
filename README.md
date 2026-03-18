@@ -136,55 +136,55 @@ is the task that has been retained the longest through 20 rounds of continual le
 
 ### Our own continual learning results for the continuum of 20 tasks from CIFAR 100 running on AGEM and GEM variants:
 
-![Alt text](https://media.discordapp.net/attachments/891721126340853761/1373020483477438697/cifar100CLcomp.png?ex=6866daf8&is=68658978&hm=af550762b4ee8a347fcd790247222738ce86ebc24d059b816024afdf371a74fc&=&format=webp&quality=lossless "Our own continual learning results for the continuum of 20 tasks from CIFAR 100 running on AGEM and GEM variants")
+![Alt text](https://github.com/DROP-TABLE-CS407/Machine-Unlearning-x-Continual-Learning/blob/main/plot/cifar100CLcomp.png?raw=true "Our own continual learning results for the continuum of 20 tasks from CIFAR 100 running on AGEM and GEM variants")
 
 ### MIA results proving that a continual learner can maintain model utility whilst reducing risk of MIA AUC for samples of the the entire train set. Only the buffer samples (~10% of the original train data) become memorised protecting the rest of the train data:
 
-![Alt text](https://media.discordapp.net/attachments/891721126340853761/1373021328344612934/miaAGEM.png?ex=6866dbc2&is=68658a42&hm=04e91a5a32330f0936e5cefff3f713b3540cfaa9eb606ae1ab9c2bd89e473d22&=&format=webp&quality=lossless "MIA results proving that a continual learner can maintain model utility whilst reducing risk of MIA AUC for samples of the the entire train set. Only the buffer samples (~10% of the original train data) become memorised protecting the rest of the train data")
+![Alt text](https://github.com/DROP-TABLE-CS407/Machine-Unlearning-x-Continual-Learning/blob/main/plot/miaAGEM.png?raw=true "MIA results proving that a continual learner can maintain model utility whilst reducing risk of MIA AUC for samples of the the entire train set. Only the buffer samples (~10% of the original train data) become memorised protecting the rest of the train data")
 
 ### A4 Test Set Task Accuracies Using NegGEM:
 
-![Alt text](https://media.discordapp.net/attachments/891721126340853761/1390103973087936732/a4neggem.png?ex=68670ab6&is=6865b936&hm=a51dddabd24a854cf009f0ba0ffcc1ce27228047b06c1f82c8c57dcb3045855b&=&format=webp&quality=lossless&width=1280&height=960 "NegGEM on task sequence A4, all test accuracies shown")
+![Alt text](https://github.com/DROP-TABLE-CS407/Machine-Unlearning-x-Continual-Learning/blob/main/plot/a4neggem.png?raw=true "NegGEM on task sequence A4, all test accuracies shown")
 
 ### A4 CL-TOW values across all algorithms:
 
-![Alt text](https://media.discordapp.net/attachments/891721126340853761/1373023267379613880/tow_scores_a4.png?ex=6866dd90&is=68658c10&hm=b8843e3d522fea5b5e1d877f45547f71f2f4cc6b78b81b824b92525f3456455e&=&format=webp&quality=lossless&width=1712&height=856 "A4 CL-TOW values across all algorithms")
+![Alt text](https://github.com/DROP-TABLE-CS407/Machine-Unlearning-x-Continual-Learning/blob/main/plot/tow_scores_a4.png?raw=true "A4 CL-TOW values across all algorithms")
 
 ### A4 $CLU_{mix}$ values across all algorithms:
 
-![Alt text](https://media.discordapp.net/attachments/891721126340853761/1373021355313856675/CLUA4.png?ex=6866dbc8&is=68658a48&hm=9990b91d5879a398ccf56750595fbd1f92081d37e2c05bc9de688a6751d38da3&=&format=webp&quality=lossless&width=1712&height=856 "A4 CLUmix values across all algorithms")
+![Alt text](https://github.com/DROP-TABLE-CS407/Machine-Unlearning-x-Continual-Learning/blob/main/plot/CLUA4.png?raw=true "A4 CLUmix values across all algorithms")
 
 ### B4 $CLU_{mix}$ values across all algorithms:
 
-![Alt text](https://media.discordapp.net/attachments/891721126340853761/1373021368236511373/CLUB4.png?ex=6866dbcb&is=68658a4b&hm=5ee4b890f8d2aa8868217a1163a569cdd3d9d78276c0de1eea5a8172f4901c70&=&format=webp&quality=lossless&width=1712&height=856 "B4 CLUmix values across all algorithms")
+![Alt text](https://github.com/DROP-TABLE-CS407/Machine-Unlearning-x-Continual-Learning/blob/main/plot/CLUB4.png?raw=true "B4 CLUmix values across all algorithms")
 
 ### C4 $CLU_{mix}$ values across all algorithms:
 
-![Alt text](https://media.discordapp.net/attachments/891721126340853761/1373021388452925531/CLUC4.png?ex=6866dbd0&is=68658a50&hm=b24da18c7693f354b1d07cb7acc662b751a22b09e192cdb7abc951d1f45eb06e&=&format=webp&quality=lossless&width=1712&height=856 "C4 CLUmix values across all algorithms")
+![Alt text](https://github.com/DROP-TABLE-CS407/Machine-Unlearning-x-Continual-Learning/blob/main/plot/CLUC4.png?raw=true "C4 CLUmix values across all algorithms")
 
 ### C4v2 $CLU_{mix}$ values across all algorithms:
 
-![Alt text](https://media.discordapp.net/attachments/891721126340853761/1373021376449089708/CLUc4v2.png?ex=6866dbcd&is=68658a4d&hm=7f5ef82c5ed3ce02f8e81bcc0388c47a53e069c6c0ad46f43992dc07fa2f20d1&=&format=webp&quality=lossless&width=1712&height=856 "C4v2 CLUmix values across all algorithms")
+![Alt text](https://github.com/DROP-TABLE-CS407/Machine-Unlearning-x-Continual-Learning/blob/main/plot/CLUB4.png?raw=true "C4v2 CLUmix values across all algorithms")
 
 ### D4 $CLU_{mix}$ values across all algorithms:
 
-![Alt text](https://media.discordapp.net/attachments/891721126340853761/1373021404508852395/CLUD4.png?ex=6866dbd4&is=68658a54&hm=0ef438c789ca9a909ca2371b16308e1cab839c9fc8847f623bc01eb6072b5541&=&format=webp&quality=lossless&width=1712&height=856 "D4 CLUmix values across all algorithms")
+![Alt text](https://github.com/DROP-TABLE-CS407/Machine-Unlearning-x-Continual-Learning/blob/main/plot/CLUD4.png?raw=true "D4 CLUmix values across all algorithms")
 
 ### E4 $CLU_{mix}$ values across all algorithms:
 
-![Alt text](https://media.discordapp.net/attachments/891721126340853761/1373021415011385475/CLUE4.png?ex=6866dbd6&is=68658a56&hm=4736d063c78c15c0cc23e82f100692d5e9c909eaebd90d509e294cc7c589716e&=&format=webp&quality=lossless&width=1712&height=856 "E4 CLUmix values across all algorithms")
+![Alt text](https://github.com/DROP-TABLE-CS407/Machine-Unlearning-x-Continual-Learning/blob/main/plot/CLUE4.png?raw=true "E4 CLUmix values across all algorithms")
 
 ### F4 $CLU_{mix}$ values across all algorithms:
 
-![Alt text](https://media.discordapp.net/attachments/891721126340853761/1373021428143882311/CLUF4.png?ex=6866dbd9&is=68658a59&hm=b24e5d6267958ae288c3fdf065b72e43b6e954db39d4764b565542db3dd3c2bd&=&format=webp&quality=lossless&width=1712&height=856 "F4 CLUmix values across all algorithms")
+![Alt text](https://github.com/DROP-TABLE-CS407/Machine-Unlearning-x-Continual-Learning/blob/main/plot/CLUF4.png?raw=true "F4 CLUmix values across all algorithms")
 
 ### G4 $CLU_{mix}$ values across all algorithms:
 
-![Alt text](https://media.discordapp.net/attachments/891721126340853761/1373021439036358727/CLUG4.png?ex=6866dbdc&is=68658a5c&hm=58c901913c72671bade403dd73767bbad6e9916e855d03ffa69b0909a0ef6f81&=&format=webp&quality=lossless&width=1712&height=856 "G4 CLUmix values across all algorithms")
+![Alt text](https://github.com/DROP-TABLE-CS407/Machine-Unlearning-x-Continual-Learning/blob/main/plot/CLUG4.png?raw=true "G4 CLUmix values across all algorithms")
 
 ### H4 $CLU_{mix}$ values across all algorithms:
 
-![Alt text](https://media.discordapp.net/attachments/891721126340853761/1373021451065626674/CLUH4.png?ex=6866dbdf&is=68658a5f&hm=6589cfab101d5cfce047b147f8c8f95876032ce81848cd9f5af18f723a4d73d1&=&format=webp&quality=lossless&width=1712&height=856 "H4 CLUmix values across all algorithms")
+![Alt text](https://github.com/DROP-TABLE-CS407/Machine-Unlearning-x-Continual-Learning/blob/main/plot/CLUH4.png?raw=true "H4 CLUmix values across all algorithms")
 
 
 # 5.) Conclusion
